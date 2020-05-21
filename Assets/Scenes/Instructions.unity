@@ -539,10 +539,13 @@ MonoBehaviour:
 
     Z - Shoot
 
-    C - Change Shot
-    Mode
+    X - Spell (Not
+    implemented yet)
 
-    Left Shift - Slow down and make hitbox visible'
+    C - Change Shot Mode
+
+    Left Shift - Slow down and make
+    hitbox visible'
 --- !u!222 &973212761
 CanvasRenderer:
   m_ObjectHideFlags: 0
