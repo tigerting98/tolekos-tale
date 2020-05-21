@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave2
   m_EditorClassIdentifier: 
   path: {fileID: 1224448787929532958, guid: 314e36040c66b984f8457671a6683d29, type: 3}
-  enemy: {fileID: 6225057521292802004, guid: 135cab260923e1a449ff4d27104581e2, type: 3}
+  enemy: {fileID: 4459303641503581329, guid: ba3dc312562f4f243aedede2b586aac4, type: 3}
   spawntime: 0.1
   number: 5
   moveSpeed: 3
