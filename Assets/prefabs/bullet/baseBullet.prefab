@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3518877856861922396}
   - component: {fileID: 9200072685321137857}
   - component: {fileID: -465456440615183729}
+  - component: {fileID: -1114664629743190563}
   m_Layer: 9
   m_Name: baseBullet
   m_TagString: Untagged
@@ -160,3 +161,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985857073f83b3a4c910d32b045dbfbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1114664629743190563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5502227822980241576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e308909258b884b8768e3330bf0e8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 200

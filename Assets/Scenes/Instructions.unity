@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 1502626804}
   - component: {fileID: 1502626803}
   m_Layer: 5
-  m_Name: Quit
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -791,8 +791,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 539917564}
-        m_MethodName: StartGame
-        m_Mode: 5
+        m_MethodName: ReturnToStartPage
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -10,13 +10,13 @@ public class Enemy : MonoBehaviour
  
     List<Transform> waypoints;
     WaveConfig config;
-    [SerializeField] int hp;
+    Health health;
     Death deathEffects;
 
     // Start is called before the first frame update
     void Start()
     {
-     
+        health = GetComponent<Health>();
         waypoints = config.GetWaypoints();
         transform.position = waypoints[0].transform.position;
         deathEffects = gameObject.GetComponent<Death>();
@@ -25,14 +25,14 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        Bullet bullet= collision.gameObject.GetComponent<Bullet>();
-        if (bullet != null) {
-            hp -= bullet.TakeDamage();
-            Destroy(bullet.gameObject);
+        DamageDealer dmg = collision.gameObject.GetComponent<DamageDealer>();
+        if (dmg != null) {
+            health.TakeDamage(dmg.GetDamage());
+            Destroy(dmg.gameObject);
         }
        
         
-        if (hp <= 0) {
+        if (health.ZeroHP()) {
             BossDeath death = gameObject.GetComponent<BossDeath>();
             if (death != null) {
                 death.Death();

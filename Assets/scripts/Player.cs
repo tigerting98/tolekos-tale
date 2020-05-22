@@ -10,22 +10,24 @@ public class Player : MonoBehaviour
     [SerializeField] float shotRate;
     [SerializeField] float bulletSpeed;
     [Range(0,10)][SerializeField] float speed;
-    [SerializeField] float xPadding= 0.6f, yPadding=0.6f;
+    [SerializeField] float focusRatio = 0.2f;
+    [SerializeField] float xPadding= 0.4f, yPadding=0.4f;
     [SerializeField] GameObject hitbox;
     float xMin, xMax, yMin, yMax;
     [SerializeField] List<Bullet> bullets;
     Coroutine firing;
     List<Func<IEnumerator>> firePatterns;
-    [SerializeField] int hp;
     [SerializeField] SceneLoader loader;
+     Health health;
+    Death deathEffects;
  
     int fireMode = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = GetComponent<Health>();
         hitbox.SetActive(false);
-        
+        deathEffects = GetComponent<Death>();
         firePatterns = new List<Func<IEnumerator>>();
         firePatterns.Add(ShootPattern1);
         firePatterns.Add(ShootPattern2);
@@ -34,12 +36,13 @@ public class Player : MonoBehaviour
         SetUpBoundary();
     }
 
-    void SetUpBoundary() {
+   
+        void SetUpBoundary() {
         Camera cam = Camera.main;
-        xMin = cam.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + xPadding;
-        xMax = cam.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - xPadding;
-        yMin = cam.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + yPadding;
-        yMax = cam.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - yPadding;
+        xMin = -4 + xPadding;
+        xMax = 4 - xPadding;
+        yMin = -4 + yPadding;
+        yMax = 4 - yPadding;
         
     }
      Color getColor(GameObject obj) {
@@ -49,55 +52,85 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject obj = collision.gameObject;
-        Bullet bul = obj.GetComponent<Bullet>();
-        if (bul != null)
+        DamageDealer dmg = obj.GetComponent<DamageDealer>();
+        if (dmg != null)
         {
-            hp -= bul.TakeDamage();
-            Destroy(obj);
+            health.TakeDamage(dmg.GetDamage());
+            if (obj.GetComponent<Bullet>()!= null)
+            { Destroy(obj); }
         }
 
-        if (hp <= 0) {
-            loader.StartGame("Defeat");
-            Destroy(gameObject);
-            
+        
+
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        DamageDealer dmg = collision.GetComponent<DamageDealer>();
+        if (dmg!= null) {
+            health.TakeDamage((int)Mathf.Ceil(dmg.GetDamage() * Time.deltaTime));
+        }
+    }
+
+    void CheckFocus() {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = speed * focusRatio;
+            hitbox.SetActive(true);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = speed / focusRatio;
+            hitbox.SetActive(false);
         }
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+    void CheckFiring() {
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            speed = speed / 3;
-            hitbox.SetActive(true);
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift)) {
-            speed = speed * 3;
-            hitbox.SetActive(false);
-        }
-        Move();
-       
-        if (Input.GetKeyDown(KeyCode.Z)) {
             firing = StartCoroutine(firePatterns[fireMode]());
         }
-        if (Input.GetKeyUp(KeyCode.Z)) {
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
             StopCoroutine(firing);
         }
-        if (Input.GetKeyDown(KeyCode.C)) {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
             fireMode = (fireMode + 1) % firePatterns.Count;
             hitbox.GetComponent<SpriteRenderer>().color = getColor(bullets[fireMode].gameObject);
             if (firing != null)
-            { StopCoroutine(firing); 
+            {
+                StopCoroutine(firing);
             }
-            if (Input.GetKey(KeyCode.Z)) {
-                firing = StartCoroutine(firePatterns[fireMode]()); 
-            
+            if (Input.GetKey(KeyCode.Z))
+            {
+                firing = StartCoroutine(firePatterns[fireMode]());
+
             }
-        
+
         }
     }
+    // Update is called once per frame
+    void Update()
+    {
+        CheckFocus();
+        Move();
 
+
+        CheckFiring();
+        CheckDeath();
+    }
+
+    public void CheckDeath() {
+        if (health.ZeroHP())
+
+        {
+
+            deathEffects.die();
+            loader.GameOver();
+
+        }
+
+    }
     
     public IEnumerator ShootPattern1() {
         while (true)

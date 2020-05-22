@@ -8,7 +8,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
   
-    [SerializeField] int damage;
+
     
     // Start is called before the first frame update
     void Start()
@@ -17,10 +17,7 @@ public class Bullet : MonoBehaviour
         
     }
 
-    public int TakeDamage() {
-
-        return this.damage;
-    }
+   
 
     public void setSpeed(Vector2 vel) {
         BulletMovement movement = gameObject.GetComponent<BulletMovement>();

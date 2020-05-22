@@ -14,9 +14,11 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] int bulletPattern;
     List<Func<IEnumerator>> actions;
     GameObject player;
+    Vector3 playerPosition = new Vector2(0,-4);
   
     void Start()
     {
+        
         actions = new List<Func<IEnumerator>>();
         actions.Add(Pattern1);
         actions.Add(Pattern2);
@@ -31,7 +33,9 @@ public class EnemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (player != null) {
+            playerPosition = player.transform.position;
+        }
         
     }
 
@@ -47,8 +51,9 @@ public class EnemyShooting : MonoBehaviour
     }
 
      float getPlayerAngle() {
-        Vector2 diff = player.transform.position - transform.position;
-        return  player == null ? 180 : Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x) + 270;
+
+        Vector2 diff = playerPosition - transform.position;
+        return Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x) + 270;
     }
 
 
@@ -88,7 +93,7 @@ public class EnemyShooting : MonoBehaviour
                 angle += 360 / 30;
             
             }
-            Debug.Log("pew");
+        
             yield return new WaitForSeconds(shotRate);
         
         
