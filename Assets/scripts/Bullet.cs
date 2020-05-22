@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
+//using System.Numerics;
 using UnityEditor;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    Camera cam; 
+  
     [SerializeField] int damage;
-    UnityEngine.Vector2 velocity;
+    
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
+      
         
     }
 
@@ -22,18 +22,19 @@ public class Bullet : MonoBehaviour
         return this.damage;
     }
 
-    public void setSpeed(UnityEngine.Vector2 vel) {
-        velocity = vel;
-        GetComponent<Rigidbody2D>().velocity = vel;
+    public void setSpeed(Vector2 vel) {
+        BulletMovement movement = gameObject.GetComponent<BulletMovement>();
+        if (movement != null) {
+            movement.SetStraightPath(vel);
+            movement.SetStartingPoint(transform.position);
+        }
+    
     }
-
+   
     // Update is called once per frame
     void Update()
     {   
-        UnityEngine.Vector3 pos = cam.WorldToViewportPoint(transform.position);
-        if (pos.x < 0 || pos.x > 1 || pos.y < 0 || pos.y > 1) {
-            Destroy(gameObject);
-        }
+       
         
     }
 }

@@ -22,6 +22,7 @@ public class EnemyShooting : MonoBehaviour
         actions.Add(Pattern2);
         actions.Add(Pattern3);
         actions.Add(Pattern4);
+        actions.Add(Pattern5);
         player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(actions[bulletPattern - 1]());
 
@@ -120,4 +121,14 @@ public class EnemyShooting : MonoBehaviour
         }
     }
 
+    IEnumerator Pattern5() {
+        while (true) {
+            Bullet bull = Instantiate(bullet, transform.position, Quaternion.identity);
+            BulletMovement move = bull.gameObject.GetComponent<BulletMovement>();
+            move.SetCustomPath(time => new Vector2((float)(0.5 * Math.Sin(time * 10)), -speed * time));
+            move.SetStartingPoint(transform.position);
+            move.RotateTrajectory(30);
+            yield return new WaitForSeconds(shotRate);
+        }
+    }
 }

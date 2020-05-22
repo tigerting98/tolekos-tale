@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     List<Transform> waypoints;
     WaveConfig config;
     [SerializeField] int hp;
+    Death deathEffects;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class Enemy : MonoBehaviour
      
         waypoints = config.GetWaypoints();
         transform.position = waypoints[0].transform.position;
-
+        deathEffects = gameObject.GetComponent<Death>();
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,7 +37,10 @@ public class Enemy : MonoBehaviour
             if (death != null) {
                 death.Death();
             }
-
+            if (deathEffects != null)
+            {
+                deathEffects.die();
+            }
             Destroy(gameObject);
         }
         
