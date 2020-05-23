@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+//using System.Numerics;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Scripting.APIUpdating;
-
+[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(Death))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] float shotRate;
-    [SerializeField] float bulletSpeed;
-    [Range(0,10)][SerializeField] float speed;
+    public float shotRate;
+    public float bulletSpeed;
+    [Range(0,10)]public float speed= 5f;
     [SerializeField] float focusRatio = 0.2f;
     [SerializeField] float xPadding= 0.4f, yPadding=0.4f;
     [SerializeField] GameObject hitbox;
@@ -17,28 +20,34 @@ public class Player : MonoBehaviour
     [SerializeField] List<Bullet> bullets;
     Coroutine firing;
     List<Func<IEnumerator>> firePatterns;
-    [SerializeField] SceneLoader loader;
+    SceneLoader loader;
      Health health;
     Death deathEffects;
  
     int fireMode = 0;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        GameManager.player = this;
+    }
     void Start()
     {
         health = GetComponent<Health>();
         hitbox.SetActive(false);
         deathEffects = GetComponent<Death>();
         firePatterns = new List<Func<IEnumerator>>();
-        firePatterns.Add(ShootPattern1);
-        firePatterns.Add(ShootPattern2);
-        firePatterns.Add(ShootPattern3);
+        firePatterns.Add(() => Patterns.PlayerShootPattern1(bullets[0], this));
+        firePatterns.Add(() => Patterns.PlayerShootPattern2(bullets[1], this));
+        firePatterns.Add(() => Patterns.PlayerShootPattern3(bullets[2], this));
         hitbox.GetComponent<SpriteRenderer>().color = getColor(bullets[0].gameObject);
         SetUpBoundary();
+        loader = GameManager.sceneLoader;
     }
 
    
         void SetUpBoundary() {
-        Camera cam = Camera.main;
+       
         xMin = -4 + xPadding;
         xMax = 4 - xPadding;
         yMin = -4 + yPadding;
@@ -51,13 +60,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject obj = collision.gameObject;
-        DamageDealer dmg = obj.GetComponent<DamageDealer>();
+       
+        DamageDealer dmg = collision.GetComponent<DamageDealer>();
         if (dmg != null)
         {
             health.TakeDamage(dmg.GetDamage());
-            if (obj.GetComponent<Bullet>()!= null)
-            { Destroy(obj); }
+            if (collision.GetComponent<Bullet>()!= null)
+            { Destroy(collision.gameObject); }
         }
 
         
@@ -114,64 +123,21 @@ public class Player : MonoBehaviour
     {
         CheckFocus();
         Move();
-
-
         CheckFiring();
         CheckDeath();
     }
 
     public void CheckDeath() {
         if (health.ZeroHP())
-
         {
-
             deathEffects.die();
+            GameManager.player = null;
             loader.GameOver();
 
         }
-
     }
     
-    public IEnumerator ShootPattern1() {
-        while (true)
-        {
-           
-            Bullet bul1 = Instantiate(bullets[0], transform.position, Quaternion.identity);
-            Bullet bul2 = Instantiate(bullets[0], transform.position, Quaternion.identity);
-            Bullet bul3 = Instantiate(bullets[0], transform.position, Quaternion.identity);
-            bul1.setSpeed(new Vector2(0, bulletSpeed));
-            bul2.setSpeed(bulletSpeed* new Vector2(0.2f, 0.8f));
-            bul3.setSpeed(bulletSpeed * new Vector2(-0.2f, 0.8f));
-            yield return new WaitForSeconds(1 / shotRate);
-        }
-    }
-    public IEnumerator ShootPattern2()
-    {
-        while (true)
-        {
-
-            Bullet bul1 = Instantiate(bullets[1], transform.position, Quaternion.identity);
-            Bullet bul2 = Instantiate(bullets[1], transform.position + new Vector3(1,0,0), Quaternion.identity);
-            Bullet bul3 = Instantiate(bullets[1], transform.position - new Vector3(1, 0, 0), Quaternion.identity);
-            bul1.setSpeed(new Vector2(0, bulletSpeed));
-            bul2.setSpeed(new Vector2(0, bulletSpeed));
-            bul3.setSpeed(new Vector2(0, bulletSpeed));
-           
-            yield return new WaitForSeconds(1 / shotRate);
-        }
-    }
-    public IEnumerator ShootPattern3()
-    {
-        while (true)
-        {
-
-            Bullet bul1 = Instantiate(bullets[2], transform.position, Quaternion.identity);
-            
-            bul1.setSpeed(new Vector2(0, bulletSpeed));
-            
-            yield return new WaitForSeconds(1 / shotRate /3);
-        }
-    }
+   
     public void Move()
     {
         float deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * speed;

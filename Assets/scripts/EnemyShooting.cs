@@ -13,28 +13,33 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] float shotRate;
     [SerializeField] int bulletPattern;
     List<Func<IEnumerator>> actions;
-    GameObject player;
-    Vector3 playerPosition = new Vector2(0,-4);
+    Player player;
+    Vector3 playerPosition;
   
     void Start()
     {
-        
+        player = GameManager.player;
         actions = new List<Func<IEnumerator>>();
         actions.Add(Pattern1);
         actions.Add(Pattern2);
         actions.Add(Pattern3);
         actions.Add(Pattern4);
         actions.Add(Pattern5);
-        player = GameObject.FindGameObjectWithTag("Player");
+        actions.Add(Pattern6);
         StartCoroutine(actions[bulletPattern - 1]());
+        if (player != null)
+        {
+            playerPosition = player.transform.position;
+        }
 
     }
-
+   
     // Update is called once per frame
     void Update()
     {
         if (player != null) {
             playerPosition = player.transform.position;
+            
         }
         
     }
@@ -43,7 +48,7 @@ public class EnemyShooting : MonoBehaviour
 
 
         Bullet bul = Instantiate(bullet, pos, Quaternion.Euler(0,0,angle));
-       
+      
 
         bul.setSpeed(Quaternion.Euler(0, 0, angle) * new Vector3(0, speed, 0));
       
@@ -60,9 +65,9 @@ public class EnemyShooting : MonoBehaviour
     IEnumerator Pattern1() {
         while (true)
         {
-            
 
-            shoot(transform.position, getPlayerAngle());
+          
+            Patterns.ShootStraight(bullet, transform.position, getPlayerAngle(), speed);
             yield return new WaitForSeconds(shotRate);
         }
 
@@ -87,12 +92,7 @@ public class EnemyShooting : MonoBehaviour
         while (true) {
             float angle = getPlayerAngle();
 
-            for (int i = 0; i < 30; i++) {
-
-                shoot(transform.position, angle);
-                angle += 360 / 30;
-            
-            }
+            Patterns.RingOfBullets(bullet, this.transform.position, 30, angle, speed);
         
             yield return new WaitForSeconds(shotRate);
         
@@ -128,11 +128,15 @@ public class EnemyShooting : MonoBehaviour
 
     IEnumerator Pattern5() {
         while (true) {
-            Bullet bull = Instantiate(bullet, transform.position, Quaternion.identity);
-            BulletMovement move = bull.gameObject.GetComponent<BulletMovement>();
-            move.SetCustomPath(time => new Vector2((float)(0.5 * Math.Sin(time * 10)), -speed * time));
-            move.SetStartingPoint(transform.position);
-            move.RotateTrajectory(30);
+            Patterns.ShootSinTrajectory(bullet, this.transform.position, getPlayerAngle(), speed, 10, 0.2f);
+            yield return new WaitForSeconds(shotRate);
+        }
+    }
+    IEnumerator Pattern6()
+    {
+        while (true)
+        {
+            Patterns.ArchimedesSpiral(bullet, this.transform.position, 1, speed, 180);
             yield return new WaitForSeconds(shotRate);
         }
     }

@@ -99,9 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08d2a6bc855c524b8c3536088057049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotRate: 10
+  shotRate: 0.1
   bulletSpeed: 20
   speed: 10
+  focusRatio: 0.2
   xPadding: 0.3
   yPadding: 0.4
   hitbox: {fileID: 7985819461488737577}
@@ -109,7 +110,6 @@ MonoBehaviour:
   - {fileID: 4830748874538541392, guid: 314e202ea616fe94c88e1869c72ce4e8, type: 3}
   - {fileID: 4830748874538541392, guid: 754994cba68c101498689411fb31378d, type: 3}
   - {fileID: 4830748874538541392, guid: 1a9aa5305939a01478b632377f55c5af, type: 3}
-  loader: {fileID: 0}
 --- !u!50 &1455112021299339000
 Rigidbody2D:
   serializedVersion: 4

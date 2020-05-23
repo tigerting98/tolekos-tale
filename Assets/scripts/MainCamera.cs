@@ -1,17 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class BossDeath : MonoBehaviour
+public class MainCamera : MonoBehaviour
 {
-    
     // Start is called before the first frame update
-    public void Death()
+    private void Awake()
     {
-
-        GameManager.sceneLoader.Victory();
+        GameManager.mainCamera = gameObject.GetComponent<Camera>();
     }
-
-
 }

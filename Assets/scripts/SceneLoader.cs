@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
 
+    private void Awake()
+    {       
+        GameManager.sceneLoader = this;       
+    }
     public void QuitGame()
     {
         Application.Quit();
@@ -32,7 +36,7 @@ public class SceneLoader : MonoBehaviour
     }
 
   
-    IEnumerator WaitAndLoad(String str) {
+    IEnumerator WaitAndLoad(string str) {
         yield return new WaitForSeconds(2f);
         LoadScene(str);
     }
