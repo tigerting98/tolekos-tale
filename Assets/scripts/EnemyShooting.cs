@@ -26,11 +26,12 @@ public class EnemyShooting : MonoBehaviour
         actions.Add(Pattern4);
         actions.Add(Pattern5);
         actions.Add(Pattern6);
-        StartCoroutine(actions[bulletPattern - 1]());
         if (player != null)
         {
             playerPosition = player.transform.position;
         }
+        StartCoroutine(actions[bulletPattern - 1]());
+        
 
     }
    
@@ -50,7 +51,7 @@ public class EnemyShooting : MonoBehaviour
         Bullet bul = Instantiate(bullet, pos, Quaternion.Euler(0,0,angle));
       
 
-        bul.setSpeed(Quaternion.Euler(0, 0, angle) * new Vector3(0, speed, 0));
+        bul.setSpeed(Quaternion.Euler(0, 0, angle) * new Vector3(speed, 0, 0));
       
         
     }
@@ -58,7 +59,7 @@ public class EnemyShooting : MonoBehaviour
      float getPlayerAngle() {
 
         Vector2 diff = playerPosition - transform.position;
-        return Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x) + 270;
+        return Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x);
     }
 
 

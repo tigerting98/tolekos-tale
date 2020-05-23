@@ -13,7 +13,7 @@ public class Patterns : MonoBehaviour
         Bullet bul = Instantiate(bullet, pos, Quaternion.Euler(0, 0, angle));
 
 
-        bul.setSpeed(Quaternion.Euler(0, 0, angle) * new Vector3(0, speed, 0));
+        bul.setSpeed(Quaternion.Euler(0, 0, angle) * new Vector3(speed, 0, 0));
         return bul;
 
     }
@@ -21,9 +21,9 @@ public class Patterns : MonoBehaviour
         while (true)
         {
             
-            Bullet bul1 = ShootStraight(bullet, player.transform.position, 0, player.bulletSpeed);
-            Bullet bul2 = ShootStraight(bullet, player.transform.position, -10, player.bulletSpeed);
-            Bullet bul3 = ShootStraight(bullet, player.transform.position, 10, player.bulletSpeed);
+            Bullet bul1 = ShootStraight(bullet, player.transform.position, 90, player.bulletSpeed);
+            Bullet bul2 = ShootStraight(bullet, player.transform.position, 100, player.bulletSpeed);
+            Bullet bul3 = ShootStraight(bullet, player.transform.position, 80, player.bulletSpeed);
            
             yield return new WaitForSeconds(player.shotRate);
         }
@@ -34,9 +34,9 @@ public class Patterns : MonoBehaviour
         while (true)
         {
 
-            Bullet bul1 = ShootStraight(bullet, player.transform.position, 0, player.bulletSpeed);
-            Bullet bul2 = ShootStraight(bullet, player.transform.position + new Vector3(1, 0), 0, player.bulletSpeed);
-            Bullet bul3 = ShootStraight(bullet, player.transform.position - new Vector3(1, 0), 0, player.bulletSpeed);
+            Bullet bul1 = ShootStraight(bullet, player.transform.position, 90, player.bulletSpeed);
+            Bullet bul2 = ShootStraight(bullet, player.transform.position + new Vector3(1, 0), 90, player.bulletSpeed);
+            Bullet bul3 = ShootStraight(bullet, player.transform.position - new Vector3(1, 0), 90, player.bulletSpeed);
           
 
             yield return new WaitForSeconds(player.shotRate);
@@ -47,7 +47,7 @@ public class Patterns : MonoBehaviour
         while (true)
         {
 
-            Bullet bul1 = ShootStraight(bullet, player.transform.position, 0, player.bulletSpeed);
+            Bullet bul1 = ShootStraight(bullet, player.transform.position, 90, player.bulletSpeed);
 
             yield return new WaitForSeconds(player.shotRate / 3);
         }
@@ -57,7 +57,7 @@ public class Patterns : MonoBehaviour
     {
 
         Vector2 diff = target - shooter;
-        return Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x) + 270;
+        return Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x);
     }
 
     public static List<Bullet> RingOfBullets(Bullet bullet, Vector2 origin, int number, float offset, float speed) {

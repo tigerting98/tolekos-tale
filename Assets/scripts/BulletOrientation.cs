@@ -23,7 +23,7 @@ public class BulletOrientation : MonoBehaviour
 
     public Quaternion FindRotation() {
         Vector2 diff = (Vector2)transform.position - oldPosition;
-        return Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x) + 270);
+        return Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x));
     }
     // Update is called once per frame
     void Update()

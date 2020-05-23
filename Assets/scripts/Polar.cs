@@ -10,7 +10,7 @@ public class Polar
     public Vector2 rect;
     public Polar(Vector2 vect) {
         this.r = vect.magnitude;
-        this.rads = Mathf.Atan2(vect.y, vect.x) - (float)Math.PI/2;
+        this.rads = Mathf.Atan2(vect.y, vect.x);
         rect = vect;
        
     }
@@ -18,7 +18,7 @@ public class Polar
     public Polar(float r, float rads) {
         this.r = r;
         this.rads = rads;
-        rect = r * new Vector2(Mathf.Cos(rads + (float)Math.PI / 2), Mathf.Sin(rads + (float)Math.PI / 2));
+        rect = r * new Vector2(Mathf.Cos(rads), Mathf.Sin(rads));
 
 
     }
