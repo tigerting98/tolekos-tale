@@ -17,49 +17,15 @@ public class Patterns : MonoBehaviour
         return bul;
 
     }
-    public static IEnumerator PlayerShootPattern1(Bullet bullet, Player player) {
-        while (true)
-        {
-            
-            Bullet bul1 = ShootStraight(bullet, player.transform.position, 90, player.bulletSpeed);
-            Bullet bul2 = ShootStraight(bullet, player.transform.position, 100, player.bulletSpeed);
-            Bullet bul3 = ShootStraight(bullet, player.transform.position, 80, player.bulletSpeed);
-           
-            yield return new WaitForSeconds(player.shotRate);
-        }
-    }
+   
 
-    public static IEnumerator PlayerShootPattern2(Bullet bullet, Player player)
-    {
-        while (true)
-        {
-
-            Bullet bul1 = ShootStraight(bullet, player.transform.position, 90, player.bulletSpeed);
-            Bullet bul2 = ShootStraight(bullet, player.transform.position + new Vector3(1, 0), 90, player.bulletSpeed);
-            Bullet bul3 = ShootStraight(bullet, player.transform.position - new Vector3(1, 0), 90, player.bulletSpeed);
-          
-
-            yield return new WaitForSeconds(player.shotRate);
-        }
-    }
-    public static IEnumerator PlayerShootPattern3(Bullet bullet, Player player)
-    {
-        while (true)
-        {
-
-            Bullet bul1 = ShootStraight(bullet, player.transform.position, 90, player.bulletSpeed);
-
-            yield return new WaitForSeconds(player.shotRate / 3);
-        }
-    }
-
-    public float AimAt(Vector2 shooter, Vector2 target)
+    public static float AimAt(Vector2 shooter, Vector2 target)
     {
 
         Vector2 diff = target - shooter;
         return Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x);
     }
-
+    
     public static List<Bullet> RingOfBullets(Bullet bullet, Vector2 origin, int number, float offset, float speed) {
         List<Bullet> bullets = new List<Bullet>();
         for (int i=0; i < number; i++) {

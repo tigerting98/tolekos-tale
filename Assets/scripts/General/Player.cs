@@ -37,9 +37,9 @@ public class Player : MonoBehaviour
         hitbox.SetActive(false);
         deathEffects = GetComponent<Death>();
         firePatterns = new List<Func<IEnumerator>>();
-        firePatterns.Add(() => Patterns.PlayerShootPattern1(bullets[0], this));
-        firePatterns.Add(() => Patterns.PlayerShootPattern2(bullets[1], this));
-        firePatterns.Add(() => Patterns.PlayerShootPattern3(bullets[2], this));
+        firePatterns.Add(() => PlayerPattern.Mode1(bullets[0], this));
+        firePatterns.Add(() => PlayerPattern.Mode2(bullets[1], this));
+        firePatterns.Add(() => PlayerPattern.Mode3(bullets[2], this));
         hitbox.GetComponent<SpriteRenderer>().color = getColor(bullets[0].gameObject);
         SetUpBoundary();
         loader = GameManager.sceneLoader;

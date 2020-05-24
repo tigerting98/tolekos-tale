@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    int waveNo = 0;
+   
     [SerializeField] List<WaveConfig> waves;
-    WaveConfig currentWave;
+
     // Start is called before the first frame update
     void Start()
     {

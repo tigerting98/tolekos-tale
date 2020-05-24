@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Toleko
       objectReference: {fileID: 0}
+    - target: {fileID: 3311493128422948756, guid: 8f94476cc49edd74bbfc94b715aead11,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.751
+      objectReference: {fileID: 0}
     - target: {fileID: 3311493128422948757, guid: 8f94476cc49edd74bbfc94b715aead11,
         type: 3}
       propertyPath: health
