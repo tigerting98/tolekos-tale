@@ -9,11 +9,11 @@ public class HealthBar : MonoBehaviour
     [SerializeField] Health health;
     [SerializeField] bool visible = true;
     [SerializeField] Text title;
-    int maxHP = 0;
-    int currentHP = 0;
+    float maxHP = 0;
+    float currentHP = 0;
  
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         if (!visible) {
             gameObject.SetActive(false);
@@ -45,8 +45,8 @@ public class HealthBar : MonoBehaviour
     void Update()
     {
         currentHP = health == null ? 0 : health.GetCurrentHP();
-        text.text = "Health : " + currentHP.ToString() + "/" + maxHP.ToString();
-        slider.value = maxHP == 0 ? 0 : (float)currentHP / (float)maxHP;
+        text.text = "Health : " + ((int)currentHP).ToString() + "/" + ((int)maxHP).ToString();
+        slider.value = maxHP == 0 ? 0 : currentHP / maxHP;
     }
 
     

@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] int maxHP = 100;
-    int currentHP;
+    [SerializeField] float maxHP = 100;
+    float currentHP;
     
     
     // Start is called before the first frame update
@@ -17,28 +17,28 @@ public class Health : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void TakeDamage(int dmg) {
+    public void TakeDamage(float dmg) {
         currentHP -= dmg;
     }
-    public void Heal(int dmg)
+    public void Heal(float dmg)
 
     {
         currentHP += dmg;
     }
-    public int GetCurrentHP()
+    public float GetCurrentHP()
     {
         return currentHP;
     }
 
-    public int GetMaxHP() {
+    public float GetMaxHP() {
         return maxHP;
     }
 
-    public void SetMaxHP(int hp) {
+    public void SetMaxHP(float hp) {
         maxHP = hp;
     }
 
-    public void ResetHP(int hp) {
+    public void ResetHP() {
         currentHP = maxHP;
     }
 

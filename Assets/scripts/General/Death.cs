@@ -16,13 +16,13 @@ public class Death : MonoBehaviour
 
     private void Update()
     {
-        if (hp != null)
-        {
+        //if (hp)
+       // {
             if (hp.ZeroHP() && canDie)
             {
                 Die();
             }
-        }
+       // }
     }
     public virtual void Die()
     {

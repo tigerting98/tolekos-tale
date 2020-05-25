@@ -31,9 +31,9 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
-        
+        GameManager.playerPosition = transform.position;
         hitbox.SetActive(false);
-       
+        
         firePatterns = new List<Func<IEnumerator>>();
         firePatterns.Add(() => PlayerPattern.Mode1(bullets[0], this));
         firePatterns.Add(() => PlayerPattern.Mode2(bullets[1], this));
@@ -101,6 +101,7 @@ public class Player : MonoBehaviour
         CheckFocus();
         Move();
         CheckFiring();
+        GameManager.playerPosition = transform.position;
        
     }
 

@@ -11,10 +11,10 @@ public class Enemy : MonoBehaviour
     int cur = 0;
  
     List<Transform> waypoints;
-    float moveSpeed;
-    [SerializeField] Health health;
-    [SerializeField] Death deathEffects;
-    [SerializeField] Movement movement;
+    public float moveSpeed;
+    public Health health;
+    public Death deathEffects;
+    public Movement movement;
 
     // Start is called before the first frame update
    
@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
        
-        if (!movement.isMoving()){ 
+        if (!movement.IsMoving()){ 
             if (cur == waypoints.Count -1)
             {
                 if (waypoints[cur].gameObject.tag == "End")
@@ -53,14 +53,7 @@ public class Enemy : MonoBehaviour
             else
             {
                 cur++;
-                Vector2 diff = waypoints[cur].position - transform.position;
-
-                float time = diff.magnitude / moveSpeed;
-
-                movement.SetStraightPath(diff / diff.magnitude * moveSpeed);
-                movement.SetStartingPoint(transform.position);
-                movement.StartMoving();
-                movement.StopMovingAfter(time);
+                movement.MoveTo(waypoints[cur].position, moveSpeed);
             }
                 
 

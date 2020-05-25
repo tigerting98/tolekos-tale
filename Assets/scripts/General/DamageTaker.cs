@@ -22,7 +22,7 @@ public class DamageTaker : MonoBehaviour
         DamageDealer dmg = collision.GetComponent<DamageDealer>();
         if (dmg != null && dmg.DamageOverTime())
         {
-            health.TakeDamage((int)Mathf.Ceil(dmg.GetDamage() * Time.deltaTime));
+            health.TakeDamage(dmg.GetDamage() * Time.deltaTime);
         }
     }
 }

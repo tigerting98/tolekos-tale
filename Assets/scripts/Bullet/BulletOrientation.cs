@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,9 @@ public class BulletOrientation : MonoBehaviour
     // Start is called before the first frame update
     Vector2 oldPosition;
     Quaternion orientation;
-    bool fix = false;
+    bool custom = false;
+    Func<float, Quaternion> orientationOverTime;
+    float timer = 0;
     void Start()
     {
         oldPosition = transform.position;
@@ -16,10 +19,18 @@ public class BulletOrientation : MonoBehaviour
     }
 
     public void SetFixedOrientation(Quaternion quad) {
-        fix = true;
-        orientation = quad;
+        custom = true;
+        orientationOverTime = t => quad;
         
     }
+
+    public void SetCustomOrientaion(Func<float, Quaternion> fun) {
+        custom = true;
+        timer = 0;
+        orientationOverTime = fun;
+    }
+
+
 
     public Quaternion FindRotation() {
         Vector2 diff = (Vector2)transform.position - oldPosition;
@@ -28,10 +39,14 @@ public class BulletOrientation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (!fix) {
+        if (custom) {
+            orientation = orientationOverTime(timer);
+            timer += Time.deltaTime;
+        }
+        else {
             orientation = FindRotation();
         }
+        
         transform.rotation = orientation;
         oldPosition = transform.position;
     }

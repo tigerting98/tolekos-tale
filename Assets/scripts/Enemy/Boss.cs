@@ -5,17 +5,16 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     [SerializeField] string name = "Boss";
-    [SerializeField] HealthBar bar;
+    BossHealthBar bar;
     void Start()
     {
-        bar = GameObject.Find("Canvas/stats UI/BossHealthBar").GetComponent<HealthBar>();
-        if (bar != null)
-        {
+        bar = GameManager.bossHealthBar;
+        
             
-            bar.SetVisible();
-            bar.SetTitle(name);
-            bar.SetHealth(gameObject.GetComponent<Health>());
-        }
+        bar.SetVisible();
+        bar.SetTitle(name);
+        bar.SetHealth(gameObject.GetComponent<Health>());
+      
     }
 
     // Update is called once per frame
@@ -25,7 +24,7 @@ public class Boss : MonoBehaviour
     }
     private void OnDestroy()
     {
-        if (bar != null) {
+        if (bar) {
             bar.SetInvisible();
         }
     }

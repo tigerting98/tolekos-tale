@@ -34,8 +34,22 @@ public class Movement : MonoBehaviour
         time = 0;
     }
 
+    public float MoveTo(Vector2 end, float speed) {
+        return MoveToFrom(transform.position, end, speed);
+        
+    }
 
-    public bool isMoving() {
+    public float MoveToFrom(Vector2 start, Vector2 end, float speed) {
+        StartMoving();
+        Vector2 diff = end - start;
+        float timeTaken = diff.magnitude / speed;
+        SetStartingPoint(start);
+        SetStraightPath(diff / timeTaken);
+        StopMovingAfter(timeTaken);
+
+        return timeTaken;
+    }
+    public bool IsMoving() {
         return moving;
     }
     public void StartMoving() {
