@@ -12,44 +12,20 @@ public class Enemy : MonoBehaviour
  
     List<Transform> waypoints;
     float moveSpeed;
-    Health health;
-    Death deathEffects;
-    Movement movement;
+    [SerializeField] Health health;
+    [SerializeField] Death deathEffects;
+    [SerializeField] Movement movement;
 
     // Start is called before the first frame update
    
     void Start()
     {
-        movement = GetComponent<Movement>();
-        health = GetComponent<Health>();
-        deathEffects = gameObject.GetComponent<Death>();
+        
         transform.position = waypoints[0].transform.position;
         movement.StopMoving();
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        DamageDealer dmg = collision.gameObject.GetComponent<DamageDealer>();
-        if (dmg != null) {
-            health.TakeDamage(dmg.GetDamage());
-            Destroy(dmg.gameObject);
-        }
-       
-        
-        if (health.ZeroHP()) {
-            BossDeath death = gameObject.GetComponent<BossDeath>();
-            if (death != null) {
-                death.Death();
-            }
-            if (deathEffects != null)
-            {
-                deathEffects.die();
-            }
-            Destroy(gameObject);
-        }
-        
-    }
+    
     public void SetWaypoints(List<Transform> waypoint) {
 
         waypoints = waypoint;
@@ -60,9 +36,12 @@ public class Enemy : MonoBehaviour
         moveSpeed = speed;
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
+       
         if (!movement.isMoving()){ 
             if (cur == waypoints.Count -1)
             {

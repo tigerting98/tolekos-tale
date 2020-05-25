@@ -26,6 +26,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8acac9476ee4244a0974b66eb4d473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 3336134810705834303, guid: 0e13dd728200b1d46904544883449c64,
+    type: 3}
+  deathSFX: {fileID: 8300000, guid: 968310ce46e332a4c832ce6bf6dd6d6a, type: 3}
+  deathVolume: 0.075
 --- !u!1001 &957944300902104566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,6 +128,11 @@ PrefabInstance:
       propertyPath: hp
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6225057521292802004, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: deathEffects
+      value: 
+      objectReference: {fileID: 5664283095083113196}
     - target: {fileID: 6619159339048187305, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
         type: 3}
       propertyPath: m_Color.r
@@ -139,7 +148,8 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.03146139
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6793133753611469860, guid: 43f1d414ba5b63b43b68bb4e0ccda89e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43f1d414ba5b63b43b68bb4e0ccda89e, type: 3}
 --- !u!1 &3327079468212045775 stripped
 GameObject:

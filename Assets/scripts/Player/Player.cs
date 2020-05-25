@@ -2,17 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 //using System.Numerics;
-using System.Security.Cryptography;
+
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Scripting.APIUpdating;
+
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(Death))]
 public class Player : MonoBehaviour
 {
     public float shotRate;
     public float bulletSpeed;
-    [Range(0,10)]public float speed= 5f;
+    [Range(0,10)] public float speed= 5f;
     [SerializeField] float focusRatio = 0.2f;
     [SerializeField] float xPadding= 0.4f, yPadding=0.4f;
     [SerializeField] GameObject hitbox;
@@ -20,9 +19,8 @@ public class Player : MonoBehaviour
     [SerializeField] List<Bullet> bullets;
     Coroutine firing;
     List<Func<IEnumerator>> firePatterns;
-    SceneLoader loader;
-     Health health;
-    Death deathEffects;
+    [SerializeField] Health health;
+    [SerializeField] PlayerDeath deathEffects;
  
     int fireMode = 0;
     // Start is called before the first frame update
@@ -33,16 +31,16 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
-        health = GetComponent<Health>();
+        
         hitbox.SetActive(false);
-        deathEffects = GetComponent<Death>();
+       
         firePatterns = new List<Func<IEnumerator>>();
         firePatterns.Add(() => PlayerPattern.Mode1(bullets[0], this));
         firePatterns.Add(() => PlayerPattern.Mode2(bullets[1], this));
         firePatterns.Add(() => PlayerPattern.Mode3(bullets[2], this));
         hitbox.GetComponent<SpriteRenderer>().color = getColor(bullets[0].gameObject);
         SetUpBoundary();
-        loader = GameManager.sceneLoader;
+     
     }
 
    
@@ -58,28 +56,7 @@ public class Player : MonoBehaviour
         return obj.GetComponent<SpriteRenderer>().color;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-       
-        DamageDealer dmg = collision.GetComponent<DamageDealer>();
-        if (dmg != null)
-        {
-            health.TakeDamage(dmg.GetDamage());
-            if (collision.GetComponent<Bullet>()!= null)
-            { Destroy(collision.gameObject); }
-        }
-
-        
-
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        DamageDealer dmg = collision.GetComponent<DamageDealer>();
-        if (dmg!= null) {
-            health.TakeDamage((int)Mathf.Ceil(dmg.GetDamage() * Time.deltaTime));
-        }
-    }
-
+   
     void CheckFocus() {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -124,18 +101,10 @@ public class Player : MonoBehaviour
         CheckFocus();
         Move();
         CheckFiring();
-        CheckDeath();
+       
     }
 
-    public void CheckDeath() {
-        if (health.ZeroHP())
-        {
-            deathEffects.die();
-            GameManager.player = null;
-            loader.GameOver();
-
-        }
-    }
+  
     
    
     public void Move()

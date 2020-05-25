@@ -6,18 +6,29 @@ public class Death : MonoBehaviour
 {
     [SerializeField] GameObject explosion;
     [SerializeField] AudioClip deathSFX;
-    Camera cam;
+    [SerializeField] Health hp;
+    [SerializeField] bool canDie = true;
+
+  
+
     [Range(0,1)][SerializeField] float deathVolume = 0.7f;
-    private void Start()
+
+
+    private void Update()
     {
-        cam = Camera.main;
+        if (hp != null)
+        {
+            if (hp.ZeroHP() && canDie)
+            {
+                Die();
+            }
+        }
     }
-    public void die()
+    public virtual void Die()
     {
 
-        
         GameObject exp = Instantiate(explosion, transform.position, Quaternion.identity);
-        AudioSource.PlayClipAtPoint(deathSFX, cam.transform.position, deathVolume);
+        AudioSource.PlayClipAtPoint(deathSFX, GameManager.mainCamera.transform.position, deathVolume);
         Destroy(exp, 1f);
 
          Destroy(gameObject);

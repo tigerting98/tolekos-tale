@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -7780461281535064715}
   - component: {fileID: 468841648470341714}
   - component: {fileID: -3481793740693039638}
+  - component: {fileID: 1041419548464534032}
   m_Layer: 10
   m_Name: baseEnemy
   m_TagString: Untagged
@@ -100,6 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901c51fed927c3c44a463523c286cfab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 468841648470341714}
+  deathEffects: {fileID: -6793133753611469860}
+  movement: {fileID: -3481793740693039638}
 --- !u!58 &520085438
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -147,6 +151,8 @@ MonoBehaviour:
   explosion: {fileID: 3336134810705834303, guid: 0e13dd728200b1d46904544883449c64,
     type: 3}
   deathSFX: {fileID: 8300000, guid: 968310ce46e332a4c832ce6bf6dd6d6a, type: 3}
+  hp: {fileID: 468841648470341714}
+  canDie: 1
   deathVolume: 0.075
 --- !u!114 &-7780461281535064715
 MonoBehaviour:
@@ -161,6 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  destroyOnImpact: 0
+  damageOverTime: 1
 --- !u!114 &468841648470341714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +194,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d26f0cb3646b7428497ac7fbe77bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1041419548464534032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551118086999079481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c66d34735967e84986cda08c4f13a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 468841648470341714}

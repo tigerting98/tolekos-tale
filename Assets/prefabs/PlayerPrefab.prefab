@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 3044574860783211177}
   - component: {fileID: 1455112021299339000}
   - component: {fileID: 5602098327999634390}
-  - component: {fileID: 7611676863584752734}
   - component: {fileID: 5947980067964757729}
+  - component: {fileID: -116579968962399137}
+  - component: {fileID: 8042909890113886862}
   m_Layer: 8
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -30,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6682898238167598175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: -3.88, z: 0}
+  m_LocalPosition: {x: -0.105, y: -3.743, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 7963614063382368396}
@@ -110,6 +111,8 @@ MonoBehaviour:
   - {fileID: 4830748874538541392, guid: 314e202ea616fe94c88e1869c72ce4e8, type: 3}
   - {fileID: 4830748874538541392, guid: 754994cba68c101498689411fb31378d, type: 3}
   - {fileID: 4830748874538541392, guid: 1a9aa5305939a01478b632377f55c5af, type: 3}
+  health: {fileID: 5947980067964757729}
+  deathEffects: {fileID: 8042909890113886862}
 --- !u!50 &1455112021299339000
 Rigidbody2D:
   serializedVersion: 4
@@ -147,22 +150,6 @@ CircleCollider2D:
   m_Offset: {x: -0.01660563, y: 0.0016799197}
   serializedVersion: 2
   m_Radius: 0.20187008
---- !u!114 &7611676863584752734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6682898238167598175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e0149cb00bda4e47a7d0283c69e15eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 590762784679042569, guid: 8155ae7c582b12e4a86b5fa38bcef9f6,
-    type: 3}
-  deathSFX: {fileID: 8300000, guid: 660e54d2e8931754b86e902dcb5572bf, type: 3}
-  deathVolume: 0.139
 --- !u!114 &5947980067964757729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +163,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
+--- !u!114 &-116579968962399137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682898238167598175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c66d34735967e84986cda08c4f13a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 5947980067964757729}
+--- !u!114 &8042909890113886862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682898238167598175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ad90e5500820e45997820886b42410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 590762784679042569, guid: 8155ae7c582b12e4a86b5fa38bcef9f6,
+    type: 3}
+  deathSFX: {fileID: 8300000, guid: 660e54d2e8931754b86e902dcb5572bf, type: 3}
+  hp: {fileID: 5947980067964757729}
+  canDie: 1
+  deathVolume: 0.14
 --- !u!1 &7985819461488737577
 GameObject:
   m_ObjectHideFlags: 0
