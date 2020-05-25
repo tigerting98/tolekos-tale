@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6619159339048187305}
   - component: {fileID: 6225057521292802004}
   - component: {fileID: 520085438}
-  - component: {fileID: 5663407167713073447}
   - component: {fileID: -6793133753611469860}
   - component: {fileID: -7780461281535064715}
   - component: {fileID: 468841648470341714}
@@ -102,9 +101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901c51fed927c3c44a463523c286cfab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0
   health: {fileID: 468841648470341714}
   deathEffects: {fileID: -6793133753611469860}
   movement: {fileID: -3481793740693039638}
+  shooting: {fileID: 1872046831142302336}
 --- !u!58 &520085438
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -121,22 +122,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5663407167713073447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2551118086999079481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd019e82f8fa0341a5eb1b36e1a3a87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  bullet: {fileID: 5304289742371261883, guid: 3118ceb8e2dd93e4bb557208bb39870e, type: 3}
-  shotRate: 1
-  bulletPattern: 2
 --- !u!114 &-6793133753611469860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206ef2f95d7fd614e93bb7bc55d3bcf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 500
+  maxHP: 300
 --- !u!114 &-3481793740693039638
 MonoBehaviour:
   m_ObjectHideFlags: 0

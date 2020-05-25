@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5916288215380762352}
-  - component: {fileID: 3173305245034243894}
+  - component: {fileID: 7044746377690088705}
   m_Layer: 0
-  m_Name: EnemyWave1
+  m_Name: EnemyWave3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3173305245034243894
+--- !u!114 &7044746377690088705
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,20 +40,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 4522323344577174238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be44f6d75ca596469c65129c2650fbc, type: 3}
+  m_Script: {fileID: 11500000, guid: f1579537c21bee448aab56b7e3ca0c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 1
+  startTime: 7
   enemies:
-  - {fileID: 424531980175920826, guid: 7249274281dc04e4cbc1b412a39df9f2, type: 3}
+  - {fileID: 6568664508114848290, guid: accf02acb6bfae242b167b6bda0e8e8e, type: 3}
   bullets:
-  - {fileID: 6386220393336790285, guid: a3caa4a95be583a418f2b9ac119cdf67, type: 3}
-  startPosition: {x: -4, y: 3}
-  endPosition: {x: 4, y: 2}
+  - {fileID: 6674517246504463294, guid: 98c948c05df69f74d85ca09475aa6dc1, type: 3}
+  - {fileID: 6674517246504463294, guid: 98c948c05df69f74d85ca09475aa6dc1, type: 3}
+  startPosition: {x: 0, y: 4}
+  endPosition: {x: 0, y: 2}
   moveSpeed: 2
-  shotRate: 0.5
-  number: 5
-  spawnRate: 0.5
-  bulletSpeed: 2
-  spreadAngle: 5
-  shotLines: 1
+  shotRate: 0.05
+  bulletSpeed: 4
+  shotRate2: 0.5
+  bulletSpeed2: 3
+  shotLines: 10
+  angularVel: 1

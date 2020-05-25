@@ -9,7 +9,8 @@ public class Level : MonoBehaviour
     void Start()
     {
         for (int i = 0; i < waves.Count; i++) {
-            SpawnWaveAfter(waves[i], waves[i].startTime);
+            EnemyWave wave = Instantiate(waves[i]);
+            StartCoroutine(SpawnWaveAfter(wave, wave.startTime));
         }
     }
 
@@ -21,6 +22,7 @@ public class Level : MonoBehaviour
     IEnumerator SpawnWaveAfter(EnemyWave wave, float sec)
     {
         yield return new WaitForSeconds(sec);
+
         wave.SpawnWave();
     }
 

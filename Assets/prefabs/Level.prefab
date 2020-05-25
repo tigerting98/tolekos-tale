@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4522323344577174238
+--- !u!1 &7016885204452351669
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5916288215380762352}
-  - component: {fileID: 3173305245034243894}
+  - component: {fileID: 7016885204452351667}
+  - component: {fileID: 7016885204452351668}
   m_Layer: 0
-  m_Name: EnemyWave1
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5916288215380762352
+--- !u!4 &7016885204452351667
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4522323344577174238}
+  m_GameObject: {fileID: 7016885204452351669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.27233347, y: 0.19923896, z: 0.9743871}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,29 +31,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3173305245034243894
+--- !u!114 &7016885204452351668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4522323344577174238}
+  m_GameObject: {fileID: 7016885204452351669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be44f6d75ca596469c65129c2650fbc, type: 3}
+  m_Script: {fileID: 11500000, guid: 176f17d871b920e409f5a389aeb5b90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 1
-  enemies:
-  - {fileID: 424531980175920826, guid: 7249274281dc04e4cbc1b412a39df9f2, type: 3}
-  bullets:
-  - {fileID: 6386220393336790285, guid: a3caa4a95be583a418f2b9ac119cdf67, type: 3}
-  startPosition: {x: -4, y: 3}
-  endPosition: {x: 4, y: 2}
-  moveSpeed: 2
-  shotRate: 0.5
-  number: 5
-  spawnRate: 0.5
-  bulletSpeed: 2
-  spreadAngle: 5
-  shotLines: 1
+  timer: 0
+  waves:
+  - {fileID: 3173305245034243894, guid: a20372eab7536e148a2ced32d13a4c17, type: 3}
+  - {fileID: -7528520830067927667, guid: cf580bb5911c9ee478bf5bc7247e0428, type: 3}
+  - {fileID: 7044746377690088705, guid: c4e586825e71c1a41b2639bf5073a7a5, type: 3}
