@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Net;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -8,6 +9,9 @@ public class Shooting : MonoBehaviour
         return firing;
     }
 
+    public Coroutine PlayAudio(AudioClip clip, float interval, float volume, float start) {
+        return StartCoroutine(PlaySoundAfter(clip, interval, volume, start));
+    }
     public Coroutine StartShootingAfter(IEnumerator pattern, float time) {
         return StartCoroutine(StartAfter(pattern, time));
         
@@ -26,12 +30,21 @@ public class Shooting : MonoBehaviour
 
     IEnumerator StartAndStopAfter(IEnumerator function, float time, float duration) {
         yield return new WaitForSeconds(time);
-        yield return StartCoroutine(function);
+        Coroutine fire = StartCoroutine(function);
         yield return new WaitForSeconds(duration);
+        StopCoroutine(fire);
         yield return null;
     
     }
 
+    public IEnumerator PlaySoundAfter(AudioClip clip, float interval, float volume, float start) {
+        yield return new WaitForSeconds(start);
+        while (true)
+        {
+            AudioSource.PlayClipAtPoint(clip, GameManager.mainCamera.transform.position, volume);
+            yield return new WaitForSeconds(interval);
+        }
+    }
    
 
 }

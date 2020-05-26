@@ -11,11 +11,14 @@ public class Movement : MonoBehaviour
     float time = 0;
     bool destroyWhenOut = true;
     bool moving = true;
- 
+
 
 
     // Start is called before the first frame update
-    
+    public void Start()
+    {
+        startingPoint = transform.position;
+    }
 
 
     public void SetStraightPath(Vector2 vel) {

@@ -14,7 +14,6 @@ public class BulletOrientation : MonoBehaviour
     void Start()
     {
         oldPosition = transform.position;
-        orientation = Quaternion.identity;
 
     }
 

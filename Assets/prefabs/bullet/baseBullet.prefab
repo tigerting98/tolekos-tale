@@ -115,6 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300e1be587e56804a990b96aee3c6344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 9200072685321137857}
+  orientation: {fileID: -465456440615183729}
 --- !u!114 &9200072685321137857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 200
+  destroyOnImpact: 1
+  damageOverTime: 0
 --- !u!50 &6115569925748409425
 Rigidbody2D:
   serializedVersion: 4

@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 {
     int cur = 0;
  
-    List<Transform> waypoints;
+
     public float moveSpeed;
     public Health health;
     public Death deathEffects;
@@ -22,16 +22,11 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         
-       // transform.position = waypoints[0].transform.position;
-       // movement.StopMoving();
+
 
     }
     
-    public void SetWaypoints(List<Transform> waypoint) {
 
-        waypoints = waypoint;
-        
-    }
 
     public void SetSpeed(float speed) {
         moveSpeed = speed;
@@ -49,26 +44,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /*
-        if (!movement.IsMoving()){ 
-            if (cur == waypoints.Count -1)
-            {
-                if (waypoints[cur].gameObject.tag == "End")
-                {
-                    Destroy(gameObject);
-                }
-            }
-            else
-            {
-                cur++;
-                movement.MoveTo(waypoints[cur].position, moveSpeed);
-            }
-                
-
-            
-
-
-
-        }*/
+      
+        
     }
 }

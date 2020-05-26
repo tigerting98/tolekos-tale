@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotRate: 0.1
   bulletSpeed: 20
-  speed: 10
+  speed: 7
   focusRatio: 0.2
   xPadding: 0.3
   yPadding: 0.4
@@ -131,7 +131,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!58 &5602098327999634390
@@ -263,7 +263,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: 43e19363070f883478abbac5277f6a0a, type: 3}
   m_Color: {r: 0.12482201, g: 0.8018868, b: 0.17737952, a: 1}
   m_FlipX: 0

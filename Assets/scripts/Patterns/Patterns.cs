@@ -37,8 +37,8 @@ public class Patterns : MonoBehaviour
 
     public static Bullet ShootSinTrajectory(Bullet bullet, Vector2 origin, float angle, float speed, float angularVelocity, float amp) {
         Bullet bull = Instantiate(bullet, origin, Quaternion.identity);
-        Movement move = bull.gameObject.GetComponent<Movement>();
-        move.SetCustomPath(time => new Vector2((float)(amp * Math.Sin(time * angularVelocity)), speed * time));
+        Movement move = bull.movement;
+        move.SetCustomPath(time => new Vector2(speed * time, (float)(amp * Math.Sin(time * angularVelocity))));
         move.SetStartingPoint(origin);
         move.RotateTrajectory(angle);
         return bull;
@@ -47,7 +47,7 @@ public class Patterns : MonoBehaviour
     public static Bullet ArchimedesSpiral(Bullet bul, Vector2 origin, float spirallingRatio, float speed, float angle)
     {
         Bullet bull = Instantiate(bul, origin, Quaternion.identity);
-        Movement move = bull.gameObject.GetComponent<Movement>();
+        Movement move = bull.movement;
         move.SetPolarPath(t=> new Polar(speed*t, spirallingRatio*speed * t));
         move.SetStartingPoint(origin);
         move.RotateTrajectory(angle);

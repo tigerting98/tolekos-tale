@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Level : MonoBehaviour
 {
     [HideInInspector] public float timer = 0;
     public List<EnemyWave> waves;
+    public List<float> times;
     void Start()
     {
+        Assert.IsTrue(waves.Count == times.Count);
         for (int i = 0; i < waves.Count; i++) {
             EnemyWave wave = Instantiate(waves[i]);
-            StartCoroutine(SpawnWaveAfter(wave, wave.startTime));
+            StartCoroutine(SpawnWaveAfter(wave, times[i]));
         }
     }
 

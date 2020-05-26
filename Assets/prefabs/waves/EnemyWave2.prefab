@@ -43,19 +43,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bfd26485ee7f2c4882eec3fc541fee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 2
   enemies:
   - {fileID: 4459303641503581329, guid: ba3dc312562f4f243aedede2b586aac4, type: 3}
   bullets:
-  - {fileID: 5304289742371261883, guid: 3118ceb8e2dd93e4bb557208bb39870e, type: 3}
-  - {fileID: 6386220393336790285, guid: a3caa4a95be583a418f2b9ac119cdf67, type: 3}
-  startPosition: {x: -4, y: 2}
-  endPosition: {x: 4, y: 2}
-  moveSpeed: 2
-  shotRate1: 3
-  shotRate2: 1
-  number: 5
-  spawnRate: 0.5
-  bulletSpeed1: 1
-  bulletSpeed2: 2
-  lines: 20
+  - {fileID: 8480991162904237657, guid: ccf34cb6786fb43429b721a622594c85, type: 3}
+  - {fileID: 2810167721679449829, guid: 24e9fd496da0fe04b99cd0296562f14a, type: 3}
+  - {fileID: 5778912221370349097, guid: 11dfa0640a2e10f4f9c5f41ac098d093, type: 3}
+  - {fileID: 6976569958840762292, guid: 3e468245fb79d3143beac9930f8f6edd, type: 3}
+  - {fileID: 5407297942308120003, guid: d4d2791305afbc04c802b1dc4ebd61b5, type: 3}
+  startPosition1: {x: -2, y: 5}
+  stopPosition1: {x: -2, y: 2}
+  endPosition1: {x: -4.5, y: 2}
+  startPosition2: {x: 2, y: 5}
+  stopPosition2: {x: 2, y: 2}
+  endPosition2: {x: 4.5, y: 2}
+  moveSpeed: 5
+  moveOutSpeed: 1
+  shotRate: 1
+  number: 2
+  spawnRate: 2
+  bulletSpeed: 2
+  lines: 10
+  bulletSpawnSound: {fileID: 8300000, guid: b204757fec9a25c4485dc63aabf2772a, type: 3}
+  volume: 0.05

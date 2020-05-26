@@ -12,7 +12,6 @@ public class EnemyWave1 : EnemyWave
     [SerializeField] int number = 5;
     [SerializeField] float spawnRate = 0.5f;
     [SerializeField] float bulletSpeed = 5f;
-    [SerializeField] float spreadAngle = 5f;
     [SerializeField] int shotLines = 1;
 
 
@@ -28,7 +27,7 @@ public class EnemyWave1 : EnemyWave
             Enemy enemy = Instantiate(enemies[0], startPosition, Quaternion.identity);
             float time = enemy.movement.MoveTo(endPosition, moveSpeed);
             enemy.DestroyAfter(time);
-            enemy.shooting.StartShooting(EnemyPatterns.ShootAtPlayerWithLines(bullets[0], enemy.transform, bulletSpeed, shotRate, spreadAngle, shotLines));
+            enemy.shooting.StartShooting(EnemyPatterns.ShootAtPlayer(bullets[0], enemy.transform, bulletSpeed, shotRate));
             yield return new WaitForSeconds(spawnRate);
         }
         Destroy(gameObject);
