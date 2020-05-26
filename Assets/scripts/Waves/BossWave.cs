@@ -19,7 +19,8 @@ public class BossWave : EnemyWave
     [SerializeField] int circleLines=20;
     [SerializeField] float delay = 0.1f;
     [SerializeField] int number = 3;
-
+    [SerializeField] AudioClip sound;
+    [SerializeField] float volume = 0.05f;
     public override void SpawnWave() {
         StartCoroutine(SpawnEnemy());
     }
@@ -32,7 +33,9 @@ public class BossWave : EnemyWave
                 time);
         for (int i = 0; i < number; i++)
         { enemy.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(bulletPack.bullets, enemy.transform, bulletSpeed2, shotRate2, circleLines)
-            , time + delay*i );}
+            , time + delay*i );
+            enemy.shooting.PlayAudio(sound, shotRate2, volume, delay * i);
+        }
         yield return new WaitForSeconds(1);
         
         Destroy(gameObject);

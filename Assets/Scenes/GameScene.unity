@@ -534,7 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   waves:
-  - {fileID: 7168278542029993669, guid: 8064984d456d1c042a4a93e420faa961, type: 3}
+  - {fileID: 7044746377690088705, guid: c4e586825e71c1a41b2639bf5073a7a5, type: 3}
   times:
   - 0
 --- !u!1001 &1390244601

@@ -61,3 +61,5 @@ MonoBehaviour:
   circleLines: 20
   delay: 0.15
   number: 5
+  sound: {fileID: 8300000, guid: e27d92b6d30e8ea40a10f9839827e998, type: 3}
+  volume: 0.2
