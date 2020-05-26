@@ -5,7 +5,7 @@ public class DamageTaker : MonoBehaviour
 {
     [SerializeField] Health health;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
 
         DamageDealer dmg = collision.GetComponent<DamageDealer>();
@@ -17,7 +17,7 @@ public class DamageTaker : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public virtual void OnTriggerStay2D(Collider2D collision)
     {
         DamageDealer dmg = collision.GetComponent<DamageDealer>();
         if (dmg != null && dmg.DamageOverTime())

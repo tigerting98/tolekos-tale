@@ -45,7 +45,7 @@ public class EnemyWave2 : EnemyWave
     float SpawnOneEnemy(Enemy enemy, Vector2 start, Vector2 stop, Vector2 end) {
         Enemy enemy1 = Instantiate(enemy, start, Quaternion.identity);
         float time1 = enemy1.movement.MoveTo(stop, moveSpeed);
-        enemy1.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(bullets, enemy1.transform, bulletSpeed, shotRate, lines), time1);
+        enemy1.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(bulletPack.bullets, enemy1.transform, bulletSpeed, shotRate, lines), time1);
         StartCoroutine(MoveAwayAfter(enemy1, end, moveOutSpeed, spawnRate));
         enemy1.shooting.PlayAudio(bulletSpawnSound, shotRate, volume, time1);
         return time1;
@@ -57,6 +57,8 @@ public class EnemyWave2 : EnemyWave
         {
             float sec = enemy.movement.MoveTo(end, speed);
             yield return new WaitForSeconds(sec);
+        }
+        if (enemy) {
             Destroy(enemy.gameObject);
         }
 

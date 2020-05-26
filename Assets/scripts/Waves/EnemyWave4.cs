@@ -47,7 +47,7 @@ public class EnemyWave4 : EnemyWave
             enemy.movement.StartMoving();
             enemy.movement.SetStraightPath(new Vector2(0, moveOutSpeed));
             enemy.movement.SetStartingPoint(enemy.transform.position);
-            enemy.shooting.StartShooting(EnemyPatterns.PulsingBulletsRandom(bullets, enemy.transform, bulletSpeed, shotRate, lines));
+            enemy.shooting.StartShooting(EnemyPatterns.PulsingBulletsRandom(bulletPack.bullets, enemy.transform, bulletSpeed, shotRate, lines));
         }
         while (enemy) { 
                 if (enemy.transform.position.y > outY)

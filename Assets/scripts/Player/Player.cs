@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 //using System.Numerics;
 
 using UnityEngine;
@@ -14,14 +15,19 @@ public class Player : MonoBehaviour
     [Range(0,10)] public float speed= 5f;
     [SerializeField] float focusRatio = 0.2f;
     [SerializeField] float xPadding= 0.4f, yPadding=0.4f;
-    [SerializeField] GameObject hitbox;
+    [SerializeField] GameObject hitbox = default;
     float xMin, xMax, yMin, yMax;
-    [SerializeField] List<Bullet> bullets;
-    Coroutine firing;
-    List<Func<IEnumerator>> firePatterns;
+    [SerializeField] List<Bullet> bullets = default;
+    [SerializeField] GameObject laser;
+    bool isLaser = false;
+    public bool isFocus = false;
+    bool isFiring = false;
+    float firingCoolDown = 0;
+    SpriteRenderer hitsprite = default;
     [SerializeField] Health health;
     [SerializeField] PlayerDeath deathEffects;
- 
+    public float currentSpeed = 5f;
+    
     int fireMode = 0;
     // Start is called before the first frame update
 
@@ -33,15 +39,13 @@ public class Player : MonoBehaviour
     {
         GameManager.playerPosition = transform.position;
         hitbox.SetActive(false);
-        
-        firePatterns = new List<Func<IEnumerator>>();
-        firePatterns.Add(() => PlayerPattern.Mode1(bullets[0], this));
-        firePatterns.Add(() => PlayerPattern.Mode2(bullets[1], this));
-        firePatterns.Add(() => PlayerPattern.Mode3(bullets[2], this));
-        hitbox.GetComponent<SpriteRenderer>().color = getColor(bullets[0].gameObject);
+        laser.SetActive(false);
+        hitsprite = hitbox.GetComponent<SpriteRenderer>();
+        hitsprite.color = getColor(bullets[0].gameObject);
         SetUpBoundary();
      
     }
+
 
    
         void SetUpBoundary() {
@@ -56,52 +60,89 @@ public class Player : MonoBehaviour
         return obj.GetComponent<SpriteRenderer>().color;
     }
 
-   
-    void CheckFocus() {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+    void CheckInputs() {
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = speed * focusRatio;
-            hitbox.SetActive(true);
+            isFocus = true;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        else {
+            isFocus = false;
+        }
+
+        if (Input.GetKey(KeyCode.Z))
         {
-            speed = speed / focusRatio;
+            isFiring = true;
+        }
+        else {
+            isFiring = false;
+        }
+        if (Input.GetKeyDown(KeyCode.C)) {
+            fireMode = (fireMode + 1) % 3;
+            hitsprite.color = getColor(bullets[fireMode].gameObject);
+        }
+    }
+    void CheckFocus() {
+        if (isFocus) {
+            currentSpeed = speed * focusRatio;
+            hitbox.SetActive(true);
+        } else {
+            currentSpeed = speed;
             hitbox.SetActive(false);
         }
 
     }
     void CheckFiring() {
-        if (Input.GetKeyDown(KeyCode.Z))
+        bool onLaser = false;
+        if (firingCoolDown > 0)
         {
-            firing = StartCoroutine(firePatterns[fireMode]());
-        }
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
-            StopCoroutine(firing);
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            fireMode = (fireMode + 1) % firePatterns.Count;
-            hitbox.GetComponent<SpriteRenderer>().color = getColor(bullets[fireMode].gameObject);
-            if (firing != null)
-            {
-                StopCoroutine(firing);
-            }
-            if (Input.GetKey(KeyCode.Z))
-            {
-                firing = StartCoroutine(firePatterns[fireMode]());
-
-            }
+            firingCoolDown -= Time.deltaTime;
 
         }
+        else {
+            if (isFiring) {
+                if (fireMode == 0)
+                {
+                    PlayerPattern.Mode1(bullets[0], this);
+                    firingCoolDown += shotRate;
+                }
+                else if (fireMode == 1)
+                {
+                    PlayerPattern.Mode2(bullets[1], this);
+                    firingCoolDown += shotRate;
+                }
+                else {
+                    if (!isFocus)
+                    {
+                        PlayerPattern.Mode3(bullets[2], this);
+                        firingCoolDown += shotRate / 3;
+                    }
+                    else {
+                        onLaser = true;
+                    }
+                }
+            }
+        }
+        if (isLaser != onLaser) {
+          
+            switchLaser();
+        }
+    }
+
+    
+    void switchLaser() {
+        isLaser = !isLaser;
+        laser.SetActive(isLaser);
     }
     // Update is called once per frame
     void Update()
     {
+        
+        CheckInputs();
         CheckFocus();
         Move();
         CheckFiring();
         GameManager.playerPosition = transform.position;
+
        
     }
 
@@ -110,8 +151,8 @@ public class Player : MonoBehaviour
    
     public void Move()
     {
-        float deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
-        float deltaY = Input.GetAxis("Vertical") * Time.deltaTime * speed;
+        float deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * currentSpeed;
+        float deltaY = Input.GetAxis("Vertical") * Time.deltaTime * currentSpeed;
         transform.position = new Vector2(Mathf.Clamp(transform.position.x + deltaX, xMin, xMax), Mathf.Clamp(transform.position.y + deltaY, yMin, yMax));
     }
 }

@@ -16,10 +16,11 @@ public class BossWave : EnemyWave
     [SerializeField] float bulletSpeed2 = 3f;
     [SerializeField] int shotLines = 20;
     [SerializeField] float angularVel = 1f;
-
+    [SerializeField] int circleLines=20;
+    [SerializeField] float delay = 0.1f;
+    [SerializeField] int number = 3;
 
     public override void SpawnWave() {
-        Debug.Log("hi");
         StartCoroutine(SpawnEnemy());
     }
 
@@ -29,7 +30,9 @@ public class BossWave : EnemyWave
         float time = enemy.movement.MoveTo(endPosition, moveSpeed);
         enemy.shooting.StartShootingAfter(EnemyPatterns.BorderOfWaveAndParticle(bullets[0], enemy.transform, bulletSpeed, shotRate, shotLines, angularVel), 
                 time);
-        enemy.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(bullets[1], enemy.transform, bulletSpeed2, shotRate2), time);
+        for (int i = 0; i < number; i++)
+        { enemy.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(bulletPack.bullets, enemy.transform, bulletSpeed2, shotRate2, circleLines)
+            , time + delay*i );}
         yield return new WaitForSeconds(1);
         
         Destroy(gameObject);

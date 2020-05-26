@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd5bb04df3a208499c3d89f3df1940c, type: 3}
+  m_Name: Balls
+  m_EditorClassIdentifier: 
+  bullets:
+  - {fileID: 8480991162904237657, guid: ccf34cb6786fb43429b721a622594c85, type: 3}
+  - {fileID: 2810167721679449829, guid: 24e9fd496da0fe04b99cd0296562f14a, type: 3}
+  - {fileID: 5778912221370349097, guid: 11dfa0640a2e10f4f9c5f41ac098d093, type: 3}
+  - {fileID: 6976569958840762292, guid: 3e468245fb79d3143beac9930f8f6edd, type: 3}
+  - {fileID: 5407297942308120003, guid: d4d2791305afbc04c802b1dc4ebd61b5, type: 3}
