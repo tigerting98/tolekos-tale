@@ -20,7 +20,9 @@ public class Movement : MonoBehaviour
         startingPoint = transform.position;
     }
 
-
+    public void SetSpeed(Vector2 vel) { 
+        
+    }
     public void SetStraightPath(Vector2 vel) {
         ResetTimer();
         trajectory = time => time * vel;

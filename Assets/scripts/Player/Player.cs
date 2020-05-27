@@ -17,8 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] float xPadding= 0.4f, yPadding=0.4f;
     [SerializeField] GameObject hitbox = default;
     float xMin, xMax, yMin, yMax;
-    [SerializeField] List<Bullet> bullets = default;
-    [SerializeField] GameObject laser;
+    [SerializeField] BulletPack bulletPack = default;
     bool isLaser = false;
     public bool isFocus = false;
     bool isFiring = false;
@@ -27,26 +26,51 @@ public class Player : MonoBehaviour
     [SerializeField] Health health;
     [SerializeField] PlayerDeath deathEffects;
     public float currentSpeed = 5f;
-    
+    Bullet waterBullet, earthBullet, fireBullet;
+    [SerializeField] Bullet laser;
+    [SerializeField] float laserDamageRatio = 20f;
+
+
     int fireMode = 0;
     // Start is called before the first frame update
 
     private void Awake()
     {
         GameManager.player = this;
+        PlayerStats.player = this;
     }
     void Start()
     {
         GameManager.playerPosition = transform.position;
         hitbox.SetActive(false);
-        laser.SetActive(false);
+        laser.gameObject.SetActive(false);
+        SetUpBullets();
+        Level();
         hitsprite = hitbox.GetComponent<SpriteRenderer>();
-        hitsprite.color = getColor(bullets[0].gameObject);
+        hitsprite.color = getColor(waterBullet.gameObject);
         SetUpBoundary();
      
     }
 
+    void SetUpBullets() {
+        waterBullet = bulletPack.bullets[0];    
+        earthBullet = bulletPack.bullets[1];
+        fireBullet = bulletPack.bullets[2];
 
+    }
+
+    public void Level()
+    {
+        SetPlayerBulletDamage(PlayerStats.damage);
+        health.IncreaseMaxHP(PlayerStats.playerMaxHP - health.maxHP);
+    }
+
+    public void SetPlayerBulletDamage(float dmg) {
+        waterBullet.damageDealer.damage = dmg;
+        fireBullet.damageDealer.damage = dmg;
+        earthBullet.damageDealer.damage = dmg;
+        laser.damageDealer.damage = dmg * laserDamageRatio;
+    }
    
         void SetUpBoundary() {
        
@@ -78,7 +102,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.C)) {
             fireMode = (fireMode + 1) % 3;
-            hitsprite.color = getColor(bullets[fireMode].gameObject);
+            hitsprite.color = getColor(bulletPack.bullets[fireMode].gameObject);
         }
     }
     void CheckFocus() {
@@ -102,18 +126,18 @@ public class Player : MonoBehaviour
             if (isFiring) {
                 if (fireMode == 0)
                 {
-                    PlayerPattern.Mode1(bullets[0], this);
+                    PlayerPattern.Mode1(waterBullet, this);
                     firingCoolDown += shotRate;
                 }
                 else if (fireMode == 1)
                 {
-                    PlayerPattern.Mode2(bullets[1], this);
+                    PlayerPattern.Mode2(earthBullet, this);
                     firingCoolDown += shotRate;
                 }
                 else {
                     if (!isFocus)
                     {
-                        PlayerPattern.Mode3(bullets[2], this);
+                        PlayerPattern.Mode3(fireBullet, this);
                         firingCoolDown += shotRate / 3;
                     }
                     else {
@@ -131,7 +155,7 @@ public class Player : MonoBehaviour
     
     void switchLaser() {
         isLaser = !isLaser;
-        laser.SetActive(isLaser);
+        laser.gameObject.SetActive(isLaser);
     }
     // Update is called once per frame
     void Update()

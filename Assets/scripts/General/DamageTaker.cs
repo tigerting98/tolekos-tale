@@ -11,7 +11,7 @@ public class DamageTaker : MonoBehaviour
         DamageDealer dmg = collision.GetComponent<DamageDealer>();
         if (dmg != null && !dmg.DamageOverTime())
         {
-            health.TakeDamage(dmg.GetDamage());
+            health.TakeDamage(dmg.damage);
             if (dmg.DestroyOnImpact())
             { Destroy(collision.gameObject); }
         }
@@ -22,7 +22,7 @@ public class DamageTaker : MonoBehaviour
         DamageDealer dmg = collision.GetComponent<DamageDealer>();
         if (dmg != null && dmg.DamageOverTime())
         {
-            health.TakeDamage(dmg.GetDamage() * Time.deltaTime);
+            health.TakeDamage(dmg.damage * Time.deltaTime);
         }
     }
 }

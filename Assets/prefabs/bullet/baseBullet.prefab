@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 9200072685321137857}
   orientation: {fileID: -465456440615183729}
+  damageDealer: {fileID: -1114664629743190563}
 --- !u!114 &9200072685321137857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e308909258b884b8768e3330bf0e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 200
+  damage: 350
   destroyOnImpact: 1
   damageOverTime: 0
 --- !u!50 &6115569925748409425

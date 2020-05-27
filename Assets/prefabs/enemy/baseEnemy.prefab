@@ -139,6 +139,7 @@ MonoBehaviour:
   deathSFX: {fileID: 8300000, guid: 968310ce46e332a4c832ce6bf6dd6d6a, type: 3}
   hp: {fileID: 468841648470341714}
   canDie: 1
+  experience: 10
   deathVolume: 0.075
 --- !u!114 &-7780461281535064715
 MonoBehaviour:
@@ -152,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e308909258b884b8768e3330bf0e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 4000
   destroyOnImpact: 0
   damageOverTime: 1
 --- !u!114 &468841648470341714

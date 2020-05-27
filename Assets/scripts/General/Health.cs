@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] float maxHP = 100;
+    public float maxHP = 5000;
     float currentHP;
     
     
@@ -30,14 +30,11 @@ public class Health : MonoBehaviour
         return currentHP;
     }
 
-    public float GetMaxHP() {
-        return maxHP;
+   
+    public void IncreaseMaxHP(float hp) {
+        maxHP += hp;
+        currentHP += hp;
     }
-
-    public void SetMaxHP(float hp) {
-        maxHP = hp;
-    }
-
     public void ResetHP() {
         currentHP = maxHP;
     }

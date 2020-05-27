@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-    [SerializeField] int damage;
+    public float damage;
     [SerializeField] bool destroyOnImpact = true;
     [SerializeField] bool damageOverTime = false;
-    public int GetDamage() {
-        return this.damage;
-    }
+  
 
     public bool DestroyOnImpact() {
         return destroyOnImpact;
