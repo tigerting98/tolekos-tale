@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7780461281535064715, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6793133753611469860, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: experience
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 520085438, guid: 43f1d414ba5b63b43b68bb4e0ccda89e, type: 3}
       propertyPath: m_Offset.y
       value: -0.10557661
@@ -18,6 +28,26 @@ PrefabInstance:
     - target: {fileID: 520085438, guid: 43f1d414ba5b63b43b68bb4e0ccda89e, type: 3}
       propertyPath: m_Offset.x
       value: 0.017062897
+      objectReference: {fileID: 0}
+    - target: {fileID: 468841648470341714, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: maxHP
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041419548464534032, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: WaterMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041419548464534032, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: EarthMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041419548464534032, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: PureMultiplier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2551118086999079481, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
         type: 3}

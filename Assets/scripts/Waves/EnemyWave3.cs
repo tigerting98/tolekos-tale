@@ -20,8 +20,6 @@ public class EnemyWave3 : EnemyWave
     [SerializeField] float amp = 0.2f;
     [SerializeField] float bulletSpeed = 2f;
     [SerializeField] float spread = 5f;
-    [SerializeField] AudioClip bulletSpawnSound;
-    [SerializeField] float volume = 0.2f;
 
 
 
@@ -57,7 +55,7 @@ public class EnemyWave3 : EnemyWave
                     EnemyPatterns.ShootSine(bullets[0], enemy.transform, angle + spread, bulletSpeed, shotRate, angularVel, amp)
                     , 0, pulseTime);
 
-                AudioSource.PlayClipAtPoint(bulletSpawnSound, GameManager.mainCamera.transform.position, volume);
+                AudioSource.PlayClipAtPoint(bulletSpawnSound, GameManager.mainCamera.transform.position, audioVolume);
                 yield return new WaitForSeconds(pulseTime + pause);
             }
         }
@@ -74,9 +72,12 @@ public class EnemyWave3 : EnemyWave
         if (enemy)
         {
             float sec = enemy.movement.MoveTo(end, speed);
+
             yield return new WaitForSeconds(sec);
-            Destroy(enemy.gameObject);
         }
+            if (enemy)
+            { Destroy(enemy.gameObject); }
+        
 
         
     }

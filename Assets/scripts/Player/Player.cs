@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] float focusRatio = 0.2f;
     [SerializeField] float xPadding= 0.4f, yPadding=0.4f;
     [SerializeField] GameObject hitbox = default;
+    [SerializeField] DamageTaker damageTaker = default;
     float xMin, xMax, yMin, yMax;
     [SerializeField] BulletPack bulletPack = default;
     bool isLaser = false;
@@ -29,9 +30,7 @@ public class Player : MonoBehaviour
     Bullet waterBullet, earthBullet, fireBullet;
     [SerializeField] Bullet laser;
     [SerializeField] float laserDamageRatio = 20f;
-
-
-    int fireMode = 0;
+    DamageType mode = DamageType.Water;
     // Start is called before the first frame update
 
     private void Awake()
@@ -43,19 +42,20 @@ public class Player : MonoBehaviour
     {
         GameManager.playerPosition = transform.position;
         hitbox.SetActive(false);
-        laser.gameObject.SetActive(false);
-        SetUpBullets();
-        Level();
+        laser.gameObject.SetActive(false);        
         hitsprite = hitbox.GetComponent<SpriteRenderer>();
-        hitsprite.color = getColor(waterBullet.gameObject);
-        SetUpBoundary();
-     
+        SetUp();
+
     }
 
-    void SetUpBullets() {
+    void SetUp() {
         waterBullet = bulletPack.bullets[0];    
         earthBullet = bulletPack.bullets[1];
         fireBullet = bulletPack.bullets[2];
+        health.maxHP = PlayerStats.playerMaxHP;
+        health.ResetHP();
+        SetDamageType();
+        SetUpBoundary();
 
     }
 
@@ -101,8 +101,42 @@ public class Player : MonoBehaviour
             isFiring = false;
         }
         if (Input.GetKeyDown(KeyCode.C)) {
-            fireMode = (fireMode + 1) % 3;
-            hitsprite.color = getColor(bulletPack.bullets[fireMode].gameObject);
+            if (mode == DamageType.Water) {
+                mode = DamageType.Earth;
+            }
+            else if (mode == DamageType.Earth)
+            {
+                mode = DamageType.Fire;
+            }
+            else
+            {
+                mode = DamageType.Water;
+            }
+            SetDamageType();
+
+        }
+    }
+
+    void SetDamageType() {
+        if (mode == DamageType.Water) {
+            hitsprite.color = getColor(waterBullet.gameObject);
+            damageTaker.WaterMultiplier = 1;
+            damageTaker.EarthMultiplier = 2;
+            damageTaker.FireMultiplier = 0.5f;
+        }
+        else if (mode == DamageType.Earth)
+        {
+            hitsprite.color = getColor(earthBullet.gameObject);
+            damageTaker.WaterMultiplier = 0.5f;
+            damageTaker.EarthMultiplier = 1;
+            damageTaker.FireMultiplier = 2;
+        }
+        if (mode == DamageType.Fire)
+        {
+            hitsprite.color = getColor(fireBullet.gameObject);
+            damageTaker.WaterMultiplier = 2;
+            damageTaker.EarthMultiplier = 0.5f;
+            damageTaker.FireMultiplier = 1;
         }
     }
     void CheckFocus() {
@@ -124,20 +158,20 @@ public class Player : MonoBehaviour
         }
         else {
             if (isFiring) {
-                if (fireMode == 0)
+                if (mode == DamageType.Water)
                 {
-                    PlayerPattern.Mode1(waterBullet, this);
+                    PlayerPattern.WaterMode(waterBullet, this);
                     firingCoolDown += shotRate;
                 }
-                else if (fireMode == 1)
+                else if (mode == DamageType.Earth)
                 {
-                    PlayerPattern.Mode2(earthBullet, this);
+                    PlayerPattern.EarthMode(earthBullet, this);
                     firingCoolDown += shotRate;
                 }
                 else {
                     if (!isFocus)
                     {
-                        PlayerPattern.Mode3(fireBullet, this);
+                        PlayerPattern.FireMode(fireBullet, this);
                         firingCoolDown += shotRate / 3;
                     }
                     else {

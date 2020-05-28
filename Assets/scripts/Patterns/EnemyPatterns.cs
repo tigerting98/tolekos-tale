@@ -94,6 +94,22 @@ public static IEnumerator ShootAtPlayer(Bullet bullet, Transform enemy, float sp
         }
     }
 
+    public static IEnumerator BorderOfWaveAndParticleRandom(List<Bullet> bullets, Transform enemy, float speed, float shotRate, int lines, float angularVel)
+    {
+
+
+        float timer = 0;
+        while (true)
+        {
+            float angle = (float)(180 * Math.Sin(timer * angularVel));
+
+            Patterns.RingOfBullets(bullets[UnityEngine.Random.Range(0, bullets.Count)], enemy.position, lines, angle, speed);
+
+            timer += shotRate;
+            yield return new WaitForSeconds(shotRate);
+        }
+    }
+
     public static IEnumerator ShootSine(Bullet bullet, Transform enemy, float angle, float speed, float shotRate, float angularVel, float amp)
     {
         while (true)

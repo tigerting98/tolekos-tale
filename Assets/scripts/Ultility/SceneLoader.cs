@@ -21,17 +21,14 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(str);
     }
 
-    public void GameOver() {
-        StartCoroutine(WaitAndLoad("Defeat"));
-
-    }
+    
 
     public void ReturnToStartPage() {
         LoadScene("StartPage");
     }
-    public void Victory()
+    public void EndScene()
     {
-        StartCoroutine(WaitAndLoad("Victory"));
+        StartCoroutine(WaitAndLoad("EndScene"));
 
     }
 

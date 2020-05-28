@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public float maxHP = 5000;
+    public float maxHP = 1000;
     float currentHP;
     
     

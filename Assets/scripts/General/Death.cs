@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-    [SerializeField] GameObject explosion;
-    [SerializeField] AudioClip deathSFX;
-    [SerializeField] Health hp;
+    [SerializeField] GameObject explosion = default;
+    [SerializeField] AudioClip deathSFX = default;
+    [SerializeField] Health hp = default;
     [SerializeField] bool canDie = true;
     [SerializeField] int experience = 10;
 

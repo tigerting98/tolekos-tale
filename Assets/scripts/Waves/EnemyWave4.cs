@@ -15,8 +15,6 @@ public class EnemyWave4 : EnemyWave
     [SerializeField] float warningTime = 0.2f;
     [SerializeField] float laserTime = 1f;
     [SerializeField] float pause = 1f;
-    [SerializeField] AudioClip bulletSpawnSound;
-    [SerializeField] float volume = 0.2f;
     [SerializeField] Bullet actualLaser;
     [SerializeField] Bullet warningLaser;
     [SerializeField] int lines = 10;
@@ -59,7 +57,7 @@ public class EnemyWave4 : EnemyWave
                     float playerAngle = Patterns.AimAt(enemy.transform.position, GameManager.playerPosition);
                 enemy.shooting.StartShooting(EnemyPatterns.ShootLaserBeam(actualLaser, warningLaser, enemy.transform, playerAngle, warningTime, laserTime));
                     yield return new WaitForSeconds(warningTime);
-                    AudioSource.PlayClipAtPoint(bulletSpawnSound, GameManager.mainCamera.transform.position, volume);
+                    AudioSource.PlayClipAtPoint(bulletSpawnSound, GameManager.mainCamera.transform.position, audioVolume);
                     
                 }
             yield return new WaitForSeconds(laserTime + pause);

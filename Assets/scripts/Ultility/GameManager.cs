@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static SceneLoader sceneLoader;
     public static BossHealthBar bossHealthBar;
     public static Vector2 playerPosition;
-
+    public static bool victory = false;
     
 
 

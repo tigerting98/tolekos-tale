@@ -21,12 +21,14 @@ public class EnemyWave1 : EnemyWave
 
     IEnumerator SpawnEnemy()
     {
+        int j = 0;
         for (int i = 0; i < number; i++)
-        {
-            Enemy enemy = Instantiate(enemies[0], startPosition, Quaternion.identity);
+        {   
+            Enemy enemy = Instantiate(enemies[j], startPosition, Quaternion.identity);
             float time = enemy.movement.MoveTo(endPosition, moveSpeed);
             enemy.DestroyAfter(time);
-            enemy.shooting.StartShooting(EnemyPatterns.ShootAtPlayer(bullets[0], enemy.transform, bulletSpeed, shotRate));
+            enemy.shooting.StartShooting(EnemyPatterns.ShootAtPlayer(bulletPack.bullets[j], enemy.transform, bulletSpeed, shotRate));
+            j = (j + 1) % 3;
             yield return new WaitForSeconds(spawnRate);
         }
         Destroy(gameObject);

@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 4459303641503581329, guid: ba3dc312562f4f243aedede2b586aac4, type: 3}
+  - {fileID: 424531980175920826, guid: 7249274281dc04e4cbc1b412a39df9f2, type: 3}
   bullets: []
   bulletPack: {fileID: 11400000, guid: f6d3e6216ead4c946a5abcd2fba1d3b8, type: 2}
+  bulletSpawnSound: {fileID: 8300000, guid: 35e015f656eb1314fbd5fd3cee727555, type: 3}
+  audioVolume: 0.03
   startPosition: {x: 0, y: 2.5}
   outY: 4.2
   number: 10
@@ -56,8 +58,6 @@ MonoBehaviour:
   warningTime: 1
   laserTime: 1
   pause: 1
-  bulletSpawnSound: {fileID: 8300000, guid: 35e015f656eb1314fbd5fd3cee727555, type: 3}
-  volume: 0.03
   actualLaser: {fileID: 3090917607954520784, guid: b2b1892a7cc093b4d901f60a59a4dda3,
     type: 3}
   warningLaser: {fileID: 4989898097670863928, guid: 95fbc8248e8aaea4da47d2783bfbafca,

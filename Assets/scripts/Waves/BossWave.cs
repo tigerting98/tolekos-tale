@@ -12,15 +12,14 @@ public class BossWave : EnemyWave
   
     [SerializeField] float bulletSpeed = 4f;
     [SerializeField] float shotRate2 = 0.5f;
-
+    [SerializeField] BulletPack circularPack = default;
     [SerializeField] float bulletSpeed2 = 3f;
     [SerializeField] int shotLines = 20;
     [SerializeField] float angularVel = 1f;
     [SerializeField] int circleLines=20;
     [SerializeField] float delay = 0.1f;
     [SerializeField] int number = 3;
-    [SerializeField] AudioClip sound;
-    [SerializeField] float volume = 0.05f;
+
     public override void SpawnWave() {
         StartCoroutine(SpawnEnemy());
     }
@@ -29,12 +28,12 @@ public class BossWave : EnemyWave
     {
         Enemy enemy = Instantiate(enemies[0], startPosition, Quaternion.identity);
         float time = enemy.movement.MoveTo(endPosition, moveSpeed);
-        enemy.shooting.StartShootingAfter(EnemyPatterns.BorderOfWaveAndParticle(bullets[0], enemy.transform, bulletSpeed, shotRate, shotLines, angularVel), 
+        enemy.shooting.StartShootingAfter(EnemyPatterns.BorderOfWaveAndParticle(bulletPack.bullets[3], enemy.transform, bulletSpeed, shotRate, shotLines, angularVel), 
                 time);
         for (int i = 0; i < number; i++)
-        { enemy.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(bulletPack.bullets, enemy.transform, bulletSpeed2, shotRate2, circleLines)
+        { enemy.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(circularPack.bullets, enemy.transform, bulletSpeed2, shotRate2, circleLines)
             , time + delay*i );
-            enemy.shooting.PlayAudio(sound, shotRate2, volume, delay * i);
+            enemy.shooting.PlayAudio(bulletSpawnSound, shotRate2, audioVolume, delay * i);
         }
         yield return new WaitForSeconds(1);
         

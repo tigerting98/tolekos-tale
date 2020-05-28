@@ -550,10 +550,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3044574860783211177, guid: b4d38132fc0a3e846b7c4471b230a92a,
+    - target: {fileID: 3745329609042663070, guid: b4d38132fc0a3e846b7c4471b230a92a,
         type: 3}
-      propertyPath: laserDamageRatio
-      value: 15
+      propertyPath: damageType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5371489841129551018, guid: b4d38132fc0a3e846b7c4471b230a92a,
         type: 3}
@@ -610,10 +610,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5947980067964757729, guid: b4d38132fc0a3e846b7c4471b230a92a,
+        type: 3}
+      propertyPath: maxHP
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6682898238167598175, guid: b4d38132fc0a3e846b7c4471b230a92a,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000809232635550173, guid: b4d38132fc0a3e846b7c4471b230a92a,
+        type: 3}
+      propertyPath: WaterMultiplier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4d38132fc0a3e846b7c4471b230a92a, type: 3}
@@ -709,7 +719,7 @@ RectTransform:
   m_Children:
   - {fileID: 2005775010}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1145,7 +1155,22 @@ PrefabInstance:
     - target: {fileID: 1104335865672112306, guid: 19d61bc960db1c949916a425807b6f7a,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.27058825
+      value: 0.21960784
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104335865672112306, guid: 19d61bc960db1c949916a425807b6f7a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.009433985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104335865672112306, guid: 19d61bc960db1c949916a425807b6f7a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104335865672112306, guid: 19d61bc960db1c949916a425807b6f7a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1104335865672112307, guid: 19d61bc960db1c949916a425807b6f7a,
         type: 3}
@@ -1278,7 +1303,7 @@ PrefabInstance:
     - target: {fileID: 7016885204452351667, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7016885204452351667, guid: e8c289207a49e244f88c972421a74609,
         type: 3}

@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 4459303641503581329, guid: ba3dc312562f4f243aedede2b586aac4, type: 3}
+  - {fileID: 424531980175920826, guid: 7249274281dc04e4cbc1b412a39df9f2, type: 3}
   bullets: []
   bulletPack: {fileID: 11400000, guid: f6d3e6216ead4c946a5abcd2fba1d3b8, type: 2}
+  bulletSpawnSound: {fileID: 8300000, guid: b204757fec9a25c4485dc63aabf2772a, type: 3}
+  audioVolume: 0.05
   startPosition1: {x: -2, y: 5}
   stopPosition1: {x: -2, y: 2}
   endPosition1: {x: -4.5, y: 2}
@@ -60,5 +62,3 @@ MonoBehaviour:
   spawnRate: 2
   bulletSpeed: 2
   lines: 10
-  bulletSpawnSound: {fileID: 8300000, guid: b204757fec9a25c4485dc63aabf2772a, type: 3}
-  volume: 0.05

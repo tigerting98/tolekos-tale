@@ -10,6 +10,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] bool visible = true;
     [SerializeField] Text title;
     float currentHP = 0;
+    float lastKnownMax = 0;
  
     // Start is called before the first frame update
     public void Start()
@@ -38,12 +39,13 @@ public class HealthBar : MonoBehaviour
     public void SetHealth(Health hp) {
         health = hp;
         currentHP = hp.GetCurrentHP();
+        lastKnownMax = hp.maxHP;
     }
     void Update()
     {
-        int max = health == null ? 0 : (int)health.maxHP;
+        lastKnownMax = health == null ? lastKnownMax : health.maxHP;
         currentHP = health == null ? 0 : health.GetCurrentHP();
-        text.text = "Health : " + ((int)currentHP).ToString() + "/" + max.ToString();
+        text.text = "Health : " + ((int)currentHP).ToString() + "/" + lastKnownMax.ToString();
         slider.value = health.maxHP == 0 ? 0 : currentHP / health.maxHP;
     }
 

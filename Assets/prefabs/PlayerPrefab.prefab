@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 6682898238167598175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.105, y: -3.743, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 7963614063382368396}
   - {fileID: 1091604003831772142}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea, type: 3}
-  m_Color: {r: 0.96512693, g: 0.9811321, b: 0.0509078, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -108,12 +108,14 @@ MonoBehaviour:
   xPadding: 0.3
   yPadding: 0.4
   hitbox: {fileID: 7985819461488737577}
+  damageTaker: {fileID: 7000809232635550173}
   bulletPack: {fileID: 11400000, guid: 42ae08ec9fccf5640b63ad463f696495, type: 2}
   isFocus: 0
   health: {fileID: 5947980067964757729}
   deathEffects: {fileID: 8042909890113886862}
   currentSpeed: 5
   laser: {fileID: 7805036315008413061}
+  laserDamageRatio: 15
 --- !u!50 &1455112021299339000
 Rigidbody2D:
   serializedVersion: 4
@@ -181,6 +183,7 @@ MonoBehaviour:
   deathSFX: {fileID: 8300000, guid: 660e54d2e8931754b86e902dcb5572bf, type: 3}
   hp: {fileID: 5947980067964757729}
   canDie: 1
+  experience: 0
   deathVolume: 0.14
 --- !u!114 &7000809232635550173
 MonoBehaviour:
@@ -195,6 +198,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 5947980067964757729}
+  FireMultiplier: 1
+  WaterMultiplier: 4
+  EarthMultiplier: 1
+  PureMultiplier: 1
   hitSound: {fileID: 8300000, guid: 47b3566d44ea9b94bbc961a855a4a6a6, type: 3}
   volume: 0.4
 --- !u!1 &7985819461488737577
@@ -340,55 +347,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 682333303739211146, guid: fb8ba1024095ab54bbd497ac2dac9966,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 682333303739211146, guid: fb8ba1024095ab54bbd497ac2dac9966,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 682333303739211149, guid: fb8ba1024095ab54bbd497ac2dac9966,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.49019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 682333303739211149, guid: fb8ba1024095ab54bbd497ac2dac9966,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.023584902
-      objectReference: {fileID: 0}
-    - target: {fileID: 682333303739211149, guid: fb8ba1024095ab54bbd497ac2dac9966,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.15522844
-      objectReference: {fileID: 0}
     - target: {fileID: 682333303739211151, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
       propertyPath: m_Name
       value: laserPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296240619865407862, guid: fb8ba1024095ab54bbd497ac2dac9966,
-        type: 3}
-      propertyPath: m_SleepingMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3865249457352194298, guid: fb8ba1024095ab54bbd497ac2dac9966,
-        type: 3}
-      propertyPath: damage
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3865249457352194298, guid: fb8ba1024095ab54bbd497ac2dac9966,
-        type: 3}
-      propertyPath: destroyOnImpact
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3865249457352194298, guid: fb8ba1024095ab54bbd497ac2dac9966,
-        type: 3}
-      propertyPath: damageOverTime
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8ba1024095ab54bbd497ac2dac9966, type: 3}

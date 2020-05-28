@@ -30,6 +30,7 @@ MonoBehaviour:
   deathSFX: {fileID: 8300000, guid: 968310ce46e332a4c832ce6bf6dd6d6a, type: 3}
   hp: {fileID: 849744070516049316}
   canDie: 1
+  experience: 150
   deathVolume: 0.075
 --- !u!1001 &957944300902104566
 PrefabInstance:
@@ -41,7 +42,22 @@ PrefabInstance:
     - target: {fileID: 468841648470341714, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
         type: 3}
       propertyPath: maxHP
-      value: 10000
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041419548464534032, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: EarthMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041419548464534032, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: WaterMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041419548464534032, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: FireMultiplier
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2551118086999079481, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
         type: 3}
@@ -137,17 +153,17 @@ PrefabInstance:
     - target: {fileID: 6619159339048187305, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.3516011
+      value: 0.9529412
       objectReference: {fileID: 0}
     - target: {fileID: 6619159339048187305, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.9528302
+      value: 0.9231169
       objectReference: {fileID: 0}
     - target: {fileID: 6619159339048187305, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.03146139
+      value: 0.031372532
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -6793133753611469860, guid: 43f1d414ba5b63b43b68bb4e0ccda89e, type: 3}

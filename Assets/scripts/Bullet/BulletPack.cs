@@ -7,5 +7,6 @@ using UnityEngine;
 public class BulletPack : ScriptableObject
 {
     public List<Bullet> bullets;
+    public float dmg = 100;
 
 }

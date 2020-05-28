@@ -19,8 +19,6 @@ public class EnemyWave2 : EnemyWave
     [SerializeField] float spawnRate = 0.5f;
     [SerializeField] float bulletSpeed = 2f;
     [SerializeField] int lines = 20;
-    [SerializeField] AudioClip bulletSpawnSound;
-    [SerializeField] float volume = 0.2f;
 
 
     public override void SpawnWave() {
@@ -32,22 +30,22 @@ public class EnemyWave2 : EnemyWave
     {
         for (int i = 0; i < number; i++)
         {
-            float time1 = SpawnOneEnemy(enemies[0], startPosition1, stopPosition1, endPosition1);
+            float time1 = SpawnOneEnemy(startPosition1, stopPosition1, endPosition1);
             yield return new WaitForSeconds(time1);
 
-            SpawnOneEnemy(enemies[0], startPosition2, stopPosition2, endPosition2);
+            SpawnOneEnemy(startPosition2, stopPosition2, endPosition2);
 
             yield return new WaitForSeconds(spawnRate - time1);
         }
         Destroy(gameObject, 20f);
     }
 
-    float SpawnOneEnemy(Enemy enemy, Vector2 start, Vector2 stop, Vector2 end) {
-        Enemy enemy1 = Instantiate(enemy, start, Quaternion.identity);
+    float SpawnOneEnemy(Vector2 start, Vector2 stop, Vector2 end) {
+        Enemy enemy1 = Instantiate(enemies[0], start, Quaternion.identity);
         float time1 = enemy1.movement.MoveTo(stop, moveSpeed);
         enemy1.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(bulletPack.bullets, enemy1.transform, bulletSpeed, shotRate, lines), time1);
         StartCoroutine(MoveAwayAfter(enemy1, end, moveOutSpeed, spawnRate));
-        enemy1.shooting.PlayAudio(bulletSpawnSound, shotRate, volume, time1);
+        enemy1.shooting.PlayAudio(bulletSpawnSound, shotRate, audioVolume, time1);
         return time1;
     }
 

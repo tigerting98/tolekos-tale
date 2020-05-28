@@ -7,7 +7,7 @@ public class DamageDealer : MonoBehaviour
     public float damage;
     [SerializeField] bool destroyOnImpact = true;
     [SerializeField] bool damageOverTime = false;
-  
+    public DamageType damageType = DamageType.Pure;
 
     public bool DestroyOnImpact() {
         return destroyOnImpact;
@@ -17,3 +17,5 @@ public class DamageDealer : MonoBehaviour
         return damageOverTime;
     }
 }
+
+public enum DamageType { Water, Earth, Fire, Pure}

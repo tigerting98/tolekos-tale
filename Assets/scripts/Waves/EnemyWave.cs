@@ -7,7 +7,9 @@ public class EnemyWave : MonoBehaviour
     public List<Enemy> enemies = default;
     public List<Bullet> bullets = default;
     public BulletPack bulletPack = default;
-    
+    [Header("Audio")]
+    public AudioClip bulletSpawnSound = default;
+    public float audioVolume;
 
     public virtual void SpawnWave() { }
 
