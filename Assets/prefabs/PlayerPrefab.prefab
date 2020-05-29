@@ -115,7 +115,6 @@ MonoBehaviour:
   deathEffects: {fileID: 8042909890113886862}
   currentSpeed: 5
   laser: {fileID: 7805036315008413061}
-  laserDamageRatio: 15
 --- !u!50 &1455112021299339000
 Rigidbody2D:
   serializedVersion: 4
@@ -165,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206ef2f95d7fd614e93bb7bc55d3bcf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 1000
 --- !u!114 &8042909890113886862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 5947980067964757729}
   FireMultiplier: 1
-  WaterMultiplier: 4
+  WaterMultiplier: 1
   EarthMultiplier: 1
   PureMultiplier: 1
   hitSound: {fileID: 8300000, guid: 47b3566d44ea9b94bbc961a855a4a6a6, type: 3}
@@ -351,6 +350,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: laserPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3865249457352194298, guid: fb8ba1024095ab54bbd497ac2dac9966,
+        type: 3}
+      propertyPath: damageType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8ba1024095ab54bbd497ac2dac9966, type: 3}

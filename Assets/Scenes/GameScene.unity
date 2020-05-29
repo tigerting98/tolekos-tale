@@ -630,11 +630,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3745329609042663070, guid: b4d38132fc0a3e846b7c4471b230a92a,
-        type: 3}
-      propertyPath: damageType
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5371489841129551018, guid: b4d38132fc0a3e846b7c4471b230a92a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -690,20 +685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5947980067964757729, guid: b4d38132fc0a3e846b7c4471b230a92a,
-        type: 3}
-      propertyPath: maxHP
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 6682898238167598175, guid: b4d38132fc0a3e846b7c4471b230a92a,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7000809232635550173, guid: b4d38132fc0a3e846b7c4471b230a92a,
-        type: 3}
-      propertyPath: WaterMultiplier
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4d38132fc0a3e846b7c4471b230a92a, type: 3}
