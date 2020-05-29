@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Text;
+using UnityEngine.EventSystems;
 using System.Transactions;
 
 public class PauseMenu : MonoBehaviour
@@ -10,8 +11,12 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] SceneLoader loader;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] Controller controller;
+    [SerializeField] GameObject warningMenu;
+    [SerializeField] GameObject warningBackButton;
+    [SerializeField] GameObject resumeButton;
     private void Awake()
     {
+        warningMenu.SetActive(false);
         gameObject.SetActive(false);
     }
 
@@ -45,5 +50,19 @@ public class PauseMenu : MonoBehaviour
     {
         Resume();
         loader.ReturnToStartPage();
+    }
+    public void OpenWarning()
+    {
+        warningMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(warningBackButton);
+    }
+
+    public void CloseWarning()
+    {
+        warningMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(resumeButton);
+
     }
 }

@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 231255706}
+  resumeButton: {fileID: 1288253936}
 --- !u!4 &803639199
 Transform:
   m_ObjectHideFlags: 0
@@ -1589,36 +1590,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1499300016}
     m_Modifications:
-    - target: {fileID: 8493430919282422286, guid: 4ae3ee45fa9e92b48b3b0367db1c822e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 452.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493430919282422286, guid: 4ae3ee45fa9e92b48b3b0367db1c822e,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 904.30347
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493430919282422286, guid: 4ae3ee45fa9e92b48b3b0367db1c822e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -69.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493430919282422286, guid: 4ae3ee45fa9e92b48b3b0367db1c822e,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 844.07495
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493430919514604423, guid: 4ae3ee45fa9e92b48b3b0367db1c822e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.00012016
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493430919514604423, guid: 4ae3ee45fa9e92b48b3b0367db1c822e,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 809.6067
-      objectReference: {fileID: 0}
     - target: {fileID: 8493430919669886449, guid: 4ae3ee45fa9e92b48b3b0367db1c822e,
         type: 3}
       propertyPath: loader
@@ -1738,11 +1709,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pause Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493430919669886461, guid: 4ae3ee45fa9e92b48b3b0367db1c822e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ae3ee45fa9e92b48b3b0367db1c822e, type: 3}
