@@ -24,12 +24,12 @@ public class Player : MonoBehaviour
     bool isFiring = false;
     float firingCoolDown = 0;
     SpriteRenderer hitsprite = default;
-    [SerializeField] Health health;
+    public Health health;
     [SerializeField] PlayerDeath deathEffects;
     public float currentSpeed = 5f;
     Bullet waterBullet, earthBullet, fireBullet;
     [SerializeField] Bullet laser;
-    [SerializeField] float laserDamageRatio = 20f;
+ 
     DamageType mode = DamageType.Water;
     // Start is called before the first frame update
 
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
         waterBullet.damageDealer.damage = dmg;
         fireBullet.damageDealer.damage = dmg;
         earthBullet.damageDealer.damage = dmg;
-        laser.damageDealer.damage = dmg * laserDamageRatio;
+        laser.damageDealer.damage = dmg * PlayerStats.laserDamageRatio;
     }
    
         void SetUpBoundary() {

@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     public static Func<int, int> expFormula = level => 100 + 25 * (level - 1);
     public static float dmgGain = 1;
     public static float maxHPGain = 100;
+    public static float laserDamageRatio = 15f;
     public static void GainEXP(int gainedEXP)
     {
 
