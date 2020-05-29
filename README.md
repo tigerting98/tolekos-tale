@@ -64,7 +64,14 @@ We plan to create a website for our game. The website will include the game clie
 ## Project Log
 
 |S/N|Task|Date|Ting Xiao(hrs)|Aloysius(hrs)|Remarks|
-|---|---|---|---|---|---|
-|1|Proposal Update|12/5/20|2|2||
-
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|1|Proposal Update|12/5/20|2|2|-|
+|2|Poster/Video Making|13/5/20|5|5|-|
+|3|Learning Git|15/5/20|3|3|-|
+|4|Learning Unity|17/5/20|4|4|-|
+|5|Programming at home|19/5/20|2|2|Created basic game structure|
+|6|Programming at home|20/5/20|2|2|Implemented player and enemy movement|
+|7|Programming at home|21/5/20|2|2|Implemented bullets|
+|8|Programming at home|22/5/20|2|2|Implemented health bars|
+|9|Refactoring code|23/5/20|1|0|-|
 
