@@ -1,4 +1,4 @@
-# Toleko's Tale
+# Toleko's Tale : A
 
 ## Proposed Level of Achievement: Artemis
 
@@ -55,4 +55,16 @@ Shift - Focus, slowing down movement to allow for finer control.
 
 ## Website Hosting
 We plan to create a website for our game. The website will include the game client, information, and any potential game updates and announcements. It will also be used to host player highscores.
+
+## Technology Stack
+1. Unity - to create the actual game.
+2. Asperite- to create sprites and backgrounds.
+3. PHP - to develop the website.
+
+## Project Log
+
+|S/N|Task|Date|Ting Xiao(hrs)|Aloysius(hrs)|Remarks|
+|---|---|---|---|---|---|
+|1|Proposal Update|12/5/20|2|2||
+
 
