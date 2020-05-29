@@ -3,7 +3,7 @@
 ## Proposed Level of Achievement: Artemis
 
 ## Motivation 
-As avid gamers, we always wanted to make video games. The game we are currently thinking of is a 2D vertical shooter game, or more commonly known as a bullet hell game. Having played games from the franchise Touhou Project created by Team Shanghai Alice, it inspired us to make a game similar to those found in Touhou Project. The reason we chose a 2D bullet hell game over other genres is that we believe it is relatively easy to develop while still providing a good challenge for us who are new to game development.
+As avid gamers, we always wanted to make video games. The game we are currently thinking of is a **2D vertical shooter game**, or more commonly known as a **bullet hell game**. Having played games from the franchise **Touhou Project** created by **Team Shanghai Alice**, it inspired us to make a game similar to those found in Touhou Project. The reason we chose a 2D bullet hell game over other genres is that we believe it is relatively easy to develop while still providing a good challenge for us who are new to game development.
 
 This is a video of a stage in Touhou 11. The core mechanics of our game will resemble those found in this game.
 https://www.youtube.com/watch?v=pGzWWQvKJOs
@@ -23,20 +23,20 @@ The project is focused on developing a 2D bullet hell game. A possible extension
 Detailed Gameplay Features
 
 ### 1. Player and Enemy Health
-Enemies will have a certain amount of Hitpoints (HP) and different projectiles will carry different damage values. The player character will also have HP, which can be upgraded through the course of the game. When the player character is hit by enemy bullets, he will lose some of his HP. When the player’s HP reaches 0 (zero), the game ends. 
+Enemies will have a certain amount of **Hitpoints (HP)** and different projectiles will carry different damage values. The player character will also have HP, which can be upgraded through the course of the game. When the player character is hit by enemy bullets, he will lose some of his HP. **When the player’s HP reaches 0 (zero), the game ends**. 
 
 The player can then choose to quit, or restart from the beginning of the stage. Some enemies, especially the bosses, may have projectiles that instantly kill the player character and thus they are forced to dodge them, instead of simply tanking through it with sheer HP.
 
 The player initially has 100HP and this can be upgraded throughout the game.
 
 ### 2. Focus
-The player can hold down a key ('Shift' by default) to Focus. Focusing slows down the movement of the player character and makes visible the character's hitbox, allowing the player to have more control over their character in order to squeeze through narrow gaps between enemy bullets.
+The player can hold down a key ('Shift' by default) to **Focus**. Focusing slows down the movement of the player character and makes visible the character's hitbox, allowing the player to have more control over their character in order to squeeze through narrow gaps between enemy bullets.
 
 Focusing also changes the shooting pattern of the player character.
 
 ### 3. Elemental Magic
 
-There will be a simple elemental system where both enemies and the player can shoot projectiles of different elements. Depending on the element that is being used, the characters will take different amounts of damage. There will be 3 elements: Fire, Water, and Earth. 
+There will be a simple **elemental system** where both enemies and the player can shoot projectiles of different elements. Depending on the element that is being used, the characters will take different amounts of damage. There will be 3 elements: Fire, Water, and Earth. 
 
 The damage affinities will be as follows (x->y means x is strong against y):
 **Fire -> Earth -> Water -> Fire**
