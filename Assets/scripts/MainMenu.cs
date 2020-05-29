@@ -7,15 +7,19 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject instructionMenu;
     public GameObject instructionButton, startButton, instructionBackButton;
-    void Start()
+    void Awake()
     {
         instructionMenu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(startButton);
+        
         
     }
+    private void Start()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(startButton);
+    }
 
-    
+
     void Update()
     {
         
