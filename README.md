@@ -1,4 +1,4 @@
-# Toleko's Tale : A
+# Toleko's Tale : A 2D Bullet Hell Game
 
 ## Proposed Level of Achievement: Artemis
 
