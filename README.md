@@ -48,9 +48,13 @@ In between stages of the campaign, the player would have access to shops where t
 There will also be changes to their shooting pattern, such as adding a wider spread or increasing their rate of fire.
 
 ### Controls (Keyboard, can be configured in the setting)
+
 Arrow keys - movement
+
 Z- Normal attack
+
 X - Switch element (Fire/Water/Earth)
+
 Shift - Focus, slowing down movement to allow for finer control.
 
 ## Website Hosting
