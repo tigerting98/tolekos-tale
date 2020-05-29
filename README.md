@@ -1,4 +1,4 @@
-# Toleko's Tale : A
+# Toleko's Tale : A 2D Vertical Shooter
 
 ## Proposed Level of Achievement: Artemis
 
