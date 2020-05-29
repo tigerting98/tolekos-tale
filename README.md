@@ -73,9 +73,9 @@ We plan to create a website for our game. The website will include the game clie
 |6|Programming at home|20/5/20|2|2|Implemented player and enemy movement|
 |7|Programming at home|21/5/20|2|2|Implemented bullets|
 |8|Programming at home|22/5/20|2|2|Implemented health bars|
-|10|Refactoring code|23/5/20|1|0|-|
-|9|Refactoring code|25/5/20|1|0|-|
-|9|Added an EXP system|26/5/20|1|0|-|
-|9|Added an elemental system|27/5/20|1|0|-|
-|10|Modified the waves for demo|28/5/20|1|0|-|
+|10|Refactoring code|23/5/20|2|2|-|
+|9|Refactoring code|25/5/20|2|2|-|
+|9|Programming at home|26/5/20|2|2|-|Added an EXP system
+|9|Programming at home|27/5/20|2|2-|Added an elemental system
+|10|Programming at home|28/5/20|2|2-|Modified the waves for demo
 
