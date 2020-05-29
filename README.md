@@ -84,3 +84,5 @@ We plan to create a website for our game. The website will include the game clie
 |14|Mentor Meeting|27/5/20|0.5|0.5|Met with Prof Zhao to discuss our game ideas and receive feedback|
 |15|Programming at home|28/5/20|1|0|Modified the waves for demo|
 
+## Link to GDD
+https://docs.google.com/document/d/1xsbC9BXN0kCata-k_R-Pm64Y5zuUKliexnhEEttQlng/edit?usp=sharing
