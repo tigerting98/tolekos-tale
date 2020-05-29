@@ -56,11 +56,11 @@ MonoBehaviour:
   width: 3.5
   moveInSpeed: 3
   moveOutSpeed: 1
-  shotRate: 0.05
+  shotRate: 0.1
   pulseTime: 0.5
-  pause: 0.5
+  pause: 1
   pulses: 8
   angularVel: 10
   amp: 0.5
-  bulletSpeed: 6
+  bulletSpeed: 4
   spread: 5
