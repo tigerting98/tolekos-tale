@@ -8,12 +8,12 @@ using System.Transactions;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] SceneLoader loader;
-    [SerializeField] TextMeshProUGUI text;
-    [SerializeField] Controller controller;
-    [SerializeField] GameObject warningMenu;
-    [SerializeField] GameObject warningBackButton;
-    [SerializeField] GameObject resumeButton;
+    [SerializeField] SceneLoader loader = default;
+    [SerializeField] TextMeshProUGUI text = default;
+    [SerializeField] Controller controller = default;
+    [SerializeField] GameObject warningMenu = default;
+    [SerializeField] GameObject warningBackButton = default;
+    [SerializeField] GameObject resumeButton = default;
     private void Awake()
     {
         warningMenu.SetActive(false);

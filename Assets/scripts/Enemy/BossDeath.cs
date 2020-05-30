@@ -10,8 +10,7 @@ public class BossDeath : Death
     public override void Die()
     {
         base.Die();
-        GameManager.victory = true;
-        GameManager.sceneLoader.EndScene();
+        GameManager.InvokeGameOverEvent(true);
     }
 
 

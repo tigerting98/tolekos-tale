@@ -98,8 +98,9 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+
         if (moving)
         {
             if (mode == MovementMode.Position)

@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     public float currentSpeed = 5f;
     public Color water, earth, fire;
     public Bullet waterBullet, earthFocusBullet, earthUnfocusBullet;
-    [SerializeField] Bullet fireFocus, fireUnfocus;
+    [SerializeField] Bullet fireFocus = default, fireUnfocus = default;
 
 
     DamageType mode;
@@ -121,7 +121,6 @@ public class Player : MonoBehaviour
     void SetDamageType() {
         if (mode == DamageType.Water) {
             hitsprite.color = water;
-            Debug.Log("water");
             damageTaker.WaterMultiplier = 1;
             damageTaker.EarthMultiplier = 2;
             damageTaker.FireMultiplier = 0.5f;

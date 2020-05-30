@@ -9,7 +9,6 @@ public class PlayerDeath : Death
     {
         base.Die();
         GameManager.player = null;
-        GameManager.victory = false;
-        GameManager.sceneLoader.EndScene();
+        GameManager.InvokeGameOverEvent(false);
     }
 }

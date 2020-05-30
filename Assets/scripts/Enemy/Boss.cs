@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    [SerializeField] string name = "Boss";
+    [SerializeField] new string name = "Boss";
     BossHealthBar bar;
     void Start()
     {

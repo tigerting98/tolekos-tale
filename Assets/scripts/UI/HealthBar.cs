@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] Text text;
-    [SerializeField] Slider slider;
-    [SerializeField] Health health;
+    [SerializeField] Text text = default;
+    [SerializeField] Slider slider = default;
+    [SerializeField] Health health = default;
     [SerializeField] bool visible = true;
-    [SerializeField] Text title;
+    [SerializeField] Text title = default;
     float currentHP = 0;
     float lastKnownMax = 0;
  

@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 
 public class Controller : MonoBehaviour
 {
-    [SerializeField] PauseMenu PauseMenu;
-    [SerializeField] GameObject resumeButton;
+    [SerializeField] PauseMenu PauseMenu = default;
+    [SerializeField] GameObject resumeButton = default;
     
 
 

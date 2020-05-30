@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,5 +16,16 @@ public class GameManager : MonoBehaviour
 
     public static Hashtable enemies = new Hashtable();
 
+    public static event Action<bool> OnGameover;
+
+    public static void InvokeGameOverEvent( bool victory) {
+        OnGameover?.Invoke(victory);
+    
+    }
+    
+    
+
+
 
 }
+

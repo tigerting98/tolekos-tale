@@ -5,7 +5,7 @@ using UnityEngine;
 public class Background : MonoBehaviour
 {
     Material background;
-    [SerializeField] float speed;
+    [SerializeField] float speed = default;
     
     // Start is called before the first frame update
     void Start()

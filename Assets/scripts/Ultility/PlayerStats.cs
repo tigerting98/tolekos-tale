@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -21,6 +22,8 @@ public class PlayerStats : MonoBehaviour
     public static float earthFocusedShotRateRatio = 2f;
     public static float baseShotRate = 0.1f;
 
+    public static event Action OnGainExp;
+
     public static void GainEXP(int gainedEXP)
     {
 
@@ -32,6 +35,7 @@ public class PlayerStats : MonoBehaviour
             LevelUp();
 
         }
+        OnGainExp?.Invoke();
 
     }
 

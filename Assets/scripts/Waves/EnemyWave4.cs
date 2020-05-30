@@ -6,17 +6,17 @@ using UnityEngine.Experimental.GlobalIllumination;
 public class EnemyWave4 : EnemyWave
 {
     // Start is called before the first frame update
-    [SerializeField] Vector2 startPosition;
+    [SerializeField] Vector2 startPosition = default;
     [SerializeField] float outY = 4.2f;
     [SerializeField] int number = 10;
-    [SerializeField] float radius;
+    [SerializeField] float radius = default;
     [SerializeField] float moveCircleSpeed = 3f;
     [SerializeField] float moveOutSpeed = 0.1f;
     [SerializeField] float warningTime = 0.2f;
     [SerializeField] float laserTime = 1f;
     [SerializeField] float pause = 1f;
-    [SerializeField] Bullet actualLaser;
-    [SerializeField] Bullet warningLaser;
+    [SerializeField] Bullet actualLaser = default;
+    [SerializeField] Bullet warningLaser = default;
     [SerializeField] int lines = 10;
     [SerializeField] float bulletSpeed = 3f;
     [SerializeField] float shotRate = 1f;

@@ -40,16 +40,20 @@ public class BulletOrientation : MonoBehaviour
         return Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x));
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (custom) {
-            orientation = orientationOverTime(timer);
-            timer += Time.deltaTime;
-        }
-        else {
-            orientation = FindRotation();
-        }
         
-        transform.rotation = orientation;
+            if (custom)
+            {
+                orientation = orientationOverTime(timer);
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                orientation = FindRotation();
+            }
+
+            transform.rotation = orientation;
+        
     }
 }

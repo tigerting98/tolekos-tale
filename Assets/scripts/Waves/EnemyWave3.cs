@@ -15,7 +15,7 @@ public class EnemyWave3 : EnemyWave
     [SerializeField] float shotRate = 0.05f;
     [SerializeField] float pulseTime = 1f;
     [SerializeField] float pause = 1f;
-    [SerializeField] float pulses;
+    [SerializeField] float pulses = default;
     [SerializeField] float angularVel = 1f;
     [SerializeField] float amp = 0.2f;
     [SerializeField] float bulletSpeed = 2f;

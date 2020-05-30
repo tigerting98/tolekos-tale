@@ -9,7 +9,22 @@ public class SceneLoader : MonoBehaviour
 
     private void Awake()
     {       
-        GameManager.sceneLoader = this;       
+        GameManager.sceneLoader = this;  
+        
+    }
+    private void Start()
+    {
+        GameManager.OnGameover += OnGameOverEvent;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnGameover -= OnGameOverEvent;
+    }
+    public void OnGameOverEvent(bool victory) {
+
+        GameManager.victory = victory;
+        EndScene();
     }
     public void QuitGame()
     {
