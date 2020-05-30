@@ -8,8 +8,6 @@ using UnityEngine;
 [RequireComponent(typeof(Movement))]
 public class Enemy : MonoBehaviour
 {
-    int cur = 0;
- 
 
     public float moveSpeed;
     public Health health;
@@ -18,14 +16,16 @@ public class Enemy : MonoBehaviour
     public Shooting shooting;
 
     // Start is called before the first frame update
-   
-    void Start()
+
+    private void Awake()
     {
-        
-
-
+        GameManager.enemies.Add(gameObject.GetInstanceID(), gameObject);
     }
-    
+
+    private void OnDestroy()
+    {
+        GameManager.enemies.Remove(gameObject.GetInstanceID());
+    }
 
 
     public void SetSpeed(float speed) {

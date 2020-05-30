@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,8 +12,8 @@ public class GameManager : MonoBehaviour
     public static BossHealthBar bossHealthBar;
     public static Vector2 playerPosition;
     public static bool victory = false;
-    
 
+    public static Hashtable enemies = new Hashtable();
 
 
 }

@@ -12,7 +12,7 @@ public class EnemyWave1 : EnemyWave
     [SerializeField] int number = 5;
     [SerializeField] float spawnRate = 0.5f;
     [SerializeField] float bulletSpeed = 5f;
-    [SerializeField] int shotLines = 1;
+
 
     public override void SpawnWave() {
 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8377726756059287403
+--- !u!1001 &4669534607990147721
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -65,32 +65,43 @@ PrefabInstance:
     - target: {fileID: 6070511153092440149, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
       propertyPath: m_Name
-      value: firePlayerBullet
+      value: earthFocused
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070511153092440150, guid: 7c29c4108f08bb446ba20f11a4f394a9,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0022232155
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070511153092440150, guid: 7c29c4108f08bb446ba20f11a4f394a9,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0067754844
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070511153092440150, guid: 7c29c4108f08bb446ba20f11a4f394a9,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.6129924
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070511153092440150, guid: 7c29c4108f08bb446ba20f11a4f394a9,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.6045299
       objectReference: {fileID: 0}
     - target: {fileID: 6070511153092440151, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
-      propertyPath: m_Color.r
-      value: 0.9056604
-      objectReference: {fileID: 0}
-    - target: {fileID: 6070511153092440151, guid: 7c29c4108f08bb446ba20f11a4f394a9,
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a5d2aaec94972b418be62e12f7b5529,
         type: 3}
-      propertyPath: m_Color.g
-      value: 0.08116765
-      objectReference: {fileID: 0}
-    - target: {fileID: 6070511153092440151, guid: 7c29c4108f08bb446ba20f11a4f394a9,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.14249375
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557872343287846176, guid: 7c29c4108f08bb446ba20f11a4f394a9,
-        type: 3}
-      propertyPath: damagetype
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7557872343287846176, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
       propertyPath: damageType
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557872343287846176, guid: 7c29c4108f08bb446ba20f11a4f394a9,
+        type: 3}
+      propertyPath: damage
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c29c4108f08bb446ba20f11a4f394a9, type: 3}

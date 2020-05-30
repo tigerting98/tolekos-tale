@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Text;
+using UnityEngine.EventSystems;
 using System.Transactions;
 
 public class PauseMenu : MonoBehaviour
@@ -10,8 +11,12 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] SceneLoader loader;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] Controller controller;
+    [SerializeField] GameObject warningMenu;
+    [SerializeField] GameObject warningBackButton;
+    [SerializeField] GameObject resumeButton;
     private void Awake()
     {
+        warningMenu.SetActive(false);
         gameObject.SetActive(false);
     }
 
@@ -27,8 +32,13 @@ public class PauseMenu : MonoBehaviour
         txt.Append(string.Format("Level: {0}\n", PlayerStats.playerLevel));
         txt.Append(string.Format("EXP: {0}/{1}\n", PlayerStats.exp, PlayerStats.expToLevelUp));
         txt.Append(string.Format("Health: {0}/{1}\n", curHP, (int)PlayerStats.playerMaxHP));
-        txt.Append(string.Format("Bullet Damage: {0}\n", PlayerStats.damage));
-        txt.Append(string.Format("Laser Damage: {0} per second", PlayerStats.damage * PlayerStats.laserDamageRatio));
+        txt.Append("Damages\n");
+        txt.Append(string.Format("Water Unfocus Damage: {0}\n", PlayerStats.damage));
+        txt.Append(string.Format("Water Focus Damage: {0}\n", PlayerStats.damage));
+        txt.Append(string.Format("Earth Unfocus Damage: {0}\n", PlayerStats.damage));
+        txt.Append(string.Format("Earth Focus Damage: {0}\n", PlayerStats.damage* PlayerStats.earthFocusDaamgeRatio));
+        txt.Append(string.Format("Fire Unfocus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireUnfocusDamageRatio));
+        txt.Append(string.Format("Fire Focus Damage: {0} per second", PlayerStats.damage * PlayerStats.fireFocusDamageRatio));
         text.text = txt.ToString() ;
     
     }
@@ -45,5 +55,19 @@ public class PauseMenu : MonoBehaviour
     {
         Resume();
         loader.ReturnToStartPage();
+    }
+    public void OpenWarning()
+    {
+        warningMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(warningBackButton);
+    }
+
+    public void CloseWarning()
+    {
+        warningMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(resumeButton);
+
     }
 }

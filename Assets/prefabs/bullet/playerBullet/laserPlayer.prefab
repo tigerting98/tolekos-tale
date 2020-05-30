@@ -118,6 +118,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: laserPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6070511153092440149, guid: 7c29c4108f08bb446ba20f11a4f394a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6070511153092440150, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
       propertyPath: m_Enabled

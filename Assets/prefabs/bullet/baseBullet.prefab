@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d26f0cb3646b7428497ac7fbe77bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentVelocity: {x: 0, y: 0}
 --- !u!114 &-465456440615183729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985857073f83b3a4c910d32b045dbfbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 9200072685321137857}
 --- !u!114 &-1114664629743190563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +159,7 @@ MonoBehaviour:
   damage: 10
   destroyOnImpact: 1
   damageOverTime: 0
+  damageType: 3
 --- !u!50 &6115569925748409425
 Rigidbody2D:
   serializedVersion: 4
