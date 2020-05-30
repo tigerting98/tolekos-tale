@@ -196,18 +196,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8493430919598080875}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &231255706 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8493430919669886449, guid: 4ae3ee45fa9e92b48b3b0367db1c822e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8493430919598080875}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ae9c48331e0e794f878d632f812c2d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &261808219 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3311493128422948762, guid: fb1ea9001c306bd4a9b0fcdad314b62b,
@@ -432,8 +420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59aff7a11b8e56445bf77e45a576cb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseMenu: {fileID: 231255706}
-  resumeButton: {fileID: 1288253936}
+  PauseMenu: {fileID: 0}
+  resumeButton: {fileID: 0}
 --- !u!4 &803639199
 Transform:
   m_ObjectHideFlags: 0
@@ -497,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1288253936}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &994770007
@@ -655,12 +643,6 @@ MonoBehaviour:
   - {fileID: 7044746377690088705, guid: c4e586825e71c1a41b2639bf5073a7a5, type: 3}
   times:
   - 0
---- !u!1 &1288253936 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8493430918579466907, guid: 4ae3ee45fa9e92b48b3b0367db1c822e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8493430919598080875}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1390244601
 PrefabInstance:
   m_ObjectHideFlags: 0
