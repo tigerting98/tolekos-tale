@@ -484,7 +484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 15ed51120173c2647adc463da5140a5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 04b010a68e1f6b3439dee0e1d9f52b7b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -532,6 +532,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endText: {fileID: 590443275}
+  defeat: {r: 0.9716981, g: 0.04075324, b: 0.03208439, a: 1}
+  victory: {r: 0.010130405, g: 1, b: 0, a: 1}
 --- !u!4 &1071243770
 Transform:
   m_ObjectHideFlags: 0
