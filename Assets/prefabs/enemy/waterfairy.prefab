@@ -19,6 +19,11 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: -0.022277385
       objectReference: {fileID: 0}
+    - target: {fileID: 468841648470341714, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: maxHP
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2551118086999079481, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
         type: 3}
       propertyPath: m_Name

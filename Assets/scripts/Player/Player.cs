@@ -10,7 +10,7 @@ using UnityEngine;
 [RequireComponent(typeof(Death))]
 public class Player : MonoBehaviour
 {
-    public float shotRate;
+    
     public float bulletSpeed;
     [Range(0,10)] public float speed= 5f;
     [SerializeField] float focusRatio = 0.2f;
@@ -18,8 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject hitbox = default;
     [SerializeField] DamageTaker damageTaker = default;
     float xMin, xMax, yMin, yMax;
-    [SerializeField] BulletPack bulletPack = default;
-    bool isLaser = false;
+    bool isFireFocus = false, isFireUnfocus = false;
     public bool isFocus = false;
     bool isFiring = false;
     float firingCoolDown = 0;
@@ -27,10 +26,12 @@ public class Player : MonoBehaviour
     public Health health;
     [SerializeField] PlayerDeath deathEffects;
     public float currentSpeed = 5f;
-    Bullet waterBullet, earthBullet, fireBullet;
-    [SerializeField] Bullet laser;
- 
-    DamageType mode = DamageType.Water;
+    public Color water, earth, fire;
+    public Bullet waterBullet, earthFocusBullet, earthUnfocusBullet;
+    [SerializeField] Bullet fireFocus, fireUnfocus;
+
+
+    DamageType mode;
     // Start is called before the first frame update
 
     private void Awake()
@@ -42,16 +43,17 @@ public class Player : MonoBehaviour
     {
         GameManager.playerPosition = transform.position;
         hitbox.SetActive(false);
-        laser.gameObject.SetActive(false);        
+        fireFocus.gameObject.SetActive(false);
+        fireUnfocus.gameObject.SetActive(false);
         hitsprite = hitbox.GetComponent<SpriteRenderer>();
         SetUp();
+        mode = DamageType.Water;
 
     }
 
     void SetUp() {
-        waterBullet = bulletPack.bullets[0];    
-        earthBullet = bulletPack.bullets[1];
-        fireBullet = bulletPack.bullets[2];
+ 
+
         health.maxHP = PlayerStats.playerMaxHP;
         health.ResetHP();
         SetDamageType();
@@ -67,9 +69,11 @@ public class Player : MonoBehaviour
 
     public void SetPlayerBulletDamage(float dmg) {
         waterBullet.damageDealer.damage = dmg;
-        fireBullet.damageDealer.damage = dmg;
-        earthBullet.damageDealer.damage = dmg;
-        laser.damageDealer.damage = dmg * PlayerStats.laserDamageRatio;
+
+        earthUnfocusBullet.damageDealer.damage = dmg;
+        earthFocusBullet.damageDealer.damage = dmg*PlayerStats.earthFocusDaamgeRatio;
+        fireFocus.damageDealer.damage = dmg * PlayerStats.fireFocusDamageRatio;
+        fireUnfocus.damageDealer.damage = dmg * PlayerStats.fireUnfocusDamageRatio;
     }
    
         void SetUpBoundary() {
@@ -79,9 +83,6 @@ public class Player : MonoBehaviour
         yMin = -4 + yPadding;
         yMax = 4 - yPadding;
         
-    }
-     Color getColor(GameObject obj) {
-        return obj.GetComponent<SpriteRenderer>().color;
     }
 
     void CheckInputs() {
@@ -119,21 +120,22 @@ public class Player : MonoBehaviour
 
     void SetDamageType() {
         if (mode == DamageType.Water) {
-            hitsprite.color = getColor(waterBullet.gameObject);
+            hitsprite.color = water;
+            Debug.Log("water");
             damageTaker.WaterMultiplier = 1;
             damageTaker.EarthMultiplier = 2;
             damageTaker.FireMultiplier = 0.5f;
         }
         else if (mode == DamageType.Earth)
         {
-            hitsprite.color = getColor(earthBullet.gameObject);
+            hitsprite.color = earth;
             damageTaker.WaterMultiplier = 0.5f;
             damageTaker.EarthMultiplier = 1;
             damageTaker.FireMultiplier = 2;
         }
         if (mode == DamageType.Fire)
         {
-            hitsprite.color = getColor(fireBullet.gameObject);
+            hitsprite.color = fire;
             damageTaker.WaterMultiplier = 2;
             damageTaker.EarthMultiplier = 0.5f;
             damageTaker.FireMultiplier = 1;
@@ -150,7 +152,7 @@ public class Player : MonoBehaviour
 
     }
     void CheckFiring() {
-        bool onLaser = false;
+        bool onFireFocus = false, onFireUnfocus = false;
         if (firingCoolDown > 0)
         {
             firingCoolDown -= Time.deltaTime;
@@ -160,37 +162,57 @@ public class Player : MonoBehaviour
             if (isFiring) {
                 if (mode == DamageType.Water)
                 {
-                    PlayerPattern.WaterMode(waterBullet, this);
-                    firingCoolDown += shotRate;
+                    if (isFocus)
+                    {
+                        PlayerPattern.WaterFocusedMode(waterBullet, this);
+                        firingCoolDown += PlayerStats.baseShotRate;
+                    }
+                    else
+                    {
+                        PlayerPattern.WaterUnfocusedMode(waterBullet, this);
+                        firingCoolDown += PlayerStats.baseShotRate;
+                    }
+                    
                 }
                 else if (mode == DamageType.Earth)
                 {
-                    PlayerPattern.EarthMode(earthBullet, this);
-                    firingCoolDown += shotRate;
+                    if (isFocus)
+                    {
+                        PlayerPattern.EarthFocusedMode(earthFocusBullet, this);
+                        firingCoolDown += PlayerStats.baseShotRate * PlayerStats.earthFocusedShotRateRatio;
+                    }
+                    else
+                    {
+                        PlayerPattern.EarthUnfocusedMode(earthUnfocusBullet, this);
+                        firingCoolDown += PlayerStats.baseShotRate;
+                    }
                 }
                 else {
                     if (!isFocus)
                     {
-                        PlayerPattern.FireMode(fireBullet, this);
-                        firingCoolDown += shotRate / 3;
+                        onFireUnfocus = true;
                     }
                     else {
-                        onLaser = true;
+                        onFireFocus= true;
                     }
                 }
             }
         }
-        if (isLaser != onLaser) {
-          
-            switchLaser();
+        if (isFireFocus != onFireFocus) {
+
+            isFireFocus = !isFireFocus;
+            fireFocus.gameObject.SetActive(isFireFocus);
+        }
+        if (isFireUnfocus != onFireUnfocus)
+        {
+
+            isFireUnfocus = !isFireUnfocus;
+            fireUnfocus.gameObject.SetActive(isFireUnfocus);
         }
     }
 
     
-    void switchLaser() {
-        isLaser = !isLaser;
-        laser.gameObject.SetActive(isLaser);
-    }
+   
     // Update is called once per frame
     void Update()
     {

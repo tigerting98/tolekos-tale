@@ -1,6 +1,7 @@
 ﻿using System;
 //using System.Numerics;
 using System.Transactions;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 public enum MovementMode { Position, Velocity, Acceleration, Homing }
@@ -10,6 +11,8 @@ public class Movement : MonoBehaviour
 
     Func<float, Vector2> graph = time => new Vector2(0,0);
     [HideInInspector]public Vector2 currentVelocity;
+    GameObject target;
+    float homingSpeed;
     float time = 0;
     bool destroyWhenOut = true;
     bool moving = true;
@@ -24,12 +27,14 @@ public class Movement : MonoBehaviour
         graph = time => vel;
         ResetTimer();
     }
-    public void SetStraightPath(Vector2 vel) {
-        SetSpeed(vel);
 
-        
+    public void Homing(GameObject tar, float spd) {
+        mode = MovementMode.Homing;
+        target = tar;
+        homingSpeed = spd;
+        currentVelocity = ((Vector2)(target.transform.position - transform.position)).normalized * homingSpeed;
+    
     }
-
 
     public void ResetTimer() {
         time = 0;
@@ -39,7 +44,7 @@ public class Movement : MonoBehaviour
         StartMoving();
         Vector2 diff = end - (Vector2)transform.position;
         float timeTaken = diff.magnitude / speed;
-        SetStraightPath(diff / timeTaken);
+        SetSpeed(diff / timeTaken);
         StopMovingAfter(timeTaken);
 
         return timeTaken;
@@ -107,8 +112,19 @@ public class Movement : MonoBehaviour
                 currentVelocity = graph(time);
 
             }
-            else {
+            else if (mode == MovementMode.Acceleration){
                 currentVelocity += graph(time) * Time.deltaTime;
+            
+            }
+            else{
+                if (!target)
+                {
+                    SetSpeed(currentVelocity);
+                }
+                else {
+                    currentVelocity = ((Vector2)(target.transform.position - transform.position)).normalized * homingSpeed;
+                
+                }
             
             }
 
@@ -121,6 +137,9 @@ public class Movement : MonoBehaviour
         
 
     }
+
+    
+
     public void OutOfBound()
     {
 

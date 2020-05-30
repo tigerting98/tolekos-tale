@@ -51,4 +51,34 @@ public class Patterns : MonoBehaviour
         move.RotateTrajectory(angle);
         return bull;
     }
+
+    public static Bullet HomeNearestEnemy(Bullet bul, Vector2 origin, Vector2 defaultVelocity) {
+        Bullet bullet = Instantiate(bul, origin, Quaternion.identity);
+        GameObject target = GetNearestEnemy(origin);
+        if (target == null)
+        {
+            bullet.movement.SetSpeed(defaultVelocity);
+        }
+        else {
+            bullet.movement.Homing(target, defaultVelocity.magnitude);
+        
+        }
+        return bullet;
+    }
+
+    public static GameObject GetNearestEnemy(Vector2 origin) {
+        GameObject obj = null;
+        float distance = Mathf.Infinity;
+        foreach (GameObject item in GameManager.enemies.Values) {
+            float dist = ((Vector2)item.transform.position - origin).magnitude;
+            if (dist < distance) {
+                distance = dist;
+                obj = item;
+            
+            }
+            
+        }
+
+        return obj;
+    }
 }

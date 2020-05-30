@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8377726756059287403
+--- !u!1001 &5346605808052971286
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 6070511153092440149, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
       propertyPath: m_Name
-      value: waterPlayerBullet
+      value: earth unfocused
       objectReference: {fileID: 0}
     - target: {fileID: 6070511153092440150, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 6070511153092440150, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.00589572
+      value: -0.0060974443
       objectReference: {fileID: 0}
     - target: {fileID: 6070511153092440150, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
@@ -85,43 +85,18 @@ PrefabInstance:
     - target: {fileID: 6070511153092440150, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.19451272
-      objectReference: {fileID: 0}
-    - target: {fileID: 6070511153092440151, guid: 7c29c4108f08bb446ba20f11a4f394a9,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.5974546
-      objectReference: {fileID: 0}
-    - target: {fileID: 6070511153092440151, guid: 7c29c4108f08bb446ba20f11a4f394a9,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.8909823
-      objectReference: {fileID: 0}
-    - target: {fileID: 6070511153092440151, guid: 7c29c4108f08bb446ba20f11a4f394a9,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.9245283
+      value: 0.18023032
       objectReference: {fileID: 0}
     - target: {fileID: 6070511153092440151, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 033d659cd9bd94c45a2e3650b19bb57f,
+      objectReference: {fileID: 21300000, guid: 8573b752f82c057428615b7a286b83c1,
         type: 3}
-    - target: {fileID: 6070511153092440151, guid: 7c29c4108f08bb446ba20f11a4f394a9,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.85882354
-      objectReference: {fileID: 0}
-    - target: {fileID: 7557872343287846176, guid: 7c29c4108f08bb446ba20f11a4f394a9,
-        type: 3}
-      propertyPath: damagetype
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7557872343287846176, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
       propertyPath: damageType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c29c4108f08bb446ba20f11a4f394a9, type: 3}

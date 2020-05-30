@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
 
     public void setSpeed(Vector2 vel) {
 
-        movement.SetStraightPath(vel);
+        movement.SetSpeed(vel);
     }
     
     
