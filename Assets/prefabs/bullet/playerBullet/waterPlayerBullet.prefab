@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 6070511153092440149, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
       propertyPath: m_Name
-      value: bluePlayerBullet
+      value: waterPlayerBullet
       objectReference: {fileID: 0}
     - target: {fileID: 6070511153092440151, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
@@ -85,6 +85,11 @@ PrefabInstance:
     - target: {fileID: 7557872343287846176, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
       propertyPath: damagetype
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557872343287846176, guid: 7c29c4108f08bb446ba20f11a4f394a9,
+        type: 3}
+      propertyPath: damageType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

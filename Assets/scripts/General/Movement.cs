@@ -1,59 +1,58 @@
 ﻿using System;
+//using System.Numerics;
 using System.Transactions;
 using UnityEngine;
-
+using UnityEngine.UIElements;
+public enum MovementMode { Position, Velocity, Acceleration, Homing }
 public class Movement : MonoBehaviour
 {
+ 
 
-
-    Vector2 startingPoint;
-    Func<float, Vector2> trajectory = time => new Vector2(0,0);
+    Func<float, Vector2> graph = time => new Vector2(0,0);
+    [HideInInspector]public Vector2 currentVelocity;
     float time = 0;
     bool destroyWhenOut = true;
     bool moving = true;
-
+    MovementMode mode = MovementMode.Velocity;
 
 
     // Start is called before the first frame update
-    public void Start()
-    {
-        startingPoint = transform.position;
-    }
+ 
 
-    public void SetSpeed(Vector2 vel) { 
-        
+    public void SetSpeed(Vector2 vel) {
+        mode = MovementMode.Velocity;
+        graph = time => vel;
+        ResetTimer();
     }
     public void SetStraightPath(Vector2 vel) {
-        ResetTimer();
-        trajectory = time => time * vel;
+        SetSpeed(vel);
 
         
     }
 
-    public void SetStartingPoint(Vector2 initialPos) {
-        ResetTimer();
-        startingPoint = initialPos;
 
-    }
     public void ResetTimer() {
         time = 0;
     }
 
     public float MoveTo(Vector2 end, float speed) {
-        return MoveToFrom(transform.position, end, speed);
-        
-    }
-
-    public float MoveToFrom(Vector2 start, Vector2 end, float speed) {
         StartMoving();
-        Vector2 diff = end - start;
+        Vector2 diff = end - (Vector2)transform.position;
         float timeTaken = diff.magnitude / speed;
-        SetStartingPoint(start);
         SetStraightPath(diff / timeTaken);
         StopMovingAfter(timeTaken);
 
         return timeTaken;
+
     }
+
+    public void SetCustomGraph(Func<float, Vector2> traj, MovementMode movementMode) {
+        mode = movementMode;
+        graph = traj;
+    
+    }
+
+   
     public bool IsMoving() {
         return moving;
     }
@@ -73,8 +72,8 @@ public class Movement : MonoBehaviour
     }
     public void SetCustomPath(Func<float, Vector2> traj) {
         ResetTimer();
-
-        trajectory = traj;
+        mode = MovementMode.Position;
+        graph = traj;
        
     }
     public void SetDestroyWhenOut(bool bl) {
@@ -82,11 +81,12 @@ public class Movement : MonoBehaviour
     }
 
     public void RotateTrajectory(float angle) {
-        trajectory = RotatePath(angle, trajectory);
-      
+        graph = RotatePath(angle, graph);
+
     }
     public void SetPolarPath(Func<float, Polar> traj) {
-        trajectory = t => traj(t).rect;
+        mode = MovementMode.Position;
+        graph = t => traj(t).rect;
     }
     public Func<float, Vector2> RotatePath(float angle, Func<float, Vector2> oldTraj) {
         return t => Quaternion.Euler(0, 0, angle) * oldTraj(t);       
@@ -97,14 +97,28 @@ public class Movement : MonoBehaviour
     {
         if (moving)
         {
+            if (mode == MovementMode.Position)
+            {
+                currentVelocity = (graph(time + Time.deltaTime) - graph(time)) / Time.deltaTime;
+
+            }
+            else if (mode == MovementMode.Velocity)
+            {
+                currentVelocity = graph(time);
+
+            }
+            else {
+                currentVelocity += graph(time) * Time.deltaTime;
+            
+            }
+
+            
             time += Time.deltaTime;
+            transform.position += (Vector3)currentVelocity * Time.deltaTime;
+            if (destroyWhenOut)
+            { OutOfBound(); }
         }
-        transform.position = trajectory(time) +startingPoint;
-
-        if (destroyWhenOut)
-        { OutOfBound(); }
-
-
+        
 
     }
     public void OutOfBound()

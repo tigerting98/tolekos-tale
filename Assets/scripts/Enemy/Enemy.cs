@@ -8,8 +8,6 @@ using UnityEngine;
 [RequireComponent(typeof(Movement))]
 public class Enemy : MonoBehaviour
 {
-    int cur = 0;
- 
 
     public float moveSpeed;
     public Health health;

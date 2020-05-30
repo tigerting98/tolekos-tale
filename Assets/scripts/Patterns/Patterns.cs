@@ -39,7 +39,6 @@ public class Patterns : MonoBehaviour
         Bullet bull = Instantiate(bullet, origin, Quaternion.identity);
         Movement move = bull.movement;
         move.SetCustomPath(time => new Vector2(speed * time, (float)(amp * Math.Sin(time * angularVelocity))));
-        move.SetStartingPoint(origin);
         move.RotateTrajectory(angle);
         return bull;
     }
@@ -49,7 +48,6 @@ public class Patterns : MonoBehaviour
         Bullet bull = Instantiate(bul, origin, Quaternion.identity);
         Movement move = bull.movement;
         move.SetPolarPath(t=> new Polar(speed*t, spirallingRatio*speed * t));
-        move.SetStartingPoint(origin);
         move.RotateTrajectory(angle);
         return bull;
     }

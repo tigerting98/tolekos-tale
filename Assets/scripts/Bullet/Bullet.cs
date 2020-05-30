@@ -9,12 +9,8 @@ public class Bullet : MonoBehaviour
     public DamageDealer damageDealer;
 
     public void setSpeed(Vector2 vel) {
-       
-        if (movement != null) {
-            movement.SetStraightPath(vel);
-            movement.SetStartingPoint(transform.position);
-        }
-    
+
+        movement.SetStraightPath(vel);
     }
     
     
