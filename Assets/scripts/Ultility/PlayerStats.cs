@@ -14,8 +14,8 @@ public class PlayerStats : MonoBehaviour
     public static Func<int, int> expFormula = level => 100 + 25 * (level - 1);
     public static float dmgGain = 1;
     public static float maxHPGain = 100;
-    public static float fireFocusDamageRatio = 15f;
-    public static float fireUnfocusDamageRatio = 10f;
+    public static float fireFocusDamageRatio = 25f;
+    public static float fireUnfocusDamageRatio = 15f;
     public static float earthFocusDaamgeRatio = 10f;
     
     public static float earthFocusedShotRateRatio = 2f;
