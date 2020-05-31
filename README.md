@@ -78,13 +78,13 @@ We plan to create a website for our game. The website will include the game clie
 |6|Programming at home|20/5/20|2|2|Implemented player and enemy movement|
 |7|Programming at home|21/5/20|2|2|Implemented bullets|
 |8|Programming at home|22/5/20|2|2|Implemented health bars|
-|10|Refactoring code|23/5/20|0|1|-|
-|11|Refactoring code|25/5/20|0|1|-|
-|12|Programming at home|26/5/20|0|1|Added an EXP system|
-|13|Programming at home|27/5/20|0|1|Added an elemental system|
-|14|Mentor Meeting|27/5/20|0.5|0.5|Met with Prof Zhao to discuss our game ideas and receive feedback|
-|15|Programming at home|28/5/20|1|0|Modified the waves for demo|
-|16|Programming at home|30/5/20|3|3|Modified player shot patters <br> Modified Main Menu UI|
+|9|Refactoring code|23/5/20|0|1|-|
+|10|Refactoring code|25/5/20|0|1|-|
+|11|Programming at home|26/5/20|0|1|Added an EXP system|
+|12|Programming at home|27/5/20|0|1|Added an elemental system|
+|13|Mentor Meeting|27/5/20|0.5|0.5|Met with Prof Zhao to discuss our game ideas and receive feedback|
+|14|Programming at home|28/5/20|1|0|Modified the waves for demo|
+|15|Programming at home|30/5/20|3|3|Modified player shot patters <br> Modified Main Menu UI|
 
 ## Link to GDD
 https://docs.google.com/document/d/1xsbC9BXN0kCata-k_R-Pm64Y5zuUKliexnhEEttQlng/edit?usp=sharing
