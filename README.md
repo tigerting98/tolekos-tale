@@ -20,7 +20,8 @@ We hope to make a fun bullet hell game where people of all skill levels can enjo
 ## Project Scope
 
 The project is focused on developing a 2D bullet hell game. A possible extension that we are looking into is to create a website to host the game client as well as scoreboard.
-Detailed Gameplay Features
+
+## Detailed Gameplay Features
 
 ### 1. Player and Enemy Health
 Enemies will have a certain amount of **Hitpoints (HP)** and different projectiles will carry different damage values. The player character will also have HP, which can be upgraded through the course of the game. When the player character is hit by enemy bullets, he will lose some of his HP. **When the player’s HP reaches 0 (zero), the game ends**. 
