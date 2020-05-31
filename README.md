@@ -83,7 +83,7 @@ We plan to create a website for our game. The website will include the game clie
 |11|Programming at home|26/5/20|0|1|Added an EXP system|
 |12|Programming at home|27/5/20|0|1|Added an elemental system|
 |13|Mentor Meeting|27/5/20|0.5|0.5|Met with Prof Zhao to discuss our game ideas and receive feedback|
-|14|Programming at home|28/5/20|1|0|Modified the waves for demo|
+|14|Programming at home|28/5/20|0|1|Modified the waves for demo|
 |15|Programming at home|30/5/20|3|3|Modified player shot patters <br> Modified Main Menu UI|
 
 ## Link to GDD
