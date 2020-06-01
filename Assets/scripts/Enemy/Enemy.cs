@@ -20,8 +20,9 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         GameManager.enemies.Add(gameObject.GetInstanceID(), gameObject);
+        movement.SetDestroyWhenOut(false);
     }
-
+    
     private void OnDestroy()
     {
         GameManager.enemies.Remove(gameObject.GetInstanceID());

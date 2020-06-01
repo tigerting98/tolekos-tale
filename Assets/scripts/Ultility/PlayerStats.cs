@@ -21,9 +21,17 @@ public class PlayerStats : MonoBehaviour
     
     public static float earthFocusedShotRateRatio = 2f;
     public static float baseShotRate = 0.1f;
-
+    public static int gold = 0;
     public static event Action OnGainExp;
-
+    public static event Action OnGainGold;
+    public static void AddGold(int gold) {
+        PlayerStats.gold += gold;
+        OnGainGold?.Invoke();
+    }
+    public static void ReduceGold(int gold)
+    {
+        PlayerStats.gold -= gold;
+    }
     public static void GainEXP(int gainedEXP)
     {
 
@@ -46,6 +54,7 @@ public class PlayerStats : MonoBehaviour
         expToLevelUp = expFormula(1);
         damage =baseDmg;
         playerMaxHP = baseMaxHP;
+        gold = 0;
     }
     public static void LevelUp()
     {

@@ -379,6 +379,33 @@ PrefabInstance:
       objectReference: {fileID: 1185564232}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c682f97637a263f42bfab3aaa44eac6a, type: 3}
+--- !u!1 &360895435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6013592291034252767, guid: b4d38132fc0a3e846b7c4471b230a92a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1390244601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &360895438
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360895435}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &623450116 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6110701852610905597, guid: 5e5fb0385e7694445aaa9a7be31f33a0,
@@ -662,11 +689,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3238915398699881123, guid: b4d38132fc0a3e846b7c4471b230a92a,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.5647059
-      objectReference: {fileID: 0}
     - target: {fileID: 5371489841129551018, guid: b4d38132fc0a3e846b7c4471b230a92a,
         type: 3}
       propertyPath: m_LocalPosition.x

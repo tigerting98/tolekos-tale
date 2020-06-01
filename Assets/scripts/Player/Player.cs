@@ -220,11 +220,18 @@ public class Player : MonoBehaviour
         CheckFocus();
         Move();
         CheckFiring();
+        CheckPointOfCollection();
         GameManager.playerPosition = transform.position;
 
        
     }
 
+    public void CheckPointOfCollection() {
+        if (transform.position.y > 2) {
+            GameManager.CollectEverything();
+        }
+    
+    }
   
     
    

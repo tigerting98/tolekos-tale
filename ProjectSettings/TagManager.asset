@@ -18,8 +18,8 @@ TagManager:
   - Player bullet
   - Enemy
   - Enemy bullet
-  - 
-  - 
+  - Collectible
+  - Collectible Hitbox
   - 
   - 
   - 

@@ -16,13 +16,21 @@ public class GameManager : MonoBehaviour
 
     public static Hashtable enemies = new Hashtable();
 
+    public static Hashtable collectibles = new Hashtable();
+
     public static event Action<bool> OnGameover;
 
     public static void InvokeGameOverEvent( bool victory) {
         OnGameover?.Invoke(victory);
     
     }
+
+    public static void CollectEverything() {
+        foreach (GameObject collectible in collectibles.Values) {
+            collectible.GetComponent<Movement>().Homing(player.gameObject, 5f);
+        }
     
+    }
     
 
 

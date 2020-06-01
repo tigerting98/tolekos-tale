@@ -27,7 +27,13 @@ public class Movement : MonoBehaviour
         graph = time => vel;
         ResetTimer();
     }
+    public void SetAcceleration(Vector2 initialVel, Func<float, Vector2> graph) {
+        mode = MovementMode.Acceleration;
+        currentVelocity = initialVel;
+        this.graph = graph;
+        ResetTimer();
 
+    }
     public void Homing(GameObject tar, float spd) {
         mode = MovementMode.Homing;
         target = tar;
@@ -145,7 +151,7 @@ public class Movement : MonoBehaviour
     {
 
 
-        if (transform.position.x < -6 || transform.position.x > 6 || transform.position.y < -6 || transform.position.y > 6)
+        if (transform.position.x < -4.5 || transform.position.x > 4.5 || transform.position.y < -4.5 || transform.position.y > 4.5)
         {
             Destroy(gameObject);
         }

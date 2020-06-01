@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,8 +14,9 @@ public class Death : MonoBehaviour
   
 
     [Range(0,1)][SerializeField] float deathVolume = 0.7f;
+    public event Action OnDeath;
 
-
+    
     private void Update()
     {
         if (hp.ZeroHP() && canDie)
@@ -24,6 +26,7 @@ public class Death : MonoBehaviour
     }
     public virtual void Die()
     {
+        OnDeath?.Invoke();
         PlayerStats.GainEXP(this.experience);
         GameObject exp = Instantiate(explosion, transform.position, Quaternion.identity);
         AudioSource.PlayClipAtPoint(deathSFX, GameManager.mainCamera.transform.position, deathVolume);

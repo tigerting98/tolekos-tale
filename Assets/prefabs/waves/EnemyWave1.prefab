@@ -59,4 +59,3 @@ MonoBehaviour:
   number: 5
   spawnRate: 0.5
   bulletSpeed: 3
-  shotLines: 1

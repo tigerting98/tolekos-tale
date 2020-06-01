@@ -30,6 +30,53 @@ PolygonCollider2D:
       - {x: 0.6499886, y: 0.3176515}
       - {x: 1.4223323, y: 0.53236556}
       - {x: 1.4400468, y: -0.6331959}
+--- !u!1 &6013592291034252767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 111255944235965247}
+  - component: {fileID: 9157249482584960020}
+  m_Layer: 13
+  m_Name: CollectibleHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &111255944235965247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013592291034252767}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5371489841129551018}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &9157249482584960020
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013592291034252767}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.15832722, y: 1.4257097}
+  serializedVersion: 2
+  m_Radius: 2.0837975
 --- !u!1 &6682898238167598175
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,6 +114,7 @@ Transform:
   - {fileID: 7963614063382368396}
   - {fileID: 1091604003831772142}
   - {fileID: 3238915398699881124}
+  - {fileID: 111255944235965247}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -132,10 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08d2a6bc855c524b8c3536088057049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotRate: 0.1
   bulletSpeed: 20
-  speed: 7
-  focusRatio: 0.2
+  speed: 5
+  focusRatio: 0.25
   xPadding: 0.3
   yPadding: 0.4
   hitbox: {fileID: 7985819461488737577}
@@ -442,6 +489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868387594631810939, guid: c08de84ff1e88da4f977012a1373d3ad,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.5647059
       objectReference: {fileID: 0}
     - target: {fileID: 8868387594631810940, guid: c08de84ff1e88da4f977012a1373d3ad,
         type: 3}
