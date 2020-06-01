@@ -4,28 +4,34 @@ using UnityEngine;
 public class DamageTaker : MonoBehaviour
 {
     [SerializeField] Health health = default;
+    public bool vulnerable = true;
     public float FireMultiplier = 1;
     public float WaterMultiplier = 1;
     public float EarthMultiplier = 1;
     public float PureMultiplier = 1;
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-
-        DamageDealer dmg = collision.GetComponent<DamageDealer>();
-        if (dmg != null && !dmg.DamageOverTime())
+        if (vulnerable)
         {
-            health.TakeDamage(GetDamage(dmg));
-            if (dmg.DestroyOnImpact())
-            { Destroy(collision.gameObject); }
+            DamageDealer dmg = collision.GetComponent<DamageDealer>();
+            if (dmg != null && !dmg.DamageOverTime())
+            {
+                health.TakeDamage(GetDamage(dmg));
+                if (dmg.DestroyOnImpact())
+                { Destroy(collision.gameObject); }
+            }
         }
     }
 
     public virtual void OnTriggerStay2D(Collider2D collision)
     {
-        DamageDealer dmg = collision.GetComponent<DamageDealer>();
-        if (dmg != null && dmg.DamageOverTime())
+        if (vulnerable)
         {
-            health.TakeDamage(GetDamage(dmg) * Time.deltaTime);
+            DamageDealer dmg = collision.GetComponent<DamageDealer>();
+            if (dmg != null && dmg.DamageOverTime())
+            {
+                health.TakeDamage(GetDamage(dmg) * Time.deltaTime);
+            }
         }
     }
 

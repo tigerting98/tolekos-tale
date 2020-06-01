@@ -12,6 +12,37 @@ PrefabInstance:
       propertyPath: m_Text
       value: Toleko
       objectReference: {fileID: 0}
+    - target: {fileID: 438698084803106439, guid: 8f94476cc49edd74bbfc94b715aead11,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 438698084803106439, guid: 8f94476cc49edd74bbfc94b715aead11,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 438698084803106439, guid: 8f94476cc49edd74bbfc94b715aead11,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 438698084803106439, guid: 8f94476cc49edd74bbfc94b715aead11,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f6512e9d3bf025945acbc045b5e77fc6,
+        type: 3}
+    - target: {fileID: 438698084803106439, guid: 8f94476cc49edd74bbfc94b715aead11,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 438698084803106439, guid: 8f94476cc49edd74bbfc94b715aead11,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3311493128422948756, guid: 8f94476cc49edd74bbfc94b715aead11,
         type: 3}
       propertyPath: m_Value
@@ -80,12 +111,12 @@ PrefabInstance:
     - target: {fileID: 3311493128422948762, guid: 8f94476cc49edd74bbfc94b715aead11,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.89
+      value: -0.8900757
       objectReference: {fileID: 0}
     - target: {fileID: 3311493128422948762, guid: 8f94476cc49edd74bbfc94b715aead11,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -260.24
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 3311493128422948762, guid: 8f94476cc49edd74bbfc94b715aead11,
         type: 3}
@@ -125,12 +156,18 @@ PrefabInstance:
     - target: {fileID: 3311493128422948762, guid: 8f94476cc49edd74bbfc94b715aead11,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0.80249345
       objectReference: {fileID: 0}
     - target: {fileID: 3311493128422948763, guid: 8f94476cc49edd74bbfc94b715aead11,
         type: 3}
       propertyPath: m_Name
       value: PlayerHealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 3311493129153039512, guid: 8f94476cc49edd74bbfc94b715aead11,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: db69c64db69b75a48800f370d45096ea,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f94476cc49edd74bbfc94b715aead11, type: 3}

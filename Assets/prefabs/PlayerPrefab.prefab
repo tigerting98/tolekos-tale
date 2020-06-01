@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 111255944235965247}
   - component: {fileID: 9157249482584960020}
+  - component: {fileID: 360895438}
   m_Layer: 13
   m_Name: CollectibleHitbox
   m_TagString: Untagged
@@ -77,6 +78,27 @@ CircleCollider2D:
   m_Offset: {x: 0.15832722, y: 1.4257097}
   serializedVersion: 2
   m_Radius: 2.0837975
+--- !u!50 &360895438
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013592291034252767}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6682898238167598175
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +115,8 @@ GameObject:
   - component: {fileID: 5947980067964757729}
   - component: {fileID: 8042909890113886862}
   - component: {fileID: 7000809232635550173}
+  - component: {fileID: -4043142195659186739}
+  - component: {fileID: 757407015530055014}
   m_Layer: 8
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -284,12 +308,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 5947980067964757729}
+  vulnerable: 1
   FireMultiplier: 1
   WaterMultiplier: 1
   EarthMultiplier: 1
   PureMultiplier: 1
   hitSound: {fileID: 8300000, guid: 47b3566d44ea9b94bbc961a855a4a6a6, type: 3}
   volume: 0.4
+--- !u!114 &-4043142195659186739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682898238167598175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56141b2ae0c011447b811097e89b6c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSpell: {fileID: 294125938, guid: a1b7f2d1f728ec84db40b2174e41d746, type: 3}
+  player: {fileID: 3044574860783211177}
+  animator: {fileID: 757407015530055014}
+  animationDelay: 0
+--- !u!95 &757407015530055014
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682898238167598175}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff90be15601bafc44b8ff049da48250b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7985819461488737577
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +501,7 @@ PrefabInstance:
     - target: {fileID: 682333303739211151, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3865249457352194298, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
@@ -488,7 +548,7 @@ PrefabInstance:
     - target: {fileID: 8868387594631810937, guid: c08de84ff1e88da4f977012a1373d3ad,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8868387594631810939, guid: c08de84ff1e88da4f977012a1373d3ad,
         type: 3}

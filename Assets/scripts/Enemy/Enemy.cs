@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     public Death deathEffects;
     public Movement movement;
     public Shooting shooting;
+    public DamageTaker damagetaker;
+    public Collider2D collider;
 
     // Start is called before the first frame update
 
@@ -28,7 +30,14 @@ public class Enemy : MonoBehaviour
         GameManager.enemies.Remove(gameObject.GetInstanceID());
     }
 
-
+    private void Start()
+    {
+        if (!collider) { 
+            collider = GetComponent<Collider2D>(); 
+        }
+        collider.enabled = false;
+        Hittable();
+    }
     public void SetSpeed(float speed) {
         moveSpeed = speed;
     }
@@ -45,7 +54,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        Hittable();
         
+    }
+
+    void Hittable() {
+        if (transform.position.x < 4.2 && transform.position.x > -4.2 && transform.position.y < 4.2 && transform.position.y > -4.2) {
+            collider.enabled = true;
+        }
+    
     }
 }

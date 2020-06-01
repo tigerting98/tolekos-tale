@@ -24,6 +24,14 @@ public class PlayerStats : MonoBehaviour
     public static int gold = 0;
     public static event Action OnGainExp;
     public static event Action OnGainGold;
+    public static event Action OnUseBomb;
+
+    public static int bombCount = 3;
+
+    public static void UseBomb() {
+        bombCount--;
+        OnUseBomb?.Invoke();
+    }
     public static void AddGold(int gold) {
         PlayerStats.gold += gold;
         OnGainGold?.Invoke();
@@ -55,6 +63,7 @@ public class PlayerStats : MonoBehaviour
         damage =baseDmg;
         playerMaxHP = baseMaxHP;
         gold = 0;
+        bombCount = 3;
     }
     public static void LevelUp()
     {
@@ -65,5 +74,22 @@ public class PlayerStats : MonoBehaviour
         playerMaxHP += maxHPGain;
         player.Level();
     }
+
+    public static void SetPlayerInvulnerable()
+    {
+        if (player)
+        {
+            player.gameObject.GetComponent<Collider2D>().enabled = false;
+        }
+    }
+
+    public static void SetPlayerVulnerable()
+    {
+        if (player)
+        {
+            player.gameObject.GetComponent<Collider2D>().enabled = true;
+        }
+    }
+
 
 }

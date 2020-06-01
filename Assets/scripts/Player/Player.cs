@@ -15,8 +15,8 @@ public class Player : MonoBehaviour
     [Range(0,10)] public float speed= 5f;
     [SerializeField] float focusRatio = 0.2f;
     [SerializeField] float xPadding= 0.4f, yPadding=0.4f;
-    [SerializeField] GameObject hitbox = default;
-    [SerializeField] DamageTaker damageTaker = default;
+    public GameObject hitbox = default;
+    public DamageTaker damageTaker = default;
     float xMin, xMax, yMin, yMax;
     bool isFireFocus = false, isFireUnfocus = false;
     public bool isFocus = false;
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     public Color water, earth, fire;
     public Bullet waterBullet, earthFocusBullet, earthUnfocusBullet;
     [SerializeField] Bullet fireFocus = default, fireUnfocus = default;
-
+    public event Action ActivateSpell;
 
     DamageType mode;
     // Start is called before the first frame update
@@ -115,6 +115,9 @@ public class Player : MonoBehaviour
             }
             SetDamageType();
 
+        }
+        if (Input.GetKeyDown(KeyCode.X)) {
+            ActivateSpell?.Invoke();
         }
     }
 
