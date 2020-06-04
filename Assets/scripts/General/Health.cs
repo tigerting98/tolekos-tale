@@ -8,10 +8,12 @@ public class Health : MonoBehaviour
 {
     public float maxHP = 1000;
     float currentHP;
-    
+    public event Action OnDeath;
+    public bool canDie = true;
+
     
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         currentHP = maxHP;
     }
@@ -19,7 +21,20 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     public void TakeDamage(float dmg) {
         currentHP -= dmg;
+        CheckDeath();
     }
+
+    public virtual void CheckDeath() {
+        if (ZeroHP()&&canDie) {
+            InvokeDeath();
+        }
+    }
+
+    public void InvokeDeath() {
+
+        OnDeath?.Invoke();
+    }
+
     public void Heal(float dmg)
 
     {

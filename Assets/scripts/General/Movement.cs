@@ -1,5 +1,4 @@
 ﻿using System;
-//using System.Numerics;
 using System.Transactions;
 using UnityEditor;
 using UnityEngine;
@@ -34,6 +33,12 @@ public class Movement : MonoBehaviour
         ResetTimer();
 
     }
+
+    public void AccelerateTowards(float acceleration, Vector2 end, float endSpeed) {
+        Vector2 direction = (end - (Vector2)transform.position).normalized;
+        Debug.Log(direction);
+        SetAcceleration(new Vector2(0, 0), t => t < endSpeed / acceleration ? direction * acceleration : new Vector2(0, 0));
+    }
     public void Homing(GameObject tar, float spd) {
         mode = MovementMode.Homing;
         target = tar;
@@ -61,6 +66,20 @@ public class Movement : MonoBehaviour
         mode = movementMode;
         graph = traj;
     
+    }
+
+    public void SetVelocityAndChangeAfter(Vector2 directionVector, float initialSpeed, float finalSpeed, float time) {
+        mode = MovementMode.Velocity;
+        ResetTimer();
+        Vector2 normalized = directionVector.normalized;
+        graph = t => t < time ? initialSpeed * normalized : finalSpeed * directionVector; 
+    }
+
+    public void MoveAndStopAfter(Vector2 velocity, float time) {
+        mode = MovementMode.Velocity;
+        ResetTimer();
+        graph = t => velocity;
+        StopMovingAfter(time);
     }
 
    

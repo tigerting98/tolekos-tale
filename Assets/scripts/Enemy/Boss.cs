@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss : Enemy
 {
     [SerializeField] new string name = "Boss";
     BossHealthBar bar;
-    void Start()
+    public BossHealth bosshealth;
+
+
+   
+    public override void Start()
     {
+        base.Start();
         bar = GameManager.bossHealthBar;
-        
-            
         bar.SetVisible();
         bar.SetTitle(name);
         bar.SetHealth(gameObject.GetComponent<Health>());
       
     }
 
+
     // Update is called once per frame
     void Update()
     {
         
     }
-    private void OnDestroy()
+    public override void OnDestroy()
     {
+        base.OnDestroy();
         if (bar) {
             bar.SetInvisible();
         }

@@ -9,6 +9,10 @@ public class DamageTaker : MonoBehaviour
     public float WaterMultiplier = 1;
     public float EarthMultiplier = 1;
     public float PureMultiplier = 1;
+    private void Awake()
+    {
+        health = health ? health : GetComponent<Health>();
+    }
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (vulnerable)

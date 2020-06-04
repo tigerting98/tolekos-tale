@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.Win32.SafeHandles;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,7 +18,22 @@ public class Patterns : MonoBehaviour
         return bul;
 
     }
-   
+    public static Bullet BurstShoot(Bullet bullet, Vector2 origin, float angle, float initialSpeed, float finalSpeed, float time)
+    {
+        Bullet bul = Instantiate(bullet, origin, Quaternion.identity);
+        bul.movement.SetVelocityAndChangeAfter(Quaternion.Euler(0, 0, angle) * new Vector2(1, 0), initialSpeed, finalSpeed, time);
+        return bul;
+    }
+
+    public static List<Bullet> ExplodingLine(Bullet bullet, Vector2 origin, float angle, float intialSpeed, float finalSpeed, int number, float minTime, float maxTime) {
+        List<Bullet> bullets = new List<Bullet>();
+        float diffTime = (maxTime - minTime) / (number - 1);
+        for (int i = 0; i < number; i++) {
+            bullets.Add(BurstShoot(bullet, origin, angle, intialSpeed, finalSpeed, minTime + diffTime * i));
+        }
+        return bullets;
+    }
+
 
     public static float AimAt(Vector2 shooter, Vector2 target)
     {
@@ -33,6 +49,16 @@ public class Patterns : MonoBehaviour
         }
         return bullets;
         
+    }
+    public static List<Bullet> ExplodingRingOfBullets(Bullet bullet, Vector2 origin, int number, float offset, float initialSpeed, float finalSpeed, float time)
+    {
+        List<Bullet> bullets = new List<Bullet>();
+        for (int i = 0; i < number; i++)   
+        {
+            bullets.Add(BurstShoot(bullet, origin, offset + i * 360 / number, initialSpeed, finalSpeed, time));
+        }
+        return bullets;
+
     }
 
     public static Bullet ShootSinTrajectory(Bullet bullet, Vector2 origin, float angle, float speed, float angularVelocity, float amp) {
@@ -70,11 +96,17 @@ public class Patterns : MonoBehaviour
         GameObject obj = null;
         float distance = Mathf.Infinity;
         foreach (GameObject item in GameManager.enemies.Values) {
-            float dist = ((Vector2)item.transform.position - origin).magnitude;
-            if (dist < distance) {
-                distance = dist;
-                obj = item;
-            
+            Vector2 pos = item.transform.position;
+            if (pos.x < 4.1 && pos.x > -4.1 && pos.y < 4.1 && pos.y > -4.1)
+            {
+                float dist = (pos - origin).magnitude;
+
+                if (dist < distance)
+                {
+                    distance = dist;
+                    obj = item;
+
+                }
             }
             
         }

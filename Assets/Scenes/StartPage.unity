@@ -862,6 +862,11 @@ PrefabInstance:
       propertyPath: m_Colors.m_PressedColor.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 180499855215087406, guid: e2f4ad6eee1145d44a93c42775a46178,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Stage1
+      objectReference: {fileID: 0}
     - target: {fileID: 180499855215087407, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
       propertyPath: m_Sprite
@@ -906,6 +911,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 0.62352943
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941424798605757238, guid: e2f4ad6eee1145d44a93c42775a46178,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Arrow up/down/left/right - movement
+
+        Z - Shoot
+
+        X -
+        Spell (Implemented default spell)
+
+        C - Change Shot Mode
+
+        Left
+        Shift - Slow down and make hitbox visible'
       objectReference: {fileID: 0}
     - target: {fileID: 5733843782204512269, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}

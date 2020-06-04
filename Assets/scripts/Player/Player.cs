@@ -30,8 +30,8 @@ public class Player : MonoBehaviour
     public Bullet waterBullet, earthFocusBullet, earthUnfocusBullet;
     [SerializeField] Bullet fireFocus = default, fireUnfocus = default;
     public event Action ActivateSpell;
-
-    DamageType mode;
+    public event Action ChangeMode;
+    public DamageType mode;
     // Start is called before the first frame update
 
     private void Awake()
@@ -114,6 +114,7 @@ public class Player : MonoBehaviour
                 mode = DamageType.Water;
             }
             SetDamageType();
+            ChangeMode?.Invoke();
 
         }
         if (Input.GetKeyDown(KeyCode.X)) {

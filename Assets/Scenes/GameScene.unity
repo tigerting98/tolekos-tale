@@ -396,7 +396,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803639197}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59aff7a11b8e56445bf77e45a576cb11, type: 3}
   m_Name: 
@@ -592,7 +592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1256385453
 Transform:
   m_ObjectHideFlags: 0
@@ -620,10 +620,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  waves:
-  - {fileID: 7044746377690088705, guid: c4e586825e71c1a41b2639bf5073a7a5, type: 3}
-  times:
-  - 0
+  wavesFirstHalf: []
+  timesFirstHalf: []
+  midBoss: {fileID: 0}
+  midBossTimer: 0
+  wavesSecondHalf: []
+  timesSecondHalf: []
 --- !u!1001 &1390244601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1271,6 +1273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010535816011449898, guid: 4e755bac2b7555e49b59cfa21b64e7a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4010535816011449903, guid: 4e755bac2b7555e49b59cfa21b64e7a0,
         type: 3}

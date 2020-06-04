@@ -17,13 +17,34 @@ public class EnemyPatterns : MonoBehaviour {
     }
 
 }
-public static IEnumerator ShootAtPlayer(Bullet bullet, Transform enemy, float speed, float shotRate)
+
+    public static IEnumerator ShootPattern(Action shot, float shotRate, Enemy enemy) {
+        while (true) {
+            shot();
+            if (enemy.spawnBulletAnimator)
+            {
+                enemy.spawnBulletAnimator.SetTrigger("Attack");
+                Debug.Log("boom");
+            }
+            yield return new WaitForSeconds(shotRate);
+        }
+
+    }
+
+    public static IEnumerator ExplodingLineAtPlayer(Bullet bullet, Enemy enemy, float intialSpeed, float finalSpeed, int number, float minTime, float maxTime, float shotRate)
+    {
+        return ShootPattern(() => Patterns.ExplodingLine(bullet, enemy.transform.position, Patterns.AimAt(enemy.transform.position, GameManager.playerPosition), intialSpeed, finalSpeed, number, minTime, maxTime), shotRate, enemy); 
+           
+    }
+    public static IEnumerator ShootAtPlayer(Bullet bullet, Transform enemy, float speed, float shotRate)
+
     {
         while (true)
         {
 
 
             Patterns.ShootStraight(bullet, enemy.position, Patterns.AimAt(enemy.position, GameManager.playerPosition), speed);
+
             yield return new WaitForSeconds(shotRate);
         }
 

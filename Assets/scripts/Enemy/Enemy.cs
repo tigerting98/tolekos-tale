@@ -16,21 +16,22 @@ public class Enemy : MonoBehaviour
     public Shooting shooting;
     public DamageTaker damagetaker;
     public Collider2D collider;
+    public Animator spawnBulletAnimator;
 
     // Start is called before the first frame update
 
-    private void Awake()
+    public virtual void Awake()
     {
         GameManager.enemies.Add(gameObject.GetInstanceID(), gameObject);
         movement.SetDestroyWhenOut(false);
     }
     
-    private void OnDestroy()
+    public virtual void OnDestroy()
     {
         GameManager.enemies.Remove(gameObject.GetInstanceID());
     }
 
-    private void Start()
+    public virtual void Start()
     {
         if (!collider) { 
             collider = GetComponent<Collider2D>(); 

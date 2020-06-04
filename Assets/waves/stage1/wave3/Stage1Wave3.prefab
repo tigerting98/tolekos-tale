@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4522323344577174238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5916288215380762352}
+  - component: {fileID: 3359563893340377122}
+  m_Layer: 0
+  m_Name: Stage1Wave3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5916288215380762352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27233347, y: 0.19923896, z: 0.9743871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3359563893340377122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff9fac20870732c4aa401ee114c035c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 5134524707559807227, guid: c16650f7f5799f441ac3b48ef7011d51, type: 3}
+  - {fileID: 401398465952111886, guid: 47dec3190297fc041af525ef7f0eeb73, type: 3}
+  - {fileID: 6829071142009845231, guid: 4c9eaebe0920ba049a553b8b928736aa, type: 3}
+  - {fileID: 3197002288320003842, guid: d6f71e1ce0476fa4791a88c516bc55e5, type: 3}
+  bullets: []
+  bulletPack: {fileID: 11400000, guid: 4c312970e0768b747ba817eff4a10225, type: 2}
+  bulletSpawnSound: {fileID: 8300000, guid: d078360dabd34564ba179e811669576d, type: 3}
+  audioVolume: 0.2
+  moveSpeed: 3
+  bottomY: 0
+  number: 10
+  spawnRate: 0.2
+  subWaveDelay: 2
+  finalDelay: 3
+  bulletCount: 15
+  initialSpeed: 10
+  finalSpeed: 1.5
+  shotRateMin: 2
+  shotRateMax: 3
+  minTime: 0
+  maxTime: 0.2
+  chanceofShooting: 0.8

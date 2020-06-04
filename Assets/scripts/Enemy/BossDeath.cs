@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class BossDeath : Death
 {
-    
+
     // Start is called before the first frame update
+
+    [SerializeField] bool endBoss = false;
     public override void Die()
     {
         base.Die();
-        GameManager.InvokeGameOverEvent(true);
+        if (endBoss)
+        {
+            GameManager.InvokeGameOverEvent(true);
+        }
     }
 
 

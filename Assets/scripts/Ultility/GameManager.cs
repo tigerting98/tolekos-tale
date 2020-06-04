@@ -15,24 +15,37 @@ public class GameManager : MonoBehaviour
     public static bool victory = false;
 
     public static Hashtable enemies = new Hashtable();
-
+    public static Hashtable enemyBullets = new Hashtable();
     public static Hashtable collectibles = new Hashtable();
 
     public static event Action<bool> OnGameover;
+    public static event Action OnBossLifeDepleted;
 
-    public static void InvokeGameOverEvent( bool victory) {
+    public static void InvokeGameOverEvent(bool victory) {
         OnGameover?.Invoke(victory);
-    
+
     }
 
     public static void CollectEverything() {
         foreach (GameObject collectible in collectibles.Values) {
             collectible.GetComponent<Movement>().Homing(player.gameObject, 5f);
         }
+
+    }
+
+    public static void BossLifeDepleted() {
+        OnBossLifeDepleted?.Invoke();
     
     }
 
-    
+
+    public static void DestoryAllEnemyBullets() {
+        foreach (GameObject obj in enemyBullets.Values) {
+            GameObject particleEffect = Instantiate(obj.GetComponent<Bullet>().explosion, obj.transform.position, Quaternion.identity);
+            Destroy(particleEffect, 1f);
+            Destroy(obj);
+        }
+    }
 
 
 

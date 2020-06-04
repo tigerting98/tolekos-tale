@@ -8,21 +8,25 @@ public class Death : MonoBehaviour
     [SerializeField] GameObject explosion = default;
     [SerializeField] AudioClip deathSFX = default;
     [SerializeField] Health hp = default;
-    [SerializeField] bool canDie = true;
+    public bool canDie = true;
     [SerializeField] int experience = 10;
 
-  
 
-    [Range(0,1)][SerializeField] float deathVolume = 0.7f;
+
+    [Range(0, 1)] [SerializeField] float deathVolume = 0.7f;
     public event Action OnDeath;
+    public event Action OnLifeDepleted;
 
-    
+    private void Awake()
+    {
+        hp = hp ? hp : GetComponent<Health>();
+        hp.OnDeath += Die;
+
+    }
+
     private void Update()
     {
-        if (hp.ZeroHP() && canDie)
-            {
-                Die();
-            }
+        
     }
     public virtual void Die()
     {
