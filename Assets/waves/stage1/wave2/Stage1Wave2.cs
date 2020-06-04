@@ -55,7 +55,7 @@ public class Stage1Wave2 : EnemyWave
             if (enemy) {
                 enemy.movement.StartMoving();
                 float newX = enemy.transform.position.x > 0 ? 4.5f: -4.5f;
-                Debug.Log(newX);
+
                 enemy.movement.AccelerateTowards(acceleration, new Vector2(newX, 4.5f), moveSpeed);
                 enemy.movement.SetDestroyWhenOut(true);
             }

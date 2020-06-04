@@ -36,7 +36,6 @@ public class Movement : MonoBehaviour
 
     public void AccelerateTowards(float acceleration, Vector2 end, float endSpeed) {
         Vector2 direction = (end - (Vector2)transform.position).normalized;
-        Debug.Log(direction);
         SetAcceleration(new Vector2(0, 0), t => t < endSpeed / acceleration ? direction * acceleration : new Vector2(0, 0));
     }
     public void Homing(GameObject tar, float spd) {

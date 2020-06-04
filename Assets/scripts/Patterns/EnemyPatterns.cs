@@ -24,7 +24,6 @@ public class EnemyPatterns : MonoBehaviour {
             if (enemy.spawnBulletAnimator)
             {
                 enemy.spawnBulletAnimator.SetTrigger("Attack");
-                Debug.Log("boom");
             }
             yield return new WaitForSeconds(shotRate);
         }
