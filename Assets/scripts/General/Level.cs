@@ -37,7 +37,6 @@ public class Level : MonoBehaviour
     }
 
     void AfterMidBoss() {
-        Debug.Log("Defeated");
         background.SetTrigger("StartMoving");
         for (int i = 0; i < wavesSecondHalf.Count; i++)
         {

@@ -199,6 +199,11 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.19215687
       objectReference: {fileID: 0}
+    - target: {fileID: 5418347704671878258, guid: ec5c627abaf5ad74988f1b9f49fd50b3,
+        type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5c627abaf5ad74988f1b9f49fd50b3, type: 3}
 --- !u!1001 &169093743
@@ -791,6 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176f17d871b920e409f5a389aeb5b90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 1957408849}
   timer: 0
   wavesFirstHalf: []
   timesFirstHalf: []
@@ -1233,6 +1239,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39887c597a63f3948a047f948fba12df, type: 3}
+--- !u!95 &1957408849 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 864717246149972829, guid: ec5c627abaf5ad74988f1b9f49fd50b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 103556580}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2005775009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,6 +1864,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -4008127955605949803, guid: 39cf8955cb2cfac4fae60a2839560160,
         type: 3}
+    - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
+        type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 1957408849}
     - target: {fileID: 7016885204452351669, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: m_Name
