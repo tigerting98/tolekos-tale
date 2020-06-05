@@ -21,7 +21,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     public void TakeDamage(float dmg) {
         currentHP -= dmg;
-        CheckDeath();
     }
 
     public virtual void CheckDeath() {
@@ -58,5 +57,9 @@ public class Health : MonoBehaviour
         return currentHP <= 0;
     }
 
-   
+    private void Update()
+    {
+        CheckDeath();
+    }
+
 }

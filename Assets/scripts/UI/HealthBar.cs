@@ -41,7 +41,7 @@ public class HealthBar : MonoBehaviour
         currentHP = hp.GetCurrentHP();
         lastKnownMax = hp.maxHP;
     }
-    void Update()
+    public virtual void Update()
     {
         lastKnownMax = health == null ? lastKnownMax : health.maxHP;
         currentHP = health == null ? 0 : health.GetCurrentHP();

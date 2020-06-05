@@ -16,6 +16,7 @@ public class Controller : MonoBehaviour
             Time.timeScale = 0;
             if (GameManager.player) {
                 GameManager.player.enabled = false;
+                GameManager.gameInput.enabled = false;
             }
             PauseMenu.gameObject.SetActive(true);
             gameObject.SetActive(false);

@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
 
     public static event Action<bool> OnGameover;
     public static event Action OnBossLifeDepleted;
+    public static event Action OnSummonBoss;
+    public static GamePlayerInput gameInput;
+    public static DialogueUI dialogueUI;
 
     public static void InvokeGameOverEvent(bool victory) {
         OnGameover?.Invoke(victory);
@@ -47,6 +50,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public static void SummonBoss() {
+        OnSummonBoss?.Invoke();
+    }
 
 
 }

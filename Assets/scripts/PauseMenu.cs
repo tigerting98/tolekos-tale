@@ -48,7 +48,9 @@ public class PauseMenu : MonoBehaviour
         gameObject.SetActive(false);
         if (GameManager.player) {
             GameManager.player.enabled = true;
+            
         }
+        GameManager.gameInput.enabled = true;
         controller.gameObject.SetActive(true);
     }
     public void Quit()

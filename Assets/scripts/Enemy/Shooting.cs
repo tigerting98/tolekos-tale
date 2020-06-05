@@ -1,12 +1,40 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+
     public Coroutine StartShooting(IEnumerator pattern) {
         Coroutine firing = StartCoroutine(pattern);
         return firing;
+    }
+
+    public Coroutine ShootWhenInBound(IEnumerator pattern, float checkInterval = 0.1f) {
+        return StartCoroutine(ShootInBound(pattern, checkInterval));
+    }
+
+    public IEnumerator ShootInBound(IEnumerator pattern, float checkInterval) {
+        bool shooting = false;
+        Coroutine firing = null;
+        while (!shooting) {
+            if (InBound()) {
+                shooting = true;
+                firing = StartCoroutine(pattern);
+            }
+            yield return new WaitForSeconds(checkInterval);
+        
+        }
+        while (shooting) {
+            if (!InBound()) {
+                shooting = false;
+                StopCoroutine(firing);
+            }
+            yield return new WaitForSeconds(checkInterval);
+        
+        }
+    
     }
 
     public Coroutine PlayAudio(AudioClip clip, float interval, float volume, float start) {
@@ -45,6 +73,10 @@ public class Shooting : MonoBehaviour
             yield return new WaitForSeconds(interval);
         }
     }
-   
 
+    public bool InBound() {
+        return transform.position.x < 4 && transform.position.x > -4 && transform.position.y > -4 && transform.position.y > -4;
+
+
+    }
 }

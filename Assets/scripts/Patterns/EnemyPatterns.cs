@@ -84,6 +84,10 @@ public class EnemyPatterns : MonoBehaviour {
 
 
     }
+    public static IEnumerator PulsingBulletsRandomAngle(Bullet bullet, Enemy enemy, float speed, float shotRate, int lines) {
+        return ShootPattern(() => Patterns.RingOfBullets(bullet, enemy.transform.position, lines, UnityEngine.Random.Range(0f, 360f), speed),
+            shotRate, enemy);
+    }
 
     public static IEnumerator PulsingBulletsRandom(List<Bullet> bullets, Transform enemy, float speed, float shotRate, int lines)
     {

@@ -6,7 +6,7 @@ using UnityEngine.Assertions;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] Animator background;
+    [SerializeField] Animator background = default;
     [HideInInspector] public float timer = 0;
     [Header("Before MidBoss")]
     public List<EnemyWave> wavesFirstHalf;
@@ -17,6 +17,7 @@ public class Level : MonoBehaviour
     [Header("After MidBoss")]
     public List<EnemyWave> wavesSecondHalf;
     public List<float> timesSecondHalf;
+    public Stage1EndBoss endBoss;
 
     void Start()
     {
@@ -33,7 +34,7 @@ public class Level : MonoBehaviour
         StartCoroutine(SpawnMidBoss(boss, midBossTimer));
         
         boss.OnDefeat += AfterMidBoss; }
-
+        GameManager.OnSummonBoss += FinalBoss;
     }
 
     void AfterMidBoss() {
@@ -44,6 +45,16 @@ public class Level : MonoBehaviour
             StartCoroutine(SpawnWaveAfter(wave, timesSecondHalf[i]));
         }
 
+    }
+
+    void FinalBoss() {
+        Debug.Log("SUmmoned");
+        if (endBoss)
+        {
+            Debug.Log("instant");
+            Stage1EndBoss boss = Instantiate(endBoss);
+            StartCoroutine(SpawnWaveAfter(boss, 0));
+        }
     }
     // Update is called once per frame
     void Update()

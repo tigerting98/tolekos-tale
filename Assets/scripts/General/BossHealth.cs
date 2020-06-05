@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class BossHealth : Health
 {
-    public int numberOfLifes = 1;
-    int currentLife = 1;
+    [HideInInspector]public int numberOfLifes = 1;
+    [HideInInspector] public int numberOfLifesLeft = 1;
     public List<float> listOfHp;
 
     public event Action OnLifeDepleted;
@@ -14,20 +14,22 @@ public class BossHealth : Health
     {
         canDie = false;
         maxHP = listOfHp[0];
+        numberOfLifes = listOfHp.Count;
+        numberOfLifesLeft = listOfHp.Count;
     }
 
     public override void CheckDeath() {
         if (ZeroHP())
         {
             OnLifeDepleted?.Invoke();
-            if (currentLife == numberOfLifes)
+            numberOfLifesLeft--;
+            if (numberOfLifesLeft == 0)
             {
                 InvokeDeath();
             }
             else {
-                currentLife++;
-                
-                maxHP = listOfHp[currentLife - 1];
+
+                maxHP = listOfHp[numberOfLifes - numberOfLifesLeft];
                 ResetHP();
             }
         }

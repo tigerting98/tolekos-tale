@@ -17,6 +17,7 @@ public class Boss : Enemy
         bar.SetVisible();
         bar.SetTitle(name);
         bar.SetHealth(gameObject.GetComponent<Health>());
+        bar.bosshealth = bosshealth;
       
     }
 

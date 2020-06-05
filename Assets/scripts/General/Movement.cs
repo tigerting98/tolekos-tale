@@ -158,8 +158,10 @@ public class Movement : MonoBehaviour
             transform.position += (Vector3)currentVelocity * Time.deltaTime;
             if (destroyWhenOut)
             { OutOfBound(); }
+            HardOutOfBound();
+
         }
-        
+       
 
     }
 
@@ -175,5 +177,12 @@ public class Movement : MonoBehaviour
         }
     }
 
+    public void HardOutOfBound() {
+        if (transform.position.x < -10 || transform.position.x > 10 || transform.position.y < -10 || transform.position.y > 10)
+        {
+            Destroy(gameObject);
+        }
+
+    }
 
 }
