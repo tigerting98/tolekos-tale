@@ -13,11 +13,7 @@ public class Boss : Enemy
     public override void Start()
     {
         base.Start();
-        bar = GameManager.bossHealthBar;
-        bar.SetVisible();
-        bar.SetTitle(name);
-        bar.SetHealth(gameObject.GetComponent<Health>());
-        bar.bosshealth = bosshealth;
+        
       
     }
 
@@ -27,11 +23,24 @@ public class Boss : Enemy
     {
         
     }
-    public override void OnDestroy()
+  
+    public override void OnEnable()
     {
-        base.OnDestroy();
-        if (bar) {
+        base.OnEnable();
+        bar = GameManager.bossHealthBar;
+        bar.SetVisible();
+        bar.SetTitle(name);
+        bar.SetHealth(gameObject.GetComponent<Health>());
+        bar.bosshealth = bosshealth;
+    }
+
+    public override void OnDisable()
+    {
+        base.OnDisable();
+        if (bar)
+        {
             bar.SetInvisible();
         }
     }
+
 }

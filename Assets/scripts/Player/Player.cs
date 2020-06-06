@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
         else {
             isFiring = false;
         }
-        if (Input.GetKeyDown(KeyCode.C)) {
+        if (Input.GetKeyDown(KeyCode.X)) {
             if (mode == DamageType.Water) {
                 mode = DamageType.Earth;
             }
@@ -117,7 +117,7 @@ public class Player : MonoBehaviour
             ChangeMode?.Invoke();
 
         }
-        if (Input.GetKeyDown(KeyCode.X)) {
+        if (Input.GetKeyDown(KeyCode.C)) {
             ActivateSpell?.Invoke();
         }
     }

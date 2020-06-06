@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
     public static GamePlayerInput gameInput;
     public static DialogueUI dialogueUI;
 
+    public static void PlaySFX(AudioClip clip, float volume) {
+        AudioSource.PlayClipAtPoint(clip, mainCamera.transform.position, volume);
+    
+    }
+
     public static void InvokeGameOverEvent(bool victory) {
         OnGameover?.Invoke(victory);
 

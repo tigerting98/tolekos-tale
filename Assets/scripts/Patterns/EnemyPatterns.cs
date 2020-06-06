@@ -164,4 +164,19 @@ public class EnemyPatterns : MonoBehaviour {
 
 
     }
+    public static IEnumerator ConePattern(Bullet bullet, Enemy spawner, float angle, float speed, float spawnRate, float number, float spacing)
+    {
+        for (int i = 0; i < number; i++)
+        {
+            Vector2 start = spawner.transform.position - Quaternion.Euler(0, 0, angle) * new Vector2(0, (spacing * i) / 2);
+            for (int j = 0; j < i + 1; j++)
+            {
+                Bullet bul = Instantiate(bullet, start + (Vector2)(Quaternion.Euler(0, 0, angle) * new Vector2(0, spacing * j)), Quaternion.identity);
+                bul.movement.SetSpeed(Quaternion.Euler(0, 0, angle) * new Vector2(speed, 0));
+            }
+            yield return new WaitForSeconds(spawnRate);
+        }
+
+
+    }
 }

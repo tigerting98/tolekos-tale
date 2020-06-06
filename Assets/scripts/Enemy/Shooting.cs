@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-
     public Coroutine StartShooting(IEnumerator pattern) {
         Coroutine firing = StartCoroutine(pattern);
+  
         return firing;
     }
 
     public Coroutine ShootWhenInBound(IEnumerator pattern, float checkInterval = 0.1f) {
-        return StartCoroutine(ShootInBound(pattern, checkInterval));
+        Coroutine firing = StartCoroutine(ShootInBound(pattern, checkInterval));
+;
+        return firing;
     }
 
     public IEnumerator ShootInBound(IEnumerator pattern, float checkInterval) {
@@ -22,6 +24,7 @@ public class Shooting : MonoBehaviour
             if (InBound()) {
                 shooting = true;
                 firing = StartCoroutine(pattern);
+
             }
             yield return new WaitForSeconds(checkInterval);
         
@@ -30,6 +33,7 @@ public class Shooting : MonoBehaviour
             if (!InBound()) {
                 shooting = false;
                 StopCoroutine(firing);
+   
             }
             yield return new WaitForSeconds(checkInterval);
         

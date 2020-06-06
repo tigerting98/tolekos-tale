@@ -22,14 +22,19 @@ public class Enemy : MonoBehaviour
 
     public virtual void Awake()
     {
-        GameManager.enemies.Add(gameObject.GetInstanceID(), gameObject);
+        
         movement.SetDestroyWhenOut(false);
     }
-    
-    public virtual void OnDestroy()
+    public virtual void OnDisable()
     {
         GameManager.enemies.Remove(gameObject.GetInstanceID());
     }
+    public virtual void OnEnable()
+    {
+        GameManager.enemies.Add(gameObject.GetInstanceID(), gameObject);
+      
+    }
+
 
     public virtual void Start()
     {

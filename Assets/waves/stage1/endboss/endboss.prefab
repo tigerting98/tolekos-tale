@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &5814461024284388876
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854411803021120833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c984330e6851226409c00099a6d0c0d4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &2355796656174008777
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854411803021120833}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.013168901, y: -0.0065844655}
+  m_Size: {x: 0.6049325, y: 1.0131689}
+  m_Direction: 0
 --- !u!1001 &2735745613638390414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20,7 +55,12 @@ PrefabInstance:
     - target: {fileID: -4821386601786655032, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: name
-      value: A Minor Hindrance
+      value: The Mighty Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: -4821386601786655032, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: collider
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -30,7 +70,7 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[0]
-      value: 300
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -40,7 +80,7 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[1]
-      value: 400
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -50,7 +90,7 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[2]
-      value: 500
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -71,6 +111,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: endboss
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: chanceToDropCoins
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: minGold
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -135,12 +185,17 @@ PrefabInstance:
     - target: {fileID: 5664283095083113196, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: experience
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5664283095083113196, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: endBoss
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664283095083113196, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: deathVolume
+      value: 0.219
       objectReference: {fileID: 0}
     - target: {fileID: 6035025132276865919, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -163,15 +218,22 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 957944301124248136, guid: accf02acb6bfae242b167b6bda0e8e8e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: accf02acb6bfae242b167b6bda0e8e8e, type: 3}
+--- !u!1 &854411803021120833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3327079468212045775, guid: accf02acb6bfae242b167b6bda0e8e8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2735745613638390414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &9202890681366198299 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
     type: 3}
   m_PrefabInstance: {fileID: 2735745613638390414}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 854411803021120833}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b6a88c0e39e3a0418b47f6401df6062, type: 3}

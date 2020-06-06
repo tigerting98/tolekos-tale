@@ -41,7 +41,7 @@ public class DialogueUI : MonoBehaviour
         gameObject.SetActive(true);
     }
     public void SetInactive() {
-        Debug.Log("inactive");
+
         leftImage.gameObject.SetActive(false);
         rightImage.gameObject.SetActive(false);
         gameObject.SetActive(false);

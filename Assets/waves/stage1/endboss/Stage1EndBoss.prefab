@@ -46,10 +46,54 @@ MonoBehaviour:
   enemies: []
   bullets: []
   bulletPack: {fileID: 0}
-  bulletSpawnSound: {fileID: 0}
-  audioVolume: 0
+  bulletSpawnSound: {fileID: 8300000, guid: be4d3706b25818147a4f2d51bee27807, type: 3}
+  audioVolume: 0.1
   background: {fileID: -9162131273511116121, guid: bbf1ec97531c67a4fb422744b1b8a8e7,
     type: 3}
   bossImage: {fileID: 0}
-  preBossFight: {fileID: 11400000, guid: ba2349c965a0de6438725b6fd43189ae, type: 2}
   theBoss: {fileID: 1792903561220353094, guid: 0c6fd512b0f90fe47a13203753d96cc4, type: 3}
+  preBossFight: {fileID: 11400000, guid: ba2349c965a0de6438725b6fd43189ae, type: 2}
+  midFightDialogue: {fileID: 11400000, guid: bc5387209a12d5043adab232250cc8f8, type: 2}
+  endFightDialogue: {fileID: 11400000, guid: f4a429c7a5636854e8330983014f9a78, type: 2}
+  lifeDepletedSound: {fileID: 8300000, guid: be4d3706b25818147a4f2d51bee27807, type: 3}
+  lifeDepletedVolume: 0.1
+  pattern1ConePack: {fileID: 11400000, guid: dc39e171c6e699345ab306b13e546b4c, type: 2}
+  pattern1SFX: {fileID: 8300000, guid: 8a0eaa0e857b1fe498c00c447be28f47, type: 3}
+  pattern1volume: 0.2
+  pattern1Number: 12
+  numberOfCone: 8
+  pattern1PulseRate: 1.5
+  pattern1SpawnRate: 0.05
+  pattern1Spacing: 0.15
+  pattern1Speed: 4
+  spellCardUI: {fileID: 1440613776595574203, guid: fbc60427d3170024288c8cb4b5ba2fa5,
+    type: 3}
+  namesOfSpellCards:
+  - Heaven's Judgement\n ~Heavenly Arrow Barrage~
+  - One For All\n~Ultimate States Of Smash~
+  pattern2IntroSound: {fileID: 8300000, guid: a59804d45dba649fdae4c0755f912f65, type: 3}
+  pattern2IntroSoundVolume: 0.4
+  arrowSpawnTimeMax: 0.12
+  arrowSpawnTimeMin: 0.07
+  maxSpeed: 5
+  minSpeed: 2
+  arrow: {fileID: 5901879662736442927, guid: 87f08c4007157814fac1e28576c5f6e9, type: 3}
+  moveSpeed: 2
+  maxY: 3.5
+  minY: 0.5
+  arrowSpeed: 1.5
+  shotRate: 1
+  explodingBullet: {fileID: 3074130419410500871, guid: 22af37041640a95438f0807ab9559167,
+    type: 3}
+  numberOfBulletsPattern3: 30
+  initialSpeedPattern3: 10
+  maxRadiusPattern3: 2
+  shortDelayPattern3: 0.15
+  finalSpeedPattern3: 2
+  pausetime: 2
+  tpSound: {fileID: 8300000, guid: b5ec15cc953ffb94a9cc18e4b7cfb1a8, type: 3}
+  smashSound: {fileID: 8300000, guid: 39c9c2827c4e4475286d0da6e5e76c5d, type: 3}
+  beforeSmashSound: {fileID: 8300000, guid: dd44fecb75653b1479656d553a5e07c0, type: 3}
+  tpSoundVolume: 0.4
+  smashSoundVolume: 0.4
+  beforeSmashSoundVolume: 0.4

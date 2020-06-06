@@ -73,6 +73,10 @@ public class Level : MonoBehaviour
 
         wave.SpawnWave();
     }
+    private void OnDestroy()
+    {
+        GameManager.OnSummonBoss -= FinalBoss;
+    }
 
-    
+
 }

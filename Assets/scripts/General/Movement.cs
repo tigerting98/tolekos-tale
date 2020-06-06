@@ -142,7 +142,7 @@ public class Movement : MonoBehaviour
             
             }
             else{
-                if (!target)
+                if (!target || !target.activeInHierarchy)
                 {
                     SetSpeed(currentVelocity);
                 }
