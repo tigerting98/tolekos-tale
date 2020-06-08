@@ -1,5 +1,66 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4821386601786655032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327079468212045775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6dd4eefcb8d594493474757143088d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  health: {fileID: -2720052727061517675}
+  deathEffects: {fileID: 5664283095083113196}
+  movement: {fileID: 4820367064947566620}
+  shooting: {fileID: 1491137777662742390}
+  damagetaker: {fileID: 232094586145697766}
+  collider: {fileID: 957944301124248136}
+  spawnBulletAnimator: {fileID: 6968570120323567185}
+  enemyAudio: {fileID: 0}
+  name: The Big Bad One
+  bosshealth: {fileID: -2720052727061517675}
+--- !u!114 &-2720052727061517675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327079468212045775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6a88c0e39e3a0418b47f6401df6062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 1000
+  canDie: 1
+  numberOfLifes: 2
+  numberOfLifesLeft: 1
+  listOfHp:
+  - 1000
+  - 1000
+--- !u!114 &5664283095083113196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327079468212045775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8acac9476ee4244a0974b66eb4d473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 3336134810705834303, guid: 0e13dd728200b1d46904544883449c64,
+    type: 3}
+  deathSound: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
+  hp: {fileID: 0}
+  canDie: 1
+  experience: 150
+  endBoss: 0
 --- !u!1 &2696318509942737689
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,66 +162,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-4821386601786655032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327079468212045775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf6dd4eefcb8d594493474757143088d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0
-  health: {fileID: -2720052727061517675}
-  deathEffects: {fileID: 5664283095083113196}
-  movement: {fileID: 4820367064947566620}
-  shooting: {fileID: 1491137777662742390}
-  damagetaker: {fileID: 232094586145697766}
-  collider: {fileID: 957944301124248136}
-  spawnBulletAnimator: {fileID: 6968570120323567185}
-  name: The Big Bad One
-  bosshealth: {fileID: -2720052727061517675}
---- !u!114 &-2720052727061517675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327079468212045775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b6a88c0e39e3a0418b47f6401df6062, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 1000
-  canDie: 1
-  numberOfLifes: 2
-  listOfHp:
-  - 1000
-  - 1000
---- !u!114 &5664283095083113196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327079468212045775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8acac9476ee4244a0974b66eb4d473, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 3336134810705834303, guid: 0e13dd728200b1d46904544883449c64,
-    type: 3}
-  deathSFX: {fileID: 8300000, guid: 968310ce46e332a4c832ce6bf6dd6d6a, type: 3}
-  hp: {fileID: 0}
-  canDie: 1
-  experience: 150
-  deathVolume: 0.075
-  endBoss: 0
 --- !u!1001 &957944300902104566
 PrefabInstance:
   m_ObjectHideFlags: 0

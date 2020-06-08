@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Spell : MonoBehaviour
 {
-    [SerializeField] AudioClip clip;
-    [SerializeField] float volume = 0.2f;
+ 
+    [SerializeField] SFX sfx;
     public float invulTimer;
     void Start()
     {
-        AudioSource.PlayClipAtPoint(clip, GameManager.mainCamera.transform.position, volume);
-        DestroyAfter(invulTimer + 2f);
+        sfx.PlayClip();
+        Invoke("DestroyBomb", invulTimer + 2f);
     }
 
-    IEnumerator DestroyAfter(float seconds) {
-        yield return new WaitForSeconds(seconds);
+    void DestroyBomb() {
+       
         Destroy(gameObject);
     
     }

@@ -17,12 +17,17 @@ public class Stage1EndBoss : EnemyWave
     [SerializeField] Dialogue endFightDialogue;
 
     [Header("Audio")]
-    [SerializeField] AudioClip lifeDepletedSound;
-    [SerializeField] float lifeDepletedVolume = 0.2f;
+    [SerializeField] SFX spellCardSFX;
+    [SerializeField] SFX pattern1SFX;
+    [SerializeField] SFX pattern2SFX;
+    [SerializeField] SFX pattern3smashSFX;
+    [SerializeField] SFX pattern3tpSFX;
+    [SerializeField] SFX lifeDepletedSFX;
+   
     [Header("Pattern1")]
     [SerializeField]
     BulletPack pattern1ConePack;
-    [SerializeField] AudioClip pattern1SFX;
+    [SerializeField] AudioClip pattern1S2FX;
     [SerializeField] float pattern1volume;
     [SerializeField]
     int pattern1Number = 5, numberOfCone = 5;
@@ -49,6 +54,9 @@ public class Stage1EndBoss : EnemyWave
     [SerializeField] int numberOfBulletsPattern3 = 30;
     [SerializeField] float initialSpeedPattern3 = 10f, maxRadiusPattern3 = 1f, shortDelayPattern3 = 0.2f, finalSpeedPattern3 = 2f;
     [SerializeField] float pausetime = 2f;
+    [SerializeField] Bullet explosion, punch;
+    [SerializeField] float punchSpeed = 2f;
+    [SerializeField] float explosionTime;
    [Header("Sound Effects")]
     [SerializeField] AudioClip tpSound, smashSound, beforeSmashSound;
     [SerializeField] float tpSoundVolume = 0.1f, smashSoundVolume = 0.1f, beforeSmashSoundVolume = 0.1f;
@@ -73,7 +81,7 @@ public class Stage1EndBoss : EnemyWave
     IEnumerator PreFight() {
         Movement bg = Instantiate(background, new Vector3(0, 8, 0.9f), Quaternion.identity);
         bossImage = bg.transform.Find("bossImage").gameObject;
-        bg.SetDestroyWhenOut(false);
+        bg.destroyBoundary = 10f;
         bg.SetSpeed(new Vector2(0, -0.8f));
         bg.StopMovingAfter(10);
         yield return new WaitForSeconds(12);
@@ -103,7 +111,7 @@ public class Stage1EndBoss : EnemyWave
 
     void StartPhase2() {
         SpellCardUI(namesOfSpellCards[0]);
-        AudioSource.PlayClipAtPoint(pattern2IntroSound, GameManager.mainCamera.transform.position, pattern2IntroSoundVolume);
+        spellCardSFX.PlayClip();
         Invoke("StartPattern2", 3f);
     }
     void StartPattern2() {
@@ -113,7 +121,8 @@ public class Stage1EndBoss : EnemyWave
         currentBoss.shooting.StartShootingAfter(RainOfArrows(), 0.3f);
         currentBoss.shooting.StartShootingAfter(MoveLeftAndRight(), 0.3f);
         currentBoss.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(arrow, currentBoss.transform, arrowSpeed, shotRate), 0.3f);
-        currentBoss.shooting.PlayAudio(pattern1SFX, shotRate, pattern1volume, 0.3f);
+        currentBoss.enemyAudio.PlayAudio(pattern2SFX, shotRate, 0.3f);
+  
     }
 
     void EndPhase2() {
@@ -125,13 +134,13 @@ public class Stage1EndBoss : EnemyWave
 
     void StartPhase3() {
         SpellCardUI(namesOfSpellCards[1]);
-        AudioSource.PlayClipAtPoint(pattern2IntroSound, GameManager.mainCamera.transform.position, pattern2IntroSoundVolume);
+        spellCardSFX.PlayClip();
         Invoke("StartPattern3", 3f);
     }
 
     void StartPattern3() {
         SwitchToBoss();
-        StartCoroutine(Pattern3());
+        Coroutine pattern3 = StartCoroutine(Pattern3());
         currentBoss.bosshealth.OnDeath += EndStage;
     }
 
@@ -153,30 +162,46 @@ public class Stage1EndBoss : EnemyWave
         Animator animator = currentBoss.gameObject.GetComponent<Animator>();
         while (animator) {
             animator.SetTrigger("Disappear");
-            GameManager.PlaySFX(tpSound, tpSoundVolume);
+            pattern3tpSFX.PlayClip();
             yield return new WaitForSeconds(1f);
-            currentBoss.transform.position = GameManager.playerPosition + new Vector2(0, 1f);
-            animator.SetTrigger("Appear");
-            GameManager.PlaySFX(beforeSmashSound, beforeSmashSoundVolume);
-            yield return new WaitForSeconds(1f);
-            SpawnPattern3Bullet();
-            GameManager.PlaySFX(smashSound, smashSoundVolume);
+            if (animator)
+            {
+                currentBoss.transform.position = GameManager.playerPosition + new Vector2(0, 1f);
+                animator.SetTrigger("Appear");
+            }
+            if (animator)
+            {
+                yield return new WaitForSeconds(0.8f);
+                Bullet punchbul = Instantiate(punch, currentBoss.transform.position, Quaternion.identity);
+                punchbul.movement.SetSpeed(new Vector2(0, -punchSpeed));
+                yield return new WaitForSeconds(1 / punchSpeed);
 
+
+                if (punchbul)
+                {
+                    Vector2 pos = punchbul.transform.position;
+                    Bullet explode = Instantiate(explosion, pos, Quaternion.identity);
+                    ExplodingAndBack(pos);
+                    Destroy(punchbul.gameObject);
+                    pattern3smashSFX.PlayClip();
+                   
+
+                }
+
+            }
             yield return new WaitForSeconds(pausetime);
         }
 
     }
 
-    void  SpawnPattern3Bullet() {
-        ExplodingAndBack();
-    
-    }
+ 
 
 
     IEnumerator Pattern1(Enemy enemy) {
-        enemy.shooting.PlayAudio(pattern1SFX, pattern1PulseRate, pattern1volume,0);
+  
         while (true) {
             float angle = UnityEngine.Random.Range(0f, 360f);
+            enemy.enemyAudio.PlayAudioTimes(pattern1SFX, pattern1SpawnRate, pattern1Number);
             for (int i = 0; i < numberOfCone; i++) {
                 enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(pattern1ConePack.GetBullet(0), enemy, angle + i * 360f / numberOfCone, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing));
             }
@@ -198,11 +223,11 @@ public class Stage1EndBoss : EnemyWave
     
     }
 
-    List<Bullet> ExplodingAndBack() {
+    List<Bullet> ExplodingAndBack(Vector2 pos) {
         List<Bullet> bullets = new List<Bullet>();
         for (int i = 0; i < numberOfBulletsPattern3; i++) {
-            Bullet bul = Instantiate(explodingBullet, (Vector2)currentBoss.transform.position - new Vector2(0, 1f), Quaternion.identity);
-            bul.movement.SetDestroyWhenOut(false);
+            Bullet bul = Instantiate(explodingBullet, pos, Quaternion.identity);
+            bul.movement.destroyBoundary = 6f;
             bul.movement.SetCustomGraph(t =>
             {
                 if (t < maxRadiusPattern3 / initialSpeedPattern3)
@@ -253,7 +278,7 @@ public class Stage1EndBoss : EnemyWave
     }
 
     void PlayLifeDepletedSound() {
-        AudioSource.PlayClipAtPoint(lifeDepletedSound, GameManager.mainCamera.transform.position, lifeDepletedVolume);
+        lifeDepletedSFX.PlayClip();
         
     }
 

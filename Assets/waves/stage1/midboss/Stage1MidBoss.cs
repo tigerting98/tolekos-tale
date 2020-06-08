@@ -23,8 +23,6 @@ public class Stage1MidBoss : EnemyWave
     [SerializeField] float spreadAngle;
     [SerializeField] float straightPulseTime;
     [SerializeField] float pauseTime;
-    [SerializeField] AudioClip straightSFX;
-    [SerializeField] float volume;
 
 
 
@@ -51,12 +49,12 @@ public class Stage1MidBoss : EnemyWave
             {
                 boss.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(balls.GetAllBullets(), boss.transform, ballSpeed, ballShotRate, ballNumber),
                   delay * i);
-                boss.shooting.PlayAudio(bulletSpawnSound, ballShotRate, audioVolume, delay * i);
+                boss.enemyAudio.PlayAudio(bulletSpawnSound, ballShotRate, delay * i);
             }
             while (true && boss) {
                 boss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(roundedBullets.GetBullet(UnityEngine.Random.Range(0, 4)), boss.transform,
                     straightSpeed, straightShotRate, spreadAngle, straightLines), 0, straightPulseTime);
-                AudioSource.PlayClipAtPoint(straightSFX, GameManager.mainCamera.transform.position, volume);
+                boss.enemyAudio.PlayAudioDuration(bulletSpawnSound, straightShotRate, straightPulseTime);
                 yield return new WaitForSeconds(pauseTime);
             }
         }

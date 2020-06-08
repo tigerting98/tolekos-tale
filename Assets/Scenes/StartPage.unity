@@ -469,9 +469,9 @@ PrefabInstance:
         Z - Shoot
 
         X -
-        Change Shot Mode
+        Spell (Implemented default spell)
 
-        C - Spell (Implemented default spell)
+        C - Change Shot Mode
 
         Left
         Shift - Slow down and make hitbox visible'

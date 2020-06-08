@@ -58,9 +58,12 @@ public class Player : MonoBehaviour
         health.ResetHP();
         SetDamageType();
         SetUpBoundary();
+        SetPlayerBulletDamage(PlayerStats.damage);
+  
 
     }
 
+   
     public void Level()
     {
         SetPlayerBulletDamage(PlayerStats.damage);
@@ -101,7 +104,7 @@ public class Player : MonoBehaviour
         else {
             isFiring = false;
         }
-        if (Input.GetKeyDown(KeyCode.X)) {
+        if (Input.GetKeyDown(KeyCode.C)) {
             if (mode == DamageType.Water) {
                 mode = DamageType.Earth;
             }
@@ -117,8 +120,8 @@ public class Player : MonoBehaviour
             ChangeMode?.Invoke();
 
         }
-        if (Input.GetKeyDown(KeyCode.C)) {
-            ActivateSpell?.Invoke();
+        if (Input.GetKeyDown(KeyCode.X)) {
+           ActivateSpell?.Invoke();
         }
     }
 

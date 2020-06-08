@@ -13,9 +13,9 @@ public class Movement : MonoBehaviour
     GameObject target;
     float homingSpeed;
     float time = 0;
-    bool destroyWhenOut = true;
     bool moving = true;
     MovementMode mode = MovementMode.Velocity;
+    public float destroyBoundary = 4.5f;
 
 
     // Start is called before the first frame update
@@ -105,9 +105,7 @@ public class Movement : MonoBehaviour
         graph = traj;
        
     }
-    public void SetDestroyWhenOut(bool bl) {
-        destroyWhenOut = bl;
-    }
+   
 
     public void RotateTrajectory(float angle) {
         graph = RotatePath(angle, graph);
@@ -156,10 +154,9 @@ public class Movement : MonoBehaviour
             
             time += Time.deltaTime;
             transform.position += (Vector3)currentVelocity * Time.deltaTime;
-            if (destroyWhenOut)
-            { OutOfBound(); }
-            HardOutOfBound();
-
+         
+            OutOfBound(); 
+           
         }
        
 
@@ -171,18 +168,12 @@ public class Movement : MonoBehaviour
     {
 
 
-        if (transform.position.x < -4.5 || transform.position.x > 4.5 || transform.position.y < -4.5 || transform.position.y > 4.5)
+        if (transform.position.x < -destroyBoundary || transform.position.x > destroyBoundary || transform.position.y < -destroyBoundary || transform.position.y > destroyBoundary)
         {
             Destroy(gameObject);
         }
     }
 
-    public void HardOutOfBound() {
-        if (transform.position.x < -10 || transform.position.x > 10 || transform.position.y < -10 || transform.position.y > 10)
-        {
-            Destroy(gameObject);
-        }
 
-    }
 
 }

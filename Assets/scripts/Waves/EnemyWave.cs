@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class EnemyWave : MonoBehaviour
@@ -8,9 +9,7 @@ public class EnemyWave : MonoBehaviour
     public List<Bullet> bullets = default;
     public BulletPack bulletPack = default;
     [Header("Audio")]
-    public AudioClip bulletSpawnSound = default;
-    public float audioVolume;
-
+    public SFX bulletSpawnSound = default;
     public virtual void SpawnWave() { }
 
     public void DestroyAfter(float sec) {

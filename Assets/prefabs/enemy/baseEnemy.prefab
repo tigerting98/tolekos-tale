@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 1041419548464534032}
   - component: {fileID: 1872046831142302336}
   - component: {fileID: 5521149633933701372}
+  - component: {fileID: -3013257962938568609}
   m_Layer: 10
   m_Name: baseEnemy
   m_TagString: Untagged
@@ -111,6 +112,7 @@ MonoBehaviour:
   damagetaker: {fileID: 1041419548464534032}
   collider: {fileID: 520085438}
   spawnBulletAnimator: {fileID: 7925799737585349543}
+  enemyAudio: {fileID: 0}
 --- !u!58 &520085438
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -124,9 +126,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0055594444}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.27207804
 --- !u!114 &-6793133753611469860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,11 +143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 3336134810705834303, guid: 0e13dd728200b1d46904544883449c64,
     type: 3}
-  deathSFX: {fileID: 8300000, guid: be4d3706b25818147a4f2d51bee27807, type: 3}
+  deathSound: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
   hp: {fileID: 468841648470341714}
   canDie: 1
   experience: 10
-  deathVolume: 0.041
 --- !u!114 &-7780461281535064715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +237,18 @@ MonoBehaviour:
   maxGold: 100
   minGold: 10
   coin: {fileID: 7094970196663169445, guid: 44e052c241147834c8f5af260bcdc767, type: 3}
+--- !u!114 &-3013257962938568609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551118086999079481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32aef5404f2a8149a7ca21e400a1e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8600933709386619661
 GameObject:
   m_ObjectHideFlags: 0

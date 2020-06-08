@@ -17,13 +17,18 @@ public class Enemy : MonoBehaviour
     public DamageTaker damagetaker;
     public Collider2D collider;
     public Animator spawnBulletAnimator;
+    public EnemyAudio enemyAudio;
 
     // Start is called before the first frame update
 
     public virtual void Awake()
     {
-        
-        movement.SetDestroyWhenOut(false);
+
+        movement.destroyBoundary = 10f;
+        if (!enemyAudio)
+        {
+            enemyAudio = GetComponent<EnemyAudio>();
+        }
     }
     public virtual void OnDisable()
     {
@@ -38,6 +43,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void Start()
     {
+        
         if (!collider) { 
             collider = GetComponent<Collider2D>(); 
         }

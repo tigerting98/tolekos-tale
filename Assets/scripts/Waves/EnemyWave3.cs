@@ -55,7 +55,7 @@ public class EnemyWave3 : EnemyWave
                     EnemyPatterns.ShootSine(bullets[0], enemy.transform, angle + spread, bulletSpeed, shotRate, angularVel, amp)
                     , 0, pulseTime);
 
-                AudioSource.PlayClipAtPoint(bulletSpawnSound, GameManager.mainCamera.transform.position, audioVolume);
+                //AudioSource.PlayClipAtPoint(bulletSpawnSound, GameManager.mainCamera.transform.position, audioVolume);
                 yield return new WaitForSeconds(pulseTime + pause);
             }
         }

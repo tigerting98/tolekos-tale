@@ -118,11 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb671b585364d3408dce1dcc7250dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: cf502ec0f1f29944db2b93ee54b67f87, type: 3}
+  collectSFX: {fileID: 11400000, guid: 7b9488e449eb84140aa6dd6445aaa4ce, type: 2}
   movement: {fileID: 6069761932101896273}
   initialSpeed: 2.5
   gravity: 1.5
-  volume: 0.15
 --- !u!114 &7094970196663169445
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -48,8 +48,7 @@ public class Stage1Wave4 : EnemyWave
     [SerializeField] float angle = 15f;
     [SerializeField] int lines = 1;
     [Header("Spawn Sound")]
-    [SerializeField] AudioClip clip;
-    [SerializeField] float volume2 = 0.1f;
+    [SerializeField] SFX tpSFX;
     public override void SpawnWave() {
         StartCoroutine(TheWave());
 
@@ -91,7 +90,7 @@ public class Stage1Wave4 : EnemyWave
         Vector2 pivot = new Vector2(Random.Range(centreminX, centremaxX), Random.Range(centreminY, centremaxY));
         Enemy enemy = Instantiate(enemies[0], spawnLocation, Quaternion.identity);
         enemy.movement.SetSpeed((pivot - spawnLocation).normalized * Random.Range(moveSpeedMin, moveSpeedMax));
-        enemy.movement.SetDestroyWhenOut(true);
+        enemy.movement.destroyBoundary = 4.5f;
         SetShooting(enemy);
 
     }
@@ -115,7 +114,7 @@ public class Stage1Wave4 : EnemyWave
     }
     IEnumerator enemy2(float x) {
         Enemy enemy = Instantiate(enemies[0], new Vector2(x, posY), Quaternion.identity);
-        AudioSource.PlayClipAtPoint(clip, GameManager.mainCamera.transform.position, volume2);
+        tpSFX.PlayClip();
         yield return new WaitForSeconds(delay);
         if (enemy)
         { enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(pack.GetBullet(0), enemy.transform, bulletSpeed2, shotRate2, angle, lines), 0, duration);

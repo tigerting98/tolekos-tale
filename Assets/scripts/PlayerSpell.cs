@@ -28,11 +28,13 @@ public class PlayerSpell : MonoBehaviour
     }
 
     IEnumerator Invul() {
+        player.ActivateSpell -= CastSpell;
         PlayerStats.SetPlayerInvulnerable();
         animator.SetBool("IsBlinking", true);
         yield return new WaitForSeconds(defaultSpell.invulTimer - animationDelay);
         animator.SetBool("IsBlinking", false);
         yield return new WaitForSeconds(animationDelay);
         PlayerStats.SetPlayerVulnerable();
+        player.ActivateSpell += CastSpell;
     }
 }

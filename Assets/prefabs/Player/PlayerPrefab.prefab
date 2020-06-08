@@ -10,7 +10,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -224,11 +224,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 590762784679042569, guid: 8155ae7c582b12e4a86b5fa38bcef9f6,
     type: 3}
-  deathSFX: {fileID: 8300000, guid: 660e54d2e8931754b86e902dcb5572bf, type: 3}
+  deathSound: {fileID: 11400000, guid: f8b97ce014f6c4d46b231e4a28a1c9b1, type: 2}
   hp: {fileID: 5947980067964757729}
   canDie: 1
   experience: 0
-  deathVolume: 0.14
 --- !u!114 &7000809232635550173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,8 +246,7 @@ MonoBehaviour:
   WaterMultiplier: 1
   EarthMultiplier: 1
   PureMultiplier: 1
-  hitSound: {fileID: 8300000, guid: 47b3566d44ea9b94bbc961a855a4a6a6, type: 3}
-  volume: 0.4
+  hitSFX: {fileID: 11400000, guid: 0041b074fc5417940b17f9d7c12af67f, type: 2}
 --- !u!114 &-4043142195659186739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: damageType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445993751460948539, guid: fb8ba1024095ab54bbd497ac2dac9966,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8ba1024095ab54bbd497ac2dac9966, type: 3}

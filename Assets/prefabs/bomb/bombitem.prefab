@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9365d50452930404692069df5df2c252, type: 3}
   volume: 0.2
+  sfx: {fileID: 11400000, guid: fe713228ce356cf4dabacebdbc80fb4b, type: 2}
   invulTimer: 4
 --- !u!1001 &2355443132054746675
 PrefabInstance:

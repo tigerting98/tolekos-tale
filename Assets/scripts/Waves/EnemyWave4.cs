@@ -56,7 +56,7 @@ public class EnemyWave4 : EnemyWave
                     float playerAngle = Patterns.AimAt(enemy.transform.position, GameManager.playerPosition);
                 enemy.shooting.StartShooting(EnemyPatterns.ShootLaserBeam(actualLaser, warningLaser, enemy.transform, playerAngle, warningTime, laserTime));
                     yield return new WaitForSeconds(warningTime);
-                    AudioSource.PlayClipAtPoint(bulletSpawnSound, GameManager.mainCamera.transform.position, audioVolume);
+                    //AudioSource.PlayClipAtPoint(bulletSpawnSound, GameManager.mainCamera.transform.position, audioVolume);
                     
                 }
             yield return new WaitForSeconds(laserTime + pause);

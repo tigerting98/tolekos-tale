@@ -46,8 +46,7 @@ MonoBehaviour:
   enemies: []
   bullets: []
   bulletPack: {fileID: 0}
-  bulletSpawnSound: {fileID: 8300000, guid: e27d92b6d30e8ea40a10f9839827e998, type: 3}
-  audioVolume: 0.1
+  bulletSpawnSound: {fileID: 11400000, guid: 1ae9de8bd4ea5e04884441c847e4f6ec, type: 2}
   movementSpeed: 5
   endY: 2
   bossEnemy: {fileID: 1792903561220353094, guid: 4e4612d5cfe5a9a41968e3289cd8357e,
@@ -65,5 +64,3 @@ MonoBehaviour:
   spreadAngle: 30
   straightPulseTime: 1
   pauseTime: 2
-  straightSFX: {fileID: 8300000, guid: d1847648cce924e44ae777a02630cb33, type: 3}
-  volume: 0.2

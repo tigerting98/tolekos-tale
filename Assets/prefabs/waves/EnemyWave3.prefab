@@ -48,8 +48,7 @@ MonoBehaviour:
   bullets:
   - {fileID: 7876142691989163037, guid: ac650eace4ff4c147a38f6a1fb127f6c, type: 3}
   bulletPack: {fileID: 0}
-  bulletSpawnSound: {fileID: 8300000, guid: bcf4e687d0381b140b7e33a30cf8399d, type: 3}
-  audioVolume: 0.05
+  bulletSpawnSound: {fileID: 11400000, guid: c254def07b7610d4192ae4bec424e8ee, type: 2}
   startY: 4.5
   endY: 3
   number: 10

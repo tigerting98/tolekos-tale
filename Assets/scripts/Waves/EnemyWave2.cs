@@ -45,7 +45,7 @@ public class EnemyWave2 : EnemyWave
         float time1 = enemy1.movement.MoveTo(stop, moveSpeed);
         enemy1.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(bulletPack.bullets, enemy1.transform, bulletSpeed, shotRate, lines), time1);
         StartCoroutine(MoveAwayAfter(enemy1, end, moveOutSpeed, spawnRate));
-        enemy1.shooting.PlayAudio(bulletSpawnSound, shotRate, audioVolume, time1);
+        //enemy1.shooting.PlayAudio(bulletSpawnSound, shotRate, audioVolume, time1);
         return time1;
     }
 

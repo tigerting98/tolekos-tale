@@ -50,8 +50,7 @@ MonoBehaviour:
   - {fileID: 3197002288320003842, guid: d6f71e1ce0476fa4791a88c516bc55e5, type: 3}
   bullets: []
   bulletPack: {fileID: 11400000, guid: 4c312970e0768b747ba817eff4a10225, type: 2}
-  bulletSpawnSound: {fileID: 8300000, guid: d078360dabd34564ba179e811669576d, type: 3}
-  audioVolume: 0.2
+  bulletSpawnSound: {fileID: 11400000, guid: c254def07b7610d4192ae4bec424e8ee, type: 2}
   moveSpeed: 3
   bottomY: 0
   number: 10

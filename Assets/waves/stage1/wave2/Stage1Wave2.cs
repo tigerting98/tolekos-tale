@@ -50,14 +50,14 @@ public class Stage1Wave2 : EnemyWave
             float angle = Patterns.AimAt(enemy.transform.position, GameManager.playerPosition);
             Patterns.ExplodingRingOfBullets(bulletPack.GetBullet(Random.Range(0, 3))
                 , enemy.transform.position, number, angle, initialSpeed, finalSpeed, burstRadius / initialSpeed) ;
-            AudioSource.PlayClipAtPoint(bulletSpawnSound, GameManager.mainCamera.transform.position, audioVolume);
+            enemy.enemyAudio.PlayAudioTimes(bulletSpawnSound, 0, 1);
             yield return new WaitForSeconds(stopTime);
             if (enemy) {
                 enemy.movement.StartMoving();
                 float newX = enemy.transform.position.x > 0 ? 4.5f: -4.5f;
 
                 enemy.movement.AccelerateTowards(acceleration, new Vector2(newX, 4.5f), moveSpeed);
-                enemy.movement.SetDestroyWhenOut(true);
+                enemy.movement.destroyBoundary = 4.2f;
             }
 
 

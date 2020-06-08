@@ -33,7 +33,7 @@ public class BossWave : EnemyWave
         for (int i = 0; i < number; i++)
         { enemy.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(circularPack.bullets, enemy.transform, bulletSpeed2, shotRate2, circleLines)
             , time + delay*i );
-            enemy.shooting.PlayAudio(bulletSpawnSound, shotRate2, audioVolume, delay * i);
+            //enemy.shooting.PlayAudio(bulletSpawnSound, shotRate2, audioVolume, delay * i);
         }
         yield return new WaitForSeconds(1);
         

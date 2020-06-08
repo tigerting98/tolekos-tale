@@ -6,14 +6,10 @@ using UnityEngine;
 public class Death : MonoBehaviour
 {
     [SerializeField] GameObject explosion = default;
-    [SerializeField] AudioClip deathSFX = default;
+    [SerializeField] SFX deathSound = default;
     [SerializeField] Health hp = default;
     public bool canDie = true;
     [SerializeField] int experience = 10;
-
-
-
-    [Range(0, 1)] [SerializeField] float deathVolume = 0.7f;
     public event Action OnDeath;
     public event Action OnLifeDepleted;
 
@@ -33,8 +29,7 @@ public class Death : MonoBehaviour
         OnDeath?.Invoke();
         PlayerStats.GainEXP(this.experience);
         GameObject exp = Instantiate(explosion, transform.position, Quaternion.identity);
-        AudioSource.PlayClipAtPoint(deathSFX, GameManager.mainCamera.transform.position, deathVolume);
-        
+        deathSound.PlayClip();
         Destroy(exp, 1f);
 
          Destroy(gameObject);

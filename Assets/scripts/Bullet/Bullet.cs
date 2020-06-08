@@ -18,6 +18,9 @@ public class Bullet : MonoBehaviour
             GameManager.enemyBullets.Add(gameObject.GetInstanceID(), gameObject);
         }
     }
+    public void DestroyBullet() {
+        Destroy(gameObject);
+    }
 
     private void OnDestroy()
     {

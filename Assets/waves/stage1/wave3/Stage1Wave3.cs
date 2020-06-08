@@ -73,7 +73,7 @@ public class Stage1Wave3 : EnemyWave
         {
             newEnemy.shooting.StartShootingAfter
               (EnemyPatterns.ExplodingLineAtPlayer(bullet, newEnemy, initialSpeed, finalSpeed, bulletCount, minTime, maxTime, shotRate), shotRate / 2);
-            newEnemy.shooting.PlayAudio(bulletSpawnSound, shotRate, audioVolume, shotRate / 2);
+            newEnemy.enemyAudio.PlayAudio(bulletSpawnSound, shotRate, shotRate / 2);
         }
         newEnemy.DestroyAfter(time);
 

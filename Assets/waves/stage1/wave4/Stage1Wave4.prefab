@@ -47,8 +47,7 @@ MonoBehaviour:
   - {fileID: 6330706413461039320, guid: 2433375df0e3c8c4eb9eca7c96ac474d, type: 3}
   bullets: []
   bulletPack: {fileID: 0}
-  bulletSpawnSound: {fileID: 8300000, guid: bcf4e687d0381b140b7e33a30cf8399d, type: 3}
-  audioVolume: 0.1
+  bulletSpawnSound: {fileID: 0}
   moveSpeedMin: 1
   moveSpeedMax: 4
   centreminX: -3
@@ -58,7 +57,7 @@ MonoBehaviour:
   minSpawnY: 0
   spawnRateMin: 0.5
   spawnRateMax: 1
-  number: 50
+  number: 1
   bullet1: {fileID: 11400000, guid: 27634bd64af986b45a203b15e8ab0dbe, type: 2}
   bullet2: {fileID: 11400000, guid: 544c8898407c2b243b80705ea5cb626f, type: 2}
   minLines: 2
@@ -79,5 +78,4 @@ MonoBehaviour:
   bulletSpeed2: 4
   angle: 15
   lines: 1
-  clip: {fileID: 8300000, guid: 7a2cd2f0b0479e6448b53306d70aed0f, type: 3}
-  volume2: 0.1
+  tpSFX: {fileID: 11400000, guid: 90c01456488d43c44864ddd83d5a7fbd, type: 2}

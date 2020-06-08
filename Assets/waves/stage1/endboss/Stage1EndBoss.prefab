@@ -46,8 +46,7 @@ MonoBehaviour:
   enemies: []
   bullets: []
   bulletPack: {fileID: 0}
-  bulletSpawnSound: {fileID: 8300000, guid: be4d3706b25818147a4f2d51bee27807, type: 3}
-  audioVolume: 0.1
+  bulletSpawnSound: {fileID: 0}
   background: {fileID: -9162131273511116121, guid: bbf1ec97531c67a4fb422744b1b8a8e7,
     type: 3}
   bossImage: {fileID: 0}
@@ -55,10 +54,14 @@ MonoBehaviour:
   preBossFight: {fileID: 11400000, guid: ba2349c965a0de6438725b6fd43189ae, type: 2}
   midFightDialogue: {fileID: 11400000, guid: bc5387209a12d5043adab232250cc8f8, type: 2}
   endFightDialogue: {fileID: 11400000, guid: f4a429c7a5636854e8330983014f9a78, type: 2}
-  lifeDepletedSound: {fileID: 8300000, guid: be4d3706b25818147a4f2d51bee27807, type: 3}
-  lifeDepletedVolume: 0.1
+  spellCardSFX: {fileID: 11400000, guid: 4c65c68c5d705c3459d529e81350beb9, type: 2}
+  pattern1SFX: {fileID: 11400000, guid: cacb82c8e502ed043afc6f42f574999b, type: 2}
+  pattern2SFX: {fileID: 11400000, guid: c254def07b7610d4192ae4bec424e8ee, type: 2}
+  pattern3smashSFX: {fileID: 11400000, guid: 32edd8a8667b3434186b14295e8dbe38, type: 2}
+  pattern3tpSFX: {fileID: 11400000, guid: dae60ebf79fe0cc499aa0608fbe8cf6d, type: 2}
+  lifeDepletedSFX: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
   pattern1ConePack: {fileID: 11400000, guid: dc39e171c6e699345ab306b13e546b4c, type: 2}
-  pattern1SFX: {fileID: 8300000, guid: 8a0eaa0e857b1fe498c00c447be28f47, type: 3}
+  pattern1S2FX: {fileID: 0}
   pattern1volume: 0.2
   pattern1Number: 12
   numberOfCone: 8
@@ -78,19 +81,24 @@ MonoBehaviour:
   maxSpeed: 5
   minSpeed: 2
   arrow: {fileID: 5901879662736442927, guid: 87f08c4007157814fac1e28576c5f6e9, type: 3}
-  moveSpeed: 2
+  moveSpeed: 0.5
   maxY: 3.5
   minY: 0.5
   arrowSpeed: 1.5
   shotRate: 1
   explodingBullet: {fileID: 3074130419410500871, guid: 22af37041640a95438f0807ab9559167,
     type: 3}
-  numberOfBulletsPattern3: 30
+  numberOfBulletsPattern3: 25
   initialSpeedPattern3: 10
-  maxRadiusPattern3: 2
+  maxRadiusPattern3: 1
   shortDelayPattern3: 0.15
   finalSpeedPattern3: 2
-  pausetime: 2
+  pausetime: 3
+  explosion: {fileID: 911972999547948889, guid: 9ecd7e71157ad364284fe4a6a2b0c127,
+    type: 3}
+  punch: {fileID: 911972999547948889, guid: 7a6f9c6c80d58864d9bec85e519acf80, type: 3}
+  punchSpeed: 2
+  explosionTime: 1
   tpSound: {fileID: 8300000, guid: b5ec15cc953ffb94a9cc18e4b7cfb1a8, type: 3}
   smashSound: {fileID: 8300000, guid: 39c9c2827c4e4475286d0da6e5e76c5d, type: 3}
   beforeSmashSound: {fileID: 8300000, guid: dd44fecb75653b1479656d553a5e07c0, type: 3}

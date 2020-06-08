@@ -19,7 +19,6 @@ public class DialogueUI : MonoBehaviour
     }
 
     public void ReceiveNewLine(Line line) {
-        Debug.Log("received");
         if (line.left)
         {
             leftImage.gameObject.SetActive(true);
