@@ -5,8 +5,11 @@ using TMPro;
 
 public class BossHealthBar : HealthBar
 {
-    [SerializeField] TextMeshProUGUI numberOfLifeText;
+    [SerializeField] GameObject lifeLocation;
+    [SerializeField] GameObject lifeImage;
     public BossHealth bosshealth;
+    List<GameObject> lifeImages = new List<GameObject>();
+    int numberOfLives = 0;
     private void Awake()
     {
         GameManager.bossHealthBar = this;
@@ -15,6 +18,30 @@ public class BossHealthBar : HealthBar
     public override void Update()
     {
         base.Update();
-        numberOfLifeText.text = "Lives: " + bosshealth.numberOfLifesLeft.ToString();
+        int newLifeCount = bosshealth.numberOfLifesLeft;
+        if (newLifeCount != numberOfLives) {
+            numberOfLives = newLifeCount;
+            Debug.Log(numberOfLives);
+            DrawLives();
+        }
+    }
+
+    public void DrawLives() {
+        for (int i = 0; i < lifeImages.Count; i++) {
+            lifeImages[i].SetActive(false);
+        }
+
+        for (int i = 0; i < numberOfLives; i++) {
+            if (i < lifeImages.Count)
+            {
+                lifeImages[i].SetActive(true);
+            }
+            else {
+                GameObject newLifeImage = Instantiate(lifeImage, lifeLocation.transform);
+                lifeImages.Add(newLifeImage);
+            }
+        
+        }
+    
     }
 }

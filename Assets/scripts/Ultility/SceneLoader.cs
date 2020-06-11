@@ -8,8 +8,16 @@ public class SceneLoader : MonoBehaviour
 {
 
     private void Awake()
-    {       
-        GameManager.sceneLoader = this;  
+    {
+        if (GameManager.sceneLoader == null)
+        {
+            GameManager.sceneLoader = this;
+            DontDestroyOnLoad(this.gameObject);
+
+        }
+        else {
+            Destroy(this.gameObject);
+        }
         
     }
     private void Start()
@@ -36,7 +44,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(str);
     }
 
+    public void LoadShopScene(LevelDescription levelDescription) {
+        GameManager.levelDescription = levelDescription;
+        SceneManager.LoadScene("Shop Scene");
     
+    }
 
     public void ReturnToStartPage() {
         LoadScene("StartPage");

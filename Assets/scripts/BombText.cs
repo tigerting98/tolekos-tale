@@ -2,22 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.PlayerLoop;
+
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class BombText : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI bomb = default;
-    
-    // Start is called before the first frame update
+    [SerializeField] int maxBombs;
+    [SerializeField] GameObject bombSprite;
+    [SerializeField] GameObject bombLocation;
+    List<GameObject> bombSprites = new List<GameObject>();
+
     void Start()
-    {   
-        bomb.text = string.Format("Bombs: {0}", PlayerStats.bombCount);
+    {
+
+        for (int i = 0; i < maxBombs; i++)
+        {
+            GameObject bomb = Instantiate(bombSprite, bombLocation.transform);
+            bombSprites.Add(bomb);
+        }
+        UpdateBomb();
         PlayerStats.OnUseBomb += UpdateBomb;
     }
 
     // Update is called once per frame
     void UpdateBomb()
     {
-        bomb.text = string.Format("Bombs: {0}", PlayerStats.bombCount);
+        for (int i = 0; i < maxBombs; i++) {
+            bombSprites[i].SetActive(i < PlayerStats.bombCount);
+        }
+
     }
 
     private void OnDestroy()

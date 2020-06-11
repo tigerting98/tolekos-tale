@@ -48,7 +48,6 @@ public class HealthBar : MonoBehaviour
         text.text = "Health : " + ((int)currentHP).ToString() + "/" + lastKnownMax.ToString();
         slider.value = health.maxHP == 0 ? 0 : currentHP / health.maxHP;
     }
-
-    
+  
     
 }

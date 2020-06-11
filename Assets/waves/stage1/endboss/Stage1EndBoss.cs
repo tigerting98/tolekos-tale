@@ -61,7 +61,8 @@ public class Stage1EndBoss : EnemyWave
     [SerializeField] AudioClip tpSound, smashSound, beforeSmashSound;
     [SerializeField] float tpSoundVolume = 0.1f, smashSoundVolume = 0.1f, beforeSmashSoundVolume = 0.1f;
 
-
+    [Header("Next Scene")]
+    [SerializeField] LevelDescription nextLevel;
     public event Action OnDefeat;
     private void Start()
     {
@@ -94,6 +95,7 @@ public class Stage1EndBoss : EnemyWave
         Vector2 initialPosition = new Vector2(bossImage.transform.position.x, bossImage.transform.position.y);
 
         currentBoss = Instantiate(theBoss, initialPosition, Quaternion.identity);
+        GameManager.currentBoss = currentBoss;
         bossImage.SetActive(false);
         currentBoss.shooting.StartShooting(Pattern1(currentBoss));
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
@@ -146,14 +148,20 @@ public class Stage1EndBoss : EnemyWave
 
     void EndStage() {
         EndPhase();
+        Invoke("Collect", 0.1f);
         bossImage.transform.position = new Vector2(0, 0);
         bossImage.SetActive(true);
         currentBoss.bosshealth.OnDeath -= EndStage;
         StartCoroutine(DialogueManager.StartDialogue(endFightDialogue, NextStage));
     
     }
+
+    void Collect() {
+        GameManager.CollectEverything();
+    }
     void NextStage() {
-        GameManager.sceneLoader.OnGameOverEvent(true);
+        GameManager.victory = true;
+        GameManager.sceneLoader.LoadShopScene(nextLevel);
 
 
     }

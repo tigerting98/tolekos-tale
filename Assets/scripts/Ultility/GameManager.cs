@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour
     public static GamePlayerInput gameInput;
     public static DialogueUI dialogueUI;
 
+    public static LevelDescription levelDescription = null;
+
+    public static Enemy currentBoss = null;
+
     public static void PlaySFX(AudioClip clip, float volume) {
         AudioSource.PlayClipAtPoint(clip, mainCamera.transform.position, volume);
     

@@ -40,6 +40,7 @@ public class Stage1MidBoss : EnemyWave
     }
     IEnumerator BossPatterns() {
         Boss boss = Instantiate(bossEnemy, new Vector2(0, 4.2f), Quaternion.identity);
+        GameManager.currentBoss = boss;
         boss.bosshealth.OnDeath += Defeated;
         float time = boss.movement.MoveTo(new Vector2(0, endY), movementSpeed);
         yield return new WaitForSeconds(time);

@@ -76,8 +76,8 @@ MonoBehaviour:
   - One For All\n~Ultimate States Of Smash~
   pattern2IntroSound: {fileID: 8300000, guid: a59804d45dba649fdae4c0755f912f65, type: 3}
   pattern2IntroSoundVolume: 0.4
-  arrowSpawnTimeMax: 0.12
-  arrowSpawnTimeMin: 0.07
+  arrowSpawnTimeMax: 0.08
+  arrowSpawnTimeMin: 0.04
   maxSpeed: 5
   minSpeed: 2
   arrow: {fileID: 5901879662736442927, guid: 87f08c4007157814fac1e28576c5f6e9, type: 3}
@@ -105,3 +105,4 @@ MonoBehaviour:
   tpSoundVolume: 0.4
   smashSoundVolume: 0.4
   beforeSmashSoundVolume: 0.4
+  nextLevel: {fileID: 11400000, guid: 1a32aca0baf75b248927de00041c87f3, type: 2}

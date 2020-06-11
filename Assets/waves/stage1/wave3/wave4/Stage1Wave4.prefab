@@ -57,7 +57,7 @@ MonoBehaviour:
   minSpawnY: 0
   spawnRateMin: 0.5
   spawnRateMax: 1
-  number: 1
+  number: 50
   bullet1: {fileID: 11400000, guid: 27634bd64af986b45a203b15e8ab0dbe, type: 2}
   bullet2: {fileID: 11400000, guid: 544c8898407c2b243b80705ea5cb626f, type: 2}
   minLines: 2

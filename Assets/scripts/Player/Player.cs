@@ -229,8 +229,8 @@ public class Player : MonoBehaviour
         CheckFiring();
         CheckPointOfCollection();
         GameManager.playerPosition = transform.position;
+        PlayerStats.playerCurrentHP = health.GetCurrentHP();
 
-       
     }
 
     public void CheckPointOfCollection() {
