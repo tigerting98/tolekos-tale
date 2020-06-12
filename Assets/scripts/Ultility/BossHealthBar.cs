@@ -21,7 +21,6 @@ public class BossHealthBar : HealthBar
         int newLifeCount = bosshealth.numberOfLifesLeft;
         if (newLifeCount != numberOfLives) {
             numberOfLives = newLifeCount;
-            Debug.Log(numberOfLives);
             DrawLives();
         }
     }

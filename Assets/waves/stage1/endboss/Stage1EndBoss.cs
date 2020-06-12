@@ -6,40 +6,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Stage1EndBoss : EnemyWave
+public class Stage1EndBoss : EnemyBossWave
 {
     [SerializeField] Movement background;
     public GameObject bossImage;
-    [SerializeField] Boss theBoss;
     [Header("Dialogues")]
     [SerializeField] Dialogue preBossFight;
     [SerializeField] Dialogue midFightDialogue;
     [SerializeField] Dialogue endFightDialogue;
 
     [Header("Audio")]
-    [SerializeField] SFX spellCardSFX;
     [SerializeField] SFX pattern1SFX;
     [SerializeField] SFX pattern2SFX;
     [SerializeField] SFX pattern3smashSFX;
     [SerializeField] SFX pattern3tpSFX;
-    [SerializeField] SFX lifeDepletedSFX;
    
     [Header("Pattern1")]
     [SerializeField]
     BulletPack pattern1ConePack;
-    [SerializeField] AudioClip pattern1S2FX;
-    [SerializeField] float pattern1volume;
     [SerializeField]
     int pattern1Number = 5, numberOfCone = 5;
     [SerializeField] float pattern1PulseRate = 1f, pattern1SpawnRate = 0.05f, pattern1Spacing = 0.05f, pattern1Speed = 3f;
 
-    [SerializeField] SpellCardUI spellCardUI;
-    SpellCardUI currentUI;
-    Boss currentBoss;
-    [SerializeField] List<string> namesOfSpellCards;
+
     [Header("Pattern2")]
-    [SerializeField] AudioClip pattern2IntroSound;
-    [SerializeField] float pattern2IntroSoundVolume;
     [SerializeField] float arrowSpawnTimeMax = 0.05f, arrowSpawnTimeMin = 0.01f;
     [SerializeField] float maxSpeed = 5f, minSpeed = 2f;
     [SerializeField] Bullet arrow;
@@ -57,22 +47,10 @@ public class Stage1EndBoss : EnemyWave
     [SerializeField] Bullet explosion, punch;
     [SerializeField] float punchSpeed = 2f;
     [SerializeField] float explosionTime;
-   [Header("Sound Effects")]
-    [SerializeField] AudioClip tpSound, smashSound, beforeSmashSound;
-    [SerializeField] float tpSoundVolume = 0.1f, smashSoundVolume = 0.1f, beforeSmashSoundVolume = 0.1f;
 
-    [Header("Next Scene")]
-    [SerializeField] LevelDescription nextLevel;
     public event Action OnDefeat;
-    private void Start()
-    {
-      
-    }
-    public void Defeated() {
-        OnDefeat?.Invoke();
-        GameManager.DestoryAllEnemyBullets();
-        DestroyAfter(5);
-    }
+
+
 
     public override void SpawnWave() {
 
@@ -94,7 +72,7 @@ public class Stage1EndBoss : EnemyWave
     void StartBossFight() {
         Vector2 initialPosition = new Vector2(bossImage.transform.position.x, bossImage.transform.position.y);
 
-        currentBoss = Instantiate(theBoss, initialPosition, Quaternion.identity);
+        currentBoss = Instantiate(boss, initialPosition, Quaternion.identity);
         GameManager.currentBoss = currentBoss;
         bossImage.SetActive(false);
         currentBoss.shooting.StartShooting(Pattern1(currentBoss));
@@ -113,7 +91,6 @@ public class Stage1EndBoss : EnemyWave
 
     void StartPhase2() {
         SpellCardUI(namesOfSpellCards[0]);
-        spellCardSFX.PlayClip();
         Invoke("StartPattern2", 3f);
     }
     void StartPattern2() {
@@ -136,7 +113,6 @@ public class Stage1EndBoss : EnemyWave
 
     void StartPhase3() {
         SpellCardUI(namesOfSpellCards[1]);
-        spellCardSFX.PlayClip();
         Invoke("StartPattern3", 3f);
     }
 
@@ -156,15 +132,7 @@ public class Stage1EndBoss : EnemyWave
     
     }
 
-    void Collect() {
-        GameManager.CollectEverything();
-    }
-    void NextStage() {
-        GameManager.victory = true;
-        GameManager.sceneLoader.LoadShopScene(nextLevel);
-
-
-    }
+    
 
     IEnumerator Pattern3() {
         Animator animator = currentBoss.gameObject.GetComponent<Animator>();
@@ -182,6 +150,7 @@ public class Stage1EndBoss : EnemyWave
                 yield return new WaitForSeconds(0.8f);
                 Bullet punchbul = Instantiate(punch, currentBoss.transform.position, Quaternion.identity);
                 punchbul.movement.SetSpeed(new Vector2(0, -punchSpeed));
+                punchbul.movement.destroyBoundary = 6f;
                 yield return new WaitForSeconds(1 / punchSpeed);
 
 
@@ -211,7 +180,7 @@ public class Stage1EndBoss : EnemyWave
             float angle = UnityEngine.Random.Range(0f, 360f);
             enemy.enemyAudio.PlayAudioTimes(pattern1SFX, pattern1SpawnRate, pattern1Number);
             for (int i = 0; i < numberOfCone; i++) {
-                enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(pattern1ConePack.GetBullet(0), enemy, angle + i * 360f / numberOfCone, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing));
+                enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(pattern1ConePack.GetBullet(0), enemy.transform, angle + i * 360f / numberOfCone, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing));
             }
             yield return new WaitForSeconds(pattern1PulseRate);
         
@@ -232,35 +201,18 @@ public class Stage1EndBoss : EnemyWave
     }
 
     List<Bullet> ExplodingAndBack(Vector2 pos) {
-        List<Bullet> bullets = new List<Bullet>();
-        for (int i = 0; i < numberOfBulletsPattern3; i++) {
-            Bullet bul = Instantiate(explodingBullet, pos, Quaternion.identity);
-            bul.movement.destroyBoundary = 6f;
-            bul.movement.SetCustomGraph(t =>
-            {
-                if (t < maxRadiusPattern3 / initialSpeedPattern3)
-                {
-                    return new Vector2(0, initialSpeedPattern3);
+       
+        return Patterns.RingOfCustomBullets(
+            angle => {
+            Bullet bul = Patterns.ShootCustomBullet(explodingBullet, pos, Movement.RotatePath(angle,
+                    t =>
+                    new Vector2(0, t < maxRadiusPattern3 / initialSpeedPattern3 ?
+                    initialSpeedPattern3 : t < maxRadiusPattern3 / initialSpeedPattern3 + shortDelayPattern3 ?
+                    0 : -finalSpeedPattern3)), MovementMode.Velocity);
+                bul.movement.destroyBoundary = 6f;
+                return bul;
+            }, 0, numberOfBulletsPattern3); 
 
-                }
-                else if (t < maxRadiusPattern3 / initialSpeedPattern3 + shortDelayPattern3)
-                {
-                    return new Vector2(0, 0);
-                }
-                else
-                {
-                    return new Vector2(0, -finalSpeedPattern3);
-                }
-
-
-
-            }, MovementMode.Velocity);
-
-            bul.movement.RotateTrajectory(i * 360 / numberOfBulletsPattern3);
-        
-        }
-
-        return bullets;
     }
 
     IEnumerator RainOfArrows() {
@@ -285,26 +237,13 @@ public class Stage1EndBoss : EnemyWave
         bossImage.SetActive(false);
     }
 
-    void PlayLifeDepletedSound() {
-        lifeDepletedSFX.PlayClip();
-        
-    }
+ 
 
-    void EndPhase() {
-        PlayLifeDepletedSound();
-        currentBoss.shooting.StopAllCoroutines();
-        currentBoss.movement.StopMoving();
+    public override void EndPhase() {
+        base.EndPhase();
         SwitchToImage();
-        GameManager.DestoryAllEnemyBullets();
-        if (currentUI)
-        { Destroy(currentUI.gameObject); }
     }
 
-    void SpellCardUI(string name) {
-        currentUI = Instantiate(spellCardUI);
-        currentUI.SetText(name.Replace("\\n", "\n"));
-
-    }
-
+  
     
 }

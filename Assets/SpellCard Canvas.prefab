@@ -347,6 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1440613775281015634}
   spellCardText: {fileID: 1440613775542175805}
+  spellCardSFX: {fileID: 11400000, guid: 4c65c68c5d705c3459d529e81350beb9, type: 2}
 --- !u!95 &1440613776595574192
 Animator:
   serializedVersion: 3

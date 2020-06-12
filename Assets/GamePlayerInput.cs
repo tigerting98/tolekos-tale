@@ -14,7 +14,13 @@ public class GamePlayerInput : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.gameInput = this;
+        if (GameManager.gameInput == null)
+        {
+            GameManager.gameInput = this;
+        }
+        else {
+            Destroy(gameObject);
+        }
     }
     
 
@@ -43,8 +49,5 @@ public class GamePlayerInput : MonoBehaviour
             OnHoldZ?.Invoke();
         }
     }
-    private void OnDestroy()
-    {
-        GameManager.gameInput = null;
-    }
+   
 }

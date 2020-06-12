@@ -115,7 +115,7 @@ public class Movement : MonoBehaviour
         mode = MovementMode.Position;
         graph = t => traj(t).rect;
     }
-    public Func<float, Vector2> RotatePath(float angle, Func<float, Vector2> oldTraj) {
+    public static Func<float, Vector2> RotatePath(float angle, Func<float, Vector2> oldTraj) {
         return t => Quaternion.Euler(0, 0, angle) * oldTraj(t);       
     }
 

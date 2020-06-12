@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static BossHealthBar bossHealthBar;
     public static Vector2 playerPosition;
     public static bool victory = false;
-
+    public static GameData gameData;
     public static Hashtable enemies = new Hashtable();
     public static Hashtable enemyBullets = new Hashtable();
     public static Hashtable collectibles = new Hashtable();

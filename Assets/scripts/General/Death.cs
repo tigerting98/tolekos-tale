@@ -27,7 +27,6 @@ public class Death : MonoBehaviour
     public virtual void Die()
     {
         OnDeath?.Invoke();
-        Debug.Log("Boom!");
         PlayerStats.GainEXP(this.experience);
         GameObject exp = Instantiate(explosion, transform.position, Quaternion.identity);
         deathSound.PlayClip();

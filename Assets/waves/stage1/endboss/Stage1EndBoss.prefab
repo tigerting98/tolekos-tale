@@ -47,35 +47,29 @@ MonoBehaviour:
   bullets: []
   bulletPack: {fileID: 0}
   bulletSpawnSound: {fileID: 0}
+  boss: {fileID: 1792903561220353094, guid: 0c6fd512b0f90fe47a13203753d96cc4, type: 3}
+  lifeDepletedSFX: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
+  namesOfSpellCards:
+  - Heaven's Judgement\n ~Heavenly Arrow Barrage~
+  - One For All\n~Ultimate States Of Smash~
+  nextLevel: {fileID: 11400000, guid: 1a32aca0baf75b248927de00041c87f3, type: 2}
   background: {fileID: -9162131273511116121, guid: bbf1ec97531c67a4fb422744b1b8a8e7,
     type: 3}
   bossImage: {fileID: 0}
-  theBoss: {fileID: 1792903561220353094, guid: 0c6fd512b0f90fe47a13203753d96cc4, type: 3}
   preBossFight: {fileID: 11400000, guid: ba2349c965a0de6438725b6fd43189ae, type: 2}
   midFightDialogue: {fileID: 11400000, guid: bc5387209a12d5043adab232250cc8f8, type: 2}
   endFightDialogue: {fileID: 11400000, guid: f4a429c7a5636854e8330983014f9a78, type: 2}
-  spellCardSFX: {fileID: 11400000, guid: 4c65c68c5d705c3459d529e81350beb9, type: 2}
   pattern1SFX: {fileID: 11400000, guid: cacb82c8e502ed043afc6f42f574999b, type: 2}
   pattern2SFX: {fileID: 11400000, guid: c254def07b7610d4192ae4bec424e8ee, type: 2}
   pattern3smashSFX: {fileID: 11400000, guid: 32edd8a8667b3434186b14295e8dbe38, type: 2}
   pattern3tpSFX: {fileID: 11400000, guid: dae60ebf79fe0cc499aa0608fbe8cf6d, type: 2}
-  lifeDepletedSFX: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
   pattern1ConePack: {fileID: 11400000, guid: dc39e171c6e699345ab306b13e546b4c, type: 2}
-  pattern1S2FX: {fileID: 0}
-  pattern1volume: 0.2
   pattern1Number: 12
   numberOfCone: 8
   pattern1PulseRate: 1.5
   pattern1SpawnRate: 0.05
   pattern1Spacing: 0.15
   pattern1Speed: 4
-  spellCardUI: {fileID: 1440613776595574203, guid: fbc60427d3170024288c8cb4b5ba2fa5,
-    type: 3}
-  namesOfSpellCards:
-  - Heaven's Judgement\n ~Heavenly Arrow Barrage~
-  - One For All\n~Ultimate States Of Smash~
-  pattern2IntroSound: {fileID: 8300000, guid: a59804d45dba649fdae4c0755f912f65, type: 3}
-  pattern2IntroSoundVolume: 0.4
   arrowSpawnTimeMax: 0.08
   arrowSpawnTimeMin: 0.04
   maxSpeed: 5
@@ -99,10 +93,3 @@ MonoBehaviour:
   punch: {fileID: 911972999547948889, guid: 7a6f9c6c80d58864d9bec85e519acf80, type: 3}
   punchSpeed: 2
   explosionTime: 1
-  tpSound: {fileID: 8300000, guid: b5ec15cc953ffb94a9cc18e4b7cfb1a8, type: 3}
-  smashSound: {fileID: 8300000, guid: 39c9c2827c4e4475286d0da6e5e76c5d, type: 3}
-  beforeSmashSound: {fileID: 8300000, guid: dd44fecb75653b1479656d553a5e07c0, type: 3}
-  tpSoundVolume: 0.4
-  smashSoundVolume: 0.4
-  beforeSmashSoundVolume: 0.4
-  nextLevel: {fileID: 11400000, guid: 1a32aca0baf75b248927de00041c87f3, type: 2}

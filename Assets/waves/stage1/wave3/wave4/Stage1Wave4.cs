@@ -97,9 +97,9 @@ public class Stage1Wave4 : EnemyWave
 
     void SetShooting(Enemy enemy) {
         float shotRate = Random.Range(shotRateMin, shotRateMax);
-        enemy.shooting.ShootWhenInBound(EnemyPatterns.PulsingBulletsRandomAngle(bullet1.GetBullet(Random.Range(0, 4)), enemy,
+        enemy.shooting.ShootWhenInBound(EnemyPatterns.PulsingBulletsRandomAngle(bullet1.GetBullet(Random.Range(0, 4)), enemy.transform,
             Random.Range(bulletSpeedMin, bulletSpeedMax), shotRate, Random.Range(minLines, maxLines+1)));
-        enemy.shooting.ShootWhenInBound(EnemyPatterns.PulsingBulletsRandomAngle(bullet2.GetBullet(Random.Range(0, 4)), enemy,
+        enemy.shooting.ShootWhenInBound(EnemyPatterns.PulsingBulletsRandomAngle(bullet2.GetBullet(Random.Range(0, 4)), enemy.transform,
             Random.Range(bulletSpeedMin, bulletSpeedMax), shotRate, Random.Range(minLines, maxLines + 1)));
         
     }

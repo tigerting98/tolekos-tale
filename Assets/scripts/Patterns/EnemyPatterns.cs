@@ -7,99 +7,67 @@ using UnityEngine.Assertions;
 public class EnemyPatterns : MonoBehaviour { 
 
   public static IEnumerator ShootAt(Bullet bullet, Transform enemy, float angle, float speed, float shotRate)
-{
-    while (true)
-    {
+    { 
+        return ShootPattern(() => Patterns.ShootStraight(bullet, enemy.position, angle, speed), shotRate);
 
+ }
 
-        Patterns.ShootStraight(bullet, enemy.position, angle, speed);
-        yield return new WaitForSeconds(shotRate);
-    }
-
-}
-
-    public static IEnumerator ShootPattern(Action shot, float shotRate, Enemy enemy) {
+    public static IEnumerator ShootPattern(Action shoot, float shotRate) {
         while (true) {
-            shot();
-            if (enemy.spawnBulletAnimator)
-            {
-                enemy.spawnBulletAnimator.SetTrigger("Attack");
-            }
+            shoot();
+            
             yield return new WaitForSeconds(shotRate);
         }
 
     }
+   
 
-    public static IEnumerator ExplodingLineAtPlayer(Bullet bullet, Enemy enemy, float intialSpeed, float finalSpeed, int number, float minTime, float maxTime, float shotRate)
+
+
+
+
+    public static IEnumerator ExplodingLineAtPlayer(Bullet bullet, Transform enemy, float intialSpeed, float finalSpeed, int number, float minTime, float maxTime, float shotRate)
     {
-        return ShootPattern(() => Patterns.ExplodingLine(bullet, enemy.transform.position, Patterns.AimAt(enemy.transform.position, GameManager.playerPosition), intialSpeed, finalSpeed, number, minTime, maxTime), shotRate, enemy); 
+        return ShootPattern(() => Patterns.ExplodingLine(bullet, enemy.position, Patterns.AimAt(enemy.transform.position, GameManager.playerPosition), intialSpeed, finalSpeed, number, minTime, maxTime), shotRate); 
            
     }
     public static IEnumerator ShootAtPlayer(Bullet bullet, Transform enemy, float speed, float shotRate)
 
     {
-        while (true)
-        {
-
-
-            Patterns.ShootStraight(bullet, enemy.position, Patterns.AimAt(enemy.position, GameManager.playerPosition), speed);
-
-            yield return new WaitForSeconds(shotRate);
-        }
+        return ShootAtPlayerWithLines(bullet, enemy, speed, shotRate, 0, 0);
 
     }
 
     public static IEnumerator ShootAtPlayerWithLines(Bullet bullet, Transform enemy, float speed, float shotRate, float spreadAngle, int lines)
     {
-        Assert.IsTrue(lines >= 1);
-        while (true)
-        {
-            float angle = Patterns.AimAt(enemy.position, GameManager.playerPosition);
 
-            Patterns.ShootStraight(bullet, enemy.position, angle, speed);
-            for (int i = 1; i < lines+1; i++)
-            {
-                Patterns.ShootStraight(bullet, enemy.position, angle - spreadAngle * i, speed);
-                Patterns.ShootStraight(bullet, enemy.position, angle + spreadAngle * i, speed);
-            }
-            yield return new WaitForSeconds(shotRate);
-        }
+        
+        return ShootPattern(() =>
+            Patterns.ShootMultipleStraightBullet(bullet, enemy.position, speed, 
+                Patterns.AimAt(enemy.position, GameManager.playerPosition), spreadAngle, lines), shotRate);
 
     }
 
     public static IEnumerator PulsingBullets(Bullet bullet, Transform enemy, float speed, float shotRate, int lines)
     {
 
-        while (true)
-        {
-            float angle = Patterns.AimAt(enemy.position, GameManager.playerPosition);
 
-            Patterns.RingOfBullets(bullet, enemy.position, lines, angle, speed);
-
-            yield return new WaitForSeconds(shotRate);
-
-
-
-        }
+        return ShootPattern(() => Patterns.RingOfBullets(bullet, enemy.position, lines, Patterns.AimAt(enemy.position, GameManager.playerPosition), speed),
+            shotRate);
 
 
     }
-    public static IEnumerator PulsingBulletsRandomAngle(Bullet bullet, Enemy enemy, float speed, float shotRate, int lines) {
-        return ShootPattern(() => Patterns.RingOfBullets(bullet, enemy.transform.position, lines, UnityEngine.Random.Range(0f, 360f), speed),
-            shotRate, enemy);
+    public static IEnumerator PulsingBulletsRandomAngle(Bullet bullet, Transform enemy, float speed, float shotRate, int lines) {
+        return ShootPattern(() => Patterns.RingOfBullets(bullet, enemy.position, lines, UnityEngine.Random.Range(0f, 360f), speed),
+            shotRate);
     }
 
     public static IEnumerator PulsingBulletsRandom(List<Bullet> bullets, Transform enemy, float speed, float shotRate, int lines)
     {
 
-        while (true)
-        {
-            float angle = Patterns.AimAt(enemy.position, GameManager.playerPosition);
-
-            Patterns.RingOfBullets(bullets[UnityEngine.Random.Range(0, bullets.Count)], enemy.position, lines, angle, speed);
-
-            yield return new WaitForSeconds(shotRate);
-        }
+        return ShootPattern(() => Patterns.RingOfBullets(bullets[UnityEngine.Random.Range(0, bullets.Count)], enemy.position, lines, 
+            Patterns.AimAt(enemy.position, GameManager.playerPosition), speed),
+            shotRate);
     }
 
     public static IEnumerator BorderOfWaveAndParticle(Bullet bullet, Transform enemy, float speed, float shotRate, int lines, float angularVel)
@@ -136,19 +104,15 @@ public class EnemyPatterns : MonoBehaviour {
 
     public static IEnumerator ShootSine(Bullet bullet, Transform enemy, float angle, float speed, float shotRate, float angularVel, float amp)
     {
-        while (true)
-        {
-            Patterns.ShootSinTrajectory(bullet, enemy.position, angle, speed, angularVel, amp);
-            yield return new WaitForSeconds(shotRate);
-        }
+        
+         return ShootPattern(()=>Patterns.ShootSinTrajectory(bullet, enemy.position, angle, speed, angularVel, amp), shotRate);
+        
     }
     public static IEnumerator ArchimedesSpiral(Bullet bullet, Transform enemy, float ratio, float speed, float shotRate, float angle)
     {
-        while (true)
-        {
-            Patterns.ArchimedesSpiral(bullet, enemy.position, ratio, speed, angle);
-            yield return new WaitForSeconds(shotRate);
-        }
+        
+        return ShootPattern(()=>Patterns.ArchimedesSpiral(bullet, enemy.position, ratio, speed, angle), shotRate);
+        
     }
 
     public static IEnumerator ShootLaserBeam(Bullet actualLaser, Bullet warningLaser, Transform enemy, float angle, float timeWarning, float duration) {
@@ -164,11 +128,11 @@ public class EnemyPatterns : MonoBehaviour {
 
 
     }
-    public static IEnumerator ConePattern(Bullet bullet, Enemy spawner, float angle, float speed, float spawnRate, float number, float spacing)
+    public static IEnumerator ConePattern(Bullet bullet, Transform spawner, float angle, float speed, float spawnRate, float number, float spacing)
     {
         for (int i = 0; i < number; i++)
         {
-            Vector2 start = spawner.transform.position - Quaternion.Euler(0, 0, angle) * new Vector2(0, (spacing * i) / 2);
+            Vector2 start = spawner.position - Quaternion.Euler(0, 0, angle) * new Vector2(0, (spacing * i) / 2);
             for (int j = 0; j < i + 1; j++)
             {
                 Bullet bul = Instantiate(bullet, start + (Vector2)(Quaternion.Euler(0, 0, angle) * new Vector2(0, spacing * j)), Quaternion.identity);
