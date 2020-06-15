@@ -67,6 +67,15 @@ public class Functions : MonoBehaviour
             timer += nextShotRate;
             yield return new WaitForSeconds(nextShotRate);
         }
+
+
+    }
+    public static Vector2 RandomLocation(float minX, float maxX, float minY, float maxY) {
+        return new Vector2(UnityEngine.Random.Range(minX, maxX), UnityEngine.Random.Range(minY, maxY));
+    }
+
+    public static Vector2 RandomLocation(Vector2 origin, float bounds) {
+        return origin + RandomLocation(-bounds, bounds, -bounds, bounds);
     }
     
 }

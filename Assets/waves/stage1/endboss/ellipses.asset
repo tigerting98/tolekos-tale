@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ellipses
   m_EditorClassIdentifier: 
   bullets:
-  - {fileID: 4583951087156805016, guid: 34ae426cf76b1c3419b7efa481dc0c4a, type: 3}
   - {fileID: 4372559274394599707, guid: 3327d1cb95b0dcc49a69fd45ce506779, type: 3}
   - {fileID: 5004346972878544079, guid: a4d653f38e933344494c084836591759, type: 3}
   - {fileID: 7814982154892608750, guid: 5d8994b5581ef9c48b9be0849898a7ab, type: 3}
+  - {fileID: 4583951087156805016, guid: 34ae426cf76b1c3419b7efa481dc0c4a, type: 3}
   dmg: 100

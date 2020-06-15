@@ -182,7 +182,7 @@ public class Stage1EndBoss : EnemyBossWave
             {
                 float offset = UnityEngine.Random.Range(0f, 360f);
                 enemy.enemyAudio.PlayAudioTimes(pattern1SFX, pattern1SpawnRate, pattern1Number);
-                Patterns.CustomRing((angle) => enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(pattern1ConePack.GetBullet(0), enemy.transform, angle, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing)), offset, numberOfCone);
+                Patterns.CustomRing((angle) => enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(pattern1ConePack.GetBullet(DamageType.Pure), enemy.transform, angle, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing)), offset, numberOfCone);
             }, pattern1PulseRate);
      
         

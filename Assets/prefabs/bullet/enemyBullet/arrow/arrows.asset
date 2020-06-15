@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: arrows
   m_EditorClassIdentifier: 
   bullets:
-  - {fileID: 1291399341478699713, guid: 6b12f009a4f614d43ac72e92c291de04, type: 3}
   - {fileID: 3959654444819504285, guid: d64bd1ee72f1dbf48bdb1fd0ba26381a, type: 3}
   - {fileID: 797186986401250010, guid: eeb801fc03953de418c383b644caac12, type: 3}
   - {fileID: 7258710860371053353, guid: 1defae0e4a862534aa92a7be6f79f0f6, type: 3}
+  - {fileID: 1291399341478699713, guid: 6b12f009a4f614d43ac72e92c291de04, type: 3}
   dmg: 100

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cd5bb04df3a208499c3d89f3df1940c, type: 3}
-  m_Name: bigballs
+  m_Name: bigballs 1
   m_EditorClassIdentifier: 
   bullets:
   - {fileID: 2464218109418663609, guid: b4fb7a3e03e4f2543aaebecf4d4d0dae, type: 3}

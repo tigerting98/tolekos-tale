@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     bool moving = true;
     MovementMode mode = MovementMode.Velocity;
     public float destroyBoundary = 4.5f;
-
+    public event Action<Vector2> OnOutOfBound;
 
     // Start is called before the first frame update
  
@@ -171,6 +171,7 @@ public class Movement : MonoBehaviour
 
         if (transform.position.x < -destroyBoundary || transform.position.x > destroyBoundary || transform.position.y < -destroyBoundary || transform.position.y > destroyBoundary)
         {
+            OnOutOfBound?.Invoke(transform.position);
             Destroy(gameObject);
         }
     }

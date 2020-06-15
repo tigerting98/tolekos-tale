@@ -40,7 +40,7 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[4]
-      value: 15000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -90,12 +90,12 @@ PrefabInstance:
     - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: minGold
-      value: 200
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: maxGold
-      value: 300
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -155,7 +155,7 @@ PrefabInstance:
     - target: {fileID: 5664283095083113196, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: experience
-      value: 200
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6237686821007657055, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}

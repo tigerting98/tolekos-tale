@@ -18,13 +18,13 @@ public class BulletPack : ScriptableObject
     public Bullet GetBullet(DamageType type) {
         switch (type) {
             case DamageType.Pure:
-                return GetBullet(0);
-            case DamageType.Water:
-                return GetBullet(1);
-            case DamageType.Earth:
-                return GetBullet(2);
-            case DamageType.Fire:
                 return GetBullet(3);
+            case DamageType.Water:
+                return GetBullet(0);
+            case DamageType.Earth:
+                return GetBullet(1);
+            case DamageType.Fire:
+                return GetBullet(2);
             default:
                 return GetBullet(0);
         }

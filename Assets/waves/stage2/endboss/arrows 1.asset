@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cd5bb04df3a208499c3d89f3df1940c, type: 3}
-  m_Name: bigballs
+  m_Name: arrows 1
   m_EditorClassIdentifier: 
   bullets:
-  - {fileID: 2464218109418663609, guid: b4fb7a3e03e4f2543aaebecf4d4d0dae, type: 3}
-  - {fileID: 2464218109418663609, guid: 809d798cfa92f5e41bedb40f9b463fb9, type: 3}
-  - {fileID: 2464218109418663609, guid: 8af6598cd1abe2746b3f6b11d8262946, type: 3}
-  - {fileID: 7986464732834073172, guid: 4ca866dae31481248b06ef509438938d, type: 3}
-  dmg: 100
+  - {fileID: 3959654444819504285, guid: d64bd1ee72f1dbf48bdb1fd0ba26381a, type: 3}
+  - {fileID: 797186986401250010, guid: eeb801fc03953de418c383b644caac12, type: 3}
+  - {fileID: 7258710860371053353, guid: 1defae0e4a862534aa92a7be6f79f0f6, type: 3}
+  - {fileID: 1291399341478699713, guid: 6b12f009a4f614d43ac72e92c291de04, type: 3}
+  dmg: 200
