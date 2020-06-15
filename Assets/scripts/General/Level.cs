@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEditor.Experimental.TerrainAPI;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -12,12 +13,12 @@ public class Level : MonoBehaviour
     public List<EnemyWave> wavesFirstHalf;
     public List<float> timesFirstHalf;
     [Header("Mid Boss")]
-    public Stage1MidBoss midBoss;
+    public EnemyBossWave midBoss;
     public float midBossTimer;
     [Header("After MidBoss")]
     public List<EnemyWave> wavesSecondHalf;
     public List<float> timesSecondHalf;
-    public Stage1EndBoss endBoss;
+    public EnemyBossWave endBoss;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class Level : MonoBehaviour
         }
         if (midBoss)
         {
-            Stage1MidBoss boss = Instantiate(midBoss);
+            EnemyBossWave boss = Instantiate(midBoss);
         StartCoroutine(SpawnMidBoss(boss, midBossTimer));
         
         boss.OnDefeat += AfterMidBoss; }
@@ -48,11 +49,10 @@ public class Level : MonoBehaviour
     }
 
     void FinalBoss() {
-        Debug.Log("SUmmoned");
         if (endBoss)
         {
             Debug.Log("instant");
-            Stage1EndBoss boss = Instantiate(endBoss);
+            EnemyBossWave boss = Instantiate(endBoss);
             StartCoroutine(SpawnWaveAfter(boss, 0));
         }
     }
@@ -78,5 +78,5 @@ public class Level : MonoBehaviour
         GameManager.OnSummonBoss -= FinalBoss;
     }
 
-
+    
 }

@@ -13,9 +13,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0013165325, y: -0.000000014901161}
+  m_Offset: {x: -0.0016967207, y: -0.0011406243}
   serializedVersion: 2
-  m_Radius: 0.14867386
+  m_Radius: 0.095447615
 --- !u!1001 &5497123808889519004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0015
       objectReference: {fileID: 0}
     - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 3092768192575656917, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: m_Name
-      value: enemy bullet ball
+      value: ball
       objectReference: {fileID: 0}
     - target: {fileID: 3092768192575656919, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}

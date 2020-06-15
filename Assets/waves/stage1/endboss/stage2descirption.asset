@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: stage2descirption
   m_EditorClassIdentifier: 
   levelDescription: You beaten the stage 1 boss! congrats on to stage 2!
-  nextLevelSceneString: EndScene
+  nextLevelSceneString: Stage2
   backgroundImage: {fileID: 21300000, guid: 81e4f3673b54cca4dba3bc6eb4b07d9a, type: 3}

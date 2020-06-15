@@ -10,11 +10,12 @@ public class BombText : MonoBehaviour
     [SerializeField] int maxBombs;
     [SerializeField] GameObject bombSprite;
     [SerializeField] GameObject bombLocation;
-    List<GameObject> bombSprites = new List<GameObject>();
+    List<GameObject> bombSprites;
 
     void Start()
     {
-
+        bombSprites = new List<GameObject>();
+        Debug.Log("Started");
         for (int i = 0; i < maxBombs; i++)
         {
             GameObject bomb = Instantiate(bombSprite, bombLocation.transform);
@@ -27,6 +28,7 @@ public class BombText : MonoBehaviour
     // Update is called once per frame
     void UpdateBomb()
     {
+       
         for (int i = 0; i < maxBombs; i++) {
             bombSprites[i].SetActive(i < PlayerStats.bombCount);
         }
@@ -35,6 +37,6 @@ public class BombText : MonoBehaviour
 
     private void OnDestroy()
     {
-        PlayerStats.OnGainGold -= UpdateBomb;
+        PlayerStats.OnUseBomb -= UpdateBomb;
     }
 }

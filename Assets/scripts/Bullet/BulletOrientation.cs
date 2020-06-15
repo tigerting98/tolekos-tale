@@ -4,6 +4,8 @@ using System.Collections.Generic;
 //using System.Numerics;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
+
 [RequireComponent(typeof(Movement))]
 public class BulletOrientation : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class BulletOrientation : MonoBehaviour
     [SerializeField] Movement movement;
     Quaternion orientation;
     bool custom = false;
+    public bool absolute = false;
+    Vector2 prev = new Vector2(0, 0);
     Func<float, Quaternion> orientationOverTime;
     float timer = 0;
     void Start()
@@ -36,7 +40,15 @@ public class BulletOrientation : MonoBehaviour
 
 
     public Quaternion FindRotation() {
-        Vector2 diff = movement.currentVelocity;
+        Vector2 diff;
+        if (absolute)
+        {
+            diff = (Vector2)transform.position - prev;
+        }
+        else
+        {
+             diff = movement.currentVelocity;
+        }
         return Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x));
     }
     // Update is called once per frame
@@ -54,6 +66,6 @@ public class BulletOrientation : MonoBehaviour
             }
 
             transform.rotation = orientation;
-        
+        prev = transform.position;
     }
 }

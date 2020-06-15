@@ -66,6 +66,9 @@ public class PlayerStats : MonoBehaviour
         playerCurrentHP = baseMaxHP;
         gold = 0;
         bombCount = 3;
+        OnGainExp = null;
+        OnGainGold = null;
+        OnUseBomb = null;
     }
     public static void LevelUp()
     {

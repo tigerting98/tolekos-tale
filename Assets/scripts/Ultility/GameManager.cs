@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public static Hashtable collectibles = new Hashtable();
 
     public static event Action<bool> OnGameover;
-    public static event Action OnBossLifeDepleted;
     public static event Action OnSummonBoss;
     public static GamePlayerInput gameInput;
     public static DialogueUI dialogueUI;
@@ -28,10 +27,7 @@ public class GameManager : MonoBehaviour
 
     public static Enemy currentBoss = null;
 
-    public static void PlaySFX(AudioClip clip, float volume) {
-        AudioSource.PlayClipAtPoint(clip, mainCamera.transform.position, volume);
-    
-    }
+ 
 
     public static void InvokeGameOverEvent(bool victory) {
         OnGameover?.Invoke(victory);
@@ -45,9 +41,23 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public static void BossLifeDepleted() {
-        OnBossLifeDepleted?.Invoke();
-    
+    public static void DestroyAllNonBossEnemy(bool dropLoot) {
+        List<Enemy> toDestroy= new List<Enemy>();
+        foreach (GameObject obj in enemies.Values) {
+            if (obj.GetComponent<Boss>() == null)
+            { toDestroy.Add(obj.GetComponent<Enemy>()); }
+        }
+       for (int i = 0; i < toDestroy.Count; i ++) {
+
+             if (dropLoot)
+              {
+                    toDestroy[i].deathEffects.Die();
+              }
+                else {
+                  Destroy(toDestroy[i].gameObject);
+                }
+        }
+        
     }
 
 

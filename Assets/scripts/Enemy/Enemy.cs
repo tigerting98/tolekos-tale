@@ -9,7 +9,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    public float moveSpeed;
+
     public Health health;
     public Death deathEffects;
     public Movement movement;
@@ -52,9 +52,7 @@ public class Enemy : MonoBehaviour
         collider.enabled = false;
         Hittable();
     }
-    public void SetSpeed(float speed) {
-        moveSpeed = speed;
-    }
+
 
     public void DestroyAfter(float seconds) {
         StartCoroutine(DestoryAt(seconds));

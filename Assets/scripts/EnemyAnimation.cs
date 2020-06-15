@@ -20,20 +20,14 @@ public class EnemyAnimation : MonoBehaviour
     IEnumerator PlayAnimationAfter( float interval, float start)
     {
         yield return new WaitForSeconds(start);
-        while (true)
-        {
-            PlayAnimation();
-            yield return new WaitForSeconds(interval);
-        }
+        yield return Functions.RepeatAction(PlayAnimation, interval);
     }
 
     IEnumerator PlayAnimationForTimes(float interval, int times)
     {
-        for (int i = 0; i < times; i++)
-        {
-            PlayAnimation();
-            yield return new WaitForSeconds(interval);
-        }
+        
+
+        return Functions.RepeatActionXTimes(PlayAnimation, interval, times);
 
     }
 

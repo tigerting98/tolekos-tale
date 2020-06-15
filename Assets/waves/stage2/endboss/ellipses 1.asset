@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd5bb04df3a208499c3d89f3df1940c, type: 3}
+  m_Name: ellipses 1
+  m_EditorClassIdentifier: 
+  bullets:
+  - {fileID: 4583951087156805016, guid: 34ae426cf76b1c3419b7efa481dc0c4a, type: 3}
+  - {fileID: 4372559274394599707, guid: 3327d1cb95b0dcc49a69fd45ce506779, type: 3}
+  - {fileID: 5004346972878544079, guid: a4d653f38e933344494c084836591759, type: 3}
+  - {fileID: 7814982154892608750, guid: 5d8994b5581ef9c48b9be0849898a7ab, type: 3}
+  dmg: 50

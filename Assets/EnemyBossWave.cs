@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +7,8 @@ public class EnemyBossWave : EnemyWave
 {
     public Boss boss;
 
-
+    public GameObject bossImage;
     [Header("Audio")]
-    [SerializeField] protected SFX lifeDepletedSFX;
 
     protected SpellCardUI currentUI;
     protected Boss currentBoss;
@@ -20,7 +20,7 @@ public class EnemyBossWave : EnemyWave
     [Header("Next Scene")]
     [SerializeField] protected LevelDescription nextLevel;
 
-
+    public Action OnDefeat;
 
 
 
@@ -43,9 +43,9 @@ public class EnemyBossWave : EnemyWave
 
     
 
-    void PlayLifeDepletedSound()
+    protected virtual void PlayLifeDepletedSound()
     {
-        lifeDepletedSFX.PlayClip();
+        GameManager.gameData.lifeDepletedSFX.PlayClip();
 
     }
 
@@ -55,8 +55,10 @@ public class EnemyBossWave : EnemyWave
         currentBoss.shooting.StopAllCoroutines();
         currentBoss.movement.StopMoving();
         GameManager.DestoryAllEnemyBullets();
+        GameManager.DestroyAllNonBossEnemy(true);
         if (currentUI)
         { Destroy(currentUI.gameObject); }
+        SwitchToImage();
     }
 
     public virtual void SpellCardUI(string name)
@@ -65,6 +67,20 @@ public class EnemyBossWave : EnemyWave
         currentUI.PlaySFX();
         currentUI.SetText(name.Replace("\\n", "\n"));
 
+    }
+
+    protected virtual void SwitchToImage()
+    {
+        bossImage.GetComponent<SpriteRenderer>().enabled = true;
+        bossImage.transform.position = currentBoss.transform.position;
+        currentBoss.gameObject.SetActive(false);
+    }
+
+    protected virtual void SwitchToBoss()
+    {
+        currentBoss.gameObject.SetActive(true);
+        currentBoss.transform.position = bossImage.transform.position;
+        bossImage.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 }

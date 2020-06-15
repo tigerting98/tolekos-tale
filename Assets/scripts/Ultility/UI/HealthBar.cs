@@ -6,14 +6,14 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField] Text text = default;
     [SerializeField] Slider slider = default;
-    [SerializeField] Health health = default;
+    [SerializeField]protected Health health = default;
     [SerializeField] bool visible = true;
     [SerializeField] Text title = default;
     float currentHP = 0;
     float lastKnownMax = 0;
  
     // Start is called before the first frame update
-    public void Start()
+    public virtual void Start()
     {
         if (!visible) {
             gameObject.SetActive(false);

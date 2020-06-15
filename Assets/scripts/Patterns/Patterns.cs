@@ -22,13 +22,13 @@ public class Patterns : MonoBehaviour
         bul.movement.SetCustomGraph(function, mode);
         return bul;
     }
-    public static List<Bullet> RingOfCustomBullets(Func<float, Bullet> bulletFunction, float offset, int lines)
+    public static List<T> CustomRing<T>(Func<float, T> bulletFunction, float offset, int lines)
     {
-        return RingOfCustomBulletsWithCustomSpacing(bulletFunction, i => i * 360f / lines, offset, lines);
+        return CustomRingWithCustomSpacing<T>(bulletFunction, i => i * 360f / lines, offset, lines);
     }
 
-    public static List<Bullet> RingOfCustomBulletsWithCustomSpacing(Func<float, Bullet> bulletFunction, Func<int, float> spacingFunction, float offset, int lines) {
-        List<Bullet> bullets = new List<Bullet>();
+    public static List<T> CustomRingWithCustomSpacing<T>(Func<float, T> bulletFunction, Func<int, float> spacingFunction, float offset, int lines) {
+        List<T> bullets = new List<T>();
         for (int i = 0; i < lines; i++)
         {
             bullets.Add(bulletFunction(offset + spacingFunction(i)));
@@ -58,12 +58,12 @@ public class Patterns : MonoBehaviour
     
     public static List<Bullet> RingOfBullets(Bullet bullet, Vector2 origin, int number, float offset, float speed) {
         
-        return RingOfCustomBullets(theta => ShootStraight(bullet, origin, theta, speed), offset, number);  
+        return CustomRing(theta => ShootStraight(bullet, origin, theta, speed), offset, number);  
         
     }
     public static List<Bullet> ExplodingRingOfBullets(Bullet bullet, Vector2 origin, int number, float offset, float initialSpeed, float finalSpeed, float time)
     {
-        return RingOfCustomBullets(theta => BurstShoot(bullet, origin, theta, initialSpeed, finalSpeed, time), offset, number);
+        return CustomRing(theta => BurstShoot(bullet, origin, theta, initialSpeed, finalSpeed, time), offset, number);
 
     }
 
@@ -72,8 +72,8 @@ public class Patterns : MonoBehaviour
         return ShootCustomBullet(bullet, origin, Movement.RotatePath(angle, time => new Vector2(speed * time, (float)(amp * Math.Sin(time * angularVelocity)))), MovementMode.Position);
         
     }
-    public static List<Bullet> ShootMultipleCustomBullet(Func<float, Bullet> bulletFunction, float mainAngle, float spreadAngle, int sideLines) {
-        return RingOfCustomBulletsWithCustomSpacing(bulletFunction, x => (x - sideLines) * spreadAngle, mainAngle, sideLines * 2 + 1);
+    public static List<T> ShootMultipleCustomBullet<T>(Func<float, T> bulletFunction, float mainAngle, float spreadAngle, int sideLines) {
+        return CustomRingWithCustomSpacing(bulletFunction, x => (x - sideLines) * spreadAngle, mainAngle, sideLines * 2 + 1);
     
     }
 

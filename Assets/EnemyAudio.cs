@@ -14,7 +14,12 @@ public class EnemyAudio : MonoBehaviour
             yield return new WaitForSeconds(interval);
         }
     }
-
+    IEnumerator PlaySoundForXTimePulses(SFX sfx, float interval, int number, float pulse) {
+        while (true) {
+            yield return PlaySoundForTimes(sfx, interval, number);
+            yield return new WaitForSeconds(pulse - interval*number);
+        }
+    }
     IEnumerator PlaySoundForTimes(SFX sfx, float interval, int times) {
         for (int i = 0; i < times; i++) {
             sfx.PlayClip();
@@ -22,7 +27,9 @@ public class EnemyAudio : MonoBehaviour
         }
     
     }
-
+    public Coroutine PlayAudioForXTimeAndPause(SFX sfx, float interval, int number, float pause) {
+        return StartCoroutine(PlaySoundForXTimePulses(sfx, interval, number,pause));
+    }
     public Coroutine PlayAudioTimes(SFX sfx, float interval, int times) {
         return StartCoroutine(PlaySoundForTimes(sfx, interval, times));
     

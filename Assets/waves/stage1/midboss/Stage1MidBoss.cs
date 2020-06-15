@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 
-public class Stage1MidBoss : EnemyWave
+public class Stage1MidBoss : EnemyBossWave
 {
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float endY = 2f;
@@ -27,7 +27,6 @@ public class Stage1MidBoss : EnemyWave
 
 
 
-    public event Action OnDefeat;
     public void Defeated() {
         OnDefeat?.Invoke();
         GameManager.DestoryAllEnemyBullets();

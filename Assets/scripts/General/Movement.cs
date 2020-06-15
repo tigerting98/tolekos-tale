@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
  
 
     public void SetSpeed(Vector2 vel) {
+        moving = true;
         mode = MovementMode.Velocity;
         graph = time => vel;
         ResetTimer();

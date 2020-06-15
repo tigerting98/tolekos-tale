@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Stage1Wave1 : EnemyWave
 {
     // Start is called before the first frame update

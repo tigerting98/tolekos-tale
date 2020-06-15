@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4522323344577174238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5916288215380762352}
+  - component: {fileID: 3085221276502336863}
+  m_Layer: 0
+  m_Name: stage2endboss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5916288215380762352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27233347, y: 0.19923896, z: 0.9743871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3085221276502336863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a903c0df0a3504542a57f4c84c433bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies: []
+  bullets: []
+  bulletPack: {fileID: 0}
+  bulletSpawnSound: {fileID: 0}
+  boss: {fileID: 6857358497036807141, guid: b02337ff7beacc24aae2ed42bdcb486e, type: 3}
+  bossImage: {fileID: 6034030427296860853, guid: 2a0e4074c7cb37045aa045d56c8bed1f,
+    type: 3}
+  namesOfSpellCards: []
+  nextLevel: {fileID: 0}
+  key: {fileID: 6034030427296860853, guid: 2a9f0734abf35f04f810965ff7e3e908, type: 3}
+  image: {fileID: 6034030427296860853, guid: 2a0e4074c7cb37045aa045d56c8bed1f, type: 3}
+  dialogue1: {fileID: 11400000, guid: 64449a14215114f44a7a5101c75db347, type: 2}
+  dialogue2: {fileID: 11400000, guid: ec2e8f9130dbf8a449e71e819ba14534, type: 2}
+  spawnY: 2
+  bigBullet: {fileID: 11400000, guid: 2f3da22e193541f459a8c254a83ffeda, type: 2}
+  pointedBullet: {fileID: 11400000, guid: 35d66af1ee0a7a04f9ce8d4eb7865e41, type: 2}
+  magicCircle: {fileID: 8420722031687854107, guid: 652e125c1c34dad4995c1c5639c1b1e8,
+    type: 3}
+  timeToRadius: 1
+  radius: 1
+  bigBulletSpeed1: 1
+  bigBulletSpread: 20
+  bigBulletShotRate: 4
+  bigBulletNumber: 4
+  initialSpeed1: 5
+  radius1: 2
+  finalSpeed1: 1
+  smallBulletdelay1: 0.2
+  angularVel: 5
+  shotRate1: 0.3
+  pulseRate: 3
+  numberOfRings1: 2
+  numberPerRings1: 60

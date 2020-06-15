@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7078749689940481325
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4821386601786655032, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: name
+      value: God Of The Lake
+      objectReference: {fileID: 0}
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: listOfHp.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: listOfHp.Array.data[0]
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: listOfHp.Array.data[1]
+      value: 12500
+      objectReference: {fileID: 0}
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: listOfHp.Array.data[2]
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: listOfHp.Array.data[3]
+      value: 13000
+      objectReference: {fileID: 0}
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: listOfHp.Array.data[4]
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: WaterMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: FireMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: EarthMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 957944301124248136, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.090479225
+      objectReference: {fileID: 0}
+    - target: {fileID: 957944301124248136, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.08390044
+      objectReference: {fileID: 0}
+    - target: {fileID: 957944301124248136, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.6177557
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696318509942737689, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327079468212045775, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_Name
+      value: fish boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: chanceToDropCoins
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: minGold
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: maxGold
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664283095083113196, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: experience
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237686821007657055, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d0454ec1a9303648adf3ad8b4d58c6d,
+        type: 3}
+    - target: {fileID: 6237686821007657055, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: accf02acb6bfae242b167b6bda0e8e8e, type: 3}

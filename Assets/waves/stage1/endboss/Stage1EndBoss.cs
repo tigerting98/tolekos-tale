@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
-
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
 public class Stage1EndBoss : EnemyBossWave
 {
     [SerializeField] Movement background;
-    public GameObject bossImage;
     [Header("Dialogues")]
     [SerializeField] Dialogue preBossFight;
     [SerializeField] Dialogue midFightDialogue;
@@ -48,7 +46,7 @@ public class Stage1EndBoss : EnemyBossWave
     [SerializeField] float punchSpeed = 2f;
     [SerializeField] float explosionTime;
 
-    public event Action OnDefeat;
+
 
 
 
@@ -74,7 +72,7 @@ public class Stage1EndBoss : EnemyBossWave
 
         currentBoss = Instantiate(boss, initialPosition, Quaternion.identity);
         GameManager.currentBoss = currentBoss;
-        bossImage.SetActive(false);
+        SwitchToBoss();
         currentBoss.shooting.StartShooting(Pattern1(currentBoss));
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
         
@@ -148,21 +146,24 @@ public class Stage1EndBoss : EnemyBossWave
             if (animator)
             {
                 yield return new WaitForSeconds(0.8f);
-                Bullet punchbul = Instantiate(punch, currentBoss.transform.position, Quaternion.identity);
-                punchbul.movement.SetSpeed(new Vector2(0, -punchSpeed));
-                punchbul.movement.destroyBoundary = 6f;
-                yield return new WaitForSeconds(1 / punchSpeed);
-
-
-                if (punchbul)
+                if (currentBoss)
                 {
-                    Vector2 pos = punchbul.transform.position;
-                    Bullet explode = Instantiate(explosion, pos, Quaternion.identity);
-                    ExplodingAndBack(pos);
-                    Destroy(punchbul.gameObject);
-                    pattern3smashSFX.PlayClip();
-                   
+                    Bullet punchbul = Instantiate(punch, currentBoss.transform.position, Quaternion.identity);
+                    punchbul.movement.SetSpeed(new Vector2(0, -punchSpeed));
+                    punchbul.movement.destroyBoundary = 6f;
+                    yield return new WaitForSeconds(1 / punchSpeed);
 
+
+                    if (punchbul)
+                    {
+                        Vector2 pos = punchbul.transform.position;
+                        Bullet explode = Instantiate(explosion, pos, Quaternion.identity);
+                        ExplodingAndBack(pos);
+                        Destroy(punchbul.gameObject);
+                        pattern3smashSFX.PlayClip();
+
+
+                    }
                 }
 
             }
@@ -176,17 +177,18 @@ public class Stage1EndBoss : EnemyBossWave
 
     IEnumerator Pattern1(Enemy enemy) {
   
-        while (true) {
-            float angle = UnityEngine.Random.Range(0f, 360f);
-            enemy.enemyAudio.PlayAudioTimes(pattern1SFX, pattern1SpawnRate, pattern1Number);
-            for (int i = 0; i < numberOfCone; i++) {
-                enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(pattern1ConePack.GetBullet(0), enemy.transform, angle + i * 360f / numberOfCone, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing));
-            }
-            yield return new WaitForSeconds(pattern1PulseRate);
+
+        return Functions.RepeatAction(() =>
+            {
+                float offset = UnityEngine.Random.Range(0f, 360f);
+                enemy.enemyAudio.PlayAudioTimes(pattern1SFX, pattern1SpawnRate, pattern1Number);
+                Patterns.CustomRing((angle) => enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(pattern1ConePack.GetBullet(0), enemy.transform, angle, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing)), offset, numberOfCone);
+            }, pattern1PulseRate);
+     
         
         }
     
-    }
+    
     IEnumerator MoveLeftAndRight() {
         bool left = true;
         while (true) {
@@ -197,12 +199,13 @@ public class Stage1EndBoss : EnemyBossWave
             yield return new WaitForSeconds(time);
         
         }
+       
     
     }
 
     List<Bullet> ExplodingAndBack(Vector2 pos) {
        
-        return Patterns.RingOfCustomBullets(
+        return Patterns.CustomRing(
             angle => {
             Bullet bul = Patterns.ShootCustomBullet(explodingBullet, pos, Movement.RotatePath(angle,
                     t =>
@@ -216,33 +219,20 @@ public class Stage1EndBoss : EnemyBossWave
     }
 
     IEnumerator RainOfArrows() {
-        while (true) {
-            Bullet bul = Instantiate(arrow, new Vector2(UnityEngine.Random.Range(-4f, 4f), 4.4f), Quaternion.identity);
-            bul.setSpeed(new Vector2(0, -UnityEngine.Random.Range(minSpeed, maxSpeed)));
+        return Functions.RepeatCustomActionCustomTime(i =>
+        {
 
-            yield return new WaitForSeconds(UnityEngine.Random.Range(arrowSpawnTimeMin, arrowSpawnTimeMax));
-        }
+            Bullet bul = Instantiate(arrow, new Vector2(UnityEngine.Random.Range(-4f, 4f), 4.4f), Quaternion.identity);
+            bul.movement.SetSpeed(new Vector2(0, -UnityEngine.Random.Range(minSpeed, maxSpeed)));
+        }, i => UnityEngine.Random.Range(arrowSpawnTimeMin, arrowSpawnTimeMax));
+            
     
     }
-    void SwitchToImage(){
-        bossImage.SetActive(true);
-        bossImage.transform.position = currentBoss.transform.position;
-        currentBoss.gameObject.SetActive(false);
-    }
-
-    void SwitchToBoss()
-    {
-        currentBoss.gameObject.SetActive(true);
-        currentBoss.transform.position = bossImage.transform.position;
-        bossImage.SetActive(false);
-    }
+ 
 
  
 
-    public override void EndPhase() {
-        base.EndPhase();
-        SwitchToImage();
-    }
+
 
   
     

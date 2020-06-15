@@ -41,6 +41,7 @@ public class Shooting : MonoBehaviour
     
     }
 
+   
     
     public Coroutine StartShootingAfter(IEnumerator pattern, float time) {
         return StartCoroutine(StartAfter(pattern, time));
