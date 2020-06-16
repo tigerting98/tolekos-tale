@@ -43,11 +43,11 @@ GameObject:
   - component: {fileID: 3044574860783211177}
   - component: {fileID: 1455112021299339000}
   - component: {fileID: 5602098327999634390}
-  - component: {fileID: 5947980067964757729}
   - component: {fileID: 8042909890113886862}
   - component: {fileID: 7000809232635550173}
   - component: {fileID: -4043142195659186739}
   - component: {fileID: 757407015530055014}
+  - component: {fileID: 4873162056464914680}
   m_Layer: 8
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -144,7 +144,7 @@ MonoBehaviour:
   hitbox: {fileID: 7985819461488737577}
   damageTaker: {fileID: 7000809232635550173}
   isFocus: 0
-  health: {fileID: 5947980067964757729}
+  health: {fileID: 4873162056464914680}
   deathEffects: {fileID: 8042909890113886862}
   currentSpeed: 5
   water: {r: 0, g: 0.8431506, b: 1, a: 1}
@@ -196,20 +196,6 @@ CircleCollider2D:
   m_Offset: {x: 0.0021971166, y: -0.00036525726}
   serializedVersion: 2
   m_Radius: 0.17600346
---- !u!114 &5947980067964757729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6682898238167598175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 206ef2f95d7fd614e93bb7bc55d3bcf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 1000
-  canDie: 1
 --- !u!114 &8042909890113886862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +211,7 @@ MonoBehaviour:
   explosion: {fileID: 590762784679042569, guid: 8155ae7c582b12e4a86b5fa38bcef9f6,
     type: 3}
   deathSound: {fileID: 11400000, guid: f8b97ce014f6c4d46b231e4a28a1c9b1, type: 2}
-  hp: {fileID: 5947980067964757729}
+  hp: {fileID: 0}
   canDie: 1
   experience: 0
 --- !u!114 &7000809232635550173
@@ -240,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e95f2b3c7fb324795f2148835e6ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 5947980067964757729}
+  health: {fileID: 0}
   vulnerable: 1
   FireMultiplier: 1
   WaterMultiplier: 1
@@ -282,6 +268,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4873162056464914680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682898238167598175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01579d5835c9f184c87f40b4f40ff631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 1000
+  canDie: 1
 --- !u!1 &7602541494218181523
 GameObject:
   m_ObjectHideFlags: 0

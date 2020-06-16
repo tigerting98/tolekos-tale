@@ -7,7 +7,6 @@ public class Stage1MidBoss : EnemyBossWave
 {
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float endY = 2f;
-    [SerializeField] Boss bossEnemy;
     [Header("Ring Bullet pattern")]
     [SerializeField] BulletPack balls;
     [SerializeField] int ballNumber;
@@ -23,7 +22,7 @@ public class Stage1MidBoss : EnemyBossWave
     [SerializeField] float spreadAngle;
     [SerializeField] float straightPulseTime;
     [SerializeField] float pauseTime;
-
+    [SerializeField] float dmgBall = 100, dmgPointed = 50;
 
 
 
@@ -38,23 +37,23 @@ public class Stage1MidBoss : EnemyBossWave
     
     }
     IEnumerator BossPatterns() {
-        Boss boss = Instantiate(bossEnemy, new Vector2(0, 4.2f), Quaternion.identity);
-        GameManager.currentBoss = boss;
-        boss.bosshealth.OnDeath += Defeated;
-        float time = boss.movement.MoveTo(new Vector2(0, endY), movementSpeed);
+        currentBoss = Instantiate(boss, new Vector2(0, 4.2f), Quaternion.identity);
+        GameManager.currentBoss = currentBoss;
+        currentBoss.bosshealth.OnDeath += Defeated;
+        float time = currentBoss.movement.MoveTo(new Vector2(0, endY), movementSpeed);
         yield return new WaitForSeconds(time);
-        if (boss)
+        if (currentBoss)
         {
             for (int i = 0; i < numberofPulses; i++)
             {
-                boss.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(balls.GetAllBullets(), boss.transform, ballSpeed, ballShotRate, ballNumber),
+                currentBoss.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(GameManager.gameData.smallRoundBullet.GetAllItems(), dmgBall, currentBoss.transform, ballSpeed, ballShotRate, ballNumber),
                   delay * i);
-                boss.enemyAudio.PlayAudio(bulletSpawnSound, ballShotRate, delay * i);
+                currentBoss.enemyAudio.PlayAudio(bulletSpawnSound, ballShotRate, delay * i);
             }
-            while (true && boss) {
-                boss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(roundedBullets.GetBullet(UnityEngine.Random.Range(0, 4)), boss.transform,
+            while (currentBoss) {
+                currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(GameManager.gameData.pointedBullet.GetItem(UnityEngine.Random.Range(0, 4)), dmgPointed, currentBoss.transform,
                     straightSpeed, straightShotRate, spreadAngle, straightLines), 0, straightPulseTime);
-                boss.enemyAudio.PlayAudioDuration(bulletSpawnSound, straightShotRate, straightPulseTime);
+                currentBoss.enemyAudio.PlayAudioDuration(bulletSpawnSound, straightShotRate, straightPulseTime);
                 yield return new WaitForSeconds(pauseTime);
             }
         }

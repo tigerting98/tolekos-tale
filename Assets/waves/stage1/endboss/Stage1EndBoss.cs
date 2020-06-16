@@ -24,7 +24,7 @@ public class Stage1EndBoss : EnemyBossWave
     BulletPack pattern1ConePack;
     [SerializeField]
     int pattern1Number = 5, numberOfCone = 5;
-    [SerializeField] float pattern1PulseRate = 1f, pattern1SpawnRate = 0.05f, pattern1Spacing = 0.05f, pattern1Speed = 3f;
+    [SerializeField] float pattern1PulseRate = 1f, pattern1SpawnRate = 0.05f, pattern1Spacing = 0.05f, pattern1Speed = 3f, dmg1 =100;
 
 
     [Header("Pattern2")]
@@ -40,7 +40,7 @@ public class Stage1EndBoss : EnemyBossWave
     [Header("Pattern3 Bullet Behavior")]
     [SerializeField] Bullet explodingBullet;
     [SerializeField] int numberOfBulletsPattern3 = 30;
-    [SerializeField] float initialSpeedPattern3 = 10f, maxRadiusPattern3 = 1f, shortDelayPattern3 = 0.2f, finalSpeedPattern3 = 2f;
+    [SerializeField] float initialSpeedPattern3 = 10f, maxRadiusPattern3 = 1f, shortDelayPattern3 = 0.2f, finalSpeedPattern3 = 2f, dmg3 = 100f;
     [SerializeField] float pausetime = 2f;
     [SerializeField] Bullet explosion, punch;
     [SerializeField] float punchSpeed = 2f;
@@ -97,7 +97,7 @@ public class Stage1EndBoss : EnemyBossWave
         currentBoss.bosshealth.OnLifeDepleted += EndPhase2;
         currentBoss.shooting.StartShootingAfter(RainOfArrows(), 0.3f);
         currentBoss.shooting.StartShootingAfter(MoveLeftAndRight(), 0.3f);
-        currentBoss.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(arrow, currentBoss.transform, arrowSpeed, shotRate), 0.3f);
+        currentBoss.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(arrow, arrow.damageDealer.damage, currentBoss.transform, arrowSpeed, shotRate), 0.3f);
         currentBoss.enemyAudio.PlayAudio(pattern2SFX, shotRate, 0.3f);
   
     }
@@ -182,7 +182,7 @@ public class Stage1EndBoss : EnemyBossWave
             {
                 float offset = UnityEngine.Random.Range(0f, 360f);
                 enemy.enemyAudio.PlayAudioTimes(pattern1SFX, pattern1SpawnRate, pattern1Number);
-                Patterns.CustomRing((angle) => enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(pattern1ConePack.GetBullet(DamageType.Pure), enemy.transform, angle, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing)), offset, numberOfCone);
+                Patterns.CustomRing((angle) => enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), dmg1, enemy.transform, angle, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing)), offset, numberOfCone);
             }, pattern1PulseRate);
      
         
@@ -207,7 +207,7 @@ public class Stage1EndBoss : EnemyBossWave
        
         return Patterns.CustomRing(
             angle => {
-            Bullet bul = Patterns.ShootCustomBullet(explodingBullet, pos, Movement.RotatePath(angle,
+            Bullet bul = Patterns.ShootCustomBullet(GameManager.gameData.smallRoundBullet.GetItem(DamageType.Pure), dmg3, pos, Movement.RotatePath(angle,
                     t =>
                     new Vector2(0, t < maxRadiusPattern3 / initialSpeedPattern3 ?
                     initialSpeedPattern3 : t < maxRadiusPattern3 / initialSpeedPattern3 + shortDelayPattern3 ?

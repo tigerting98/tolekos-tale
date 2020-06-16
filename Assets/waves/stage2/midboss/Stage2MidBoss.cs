@@ -19,16 +19,17 @@ public class Stage2MidBoss : EnemyBossWave
     [SerializeField] float radius, radiusVariance, angularVel;
     [SerializeField] float timeToRadius;
     [SerializeField] float delayBeforeShooting;
-    [SerializeField] Bullet waterBullet;
-    [SerializeField] float bulletPattern1Speed, pattern1ShotRate, pattern1PulseRate;
+    Bullet waterBullet;
+    [SerializeField] float bulletPattern1Speed, pattern1ShotRate, pattern1PulseRate, dmg1 = 130;
     [SerializeField] int numberOfLines, pattern1BulletsPerPulse;
 
     [Header("Pattern 2")]
-    [SerializeField] float bulletPattern2Speed, pattern2ShotRate, pattern2angularvel;
+    [SerializeField] float bulletPattern2Speed, pattern2ShotRate, pattern2angularvel, dmg2 = 200;
     [SerializeField] int numberOfLines2;
 
 
     public override void SpawnWave() {
+        waterBullet = GameManager.gameData.pointedBullet.GetItem(DamageType.Water);
         StartCoroutine(PreFight1());
     }
      IEnumerator PreFight1() {
@@ -75,14 +76,14 @@ public class Stage2MidBoss : EnemyBossWave
     }
     void StartPattern2() {
         SwitchToBoss();
-        currentBoss.shooting.StartCoroutine(EnemyPatterns.BorderOfWaveAndParticle(waterBullet,
+        currentBoss.shooting.StartCoroutine(EnemyPatterns.BorderOfWaveAndParticle(waterBullet, dmg2,
             currentBoss.transform, bulletPattern2Speed, pattern2ShotRate, numberOfLines2, pattern2angularvel));
    
     }
     IEnumerator Pattern1() {
         List<Bullet> magicCircles = Patterns.CustomRing(
 
-            angle =>  Patterns.ShootCustomBullet(magicCircle, currentBoss.transform.position, Movement.RotatePath(
+            angle =>  Patterns.ShootCustomBullet(magicCircle,0, currentBoss.transform.position, Movement.RotatePath(
              angle, t => new Polar(t > timeToRadius ? radius + (float)(radiusVariance*Math.Sin(t-timeToRadius)) : radius * t / timeToRadius, angularVel * t).rect), MovementMode.Position)
             , 0, numberofMagicCircles);
 
@@ -95,7 +96,7 @@ public class Stage2MidBoss : EnemyBossWave
             int y = i;
             Shooting shooting = bul.GetComponent<Shooting>();          
             shooting.StartCoroutine(EnemyPatterns.RepeatSubPatternWithInterval(
-                ()=> EnemyPatterns.PulsingLines(waterBullet, bul.transform, bulletPattern1Speed, 
+                ()=> EnemyPatterns.PulsingLines(waterBullet, dmg1, bul.transform, bulletPattern1Speed, 
                 y%2==0? 0:Patterns.AimAt(bul.transform.position, GameManager.playerPosition), pattern1ShotRate, numberOfLines, pattern1BulletsPerPulse), shooting, pattern1PulseRate));
             i++;
         }

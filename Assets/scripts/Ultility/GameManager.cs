@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public static event Action OnSummonBoss;
     public static GamePlayerInput gameInput;
     public static DialogueUI dialogueUI;
+    public const float WeakMultiplier = 0.5f, StrongMultiplier = 1.5f;
 
     public static LevelDescription levelDescription = null;
 

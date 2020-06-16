@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd5bb04df3a208499c3d89f3df1940c, type: 3}
   m_Name: bigballs
   m_EditorClassIdentifier: 
-  bullets:
+  objects:
   - {fileID: 2464218109418663609, guid: b4fb7a3e03e4f2543aaebecf4d4d0dae, type: 3}
   - {fileID: 2464218109418663609, guid: 809d798cfa92f5e41bedb40f9b463fb9, type: 3}
   - {fileID: 2464218109418663609, guid: 8af6598cd1abe2746b3f6b11d8262946, type: 3}
   - {fileID: 7986464732834073172, guid: 4ca866dae31481248b06ef509438938d, type: 3}
-  dmg: 100

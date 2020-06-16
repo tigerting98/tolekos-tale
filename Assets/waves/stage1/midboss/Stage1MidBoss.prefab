@@ -44,23 +44,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
-  bullets: []
-  bulletPack: {fileID: 0}
   bulletSpawnSound: {fileID: 11400000, guid: 1ae9de8bd4ea5e04884441c847e4f6ec, type: 2}
+  boss: {fileID: 1792903561220353094, guid: 4e4612d5cfe5a9a41968e3289cd8357e, type: 3}
+  bossImage: {fileID: 0}
+  namesOfSpellCards: []
+  nextLevel: {fileID: 0}
   movementSpeed: 5
   endY: 2
   bossEnemy: {fileID: 1792903561220353094, guid: 4e4612d5cfe5a9a41968e3289cd8357e,
     type: 3}
-  balls: {fileID: 11400000, guid: 53d3c27e5080ddf4b9b16c0d22521ab8, type: 2}
+  balls: {fileID: 0}
   ballNumber: 20
   ballSpeed: 2
   ballShotRate: 4
   delay: 0.2
   numberofPulses: 2
-  roundedBullets: {fileID: 11400000, guid: 463b24bcd6598b149b15940c33a760c3, type: 2}
+  roundedBullets: {fileID: 0}
   straightLines: 2
   straightSpeed: 4
   straightShotRate: 0.1
   spreadAngle: 30
   straightPulseTime: 1
   pauseTime: 2
+  dmgBall: 100
+  dmgPointed: 50

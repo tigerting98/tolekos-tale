@@ -45,13 +45,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 5134524707559807227, guid: 6f26f4cb6d1fa334487f89724e0a960c, type: 3}
-  bullets: []
-  bulletPack: {fileID: 0}
   bulletSpawnSound: {fileID: 0}
-  audioVolume: 0
   y1: 3.5
   y2: 2.5
   moveSpeed: 4
   delay: 3
   number: 10
   spawnRate: 0.2
+  stats: {fileID: 11400000, guid: b41451b7b3a185f4f9234ed8097e744b, type: 2}

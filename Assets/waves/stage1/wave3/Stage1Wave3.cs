@@ -11,6 +11,7 @@ public class Stage1Wave3 : EnemyWave
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float bottomY = 0f;
     [SerializeField] int number = 10;
+    [SerializeField] EnemyStats stats;
     [Header("SpawnRate")]
     [SerializeField] float spawnRate = 0.2f;
     [SerializeField] float subWaveDelay = 1f;
@@ -24,6 +25,7 @@ public class Stage1Wave3 : EnemyWave
     [SerializeField] float minTime = 0.1f;
     [SerializeField] float maxTime = 1f;
     [SerializeField] float chanceofShooting = 0.3f;
+    [SerializeField] float dmg = 50;
 
 
     public override void SpawnWave() {
@@ -56,23 +58,25 @@ public class Stage1Wave3 : EnemyWave
         Vector2 end = left ? new Vector2(4.2f, bottomY) : new Vector2(-4.2f, bottomY);
         for (int i = 0; i < number; i++)
         {
-            int j = color ? i % 3 + 1 : 0;
-            StartCoroutine(SpawnEnemy(enemies[j], bulletPack.GetBullet(j), time, start, end));
+            int j = color ? i % 3 : 3;
+
+            StartCoroutine(SpawnEnemy(GameManager.gameData.ghosts.GetItem(j), GameManager.gameData.ellipseBullet.GetItem(j), dmg, time, start, end));
             time += spawnRate;
         }
 
     }
 
-    IEnumerator SpawnEnemy(Enemy enemy, Bullet bullet, float delay, Vector2 start, Vector2 end)
+    IEnumerator SpawnEnemy(Enemy enemy, Bullet bullet, float dmg, float delay, Vector2 start, Vector2 end)
     {
         yield return new WaitForSeconds(delay);
         Enemy newEnemy = Instantiate(enemy, start, Quaternion.identity);
+        enemy.SetEnemy(stats, false);
         float time = newEnemy.movement.MoveTo(end, moveSpeed);
         float shotRate = Random.Range(shotRateMin, shotRateMax);
         if (chanceofShooting > Random.Range(0f, 1f))
         {
             newEnemy.shooting.StartShootingAfter
-              (EnemyPatterns.ExplodingLineAtPlayer(bullet, newEnemy.transform, initialSpeed, finalSpeed, bulletCount, minTime, maxTime, shotRate), shotRate / 2);
+              (EnemyPatterns.ExplodingLineAtPlayer(bullet, dmg, newEnemy.transform, initialSpeed, finalSpeed, bulletCount, minTime, maxTime, shotRate), shotRate / 2);
             newEnemy.enemyAudio.PlayAudio(bulletSpawnSound, shotRate, shotRate / 2);
             newEnemy.enemyAnimation.PlayAnimation(shotRate, shotRate / 2);
         }

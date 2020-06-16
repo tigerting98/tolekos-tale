@@ -43,10 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f5dc48881bd1f489897fc69c6c51d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 6330706413461039320, guid: 2433375df0e3c8c4eb9eca7c96ac474d, type: 3}
-  bullets: []
-  bulletPack: {fileID: 0}
+  enemies: []
   bulletSpawnSound: {fileID: 0}
   moveSpeedMin: 1
   moveSpeedMax: 4
@@ -55,17 +52,17 @@ MonoBehaviour:
   centreminY: -3
   centremaxY: 3
   minSpawnY: 0
+  stats: {fileID: 11400000, guid: 4cfc299847d6eac48a2fd68fda2213d7, type: 2}
   spawnRateMin: 0.5
   spawnRateMax: 1
   number: 50
-  bullet1: {fileID: 11400000, guid: 27634bd64af986b45a203b15e8ab0dbe, type: 2}
-  bullet2: {fileID: 11400000, guid: 544c8898407c2b243b80705ea5cb626f, type: 2}
   minLines: 2
   maxLines: 5
   bulletSpeedMin: 1
   bulletSpeedMax: 4
   shotRateMin: 1
   shotRateMax: 5
+  dmg1: 100
   arrivalDelay: 1
   posY: 3
   number2: 10
@@ -74,8 +71,8 @@ MonoBehaviour:
   delay: 0.2
   pause: 1
   speed: 1
-  pack: {fileID: 11400000, guid: 4a4b7dbc9292829408832d86520b2d63, type: 2}
   bulletSpeed2: 4
   angle: 15
   lines: 1
+  dmg2: 50
   tpSFX: {fileID: 11400000, guid: 90c01456488d43c44864ddd83d5a7fbd, type: 2}

@@ -12,6 +12,7 @@ public class Stage1Wave2 : EnemyWave
     [SerializeField] float randomFactor = 0.1f;
     [SerializeField] float stopY = 3f;
     [SerializeField] float stopTime = 0.5f;
+    [SerializeField] EnemyStats stats;
     [Header("SpawnRate")]
     [SerializeField] float min = 0.3f;
     [SerializeField] float max = 0.7f;
@@ -20,7 +21,7 @@ public class Stage1Wave2 : EnemyWave
     [SerializeField] float initialSpeed = 10f;
     [SerializeField] float burstRadius = 1f;
     [SerializeField] float finalSpeed = 1f;
-
+    [SerializeField] float dmg = 100;
 
     public override void SpawnWave() {
         List<float> positions = new List<float>();
@@ -43,12 +44,13 @@ public class Stage1Wave2 : EnemyWave
     IEnumerator SpawnEnemy(float delay, float x)
     {
         yield return new WaitForSeconds(delay);
-        Enemy enemy = Instantiate(enemies[0], new Vector2(x, 4.5f), Quaternion.identity);
+        Enemy enemy = Instantiate(GameManager.gameData.linemonster.GetItem(DamageType.Pure), new Vector2(x, 4.5f), Quaternion.identity);
+        enemy.SetEnemy(stats, false);
         float time1 = enemy.movement.MoveTo(new Vector2(x + Random.Range(-randomFactor, randomFactor), stopY), moveSpeed);
         yield return new WaitForSeconds(time1);
         if (enemy) {
             float angle = Patterns.AimAt(enemy.transform.position, GameManager.playerPosition);
-            Patterns.ExplodingRingOfBullets(bulletPack.GetBullet(Random.Range(0, 3))
+            Patterns.ExplodingRingOfBullets(GameManager.gameData.smallRoundBullet.GetItem(Random.Range(0, 3)), dmg
                 , enemy.transform.position, number, angle, initialSpeed, finalSpeed, burstRadius / initialSpeed) ;
             enemy.enemyAudio.PlayAudioTimes(bulletSpawnSound, 0, 1);
             yield return new WaitForSeconds(stopTime);

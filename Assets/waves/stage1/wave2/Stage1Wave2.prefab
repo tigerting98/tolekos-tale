@@ -43,20 +43,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64774cfe08d5ab34480cd7812676bc78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 7404586815816348530, guid: 61d64ab0cc86fc34d9194951cb1d4462, type: 3}
-  bullets: []
-  bulletPack: {fileID: 11400000, guid: 083747794e40edb4dbcecc003e4eb37b, type: 2}
-  bulletSpawnSound: {fileID: 11400000, guid: 3e8ee86becea32a40a1c90921e233b95, type: 2}
+  enemies: []
+  bulletSpawnSound: {fileID: 11400000, guid: db48958cbc7a5a64bac15606518d3ace, type: 2}
   moveSpeed: 3
   acceleration: 5
   number: 15
   randomFactor: 0.5
   stopY: 2
   stopTime: 2
+  stats: {fileID: 11400000, guid: dcceb9e82b3430c4dad6121f26f29a56, type: 2}
   min: 1
   max: 1.5
   bulletCount: 20
   initialSpeed: 10
   burstRadius: 1
   finalSpeed: 2
+  dmg: 100

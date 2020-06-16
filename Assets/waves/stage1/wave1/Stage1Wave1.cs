@@ -11,6 +11,7 @@ public class Stage1Wave1 : EnemyWave
     [SerializeField] float delay;
     [SerializeField] int number = 5;
     [SerializeField] float spawnRate = 0.5f;
+    [SerializeField] EnemyStats stats;
 
 
     public override void SpawnWave() {
@@ -25,8 +26,10 @@ public class Stage1Wave1 : EnemyWave
         yield return new WaitForSeconds(delay);
         for (int i = 0; i < number; i++)
         {
+
             float initialX = left ? -4.5f : 4.5f;
-            Enemy enemy = Instantiate(enemies[0], new Vector2(initialX, y), Quaternion.identity);
+            Enemy enemy = Instantiate(GameManager.gameData.ghosts.GetItem(DamageType.Pure), new Vector2(initialX, y), Quaternion.identity);
+            enemy.SetEnemy(stats, false);
             float time = enemy.movement.MoveTo(new Vector2(-initialX, y), moveSpeed);
             enemy.DestroyAfter(time);
             yield return new WaitForSeconds(spawnRate);

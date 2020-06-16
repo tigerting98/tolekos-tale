@@ -110,3 +110,5 @@ MonoBehaviour:
     left: 0
     enemyid: 0
     shootChance: 0.1
+  stats: {fileID: 11400000, guid: 1f26a21c71ec6d84eb8b7e9a7cad5e11, type: 2}
+  dmg: 150

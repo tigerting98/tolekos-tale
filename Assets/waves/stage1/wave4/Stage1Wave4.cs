@@ -19,19 +19,19 @@ public class Stage1Wave4 : EnemyWave
     [SerializeField] float centreminY = -3f;
     [SerializeField] float centremaxY = 3f;
     [SerializeField] float minSpawnY = 0f;
+    [SerializeField] EnemyStats stats;
     [Header("SpawnRate")]
     [SerializeField] float spawnRateMin = 0.5f;
     [SerializeField] float spawnRateMax = 1f;
     [SerializeField] float number = 50;
     [Header("Bullet Behavior")]
-    [SerializeField] BulletPack bullet1;
-    [SerializeField] BulletPack bullet2;
     [SerializeField] int minLines = 2;
     [SerializeField] int maxLines = 5;
     [SerializeField] float bulletSpeedMin = 1f;
     [SerializeField] float bulletSpeedMax = 4f;
     [SerializeField] float shotRateMin = 1f;
     [SerializeField] float shotRateMax = 5f;
+    [SerializeField] float dmg1 = 100;
 
     [Header("Second Wave")]
     [SerializeField] float arrivalDelay = 1f;
@@ -43,13 +43,15 @@ public class Stage1Wave4 : EnemyWave
     [SerializeField] float pause = 1f;
     [SerializeField] float speed = 2f;
     [Header("Second Wave Bullets")]
-    [SerializeField] BulletPack pack;
     [SerializeField] float bulletSpeed2 = 2f;
     [SerializeField] float angle = 15f;
     [SerializeField] int lines = 1;
+    [SerializeField] float dmg2 = 50;
     [Header("Spawn Sound")]
     [SerializeField] SFX tpSFX;
+    Enemy en;
     public override void SpawnWave() {
+        en = GameManager.gameData.patternSprite;
         StartCoroutine(TheWave());
 
 
@@ -88,7 +90,8 @@ public class Stage1Wave4 : EnemyWave
         }
 
         Vector2 pivot = new Vector2(Random.Range(centreminX, centremaxX), Random.Range(centreminY, centremaxY));
-        Enemy enemy = Instantiate(enemies[0], spawnLocation, Quaternion.identity);
+        Enemy enemy = Instantiate(en, spawnLocation, Quaternion.identity);
+        en.SetEnemy(stats, false);
         enemy.movement.SetSpeed((pivot - spawnLocation).normalized * Random.Range(moveSpeedMin, moveSpeedMax));
         enemy.movement.destroyBoundary = 4.5f;
         SetShooting(enemy);
@@ -97,9 +100,11 @@ public class Stage1Wave4 : EnemyWave
 
     void SetShooting(Enemy enemy) {
         float shotRate = Random.Range(shotRateMin, shotRateMax);
-        enemy.shooting.ShootWhenInBound(EnemyPatterns.PulsingBulletsRandomAngle(bullet1.GetBullet(Random.Range(0, 4)), enemy.transform,
+        Bullet bul1 = GameManager.gameData.arrowBullet.GetItem(Random.Range(0, 4));
+        Bullet bul2 = GameManager.gameData.ellipseBullet.GetItem(Random.Range(0, 4));
+        enemy.shooting.ShootWhenInBound(EnemyPatterns.PulsingBulletsRandomAngle(bul1, dmg1, enemy.transform,
             Random.Range(bulletSpeedMin, bulletSpeedMax), shotRate, Random.Range(minLines, maxLines+1)));
-        enemy.shooting.ShootWhenInBound(EnemyPatterns.PulsingBulletsRandomAngle(bullet2.GetBullet(Random.Range(0, 4)), enemy.transform,
+        enemy.shooting.ShootWhenInBound(EnemyPatterns.PulsingBulletsRandomAngle(bul2, dmg1, enemy.transform,
             Random.Range(bulletSpeedMin, bulletSpeedMax), shotRate, Random.Range(minLines, maxLines + 1)));
         
     }
@@ -113,11 +118,13 @@ public class Stage1Wave4 : EnemyWave
     
     }
     IEnumerator enemy2(float x) {
-        Enemy enemy = Instantiate(enemies[0], new Vector2(x, posY), Quaternion.identity);
+        Enemy enemy = Instantiate(en, new Vector2(x, posY), Quaternion.identity);
+        enemy.SetEnemy(stats, false);
+        Bullet bul = GameManager.gameData.whiteArrowBullet;
         tpSFX.PlayClip();
         yield return new WaitForSeconds(delay);
         if (enemy)
-        { enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(pack.GetBullet(0), enemy.transform, bulletSpeed2, shotRate2, angle, lines), 0, duration);
+        { enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(bul, dmg2, enemy.transform, bulletSpeed2, shotRate2, angle, lines), 0, duration);
         }
         yield return new WaitForSeconds(duration + pause);
         if (enemy) {

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public float maxHP = 1000;
-    float currentHP;
+    protected float currentHP;
     public event Action OnDeath;
     public bool canDie = true;
 
@@ -29,31 +29,31 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void InvokeDeath() {
+    public virtual void InvokeDeath() {
 
         OnDeath?.Invoke();
     }
 
-    public void Heal(float dmg)
+    public virtual void Heal(float dmg)
 
     {
         currentHP += dmg;
     }
-    public float GetCurrentHP()
+    public virtual float GetCurrentHP()
     {
         return currentHP;
     }
 
    
-    public void IncreaseMaxHP(float hp) {
+    public virtual void IncreaseMaxHP(float hp) {
         maxHP += hp;
         currentHP += hp;
     }
-    public void ResetHP() {
+    public virtual void ResetHP() {
         currentHP = maxHP;
     }
 
-    public bool ZeroHP() {
+    public virtual bool ZeroHP() {
         return currentHP <= 0;
     }
 

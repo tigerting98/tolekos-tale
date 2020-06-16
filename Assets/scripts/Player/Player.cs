@@ -6,7 +6,7 @@ using System.Threading;
 
 using UnityEngine;
 
-[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(PlayerHealth))]
 [RequireComponent(typeof(Death))]
 public class Player : MonoBehaviour
 {
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     bool isFiring = false;
     float firingCoolDown = 0;
     SpriteRenderer hitsprite = default;
-    public Health health;
+    public PlayerHealth health;
     [SerializeField] PlayerDeath deathEffects;
     public float currentSpeed = 5f;
     public Color water, earth, fire;
@@ -54,8 +54,6 @@ public class Player : MonoBehaviour
     void SetUp() {
  
 
-        health.maxHP = PlayerStats.playerMaxHP;
-        health.ResetHP();
         SetDamageType();
         SetUpBoundary();
         SetPlayerBulletDamage(PlayerStats.damage);
@@ -129,21 +127,21 @@ public class Player : MonoBehaviour
         if (mode == DamageType.Water) {
             hitsprite.color = water;
             damageTaker.WaterMultiplier = 1;
-            damageTaker.EarthMultiplier = 2;
-            damageTaker.FireMultiplier = 0.5f;
+            damageTaker.EarthMultiplier = GameManager.StrongMultiplier;
+            damageTaker.FireMultiplier = GameManager.WeakMultiplier;
         }
         else if (mode == DamageType.Earth)
         {
             hitsprite.color = earth;
-            damageTaker.WaterMultiplier = 0.5f;
+            damageTaker.WaterMultiplier = GameManager.WeakMultiplier;
             damageTaker.EarthMultiplier = 1;
-            damageTaker.FireMultiplier = 2;
+            damageTaker.FireMultiplier = GameManager.StrongMultiplier;
         }
         if (mode == DamageType.Fire)
         {
             hitsprite.color = fire;
-            damageTaker.WaterMultiplier = 2;
-            damageTaker.EarthMultiplier = 0.5f;
+            damageTaker.WaterMultiplier = GameManager.StrongMultiplier;
+            damageTaker.EarthMultiplier = GameManager.WeakMultiplier;
             damageTaker.FireMultiplier = 1;
         }
     }

@@ -46,3 +46,16 @@ MonoBehaviour:
   spellcardUI: {fileID: 1440613776595574203, guid: fbc60427d3170024288c8cb4b5ba2fa5,
     type: 3}
   lifeDepletedSFX: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
+  pointedBullet: {fileID: 11400000, guid: 41aa83ad522d4c441b420119f326348b, type: 2}
+  smallRoundBullet: {fileID: 11400000, guid: f6d3e6216ead4c946a5abcd2fba1d3b8, type: 2}
+  bigBullet: {fileID: 11400000, guid: 6583d2f611a41f24fa8dea759fa2b553, type: 2}
+  arrowBullet: {fileID: 11400000, guid: 93521daa990d365478ecda6f7b65cc39, type: 2}
+  ellipseBullet: {fileID: 11400000, guid: db9c7a3e4381a7d458143ac16c0b25c4, type: 2}
+  whiteArrowBullet: {fileID: 8666329801328841485, guid: a7c8ba91d620fce408a9031c3a0b0d87,
+    type: 3}
+  ghosts: {fileID: 11400000, guid: f9bc86bb33e833e42b241d21cac03812, type: 2}
+  linemonster: {fileID: 11400000, guid: e17c5ae1cdbaddd45a4fe548718245ab, type: 2}
+  waterFairy: {fileID: 8125937657687486251, guid: 58b208128480af14e95154258395709b,
+    type: 3}
+  patternSprite: {fileID: 6330706413461039320, guid: 0f38cfbd00a6bb545b54edd928d675ba,
+    type: 3}

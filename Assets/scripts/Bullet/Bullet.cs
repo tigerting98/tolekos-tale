@@ -19,6 +19,13 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public Bullet SetDamage(float dmg) { 
+        if(damageDealer)
+        {
+            damageDealer.damage = dmg;
+
+        }return this;
+    }
     private void OnDestroy()
     {
         

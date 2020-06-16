@@ -29,6 +29,9 @@ public class PlayerStats : MonoBehaviour
     public static int maxBomb = 10;
     public static int bombCount = 3;
 
+    public static float bombDamage = 1000;
+    
+
     public static void UseBomb() {
         bombCount--;
         OnUseBomb?.Invoke();
@@ -58,6 +61,7 @@ public class PlayerStats : MonoBehaviour
 
     public static void Reset()
     {
+        bombDamage = 1000;
         playerLevel = 1;
         exp = 0;
         expToLevelUp = expFormula(1);

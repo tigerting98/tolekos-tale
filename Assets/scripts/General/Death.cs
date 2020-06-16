@@ -9,7 +9,7 @@ public class Death : MonoBehaviour
     [SerializeField] SFX deathSound = default;
     [SerializeField] Health hp = default;
     public bool canDie = true;
-    [SerializeField] int experience = 10;
+    public int experience = 10;
     public event Action OnDeath;
     public event Action OnLifeDepleted;
 

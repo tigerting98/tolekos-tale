@@ -43,9 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a903c0df0a3504542a57f4c84c433bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
-  bullets: []
-  bulletPack: {fileID: 0}
   bulletSpawnSound: {fileID: 0}
   boss: {fileID: 6857358497036807141, guid: b02337ff7beacc24aae2ed42bdcb486e, type: 3}
   bossImage: {fileID: 6034030427296860853, guid: 2a0e4074c7cb37045aa045d56c8bed1f,
@@ -61,11 +58,6 @@ MonoBehaviour:
   dialogue2: {fileID: 11400000, guid: ec2e8f9130dbf8a449e71e819ba14534, type: 2}
   endDialogue: {fileID: 11400000, guid: 453877f5855fc4f4a924eef106134e2d, type: 2}
   spawnY: 2
-  bigBullet: {fileID: 11400000, guid: 883b65a988d3cf245abdecada7d223d5, type: 2}
-  ellipseBullet: {fileID: 11400000, guid: 608a7b9ce54a58b4dbb906a5c2701efd, type: 2}
-  pointedBullet: {fileID: 11400000, guid: 6910bab1b6def904fa598bac71c0916d, type: 2}
-  smallBullet: {fileID: 11400000, guid: f8931e29a32f881429e75211464553e2, type: 2}
-  arrowBullet: {fileID: 11400000, guid: 1afa37b11ecc459478144a73ff35864d, type: 2}
   magicCircle: {fileID: 8420722031687854107, guid: 652e125c1c34dad4995c1c5639c1b1e8,
     type: 3}
   timeToRadius: 1
@@ -73,6 +65,8 @@ MonoBehaviour:
   bigBulletSpeed1: 1
   bigBulletSpread: 20
   bigBulletShotRate: 4
+  dmg1Big: 300
+  dmg1ellipse: 200
   bigBulletNumber: 4
   initialSpeed1: 5
   radius1: 2
@@ -90,11 +84,13 @@ MonoBehaviour:
   delay: 0.1
   lineduration: 7
   pulseRate2: 20
+  dmg2line: 150
   CircleBullets2shotRate: 0.6
   spread2: 15
   circlebulletpulseRate2: 5
   bossmovespeed: 8
   pulseDuration2: 3
+  dmg2circle: 200
   numberOfCircleBullets2: 5
   radius3: 1
   pulseRate3: 0.5
@@ -105,11 +101,16 @@ MonoBehaviour:
   shotRateLarge3: 3
   spreadAngleLarge3: 20
   largespeed3: 1.2
+  dmg3arrow: 100
+  dmg3circle: 150
+  dmg3Big: 300
   spawnradius4: 0.2
   initialSpeed4: 3
   finalSpeed4: 1
   shotRate4: 0.05
   pulseRate4: 5
+  dmg4pointed: 250
+  dmg4arrow: 125
   spawnRatio4: 2
   numberPerPulse4: 70
   waterfairy: {fileID: 1721693820931709140, guid: e8c0a44795a259243af3c6fb387fdf24,
@@ -118,6 +119,7 @@ MonoBehaviour:
   bossShootRate5: 4
   bossShootSpeed5: 2
   bossshootSpread5: 20
+  dmg5Big: 300
   bossShootNumber5: 5
   spawnRatefairy: 4
   shotRatefairy: 0.05
@@ -128,6 +130,7 @@ MonoBehaviour:
   fairyangularVel: 10
   fairyamp: 0.2
   fairyY: 3
+  dmg5fairy: 100
   spawnRateslime: 3
   shotRateslime: 2
   speedbulletslime: 2
@@ -136,3 +139,5 @@ MonoBehaviour:
   numberofexplodingBullets: 30
   explodingBulletSpeedFast: 2
   explodingBulletSpeedSlow: 1
+  dmg5arrow: 0
+  dmg5ball: 0

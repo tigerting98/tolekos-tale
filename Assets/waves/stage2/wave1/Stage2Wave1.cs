@@ -20,17 +20,23 @@ public class Stage2Wave1 : EnemyWave
     [SerializeField] int bulletNumber;
     [SerializeField] int lines;
     [SerializeField] List<SubWave> subwaves;
+    [SerializeField] EnemyStats stats;
+    [SerializeField] float dmg = 150;
 
 
     public override void SpawnWave() {
         foreach (SubWave subwave in subwaves) {
-            StartCoroutine(SpawnEnemy(enemies[subwave.enemyid], subwave.left, subwave.startTime, subwave.number, subwave.shootChance));
+            Enemy en = subwave.enemyid == 0 ? GameManager.gameData.ghosts.GetItem(DamageType.Water)
+                : GameManager.gameData.linemonster.GetItem(DamageType.Water);
+            en.SetEnemy(stats, false) ;
+            StartCoroutine(SpawnEnemy(en, subwave.left, subwave.startTime, subwave.number, subwave.shootChance));
         }
 
     }
 
     IEnumerator SpawnEnemy(Enemy en, bool left, float delay, int number, float shootChance)
     {
+        Bullet bul = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Water);
         yield return new WaitForSeconds(delay);
         float r= 4.1f;
         yield return Functions.RepeatActionXTimes(() =>
@@ -41,7 +47,7 @@ public class Stage2Wave1 : EnemyWave
             float acc = startSpeed / time;
             enemy.movement.SetAcceleration(new Vector2((left ? 1 : -1) * startSpeed, 0), t => new Vector2((left ? 1 : -1) * (t < time ? -acc : acc), 0));
             if (Random.Range(0f,1f)< shootChance) {
-                enemy.shooting.StartShootingFor(EnemyPatterns.PulsingBulletsRandomAngle(bullets[0], enemy.transform, bulletSpeed, shotRate, lines), time, shotRate * bulletNumber);
+                enemy.shooting.StartShootingFor(EnemyPatterns.PulsingBulletsRandomAngle(bul, dmg, enemy.transform, bulletSpeed, shotRate, lines), time, shotRate * bulletNumber);
                 }
         }, spawnRate, number);
     }

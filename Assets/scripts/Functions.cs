@@ -77,5 +77,36 @@ public class Functions : MonoBehaviour
     public static Vector2 RandomLocation(Vector2 origin, float bounds) {
         return origin + RandomLocation(-bounds, bounds, -bounds, bounds);
     }
-    
+
+    public static GameObject GetNearestEnemy(Vector2 origin)
+    {
+        GameObject obj = null;
+        float distance = Mathf.Infinity;
+        foreach (GameObject item in GameManager.enemies.Values)
+        {
+            Vector2 pos = item.transform.position;
+            if (pos.x < 4.1 && pos.x > -4.1 && pos.y < 4.1 && pos.y > -4.1)
+            {
+                float dist = (pos - origin).magnitude;
+
+                if (dist < distance)
+                {
+                    distance = dist;
+                    obj = item;
+
+                }
+            }
+
+        }
+
+        return obj;
+    }
+
+    public static float AimAt(Vector2 shooter, Vector2 target)
+    {
+
+        Vector2 diff = target - shooter;
+        return Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x);
+    }
+
 }

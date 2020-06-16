@@ -12,6 +12,7 @@ public class PlayerShop : MonoBehaviour
     [SerializeField] Slider healthbar;
     [SerializeField] Text healthtext;
     [SerializeField] TextMeshProUGUI goldText;
+    [SerializeField] TextMeshProUGUI bombDmgText;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,8 @@ public class PlayerShop : MonoBehaviour
         healthtext.text = ((int)PlayerStats.playerCurrentHP).ToString() + "/" + ((int)PlayerStats.playerMaxHP).ToString();
         healthbar.value = PlayerStats.playerCurrentHP / PlayerStats.playerMaxHP;
         goldText.text = "Gold: " + PlayerStats.gold.ToString();
- 
+        bombDmgText.text = string.Format("Bomb Damage: {0} per part", PlayerStats.bombDamage);
+
+
     }
 }

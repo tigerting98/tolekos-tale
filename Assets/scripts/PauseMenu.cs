@@ -39,6 +39,7 @@ public class PauseMenu : MonoBehaviour
         txt.Append(string.Format("Earth Focus Damage: {0}\n", PlayerStats.damage* PlayerStats.earthFocusDaamgeRatio));
         txt.Append(string.Format("Fire Unfocus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireUnfocusDamageRatio));
         txt.Append(string.Format("Fire Focus Damage: {0} per second", PlayerStats.damage * PlayerStats.fireFocusDamageRatio));
+        txt.Append(string.Format("Bomb Damage: {0} per part", PlayerStats.bombDamage));
         text.text = txt.ToString() ;
     
     }

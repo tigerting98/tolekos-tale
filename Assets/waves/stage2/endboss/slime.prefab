@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206ef2f95d7fd614e93bb7bc55d3bcf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 1000
+  maxHP: 350
   canDie: 1
 --- !u!114 &-3481793740693039638
 MonoBehaviour:
@@ -238,6 +238,7 @@ MonoBehaviour:
   maxGold: 100
   minGold: 10
   coin: {fileID: 7094970196663169445, guid: 44e052c241147834c8f5af260bcdc767, type: 3}
+  otherDrops: []
 --- !u!114 &-3013257962938568609
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Transactions;
 using UnityEditor;
 using UnityEngine;
@@ -26,6 +27,10 @@ public class Movement : MonoBehaviour
         mode = MovementMode.Velocity;
         graph = time => vel;
         ResetTimer();
+    }
+
+    public void SetSpeed(float vel, float angle) {
+        SetSpeed(Quaternion.Euler(0, 0, angle) * new Vector2(vel, 0));
     }
     public void SetAcceleration(Vector2 initialVel, Func<float, Vector2> graph) {
         mode = MovementMode.Acceleration;

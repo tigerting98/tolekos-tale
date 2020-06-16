@@ -24,6 +24,16 @@ PrefabInstance:
       propertyPath: maxHP
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1041419548464534032, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: EarthMultiplier
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041419548464534032, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: FireMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2551118086999079481, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
         type: 3}
       propertyPath: m_Name

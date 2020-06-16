@@ -4,16 +4,16 @@ using System.Reflection;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Bullet Pack")]
-public class BulletPack : ScriptableObject
+public class BulletPack : ElementPack<Bullet>
 {
-    public List<Bullet> bullets;
-    public float dmg = 100;
+    
 
-    public Bullet GetBullet(int i) {
+
+    /*public Bullet GetBullet(int i) {
         Bullet bul = bullets[i];
-        bul.damageDealer.damage = dmg;
         return bul;
     }
+
 
     public Bullet GetBullet(DamageType type) {
         switch (type) {
@@ -30,6 +30,8 @@ public class BulletPack : ScriptableObject
         }
     }
 
+
+
     public List<Bullet> GetAllBullets() {
         List<Bullet> buls = new List<Bullet>();
         for (int i = 0; i < bullets.Count; i++) {
@@ -37,6 +39,6 @@ public class BulletPack : ScriptableObject
         }
         return buls;
     
-    }
+    }*/
 
 }

@@ -48,14 +48,13 @@ MonoBehaviour:
   bulletPack: {fileID: 0}
   bulletSpawnSound: {fileID: 0}
   boss: {fileID: 1792903561220353094, guid: 0c6fd512b0f90fe47a13203753d96cc4, type: 3}
-  lifeDepletedSFX: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
+  bossImage: {fileID: 0}
   namesOfSpellCards:
   - Heaven's Judgement\n ~Heavenly Arrow Barrage~
   - One For All\n~Ultimate States Of Smash~
   nextLevel: {fileID: 11400000, guid: 1a32aca0baf75b248927de00041c87f3, type: 2}
   background: {fileID: -9162131273511116121, guid: bbf1ec97531c67a4fb422744b1b8a8e7,
     type: 3}
-  bossImage: {fileID: 0}
   preBossFight: {fileID: 11400000, guid: ba2349c965a0de6438725b6fd43189ae, type: 2}
   midFightDialogue: {fileID: 11400000, guid: bc5387209a12d5043adab232250cc8f8, type: 2}
   endFightDialogue: {fileID: 11400000, guid: f4a429c7a5636854e8330983014f9a78, type: 2}
@@ -63,13 +62,14 @@ MonoBehaviour:
   pattern2SFX: {fileID: 11400000, guid: c254def07b7610d4192ae4bec424e8ee, type: 2}
   pattern3smashSFX: {fileID: 11400000, guid: 32edd8a8667b3434186b14295e8dbe38, type: 2}
   pattern3tpSFX: {fileID: 11400000, guid: dae60ebf79fe0cc499aa0608fbe8cf6d, type: 2}
-  pattern1ConePack: {fileID: 11400000, guid: dc39e171c6e699345ab306b13e546b4c, type: 2}
+  pattern1ConePack: {fileID: 0}
   pattern1Number: 12
   numberOfCone: 8
   pattern1PulseRate: 1.5
   pattern1SpawnRate: 0.05
   pattern1Spacing: 0.15
   pattern1Speed: 4
+  dmg1: 100
   arrowSpawnTimeMax: 0.08
   arrowSpawnTimeMin: 0.04
   maxSpeed: 5
@@ -80,13 +80,14 @@ MonoBehaviour:
   minY: 0.5
   arrowSpeed: 1.5
   shotRate: 1
-  explodingBullet: {fileID: 3074130419410500871, guid: 22af37041640a95438f0807ab9559167,
+  explodingBullet: {fileID: 911972999547948889, guid: 9ecd7e71157ad364284fe4a6a2b0c127,
     type: 3}
   numberOfBulletsPattern3: 25
   initialSpeedPattern3: 10
   maxRadiusPattern3: 1
   shortDelayPattern3: 0.15
   finalSpeedPattern3: 2
+  dmg3: 100
   pausetime: 3
   explosion: {fileID: 911972999547948889, guid: 9ecd7e71157ad364284fe4a6a2b0c127,
     type: 3}

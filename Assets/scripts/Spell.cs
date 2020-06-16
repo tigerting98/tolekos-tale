@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Spell : MonoBehaviour
 {
- 
+
+    [SerializeField] List<Bomb> bombparts;
     [SerializeField] SFX sfx;
     public float invulTimer;
     void Start()
@@ -17,5 +18,11 @@ public class Spell : MonoBehaviour
        
         Destroy(gameObject);
     
+    }
+
+    public void SetDamage(float dmg) {
+        foreach (Bomb bomb in bombparts) {
+            bomb.SetDamage(dmg);
+        }
     }
 }

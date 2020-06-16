@@ -43,17 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9fac20870732c4aa401ee114c035c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 5134524707559807227, guid: c16650f7f5799f441ac3b48ef7011d51, type: 3}
-  - {fileID: 401398465952111886, guid: 47dec3190297fc041af525ef7f0eeb73, type: 3}
-  - {fileID: 6829071142009845231, guid: 4c9eaebe0920ba049a553b8b928736aa, type: 3}
-  - {fileID: 3197002288320003842, guid: d6f71e1ce0476fa4791a88c516bc55e5, type: 3}
-  bullets: []
-  bulletPack: {fileID: 11400000, guid: 4c312970e0768b747ba817eff4a10225, type: 2}
+  enemies: []
   bulletSpawnSound: {fileID: 11400000, guid: c254def07b7610d4192ae4bec424e8ee, type: 2}
   moveSpeed: 3
   bottomY: 0
   number: 10
+  stats: {fileID: 11400000, guid: 8612c0ca12e233740814a5db32c34473, type: 2}
   spawnRate: 0.2
   subWaveDelay: 2
   finalDelay: 3
@@ -65,3 +60,4 @@ MonoBehaviour:
   minTime: 0
   maxTime: 0.2
   chanceofShooting: 0.8
+  dmg: 50

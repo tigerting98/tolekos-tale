@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using UnityEditor.Experimental.TerrainAPI;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -20,7 +18,7 @@ public class Level : MonoBehaviour
     public List<float> timesSecondHalf;
     public EnemyBossWave endBoss;
 
-    void Start()
+    public virtual void Start()
     {
 
 
@@ -57,7 +55,7 @@ public class Level : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         timer = timer + Time.deltaTime;
     }
