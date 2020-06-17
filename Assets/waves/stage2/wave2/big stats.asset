@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c516afbddbe14eb458c8e02a00bb86d5, type: 3}
   m_Name: big stats
   m_EditorClassIdentifier: 
-  hp: 5000
+  hp: 4500
   dmg: 1000
   goldchance: 1
   maxGold: 200

@@ -16,16 +16,13 @@ public class Enemy : MonoBehaviour
     public Shooting shooting;
     public DamageTaker damagetaker;
     public Collider2D collider;
-    public EnemyAnimation enemyAnimation;
     public EnemyAudio enemyAudio;
 
     // Start is called before the first frame update
 
     public virtual void Awake()
     {
-        if (!enemyAnimation) {
-            enemyAnimation = GetComponent<EnemyAnimation>();
-        }
+
         movement.destroyBoundary = 10f;
         if (!enemyAudio)
         {

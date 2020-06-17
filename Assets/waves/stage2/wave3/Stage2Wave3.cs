@@ -13,6 +13,7 @@ public class Stage2Wave3 : EnemyWave
     [SerializeField] float pulseRate, pulseDuration;
     [SerializeField] EnemyStats ghostStat, fairyStat;
     [SerializeField] int numberOfBlobs;
+    [SerializeField] EnemyWave wave;
     [Header("Bullet Behavior")]
     [SerializeField] float amp, pointedvel, pointedshotRate, pointedangularvel, ballspeed, ballspread;
     [SerializeField] int pulseballnumber, numberOfPulses;
@@ -22,6 +23,7 @@ public class Stage2Wave3 : EnemyWave
 
     public override void SpawnWave()
     {
+        Instantiate(wave).SpawnWave();
         ball = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Water);
         arrow = GameManager.gameData.arrowBullet.GetItem(DamageType.Water);
         pointed = GameManager.gameData.pointedBullet.GetItem(DamageType.Water);

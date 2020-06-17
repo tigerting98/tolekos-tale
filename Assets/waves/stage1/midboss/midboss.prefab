@@ -30,7 +30,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnBulletAnimator
       value: 
-      objectReference: {fileID: 4990559851566750943}
+      objectReference: {fileID: 0}
     - target: {fileID: -4821386601786655032, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: moveSpeed
@@ -49,7 +49,7 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[0]
-      value: 4000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -120,6 +120,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: midboss
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: chanceToDropCoins
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: minGold
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -242,9 +252,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6a88c0e39e3a0418b47f6401df6062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &4990559851566750943 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6968570120323567185, guid: accf02acb6bfae242b167b6bda0e8e8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2735745613638390414}
-  m_PrefabAsset: {fileID: 0}

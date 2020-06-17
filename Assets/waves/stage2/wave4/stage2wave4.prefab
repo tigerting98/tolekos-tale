@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5916288215380762352}
-  - component: {fileID: -2699760848363402308}
+  - component: {fileID: -6778047189204771702}
   m_Layer: 0
-  m_Name: Stage2Wave2
+  m_Name: stage2wave4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-2699760848363402308
+--- !u!114 &-6778047189204771702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,37 +40,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 4522323344577174238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be94ea66fd495944b0f08ae00e7e302, type: 3}
+  m_Script: {fileID: 11500000, guid: 6601c5e6efc2bcc44b05273bac4f3d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnSound: {fileID: 0}
-  stopY: 2
-  stopX: 2
-  movespeed1: 7
-  movespeed2: 2
-  spawnRate: 5
-  ballDmg1: 0
-  pointedDmg1: 0
-  pulseRate: 2
-  pulseDuration: 1.5
-  ghostStat: {fileID: 11400000, guid: 2f9f15b999656794d83d91cd2ac020a6, type: 2}
-  fairyStat: {fileID: 11400000, guid: d4bec4e21710f3b458e0f7e1d424a590, type: 2}
-  numberOfBlobs: 8
-  amp: 0.2
-  pointedvel: 2.5
-  pointedshotRate: 0.05
-  pointedangularvel: 15
-  ballspeed: 2.5
-  ballspread: 15
-  pulseballnumber: 7
-  numberOfPulses: 5
-  ballSpeed2: 2.4
-  arrowSpeed2: 1
-  angularvelball: 79
-  angularvelarrow: 20
-  shotrateball: 0.2
-  shotratearrow: 0.25
-  delay: 3
-  shootingduration: 20
-  dmgball2: 250
-  dmgarrow2: 200
+  movespeed: 3
+  spawnRate: 0.2
+  stats: {fileID: 11400000, guid: 040435af997442546bb651cf33fc709d, type: 2}
+  subwaves:
+  - y: 3
+    timing: 2
+    number: 7
+    left: 1
+  - y: 2.5
+    timing: 5
+    number: 2
+    left: 0
+  - y: 3
+    timing: 10
+    number: 6
+    left: 1
+  - y: 3
+    timing: 15
+    number: 9
+    left: 0
+  - y: 2.1
+    timing: 20
+    number: 7
+    left: 1
+  - y: 2.4
+    timing: 25
+    number: 6
+    left: 0
+  - y: 1.5
+    timing: 30
+    number: 5
+    left: 1
+  - y: 2.8
+    timing: 33
+    number: 4
+    left: 0
+  shotRate: 0.4
+  dmg: 150
+  shotSpeed: 3
+  delay: 0.5

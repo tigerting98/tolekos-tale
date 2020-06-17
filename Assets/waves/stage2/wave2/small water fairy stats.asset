@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c516afbddbe14eb458c8e02a00bb86d5, type: 3}
   m_Name: small water fairy stats
   m_EditorClassIdentifier: 
-  hp: 1750
+  hp: 1400
   dmg: 700
   goldchance: 0.8
   maxGold: 50

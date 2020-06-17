@@ -9,12 +9,6 @@ public class Bullet : MonoBehaviour
     public DamageDealer damageDealer;
     public GameObject explosion;
 
-    private void Awake()
-    {
-        if (tag == "Enemy Bullet") {
-            GameManager.enemyBullets.Add(gameObject.GetInstanceID(), gameObject);
-        }
-    }
     public void DestroyBullet() {
         Destroy(gameObject);
     }
@@ -25,11 +19,6 @@ public class Bullet : MonoBehaviour
             damageDealer.damage = dmg;
 
         }return this;
-    }
-    private void OnDestroy()
-    {
-        
-        GameManager.enemyBullets.Remove(gameObject.GetInstanceID());
     }
 
 

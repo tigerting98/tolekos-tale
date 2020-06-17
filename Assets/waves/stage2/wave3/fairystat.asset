@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c516afbddbe14eb458c8e02a00bb86d5, type: 3}
   m_Name: fairystat
   m_EditorClassIdentifier: 
-  hp: 15000
+  hp: 12500
   dmg: 1000
   goldchance: 1
   maxGold: 600

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-struct SubWave {
+struct Stage2Wave1SubWave {
     public int number;
     public float startTime;
     public bool left;
@@ -19,13 +19,13 @@ public class Stage2Wave1 : EnemyWave
     [SerializeField] float shotRate;
     [SerializeField] int bulletNumber;
     [SerializeField] int lines;
-    [SerializeField] List<SubWave> subwaves;
+    [SerializeField] List<Stage2Wave1SubWave> subwaves;
     [SerializeField] EnemyStats stats;
     [SerializeField] float dmg = 150;
 
 
     public override void SpawnWave() {
-        foreach (SubWave subwave in subwaves) {
+        foreach (Stage2Wave1SubWave subwave in subwaves) {
             Enemy en = subwave.enemyid == 0 ? GameManager.gameData.ghosts.GetItem(DamageType.Water)
                 : GameManager.gameData.linemonster.GetItem(DamageType.Water);
             en.SetEnemy(stats, false) ;
