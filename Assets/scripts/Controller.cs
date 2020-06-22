@@ -9,7 +9,6 @@ public class Controller : MonoBehaviour
     [SerializeField] GameObject resumeButton = default;
     
 
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {

@@ -1251,7 +1251,7 @@ PrefabInstance:
     - target: {fileID: 387928394854760545, guid: 95962e6eb692fdd46989e32ab1c69bc8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 387928394854760545, guid: 95962e6eb692fdd46989e32ab1c69bc8,
         type: 3}
@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc63cd80b636e541abd0b885eb3e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: -337711101471671250, guid: 56c77ef3bf5342d4d83a29886f997b1f, type: 3}
+  wave: {fileID: 645298095112838643, guid: 508300248b1687e4896d41c2e17c9c8c, type: 3}
   playerLevel: 800
 --- !u!4 &1931965796
 Transform:
