@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 
+//this class is responsible for taking damage upon collision
 public class DamageTaker : MonoBehaviour
 {
     [SerializeField] Health health = default;
@@ -22,7 +23,18 @@ public class DamageTaker : MonoBehaviour
             {
                 health.TakeDamage(GetDamage(dmg));
                 if (dmg.DestroyOnImpact())
-                { Destroy(collision.gameObject); }
+                {
+                    IPooledObject obj = dmg.gameObject.GetComponent<IPooledObject>();
+                    if (obj != null)
+                    {
+                        obj.Deactivate();
+            
+                    }
+                    else
+                    {
+                        Destroy(collision.gameObject);
+                    }
+                }
             }
         }
     }

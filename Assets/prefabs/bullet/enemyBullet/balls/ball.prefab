@@ -104,6 +104,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.9299654
       objectReference: {fileID: 0}
+    - target: {fileID: 5304289742371261883, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: bulletPoolID
+      value: ball-0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3118ceb8e2dd93e4bb557208bb39870e, type: 3}

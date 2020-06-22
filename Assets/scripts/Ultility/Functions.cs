@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+//a list of useful utility functions commonly used
 public class Functions : MonoBehaviour
 {
     // Start is called before the first frame update
+    //repeat an action some amount of time
     public static IEnumerator RepeatAction(Action action, float shotRate)
     {
         return RepeatCustomAction(i => action(), shotRate);
@@ -85,7 +86,7 @@ public class Functions : MonoBehaviour
         foreach (GameObject item in GameManager.enemies.Values)
         {
             Vector2 pos = item.transform.position;
-            if (pos.x < 4.1 && pos.x > -4.1 && pos.y < 4.1 && pos.y > -4.1)
+            if (WithinBounds(pos, 4.1f)) 
             {
                 float dist = (pos - origin).magnitude;
 
@@ -109,4 +110,17 @@ public class Functions : MonoBehaviour
         return Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x);
     }
 
+    public static bool WithinBounds(Vector2 pos, float minx, float maxx, float miny, float maxy) {
+        return pos.x < maxx && pos.x > minx && pos.y < maxy && pos.y > miny;
+    }
+
+    public static bool WithinBounds(Vector2 pos, float x, float y) {
+        return WithinBounds(pos, -x, x, -y, y);
+    }
+
+    public static bool WithinBounds(Vector2 pos, float i) {
+        return WithinBounds(pos, i, i);
+    }
+
+     
 }

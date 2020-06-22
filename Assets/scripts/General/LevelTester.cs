@@ -14,7 +14,7 @@ public class LevelTester : Level
             {
 
                 PlayerStats.LevelUp();
-                Debug.Log(PlayerStats.playerCurrentHP);
+
             }
             PlayerStats.GainEXP(1);
         }

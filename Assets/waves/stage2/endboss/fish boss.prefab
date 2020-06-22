@@ -95,12 +95,12 @@ PrefabInstance:
     - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: minGold
-      value: 600
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: maxGold
-      value: 700
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this class is responsible for the dialogue system in the game
 public class DialogueManager : MonoBehaviour
 {
     public static int currentDialogueLine;

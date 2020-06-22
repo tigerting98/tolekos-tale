@@ -37,6 +37,15 @@ public class BulletOrientation : MonoBehaviour
         orientationOverTime = fun;
     }
 
+    public void Reset()
+    {
+        custom = false;
+        absolute = false;
+        prev = new Vector2(0, 0);
+        orientationOverTime = null;
+        timer = 0;
+        orientation = Quaternion.identity;
+    }
 
 
     public Quaternion FindRotation() {

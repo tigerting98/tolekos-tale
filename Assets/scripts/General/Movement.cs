@@ -1,15 +1,14 @@
-﻿using System;
-
-using System.Transactions;
-using UnityEditor;
+﻿
+using System;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+
 public enum MovementMode { Position, Velocity, Acceleration, Homing }
 public class Movement : MonoBehaviour
 {
  
 
-    Func<float, Vector2> graph = time => new Vector2(0,0);
+    public Func<float, Vector2> graph = time => new Vector2(0,0);
     [HideInInspector]public Vector2 currentVelocity;
     GameObject target;
     float homingSpeed;
@@ -17,7 +16,7 @@ public class Movement : MonoBehaviour
     bool moving = true;
     MovementMode mode = MovementMode.Velocity;
     public float destroyBoundary = 4.5f;
-    public event Action<Vector2> OnOutOfBound;
+    public List<ActionTrigger<Movement>> triggers = new List<ActionTrigger<Movement>>();
 
     // Start is called before the first frame update
  
@@ -32,6 +31,8 @@ public class Movement : MonoBehaviour
     public void SetSpeed(float vel, float angle) {
         SetSpeed(Quaternion.Euler(0, 0, angle) * new Vector2(vel, 0));
     }
+
+    //takes a velocity and acceleration graph
     public void SetAcceleration(Vector2 initialVel, Func<float, Vector2> graph) {
         mode = MovementMode.Acceleration;
         currentVelocity = initialVel;
@@ -40,10 +41,12 @@ public class Movement : MonoBehaviour
 
     }
 
+    //accelerates towards a location, until its speed reaches the endspeed
     public void AccelerateTowards(float acceleration, Vector2 end, float endSpeed) {
         Vector2 direction = (end - (Vector2)transform.position).normalized;
         SetAcceleration(new Vector2(0, 0), t => t < endSpeed / acceleration ? direction * acceleration : new Vector2(0, 0));
     }
+    //homes a target at a certain speed
     public void Homing(GameObject tar, float spd) {
         mode = MovementMode.Homing;
         target = tar;
@@ -56,6 +59,7 @@ public class Movement : MonoBehaviour
         time = 0;
     }
 
+    //move to a location and then stopping afterwards
     public float MoveTo(Vector2 end, float speed) {
         StartMoving();
         Vector2 diff = end - (Vector2)transform.position;
@@ -73,6 +77,7 @@ public class Movement : MonoBehaviour
     
     }
 
+    //changes speed after some amount of time
     public void SetVelocityAndChangeAfter(Vector2 directionVector, float initialSpeed, float finalSpeed, float time) {
         mode = MovementMode.Velocity;
         ResetTimer();
@@ -80,6 +85,7 @@ public class Movement : MonoBehaviour
         graph = t => t < time ? initialSpeed * normalized : finalSpeed * directionVector; 
     }
 
+    //moves for a while then stop
     public void MoveAndStopAfter(Vector2 velocity, float time) {
         mode = MovementMode.Velocity;
         ResetTimer();
@@ -112,7 +118,7 @@ public class Movement : MonoBehaviour
        
     }
    
-
+ 
     public void RotateTrajectory(float angle) {
         graph = RotatePath(angle, graph);
 
@@ -125,6 +131,25 @@ public class Movement : MonoBehaviour
         return t => Quaternion.Euler(0, 0, angle) * oldTraj(t);       
     }
 
+    public static Func<float, Vector2> ReflectPathAboutX(Func<float, Vector2> oldTraj) {
+        return t =>
+        {
+            Vector2 old = oldTraj(t);
+            return new Vector2(old.x, -old.y);
+        };
+        
+    
+    }
+    public static Func<float, Vector2> ReflectPathAboutY(Func<float, Vector2> oldTraj)
+    {
+        return t =>
+        {
+            Vector2 old = oldTraj(t);
+            return new Vector2(-old.x, old.y);
+        };
+
+
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -158,8 +183,13 @@ public class Movement : MonoBehaviour
             }
 
             
+
+            
             time += Time.deltaTime;
+
             transform.position += (Vector3)currentVelocity * Time.deltaTime;
+
+            CheckTriggers();
          
             OutOfBound(); 
            
@@ -168,16 +198,56 @@ public class Movement : MonoBehaviour
 
     }
 
-    
+    //check for all possible triggers associated with this component
+    private void CheckTriggers() {
+        foreach (ActionTrigger<Movement> actionTrigger in triggers) {
+            actionTrigger.CheckTrigger(this);
+        }
+    }
+    private void OnDisable()
+    {
+        Reset();
+    }
 
+
+    public void ResetTriggers() {
+        triggers = new List<ActionTrigger<Movement>>();
+    }
+    //reset to default values
+    public void Reset()
+    {
+        graph = time => new Vector2(0, 0);
+        currentVelocity = new Vector2(0,0);
+        target = null;
+        homingSpeed = 0;
+        ResetTimer();
+        moving = true;
+        mode = MovementMode.Velocity;
+        destroyBoundary = 4.5f;
+        ResetTriggers();
+    }
+    //destory the object or deactivate it if its pooled
+    public void RemoveObject() {
+        IPooledObject obj = gameObject.GetComponent<IPooledObject>();
+        if (obj != null)
+        {
+            obj.Deactivate();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    //check if its within bounds
     public void OutOfBound()
     {
 
 
-        if (transform.position.x < -destroyBoundary || transform.position.x > destroyBoundary || transform.position.y < -destroyBoundary || transform.position.y > destroyBoundary)
+        if (!Functions.WithinBounds(transform.position,destroyBoundary))
         {
-            OnOutOfBound?.Invoke(transform.position);
-            Destroy(gameObject);
+
+            RemoveObject();
         }
     }
 

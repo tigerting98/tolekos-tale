@@ -15,13 +15,16 @@ MonoBehaviour:
   lines:
   - left: 0
     speaker: {fileID: 21300000, guid: d52abbc0266cd4f4b89ad5c82422bb31, type: 3}
+    isPlayer: 0
     text: You defeated me?
     name: Defeated Guard
   - left: 1
     speaker: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea, type: 3}
+    isPlayer: 1
     text: I sure did madafaka
     name: Toleko
   - left: 0
     speaker: {fileID: 21300000, guid: d52abbc0266cd4f4b89ad5c82422bb31, type: 3}
+    isPlayer: 0
     text: Fine! Now proceed if you must!
     name: Defeated Guard

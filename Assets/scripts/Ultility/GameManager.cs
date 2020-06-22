@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public static Hashtable enemies = new Hashtable();
     public static Hashtable enemyBullets = new Hashtable();
     public static Hashtable collectibles = new Hashtable();
+    public static BulletPools bulletpools;
 
     public static event Action<bool> OnGameover;
     public static event Action OnSummonBoss;
@@ -63,10 +64,14 @@ public class GameManager : MonoBehaviour
 
 
     public static void DestoryAllEnemyBullets() {
+        List<Bullet> toDestroy = new List<Bullet>();
         foreach (GameObject obj in enemyBullets.Values) {
-            GameObject particleEffect = Instantiate(obj.GetComponent<Bullet>().explosion, obj.transform.position, Quaternion.identity);
-            Destroy(particleEffect, 1f);
-            Destroy(obj);
+            toDestroy.Add( obj.GetComponent<Bullet>());
+        }
+        for (int i = 0; i < toDestroy.Count; i++) {
+            GameObject particleEffect = Instantiate(toDestroy[i].explosion, toDestroy[i].transform.position, Quaternion.identity);
+            Destroy(particleEffect, 0.5f);
+            toDestroy[i].Deactivate();
         }
     }
 

@@ -13,8 +13,11 @@ public class Bomb : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<Bullet>()) {
-            Destroy(other.gameObject);
+        Bullet bul = other.GetComponent<Bullet>();
+        if (bul) {
+            //Destroy(bul.gameObject);
+            bul.Deactivate();
+ 
         }
     }
     public void Deactivate()

@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 420290039801067047, guid: 4af21a2e09231b8428c02665f6719b56,
+        type: 3}
+      propertyPath: bulletPoolID
+      value: ball-3
+      objectReference: {fileID: 0}
     - target: {fileID: 6520704093229288764, guid: 4af21a2e09231b8428c02665f6719b56,
         type: 3}
       propertyPath: damage

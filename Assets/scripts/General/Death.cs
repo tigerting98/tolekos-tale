@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//this class is responsible for the death of objects and triggers the death effects
 public class Death : MonoBehaviour
 {
     [SerializeField] GameObject explosion = default;

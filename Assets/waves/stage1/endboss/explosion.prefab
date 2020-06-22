@@ -127,6 +127,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 6529d409f658e4f4693c4d69294fc4fe,
         type: 3}
+    - target: {fileID: 5304289742371261883, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: bulletPoolID
+      value: explosion
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3118ceb8e2dd93e4bb557208bb39870e, type: 3}
 --- !u!1 &8057183543058321719 stripped

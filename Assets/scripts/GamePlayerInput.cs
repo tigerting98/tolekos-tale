@@ -17,6 +17,7 @@ public class GamePlayerInput : MonoBehaviour
         if (GameManager.gameInput == null)
         {
             GameManager.gameInput = this;
+            DontDestroyOnLoad(gameObject);
         }
         else {
             Destroy(gameObject);

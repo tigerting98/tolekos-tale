@@ -15,7 +15,6 @@ public class Stage2MidBoss : EnemyBossWave
     [SerializeField] Dialogue preFightDialogue1, preFightDialogue2;
     [Header("Pattern 1")]
     [SerializeField] int numberofMagicCircles;
-    [SerializeField] Bullet magicCircle;
     [SerializeField] float radius, radiusVariance, angularVel;
     [SerializeField] float timeToRadius;
     [SerializeField] float delayBeforeShooting;
@@ -83,7 +82,7 @@ public class Stage2MidBoss : EnemyBossWave
     IEnumerator Pattern1() {
         List<Bullet> magicCircles = Patterns.CustomRing(
 
-            angle =>  Patterns.ShootCustomBullet(magicCircle,0, currentBoss.transform.position, Movement.RotatePath(
+            angle =>  Patterns.ShootCustomBullet(GameManager.gameData.waterCircle,0, currentBoss.transform.position, Movement.RotatePath(
              angle, t => new Polar(t > timeToRadius ? radius + (float)(radiusVariance*Math.Sin(t-timeToRadius)) : radius * t / timeToRadius, angularVel * t).rect), MovementMode.Position)
             , 0, numberofMagicCircles);
 

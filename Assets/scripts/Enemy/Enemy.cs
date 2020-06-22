@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
 
     // Start is called before the first frame update
 
+    //set the auto destory boundaries to 10.
     public virtual void Awake()
     {
 
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //changes enemy stats given paramters, if the value is <0, it is considered to not change the original
     public Enemy SetEnemyStats(float hp, float dmg, float goldchance, int maxGold, int minGold, int exp) {
         if (health && hp > -1) {
             health.maxHP = hp;

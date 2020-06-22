@@ -148,18 +148,19 @@ public class Stage1EndBoss : EnemyBossWave
                 yield return new WaitForSeconds(0.8f);
                 if (currentBoss)
                 {
-                    Bullet punchbul = Instantiate(punch, currentBoss.transform.position, Quaternion.identity);
+                    Bullet punchbul = GameManager.bulletpools.SpawnBullet(punch, currentBoss.transform.position);
                     punchbul.movement.SetSpeed(new Vector2(0, -punchSpeed));
                     punchbul.movement.destroyBoundary = 6f;
                     yield return new WaitForSeconds(1 / punchSpeed);
 
 
-                    if (punchbul)
+                    if (punchbul&&punchbul.gameObject.activeInHierarchy)
                     {
+                        Debug.Log("boom!");
                         Vector2 pos = punchbul.transform.position;
                         Bullet explode = Instantiate(explosion, pos, Quaternion.identity);
                         ExplodingAndBack(pos);
-                        Destroy(punchbul.gameObject);
+                        punchbul.Deactivate();
                         pattern3smashSFX.PlayClip();
 
 
@@ -222,7 +223,7 @@ public class Stage1EndBoss : EnemyBossWave
         return Functions.RepeatCustomActionCustomTime(i =>
         {
 
-            Bullet bul = Instantiate(arrow, new Vector2(UnityEngine.Random.Range(-4f, 4f), 4.4f), Quaternion.identity);
+            Bullet bul = GameManager.bulletpools.SpawnBullet(arrow, new Vector2(UnityEngine.Random.Range(-4f, 4f), 4.4f), Quaternion.identity);
             bul.movement.SetSpeed(new Vector2(0, -UnityEngine.Random.Range(minSpeed, maxSpeed)));
         }, i => UnityEngine.Random.Range(arrowSpawnTimeMin, arrowSpawnTimeMax));
             

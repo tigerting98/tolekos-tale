@@ -22,6 +22,16 @@ PrefabInstance:
       propertyPath: damage
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3399355906277951174, guid: e3e5c0f0c7f411145b640e71a32ef105,
+        type: 3}
+      propertyPath: bulletPoolID
+      value: player-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399355906277951174, guid: e3e5c0f0c7f411145b640e71a32ef105,
+        type: 3}
+      propertyPath: spawnAnimation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5502227822980241576, guid: e3e5c0f0c7f411145b640e71a32ef105,
         type: 3}
       propertyPath: m_Name

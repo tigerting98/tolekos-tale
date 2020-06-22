@@ -43,6 +43,11 @@ PrefabInstance:
       propertyPath: orientation
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3983977687119031867, guid: 7c29c4108f08bb446ba20f11a4f394a9,
+        type: 3}
+      propertyPath: bulletPoolID
+      value: player-4
+      objectReference: {fileID: 0}
     - target: {fileID: 5529224917793828012, guid: 7c29c4108f08bb446ba20f11a4f394a9,
         type: 3}
       propertyPath: m_SleepingMode

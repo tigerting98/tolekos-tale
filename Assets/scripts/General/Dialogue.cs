@@ -6,6 +6,7 @@ using UnityEngine;
 public struct Line {
     public bool left;
     public Sprite speaker;
+    public bool isPlayer;
     [TextArea(2,5)]
     public string text;
     public string name;

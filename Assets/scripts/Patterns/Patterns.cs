@@ -18,7 +18,7 @@ public class Patterns : MonoBehaviour
     }
 
     public static Bullet ShootCustomBullet(Bullet bullet, float dmg, Vector2 origin, Func<float, Vector2> function, MovementMode mode) {
-        Bullet bul = Instantiate(bullet, origin, Quaternion.identity);
+        Bullet bul = GameManager.bulletpools.SpawnBullet(bullet, origin);
         bul.SetDamage(dmg);
         bul.movement.SetCustomGraph(function, mode);
         return bul;
@@ -84,7 +84,7 @@ public class Patterns : MonoBehaviour
    
 
     public static Bullet HomeNearestEnemy(Bullet bul, float dmg, Vector2 origin, Vector2 defaultVelocity) {
-        Bullet bullet = Instantiate(bul, origin, Quaternion.identity);
+        Bullet bullet = GameManager.bulletpools.SpawnBullet(bul, origin);
         bullet.SetDamage(dmg);
         GameObject target = Functions.GetNearestEnemy(origin);
         if (target == null)

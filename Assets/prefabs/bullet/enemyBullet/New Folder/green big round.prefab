@@ -21,12 +21,12 @@ PrefabInstance:
     - target: {fileID: 982550521754833983, guid: 4ca866dae31481248b06ef509438938d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.13004985
       objectReference: {fileID: 0}
     - target: {fileID: 982550521754833983, guid: 4ca866dae31481248b06ef509438938d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 982550521754833983, guid: 4ca866dae31481248b06ef509438938d,
         type: 3}
@@ -72,6 +72,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566434323741978959, guid: 4ca866dae31481248b06ef509438938d,
+        type: 3}
+      propertyPath: damage
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491309488615678547, guid: 4ca866dae31481248b06ef509438938d,
+        type: 3}
+      propertyPath: destroyBoundary
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986464732834073172, guid: 4ca866dae31481248b06ef509438938d,
+        type: 3}
+      propertyPath: bulletPoolID
+      value: big-1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ca866dae31481248b06ef509438938d, type: 3}

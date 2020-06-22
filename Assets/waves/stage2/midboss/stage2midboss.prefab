@@ -57,8 +57,6 @@ MonoBehaviour:
   preFightDialogue1: {fileID: 11400000, guid: ccd147152c09e494a88af668ebefad10, type: 2}
   preFightDialogue2: {fileID: 11400000, guid: 2d1b6d082e0ad844aa4c3efff18d92a9, type: 2}
   numberofMagicCircles: 8
-  magicCircle: {fileID: 8420722031687854107, guid: 7e44fe5e8e9fba0489a33d229c786ce4,
-    type: 3}
   radius: 1.5
   radiusVariance: 0.5
   angularVel: 15

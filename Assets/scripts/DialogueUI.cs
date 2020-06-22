@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+//this controls the UI that displays the dialogue
 public class DialogueUI : MonoBehaviour
 {
     [SerializeField] Image leftImage, rightImage;
@@ -23,13 +23,13 @@ public class DialogueUI : MonoBehaviour
         {
             leftImage.gameObject.SetActive(true);
             rightImage.gameObject.SetActive(false);
-            leftImage.sprite = line.speaker;
+            leftImage.sprite = line.isPlayer? GameManager.gameData.playerDialogueSprite : line.speaker;
 
         }
         else {
             leftImage.gameObject.SetActive(false);
             rightImage.gameObject.SetActive(true);
-            rightImage.sprite = line.speaker;
+            rightImage.sprite = line.isPlayer ? GameManager.gameData.playerDialogueSprite : line.speaker;
 
         }
 

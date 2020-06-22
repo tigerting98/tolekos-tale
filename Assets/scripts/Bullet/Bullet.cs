@@ -1,26 +1,45 @@
 ﻿
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IPooledObject
 {
 
     public Movement movement;
     public BulletOrientation orientation;
     public DamageDealer damageDealer;
     public GameObject explosion;
+    public string bulletPoolID;
+    [SerializeField] ParticleSystem spawnParticles = default;
+    [SerializeField] float size = 0.7f;
+    [SerializeField] bool spawnAnimation = true;
 
-    public void DestroyBullet() {
-        Destroy(gameObject);
+    public void Deactivate()
+    {
+     
+        GameManager.bulletpools.DeactivateBullet(this);
     }
 
-    public Bullet SetDamage(float dmg) { 
-        if(damageDealer)
+    public Bullet SetDamage(float dmg)
+    {
+        if (damageDealer)
         {
             damageDealer.damage = dmg;
 
-        }return this;
+        }
+        return this;
     }
 
-
-
+    public void OnSpawn()
+    {
+        if (spawnAnimation && spawnParticles)
+        {
+            ParticleSystem particle = Instantiate(spawnParticles, transform.position, Quaternion.identity);
+            SetParticle(particle);
+            Destroy(particle.gameObject, 0.4f);
+        }
+    }
+    void SetParticle(ParticleSystem system)
+    {
+        system.startSize = size;
+    }
 }

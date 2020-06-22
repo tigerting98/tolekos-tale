@@ -5,19 +5,21 @@ using UnityEngine;
 using UnityEngine.Assertions;
 
 public class EnemyPatterns : MonoBehaviour {
-
+    //shoots constant speed bullet at a target angle at a constant speed in a constant rate
     public static IEnumerator ShootAt(Bullet bullet, float dmg, Transform enemy, float angle, float speed, float shotRate)
     {
         return Functions.RepeatAction(() => Patterns.ShootStraight(bullet, dmg, enemy.position, angle, speed), shotRate);
 
     }
 
-
+    //shoots constant speed bullet at a target angle that is fast at first then slow in a constant rate
     public static IEnumerator ExplodingLineAtPlayer(Bullet bullet, float dmg, Transform enemy, float intialSpeed, float finalSpeed, int number, float minTime, float maxTime, float shotRate)
     {
         return Functions.RepeatAction(() => Patterns.ExplodingLine(bullet, dmg, enemy.position, Patterns.AimAt(enemy.transform.position, GameManager.playerPosition), intialSpeed, finalSpeed, number, minTime, maxTime), shotRate);
 
     }
+
+    //shoots bullets at players in a constant rate
     public static IEnumerator ShootAtPlayer(Bullet bullet, float dmg, Transform enemy, float speed, float shotRate)
 
     {
@@ -25,6 +27,7 @@ public class EnemyPatterns : MonoBehaviour {
 
     }
 
+    //shoots multiple bullets at player, with the centre aimed directly at him
     public static IEnumerator ShootAtPlayerWithLines(Bullet bullet, float dmg, Transform enemy, float speed, float shotRate, float spreadAngle, int lines)
     {
 
@@ -34,17 +37,22 @@ public class EnemyPatterns : MonoBehaviour {
                 Patterns.AimAt(enemy.position, GameManager.playerPosition), spreadAngle, lines), shotRate);
 
     }
+   
+    // shoots a stream of certain number of bullets, resulting in a line of bullets
     public static IEnumerator PulsingLine(Bullet bullet, float dmg, Transform enemy, float speed, float angle, float shotRate, int number) {
 
         return Functions.RepeatActionXTimes(() => Patterns.ShootStraight(bullet, dmg, enemy.position, angle, speed), shotRate, number);
     }
 
+    //takes a subpattern and continue it repetitvely with an interval
     public static IEnumerator RepeatSubPatternWithInterval(Func<IEnumerator> subpattern, Shooting enemy, float interval) {
         return Functions.RepeatAction(() => enemy.StartCoroutine(subpattern()), interval);
     }
+    //shoots a lines of bullets in a circle
     public static IEnumerator PulsingLines(Bullet bullet, float dmg, Transform enemy, float speed, float angle, float shotRate, int lines, int number) {
         return Functions.RepeatActionXTimes(() => Patterns.RingOfBullets(bullet, dmg, enemy.position, lines, angle, speed), shotRate, number);
     } 
+    //shoots circles of bullets, centered at the player angle
     public static IEnumerator PulsingBullets(Bullet bullet, float dmg, Transform enemy, float speed, float shotRate, int lines)
     {
 
@@ -54,11 +62,15 @@ public class EnemyPatterns : MonoBehaviour {
 
 
     }
+
+    //shoots circles of bullets, each with different random offset angle
     public static IEnumerator PulsingBulletsRandomAngle(Bullet bullet, float dmg, Transform enemy, float speed, float shotRate, int lines) {
         return Functions.RepeatAction(() => Patterns.RingOfBullets(bullet, dmg, enemy.position, lines, UnityEngine.Random.Range(0f, 360f), speed),
             shotRate);
     }
 
+
+    //shoots circles of random bullets at the player
     public static IEnumerator PulsingBulletsRandom(List<Bullet> bullets, float dmg, Transform enemy, float speed, float shotRate, int lines)
     {
 
@@ -67,6 +79,7 @@ public class EnemyPatterns : MonoBehaviour {
             shotRate);
     }
 
+    //shoots bullets of custom behavior with custom spacing at a custom angular velocity
     public static IEnumerator CustomSpinningCustomBulletsCustomSpacing(Func<float,Bullet> bulFunction, Func<int, float> spacingFunction, Func<float, float> spinningFunction, int lines, float shotRate)
     {
         return Functions.RepeatCustomAction(
@@ -75,6 +88,7 @@ public class EnemyPatterns : MonoBehaviour {
 
 
     }
+    //shoots striaght bullets of custom spacing at a custom angular velocity
     public static IEnumerator CustomSpinningStraightBulletsCustomSpacing(Bullet bullet, float dmg, Transform enemy, float speed, Func<int,float> spacingFunction, Func<float, float> spinningFunction, int lines, float shotRate) {
         return CustomSpinningCustomBulletsCustomSpacing(angle => Patterns.ShootStraight(bullet, dmg, enemy.position, angle, speed),
             spacingFunction, spinningFunction, lines, shotRate);
@@ -82,13 +96,18 @@ public class EnemyPatterns : MonoBehaviour {
     
     }
 
+    //shoots straight bullets that is spaced apart evenly with a custom angular velocity
     public static IEnumerator CustomSpinningStraightBullets(Bullet bullet, float dmg, Transform enemy, float speed, Func<float, float> spinningFunction, int lines, float shotRate) {
         return CustomSpinningStraightBulletsCustomSpacing(bullet, dmg, enemy, speed, i => 360f * i / lines, spinningFunction, lines, shotRate);
     }
 
+
+    //shoots straight bullets that is spaced apart evenly with a constant angular velocity
     public static IEnumerator ConstantSpinningStraightBullets(Bullet bullet, float dmg, Transform enemy, float speed, float angularVel, float start, int lines, float shotRate) {
         return CustomSpinningStraightBullets(bullet, dmg, enemy, speed, time => start + angularVel * time, lines, shotRate);
     }
+
+    //a pattern that uses a sin wave angular velocity
     public static IEnumerator BorderOfWaveAndParticle(Bullet bullet, float dmg, Transform enemy, float speed, float shotRate, int lines, float angularVel)
     {
 
@@ -96,10 +115,12 @@ public class EnemyPatterns : MonoBehaviour {
 
     }
 
+    //a pattern that looks like a fanning effect
     public static void StartFanningPattern(Bullet bullet, float dmg, Shooting enemy, float speed, float angularVel, float start, int lines, float shotRate, int number, float speedDiff) {
         Functions.StartMultipleCustomCoroutines(enemy, i => ConstantSpinningStraightBullets(bullet, dmg, enemy.transform, speed + i * speedDiff, angularVel, start, lines, shotRate), number);
     }
 
+    //summons magic circle that rotate around the enemy
     public static Bullet SummonMagicCircle(Bullet magicCircle, float dmg, Transform enemy, float timeToRadius, float angle, float radius, float rotationSpeed) {
         Bullet bul = Patterns.ShootCustomBullet(magicCircle, dmg, enemy.position, Movement.RotatePath(
              angle, t => new Polar(t > timeToRadius ? radius : radius * t / timeToRadius, rotationSpeed * t).rect), MovementMode.Position);
@@ -107,23 +128,46 @@ public class EnemyPatterns : MonoBehaviour {
         return bul;
     }
 
+    //summons a bullet that shoots out then rotate outwards
     public static Bullet OutAndSpinBullet(Bullet bul, float dmg, Transform origin, float initialSpeed, float radius, float radialSpeed2, float angularVel, float delay, float initialAngle) {
         return Patterns.ShootCustomBullet(bul, dmg, origin.position,
             t => new Polar(t < radius / initialSpeed ? initialSpeed * t : t < radius / initialSpeed + delay ? radius : radius + radialSpeed2 * (t - delay - radius / initialSpeed),
             initialAngle + (t < radius / initialSpeed + delay ? 0 : angularVel * (t - radius / initialSpeed - delay))).rect, MovementMode.Position);
     }
-
+    // summons a ring of bullet that shoots out and then rotate outwards
     public static List<Bullet> OutAndSpinRingOfBullets(Bullet bul, float dmg, Transform origin, float intialSpeed, float radius, float radialSpeed2, float angularVel, float delay, float offset, int lines) {
         return Patterns.CustomRing(angle => OutAndSpinBullet(bul, dmg, origin, intialSpeed, radius, radialSpeed2, angularVel, delay, angle), offset, lines);
     }
+
+    //shoot bullets that follow a sine pattern
     public static IEnumerator ShootSine(Bullet bullet, float dmg, Transform enemy, float angle, float speed, float shotRate, float angularVel, float amp)
     {
         
          return Functions.RepeatAction(()=>Patterns.ShootSinTrajectory(bullet, dmg, enemy.position, angle, speed, angularVel, amp), shotRate);
         
     }
+    //shoot bullet that seem to follow drag and gravity
+    public static Bullet FallingBullet(Bullet bullet, float dmg, Vector2 origin, float initialAngle, float downwardsAcceleration, float timeOfAcceleration, float initialSpeed)
+    {
+        Bullet bul = GameManager.bulletpools.SpawnBullet(bullet, origin);
+        bul.SetDamage(dmg);
+        bul.movement.destroyBoundary = 6f;
+        bul.movement.SetAcceleration(Quaternion.Euler(0, 0, initialAngle) * new Vector2(initialSpeed, 0), t => new Vector2(0, t < timeOfAcceleration ? -downwardsAcceleration : 0));
+        return bul;
 
 
+    }
+
+    //shoot bullest that seem to follow drag and gravity
+    public static List<Bullet> FallingBullets(Bullet bullet, float dmg, Vector2 origin, int number, float angleRange, float downwardsAcceleration, float timeOfAcceleration, float initialSpeed) {
+        List<Bullet> bullets = new List<Bullet>();
+        for (int i = 0; i < number; i++) {
+            bullets.Add(FallingBullet(bullet, dmg, origin, 90 + UnityEngine.Random.Range(-angleRange, angleRange), downwardsAcceleration, timeOfAcceleration, initialSpeed));
+        }
+        return bullets;
+    }
+
+    //shoot a laser beam
     public static IEnumerator ShootLaserBeam(Bullet actualLaser, Bullet warningLaser, Transform enemy, float angle, float timeWarning, float duration) {
         Bullet warning = Instantiate(warningLaser, enemy.position, Quaternion.Euler(0, 0, angle), enemy);
         warning.orientation.SetFixedOrientation(Quaternion.Euler(0, 0, angle));
@@ -137,6 +181,7 @@ public class EnemyPatterns : MonoBehaviour {
 
 
     }
+    //shoot a conelike pattern
     public static IEnumerator ConePattern(Bullet bullet, float dmg, Transform spawner, float angle, float speed, float spawnRate, int number, float spacing)
     {
        
@@ -144,7 +189,7 @@ public class EnemyPatterns : MonoBehaviour {
             Vector2 start = spawner.position - Quaternion.Euler(0, 0, angle) * new Vector2(0, (spacing * i) / 2);
             for (int j = 0; j < i + 1; j++)
             {
-                Bullet bul = Instantiate(bullet, start + (Vector2)(Quaternion.Euler(0, 0, angle) * new Vector2(0, spacing * j)), Quaternion.identity);
+                Bullet bul = GameManager.bulletpools.SpawnBullet(bullet, start + (Vector2)(Quaternion.Euler(0, 0, angle) * new Vector2(0, spacing * j)));
                 bul.SetDamage(dmg);
                 bul.movement.SetSpeed(Quaternion.Euler(0, 0, angle) * new Vector2(speed, 0));
             }

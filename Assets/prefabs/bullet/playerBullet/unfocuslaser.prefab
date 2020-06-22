@@ -93,6 +93,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: unfocuslaser
       objectReference: {fileID: 0}
+    - target: {fileID: 7642333296467870689, guid: fb8ba1024095ab54bbd497ac2dac9966,
+        type: 3}
+      propertyPath: bulletPoolID
+      value: player-5
+      objectReference: {fileID: 0}
     - target: {fileID: 8445993751460948539, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x

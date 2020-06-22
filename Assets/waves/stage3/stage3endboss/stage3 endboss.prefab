@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4522323344577174238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5916288215380762352}
+  - component: {fileID: -2248102024064073189}
+  m_Layer: 0
+  m_Name: stage3 endboss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5916288215380762352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27233347, y: 0.19923896, z: 0.9743871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2248102024064073189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53807db8a3787734194668c22559d5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnSound: {fileID: 0}
+  boss: {fileID: 5510918016240705999, guid: 4dc00fa65a9378545ad055ac41dcaed9, type: 3}
+  bossImage: {fileID: 0}
+  namesOfSpellCards: []
+  nextLevel: {fileID: 0}
+  earthCircle: {fileID: 0}
+  key: {fileID: 6034030427296860853, guid: 98d4cbe4543ac1144a641a6525c1c54b, type: 3}
+  image: {fileID: 6034030427296860853, guid: 54e6fd7b213e26449a8f4ffda9e9d305, type: 3}
+  slamEffect: {fileID: 1279058984129278453, guid: 4a7c50207964a124d86d48a071c8289d,
+    type: 3}
+  initialMoveSpeed: 9
+  spawnLocationY: 2.5
+  spawnDelay: 0
+  preFightDialogue1: {fileID: 11400000, guid: 4265b6bff2cda0f498374508cd873d70, type: 2}
+  preFightDialogue2: {fileID: 11400000, guid: d47df1cd860a12f428c4e1b1a09c8881, type: 2}
+  movementSpeed1: 0
+  pulseRate1: 0
+  pauseDuration1: 0
+  x1: 0
+  y1: 0
+  dmg1: 0
+  anglerange1: 0
+  initialspeed1min: 0
+  intialspeed1max: 0
+  acceleration1: 0
+  pulses1: 0
+  bulletsperPulse1: 0
+  y2: 0
+  ringspeed: 0
+  bulletspeedfast: 0
+  bulletspeedtime: 0
+  bulletspeedslow: 0
+  radiusAroundPlayer: 0
+  ballDmg: 0
+  pulserate2: 0
+  timetoExplode: 0
+  numberOfRings: 0
+  numberOfBulletsPerRing: 0

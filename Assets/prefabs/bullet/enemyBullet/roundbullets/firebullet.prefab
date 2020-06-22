@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2788205951108006425, guid: 8431cd9c02324a44b891cef3c69137a0,
+        type: 3}
+      propertyPath: bulletPoolID
+      value: round-3
+      objectReference: {fileID: 0}
     - target: {fileID: 5027870583207795826, guid: 8431cd9c02324a44b891cef3c69137a0,
         type: 3}
       propertyPath: m_LocalPosition.x
