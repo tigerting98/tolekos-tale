@@ -22,4 +22,6 @@ public class ActionTrigger<T> where T : Component
             }
         }
     }
+
+    
 }

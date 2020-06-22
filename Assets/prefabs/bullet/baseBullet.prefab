@@ -120,6 +120,10 @@ MonoBehaviour:
   damageDealer: {fileID: -1114664629743190563}
   explosion: {fileID: 4399595535654136969, guid: 5d93948ca89301d4f9989209f55ca841,
     type: 3}
+  bulletPoolID: base
+  spawnParticles: {fileID: 0}
+  size: 0.7
+  spawnAnimation: 1
 --- !u!114 &9200072685321137857
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -57,6 +57,8 @@ MonoBehaviour:
     type: 3}
   leafBullet3: {fileID: 5063213686787385824, guid: 487d6beaf8d07824b971e41f7f0b838a,
     type: 3}
+  rockBullet: {fileID: 4298244740041365992, guid: 3c57a44023bd12c48ad13951bf82627c,
+    type: 3}
   whiteArrowBullet: {fileID: 8666329801328841485, guid: a7c8ba91d620fce408a9031c3a0b0d87,
     type: 3}
   waterCircle: {fileID: 8420722031687854107, guid: bf1789e7ede57794094bebf2c9bfe24a,

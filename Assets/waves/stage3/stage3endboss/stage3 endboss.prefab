@@ -46,7 +46,11 @@ MonoBehaviour:
   bulletSpawnSound: {fileID: 0}
   boss: {fileID: 5510918016240705999, guid: 4dc00fa65a9378545ad055ac41dcaed9, type: 3}
   bossImage: {fileID: 0}
-  namesOfSpellCards: []
+  namesOfSpellCards:
+  - Earthquake\n~Falling leafs and spiking Rocks~
+  - 
+  - 
+  - 
   nextLevel: {fileID: 0}
   earthCircle: {fileID: 0}
   key: {fileID: 6034030427296860853, guid: 98d4cbe4543ac1144a641a6525c1c54b, type: 3}
@@ -58,26 +62,28 @@ MonoBehaviour:
   spawnDelay: 0
   preFightDialogue1: {fileID: 11400000, guid: 4265b6bff2cda0f498374508cd873d70, type: 2}
   preFightDialogue2: {fileID: 11400000, guid: d47df1cd860a12f428c4e1b1a09c8881, type: 2}
-  movementSpeed1: 0
-  pulseRate1: 0
-  pauseDuration1: 0
-  x1: 0
-  y1: 0
-  dmg1: 0
-  anglerange1: 0
-  initialspeed1min: 0
-  intialspeed1max: 0
-  acceleration1: 0
-  pulses1: 0
-  bulletsperPulse1: 0
-  y2: 0
-  ringspeed: 0
-  bulletspeedfast: 0
-  bulletspeedtime: 0
-  bulletspeedslow: 0
-  radiusAroundPlayer: 0
-  ballDmg: 0
-  pulserate2: 0
-  timetoExplode: 0
-  numberOfRings: 0
-  numberOfBulletsPerRing: 0
+  bulletspeed1: 2.63
+  topBulletSpread: 80
+  sideBulletSpread: 40
+  sideOriginAngle: 20
+  rockdmg1: 250
+  leafdmg1: 200
+  bossSpeed1: 5
+  shotRate1: 0.03
+  shotPulseDuration1: 3
+  pause1: 3
+  minipause1: 1.5
+  topPosition1: {x: 0, y: 3}
+  rightPosition1: {x: 1, y: 1}
+  leftPosition1: {x: -1, y: 1}
+  rockspeed2: 2
+  rockSpawnRate2: 0.08
+  x2: 1
+  y2: 2.5
+  movespeed2: 0.5
+  delay2: 2
+  leafshotRate2: 0.2
+  leafSpread2: 20
+  leafSped2: 4
+  leafdmg2: 200
+  leaflines2: 2
