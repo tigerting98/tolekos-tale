@@ -10,7 +10,8 @@ public class GameData : MonoBehaviour
     public Bullet leafBullet1, leafBullet2, leafBullet3, rockBullet;
     public Bullet whiteArrowBullet;
     public Bullet waterCircle, earthCircle;
-    public EnemyPack ghosts, linemonster;
+    public Bullet mushroomPillar;
+    public EnemyPack ghosts, linemonster, mushrooms;
     public Enemy waterFairy;
     public Enemy patternSprite, treeant;
     public Sprite playerDialogueSprite;

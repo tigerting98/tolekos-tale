@@ -122,6 +122,8 @@ MonoBehaviour:
     type: 3}
   bulletPoolID: base
   spawnParticles: {fileID: 0}
+  hitParticles: {fileID: 4399595535654137015, guid: 5d93948ca89301d4f9989209f55ca841,
+    type: 3}
   size: 0.7
   spawnAnimation: 1
 --- !u!114 &9200072685321137857

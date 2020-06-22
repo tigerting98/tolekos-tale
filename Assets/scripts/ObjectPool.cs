@@ -38,6 +38,7 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : Component
 
     //return an object back to its pool
     public void ReturnToPool(T tobeReturned) {
+        tobeReturned.transform.localScale = pooledObject.transform.localScale;
         tobeReturned.gameObject.SetActive(false);
         objectPool.Enqueue(tobeReturned);
     }

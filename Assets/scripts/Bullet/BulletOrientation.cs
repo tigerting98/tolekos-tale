@@ -11,7 +11,7 @@ public class BulletOrientation : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] Movement movement;
-    Quaternion orientation;
+    public Quaternion orientation;
     bool custom = false;
     public bool absolute = false;
     Vector2 prev = new Vector2(0, 0);

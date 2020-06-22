@@ -93,5 +93,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6539465222748635732, guid: 75e9840902b09f04d99b4903c8b1963e,
+        type: 3}
+      propertyPath: bulletPoolID
+      value: leaf-3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75e9840902b09f04d99b4903c8b1963e, type: 3}

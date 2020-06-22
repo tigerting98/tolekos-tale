@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     [HideInInspector]public Vector2 currentVelocity;
     GameObject target;
     float homingSpeed;
-    float time = 0;
+    public float time = 0;
     bool moving = true;
     MovementMode mode = MovementMode.Velocity;
     public float destroyBoundary = 4.5f;

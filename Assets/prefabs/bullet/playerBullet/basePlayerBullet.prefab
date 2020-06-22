@@ -37,6 +37,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: basePlayerBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 5502227822980241576, guid: e3e5c0f0c7f411145b640e71a32ef105,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player Bullet
+      objectReference: {fileID: 0}
     - target: {fileID: 5502227822980241579, guid: e3e5c0f0c7f411145b640e71a32ef105,
         type: 3}
       propertyPath: m_Offset.y

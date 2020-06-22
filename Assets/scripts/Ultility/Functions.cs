@@ -122,5 +122,22 @@ public class Functions : MonoBehaviour
         return WithinBounds(pos, i, i);
     }
 
+    public static DamageType RandomType(bool includePure) {
+
+        int x = UnityEngine.Random.Range(0, includePure ? 4 : 3);
+        switch (x) {
+            case 0:
+                return DamageType.Water;
+            case 1:
+                return DamageType.Earth;
+            case 2:
+                return DamageType.Fire;
+            case 3:
+                return DamageType.Pure;
+            default:
+                return DamageType.Pure;
+        }
+    }
+
      
 }

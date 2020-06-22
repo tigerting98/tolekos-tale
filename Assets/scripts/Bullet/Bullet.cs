@@ -10,12 +10,13 @@ public class Bullet : MonoBehaviour, IPooledObject
     public GameObject explosion;
     public string bulletPoolID;
     [SerializeField] ParticleSystem spawnParticles = default;
+    [SerializeField] ParticleSystem hitParticles = default;
     [SerializeField] float size = 0.7f;
     [SerializeField] bool spawnAnimation = true;
 
     public void Deactivate()
     {
-     
+        
         GameManager.bulletpools.DeactivateBullet(this);
     }
 
@@ -28,7 +29,12 @@ public class Bullet : MonoBehaviour, IPooledObject
         }
         return this;
     }
-
+    public void SpawnHitParticles() {
+        if (hitParticles) {
+            ParticleSystem particle = Instantiate(hitParticles, transform.position, Quaternion.identity);
+            Destroy(particle.gameObject, 0.4f);
+        }
+    }
     public void OnSpawn()
     {
         if (spawnAnimation && spawnParticles)

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2fe1d95e2154242a4613030a6fca57, type: 3}
+  m_Name: Mushroom pack
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 5469599356447784283, guid: 15bd6cf3658c6db47b3aacf7a117db2c, type: 3}
+  - {fileID: 5469599356447784283, guid: 88a7d0f79c6875848921f0dc60879f6f, type: 3}
+  - {fileID: 5469599356447784283, guid: 0be74955cc863fd4eb22246b9bcdf919, type: 3}
+  - {fileID: 8983604795232008286, guid: df3b4a07f1fe6454e9569b61a55a250b, type: 3}

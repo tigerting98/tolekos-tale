@@ -48,9 +48,9 @@ MonoBehaviour:
   bossImage: {fileID: 0}
   namesOfSpellCards:
   - Earthquake\n~Falling leafs and spiking Rocks~
-  - 
-  - 
-  - 
+  - Summon Sign\n~Colourful Exploding Shrooms!~
+  - Tower Sign\n ~Erupting Mushroom Towers Of Doom!~
+  - The Mushroommancer\n ~The Mushroommancer Loyal Mushrooms~
   nextLevel: {fileID: 0}
   earthCircle: {fileID: 0}
   key: {fileID: 6034030427296860853, guid: 98d4cbe4543ac1144a641a6525c1c54b, type: 3}
@@ -59,7 +59,6 @@ MonoBehaviour:
     type: 3}
   initialMoveSpeed: 9
   spawnLocationY: 2.5
-  spawnDelay: 0
   preFightDialogue1: {fileID: 11400000, guid: 4265b6bff2cda0f498374508cd873d70, type: 2}
   preFightDialogue2: {fileID: 11400000, guid: d47df1cd860a12f428c4e1b1a09c8881, type: 2}
   bulletspeed1: 2.63
@@ -87,3 +86,46 @@ MonoBehaviour:
   leafSped2: 4
   leafdmg2: 200
   leaflines2: 2
+  angularvel: 51.556
+  firstspeed: 1.4
+  speeddiff: 0.2
+  y3: 1
+  leaf3dmg: 200
+  shotRate3: 0.314
+  leaf3scale: 0.65
+  leafnumbers3: 3
+  leaflines3: 3
+  mushroomStats4: {fileID: 11400000, guid: abaa4b87a17193e4f99e28eddd7c21d7, type: 2}
+  spawnRate4: 0.25
+  mushroomspeed4: 3
+  mushroomspinning4: 480
+  pulseRate4: 5
+  delayinitial4: 0.7
+  mushroomspawnangularvel: 89
+  shootDuration4: 2
+  totalMoveDuration4: 2
+  ratio4first: 3
+  ratio4next: 3
+  mushroomlines: 5
+  speedbig4: 2
+  delaynext: 0.5
+  movetime4: 0.7
+  speedsmall4: 1
+  bigDmg: 500
+  smallDmg: 150
+  midPoint5: {x: 0, y: 3.5}
+  topRight: {x: -2.6, y: 3}
+  topLeft: {x: 2.6, y: 3}
+  numberOfPillars: 5
+  numberofLeafPerLines5: 6
+  numberOfLeafLine5: 2
+  pillarSpeed1: 2
+  pillarSpeed2: 15
+  pillarSpeed3: 3
+  bossmovespeed5: 8
+  leafspeed5: 2
+  leafspeeddiff5: 0.4
+  delaypillar1: 1
+  delaypillar2: 0.5
+  pillarRate: 6
+  leafspreadAngle5: 20

@@ -24,6 +24,9 @@ public class DamageTaker : MonoBehaviour
                 health.TakeDamage(GetDamage(dmg));
                 if (dmg.DestroyOnImpact())
                 {
+                    if (dmg.gameObject.tag == "Player Bullet") {
+                        dmg.gameObject.GetComponent<Bullet>().SpawnHitParticles();
+                    }
                     IPooledObject obj = dmg.gameObject.GetComponent<IPooledObject>();
                     if (obj != null)
                     {
