@@ -14,17 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - left: 1
-    speaker: {fileID: 21300000, guid: e4bfe5b99e7ca9847a3b2a32ca709ce0, type: 3}
+    speaker: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea, type: 3}
     isPlayer: 1
-    text: Wa! A mushroom
+    text: Wah! A mushroom?
     name: Toleko
   - left: 0
     speaker: {fileID: 21300000, guid: 2f70f9afea3171a40a641d22381cf366, type: 3}
     isPlayer: 0
-    text: boo boo baa baa
+    text: ...
     name: Mushroom
   - left: 1
-    speaker: {fileID: 21300000, guid: e4bfe5b99e7ca9847a3b2a32ca709ce0, type: 3}
+    speaker: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea, type: 3}
     isPlayer: 1
-    text: Guess, I have to slay it
+    text: Not gonna talk like the slime just now?
+    name: Toleko
+  - left: 0
+    speaker: {fileID: 21300000, guid: 2f70f9afea3171a40a641d22381cf366, type: 3}
+    isPlayer: 0
+    text: ...
+    name: Mushroom
+  - left: 1
+    speaker: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea, type: 3}
+    isPlayer: 1
+    text: If you're not gonna move and say anything, then I guess I just have to
+      get rid of you.
     name: Toleko
