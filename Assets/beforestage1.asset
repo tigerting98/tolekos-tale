@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17957c16a776190419a086cf84410a05, type: 3}
   m_Name: beforestage1
   m_EditorClassIdentifier: 
-  levelDescription: welcome to the journey
+  levelDescription: "Toleko was returning to the tower picking mushrooms in the forest.\nMaking
+    his way up the cobblestone staircase, he sensed something amiss.\nThe usual clanking
+    of glass and the occasional maniacal giggles that came from Old Sylfer were replaced
+    by silence.  \r\nToleko rushed up into the main laboratory, only to find his
+    master missing. \r\nAnd so begins Toleko's journey."
   nextLevelSceneString: Stage1
   backgroundImage: {fileID: 21300000, guid: 81e4f3673b54cca4dba3bc6eb4b07d9a, type: 3}

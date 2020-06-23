@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17957c16a776190419a086cf84410a05, type: 3}
   m_Name: stage2descirption
   m_EditorClassIdentifier: 
-  levelDescription: You beaten the stage 1 boss! congrats on to stage 2!
+  levelDescription: 'After Toleko defeated Valem the Never-Awake, Valem told him
+    of the locations of the 3 keys needed to reach Pyfler. It would seem that Pylfer
+    is always devising new tricks to prevent Toleko from taking his master back.
+
+    Thus,
+    Toleko headed off to his next destination, the Great Lake, to confront the "God
+    of the Lake".'
   nextLevelSceneString: Stage2
   backgroundImage: {fileID: 21300000, guid: 81e4f3673b54cca4dba3bc6eb4b07d9a, type: 3}
