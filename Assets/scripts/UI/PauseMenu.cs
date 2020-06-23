@@ -14,16 +14,32 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject warningMenu = default;
     [SerializeField] GameObject warningBackButton = default;
     [SerializeField] GameObject resumeButton = default;
+    private GameObject lastSelected;
     private void Awake()
     {
         warningMenu.SetActive(false);
         gameObject.SetActive(false);
     }
 
+    private void OnEnable() {
+        lastSelected = EventSystem.current.currentSelectedGameObject;
+    }
+
     // Update is called once per frame
     void Update()
     {
         StatsText();
+        GameObject current = EventSystem.current.currentSelectedGameObject;
+        if (current != lastSelected && current != null) {
+            lastSelected = current;
+        }
+        if (EventSystem.current.currentSelectedGameObject == null && lastSelected.activeInHierarchy) 
+        {
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                EventSystem.current.SetSelectedGameObject(lastSelected);
+            }
+        }
     }
 
     public void StatsText() {
