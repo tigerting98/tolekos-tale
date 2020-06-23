@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17957c16a776190419a086cf84410a05, type: 3}
-  m_Name: level3
+  m_Name: stage3description
   m_EditorClassIdentifier: 
-  levelDescription: You beaten stage 2! congrats! Onwards!
+  levelDescription: Now that Toleko has acquired the first key and had his fill of
+    grilled fish for a lifetime, he set off in search of the second key in the magical
+    Forest of Mushrooms.
   nextLevelSceneString: EndScene
   backgroundImage: {fileID: 21300000, guid: 81e4f3673b54cca4dba3bc6eb4b07d9a, type: 3}

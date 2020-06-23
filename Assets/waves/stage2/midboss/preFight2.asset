@@ -21,10 +21,12 @@ MonoBehaviour:
   - left: 1
     speaker: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea, type: 3}
     isPlayer: 1
-    text: 'What? A talking slime? '
+    text: What? A talking slime? Strange... your appearance seems like a copyright
+      infringement...
     name: Toleko
   - left: 0
     speaker: {fileID: 21300000, guid: e4bfe5b99e7ca9847a3b2a32ca709ce0, type: 3}
     isPlayer: 0
-    text: How rude! Anyways, I will not let you go closer to the lake!
+    text: How rude! Anyways, I will not let you go closer to the lake! You will not
+      disturb the slumber of the mighty God of the Lake!
     name: Talking Slime

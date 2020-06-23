@@ -16,10 +16,10 @@ MonoBehaviour:
   - left: 0
     speaker: {fileID: 21300000, guid: 2486b659898567943b0eef0eb7b78c82, type: 3}
     isPlayer: 0
-    text: Stop!
+    text: Stop! Don't proceed any further!!
     name: ??????
   - left: 1
     speaker: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea, type: 3}
     isPlayer: 1
-    text: What?
+    text: What? Who is it now this time?!
     name: Toleko

@@ -16,10 +16,16 @@ MonoBehaviour:
   - left: 1
     speaker: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea, type: 3}
     isPlayer: 1
-    text: Oh great! The legendary fish!
+    text: Woah! So this is the God of the Lake... Seems to me that it's just an overgrown
+      fish.
     name: Toleko
+  - left: 0
+    speaker: {fileID: 21300000, guid: 2d0454ec1a9303648adf3ad8b4d58c6d, type: 3}
+    isPlayer: 0
+    text: '*GLUB GLUB GLUB*'
+    name: God of the Lake???
   - left: 1
     speaker: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea, type: 3}
     isPlayer: 1
-    text: Guess I have to kill it before going on....
+    text: Well, looks like I've got to kill it before I can get that key.
     name: Toleko

@@ -16,5 +16,6 @@ MonoBehaviour:
   - left: 1
     speaker: {fileID: 0}
     isPlayer: 1
-    text: Finally, I found the water key
+    text: Is that the key? Seems like I would have dive down to get it. Time to get
+      wet, I guess.
     name: Toleko
