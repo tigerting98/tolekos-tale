@@ -129,3 +129,15 @@ MonoBehaviour:
   delaypillar2: 0.5
   pillarRate: 6
   leafspreadAngle5: 20
+  bossPosition6: {x: 0, y: 2}
+  leftMushroomPosition6: {x: -2, y: 3}
+  rightMushroomPosition6: {x: 2, y: 3}
+  mushroomSpeed6: 4
+  shootSpeed6l: 3
+  angleSpread6l: 50
+  deacceleration6l: 3
+  finalSpeed6l: 2.5
+  shotRate6l: 0.02
+  pulseDuration6l: 2
+  pulsePause6l: 1
+  stats6: {fileID: 11400000, guid: 356a9a7523a62a740af634c9c52fe553, type: 2}

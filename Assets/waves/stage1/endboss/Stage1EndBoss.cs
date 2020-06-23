@@ -83,13 +83,13 @@ public class Stage1EndBoss : EnemyBossWave
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase1;
         EndPhase();
         
-        Invoke("StartPhase2", 1f);
+        Invoke("StartPhase2", endPhaseTransition);
     
     }
 
     void StartPhase2() {
         SpellCardUI(namesOfSpellCards[0]);
-        Invoke("StartPattern2", 3f);
+        Invoke("StartPattern2", spellCardTransition);
     }
     void StartPattern2() {
         
@@ -111,7 +111,7 @@ public class Stage1EndBoss : EnemyBossWave
 
     void StartPhase3() {
         SpellCardUI(namesOfSpellCards[1]);
-        Invoke("StartPattern3", 3f);
+        Invoke("StartPattern3", spellCardTransition);
     }
 
     void StartPattern3() {

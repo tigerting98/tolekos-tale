@@ -41,6 +41,18 @@ public class Stage3EndBoss : EnemyBossWave
     [SerializeField] int numberOfPillars = 3, numberofLeafPerLines5 = 3, numberOfLeafLine5 = 10;
     [SerializeField] float pillarSpeed1 = 2f, pillarSpeed2 = 6f, pillarSpeed3= 3f, bossmovespeed5 = 8f, leafspeed5 = 4f, leafspeeddiff5 = 0.1f;
     [SerializeField] float delaypillar1 = 1f, delaypillar2 = 0.5f, pillarRate = 6f, leafspreadAngle5 = 15f;
+    [Header("Pattern6")]
+    [SerializeField] Vector2 bossPosition6;
+    [SerializeField] Vector2 leftMushroomPosition6, rightMushroomPosition6;
+    [SerializeField] float mushroomSpeed6 = 3f;
+    [Header("Pattern6 Left Mushroom")]
+    [SerializeField] float shootSpeed6l = 4f;
+    [SerializeField] float angleSpread6l = 50f, deacceleration6l = 4f, finalSpeed6l = 2.5f, shotRate6l = 0.1f, pulseDuration6l = 2f, pulsePause6l = 1f;
+    [SerializeField] EnemyStats stats6;
+    [Header("Pattern6 Right Mushroom")]
+    [SerializeField] float shootSpeed6r = 3f;
+    [SerializeField] float pulsetime6r = 0.5f, pulsepause6r = 0.3f, shotrate6r = 0.05f;
+    [SerializeField] int numberofLines = 30;
 
     public override void SpawnWave()
     {
@@ -87,7 +99,7 @@ public class Stage3EndBoss : EnemyBossWave
     {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase1;
         EndPhase();
-        Invoke("Phase2", 1f);
+        Invoke("Phase2", endPhaseTransition);
     }
 
     IEnumerator Pattern1()
@@ -117,7 +129,7 @@ public class Stage3EndBoss : EnemyBossWave
     void Phase2()
     {
         SpellCardUI(namesOfSpellCards[0]);
-        Invoke("StartPattern2", 2f);
+        Invoke("StartPattern2", spellCardTransition);
 
     }
 
@@ -132,7 +144,7 @@ public class Stage3EndBoss : EnemyBossWave
     {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase2;
         EndPhase();
-        Invoke("Phase3", 1f);
+        Invoke("Phase3", endPhaseTransition);
 
     }
 
@@ -147,12 +159,12 @@ public class Stage3EndBoss : EnemyBossWave
     void EndPhase3() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase3;
         EndPhase();
-        Invoke("Phase4", 1f);
+        Invoke("Phase4", endPhaseTransition);
     }
 
     void Phase4() {
         SpellCardUI(namesOfSpellCards[1]);
-        Invoke("StartPattern4", 2f);
+        Invoke("StartPattern4", spellCardTransition);
         
     }
     void StartPattern4()
@@ -166,12 +178,12 @@ public class Stage3EndBoss : EnemyBossWave
     {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase4;
         EndPhase();
-        Invoke("Phase5", 1f);
+        Invoke("Phase5", endPhaseTransition);
     }
     void Phase5()
     {
         SpellCardUI(namesOfSpellCards[2]);
-        Invoke("StartPattern5", 2f);
+        Invoke("StartPattern5", spellCardTransition);
 
     }
 
@@ -184,11 +196,15 @@ public class Stage3EndBoss : EnemyBossWave
     void EndPhase5() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase5;
         EndPhase();
-        Invoke("Phase6", 1f); 
+        Invoke("Phase6", endPhaseTransition); 
     }
     void Phase6() {
         SpellCardUI(namesOfSpellCards[3]);
-        Invoke("StartPattern6", 2f);
+        Invoke("StartPattern6", spellCardTransition);
+    }
+    void StartPattern6() {
+        SwitchToBoss();
+        currentBoss.shooting.StartCoroutine(Pattern6());
     }
     void End()
     {
@@ -295,15 +311,11 @@ public class Stage3EndBoss : EnemyBossWave
             i => Patterns.ShootMultipleStraightBullet(leaf1, leafdmg1, pillar.transform.position, leafspeed5 + i * leafspeeddiff5,
             pillarlocation == 0 ? 180 : pillarlocation == 1 ? -90 : 0, leafspreadAngle5, numberOfLeafLine5), 0.02f, numberofLeafPerLines5));
                  
-                
-           /* Patterns.ShootMultipleStraightBullet(leaf1, leafdmg1, pillar.transform.position, leafspeed5 + i * leafspeeddiff5,
-                pillarlocation ==0? 180: pillarlocation==1 ? -90 : 0,leafspreadAngle5 ,numberofLeafPerLines5 );*/
        
         yield return new WaitForSeconds(delaypillar2);
         pillar.movement.SetSpeed(pillarSpeed3, pillarlocation == 0 ? 180 : pillarlocation == 1 ? 270 : 0);
 
     }
-    void DoSomething() { }
     IEnumerator BarrageOfReflectingBullets(Bullet bul, float dmg, float angleMin, float angleMax, float speed, float shotRate)
     {
         return Functions.RepeatAction(() => ReflectingBullet(bul, dmg, currentBoss.transform.position,
@@ -375,4 +387,36 @@ public class Stage3EndBoss : EnemyBossWave
            
         
     }
+    IEnumerator Pattern6() {
+        
+        float time = currentBoss.movement.MoveTo(bossPosition6, initialMoveSpeed);
+        yield return new WaitForSeconds(time);
+        Enemy mushroomLeft = Instantiate(GameManager.gameData.midBossMushroomMob, currentBoss.transform.position, Quaternion.identity);
+        float time1 = mushroomLeft.movement.MoveTo(leftMushroomPosition6, mushroomSpeed6);
+        mushroomLeft.SetEnemy(stats6, false);
+        Enemy mushroomRight = Instantiate(GameManager.gameData.midBossMushroomMob, currentBoss.transform.position, Quaternion.identity);
+        float time2 = mushroomRight.movement.MoveTo(rightMushroomPosition6, mushroomSpeed6);
+        mushroomRight.SetEnemy(stats6, false);
+        yield return new WaitForSeconds(Math.Max(time1, time2));
+        mushroomLeft.shooting.StartShooting(Functions.RepeatAction(()=>
+            Functions.StartMultipleCustomCoroutines(this,
+            i => UpThenHomeBullet(leaf2, leafdmg2, Functions.RandomLocation(mushroomLeft.transform.position, 0.5f), shootSpeed6l,
+            90 + UnityEngine.Random.Range(-angleSpread6l, angleSpread6l), deacceleration6l, finalSpeed6l), (int)(pulseDuration6l / shotRate6l), shotRate6l)
+            , pulseDuration6l + pulsePause6l));
+
+
+    }
+
+    IEnumerator UpThenHomeBullet(Bullet bul, float dmg, Vector2 spawnPos, float shootSpeed, float angle, float deacceleration, float finalSpeed) {
+
+        Bullet bullet = GameManager.bulletpools.SpawnBullet(bul, spawnPos);
+        bullet.SetDamage(dmg);
+        bullet.movement.SetAcceleration(Quaternion.Euler(0, 0, angle) * new Vector2(shootSpeed, 0), t => new Vector2(0, -deacceleration));
+        bullet.movement.destroyBoundary = 6f;
+        yield return new WaitForSeconds(shootSpeed * Mathf.Sin(Mathf.Deg2Rad * angle) / deacceleration);
+        if (bullet && bullet.gameObject.activeInHierarchy) {
+            float angle2 = Functions.AimAt(bullet.transform.position, GameManager.playerPosition);
+            bullet.movement.SetSpeed(finalSpeed, angle2);
+        }
+    }  
 }

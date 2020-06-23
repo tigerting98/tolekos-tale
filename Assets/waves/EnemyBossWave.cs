@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemyBossWave : EnemyWave
 {
+    protected static float endPhaseTransition = 0.2f;
+    protected static float spellCardTransition = 1.7f;
     public Boss boss;
 
     public GameObject bossImage;

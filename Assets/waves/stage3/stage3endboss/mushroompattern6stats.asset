@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c516afbddbe14eb458c8e02a00bb86d5, type: 3}
-  m_Name: mushroomstat
+  m_Name: mushroompattern6stats
   m_EditorClassIdentifier: 
-  hp: 400
-  dmg: 300
-  goldchance: 0
+  hp: 100
+  dmg: 1000
+  goldchance: 0.3
   maxGold: 20
   minGold: 10
-  exp: 0
+  exp: 10
   customResist: 0
   type: 3
   waterMultiplier: 0

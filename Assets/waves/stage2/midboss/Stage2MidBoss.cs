@@ -57,12 +57,12 @@ public class Stage2MidBoss : EnemyBossWave
     void EndPhase1() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase1;
         EndPhase();
-        Invoke("Phase2", 1f);
+        Invoke("Phase2", endPhaseTransition);
     }
 
     void Phase2() {
         SpellCardUI(namesOfSpellCards[0]);
-        Invoke("StartPattern2", 2f);
+        Invoke("StartPattern2", spellCardTransition);
         currentBoss.bosshealth.OnDeath += End;
 
     }

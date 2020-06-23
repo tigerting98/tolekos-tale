@@ -88,12 +88,12 @@ public class Stage2EndBoss : EnemyBossWave
     void EndPhase1() {
         EndPhase();
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase1;
-        Invoke("Phase2", 1f);
+        Invoke("Phase2", endPhaseTransition);
     }
 
     void Phase2() {
         SpellCardUI(namesOfSpellCards[0]);
-        Invoke("Pattern2", 2f);
+        Invoke("Pattern2", spellCardTransition);
     }
 
     void Pattern2() {
@@ -128,7 +128,7 @@ public class Stage2EndBoss : EnemyBossWave
     {
         EndPhase();
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase2;
-        Invoke("Phase3", 1f);
+        Invoke("Phase3", endPhaseTransition);
     }
 
     void Phase3() {
@@ -148,12 +148,12 @@ public class Stage2EndBoss : EnemyBossWave
     void EndPhase3() {
         EndPhase();
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase3;
-        Invoke("Phase4", 1f);
+        Invoke("Phase4", endPhaseTransition);
     }
 
     void Phase4() {
         SpellCardUI(namesOfSpellCards[1]);
-        Invoke("Pattern4", 2f);
+        Invoke("Pattern4", spellCardTransition);
     }
 
     void Pattern4() {
@@ -174,12 +174,12 @@ public class Stage2EndBoss : EnemyBossWave
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase4;
         EndPhase();
 
-        Invoke("Phase5", 1f);
+        Invoke("Phase5", endPhaseTransition);
     }
 
     void Phase5() {
         SpellCardUI(namesOfSpellCards[2]);
-        Invoke("Pattern5", 2f);
+        Invoke("Pattern5", spellCardTransition);
 
     }
 
@@ -196,7 +196,7 @@ public class Stage2EndBoss : EnemyBossWave
     void EndPhase5() {
         EndPhase();
         Destroy(bossImage);
-        Invoke("EndDialogue", 1f);
+        Invoke("EndDialogue", endPhaseTransition);
     }
 
     void EndDialogue() {
@@ -277,6 +277,7 @@ public class Stage2EndBoss : EnemyBossWave
                     fairy.shooting.StartShootingFor(EnemyPatterns.ShootSine(pointedBullet, dmg5fairy, fairy.transform, angle,
                     speedbulletfairy, shotRatefairy, fairyangularVel, fairyamp), 0, fairypulseDuration);
                 }, fairypulseRate), time);
+            Destroy(fairy.gameObject, 15f);
             yield return new WaitForSeconds(spawnRatefairy);
         }
         

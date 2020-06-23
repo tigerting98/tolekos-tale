@@ -14,6 +14,7 @@ public class GameData : MonoBehaviour
     public EnemyPack ghosts, linemonster, mushrooms;
     public Enemy waterFairy;
     public Enemy patternSprite, treeant;
+    public Enemy midBossMushroomMob;
     public Sprite playerDialogueSprite;
 
     private void Awake()
