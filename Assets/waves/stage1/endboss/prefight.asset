@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - left: 0
-    speaker: {fileID: 21300000, guid: d52abbc0266cd4f4b89ad5c82422bb31, type: 3}
+    speaker: {fileID: 21300000, guid: 4362fb7448bc2a843bd408f48667dfa8, type: 3}
     isPlayer: 0
     text: ZZZZ......
     name: ???
@@ -24,7 +24,7 @@ MonoBehaviour:
     text: Valem! It's me, Toleko!
     name: Toleko
   - left: 0
-    speaker: {fileID: 21300000, guid: d52abbc0266cd4f4b89ad5c82422bb31, type: 3}
+    speaker: {fileID: 21300000, guid: 4362fb7448bc2a843bd408f48667dfa8, type: 3}
     isPlayer: 0
     text: ZZZ.... *hic*
     name: Valem the Guard
@@ -35,7 +35,7 @@ MonoBehaviour:
       or something?
     name: Toleko
   - left: 0
-    speaker: {fileID: 21300000, guid: d52abbc0266cd4f4b89ad5c82422bb31, type: 3}
+    speaker: {fileID: 21300000, guid: 4362fb7448bc2a843bd408f48667dfa8, type: 3}
     isPlayer: 0
     text: '.... HUH!! WHO''S THERE!!
 
@@ -49,19 +49,19 @@ MonoBehaviour:
       3rd time is month! I need to bring him back to the tower.
     name: Toleko
   - left: 0
-    speaker: {fileID: 21300000, guid: d52abbc0266cd4f4b89ad5c82422bb31, type: 3}
+    speaker: {fileID: 21300000, guid: 4362fb7448bc2a843bd408f48667dfa8, type: 3}
     isPlayer: 0
     text: 'I see, I see. Must be tough being you, huh? Anyways, this time he decided
       that one lock wasn''t enough, so he made three. '
     name: Valem the Guard
   - left: 0
-    speaker: {fileID: 21300000, guid: d52abbc0266cd4f4b89ad5c82422bb31, type: 3}
+    speaker: {fileID: 21300000, guid: 4362fb7448bc2a843bd408f48667dfa8, type: 3}
     isPlayer: 0
     text: The keys to these locks were hidden out in the wilds, but luckily for you,
       I know where they are.
     name: Valem the Guard
   - left: 0
-    speaker: {fileID: 21300000, guid: d52abbc0266cd4f4b89ad5c82422bb31, type: 3}
+    speaker: {fileID: 21300000, guid: 4362fb7448bc2a843bd408f48667dfa8, type: 3}
     isPlayer: 0
     text: But before I tell you, let's just have the usual mock battle, shall we?
       So that Pylfer doesn't think that I'm slacking off again.

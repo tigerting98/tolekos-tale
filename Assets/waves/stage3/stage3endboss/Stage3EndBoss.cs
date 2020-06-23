@@ -300,9 +300,10 @@ public class Stage3EndBoss : EnemyBossWave
     }
     IEnumerator SummonPillar(int pillarlocation) {
         float pos = UnityEngine.Random.Range(-3.5f, 3.5f);
+        Quaternion orientation = Quaternion.Euler(0, 0, pillarlocation == 0 ? 0 : pillarlocation == 1 ? 90 : 180);
         Bullet pillar = GameManager.bulletpools.SpawnBullet(GameManager.gameData.mushroomPillar, pillarlocation == 0 ? new Vector2(-4.1f, pos) :
-            pillarlocation == 1 ? new Vector2(pos, -4.1f) : new Vector2(4.1f, pos));
-        pillar.orientation.SetFixedOrientation(Quaternion.Euler(0,0,pillarlocation == 0 ? 0 : pillarlocation == 1 ? 90 : 180));
+            pillarlocation == 1 ? new Vector2(pos, -4.1f) : new Vector2(4.1f, pos), orientation);
+        pillar.orientation.SetFixedOrientation(orientation);
         pillar.movement.MoveAndStopAfter(pillarlocation == 0 ? new Vector2(pillarSpeed1, 0) : pillarlocation == 1 ?
             new Vector2(0, pillarSpeed1) : new Vector2(-pillarSpeed1, 0), 0.6f/pillarSpeed1);
         
