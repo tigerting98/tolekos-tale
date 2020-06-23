@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 577416866631812059}
   - component: {fileID: 645298095112838643}
   m_Layer: 0
-  m_Name: txTextWave
+  m_Name: wave3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,21 +40,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 605409298409342410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a26dffe17cbde774d86510bc0ca310c2, type: 3}
+  m_Script: {fileID: 11500000, guid: d3a2939d94f14634094e0a19ec1d3b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnSound: {fileID: 0}
-  y1: 0
-  y2: 0
   moveSpeed: 2
   delay: 0
   number: 5
   spawnRate: 0.5
-  stats: {fileID: 11400000, guid: d4bec4e21710f3b458e0f7e1d424a590, type: 2}
+  stats: {fileID: 0}
   shootingDelay: 0.3
-  bulletSpeed: 1
+  bulletSpeed: 0.5
   shotRate: 0.2
   shotAngle: 20
   lines: 1
   bulletsPerLine: 10
-  damage: 10
+  damage: 200
+  subwaveList:
+  - spawnDelay: 0
+    numberOfEnemies: 5
+    startY: 3
+    midY: 1.5
+    endY: 0
+    lines: 1
+    element: 1
+    enemyPack: {fileID: 11400000, guid: f9bc86bb33e833e42b241d21cac03812, type: 2}
+    enemyBullet: {fileID: 6539465222748635732, guid: 75e9840902b09f04d99b4903c8b1963e,
+      type: 3}
+    enemyStats: {fileID: 11400000, guid: 6b2f4c6725e1ffc46b01150adf1a5340, type: 2}
+  - spawnDelay: 10
+    numberOfEnemies: 7
+    startY: 4
+    midY: 0
+    endY: -1
+    lines: 2
+    element: 1
+    enemyPack: {fileID: 11400000, guid: e17c5ae1cdbaddd45a4fe548718245ab, type: 2}
+    enemyBullet: {fileID: 6539465222748635732, guid: 75e9840902b09f04d99b4903c8b1963e,
+      type: 3}
+    enemyStats: {fileID: 11400000, guid: 6b2f4c6725e1ffc46b01150adf1a5340, type: 2}
