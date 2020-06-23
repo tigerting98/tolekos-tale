@@ -20,6 +20,8 @@ public class Shop : MonoBehaviour
     [SerializeField] Button backButton;
     List<ShopButton> menuItems = new List<ShopButton>();
     public event Action OnCloseShop;
+    private GameObject lastSelected;
+
 
     private void Awake()
     {
@@ -63,6 +65,7 @@ public class Shop : MonoBehaviour
     private void EnableInvoke() {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(menuItems[0].gameObject);
+        lastSelected = menuItems[0].gameObject;
     }
 
     private void SetInactive() {
@@ -73,6 +76,10 @@ public class Shop : MonoBehaviour
     }
     private void Update()
     {
+        GameObject current = EventSystem.current.currentSelectedGameObject;
+        if (current != lastSelected && current != null) {
+            lastSelected = current;
+        }
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (EventSystem.current.currentSelectedGameObject == backButton.gameObject)
             {
@@ -80,6 +87,13 @@ public class Shop : MonoBehaviour
             }
             else { EventSystem.current.SetSelectedGameObject(backButton.gameObject); }
         
+        }
+        if (EventSystem.current.currentSelectedGameObject == null && lastSelected.activeInHierarchy) 
+        {
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                EventSystem.current.SetSelectedGameObject(lastSelected);
+            }
         }
     }
 }

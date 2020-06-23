@@ -584,6 +584,7 @@ MonoBehaviour:
   background: {fileID: 1119245767}
   text: {fileID: 162877634}
   nextStageButton: {fileID: 2062395540}
+  shopButton: {fileID: 1055031384}
 --- !u!1 &1134189399
 GameObject:
   m_ObjectHideFlags: 0
