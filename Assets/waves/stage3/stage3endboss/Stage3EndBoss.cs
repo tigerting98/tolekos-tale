@@ -8,8 +8,7 @@ using UnityEngine.SocialPlatforms;
 public class Stage3EndBoss : EnemyBossWave
 {
     // Start is called before the first frame update
-    [SerializeField] GameObject earthCircle, key;
-    GameObject actualCircle;
+    [SerializeField] GameObject key;
     [SerializeField] GameObject image;
     [SerializeField] ParticleSystem slamEffect;
     [SerializeField] float initialMoveSpeed;
@@ -51,8 +50,11 @@ public class Stage3EndBoss : EnemyBossWave
     [SerializeField] EnemyStats stats6;
     [Header("Pattern6 Right Mushroom")]
     [SerializeField] float shootSpeed6r = 3f;
-    [SerializeField] float pulsetime6r = 0.5f, pulsepause6r = 0.3f, shotrate6r = 0.05f;
-    [SerializeField] int numberofLines = 30;
+    [SerializeField] float pulserate6r = 1, shotrate6r = 0.05f, greendmg = 200f;
+    [SerializeField] int numberofLines6r = 30, numberofBulletsPerLine6r = 8;
+    [Header("Pattern6 Boss")]
+    [SerializeField] float shootrate6 = 0.05f, shotSpeed6 = 2f, spreadAngle6 =45f;
+    [SerializeField] Dialogue endDialogue;
 
     public override void SpawnWave()
     {
@@ -91,6 +93,7 @@ public class Stage3EndBoss : EnemyBossWave
         currentBoss = Instantiate(boss, new Vector2(0, spawnLocationY), Quaternion.identity);
         GameManager.currentBoss = currentBoss;
         currentBoss.shooting.StartShooting(Pattern1());
+        
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
         SwitchToBoss();
     }
@@ -205,15 +208,16 @@ public class Stage3EndBoss : EnemyBossWave
     void StartPattern6() {
         SwitchToBoss();
         currentBoss.shooting.StartCoroutine(Pattern6());
+        currentBoss.bosshealth.OnDeath += EndPhase6;
     }
-    void End()
+    void EndPhase6()
     {
+        
         EndPhase();
         Destroy(bossImage);
-        OnDefeat?.Invoke();
-        DestroyAfter(5);
+        StartCoroutine(DialogueManager.StartDialogue(endDialogue, NextStage));
     }
-
+  
     Enemy ShootMushroom(float speed, float angle, DamageType type, float spinningvel) {
         Enemy mushroom = Instantiate(GameManager.gameData.mushrooms.GetItem(type), currentBoss.transform.position, Quaternion.identity);
         mushroom.movement.SetSpeed(speed, angle);
@@ -388,7 +392,7 @@ public class Stage3EndBoss : EnemyBossWave
         
     }
     IEnumerator Pattern6() {
-        
+        Bullet green = GameManager.gameData.ellipseBullet.GetItem(DamageType.Earth);
         float time = currentBoss.movement.MoveTo(bossPosition6, initialMoveSpeed);
         yield return new WaitForSeconds(time);
         Enemy mushroomLeft = Instantiate(GameManager.gameData.midBossMushroomMob, currentBoss.transform.position, Quaternion.identity);
@@ -403,7 +407,12 @@ public class Stage3EndBoss : EnemyBossWave
             i => UpThenHomeBullet(leaf2, leafdmg2, Functions.RandomLocation(mushroomLeft.transform.position, 0.5f), shootSpeed6l,
             90 + UnityEngine.Random.Range(-angleSpread6l, angleSpread6l), deacceleration6l, finalSpeed6l), (int)(pulseDuration6l / shotRate6l), shotRate6l)
             , pulseDuration6l + pulsePause6l));
+        mushroomRight.shooting.StartShooting(Functions.RepeatAction(
+            () => mushroomRight.shooting.StartShooting(EnemyPatterns.PulsingLines(green, greendmg, mushroomRight.transform, shootSpeed6r, 0, shotrate6r, numberofLines6r, numberofBulletsPerLine6r)),
+            pulserate6r));
 
+        currentBoss.shooting.StartShooting(BarrageOfReflectingBullets(rock, rockdmg1,
+                90 - spreadAngle6, 90 + spreadAngle6, shotSpeed6, shootrate6 ));
 
     }
 

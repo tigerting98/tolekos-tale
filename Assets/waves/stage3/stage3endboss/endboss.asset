@@ -9,18 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c516afbddbe14eb458c8e02a00bb86d5, type: 3}
-  m_Name: mushroompattern6stats
+  m_Script: {fileID: 11500000, guid: b54388a81ad299c44b3d776bc27ed6e0, type: 3}
+  m_Name: endboss
   m_EditorClassIdentifier: 
-  hp: 25000
-  dmg: 1000
-  goldchance: 0
-  maxGold: 0
-  minGold: 0
-  exp: 0
-  customResist: 0
-  type: 3
-  waterMultiplier: 0
-  earthMultiplier: 0
-  fireMultiplier: 0
-  pureMultiplier: 0
+  lines:
+  - left: 0
+    speaker: {fileID: 0}
+    isPlayer: 1
+    text: 23423
+    name: 234

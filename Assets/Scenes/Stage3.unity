@@ -258,12 +258,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 915536548896371474, guid: 50f325502f0e33548b791f58bc2ca57d,
-        type: 3}
-      propertyPath: mushroomPillar
-      value: 
-      objectReference: {fileID: 6063934732109912144, guid: 27b76d1befe82fa48b84f891c7496a45,
-        type: 3}
     - target: {fileID: 6907845975779757171, guid: 50f325502f0e33548b791f58bc2ca57d,
         type: 3}
       propertyPath: m_Name
@@ -1327,7 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wave: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23, type: 3}
-  playerLevel: 13
+  playerLevel: 100
 --- !u!4 &1931965796
 Transform:
   m_ObjectHideFlags: 0
