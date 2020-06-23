@@ -13,13 +13,30 @@ MonoBehaviour:
   m_Name: prefight2
   m_EditorClassIdentifier: 
   lines:
+  - left: 1
+    speaker: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea, type: 3}
+    isPlayer: 1
+    text: Hi Sally! How have you been?
+    name: Toleko
   - left: 0
     speaker: {fileID: 21300000, guid: 760f28cc6815e01488537f2dcb2049c3, type: 3}
     isPlayer: 0
-    text: You will not pass!
-    name: Mushroom girl
+    text: Don't call me that! I'm the Great MUSHROOMANCER!! You shall not have the
+      key!
+    name: Sally?
   - left: 1
-    speaker: {fileID: 21300000, guid: 2f70f9afea3171a40a641d22381cf366, type: 3}
+    speaker: {fileID: 0}
     isPlayer: 1
-    text: Here we go again!
+    text: Why not? I need the key to rescue my master from that Pilfering Pyfler...
+      again.
+    name: Toleko
+  - left: 0
+    speaker: {fileID: 21300000, guid: 760f28cc6815e01488537f2dcb2049c3, type: 3}
+    isPlayer: 0
+    text: Because you're so annoying! I'm gonna shut you up once and for all!!
+    name: Sally the Mushroomancer
+  - left: 1
+    speaker: {fileID: 0}
+    isPlayer: 1
+    text: Looks like she's stopped listening to me...
     name: Toleko

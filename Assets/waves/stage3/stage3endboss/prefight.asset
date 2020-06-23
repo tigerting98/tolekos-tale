@@ -16,7 +16,7 @@ MonoBehaviour:
   - left: 1
     speaker: {fileID: 21300000, guid: 2486b659898567943b0eef0eb7b78c82, type: 3}
     isPlayer: 1
-    text: Hey look! The Key!
+    text: 'Hey look! It''s the key! '
     name: Toleko
   - left: 0
     speaker: {fileID: 21300000, guid: c9398ceeb3857b1488fddb17024e9b51, type: 3}

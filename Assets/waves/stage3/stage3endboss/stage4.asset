@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17957c16a776190419a086cf84410a05, type: 3}
   m_Name: stage4
   m_EditorClassIdentifier: 
-  levelDescription: werwer
+  levelDescription: "After Sally had calmed down a bit, Toleko took the second key
+    and made preparations to journey to Mount Fireblast, where the fire was hidden.
+    \nAfter a long and uncomfortable flight, he finally arrived at the foot of the
+    fiery volcano. The heat would normally be unbearable for humans, but with the
+    help of some magic, Toleko was able to cool himself down. Still, he was sweating
+    like a pig and wished nothing more than to get out of this infernal place."
   nextLevelSceneString: EndScene
   backgroundImage: {fileID: 21300000, guid: 81e4f3673b54cca4dba3bc6eb4b07d9a, type: 3}
