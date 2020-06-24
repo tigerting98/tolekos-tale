@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 //using System.Numerics;
 using System.Security.Cryptography;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
-
+public enum OrientationMode {velocity, position }
 [RequireComponent(typeof(Movement))]
+
 public class BulletOrientation : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -14,8 +16,10 @@ public class BulletOrientation : MonoBehaviour
     public Quaternion orientation;
     bool custom = false;
     public bool absolute = false;
+    public OrientationMode mode = OrientationMode.position;
     Vector2 prev = new Vector2(0, 0);
     Func<float, Quaternion> orientationOverTime;
+    Func<float, float> angularVelOverTime;
     float timer = 0;
     void Start()
     {
@@ -35,8 +39,15 @@ public class BulletOrientation : MonoBehaviour
         custom = true;
         timer = 0;
         orientationOverTime = fun;
+        mode = OrientationMode.position;
     }
 
+    public void SetCustomAngularVel(Func<float, float> fun) {
+        custom = true;
+        timer = 0;
+        angularVelOverTime = fun;
+        mode = OrientationMode.velocity;
+    }
     public void Reset()
     {
         custom = false;
@@ -45,6 +56,8 @@ public class BulletOrientation : MonoBehaviour
         orientationOverTime = null;
         timer = 0;
         orientation = Quaternion.identity;
+        angularVelOverTime = null;
+        mode = OrientationMode.position;
     }
 
 
@@ -66,15 +79,24 @@ public class BulletOrientation : MonoBehaviour
         
             if (custom)
             {
-                orientation = orientationOverTime(timer);
+                if (mode == OrientationMode.position)
+                {
+                    orientation = orientationOverTime(timer);
+                    timer += Time.deltaTime;
+                transform.rotation = orientation;
+        
+            }
+             else {
+                transform.Rotate(0, 0, angularVelOverTime(timer) * Time.deltaTime);
                 timer += Time.deltaTime;
+            }
             }
             else
             {
                 orientation = FindRotation();
-            }
-
             transform.rotation = orientation;
+          
+        }
         prev = transform.position;
     }
 }

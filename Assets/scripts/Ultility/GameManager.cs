@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
     public static BulletPools bulletpools;
 
     public static event Action<bool> OnGameover;
-    public static event Action OnSummonBoss;
+    public static event Action OnSummonEndBoss;
+    public static event Action OnSummonMidBoss;
     public static GamePlayerInput gameInput;
     public static DialogueUI dialogueUI;
     public const float WeakMultiplier = 0.5f, StrongMultiplier = 1.5f;
@@ -75,9 +76,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void SummonBoss() {
+    public static void SummonEndBoss() {
 
-        OnSummonBoss?.Invoke();
+        OnSummonEndBoss?.Invoke();
+    }
+
+    public static void SummonMidBoss() {
+        OnSummonMidBoss?.Invoke();
+    }
+
+    public static void ResetBosses() {
+        OnSummonMidBoss = null;
+        OnSummonEndBoss = null;
+        
     }
 
 

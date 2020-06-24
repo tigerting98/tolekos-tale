@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Policy;
 using UnityEditor;
 using UnityEngine;
 //a list of useful utility functions commonly used
@@ -139,5 +140,17 @@ public class Functions : MonoBehaviour
         }
     }
 
-     
+    public static float modulo(float number, float mod) {
+        if (number < 0)
+        {
+            return mod - modulo(Math.Abs(number), mod);
+        }
+        else if (number >= mod)
+        {
+            return number - mod * Mathf.FloorToInt(number / mod);
+        }
+        else {
+            return number;
+        }
+    }
 }

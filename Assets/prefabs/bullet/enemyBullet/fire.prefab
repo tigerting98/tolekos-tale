@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6975979355013263552
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1600894606670411424, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656917, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_Name
+      value: fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.038922943
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0041182414
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.051590085
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.18037479
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_Direction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656919, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3dc5e1d761d936843bd820e7ef987757,
+        type: 3}
+    - target: {fileID: 5304289742371261883, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: bulletPoolID
+      value: enemy-fire-0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3118ceb8e2dd93e4bb557208bb39870e, type: 3}

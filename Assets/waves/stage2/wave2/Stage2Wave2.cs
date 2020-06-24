@@ -13,6 +13,7 @@ public class Stage2Wave2 : EnemyWave
     [SerializeField] float shotRate, shotRate2;
     [SerializeField] float speedDifference, minSpeed, angularVel, angularVel2, dmg;
     [SerializeField] int numberPerLine, lines;
+    [SerializeField] float beforeBossTime = 10f;
     Bullet bul;
     public override void SpawnWave() {
         bul = GameManager.gameData.pointedBullet.GetItem(DamageType.Water);
@@ -54,6 +55,10 @@ public class Stage2Wave2 : EnemyWave
             EnemyPatterns.StartFanningPattern(bul, dmg, enemy.shooting, minSpeed, -angularVel2, 0, 1, shotRate2, numberPerLine, speedDifference);
            
         }
+        yield return new WaitForSeconds(beforeBossTime);
+        GameManager.DestoryAllEnemyBullets();
+        GameManager.DestroyAllNonBossEnemy(false);
+        GameManager.SummonMidBoss();
     }
 
     

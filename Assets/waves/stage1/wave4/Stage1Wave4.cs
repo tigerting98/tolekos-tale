@@ -65,7 +65,8 @@ public class Stage1Wave4 : EnemyWave
         yield return new WaitForSeconds(arrivalDelay);
             SecondHalf();
         yield return new WaitForSeconds(3);
-        GameManager.SummonBoss();
+        GameManager.SummonEndBoss();
+        DestroyAfter(5f);
 
     }
 

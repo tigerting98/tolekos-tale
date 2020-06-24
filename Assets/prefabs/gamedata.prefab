@@ -67,6 +67,8 @@ MonoBehaviour:
     type: 3}
   mushroomPillar: {fileID: 6063934732109912144, guid: 27b76d1befe82fa48b84f891c7496a45,
     type: 3}
+  fireBullet: {fileID: 2977784430267972987, guid: a36b8f5427bc05a44a8ae4995df1d732,
+    type: 3}
   ghosts: {fileID: 11400000, guid: f9bc86bb33e833e42b241d21cac03812, type: 2}
   linemonster: {fileID: 11400000, guid: e17c5ae1cdbaddd45a4fe548718245ab, type: 2}
   mushrooms: {fileID: 11400000, guid: 6bbd3837208b3f340abf41594e72f4b6, type: 2}
@@ -76,6 +78,8 @@ MonoBehaviour:
     type: 3}
   treeant: {fileID: 1673228067095624031, guid: 7fda2911b15819c48a6fbc617cae385f, type: 3}
   midBossMushroomMob: {fileID: 3891478456235747014, guid: 4210db93f65ed3049b0731deeb345d0e,
+    type: 3}
+  greenSlime: {fileID: 1209050533006121410, guid: 62802f75734c5af4aa142ed5c7c3e5b7,
     type: 3}
   playerDialogueSprite: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea,
     type: 3}

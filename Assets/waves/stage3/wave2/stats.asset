@@ -15,9 +15,9 @@ MonoBehaviour:
   hp: 1000
   dmg: 1000
   goldchance: 0.6
-  maxGold: 80
-  minGold: 60
-  exp: 13
+  maxGold: 90
+  minGold: 70
+  exp: 15
   customResist: 0
   type: 3
   waterMultiplier: 0

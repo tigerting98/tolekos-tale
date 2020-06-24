@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &392149083645744383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7682615597959055173}
+  - component: {fileID: 3696897607128456916}
+  m_Layer: 0
+  m_Name: stage4midboss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7682615597959055173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392149083645744383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0810347, y: 12.350239, z: 0.9069309}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3696897607128456916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392149083645744383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6f1fa149611b349915a38b87473636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnSound: {fileID: 0}
+  boss: {fileID: 5510918016240705999, guid: c0d69388963e4e9469b5ff82c6d09b9b, type: 3}
+  bossImage: {fileID: 0}
+  namesOfSpellCards:
+  - Heat Spell\n ~Burning Merry Go Round~
+  nextLevel: {fileID: 0}
+  spawnEffect: {fileID: 713349088135005307, guid: 0845c8f5beef85e4db65d60c7a3c528f,
+    type: 3}
+  image: {fileID: 6034030427296860853, guid: e682df331325ac445a480f320f298c73, type: 3}
+  spawnLocation: {x: 0, y: 1.5}
+  prefightDialogue: {fileID: 11400000, guid: 36edd3b067c0ea64eaa90f2539b75949, type: 2}
+  dmgfirebullet1: 275
+  dmgfireball1: 400
+  fireSpreadAngle: 35
+  shotSpeed: 0.04
+  firebullet1Max: 4
+  firebullet1Min: 2.5
+  fireballspeed1: 3
+  fireballshotRate: 1
+  fireballLines1: 20
+  moveSpeed2: 9
+  y2: 1.5
+  fireCircleLocationLeft: {x: -3, y: -3}
+  fireCircleLocationRight: {x: 3, y: -3}
+  angularvel2: 205
+  shotRate2: 0.07
+  bulletspeed2: 2.8
+  bulletdmg2: 250
+  laserDelay: 1.5
+  delaytoNextLaser: 3
+  laserangularVel: 34
+  firebeamdmg: 2500
+  spinDuration: 6

@@ -49,7 +49,7 @@ public class Stage2Wave3 : EnemyWave
             fairy.movement.SetSpeed(movespeed1, 90);
         }
         yield return new WaitForSeconds(1f);
-        GameManager.SummonBoss();
+        GameManager.SummonEndBoss();
         GameManager.DestoryAllEnemyBullets();
     }
     IEnumerator SpawnBlob(bool left) {

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!60 &209056043124807382
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8868387594631810937}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0.5}
+    oldSize: {x: 1.5, y: 1.5}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.043518137, y: -0.15414926}
+      - {x: 0.027934318, y: 0.02903279}
+      - {x: 0.6499886, y: 0.3176515}
+      - {x: 1.4223323, y: 0.53236556}
+      - {x: 1.4400468, y: -0.6331959}
 --- !u!1001 &8244671455171302134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,12 +40,12 @@ PrefabInstance:
     - target: {fileID: 682333303739211146, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.76
       objectReference: {fileID: 0}
     - target: {fileID: 682333303739211146, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 682333303739211146, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
@@ -25,12 +55,12 @@ PrefabInstance:
     - target: {fileID: 682333303739211146, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 682333303739211146, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 682333303739211146, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
@@ -62,6 +92,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 682333303739211146, guid: fb8ba1024095ab54bbd497ac2dac9966,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 682333303739211146, guid: fb8ba1024095ab54bbd497ac2dac9966,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12.858042
+      objectReference: {fileID: 0}
     - target: {fileID: 682333303739211149, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
       propertyPath: m_Sprite
@@ -86,7 +126,7 @@ PrefabInstance:
     - target: {fileID: 682333303739211149, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.7294118
+      value: 0.5647059
       objectReference: {fileID: 0}
     - target: {fileID: 682333303739211151, guid: fb8ba1024095ab54bbd497ac2dac9966,
         type: 3}
@@ -113,5 +153,12 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8445993751460948539, guid: fb8ba1024095ab54bbd497ac2dac9966, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb8ba1024095ab54bbd497ac2dac9966, type: 3}
+--- !u!1 &8868387594631810937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 682333303739211151, guid: fb8ba1024095ab54bbd497ac2dac9966,
+    type: 3}
+  m_PrefabInstance: {fileID: 8244671455171302134}
+  m_PrefabAsset: {fileID: 0}

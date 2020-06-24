@@ -9,12 +9,15 @@ public class GameData : MonoBehaviour
     public BulletPack pointedBullet, smallRoundBullet, bigBullet, arrowBullet, ellipseBullet;
     public Bullet leafBullet1, leafBullet2, leafBullet3, rockBullet;
     public Bullet whiteArrowBullet;
-    public Bullet waterCircle, earthCircle;
+    public Bullet waterCircle, earthCircle, fireCircle;
     public Bullet mushroomPillar;
+    public Bullet fireBullet;
+    public Bullet fireBeam;
     public EnemyPack ghosts, linemonster, mushrooms;
     public Enemy waterFairy;
     public Enemy patternSprite, treeant;
     public Enemy midBossMushroomMob;
+    public Enemy greenSlime;
     public Sprite playerDialogueSprite;
 
     private void Awake()

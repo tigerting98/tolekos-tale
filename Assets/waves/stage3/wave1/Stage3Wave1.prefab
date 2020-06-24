@@ -51,20 +51,62 @@ MonoBehaviour:
   - miny: 0
     maxy: 3
     timing: 0
-    number: 16
+    number: 20
     left: 1
-    shotChance: 0.267
+    shotChance: 0.25
   - miny: 1
     maxy: 2.5
     timing: 5
-    number: 18
+    number: 20
     left: 0
-    shotChance: 0.096
+    shotChance: 0.25
   - miny: 2
     maxy: 3
-    timing: 9
-    number: 21
+    timing: 14
+    number: 13
     left: 0
+    shotChance: 0.103
+  - miny: 2
+    maxy: 3
+    timing: 21
+    number: 12
+    left: 1
+    shotChance: 0.103
+  - miny: 2
+    maxy: 3
+    timing: 30
+    number: 10
+    left: 0
+    shotChance: 0.103
+  - miny: 2
+    maxy: 3
+    timing: 36
+    number: 15
+    left: 1
+    shotChance: 0.103
+  - miny: 2
+    maxy: 3
+    timing: 44
+    number: 15
+    left: 0
+    shotChance: 0.103
+  - miny: 2
+    maxy: 3
+    timing: 50
+    number: 15
+    left: 0
+    shotChance: 0.103
+  - miny: 2
+    maxy: 3
+    timing: 56
+    number: 15
+    left: 1
+    shotChance: 0.103
+  - miny: 2
+    maxy: 3
+    timing: 64
+    number: 15
+    left: 1
     shotChance: 0.103
   shotRate: 0.5
   dmg: 200

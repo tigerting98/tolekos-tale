@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -12,7 +13,6 @@ public class Level : MonoBehaviour
     public List<float> timesFirstHalf;
     [Header("Mid Boss")]
     public EnemyBossWave midBoss;
-    public float midBossTimer;
     [Header("After MidBoss")]
     public List<EnemyWave> wavesSecondHalf;
     public List<float> timesSecondHalf;
@@ -20,24 +20,42 @@ public class Level : MonoBehaviour
 
     public virtual void Start()
     {
-
+        GameManager.ResetBosses();
 
         Assert.IsTrue(wavesFirstHalf.Count == timesFirstHalf.Count);
         for (int i = 0; i < wavesFirstHalf.Count; i++) {
             EnemyWave wave = Instantiate(wavesFirstHalf[i]);
             StartCoroutine(SpawnWaveAfter(wave, timesFirstHalf[i]));
         }
+
+        GameManager.OnSummonMidBoss += MidBoss;
+        GameManager.OnSummonEndBoss += FinalBoss;
+    }
+    void MidBoss() {
         if (midBoss)
         {
-            EnemyBossWave boss = Instantiate(midBoss);
-        StartCoroutine(SpawnMidBoss(boss, midBossTimer));
+            try
+            {
+                
+                background.SetTrigger("StopMoving");
+            }
         
-        boss.OnDefeat += AfterMidBoss; }
-        GameManager.OnSummonBoss += FinalBoss;
-    }
+            catch (Exception ex) { Debug.Log(ex.ToString()); }
+            EnemyBossWave boss = Instantiate(midBoss);
+            StartCoroutine(SpawnWaveAfter(boss, 0));
 
+            boss.OnDefeat += AfterMidBoss;
+        }
+    
+    }
     void AfterMidBoss() {
-        background.SetTrigger("StartMoving");
+        try
+        {
+
+            background.SetTrigger("StartMoving");
+        }
+        catch (Exception ex) { Debug.Log(ex.ToString()); }
+
         for (int i = 0; i < wavesSecondHalf.Count; i++)
         {
             EnemyWave wave = Instantiate(wavesSecondHalf[i]);
@@ -49,7 +67,6 @@ public class Level : MonoBehaviour
     void FinalBoss() {
         if (endBoss)
         {
-            Debug.Log("instant");
             EnemyBossWave boss = Instantiate(endBoss);
             StartCoroutine(SpawnWaveAfter(boss, 0));
         }
@@ -60,11 +77,7 @@ public class Level : MonoBehaviour
         timer = timer + Time.deltaTime;
     }
 
-    IEnumerator SpawnMidBoss(EnemyWave wave, float sec) {
-        yield return new WaitForSeconds(sec);
-        background.SetTrigger("StopMoving");
-        wave.SpawnWave();
-    }
+ 
     IEnumerator SpawnWaveAfter(EnemyWave wave, float sec)
     {
         yield return new WaitForSeconds(sec);
@@ -73,7 +86,7 @@ public class Level : MonoBehaviour
     }
     private void OnDestroy()
     {
-        GameManager.OnSummonBoss -= FinalBoss;
+        GameManager.OnSummonEndBoss -= FinalBoss;
     }
 
     

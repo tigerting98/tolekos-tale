@@ -1,9 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO.MemoryMappedFiles;
+
 using UnityEngine;
-using UnityEngine.Windows.Speech;
-using UnityEngine.XR.WSA;
+
 
 public class Stage1Wave3 : EnemyWave
 {
@@ -27,6 +25,8 @@ public class Stage1Wave3 : EnemyWave
     [SerializeField] float chanceofShooting = 0.3f;
     [SerializeField] float dmg = 50;
 
+    [Header("Boss SpawnTime")]
+    [SerializeField] float bossDelay = 5f;
 
     public override void SpawnWave() {
         StartCoroutine(TheWave());
@@ -48,7 +48,11 @@ public class Stage1Wave3 : EnemyWave
         yield return new WaitForSeconds(spawnRate / 2);
         SpawnSubWave(true, true);
         SpawnSubWave(false, true);
-
+        yield return new WaitForSeconds(spawnRate * number + bossDelay);
+        GameManager.DestoryAllEnemyBullets();
+        GameManager.DestroyAllNonBossEnemy(false);
+        GameManager.SummonMidBoss();
+        DestroyAfter(5f);
 
     }
 

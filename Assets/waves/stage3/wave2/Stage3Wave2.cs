@@ -13,6 +13,7 @@ public class Stage3Wave2 : EnemyWave
     [SerializeField] float spawnRate, shootingduration, delayBeforeMoving, enterSpeed = 8, leaveSpeed = 2;
     [SerializeField] EnemyStats stats;
     [SerializeField] int numberOfEnemy;
+    [SerializeField] float delay = 5f;
     [SerializeField] float xBound, minY, maxY;
     Enemy enemy;
     [Header("Bullet Behavior")]
@@ -25,10 +26,17 @@ public class Stage3Wave2 : EnemyWave
         bullet = GameManager.gameData.leafBullet2;
         Functions.StartMultipleCustomCoroutines(this, i => SpawnEnemy(), numberOfEnemy, spawnRate);
         Functions.StartMultipleCustomCoroutines(this, i => SpawnEnemy(), numberOfEnemy, spawnRate);
+        Invoke("SummonMidBoss", numberOfEnemy * spawnRate + delay);
     }
 
-
-    IEnumerator SpawnEnemy() {
+    void SummonMidBoss() 
+    {
+        GameManager.DestoryAllEnemyBullets();
+        GameManager.DestroyAllNonBossEnemy(false);
+        GameManager.SummonMidBoss();
+    }
+    IEnumerator SpawnEnemy()
+    {
         Vector2 spawnPos = Functions.RandomLocation(-xBound, xBound, minY, maxY);
         Enemy em = Instantiate(enemy, new Vector2(Random.Range(-4f,4f), 4.1f), Quaternion.identity);
         em.SetEnemy(stats, false);
@@ -54,9 +62,9 @@ public class Stage3Wave2 : EnemyWave
         bul.orientation.SetFixedOrientation(Quaternion.Euler(0, 0, orientationangle));
         return bul;
     }
+   
 
 
 
-  
 
 }
