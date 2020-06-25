@@ -59,7 +59,8 @@ public class Stage3Wave2 : EnemyWave
         Bullet bul = GameManager.bulletpools.SpawnBullet(bullet, origin);
         bul.SetDamage(bulletDmg);
         bul.movement.SetAcceleration(Quaternion.Euler(0, 0, angle) * new Vector2(startSpeed, 0), t => new Vector2(Random.Range(-accelerationFactor, accelerationFactor), 0));
-        bul.orientation.SetFixedOrientation(Quaternion.Euler(0, 0, orientationangle));
+        //bul.orientation.SetFixedOrientation(Quaternion.Euler(0, 0, orientationangle));
+        bul.orientation.SetFixedOrientation(orientationangle);
         return bul;
     }
    

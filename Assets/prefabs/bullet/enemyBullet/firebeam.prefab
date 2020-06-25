@@ -71,6 +71,11 @@ PrefabInstance:
       propertyPath: damage
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 1600894606670411424, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -146,6 +151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092768192575656919, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 3634036800765333292, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}

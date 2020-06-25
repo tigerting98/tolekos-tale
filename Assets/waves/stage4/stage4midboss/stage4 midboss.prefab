@@ -4760,8 +4760,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
-  orientation: {x: 0, y: 0, z: 0, w: 1}
+  angle: 0
   absolute: 0
+  mode: 1
 --- !u!1001 &8172987494510255879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4782,12 +4783,12 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[0]
-      value: 17500
+      value: 16000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[1]
-      value: 20000
+      value: 18000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}

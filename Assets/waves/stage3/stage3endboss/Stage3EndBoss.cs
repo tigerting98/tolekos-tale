@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
@@ -218,12 +218,12 @@ public class Stage3EndBoss : EnemyBossWave
         StartCoroutine(DialogueManager.StartDialogue(endDialogue, NextStage));
     }
   
-    Enemy ShootMushroom(float speed, float angle, DamageType type, float spinningvel) {
+    Enemy ShootMushroom(float speed, float angle, DamageType type, float spinningvel, float startOrientation) {
         Enemy mushroom = Instantiate(GameManager.gameData.mushrooms.GetItem(type), currentBoss.transform.position, Quaternion.identity);
         mushroom.movement.SetSpeed(speed, angle);
         mushroom.SetEnemy(mushroomStats4, false);
         mushroom.GetComponent<DamageDealer>().damageType = type;
-        mushroom.GetComponent<BulletOrientation>().SetCustomOrientaion(t => Quaternion.Euler(0, 0, spinningvel * t));
+        mushroom.GetComponent<BulletOrientation>().StartRotating(spinningvel, startOrientation);
         return mushroom;
     }
 
@@ -243,6 +243,7 @@ public class Stage3EndBoss : EnemyBossWave
     IEnumerator Pattern4() {
     
         while (true) {
+            float startAngle = UnityEngine.Random.Range(0f, 360f);
             List<Enemy> enemies = new List<Enemy>();
             currentBoss.shooting.StartShootingFor(Functions.RepeatCustomAction(
                 i => {
@@ -250,7 +251,7 @@ public class Stage3EndBoss : EnemyBossWave
                     for (int y = 0; y < mushroomlines; y++)
                     {
                         Enemy em = ShootMushroom(mushroomspeed4, i * spawnRate4 * mushroomspawnangularvel + y*360f/mushroomlines, Functions.RandomType(false),
-                       mushroomspinning4);
+                       mushroomspinning4, startAngle);
 
                         enemies.Add(em);
                     }
@@ -263,7 +264,7 @@ public class Stage3EndBoss : EnemyBossWave
                 {
                     en.movement.StopMoving();
                     BulletOrientation ori = en.GetComponent<BulletOrientation>();
-                    ori.SetFixedOrientation(ori.orientation);
+                    ori.SetFixedOrientation(ori.angle);
                 }
             }
             yield return new WaitForSeconds(delayinitial4);
@@ -271,10 +272,11 @@ public class Stage3EndBoss : EnemyBossWave
                 if (en)
                 {
                     DamageType type = en.GetComponent<DamageDealer>().damageType;
+                    float shootAngle = en.GetComponent<BulletOrientation>().angle;
                     Bullet small = GameManager.gameData.arrowBullet.GetItem(type);
                     Bullet big = GameManager.gameData.smallRoundBullet.GetItem(type);
                     Patterns.CustomRing(angle => explodingBullets(big, small, bigDmg, smallDmg, en.transform.position, ratio4next, angle,
-                        speedbig4, angle, speedsmall4, movetime4, delaynext), UnityEngine.Random.Range(0, 360f), ratio4first);
+                        speedbig4, angle, speedsmall4, movetime4, delaynext), shootAngle, ratio4first);
                     Destroy(en.gameObject);
                 }
             }
@@ -300,9 +302,9 @@ public class Stage3EndBoss : EnemyBossWave
     }
     IEnumerator SummonPillar(int pillarlocation) {
         float pos = UnityEngine.Random.Range(-3.5f, 3.5f);
-        Quaternion orientation = Quaternion.Euler(0, 0, pillarlocation == 0 ? 0 : pillarlocation == 1 ? 90 : 180);
+        float orientation = pillarlocation == 0 ? 0 : pillarlocation == 1 ? 90 : 180;
         Bullet pillar = GameManager.bulletpools.SpawnBullet(GameManager.gameData.mushroomPillar, pillarlocation == 0 ? new Vector2(-4.1f, pos) :
-            pillarlocation == 1 ? new Vector2(pos, -4.1f) : new Vector2(4.1f, pos), orientation);
+            pillarlocation == 1 ? new Vector2(pos, -4.1f) : new Vector2(4.1f, pos), Quaternion.Euler(0,0,orientation));
         pillar.orientation.SetFixedOrientation(orientation);
         pillar.movement.MoveAndStopAfter(pillarlocation == 0 ? new Vector2(pillarSpeed1, 0) : pillarlocation == 1 ?
             new Vector2(0, pillarSpeed1) : new Vector2(-pillarSpeed1, 0), 0.6f/pillarSpeed1);

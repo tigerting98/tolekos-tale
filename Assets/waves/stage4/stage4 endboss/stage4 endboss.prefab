@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8586624695929014435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5311698847181242526}
+  - component: {fileID: -245436105591341741}
+  m_Layer: 0
+  m_Name: stage4 endboss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5311698847181242526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586624695929014435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9352727, y: 1.3440944, z: -4.2195635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-245436105591341741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586624695929014435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcfe7df08f3c20b4e8cdfe5392281087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnSound: {fileID: 0}
+  boss: {fileID: 2465689840817753905, guid: 54f9879fedb5a404fa6117b9c69309af, type: 3}
+  bossImage: {fileID: 0}
+  namesOfSpellCards:
+  - Chaos\n~Explosions Everywhere!~
+  - 
+  - 
+  - 
+  nextLevel: {fileID: 0}
+  key: {fileID: 0}
+  preFight1: {fileID: 11400000, guid: 10fb73424127ed1419cf8b969a678d5f, type: 2}
+  fireCircle: {fileID: 7336651296054420115, guid: 6f8bf7ae6164a6a45a31fc8fe157db7a,
+    type: 3}
+  spawnEffect: {fileID: 1064576369312752990, guid: 1ca4f0e3fbb0aa745ac0ce6a6cffd349,
+    type: 3}
+  delaybeforeSpinning: 0.2
+  delaybeforeparticle: 2
+  spinAcceleration: 1000
+  delayBeforeDialogue: 2
+  image: {fileID: 1942461149746707325, guid: 2322c82692a4cc743892d5cea68571be, type: 3}
+  spawnLocation: {x: 0, y: 2}
+  period1: 0.87
+  shootSpeed1: 3.7
+  spread1: 34
+  timeperPulse1: 10
+  shotRate1: 0.03
+  delaystart1: 0.5
+  angularvel: 4
+  totaltimemove1: 5.5
+  delaytoNext: 2
+  bounds: 1
+  speed1: 4
+  fireBalldmg1: 260
+  fireBeamdmg1: 3000
+  explosionCircle: {fileID: 4221692458848178709, guid: c8d6506f5078cb841a43eb49a6aba008,
+    type: 3}
+  delay2: 1.2
+  slowSpawnRate2: 0.8
+  fastSpawnRate2: 0.2
+  numberofbulletsperexplosion2min: 8
+  numberofbulletsperexplosion2max: 14
+  maxSpeed2: 3
+  minSpeed2: 2
+  dmg2star: 300
+  maxangularvel: 500
+  fireballdmg3: 350
+  fireballspeed3: 3.2
+  fireballshotrate: 0.2
+  fireballpulserate: 3
+  fireballpulsetime: 1
+  fireballspread3: 8
+  laserDmg3: 600
+  fireballNumber3: 7
+  numberOfCircles3: 5
+  numberoflasers3: 2
+  y3: 3.2
+  x3: 3.5
+  delayBetweenEach3: 0.15
+  lasershotRate3: 1.5
+  spreadlaser3: 15
+  laserspeed: 4.6
+  bossLocation3: {x: 0, y: 2.3}

@@ -167,20 +167,7 @@ public class EnemyPatterns : MonoBehaviour {
         return bullets;
     }
 
-    //shoot a laser beam
-    public static IEnumerator ShootLaserBeam(Bullet actualLaser, Bullet warningLaser, Transform enemy, float angle, float timeWarning, float duration) {
-        Bullet warning = Instantiate(warningLaser, enemy.position, Quaternion.Euler(0, 0, angle), enemy);
-        warning.orientation.SetFixedOrientation(Quaternion.Euler(0, 0, angle));
-        yield return new WaitForSeconds(timeWarning);
-        Destroy(warning.gameObject);
-        Bullet actual = Instantiate(actualLaser, enemy.position, Quaternion.Euler(0, 0, angle), enemy);
-        actual.orientation.SetFixedOrientation(Quaternion.Euler(0, 0, angle));
-        yield return new WaitForSeconds(duration);
-        
-        Destroy(actual.gameObject);
 
-
-    }
     //shoot a conelike pattern
     public static IEnumerator ConePattern(Bullet bullet, float dmg, Transform spawner, float angle, float speed, float spawnRate, int number, float spacing)
     {

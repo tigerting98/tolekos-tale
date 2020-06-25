@@ -11,8 +11,8 @@ public class GameData : MonoBehaviour
     public Bullet whiteArrowBullet;
     public Bullet waterCircle, earthCircle, fireCircle;
     public Bullet mushroomPillar;
-    public Bullet fireBullet;
-    public Bullet fireBeam;
+    public Bullet fireBullet, fireStarBullet;
+    public Bullet fireBeam, fireShortLaser;
     public EnemyPack ghosts, linemonster, mushrooms;
     public Enemy waterFairy;
     public Enemy patternSprite, treeant;

@@ -13,12 +13,12 @@ public class BulletOrientation : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] Movement movement;
-    public Quaternion orientation;
+    public float angle = 0;
     bool custom = false;
     public bool absolute = false;
     public OrientationMode mode = OrientationMode.position;
     Vector2 prev = new Vector2(0, 0);
-    Func<float, Quaternion> orientationOverTime;
+    Func<float, float> orientationOverTime;
     Func<float, float> angularVelOverTime;
     float timer = 0;
     void Start()
@@ -26,16 +26,28 @@ public class BulletOrientation : MonoBehaviour
         if (!movement) {
             movement = GetComponent<Movement>();
         }
-
-    }
-
-    public void SetFixedOrientation(Quaternion quad) {
-        custom = true;
-        orientationOverTime = t => quad;
         
+
+    }
+    private void OnEnable()
+    {
+        angle = transform.rotation.z;
     }
 
-    public void SetCustomOrientaion(Func<float, Quaternion> fun) {
+    public void StartRotating(float angularVel, float startAngle) {
+        angle = startAngle;
+        SetCustomAngularVel(t => angularVel);
+    }
+    public void StartRotating(float angularVel)
+    {
+        SetCustomAngularVel(t => angularVel);
+    }
+    public void SetFixedOrientation(float angle) {
+        SetCustomOrientation(t => angle);
+    }
+
+
+    public void SetCustomOrientation(Func<float, float> fun) {
         custom = true;
         timer = 0;
         orientationOverTime = fun;
@@ -55,13 +67,13 @@ public class BulletOrientation : MonoBehaviour
         prev = new Vector2(0, 0);
         orientationOverTime = null;
         timer = 0;
-        orientation = Quaternion.identity;
+        angle = 0;
         angularVelOverTime = null;
         mode = OrientationMode.position;
     }
 
 
-    public Quaternion FindRotation() {
+    public float FindRotation() {
         Vector2 diff;
         if (absolute)
         {
@@ -71,32 +83,37 @@ public class BulletOrientation : MonoBehaviour
         {
              diff = movement.currentVelocity;
         }
-        return Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x));
+        return  Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x);
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-            if (custom)
+
+        if (custom)
+        {
+            if (mode == OrientationMode.position)
             {
-                if (mode == OrientationMode.position)
-                {
-                    orientation = orientationOverTime(timer);
-                    timer += Time.deltaTime;
-                transform.rotation = orientation;
-        
-            }
-             else {
-                transform.Rotate(0, 0, angularVelOverTime(timer) * Time.deltaTime);
+                angle = orientationOverTime(timer);
                 timer += Time.deltaTime;
-            }
+                
+
             }
             else
             {
-                orientation = FindRotation();
-            transform.rotation = orientation;
-          
+                angle += angularVelOverTime(timer)*Time.deltaTime;
+                timer += Time.deltaTime;
+            }
         }
-        prev = transform.position;
+        else
+        {
+            angle = FindRotation();
+            
+
+        }
+        angle = Functions.modulo(angle, 360);
+        transform.rotation = Quaternion.Euler(0,0,angle);
+            prev = transform.position;
     }
+
+
 }

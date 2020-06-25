@@ -65,9 +65,15 @@ MonoBehaviour:
     type: 3}
   earthCircle: {fileID: 8420722031687854107, guid: 90d66b004369f314a8ce1ebc99956d15,
     type: 3}
+  fireCircle: {fileID: 350400323087982558, guid: 0cbe869c9fa14e044baba49ffca1742a,
+    type: 3}
   mushroomPillar: {fileID: 6063934732109912144, guid: 27b76d1befe82fa48b84f891c7496a45,
     type: 3}
   fireBullet: {fileID: 2977784430267972987, guid: a36b8f5427bc05a44a8ae4995df1d732,
+    type: 3}
+  fireStarBullet: {fileID: 2977784430267972987, guid: 1af983311e2a83b4899430ed42b385c7,
+    type: 3}
+  fireBeam: {fileID: 3090917607954520784, guid: b2b1892a7cc093b4d901f60a59a4dda3,
     type: 3}
   ghosts: {fileID: 11400000, guid: f9bc86bb33e833e42b241d21cac03812, type: 2}
   linemonster: {fileID: 11400000, guid: e17c5ae1cdbaddd45a4fe548718245ab, type: 2}

@@ -57,8 +57,8 @@ MonoBehaviour:
   dmgfirebullet1: 275
   dmgfireball1: 400
   fireSpreadAngle: 35
-  shotSpeed: 0.04
-  firebullet1Max: 4
+  shotSpeed: 0.05
+  firebullet1Max: 3.2
   firebullet1Min: 2.5
   fireballspeed1: 3
   fireballshotRate: 1
@@ -67,12 +67,12 @@ MonoBehaviour:
   y2: 1.5
   fireCircleLocationLeft: {x: -3, y: -3}
   fireCircleLocationRight: {x: 3, y: -3}
-  angularvel2: 205
-  shotRate2: 0.07
-  bulletspeed2: 2.8
+  angularvel2: 65
+  shotRate2: 0.25
+  bulletspeed2: 2
   bulletdmg2: 250
   laserDelay: 1.5
   delaytoNextLaser: 3
   laserangularVel: 34
-  firebeamdmg: 2500
+  firebeamdmg: 2000
   spinDuration: 6
