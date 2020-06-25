@@ -75,6 +75,8 @@ MonoBehaviour:
     type: 3}
   fireBeam: {fileID: 3090917607954520784, guid: b2b1892a7cc093b4d901f60a59a4dda3,
     type: 3}
+  fireShortLaser: {fileID: 4898057403704986435, guid: b10fb58a4b8d86e499eb57094648a48d,
+    type: 3}
   ghosts: {fileID: 11400000, guid: f9bc86bb33e833e42b241d21cac03812, type: 2}
   linemonster: {fileID: 11400000, guid: e17c5ae1cdbaddd45a4fe548718245ab, type: 2}
   mushrooms: {fileID: 11400000, guid: 6bbd3837208b3f340abf41594e72f4b6, type: 2}
