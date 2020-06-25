@@ -1901,12 +1901,12 @@ PrefabInstance:
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: wavesSecondHalf.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: timesSecondHalf.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
@@ -2021,7 +2021,7 @@ PrefabInstance:
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: timesSecondHalf.Array.data[0]
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
@@ -2032,30 +2032,30 @@ PrefabInstance:
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: timesSecondHalf.Array.data[1]
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: timesSecondHalf.Array.data[2]
-      value: 16
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: wavesSecondHalf.Array.data[1]
       value: 
-      objectReference: {fileID: 6865967758086555011, guid: 508300248b1687e4896d41c2e17c9c8c,
+      objectReference: {fileID: 3412941054246006887, guid: a67623a9e2eeeb74ab134e2212dce341,
         type: 3}
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: wavesSecondHalf.Array.data[2]
       value: 
-      objectReference: {fileID: 6865967758086555011, guid: 508300248b1687e4896d41c2e17c9c8c,
+      objectReference: {fileID: 2064137623303871952, guid: 427329f0ae477f74f97348a3356a83ed,
         type: 3}
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: wavesSecondHalf.Array.data[3]
       value: 
-      objectReference: {fileID: 3412941054246006887, guid: a67623a9e2eeeb74ab134e2212dce341,
+      objectReference: {fileID: 7855677368205261048, guid: 1a228782789876b4f9c667b8a270f890,
         type: 3}
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
@@ -2066,7 +2066,7 @@ PrefabInstance:
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: timesSecondHalf.Array.data[3]
-      value: 6
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
