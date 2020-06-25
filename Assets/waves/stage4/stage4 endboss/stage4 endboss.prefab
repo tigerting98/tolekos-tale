@@ -48,7 +48,7 @@ MonoBehaviour:
   bossImage: {fileID: 0}
   namesOfSpellCards:
   - Chaos\n~Explosions Everywhere!~
-  - 
+  - Fire Wheel\n ~Spiralling Flames Of Doom~
   - 
   - 
   nextLevel: {fileID: 0}
@@ -105,3 +105,13 @@ MonoBehaviour:
   spreadlaser3: 15
   laserspeed: 4.6
   bossLocation3: {x: 0, y: 2.3}
+  dmg4: 300
+  speed4circle: 1.5
+  radialVel4: 1.4
+  delayBeforeMovingOff4: 5
+  delayPerBullet4: 0.03
+  shotRate4: 0.08
+  acc4: 5
+  timeAccelerating4: 0.6
+  timeBetweenCircles4: 8
+  numberOfCircles4: 5
