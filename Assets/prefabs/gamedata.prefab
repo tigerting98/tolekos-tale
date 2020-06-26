@@ -73,6 +73,8 @@ MonoBehaviour:
     type: 3}
   fireStarBullet: {fileID: 2977784430267972987, guid: 1af983311e2a83b4899430ed42b385c7,
     type: 3}
+  fireBall: {fileID: 4476901400571525787, guid: 20a940596bd094e44ab3cfd83f742306,
+    type: 3}
   fireBeam: {fileID: 3090917607954520784, guid: b2b1892a7cc093b4d901f60a59a4dda3,
     type: 3}
   fireShortLaser: {fileID: 4898057403704986435, guid: b10fb58a4b8d86e499eb57094648a48d,

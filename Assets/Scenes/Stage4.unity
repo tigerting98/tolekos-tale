@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wave: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e, type: 3}
-  playerLevel: 17
+  playerLevel: 1000
 --- !u!4 &1931965796
 Transform:
   m_ObjectHideFlags: 0
