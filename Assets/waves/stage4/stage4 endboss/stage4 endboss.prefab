@@ -80,12 +80,12 @@ MonoBehaviour:
   explosionCircle: {fileID: 4221692458848178709, guid: c8d6506f5078cb841a43eb49a6aba008,
     type: 3}
   delay2: 1.2
-  slowSpawnRate2: 0.8
-  fastSpawnRate2: 0.2
+  slowSpawnRate2: 0.5
+  fastSpawnRate2: 0.25
   numberofbulletsperexplosion2min: 8
-  numberofbulletsperexplosion2max: 14
-  maxSpeed2: 3
-  minSpeed2: 2
+  numberofbulletsperexplosion2max: 16
+  maxSpeed2: 2.5
+  minSpeed2: 1.5
   dmg2star: 300
   maxangularvel: 500
   fireballdmg3: 350
@@ -105,13 +105,25 @@ MonoBehaviour:
   spreadlaser3: 15
   laserspeed: 4.6
   bossLocation3: {x: 0, y: 2.3}
-  dmg4: 300
-  speed4circle: 1.5
-  radialVel4: 1.4
-  delayBeforeMovingOff4: 5
-  delayPerBullet4: 0.03
-  shotRate4: 0.08
-  acc4: 5
-  timeAccelerating4: 0.6
-  timeBetweenCircles4: 8
+  dmg4: 400
+  speed4circle: 2.5
+  radialVel4: 0.6
+  delayBeforeMovingOff4: 6
+  delayPerBullet4: 0.04
+  shotRate4: 0.12
+  acc4: 3.2
+  timeAccelerating4: 0.5
+  timeBetweenCircles4: 12
   numberOfCircles4: 5
+  arcAngle5: 195
+  arcshotRate5: 2
+  arcspeed5: 1.6
+  spacingAngle5: 3
+  firearcdmg5: 500
+  speedBullet5Min: 1.5
+  speedBullet5Max: 3.2
+  shotRateMax: 0.15
+  shotRateMin: 0.07
+  stardmg5: 300
+  maxSpin5: 500
+  bulletCountMultiplier: 2

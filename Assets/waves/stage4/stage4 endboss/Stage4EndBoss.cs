@@ -36,6 +36,10 @@ public class Stage4EndBoss : EnemyBossWave
     [SerializeField] float speed4circle, radialVel4;
     [SerializeField] float delayBeforeMovingOff4 = 5f, delayPerBullet4 = 0.03f, shotRate4 = 0.1f, acc4 = 3f, timeAccelerating4 = 1f, timeBetweenCircles4 = 10f;
     [SerializeField] int numberOfCircles4= 8;
+    [Header("Pattern5")]
+    [SerializeField] float arcAngle5= 320f, arcshotRate5 = 1f, arcspeed5 = 3f, spacingAngle5 = 1f,firearcdmg5= 500f;
+    [SerializeField] float speedBullet5Min = 2f, speedBullet5Max = 4f, shotRateMax = 0.1f, shotRateMin = 0.05f, stardmg5 = 300f, maxSpin5 = 500f;
+    [SerializeField] int bulletCountMultiplier = 2;
     protected override void SwitchToBoss()
     {
         bossImage.GetComponent<ParticleSystem>().Stop();
@@ -120,6 +124,7 @@ public class Stage4EndBoss : EnemyBossWave
     }
 
     void EndPhase3() {
+        currentBoss.bosshealth.OnLifeDepleted -= EndPhase3;
         EndPhase();
         Invoke("StartPhase4", endPhaseTransition);
 
@@ -139,24 +144,67 @@ public class Stage4EndBoss : EnemyBossWave
                 for (int j = 0; j < numberOfCircles4; j++)
                 {
                     int z = i % 4;
-                    ShootMagicCircleRadiallyOutward(j * 360f / numberOfCircles4, z % 2 == 0, z < 2);
+                    ShootMagicCircleRadiallyOutward(j * 360f / numberOfCircles4, z < 2, z % 2 == 0);
                 }
             }, timeBetweenCircles4)
             , time);
+        currentBoss.bosshealth.OnLifeDepleted += EndPhase4;
     }
+    void EndPhase4() {
+        currentBoss.bosshealth.OnLifeDepleted -= EndPhase4;
+        EndPhase();
+        Invoke("Phase5", endPhaseTransition);
+    }
+    void Phase5() {
+        SwitchToBoss();
+        Bullet fire = GameManager.gameData.fireBullet;
+        Bullet star = GameManager.gameData.fireStarBullet;
+        float time = currentBoss.movement.MoveTo(spawnLocation, speed1);
+        currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomAction(
+            i =>
+            {
+                float originAngle = 90 + (i % 2 == 0 ? 1 : -1) * arcAngle5 / 2;
+                Patterns.ShootMultipleStraightBullet(fire, firearcdmg5, currentBoss.transform.position, arcspeed5, originAngle,
+                    spacingAngle5, (int)(arcAngle5 / (spacingAngle5 * 2)));
 
+            }, arcshotRate5
+            ), time);
+        currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomActionCustomTime(
+            i=> {
+                for (int j = 0; j < bulletCountMultiplier; j++) {
+                    float speed = UnityEngine.Random.Range(speedBullet5Min, speedBullet5Max);
+                    Bullet star2 = Patterns.ShootStraight(star, stardmg5, new Vector2(UnityEngine.Random.Range(-3.9f, 3.9f), 4.1f), -90,
+                        speed);
+                    star2.orientation.StartRotating(speed / speedBullet5Max * maxSpin5);
+                }
+            }, i=> UnityEngine.Random.Range(shotRateMin, shotRateMax)
+            ),time);
+        currentBoss.bosshealth.OnLifeDepleted += EndPhase5;
+    }
+    void EndPhase5() {
+        currentBoss.bosshealth.OnLifeDepleted -= EndPhase5;
+        EndPhase();
+        Invoke("StartPhase6", spellCardTransition);
+    }
+    void StartPhase6() {
+        SwitchToBoss();
+    }
     void ShootMagicCircleRadiallyOutward(float startAngle, bool outwards, bool left) {
         Bullet magicCircle = GameManager.bulletpools.SpawnBullet(GameManager.gameData.fireCircle, currentBoss.transform.position);
+        magicCircle.movement.Reset();
         magicCircle.movement.destroyBoundary = 8f;
         magicCircle.movement.SetCustomGraph(t => new Polar((radialVel4*(t+ 0.01f)),Mathf.Rad2Deg*(left?1:-1)*speed4circle/radialVel4 * (Mathf.Log((t+0.01f)/0.01f)) + startAngle).rect, MovementMode.Position);
         magicCircle.GetComponent<Shooting>().StartShooting(Functions.RepeatCustomAction(
             i => Pattern4Bullet(magicCircle.orientation.angle + (outwards? 90: -90), magicCircle.transform.position, delayBeforeMovingOff4 +
             i * delayPerBullet4, acc4, timeAccelerating4), shotRate4));
 
+
     }
     Bullet  Pattern4Bullet(float angle, Vector2 origin, float delay, float acceleration, float totalAccelerationTime) {
-        return Patterns.ShootCustomBullet(GameManager.gameData.fireStarBullet, dmg4, origin, 
+        Bullet bul = Patterns.ShootCustomBullet(GameManager.gameData.fireStarBullet, dmg4, origin, 
             Movement.RotatePath(angle, t => new Vector2(t<delay? 0 : t< delay + totalAccelerationTime? acceleration:0,0)), MovementMode.Acceleration);
+        bul.transform.localScale = 0.8f * bul.transform.localScale;
+        return bul;
 
         
     }
