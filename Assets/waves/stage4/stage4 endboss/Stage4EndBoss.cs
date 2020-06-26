@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
@@ -26,6 +27,7 @@ public class Stage4EndBoss : EnemyBossWave
     [SerializeField] int numberofbulletsperexplosion2min = 10, numberofbulletsperexplosion2max = 30;
     [SerializeField] float maxSpeed2 =5, minSpeed2 = 1, dmg2star = 300f;
     [SerializeField] float maxangularvel = 500f;
+    [SerializeField] Dictionary<int, GameObject> explosionCircles2 = new Dictionary<int, GameObject>();
     [Header("Pattern3")]
     [SerializeField] float fireballdmg3 = 350f, fireballspeed3, fireballshotrate, fireballpulserate, fireballpulsetime, fireballspread3 = 20f;
     [SerializeField] float laserDmg3 = 600f;
@@ -46,7 +48,13 @@ public class Stage4EndBoss : EnemyBossWave
     [SerializeField] float fireballdmg6 = 300f, radialvel6 = 2f, angularvel6 = 10f, delayBetweenPulse6 = 0.5f, pulseRate6bullet = 3f, xpositionCircle = 2.5f, yposmin6 = -1.5f, yposMax6 = 3f;
     [SerializeField] int numberOfLasers = 5, numberOfBullets6 = 30, numberOfBigBullet6 = 30;
     [SerializeField] float speed6Big = 2f, dmg6Big = 400f, shotRatebig6 = 1.5f;
-
+    [Header("Pattern7")]
+    [SerializeField] float laserLastTime7 = 5f, laserDmg7 = 3000f, laserShotRate7 = 7f, distanceMin7 = 2f, distanceMax7 =3f, enemymovespeed7 = 15f;
+    [SerializeField] float minSpeed7 = 1f, maxSpeed7 = 5f, shotRateMin7 = 0.1f, shotRateMax7 = 0.3f,shortlaserdmg7 = 300f;
+    [SerializeField] int numberOfBulletsMin = 1, numberOfBulletsMax = 5;
+    [SerializeField] ParticleSystem deathEffect;
+    [Header("Dialogues")]
+    [SerializeField] Dialogue midFightDialogue, endDialogue;
     protected override void SwitchToBoss()
     {
         bossImage.GetComponent<ParticleSystem>().Stop();
@@ -109,8 +117,18 @@ public class Stage4EndBoss : EnemyBossWave
     void EndPhase2()
     {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase2;
+        DestroyAllMagicCicles();
         EndPhase();
         Invoke("StartPhase3", endPhaseTransition);
+    }
+    void DestroyAllMagicCicles() {
+  
+        foreach (GameObject circle in explosionCircles2.Values) {
+            Destroy(circle, 0.05f);
+        }
+        explosionCircles2 = null;
+
+
     }
     void StartPhase3()
     {
@@ -212,6 +230,79 @@ public class Stage4EndBoss : EnemyBossWave
         currentBoss.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandomAngle(
             GameManager.gameData.bigBullet.GetItem(DamageType.Fire), dmg6Big, currentBoss.transform, speed6Big, shotRatebig6, numberOfBigBullet6)
             , shotRatebig6);
+        currentBoss.bosshealth.OnLifeDepleted += EndPhase6;
+    }
+    void EndPhase6() {
+        currentBoss.bosshealth.OnLifeDepleted -= EndPhase6;
+        EndPhase();
+        StartCoroutine(DialogueManager.StartDialogue(midFightDialogue, StartPhase7));
+    }
+    void StartPhase7() {
+        SpellCardUI(namesOfSpellCards[3]);
+        Invoke("Phase7", spellCardTransition);
+    }
+    void Phase7() {
+        SwitchToBoss();
+        Bullet laser = GameManager.gameData.masterSpark;
+        currentBoss.shooting.StartShooting(Functions.RepeatAction(()=>
+       {
+           float angle = Functions.AimAt(new Vector2(0, 0), GameManager.playerPosition);
+           Vector2 spawn = new Vector2(0, 0) + (Vector2)(Quaternion.Euler(0, 0, 180 + angle) * new Vector2(UnityEngine.Random.Range(distanceMin7, distanceMax7), 0));
+           currentBoss.shooting.StartShooting(ShootLaserBeams(laser, spawn, enemymovespeed7));
+           }, laserShotRate7 ));
+        try
+        {
+            currentBoss.shooting.StartShooting(Functions.RepeatCustomActionCustomTime(
+                i =>
+                {
+                    float ratio = currentBoss.bosshealth.GetCurrentHP() / currentBoss.bosshealth.maxHP;
+                    int number = (int)(numberOfBulletsMin + (numberOfBulletsMax - numberOfBulletsMin) * (1 - ratio));
+                    for (int j = 0; j < number; j++)
+                    {
+                        Bullet bul1 = Patterns.ShootStraight(GameManager.gameData.fireShortLaser, shortlaserdmg7, new Vector2(UnityEngine.Random.Range(-3.8f, 3.8f), 4.7f), -90,
+                              minSpeed7 + (maxSpeed7 - minSpeed7) * (1 - ratio));
+                        bul1.movement.destroyBoundary = 5f;
+                        Bullet bul2 = Patterns.ShootStraight(GameManager.gameData.fireShortLaser, shortlaserdmg7, new Vector2(UnityEngine.Random.Range(-3.8f, 3.8f), -4.7f), 90,
+                             minSpeed7 + (maxSpeed7 - minSpeed7) * (1 - ratio));
+                        bul2.movement.destroyBoundary = 5f;
+
+                    }
+                }, i => shotRateMin7 + (currentBoss.bosshealth.GetCurrentHP() / currentBoss.bosshealth.maxHP) * (shotRateMax7 - shotRateMin7)
+
+                ));
+        }
+        catch (Exception ex)
+        {
+            Debug.Log(ex);
+        }
+
+        currentBoss.bosshealth.OnDeath += EndPhase7;
+    }
+    void EndPhase7() {
+        currentBoss.bosshealth.OnDeath -= EndPhase7;
+        EndPhase();
+        Vector2 pos = bossImage.transform.position;
+        Destroy(bossImage.gameObject);
+        Instantiate(key, pos, Quaternion.identity);
+        Instantiate(deathEffect, pos, Quaternion.Euler(-90, 0, 0));
+        Invoke("EndDialogue", 1f);
+    }
+    void EndDialogue() {
+        StartCoroutine(DialogueManager.StartDialogue(endDialogue, NextStage));
+    }
+
+    IEnumerator ShootLaserBeams(Bullet lase, Vector2 position, float speed) {
+        float time = currentBoss.movement.MoveTo(position, speed);
+        yield return new WaitForSeconds(time);
+        float angle = Functions.AimAt(currentBoss.transform.position, GameManager.playerPosition);
+        Bullet laser = GameManager.bulletpools.SpawnBullet(lase, currentBoss.transform.position, Quaternion.Euler(0, 0, angle));
+        laser.orientation.SetFixedOrientation(angle);
+        laser.SetDamage(laserDmg7);
+        yield return new WaitForSeconds(laserLastTime7);
+        if (laser) {
+            laser.GetComponent<Animator>().SetTrigger("FadeOut");
+        }
+
     }
     IEnumerator SummonFireCircles( Vector2 position) {
         Bullet fireRoundBall = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Fire);
@@ -228,7 +319,6 @@ public class Stage4EndBoss : EnemyBossWave
                         Bullet bul = Patterns.ShootCustomBullet(fireRoundBall, fireballdmg6, fireCircle.transform.position,
                 t => new Polar(radialvel6 * t, (y % 2 == 0 ? -1 : 1) * angularvel6 * t + angle).rect, MovementMode.Position);
                         bul.movement.destroyBoundary = 8f;
-                        //bul.transform.localScale *= 0.95f;
                         return bul;
                         }, 0, numberOfBullets6);
                 }, delayBetweenPulse6, 2
@@ -311,16 +401,23 @@ public class Stage4EndBoss : EnemyBossWave
         laserRight.Deactivate();
     }
     IEnumerator SummonExplosion(Vector2 location, int numberofBullets) {
+
         GameObject obj = Instantiate(explosionCircle, location, Quaternion.identity);
-        Destroy(obj, delay2);
+        explosionCircles2.Add(obj.GetInstanceID(), obj);
         yield return new WaitForSeconds(delay2);
-        for (int i = 0; i < numberofBullets; i++) {
-            float speed = UnityEngine.Random.Range(minSpeed2, maxSpeed2);
-            Bullet bul = Patterns.ShootStraight(GameManager.gameData.fireStarBullet, dmg2star, location, UnityEngine.Random.Range(0f, 360f),
-                speed);
-            bul.orientation.StartRotating(maxangularvel * speed / maxSpeed2);
+        if (obj)
+        {
+            for (int i = 0; i < numberofBullets; i++)
+            {
+                float speed = UnityEngine.Random.Range(minSpeed2, maxSpeed2);
+                Bullet bul = Patterns.ShootStraight(GameManager.gameData.fireStarBullet, dmg2star, location, UnityEngine.Random.Range(0f, 360f),
+                    speed);
+                bul.orientation.StartRotating(maxangularvel * speed / maxSpeed2);
 
 
+            }
+            Destroy(obj);
+            explosionCircles2.Remove(obj.GetInstanceID());
         }
         
     }

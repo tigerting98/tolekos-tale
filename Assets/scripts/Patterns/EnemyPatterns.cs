@@ -20,7 +20,8 @@ public class EnemyPatterns : MonoBehaviour {
     }
 
     //shoots bullets at players in a constant rate
-    public static IEnumerator ShootAtPlayer(Bullet bullet, float dmg, Transform enemy, float speed, float shotRate)
+    public static IEnumerator ShootAtPlayer(Bullet bullet, float dmg, 
+        Transform enemy, float speed, float shotRate)
 
     {
         return ShootAtPlayerWithLines(bullet, dmg, enemy, speed, shotRate, 0, 0);

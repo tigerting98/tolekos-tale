@@ -2103,6 +2103,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1499300016}
     m_Modifications:
+    - target: {fileID: 1715961104116161015, guid: 9e3562343496df64faf3d69b9923db5d,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1715961104572737844, guid: 9e3562343496df64faf3d69b9923db5d,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2136,6 +2141,11 @@ PrefabInstance:
     - target: {fileID: 6733830816837839112, guid: 9e3562343496df64faf3d69b9923db5d,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733830817429608907, guid: 9e3562343496df64faf3d69b9923db5d,
+        type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8108614614539191065, guid: 9e3562343496df64faf3d69b9923db5d,
@@ -2256,6 +2266,11 @@ PrefabInstance:
     - target: {fileID: 8126850231909712904, guid: 9e3562343496df64faf3d69b9923db5d,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126850232224675019, guid: 9e3562343496df64faf3d69b9923db5d,
+        type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2410,7 +2425,7 @@ PrefabInstance:
     - target: {fileID: 8493430919669886461, guid: 4ae3ee45fa9e92b48b3b0367db1c822e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ae3ee45fa9e92b48b3b0367db1c822e, type: 3}
@@ -2475,6 +2490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090528654541230100, guid: e2df86e25871e2e41b9473eac39cc4cc,
+        type: 3}
+      propertyPath: orthographic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9090528654541230102, guid: e2df86e25871e2e41b9473eac39cc4cc,
         type: 3}

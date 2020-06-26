@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,9 +15,10 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : Component
     public T SpawnFromPool(Vector3 position, Quaternion rotation) {
         if (objectPool.Count == 0)
         {
-            T obj =  Instantiate(pooledObject, position, rotation);
+           T obj = Instantiate(pooledObject, position, rotation);
             obj.GetComponent<IPooledObject>().OnSpawn();
             return obj;
+       
         }
         else {
             T obj = objectPool.Dequeue();

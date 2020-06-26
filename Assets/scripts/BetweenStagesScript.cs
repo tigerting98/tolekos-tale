@@ -13,10 +13,6 @@ public class BetweenStagesScript : MonoBehaviour
     [SerializeField] Button shopButton;
     private GameObject lastSelected;
 
-    private void Awake() {
-        EventSystem.current.SetSelectedGameObject(shopButton.gameObject);
-        lastSelected = shopButton.gameObject;
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +23,9 @@ public class BetweenStagesScript : MonoBehaviour
                 () => GameManager.sceneLoader.LoadScene(GameManager.levelDescription.nextLevelSceneString));
         
         }
-
+        EventSystem.current.SetSelectedGameObject(shopButton.gameObject);
+        lastSelected = shopButton.gameObject;
+        
     }
     private void Update() {
         GameObject current = EventSystem.current.currentSelectedGameObject;
