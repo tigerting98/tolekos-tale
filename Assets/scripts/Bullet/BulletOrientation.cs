@@ -28,10 +28,16 @@ public class BulletOrientation : MonoBehaviour
         }
         
 
+
+
     }
     private void OnEnable()
     {
         angle = transform.rotation.z;
+    }
+    private void OnDisable()
+    {
+        Reset();
     }
 
     public void StartRotating(float angularVel, float startAngle) {
