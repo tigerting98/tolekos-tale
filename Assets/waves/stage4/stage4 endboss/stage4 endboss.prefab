@@ -49,7 +49,7 @@ MonoBehaviour:
   namesOfSpellCards:
   - Chaos\n~Explosions Everywhere!~
   - Fire Wheel\n ~Spiralling Flames Of Doom~
-  - 
+  - Pandemonium\n~Geysers Of Flame~
   - 
   nextLevel: {fileID: 0}
   key: {fileID: 0}
@@ -127,3 +127,26 @@ MonoBehaviour:
   stardmg5: 300
   maxSpin5: 500
   bulletCountMultiplier: 2
+  delay6: 0.5
+  spacing6Min: 1
+  spacing6Max: 1.3
+  startMinX6: -4
+  startMaxX6: -3.4
+  laserduration6: 3
+  dmglaser6: 1000
+  pulseRate6: 5
+  magiccirclespeed: 10
+  fireballdmg6: 300
+  radialvel6: 1.5
+  angularvel6: 18
+  delayBetweenPulse6: 0.2
+  pulseRate6bullet: 5
+  xpositionCircle: 2.5
+  yposmin6: 0
+  yposMax6: 3
+  numberOfLasers: 8
+  numberOfBullets6: 25
+  numberOfBigBullet6: 15
+  speed6Big: 2
+  dmg6Big: 400
+  shotRatebig6: 5
