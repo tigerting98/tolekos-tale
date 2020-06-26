@@ -11,10 +11,13 @@ struct WavePattern7Subwave
 
 }
 
-public class WavePattern7 : EnemyWave // Creates a singular tanky "miniboss" enemy that shoots rings of two different types of projectiles
-                                      // The smaller projectile comes out in pulses, while the bigger projectile is shot one ring at a time
-                                      // The time between each pulse of small bullets and time between each wave of big bullets can be configured.
-                                      // Along with the number of projectiles per ring and how long the enemy remains active.
+public class WavePattern7 : EnemyWave 
+/* 
+Creates a singular tanky "miniboss" enemy that shoots rings of two different types of projectile
+The smaller projectile comes out in pulses, while the bigger projectile is shot one ring at a time
+The time between each pulse of small bullets and time between each wave of big bullets can be configured.
+Along with the number of projectiles per ring and how long the enemy remains active.
+*/
 {
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] EnemyStats stats;
@@ -87,11 +90,7 @@ public class WavePattern7 : EnemyWave // Creates a singular tanky "miniboss" ene
         {
             enemy.StopAllCoroutines();
             float timeToEnd = enemy.movement.MoveTo(initialPos, moveSpeed);
-            yield return new WaitForSeconds(timeToEnd);
-            if (enemy)
-            {
-                Destroy(enemy.gameObject);
-            }
+            Destroy(enemy.gameObject, timeToEnd);
         }
     }
 

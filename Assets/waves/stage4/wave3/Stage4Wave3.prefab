@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &476411388141871276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1815392950978100159}
+  - component: {fileID: 2368717317467515822}
+  m_Layer: 0
+  m_Name: Stage4Wave3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1815392950978100159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476411388141871276}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.739433, y: -9.985538, z: -36.603607}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2368717317467515822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476411388141871276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f98e961cb20f4e4a9b0e145502bbbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnSound: {fileID: 0}
+  moveSpeed: 3
+  stats: {fileID: 11400000, guid: 7466e37ec06b8f94e91a52d9458d3768, type: 2}
+  bulletSpeed: 2.5
+  ringSpeed: 1.5
+  shotRate: 0.5
+  pulseRate: 2
+  bulletDamage: 200
+  stationaryTime: 1
+  numberOfBulletsInDeathRing: 3
+  numberOfBulletsPerLine: 5
+  subwaveList:
+  - spawnDelay: 0
+    highY: 3.5
+    lowY: -1.5
+    numberOfEnemies: 20
+    left: 1
+  spawnRate: 0.5

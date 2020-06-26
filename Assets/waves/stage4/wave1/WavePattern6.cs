@@ -67,8 +67,7 @@ The number of enemies spawned and the region in which they can spawn can be conf
         {
             float finalX = initialX < 0f ? 4.2f : -4.2f;
             float timeToEnd = enemy.movement.MoveTo(new Vector2(finalX, yPos), moveSpeed);
-            yield return new WaitForSeconds(timeToEnd);
-            Destroy(enemy.gameObject);
+            Destroy(enemy.gameObject, timeToEnd);
         }
 
     }
