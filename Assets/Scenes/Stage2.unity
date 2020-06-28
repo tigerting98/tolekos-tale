@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -965,7 +965,6 @@ MonoBehaviour:
   timesFirstHalf: []
   midBoss: {fileID: -7564777018390575113, guid: a87b5849bcf6dad499f67bb80b558ccc,
     type: 3}
-  midBossTimer: 0
   wavesSecondHalf:
   - {fileID: -2699760848363402308, guid: 4f49f89e041a5f34c8859a0aaa07475c, type: 3}
   - {fileID: -6778047189204771702, guid: 913f84ba4dd3195478c49d3b595d3724, type: 3}
@@ -2136,21 +2135,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733830815496607570, guid: 9e3562343496df64faf3d69b9923db5d,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733830815496607570, guid: 9e3562343496df64faf3d69b9923db5d,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733830816080324496, guid: 9e3562343496df64faf3d69b9923db5d,
-        type: 3}
-      propertyPath: health
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6733830816837839112, guid: 9e3562343496df64faf3d69b9923db5d,
         type: 3}

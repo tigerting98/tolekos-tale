@@ -17,7 +17,7 @@ MonoBehaviour:
   goldchance: 1
   maxGold: 600
   minGold: 300
-  exp: 1
+  exp: 125
   customResist: 0
   type: 0
   waterMultiplier: 0

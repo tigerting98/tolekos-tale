@@ -70,7 +70,7 @@ MonoBehaviour:
   angularvel2: 65
   shotRate2: 0.25
   bulletspeed2: 2
-  bulletdmg2: 250
+  bulletdmg2: 275
   laserDelay: 1.5
   delaytoNextLaser: 3
   laserangularVel: 34

@@ -20,7 +20,6 @@ GameObject:
   - component: {fileID: 1872046831142302336}
   - component: {fileID: 5521149633933701372}
   - component: {fileID: -3013257962938568609}
-  - component: {fileID: -7852280901263010578}
   m_Layer: 10
   m_Name: slime
   m_TagString: Untagged
@@ -111,7 +110,6 @@ MonoBehaviour:
   shooting: {fileID: 1872046831142302336}
   damagetaker: {fileID: 1041419548464534032}
   collider: {fileID: 520085438}
-  enemyAnimation: {fileID: -7852280901263010578}
   enemyAudio: {fileID: -3013257962938568609}
 --- !u!58 &520085438
 CircleCollider2D:
@@ -146,7 +144,7 @@ MonoBehaviour:
   deathSound: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
   hp: {fileID: 468841648470341714}
   canDie: 1
-  experience: 10
+  experience: 0
 --- !u!114 &-7780461281535064715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentVelocity: {x: 0, y: 0}
+  time: 0
   destroyBoundary: 4.5
 --- !u!114 &1041419548464534032
 MonoBehaviour:
@@ -207,7 +206,7 @@ MonoBehaviour:
   vulnerable: 1
   FireMultiplier: 0.5
   WaterMultiplier: 1
-  EarthMultiplier: 2
+  EarthMultiplier: 1.5
   PureMultiplier: 1
 --- !u!114 &1872046831142302336
 MonoBehaviour:
@@ -234,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death: {fileID: -6793133753611469860}
-  chanceToDropCoins: 0.8
+  chanceToDropCoins: 0
   maxGold: 100
   minGold: 10
   coin: {fileID: 7094970196663169445, guid: 44e052c241147834c8f5af260bcdc767, type: 3}
@@ -251,19 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32aef5404f2a8149a7ca21e400a1e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7852280901263010578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2551118086999079481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeba56e1445bbb0478b316ffc370a6ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 7925799737585349543}
 --- !u!1 &8600933709386619661
 GameObject:
   m_ObjectHideFlags: 0

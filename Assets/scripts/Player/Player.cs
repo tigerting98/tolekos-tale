@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     
     public float bulletSpeed;
     [Range(0,10)] public float speed= 5f;
-    [SerializeField] float focusRatio = 0.2f;
+    [SerializeField] float focusRatio = 0.3f;
     [SerializeField] float xPadding= 0.4f, yPadding=0.4f;
     public GameObject hitbox = default;
     public DamageTaker damageTaker = default;

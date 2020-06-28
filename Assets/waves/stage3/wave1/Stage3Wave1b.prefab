@@ -89,22 +89,22 @@ MonoBehaviour:
     left: 1
     enemyid: 0
     shootChance: 1
-  - number: 6
+  - number: 4
     startTime: 58
     left: 0
     enemyid: 0
-    shootChance: 1
-  - number: 6
+    shootChance: 0.7
+  - number: 3
     startTime: 60
     left: 0
     enemyid: 0
-    shootChance: 1
-  - number: 5
+    shootChance: 0.7
+  - number: 2
     startTime: 62
     left: 0
     enemyid: 0
     shootChance: 1
-  - number: 8
+  - number: 6
     startTime: 64
     left: 1
     enemyid: 0
