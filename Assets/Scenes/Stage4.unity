@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1872,7 +1872,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wavesSecondHalf.Array.data[0]
       value: 
-      objectReference: {fileID: 6402490802107694836, guid: 0c52c162bb86d9d4cb470904b9a9c317,
+      objectReference: {fileID: 6402490802107694836, guid: 815a507b11b3d254fb43d18720ef3693,
         type: 3}
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
@@ -1894,7 +1894,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wavesFirstHalf.Array.data[3]
       value: 
-      objectReference: {fileID: 6626234176359241361, guid: 9bef7129020c09c4b8d238d41fba899c,
+      objectReference: {fileID: 6626234176359241361, guid: b0ee268c08748bc4b92d7297899e50dd,
         type: 3}
     - target: {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
@@ -1905,7 +1905,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wavesSecondHalf.Array.data[1]
       value: 
-      objectReference: {fileID: 7255629957415309759, guid: edfc1ca8d4d0d4644ae2977e8248e86c,
+      objectReference: {fileID: 7255629957415309759, guid: d228d026a32bbef49945b2d9628dc139,
         type: 3}
     - target: {fileID: 7016885204452351669, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
