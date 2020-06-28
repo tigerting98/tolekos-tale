@@ -9,6 +9,8 @@ struct WavePattern9Subwave
     public float xPos;
     public float yPos;
     public float angularVelocity;
+    public bool summonEndboss;
+    public bool summonMidboss;
 }
 public class WavePattern9 : EnemyWave
 {
@@ -32,14 +34,26 @@ public class WavePattern9 : EnemyWave
         SetUp();
         foreach (WavePattern9Subwave subwave in subwaveList) 
         {
-            StartCoroutine(SpawnSubwave(subwave.spawnDelay, subwave.xPos, subwave.yPos, subwave.angularVelocity));
+            StartCoroutine(SpawnSubwave(subwave.spawnDelay, subwave.xPos, subwave.yPos, subwave.angularVelocity, subwave.summonEndboss, subwave.summonMidboss));
         }
     }
 
-    IEnumerator SpawnSubwave(float spawnDelay, float xPos, float yPos, float angularVelocity) 
+    IEnumerator SpawnSubwave(float spawnDelay, float xPos, float yPos, float angularVelocity, bool summonEndboss, bool summonMidboss) 
     {
         yield return new WaitForSeconds(spawnDelay);
         this.StartCoroutine(SpawnEnemy(xPos, yPos, angularVelocity));
+        yield return new WaitForSeconds(activeTime);
+        if (summonEndboss) 
+        {
+            GameManager.DestoryAllEnemyBullets();
+            GameManager.DestroyAllNonBossEnemy(false);
+            GameManager.SummonEndBoss();
+        } else if (summonMidboss)
+        {
+            GameManager.DestoryAllEnemyBullets();
+            GameManager.DestroyAllNonBossEnemy(false);
+            GameManager.SummonMidBoss();
+        }
     }
     
     IEnumerator SpawnEnemy(float xPos, float yPos, float angularVelocity)

@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17957c16a776190419a086cf84410a05, type: 3}
   m_Name: stage5
   m_EditorClassIdentifier: 
-  levelDescription: Congrats on stage4
+  levelDescription: "After a heated confrontation with the fire spirit, Toleko banished
+    it with his magic and retrievied the third and final key required to unlock the
+    gate to Pylfer's castle. \nWith the 3 keys in tow, he headed back to the castle,
+    eager to get this over and done with so that he can go home and take a long bath."
   nextLevelSceneString: EndScene
   backgroundImage: {fileID: 21300000, guid: 81e4f3673b54cca4dba3bc6eb4b07d9a, type: 3}

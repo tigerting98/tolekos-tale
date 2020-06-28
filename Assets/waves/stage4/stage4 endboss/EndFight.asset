@@ -16,10 +16,10 @@ MonoBehaviour:
   - left: 1
     speaker: {fileID: 0}
     isPlayer: 1
-    text: Oh, that was quick
+    text: Oh, that was quick! It just disappeared into nothing...
     name: Toleko
   - left: 1
     speaker: {fileID: 0}
     isPlayer: 1
-    text: Guess I have the key now
+    text: Guess I have the key now. Time to head back to Pylfer's castle.
     name: Toleko

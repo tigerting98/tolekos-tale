@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1957461059014814330
+--- !u!1 &8810873078175065731
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,59 +8,58 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1957461059014814332}
-  - component: {fileID: 1957461059014814331}
+  - component: {fileID: 8907301381967435620}
+  - component: {fileID: 7255629957415309759}
   m_Layer: 0
-  m_Name: Stage4Wave1
+  m_Name: BeforeEndBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1957461059014814332
+--- !u!4 &8907301381967435620
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957461059014814330}
+  m_GameObject: {fileID: 8810873078175065731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0171053, y: -0.88389254, z: -7.985865}
+  m_LocalPosition: {x: -26.206808, y: -9.963517, z: -36.603607}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1957461059014814331
+--- !u!114 &7255629957415309759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957461059014814330}
+  m_GameObject: {fileID: 8810873078175065731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d327632d39f4d40a9fb2111202503b, type: 3}
+  m_Script: {fileID: 11500000, guid: a945f0ef3aa40b44db201c6a6f34a8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnSound: {fileID: 0}
-  moveSpeed: 5
-  stats: {fileID: 11400000, guid: 4fef43c2b7a4d1a40bc88a20d5141b77, type: 2}
-  bulletSpeed: 3.5
-  shotRate: 0.15
+  stats: {fileID: 11400000, guid: aad28aca85557f84692371875a9dc3da, type: 2}
+  bulletSpeed: 1.2
+  shotRate: 0.1
   bulletDamage: 200
-  stationaryTime: 10
+  numberOfLines: 10
   subwaveList:
   - spawnDelay: 0
-    highY: 3.5
-    lowY: -1
-    numberOfEnemies: 20
-  - spawnDelay: 7
-    highY: 3.5
-    lowY: -1
-    numberOfEnemies: 25
-  - spawnDelay: 14
-    highY: 3.5
-    lowY: -1
-    numberOfEnemies: 30
-  spawnRate: 0.2
+    xPos: -2
+    yPos: 1.5
+    angularVelocity: 69
+    summonEndboss: 0
+    summonMidboss: 0
+  - spawnDelay: 0
+    xPos: 2
+    yPos: 1.5
+    angularVelocity: -69
+    summonEndboss: 1
+    summonMidboss: 0
+  activeTime: 20
