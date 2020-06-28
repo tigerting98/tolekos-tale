@@ -18,5 +18,5 @@ MonoBehaviour:
     fiery volcano. The heat would normally be unbearable for humans, but with the
     help of some magic, Toleko was able to cool himself down. Still, he was sweating
     like a pig and wished nothing more than to get out of this infernal place."
-  nextLevelSceneString: EndScene
+  nextLevelSceneString: Stage4
   backgroundImage: {fileID: 21300000, guid: 81e4f3673b54cca4dba3bc6eb4b07d9a, type: 3}
