@@ -47,7 +47,7 @@ MonoBehaviour:
   boss: {fileID: 6857358497036807141, guid: 306c26b2885068d4a9b504b6495f3071, type: 3}
   bossImage: {fileID: 0}
   namesOfSpellCards:
-  - Water Sign\n~Spiralling Waves Of Doom~
+  - Slime Secrets\n~Spiraling Waves Of Doom~
   nextLevel: {fileID: 0}
   waterCircle: {fileID: 2610694480630583689, guid: ec6988b72df21bb448d33d6753039904,
     type: 3}

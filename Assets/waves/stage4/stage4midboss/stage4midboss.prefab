@@ -47,7 +47,7 @@ MonoBehaviour:
   boss: {fileID: 5510918016240705999, guid: c0d69388963e4e9469b5ff82c6d09b9b, type: 3}
   bossImage: {fileID: 0}
   namesOfSpellCards:
-  - Heat Spell\n ~Burning Merry Go Round~
+  - Heat Wave\n ~Burning Merry-Go-Round~
   nextLevel: {fileID: 0}
   spawnEffect: {fileID: 713349088135005307, guid: 0845c8f5beef85e4db65d60c7a3c528f,
     type: 3}

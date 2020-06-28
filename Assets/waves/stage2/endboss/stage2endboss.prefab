@@ -48,9 +48,9 @@ MonoBehaviour:
   bossImage: {fileID: 6034030427296860853, guid: 2a0e4074c7cb37045aa045d56c8bed1f,
     type: 3}
   namesOfSpellCards:
-  - Angry FIsh \n ~Watery Cage Of Death~
-  - Playful Fish\n ~Watery Jet Of Doom~
-  - Divine Fish\n ~The God Of The Lake~
+  - Angry Fish \n ~Underwater Prison~
+  - Playful Fish\n ~High Pressure Jet~
+  - Gigantic Fish\n ~The God Of The Lake~
   nextLevel: {fileID: 11400000, guid: da9b8a33890d10445b92bca40dd8857b, type: 2}
   key: {fileID: 6034030427296860853, guid: 2a9f0734abf35f04f810965ff7e3e908, type: 3}
   image: {fileID: 6034030427296860853, guid: 2a0e4074c7cb37045aa045d56c8bed1f, type: 3}
@@ -58,8 +58,6 @@ MonoBehaviour:
   dialogue2: {fileID: 11400000, guid: ec2e8f9130dbf8a449e71e819ba14534, type: 2}
   endDialogue: {fileID: 11400000, guid: 453877f5855fc4f4a924eef106134e2d, type: 2}
   spawnY: 2
-  magicCircle: {fileID: 8420722031687854107, guid: 652e125c1c34dad4995c1c5639c1b1e8,
-    type: 3}
   timeToRadius: 1
   radius: 1
   bigBulletSpeed1: 1

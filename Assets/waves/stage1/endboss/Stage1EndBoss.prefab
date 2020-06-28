@@ -43,15 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc44f8ae3eaa98649b3e4255e41f616b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
-  bullets: []
-  bulletPack: {fileID: 0}
   bulletSpawnSound: {fileID: 0}
   boss: {fileID: 1792903561220353094, guid: 0c6fd512b0f90fe47a13203753d96cc4, type: 3}
   bossImage: {fileID: 0}
   namesOfSpellCards:
-  - Heaven's Judgement\n ~Heavenly Arrow Barrage~
-  - One For All\n~Ultimate States Of Smash~
+  - Divine Archery\n ~Heavenly Arrow Barrage~
+  - Muscle Madness\n~Explosive Tricep Contraction~
   nextLevel: {fileID: 11400000, guid: 1a32aca0baf75b248927de00041c87f3, type: 2}
   background: {fileID: -9162131273511116121, guid: bbf1ec97531c67a4fb422744b1b8a8e7,
     type: 3}
