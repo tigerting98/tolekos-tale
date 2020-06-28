@@ -156,13 +156,13 @@ MonoBehaviour:
   distanceMin7: 2
   distanceMax7: 3
   enemymovespeed7: 15
-  minSpeed7: 2.5
-  maxSpeed7: 5
-  shotRateMin7: 0.2
-  shotRateMax7: 0.8
-  shortlaserdmg7: 250
-  numberOfBulletsMin: 1
-  numberOfBulletsMax: 4
+  minSpeed7: 2
+  maxSpeed7: 3
+  shotRate7: 0.15
+  shotinterval7: 0.08
+  shotdmg7: 185
+  numberMin7: 3
+  numberMax7: 6
   deathEffect: {fileID: 1064576369312752990, guid: d7d342484b78ba643aba1d80e2044b32,
     type: 3}
   midFightDialogue: {fileID: 11400000, guid: c2f2372de80bbd64f842b58906521ca9, type: 2}

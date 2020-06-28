@@ -50,8 +50,8 @@ public class Stage4EndBoss : EnemyBossWave
     [SerializeField] float speed6Big = 2f, dmg6Big = 400f, shotRatebig6 = 1.5f;
     [Header("Pattern7")]
     [SerializeField] float laserLastTime7 = 5f, laserDmg7 = 3000f, laserShotRate7 = 7f, distanceMin7 = 2f, distanceMax7 =3f, enemymovespeed7 = 15f;
-    [SerializeField] float minSpeed7 = 1f, maxSpeed7 = 5f, shotRateMin7 = 0.1f, shotRateMax7 = 0.3f,shortlaserdmg7 = 300f;
-    [SerializeField] int numberOfBulletsMin = 1, numberOfBulletsMax = 5;
+    [SerializeField] float minSpeed7 = 1f, maxSpeed7 = 5f, shotRate7=0.3f,shotinterval7 = 0.05f, shotdmg7= 150f;
+    [SerializeField] int numberMin7 = 3, numberMax7 = 7;
     [SerializeField] ParticleSystem deathEffect;
     [Header("Dialogues")]
     [SerializeField] Dialogue midFightDialogue, endDialogue;
@@ -252,24 +252,17 @@ public class Stage4EndBoss : EnemyBossWave
            }, laserShotRate7 ));
         try
         {
-            currentBoss.shooting.StartShooting(Functions.RepeatCustomActionCustomTime(
-                i =>
+            currentBoss.shooting.StartShooting(Functions.RepeatAction(
+                () =>
                 {
-                    float ratio = currentBoss.bosshealth.GetCurrentHP() / currentBoss.bosshealth.maxHP;
-                    int number = (int)(numberOfBulletsMin + (numberOfBulletsMax - numberOfBulletsMin) * (1 - ratio));
-                    for (int j = 0; j < number; j++)
-                    {
-                        Bullet bul1 = Patterns.ShootStraight(GameManager.gameData.fireShortLaser, shortlaserdmg7, new Vector2(UnityEngine.Random.Range(-3.8f, 3.8f), 4.7f), -90,
-                              minSpeed7 + (maxSpeed7 - minSpeed7) * (1 - ratio));
-                        bul1.movement.destroyBoundary = 5f;
-                        Bullet bul2 = Patterns.ShootStraight(GameManager.gameData.fireShortLaser, shortlaserdmg7, new Vector2(UnityEngine.Random.Range(-3.8f, 3.8f), -4.7f), 90,
-                             minSpeed7 + (maxSpeed7 - minSpeed7) * (1 - ratio));
-                        bul2.movement.destroyBoundary = 5f;
-
-                    }
-                }, i => shotRateMin7 + (currentBoss.bosshealth.GetCurrentHP() / currentBoss.bosshealth.maxHP) * (shotRateMax7 - shotRateMin7)
-
-                ));
+                    float ratio =1- currentBoss.bosshealth.GetCurrentHP() / currentBoss.bosshealth.maxHP;
+                    int number = numberMin7 + (int)(ratio * (numberMax7 - numberMin7));
+                    float speed = minSpeed7 + (ratio * (maxSpeed7 - minSpeed7));
+                    currentBoss.shooting.StartShooting(Phase7ShortLine(number, true, speed));
+                    currentBoss.shooting.StartShooting(Phase7ShortLine(number, false, speed));
+                }
+                , shotRate7));
+               
         }
         catch (Exception ex)
         {
@@ -278,7 +271,16 @@ public class Stage4EndBoss : EnemyBossWave
 
         currentBoss.bosshealth.OnDeath += EndPhase7;
     }
+
+    IEnumerator Phase7ShortLine(int number, bool up, float speed) {
+        Bullet bul = GameManager.gameData.ellipseBullet.GetItem(DamageType.Fire);
+        Vector2 pos = new Vector2(UnityEngine.Random.Range(-3.9f, 3.9f), up? -4.1f: 4.1f);
+        return Functions.RepeatActionXTimes(
+            () => Patterns.ShootStraight(bul, shotdmg7, pos,
+            up ? 90 : 270, speed), shotinterval7, number);
+    }
     void EndPhase7() {
+
         currentBoss.bosshealth.OnDeath -= EndPhase7;
         EndPhase();
         Vector2 pos = bossImage.transform.position;
