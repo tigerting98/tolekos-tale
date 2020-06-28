@@ -21,10 +21,18 @@ MonoBehaviour:
   - left: 1
     speaker: {fileID: 21300000, guid: f3f8f794e530670408920b96ba3361ac, type: 3}
     isPlayer: 1
-    text: I certainly do!
+    text: I certainly do! By any chance, could you just maybe, I dunno, give me the
+      key?
     name: Toleko
   - left: 0
     speaker: {fileID: 21300000, guid: f3f8f794e530670408920b96ba3361ac, type: 3}
     isPlayer: 0
-    text: LETS FIGHT!
+    text: YOU'RE GONNA HAVE TO WRENCH IT FROM INSIDE ME!! LET'S SEE HOW YOU HANDLE
+      THIS HEAT!!
     name: Fire Spirit
+  - left: 1
+    speaker: {fileID: 21300000, guid: f3f8f794e530670408920b96ba3361ac, type: 3}
+    isPlayer: 1
+    text: Oh boy, what's with these key guardians and their violent inclinations.
+      Sheesh!
+    name: Toleko

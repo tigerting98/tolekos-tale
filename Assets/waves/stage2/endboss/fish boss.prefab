@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: -4821386601786655032, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: name
-      value: God Of The Lake
+      value: '"God Of The Lake"'
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}

@@ -156,7 +156,7 @@ PrefabInstance:
     - target: {fileID: -4821386601786655032, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: name
-      value: The Mighty Guard
+      value: Valem The Never-Awake
       objectReference: {fileID: 0}
     - target: {fileID: -4821386601786655032, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}

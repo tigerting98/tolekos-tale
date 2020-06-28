@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5916288215380762352}
   - component: {fileID: -5194968770029176298}
   m_Layer: 0
-  m_Name: stage3 endboss
+  m_Name: stage3midboss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   bossImage: {fileID: 6034030427296860853, guid: 8ff239ce2cc6efa4e8342769fa9a0840,
     type: 3}
   namesOfSpellCards:
-  - Spore Attack!\n ~Exploding Spores Of Delight~
+  - Spore Attack\n ~Exploding Spores of Delight~
   nextLevel: {fileID: 0}
   earthCircle: {fileID: 3435677033397378573, guid: b734662aac5843d4ab894c7b4971b14d,
     type: 3}

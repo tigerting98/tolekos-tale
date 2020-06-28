@@ -47,10 +47,10 @@ MonoBehaviour:
   boss: {fileID: 2465689840817753905, guid: 54f9879fedb5a404fa6117b9c69309af, type: 3}
   bossImage: {fileID: 0}
   namesOfSpellCards:
-  - Chaos\n~Explosions Everywhere!~
-  - Fire Wheel\n ~Spiralling Flames Of Doom~
+  - Absolute Chaos\n~Explosions Everywhere!~
+  - Fire Wheel\n ~Star-Spangled Conflagration~
   - Pandemonium\n~Geysers Of Flame~
-  - Zoom!\n~LAASSEEERR BEAM!~
+  - Last Resort\n~Meltdown~
   nextLevel: {fileID: 11400000, guid: 5de849c1ee2620e4cafdade913add7b8, type: 2}
   key: {fileID: 6034030427296860853, guid: d75a1ff5e7e7ac349bbe294fb3d3ada1, type: 3}
   preFight1: {fileID: 11400000, guid: 10fb73424127ed1419cf8b969a678d5f, type: 2}

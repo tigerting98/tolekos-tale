@@ -47,10 +47,10 @@ MonoBehaviour:
   boss: {fileID: 5510918016240705999, guid: 4dc00fa65a9378545ad055ac41dcaed9, type: 3}
   bossImage: {fileID: 0}
   namesOfSpellCards:
-  - Earthquake\n~Falling leafs and spiking Rocks~
-  - Summon Sign\n~Colourful Exploding Shrooms!~
-  - Tower Sign\n ~Erupting Mushroom Towers Of Doom!~
-  - The Mushroommancer\n ~The Mushroommancer Loyal Mushrooms~
+  - Earthquake\n~Falling Leaves and Spiking Rocks~
+  - Colourful Dance\n~Mushroom Light Show~
+  - Overgrowth\n ~Blossoming Fruiting Bodies~
+  - Fire Support\n ~The Mushroommancer's Loyal Mushrooms~
   nextLevel: {fileID: 11400000, guid: d73e175741a50b54fac65e5db4aedec6, type: 2}
   key: {fileID: 6034030427296860853, guid: 98d4cbe4543ac1144a641a6525c1c54b, type: 3}
   image: {fileID: 6034030427296860853, guid: 54e6fd7b213e26449a8f4ffda9e9d305, type: 3}

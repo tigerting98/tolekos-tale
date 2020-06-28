@@ -45,19 +45,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawnSound: {fileID: 0}
   moveSpeed: 3
-  stats: {fileID: 11400000, guid: 7466e37ec06b8f94e91a52d9458d3768, type: 2}
+  stats: {fileID: 11400000, guid: 2bc22f1d450dbef4aa98364171969031, type: 2}
   bulletSpeed: 2.5
   ringSpeed: 1.5
-  shotRate: 0.5
-  pulseRate: 2
+  shotRate: 0.1
+  pulseRate: 3.5
   bulletDamage: 200
   stationaryTime: 1
   numberOfBulletsInDeathRing: 3
-  numberOfBulletsPerLine: 5
+  numberOfBulletsPerLine: 3
   subwaveList:
   - spawnDelay: 0
-    highY: 3.5
-    lowY: -1.5
-    numberOfEnemies: 20
+    highY: 3
+    lowY: 1
+    numberOfEnemies: 15
     left: 1
+  - spawnDelay: 0.25
+    highY: 3
+    lowY: 1
+    numberOfEnemies: 15
+    left: 0
   spawnRate: 0.5
