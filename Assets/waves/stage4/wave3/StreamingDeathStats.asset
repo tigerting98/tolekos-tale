@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 75
   dmg: 1000
-  goldchance: 0.3
-  maxGold: 20
-  minGold: 10
-  exp: 4
+  goldchance: 0.1
+  maxGold: 60
+  minGold: 50
+  exp: 5
   customResist: 0
   type: 3
   waterMultiplier: 0

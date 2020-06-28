@@ -48,7 +48,7 @@ MonoBehaviour:
   delay: 0
   number: 5
   spawnRate: 0.5
-  stats: {fileID: 11400000, guid: 6a0f00cb92283da439519e2feb794547, type: 2}
+  stats: {fileID: 11400000, guid: 798bd1fbbdd45b448bd6173ccd4ca76f, type: 2}
   shootingDelay: 0.3
   bulletSpeed: 3
   shotAngle: 20

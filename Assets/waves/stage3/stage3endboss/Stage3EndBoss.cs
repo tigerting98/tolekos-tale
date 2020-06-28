@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 public class Stage3EndBoss : EnemyBossWave
 {
@@ -406,7 +404,7 @@ public class Stage3EndBoss : EnemyBossWave
         mushroomRight.SetEnemy(stats6, false);
         yield return new WaitForSeconds(Math.Max(time1, time2));
         mushroomLeft.shooting.StartShooting(Functions.RepeatAction(()=>
-            Functions.StartMultipleCustomCoroutines(currentBoss.shooting,
+            Functions.StartMultipleCustomCoroutines(mushroomLeft.shooting,
             i => UpThenHomeBullet(leaf2, leafdmg2, Functions.RandomLocation(mushroomLeft.transform.position, 0.5f), shootSpeed6l,
             90 + UnityEngine.Random.Range(-angleSpread6l, angleSpread6l), deacceleration6l, finalSpeed6l), (int)(pulseDuration6l / shotRate6l), shotRate6l)
             , pulseDuration6l + pulsePause6l));

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Security.Policy;
-using UnityEditor;
 using UnityEngine;
 //a list of useful utility functions commonly used
 public class Functions : MonoBehaviour

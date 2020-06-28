@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95de6edd9cfa37a42a59bcc92b361e54, type: 3}
   m_Name: New Bomb Item
   m_EditorClassIdentifier: 
-  itemName: A bomb
+  itemName: Bomb
   icon: {fileID: 21300000, guid: 0ecb54dd8705c68438b0e27a05874504, type: 3}
   description: Buys 1 bomb (max 10)
   cost: 600

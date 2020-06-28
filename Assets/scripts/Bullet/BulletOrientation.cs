@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-//using System.Numerics;
-using System.Security.Cryptography;
-using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
-using UnityEngine.Windows.Speech;
 public enum OrientationMode {velocity, position }
 [RequireComponent(typeof(Movement))]
 
