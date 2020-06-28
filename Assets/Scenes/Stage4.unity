@@ -970,7 +970,7 @@ MonoBehaviour:
   - {fileID: 1957461059014814331, guid: 31248cf00a429584f98c3559d672a0e1, type: 3}
   - {fileID: 636725982045620863, guid: d699ff4595a5a5942b99dd637f429608, type: 3}
   - {fileID: 2368717317467515822, guid: a646cf1f1586a464d9e0c8183cb2884e, type: 3}
-  - {fileID: 6626234176359241361, guid: 9bef7129020c09c4b8d238d41fba899c, type: 3}
+  - {fileID: 6626234176359241361, guid: b0ee268c08748bc4b92d7297899e50dd, type: 3}
   timesFirstHalf:
   - 0
   - 25
@@ -978,8 +978,8 @@ MonoBehaviour:
   - 43
   midBoss: {fileID: 3696897607128456916, guid: a5221c94acbfd4744a9bf0b8b2b0ad65, type: 3}
   wavesSecondHalf:
-  - {fileID: 6402490802107694836, guid: 0c52c162bb86d9d4cb470904b9a9c317, type: 3}
-  - {fileID: 7255629957415309759, guid: edfc1ca8d4d0d4644ae2977e8248e86c, type: 3}
+  - {fileID: 6402490802107694836, guid: 815a507b11b3d254fb43d18720ef3693, type: 3}
+  - {fileID: 7255629957415309759, guid: d228d026a32bbef49945b2d9628dc139, type: 3}
   timesSecondHalf:
   - 0
   - 20
