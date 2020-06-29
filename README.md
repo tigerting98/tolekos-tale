@@ -59,7 +59,7 @@ The first difficulty is the planning stage. A substantial amount of time was spe
 5. Create new difficulty levels
   * We will be making the other 2 difficulty levels by rebalancing enemy stats and modifying some of their bullet patterns.
 
-
+## Original README
 ## Proposed Level of Achievement: Artemis
 
 ## Motivation 
@@ -127,24 +127,7 @@ We plan to create a website for our game. The website will include the game clie
 3. PHP - to develop the website.
 
 ## Project Log
-
-|S/N|Task|Date|Ting Xiao(hrs)|Aloysius(hrs)|Remarks|
-|:---:|:---:|:---:|:---:|:---:|:---:|
-|1|Proposal Update|12/5/20|2|2|-|
-|2|Poster/Video Making|13/5/20|5|5|-|
-|3|Learning Git|15/5/20|3|3|-|
-|4|Learning Unity|17/5/20|4|4|-|
-|5|Programming at home|19/5/20|2|2|Created basic game structure|
-|6|Programming at home|20/5/20|2|2|Implemented player and enemy movement|
-|7|Programming at home|21/5/20|2|2|Implemented bullets|
-|8|Programming at home|22/5/20|2|2|Implemented health bars|
-|9|Refactoring code|23/5/20|0|1|-|
-|10|Refactoring code|25/5/20|0|1|-|
-|11|Programming at home|26/5/20|0|1|Added an EXP system|
-|12|Programming at home|27/5/20|0|1|Added an elemental system|
-|13|Mentor Meeting|27/5/20|0.5|0.5|Met with Prof Zhao to discuss our game ideas and receive feedback|
-|14|Programming at home|28/5/20|0|1|Modified the waves for demo|
-|15|Programming at home|30/5/20|3|3|Modified player shot patters <br> Modified Main Menu UI|
+https://docs.google.com/document/d/1NV8Q0bUViDfeDqzW5LkirybYbUMsip9ERNo5xfECZhc/edit?usp=sharing
 
 ## Link to GDD
 https://docs.google.com/document/d/1xsbC9BXN0kCata-k_R-Pm64Y5zuUKliexnhEEttQlng/edit?usp=sharing
