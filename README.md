@@ -12,18 +12,19 @@
 * Story scene in between stages that give the player some exposition of the story.
 * Balancing of enemy encounters.
 
-**For a better understanding of the updates, please watch our milestone 2 demo video.** 
+**For a better understanding of the updates, please watch our milestone 2 demo video.**
+https://www.youtube.com/watch?v=_ydE4VhcVX0&feature=youtu.be
 
 ### The General Architecture of the Code Base:
 As of now, we currently have 113 C# scripts and ~7300 lines of code that is written by ourselves apart from the Unity Engine.
 The scripts inside the Asset/scripts folders are in charge of the game logic, UI, movement, etc while the scripts inside the waves folders are in charge of generating the wave patterns and the content of the game. We also have a game manager object that is in charge of holding the references to different scripts and prefabs to allow them to interact with each other. The game data object stores the enemy bullets, sprites to be used by the waves scripts. The stats are then set up within the wave scripts. The player data object stores all of the player stats throughout the game.
 
-We have refactored most of the backend scripts to allow for easy extensibility. We have however, not refactored our audio and sound effect system. We will look to improve that by Milestone 3.
+We have refactored most of the backend scripts to allow for easy extension. We have however, not refactored our audio and sound effect system. We will look to improve that by Milestone 3.
 
 ### How to install and test the game:
 Download the game from: https://drive.google.com/file/d/1tbSc_yT6DndrvMSS59qmOkV1HCFbjpBd/view?usp=sharing
 **Or**
-https://github.com/tigerting98/tolekos-tale/blob/master/Toleko's Tale.exe
+Simply download Toleko's Tale.exe from this repository.
 
 Download and run the .exe file and simply install the game. Play the game!
 
