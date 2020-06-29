@@ -65,11 +65,11 @@ MonoBehaviour:
   bulletPattern1Speed: 3.5
   pattern1ShotRate: 0.1
   pattern1PulseRate: 2
-  dmg1: 100
+  dmg1: 130
   numberOfLines: 8
   pattern1BulletsPerPulse: 8
   bulletPattern2Speed: 3
   pattern2ShotRate: 0.05
   pattern2angularvel: 1.5
-  dmg2: 150
+  dmg2: 175
   numberOfLines2: 8

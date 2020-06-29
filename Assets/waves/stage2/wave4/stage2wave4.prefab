@@ -81,6 +81,6 @@ MonoBehaviour:
     number: 4
     left: 0
   shotRate: 0.4
-  dmg: 150
+  dmg: 125
   shotSpeed: 3
   delay: 0.5

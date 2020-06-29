@@ -59,6 +59,7 @@ MonoBehaviour:
   minSpeed: 1.5
   angularVel: 53
   angularVel2: 173
-  dmg: 150
+  dmg: 145
   numberPerLine: 10
   lines: 3
+  beforeBossTime: 10

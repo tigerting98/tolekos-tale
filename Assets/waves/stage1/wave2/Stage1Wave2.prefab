@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64774cfe08d5ab34480cd7812676bc78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
   bulletSpawnSound: {fileID: 11400000, guid: db48958cbc7a5a64bac15606518d3ace, type: 2}
   moveSpeed: 3
   acceleration: 5
@@ -58,4 +57,4 @@ MonoBehaviour:
   initialSpeed: 10
   burstRadius: 1
   finalSpeed: 2
-  dmg: 100
+  dmg: 85

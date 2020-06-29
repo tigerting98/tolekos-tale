@@ -48,7 +48,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 4fef43c2b7a4d1a40bc88a20d5141b77, type: 2}
   bulletSpeed: 3.5
   shotRate: 0.15
-  bulletDamage: 200
+  bulletDamage: 310
   stationaryTime: 10
   subwaveList:
   - spawnDelay: 0

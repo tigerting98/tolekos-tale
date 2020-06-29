@@ -66,7 +66,7 @@ MonoBehaviour:
   pattern1SpawnRate: 0.05
   pattern1Spacing: 0.15
   pattern1Speed: 4
-  dmg1: 100
+  dmg1: 85
   arrowSpawnTimeMax: 0.08
   arrowSpawnTimeMin: 0.04
   maxSpeed: 5

@@ -58,6 +58,6 @@ MonoBehaviour:
   shotRate: 0.1
   startSpeed: 2
   accelerationFactor: 4
-  bulletDmg: 250
+  bulletDmg: 235
   orientationangle: -135
   angleRange: 60

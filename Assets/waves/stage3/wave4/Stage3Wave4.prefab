@@ -51,7 +51,7 @@ MonoBehaviour:
   shotAngle: 20
   numberOfRings: 1
   bulletsPerRing: 15
-  bulletDamage: 250
+  bulletDamage: 265
   stationaryTime: 1
   subwaveList:
   - spawnDelay: 0

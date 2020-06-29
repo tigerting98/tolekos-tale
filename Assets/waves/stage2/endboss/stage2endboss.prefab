@@ -63,8 +63,8 @@ MonoBehaviour:
   bigBulletSpeed1: 1
   bigBulletSpread: 20
   bigBulletShotRate: 4
-  dmg1Big: 300
-  dmg1ellipse: 200
+  dmg1Big: 275
+  dmg1ellipse: 210
   bigBulletNumber: 4
   initialSpeed1: 5
   radius1: 2
@@ -82,13 +82,13 @@ MonoBehaviour:
   delay: 0.1
   lineduration: 7
   pulseRate2: 20
-  dmg2line: 150
+  dmg2line: 180
   CircleBullets2shotRate: 0.6
   spread2: 15
   circlebulletpulseRate2: 5
   bossmovespeed: 8
   pulseDuration2: 3
-  dmg2circle: 200
+  dmg2circle: 225
   numberOfCircleBullets2: 5
   radius3: 1
   pulseRate3: 0.5
@@ -99,16 +99,16 @@ MonoBehaviour:
   shotRateLarge3: 3
   spreadAngleLarge3: 20
   largespeed3: 1.2
-  dmg3arrow: 100
-  dmg3circle: 150
-  dmg3Big: 300
+  dmg3arrow: 215
+  dmg3circle: 225
+  dmg3Big: 275
   spawnradius4: 0.2
   initialSpeed4: 3
   finalSpeed4: 1
   shotRate4: 0.05
   pulseRate4: 5
-  dmg4pointed: 250
-  dmg4arrow: 125
+  dmg4pointed: 275
+  dmg4arrow: 215
   spawnRatio4: 2
   numberPerPulse4: 70
   waterfairy: {fileID: 1721693820931709140, guid: e8c0a44795a259243af3c6fb387fdf24,
@@ -117,7 +117,7 @@ MonoBehaviour:
   bossShootRate5: 4
   bossShootSpeed5: 2
   bossshootSpread5: 20
-  dmg5Big: 300
+  dmg5Big: 325
   bossShootNumber5: 5
   spawnRatefairy: 4
   shotRatefairy: 0.05
@@ -128,7 +128,7 @@ MonoBehaviour:
   fairyangularVel: 10
   fairyamp: 0.2
   fairyY: 3
-  dmg5fairy: 100
+  dmg5fairy: 175
   spawnRateslime: 3
   shotRateslime: 2
   speedbulletslime: 2
@@ -137,5 +137,5 @@ MonoBehaviour:
   numberofexplodingBullets: 30
   explodingBulletSpeedFast: 2
   explodingBulletSpeedSlow: 1
-  dmg5arrow: 0
-  dmg5ball: 0
+  dmg5arrow: 215
+  dmg5ball: 230

@@ -78,7 +78,7 @@ MonoBehaviour:
   bulletspeedtime: 0.2
   bulletspeedslow: 2
   radiusAroundPlayer: 1.25
-  ballDmg: 250
+  ballDmg: 310
   pulserate2: 3.5
   timetoExplode: 1.75
   numberOfRings: 10

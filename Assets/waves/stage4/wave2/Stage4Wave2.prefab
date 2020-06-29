@@ -54,7 +54,7 @@ MonoBehaviour:
   numberOfSmallBulletsPerRing: 50
   numberOfBigBulletsPerRing: 15
   numberOfSmallBulletRingsPerPulse: 3
-  bulletDamage: 200
+  bulletDamage: 325
   stationaryTime: 20
   subwaveList:
   - spawnDelay: 0

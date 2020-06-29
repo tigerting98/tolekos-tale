@@ -109,10 +109,10 @@ MonoBehaviour:
     left: 1
     shotChance: 0.103
   shotRate: 0.5
-  dmg: 200
+  dmg: 235
   shotSpeed: 3
   delay: 0.5
-  dmgexplode: 250
+  dmgexplode: 285
   fastspeed: 5
   slowspeed: 1
   radius: 1

@@ -54,8 +54,8 @@ MonoBehaviour:
   image: {fileID: 6034030427296860853, guid: e682df331325ac445a480f320f298c73, type: 3}
   spawnLocation: {x: 0, y: 1.5}
   prefightDialogue: {fileID: 11400000, guid: 36edd3b067c0ea64eaa90f2539b75949, type: 2}
-  dmgfirebullet1: 275
-  dmgfireball1: 400
+  dmgfirebullet1: 325
+  dmgfireball1: 415
   fireSpreadAngle: 35
   shotSpeed: 0.05
   firebullet1Max: 3.2
@@ -70,7 +70,7 @@ MonoBehaviour:
   angularvel2: 65
   shotRate2: 0.25
   bulletspeed2: 2
-  bulletdmg2: 275
+  bulletdmg2: 315
   laserDelay: 1.5
   delaytoNextLaser: 3
   laserangularVel: 34

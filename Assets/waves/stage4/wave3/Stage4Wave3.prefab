@@ -50,7 +50,7 @@ MonoBehaviour:
   ringSpeed: 1.5
   shotRate: 0.1
   pulseRate: 3.5
-  bulletDamage: 200
+  bulletDamage: 335
   stationaryTime: 1
   numberOfBulletsInDeathRing: 3
   numberOfBulletsPerLine: 3

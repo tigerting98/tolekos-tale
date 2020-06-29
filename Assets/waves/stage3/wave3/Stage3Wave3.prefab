@@ -53,7 +53,7 @@ MonoBehaviour:
   bulletSpeed: 3
   shotAngle: 20
   bulletsPerLine: 3
-  bulletDamage: 225
+  bulletDamage: 245
   subwaveList:
   - spawnDelay: 0
     numberOfEnemies: 5

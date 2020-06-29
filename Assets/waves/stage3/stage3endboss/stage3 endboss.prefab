@@ -64,8 +64,8 @@ MonoBehaviour:
   topBulletSpread: 80
   sideBulletSpread: 40
   sideOriginAngle: 20
-  rockdmg1: 250
-  leafdmg1: 200
+  rockdmg1: 310
+  leafdmg1: 265
   bossSpeed1: 5
   shotRate1: 0.03
   shotPulseDuration1: 3
@@ -83,13 +83,13 @@ MonoBehaviour:
   leafshotRate2: 0.2
   leafSpread2: 20
   leafSped2: 4
-  leafdmg2: 200
+  leafdmg2: 215
   leaflines2: 2
   angularvel: 51.556
   firstspeed: 1.4
   speeddiff: 0.2
   y3: 1
-  leaf3dmg: 200
+  leaf3dmg: 245
   shotRate3: 0.314
   leaf3scale: 0.65
   leafnumbers3: 3
@@ -110,8 +110,8 @@ MonoBehaviour:
   delaynext: 0.5
   movetime4: 0.7
   speedsmall4: 1
-  bigDmg: 500
-  smallDmg: 150
+  bigDmg: 525
+  smallDmg: 275
   midPoint5: {x: 0, y: 3.5}
   topRight: {x: -2.6, y: 3}
   topLeft: {x: 2.6, y: 3}
@@ -128,6 +128,7 @@ MonoBehaviour:
   delaypillar2: 0.5
   pillarRate: 6
   leafspreadAngle5: 20
+  pillardmg: 1750
   bossPosition6: {x: 0, y: 2}
   leftMushroomPosition6: {x: -2, y: 3}
   rightMushroomPosition6: {x: 2, y: 3}
@@ -143,7 +144,7 @@ MonoBehaviour:
   shootSpeed6r: 3
   pulserate6r: 1
   shotrate6r: 0.08
-  greendmg: 200
+  greendmg: 265
   numberofLines6r: 40
   numberofBulletsPerLine6r: 6
   shootrate6: 0.2

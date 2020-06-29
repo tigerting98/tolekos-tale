@@ -37,7 +37,7 @@ public class Stage3EndBoss : EnemyBossWave
     [SerializeField] Vector2 topRight, topLeft;
     [SerializeField] int numberOfPillars = 3, numberofLeafPerLines5 = 3, numberOfLeafLine5 = 10;
     [SerializeField] float pillarSpeed1 = 2f, pillarSpeed2 = 6f, pillarSpeed3= 3f, bossmovespeed5 = 8f, leafspeed5 = 4f, leafspeeddiff5 = 0.1f;
-    [SerializeField] float delaypillar1 = 1f, delaypillar2 = 0.5f, pillarRate = 6f, leafspreadAngle5 = 15f;
+    [SerializeField] float delaypillar1 = 1f, delaypillar2 = 0.5f, pillarRate = 6f, leafspreadAngle5 = 15f, pillardmg = 1500;
     [Header("Pattern6")]
     [SerializeField] Vector2 bossPosition6;
     [SerializeField] Vector2 leftMushroomPosition6, rightMushroomPosition6;
@@ -303,6 +303,7 @@ public class Stage3EndBoss : EnemyBossWave
         float orientation = pillarlocation == 0 ? 0 : pillarlocation == 1 ? 90 : 180;
         Bullet pillar = GameManager.bulletpools.SpawnBullet(GameManager.gameData.mushroomPillar, pillarlocation == 0 ? new Vector2(-4.1f, pos) :
             pillarlocation == 1 ? new Vector2(pos, -4.1f) : new Vector2(4.1f, pos), Quaternion.Euler(0,0,orientation));
+        pillar.SetDamage(pillardmg);
         pillar.orientation.SetFixedOrientation(orientation);
         pillar.movement.MoveAndStopAfter(pillarlocation == 0 ? new Vector2(pillarSpeed1, 0) : pillarlocation == 1 ?
             new Vector2(0, pillarSpeed1) : new Vector2(-pillarSpeed1, 0), 0.6f/pillarSpeed1);

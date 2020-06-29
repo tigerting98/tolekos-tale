@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5916288215380762352}
   - component: {fileID: -2699760848363402308}
   m_Layer: 0
-  m_Name: Stage2Wave2
+  m_Name: Stage2Wave3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,8 +49,8 @@ MonoBehaviour:
   movespeed1: 7
   movespeed2: 2
   spawnRate: 5
-  ballDmg1: 0
-  pointedDmg1: 0
+  ballDmg1: 225
+  pointedDmg1: 175
   pulseRate: 2
   pulseDuration: 1.5
   ghostStat: {fileID: 11400000, guid: 2f9f15b999656794d83d91cd2ac020a6, type: 2}
@@ -73,5 +73,5 @@ MonoBehaviour:
   shotratearrow: 0.25
   delay: 3
   shootingduration: 20
-  dmgball2: 250
-  dmgarrow2: 200
+  dmgball2: 245
+  dmgarrow2: 220

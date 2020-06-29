@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f5dc48881bd1f489897fc69c6c51d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
   bulletSpawnSound: {fileID: 0}
   moveSpeedMin: 1
   moveSpeedMax: 4
@@ -62,7 +61,7 @@ MonoBehaviour:
   bulletSpeedMax: 4
   shotRateMin: 1
   shotRateMax: 5
-  dmg1: 100
+  dmg1: 85
   arrivalDelay: 1
   posY: 3
   number2: 10
@@ -74,5 +73,5 @@ MonoBehaviour:
   bulletSpeed2: 4
   angle: 15
   lines: 1
-  dmg2: 50
+  dmg2: 70
   tpSFX: {fileID: 11400000, guid: 90c01456488d43c44864ddd83d5a7fbd, type: 2}

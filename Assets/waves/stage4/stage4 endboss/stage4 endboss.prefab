@@ -75,7 +75,7 @@ MonoBehaviour:
   delaytoNext: 2
   bounds: 1
   speed1: 4
-  fireBalldmg1: 260
+  fireBalldmg1: 325
   fireBeamdmg1: 3000
   explosionCircle: {fileID: 4221692458848178709, guid: c8d6506f5078cb841a43eb49a6aba008,
     type: 3}
@@ -86,15 +86,15 @@ MonoBehaviour:
   numberofbulletsperexplosion2max: 16
   maxSpeed2: 2.5
   minSpeed2: 1.5
-  dmg2star: 245
+  dmg2star: 315
   maxangularvel: 500
-  fireballdmg3: 275
+  fireballdmg3: 325
   fireballspeed3: 3.2
   fireballshotrate: 0.2
   fireballpulserate: 3
   fireballpulsetime: 1
   fireballspread3: 8
-  laserDmg3: 500
+  laserDmg3: 515
   fireballNumber3: 7
   numberOfCircles3: 5
   numberoflasers3: 2
@@ -105,7 +105,7 @@ MonoBehaviour:
   spreadlaser3: 15
   laserspeed: 4.6
   bossLocation3: {x: 0, y: 2.3}
-  dmg4: 325
+  dmg4: 385
   speed4circle: 2.5
   radialVel4: 0.6
   delayBeforeMovingOff4: 6
@@ -124,7 +124,7 @@ MonoBehaviour:
   speedBullet5Max: 3.2
   shotRateMax: 0.15
   shotRateMin: 0.07
-  stardmg5: 200
+  stardmg5: 315
   maxSpin5: 500
   bulletCountMultiplier: 2
   delay6: 0.5
@@ -136,7 +136,7 @@ MonoBehaviour:
   dmglaser6: 1000
   pulseRate6: 5
   magiccirclespeed: 10
-  fireballdmg6: 260
+  fireballdmg6: 325
   radialvel6: 1.5
   angularvel6: 18
   delayBetweenPulse6: 0.2
@@ -160,7 +160,7 @@ MonoBehaviour:
   maxSpeed7: 3
   shotRate7: 0.15
   shotinterval7: 0.08
-  shotdmg7: 185
+  shotdmg7: 310
   numberMin7: 3
   numberMax7: 6
   deathEffect: {fileID: 1064576369312752990, guid: d7d342484b78ba643aba1d80e2044b32,

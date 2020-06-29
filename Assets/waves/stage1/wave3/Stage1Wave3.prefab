@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9fac20870732c4aa401ee114c035c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
   bulletSpawnSound: {fileID: 11400000, guid: c254def07b7610d4192ae4bec424e8ee, type: 2}
   moveSpeed: 3
   bottomY: 0
@@ -60,4 +59,5 @@ MonoBehaviour:
   minTime: 0
   maxTime: 0.2
   chanceofShooting: 0.8
-  dmg: 50
+  dmg: 45
+  bossDelay: 5
