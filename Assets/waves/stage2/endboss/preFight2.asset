@@ -20,7 +20,7 @@ MonoBehaviour:
       fish.
     name: Toleko
   - left: 0
-    speaker: {fileID: 21300000, guid: 2d0454ec1a9303648adf3ad8b4d58c6d, type: 3}
+    speaker: {fileID: 21300000, guid: 48e2f08f38009554cb64371f49b838c4, type: 3}
     isPlayer: 0
     text: '*GLUB GLUB GLUB*'
     name: God of the Lake???
