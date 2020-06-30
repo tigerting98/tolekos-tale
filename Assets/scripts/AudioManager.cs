@@ -23,9 +23,7 @@ public class AudioManager : MonoBehaviour
             current = this;
         }
         if (!SFXPlayer) {
-            GameObject obj = new GameObject();
-            SFXPlayer = obj.AddComponent<AudioSource>();
-            DontDestroyOnLoad(obj);
+            SFXPlayer = GetComponent<AudioSource>();
         }
     }
 
