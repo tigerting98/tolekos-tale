@@ -156,6 +156,7 @@ public class Stage1EndBoss : EnemyBossWave
                     {
                         Vector2 pos = punchbul.transform.position;
                         Bullet explode = Instantiate(explosion, pos, Quaternion.identity);
+                        Destroy(explode.gameObject, 1.2f);
                         ExplodingAndBack(pos);
                         punchbul.Deactivate();
                         pattern3smashSFX.PlayClip();

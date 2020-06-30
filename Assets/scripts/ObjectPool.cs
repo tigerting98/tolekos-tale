@@ -13,12 +13,18 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : Component
 
     //retrieves a new object from the pool
     public T SpawnFromPool(Vector3 position, Quaternion rotation) {
+        
         if (objectPool.Count == 0)
         {
-           T obj = Instantiate(pooledObject, position, rotation);
-            obj.GetComponent<IPooledObject>().OnSpawn();
-            return obj;
-       
+            if (pooledObject)
+            {
+                T obj = Instantiate(pooledObject, position, rotation);
+                obj.GetComponent<IPooledObject>().OnSpawn();
+                return obj;
+            }
+            else {
+                return null;
+            }
         }
         else {
             T obj = objectPool.Dequeue();
@@ -40,8 +46,11 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : Component
 
     //return an object back to its pool
     public void ReturnToPool(T tobeReturned) {
-        tobeReturned.transform.localScale = pooledObject.transform.localScale;
-        tobeReturned.gameObject.SetActive(false);
-        objectPool.Enqueue(tobeReturned);
+        if (tobeReturned&&pooledObject)
+        {
+            tobeReturned.transform.localScale = pooledObject.transform.localScale;
+            tobeReturned.gameObject.SetActive(false);
+            objectPool.Enqueue(tobeReturned);
+        }
     }
 }

@@ -77,12 +77,19 @@ public class GameManager : MonoBehaviour
     public static void DestoryAllEnemyBullets() {
         List<Bullet> toDestroy = new List<Bullet>();
         foreach (GameObject obj in enemyBullets.Values) {
-            toDestroy.Add( obj.GetComponent<Bullet>());
+            if (obj.TryGetComponent<Bullet>(out Bullet comp))
+            {
+                toDestroy.Add(comp);
+            }
         }
+
         for (int i = 0; i < toDestroy.Count; i++) {
             GameObject particleEffect = Instantiate(toDestroy[i].explosion, toDestroy[i].transform.position, Quaternion.identity);
             Destroy(particleEffect, 0.5f);
-            toDestroy[i].Deactivate();
+            if (toDestroy[i])
+            {
+                toDestroy[i].Deactivate();
+            }
         }
     }
 

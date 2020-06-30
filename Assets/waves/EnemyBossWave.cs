@@ -53,14 +53,21 @@ public class EnemyBossWave : EnemyWave
 
     public virtual void EndPhase()
     {
-        PlayLifeDepletedSound();
-        currentBoss.shooting.StopAllCoroutines();
-        currentBoss.movement.StopMoving();
-        GameManager.DestoryAllEnemyBullets();
-        GameManager.DestroyAllNonBossEnemy(true);
-        if (currentUI)
-        { Destroy(currentUI.gameObject); }
-        SwitchToImage();
+        try
+        {
+            PlayLifeDepletedSound();
+            currentBoss.shooting.StopAllCoroutines();
+            currentBoss.movement.StopMoving();
+            GameManager.DestoryAllEnemyBullets();
+            GameManager.DestroyAllNonBossEnemy(true);
+            if (currentUI)
+            { Destroy(currentUI.gameObject); }
+            SwitchToImage();
+            }catch (Exception ex)
+        {
+            Debug.Log(ex);
+        }
+        
     }
 
     public virtual void SpellCardUI(string name)
@@ -74,15 +81,29 @@ public class EnemyBossWave : EnemyWave
     protected virtual void SwitchToImage()
     {
         bossImage.GetComponent<SpriteRenderer>().enabled = true;
-        bossImage.transform.position = currentBoss.transform.position;
-        currentBoss.gameObject.SetActive(false);
+        try
+        {
+            bossImage.transform.position = currentBoss.transform.position;
+            currentBoss.gameObject.SetActive(false);
+        }
+        catch (Exception ex) 
+        {
+            Debug.Log(ex);
+        }
     }
 
     protected virtual void SwitchToBoss()
     {
-        currentBoss.gameObject.SetActive(true);
-        currentBoss.transform.position = bossImage.transform.position;
-        bossImage.GetComponent<SpriteRenderer>().enabled = false;
+        try
+        {
+            currentBoss.gameObject.SetActive(true);
+            currentBoss.transform.position = bossImage.transform.position;
+            bossImage.GetComponent<SpriteRenderer>().enabled = false;
+        }
+        catch (Exception ex)
+        {
+            Debug.Log(ex);
+        }
     }
 
 }

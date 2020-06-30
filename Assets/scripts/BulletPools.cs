@@ -24,7 +24,11 @@ public class BulletPools : MonoBehaviour
         Bullet bul;
         if (bulletpools.ContainsKey(bullet.bulletPoolID))
         {
-            bul = bulletpools[bullet.bulletPoolID].SpawnFromPool(position, rotation);
+            BulletPool pool = bulletpools[bullet.bulletPoolID];
+            if (!pool.pooledObject) {
+                pool.pooledObject = bullet;
+            }
+            bul = pool.SpawnFromPool(position, rotation);
             
         }
         else {
@@ -48,15 +52,16 @@ public class BulletPools : MonoBehaviour
 
     //place a bullet back to the pool
     public void DeactivateBullet(Bullet bullet) {
-        if (bulletpools.ContainsKey(bullet.bulletPoolID))
+        if (bullet)
         {
-            bulletpools[bullet.bulletPoolID].ReturnToPool(bullet);
-        }
-        else {
-            BulletPool newBulletPool = Instantiate(bulletPool);
-            newBulletPool.pooledObject = bullet;
-            newBulletPool.ReturnToPool(bullet);
-            bulletpools.Add(bullet.bulletPoolID, newBulletPool);
+            if (bulletpools.ContainsKey(bullet.bulletPoolID))
+            {
+                bulletpools[bullet.bulletPoolID].ReturnToPool(bullet);
+            }
+            else
+            {
+                Destroy(bullet.gameObject);
+            }
         }
     }
 }
