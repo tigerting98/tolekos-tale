@@ -87,6 +87,7 @@ public class Level : MonoBehaviour
     private void OnDestroy()
     {
         GameManager.OnSummonEndBoss -= FinalBoss;
+        GameManager.OnSummonMidBoss -= MidBoss;
     }
 
     

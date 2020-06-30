@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: playerdeathSFX
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 660e54d2e8931754b86e902dcb5572bf, type: 3}
-  volume: 0.14
+  volume: 0.5
+  id: playerdeath
+  cooldownTime: 0.01

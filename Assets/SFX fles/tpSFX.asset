@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: b5ec15cc953ffb94a9cc18e4b7cfb1a8, type: 3}
   volume: 0.1
+  id: teleport
+  cooldownTime: 0.01

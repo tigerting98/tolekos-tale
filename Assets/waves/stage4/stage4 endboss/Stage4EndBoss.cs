@@ -83,6 +83,7 @@ public class Stage4EndBoss : EnemyBossWave
     void Phase1() {
         currentBoss = Instantiate(boss, spawnLocation, Quaternion.identity);
         SwitchToBoss();
+        GameManager.currentBoss = currentBoss;
         currentBoss.shooting.StartShooting(Functions.RepeatCustomAction(i => {
             float time = currentBoss.movement.MoveTo(Functions.RandomLocation(spawnLocation-new Vector2(0,bounds/2), bounds), speed1);
             currentBoss.shooting.StartShootingAfter(PulsePhase1(

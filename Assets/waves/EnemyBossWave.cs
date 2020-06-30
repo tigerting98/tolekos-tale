@@ -47,7 +47,7 @@ public class EnemyBossWave : EnemyWave
 
     protected virtual void PlayLifeDepletedSound()
     {
-        GameManager.gameData.lifeDepletedSFX.PlayClip();
+        AudioManager.current.PlaySFX(GameManager.gameData.lifeDepletedSFX);
 
     }
 

@@ -25,7 +25,7 @@ public class Collectible : MonoBehaviour
     {
         Collect?.Invoke();
         if (collectSFX) {
-            collectSFX.PlayClip();
+            AudioManager.current.PlaySFX(collectSFX);
         }
         Destroy(gameObject);
     }

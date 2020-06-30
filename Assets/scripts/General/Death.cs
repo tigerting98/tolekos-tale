@@ -30,7 +30,7 @@ public class Death : MonoBehaviour
         OnDeath?.Invoke();
         PlayerStats.GainEXP(this.experience);
         GameObject exp = Instantiate(explosion, transform.position, Quaternion.identity);
-        deathSound.PlayClip();
+        AudioManager.current.PlaySFX(deathSound);
         Destroy(exp, 1f);
 
          Destroy(gameObject);

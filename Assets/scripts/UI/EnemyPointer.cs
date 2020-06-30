@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//this controls the boss indicator pointer at the bottom of the screen du ring boss fight
+//this controls the boss indicator pointer at the bottom of the screen during boss fight
 public class EnemyPointer : MonoBehaviour
 {
     SpriteRenderer sprite;

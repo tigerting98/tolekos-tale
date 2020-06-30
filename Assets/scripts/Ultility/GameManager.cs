@@ -30,6 +30,16 @@ public class GameManager : MonoBehaviour
 
     public static Enemy currentBoss = null;
 
+    public static void Reset() {
+        victory = false;
+
+        enemies = new Hashtable();
+        enemyBullets = new Hashtable();
+        collectibles = new Hashtable();
+        ResetBosses();
+        levelDescription = null;
+        currentBoss = null;
+    }
  
 
     public static void InvokeGameOverEvent(bool victory) {

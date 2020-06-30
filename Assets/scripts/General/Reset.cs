@@ -5,8 +5,9 @@ using UnityEngine;
 public class Reset : MonoBehaviour
 {
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
         PlayerStats.Reset();
+        GameManager.Reset();
     }
 }

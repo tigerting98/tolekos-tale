@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
-  orientation: {x: 0, y: 0, z: 0, w: 0}
+  angle: 0
   absolute: 0
+  mode: 1
 --- !u!1001 &3084952704041832330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26,7 +27,7 @@ PrefabInstance:
         type: 3}
       propertyPath: deathSound
       value: 
-      objectReference: {fileID: 11400000, guid: 10c6a47e969eb0d46a78a6a69f734afe,
+      objectReference: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff,
         type: 2}
     - target: {fileID: 520085438, guid: 43f1d414ba5b63b43b68bb4e0ccda89e, type: 3}
       propertyPath: m_Offset.y

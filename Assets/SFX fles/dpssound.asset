@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9e4dc7d24b225640a1bf1ebc2260221, type: 3}
-  m_Name: woosh
+  m_Name: dpssound
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: bcf4e687d0381b140b7e33a30cf8399d, type: 3}
-  volume: 0.1
+  clip: {fileID: 8300000, guid: dd7fd75ea1385d94687c688bf962d8ca, type: 3}
+  volume: 0.4
+  id: player DOT sound
+  cooldownTime: 0.05

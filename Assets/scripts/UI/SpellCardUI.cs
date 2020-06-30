@@ -24,6 +24,7 @@ public class SpellCardUI : MonoBehaviour
     }
 
     public void PlaySFX() {
-        spellCardSFX.PlayClip();
+        AudioManager.current.PlaySFX(spellCardSFX);
+        
     }
 }

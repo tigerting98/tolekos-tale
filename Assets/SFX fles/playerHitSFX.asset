@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: playerHitSFX
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 47b3566d44ea9b94bbc961a855a4a6a6, type: 3}
-  volume: 0.4
+  volume: 0.5
+  id: playerHit
+  cooldownTime: 0.01

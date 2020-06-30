@@ -203,6 +203,7 @@ MonoBehaviour:
   EarthMultiplier: 1
   PureMultiplier: 1
   hitSFX: {fileID: 11400000, guid: 0041b074fc5417940b17f9d7c12af67f, type: 2}
+  stayHitSFX: {fileID: 11400000, guid: 3b5aa18664ece8b40b6f9ea3a773761a, type: 2}
 --- !u!114 &-4043142195659186739
 MonoBehaviour:
   m_ObjectHideFlags: 0

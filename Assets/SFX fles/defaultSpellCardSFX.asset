@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e4dc7d24b225640a1bf1ebc2260221, type: 3}
   m_Name: defaultSpellCardSFX
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 74c547d2bc4c7462ba21369f842b3f8c, type: 3}
-  volume: 0.2
+  clip: {fileID: 8300000, guid: dd64ad88ae3686a4aa6439d15de0f292, type: 3}
+  volume: 0.3
+  id: defaultspellsfx
+  cooldownTime: 0.01

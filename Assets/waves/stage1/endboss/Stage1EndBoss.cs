@@ -116,16 +116,14 @@ public class Stage1EndBoss : EnemyBossWave
 
     void StartPattern3() {
         SwitchToBoss();
-        Coroutine pattern3 = StartCoroutine(Pattern3());
+        currentBoss.shooting.StartShooting(Pattern3());
         currentBoss.bosshealth.OnDeath += EndStage;
     }
 
     void EndStage() {
+        currentBoss.bosshealth.OnDeath -= EndStage;
         EndPhase();
         Invoke("Collect", 0.1f);
-        bossImage.transform.position = new Vector2(0, 0);
-        bossImage.SetActive(true);
-        currentBoss.bosshealth.OnDeath -= EndStage;
         StartCoroutine(DialogueManager.StartDialogue(endFightDialogue, NextStage));
     
     }
@@ -156,7 +154,6 @@ public class Stage1EndBoss : EnemyBossWave
 
                     if (punchbul&&punchbul.gameObject.activeInHierarchy)
                     {
-                        Debug.Log("boom!");
                         Vector2 pos = punchbul.transform.position;
                         Bullet explode = Instantiate(explosion, pos, Quaternion.identity);
                         ExplodingAndBack(pos);

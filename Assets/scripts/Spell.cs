@@ -10,7 +10,7 @@ public class Spell : MonoBehaviour
     public float invulTimer;
     void Start()
     {
-        sfx.PlayClip();
+        AudioManager.current.PlaySFX(sfx);
         Invoke("DestroyBomb", invulTimer + 2f);
     }
 

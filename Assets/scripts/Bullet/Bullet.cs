@@ -13,7 +13,8 @@ public class Bullet : MonoBehaviour, IPooledObject
     [SerializeField] ParticleSystem hitParticles = default;
     [SerializeField] float size = 0.7f;
     [SerializeField] bool spawnAnimation = true;
-
+    public bool playSpawnSound = true;
+    public SFX spawnSound = default;
     public void Deactivate()
     {
         
@@ -43,6 +44,7 @@ public class Bullet : MonoBehaviour, IPooledObject
             SetParticle(particle);
             Destroy(particle.gameObject, 0.4f);
         }
+        
     }
     void SetParticle(ParticleSystem system)
     {
