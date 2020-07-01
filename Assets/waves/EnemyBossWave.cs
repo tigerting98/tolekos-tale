@@ -58,6 +58,7 @@ public class EnemyBossWave : EnemyWave
             PlayLifeDepletedSound();
             currentBoss.shooting.StopAllCoroutines();
             currentBoss.movement.StopMoving();
+            currentBoss.enemyAudio.StopAllCoroutines();
             GameManager.DestoryAllEnemyBullets();
             GameManager.DestroyAllNonBossEnemy(true);
             if (currentUI)
@@ -90,20 +91,23 @@ public class EnemyBossWave : EnemyWave
         {
             Debug.Log(ex);
         }
+
+      
     }
 
     protected virtual void SwitchToBoss()
     {
-        try
-        {
-            currentBoss.gameObject.SetActive(true);
-            currentBoss.transform.position = bossImage.transform.position;
-            bossImage.GetComponent<SpriteRenderer>().enabled = false;
-        }
-        catch (Exception ex)
-        {
-            Debug.Log(ex);
-        }
+         try
+         {
+             currentBoss.gameObject.SetActive(true);
+             currentBoss.transform.position = bossImage.transform.position;
+             bossImage.GetComponent<SpriteRenderer>().enabled = false;
+         }
+         catch (Exception ex)
+         {
+             Debug.Log(ex);
+         }
+      
     }
 
 }

@@ -21,6 +21,7 @@ MonoBehaviour:
   enemyAudio: {fileID: 0}
   name: The Big Bad One
   bosshealth: {fileID: -2720052727061517675}
+  hitbox: {fileID: 957944301124248136}
 --- !u!114 &-2720052727061517675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,7 +59,6 @@ MonoBehaviour:
   hp: {fileID: 0}
   canDie: 1
   experience: 150
-  endBoss: 0
 --- !u!1001 &957944300902104566
 PrefabInstance:
   m_ObjectHideFlags: 0

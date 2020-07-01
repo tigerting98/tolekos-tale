@@ -9,6 +9,7 @@ public class PlayerHealthBar : HealthBar
     {
         SetVisible();
         SetHealth(GameManager.player.health);
+        SetTaker(GameManager.player.GetComponent<DamageTaker>());
     }
 
     // Update is called once per frame

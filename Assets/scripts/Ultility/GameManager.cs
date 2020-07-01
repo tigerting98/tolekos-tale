@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public static LevelDescription levelDescription = null;
 
-    public static Enemy currentBoss = null;
+    public static Boss currentBoss = null;
 
     public static void Reset() {
         victory = false;

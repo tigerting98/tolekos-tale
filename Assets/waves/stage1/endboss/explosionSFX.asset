@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: explosionSFX
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 39c9c2827c4e4475286d0da6e5e76c5d, type: 3}
-  volume: 0.4
+  volume: 0.2
+  id: 
+  cooldownTime: 0.01

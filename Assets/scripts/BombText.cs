@@ -15,7 +15,6 @@ public class BombText : MonoBehaviour
     void Start()
     {
         bombSprites = new List<GameObject>();
-        Debug.Log("Started");
         for (int i = 0; i < maxBombs; i++)
         {
             GameObject bomb = Instantiate(bombSprite, bombLocation.transform);

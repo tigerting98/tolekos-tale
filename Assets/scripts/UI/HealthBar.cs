@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System.Diagnostics;
+
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] Text text = default;
+    [SerializeField] TextMeshProUGUI text = default;
     [SerializeField] Slider slider = default;
-    [SerializeField]protected Health health = default;
+    [SerializeField] protected Health health = default;
+    [SerializeField] protected DamageTaker taker = default;
     [SerializeField] bool visible = true;
-    [SerializeField] Text title = default;
+    [SerializeField] TextMeshProUGUI title = default;
+    [SerializeField] TextMeshProUGUI waterResistText;
+    [SerializeField] TextMeshProUGUI earthResistText;
+    [SerializeField] TextMeshProUGUI fireResistText;
     float currentHP = 0;
     float lastKnownMax = 0;
  
@@ -41,12 +48,22 @@ public class HealthBar : MonoBehaviour
         currentHP = hp.GetCurrentHP();
         lastKnownMax = hp.maxHP;
     }
+    public void SetTaker(DamageTaker taker) {
+        this.taker = taker;
+    }
+
+    public void SetResist() {
+        waterResistText.text = ((int)(taker.WaterMultiplier*100)).ToString() + "%";
+        earthResistText.text = ((int)(taker.EarthMultiplier * 100)).ToString() + "%";
+        fireResistText.text = ((int)(taker.FireMultiplier * 100)).ToString() + "%";
+    }
     public virtual void Update()
     {
         lastKnownMax = health == null ? lastKnownMax : health.maxHP;
         currentHP = health == null ? 0 : health.GetCurrentHP();
         text.text = "Health : " + ((int)currentHP).ToString() + "/" + lastKnownMax.ToString();
         slider.value = health.maxHP == 0 ? 0 : currentHP / health.maxHP;
+        SetResist();
     }
   
     

@@ -19,7 +19,6 @@ public class BasicDroppable : MonoBehaviour
     void DropItems() {
         
         if (Random.Range(0f, 1f) <= chanceToDropCoins) {
-            Debug.Log("dropped");
             Coin coin = Instantiate(this.coin, transform.position, Quaternion.identity);
             coin.goldAmount = Random.Range(minGold, maxGold + 1);
         }

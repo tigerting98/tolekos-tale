@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: enemydeathSFX
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 91be065b594ee9e489fd74f0e2f0bb19, type: 3}
-  volume: 0.4
+  volume: 0.13
   id: defaultenemydeath
   cooldownTime: 0.05

@@ -15,7 +15,6 @@ public class Bomb : MonoBehaviour
     {
         Bullet bul = other.GetComponent<Bullet>();
         if (bul) {
-            //Destroy(bul.gameObject);
             bul.Deactivate();
  
         }

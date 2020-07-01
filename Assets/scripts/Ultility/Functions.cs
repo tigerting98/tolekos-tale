@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using UnityEditor.Build;
 using UnityEngine;
 //a list of useful utility functions commonly used
 public class Functions : MonoBehaviour
@@ -83,20 +84,22 @@ public class Functions : MonoBehaviour
         float distance = Mathf.Infinity;
         foreach (GameObject item in GameManager.enemies.Values)
         {
+           
             Vector2 pos = item.transform.position;
-            if (WithinBounds(pos, 4.1f)) 
-            {
-                float dist = (pos - origin).magnitude;
-
-                if (dist < distance)
+                if (WithinBounds(pos, 4.1f))
                 {
-                    distance = dist;
-                    obj = item;
+                    float dist = (pos - origin).magnitude;
 
-                }
-            }
+                    if (dist < distance)
+                    {
+                        distance = dist;
+                        obj = item;
 
+                    }
+                } 
         }
+
+        
 
         return obj;
     }

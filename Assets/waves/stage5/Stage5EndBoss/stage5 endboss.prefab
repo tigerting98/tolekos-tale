@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7945233418130177188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4668363733852199965}
+  - component: {fileID: -4305600891919636960}
+  m_Layer: 0
+  m_Name: stage5 endboss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4668363733852199965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945233418130177188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1301.1193, y: 948.6191, z: -90.908165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4305600891919636960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945233418130177188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7712cbcd0416514784424348294e6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnSound: {fileID: 0}
+  boss: {fileID: 0}
+  bossImage: {fileID: 0}
+  namesOfSpellCards: []
+  nextLevel: {fileID: 0}
+  ui: {fileID: 9172258930565150853, guid: 61f657deda4becf43bcb58ed87351be1, type: 3}
+  waterprefab: {fileID: 1806583198196191237, guid: 831046c0a97f4d845886a24da33b496c,
+    type: 3}
+  earthprefab: {fileID: 1806583198196191237, guid: 5a6498164dd0bd847be21c40d5417005,
+    type: 3}
+  fireprefab: {fileID: 1806583198196191237, guid: 376fe122084c8144cabfe9db0cabdb01,
+    type: 3}
+  waterBoss: {fileID: 0}
+  earthBoss: {fileID: 0}
+  fireBoss: {fileID: 0}

@@ -58,6 +58,7 @@ public class Stage4MidBoss : EnemyBossWave
 
     void EndPhase1() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase1;
+        currentBoss.GetComponent<BulletOrientation>().Reset();
         EndPhase();
         Invoke("StartPhase2", endPhaseTransition);
 
@@ -68,7 +69,6 @@ public class Stage4MidBoss : EnemyBossWave
     }
     void Phase2() {
         SwitchToBoss();
-        currentBoss.GetComponent<BulletOrientation>().Reset();
         currentBoss.transform.rotation = Quaternion.identity;
         currentBoss.shooting.StartCoroutine(Pattern2());
         currentBoss.bosshealth.OnDeath += End;

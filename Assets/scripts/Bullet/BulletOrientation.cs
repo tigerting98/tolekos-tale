@@ -26,6 +26,7 @@ public class BulletOrientation : MonoBehaviour
 
 
     }
+  
     private void OnEnable()
     {
         angle = transform.rotation.z;
