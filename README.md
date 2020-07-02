@@ -22,11 +22,7 @@ The scripts inside the Asset/scripts folders are in charge of the game logic, UI
 We have refactored most of the backend scripts to allow for easy extension. We have however, not refactored our audio and sound effect system. We will look to improve that by Milestone 3.
 
 ### How to install and test the game:
-Download the game from: https://drive.google.com/file/d/1tbSc_yT6DndrvMSS59qmOkV1HCFbjpBd/view?usp=sharing
-**Or**
-Simply download Toleko's Tale.exe from this repository.
-
-Download and run the .exe file and simply install the game. Play the game!
+Download from the latest release and simply install the game using the .exe file.
 
 If you are unable to install the .exe file, you can download the zip file here:
 https://drive.google.com/file/d/1BG2fCIZV_zzaaoU2px1Q4n5hXnMo7Fjb/view?usp=sharing
