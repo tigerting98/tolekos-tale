@@ -2183,6 +2183,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1499300016}
     m_Modifications:
+    - target: {fileID: 849787164949987875, guid: 9e3562343496df64faf3d69b9923db5d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.62994766
+      objectReference: {fileID: 0}
     - target: {fileID: 1715961104116161015, guid: 9e3562343496df64faf3d69b9923db5d,
         type: 3}
       propertyPath: m_Interactable
@@ -2268,6 +2273,23 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6189775903651794084, guid: 9e3562343496df64faf3d69b9923db5d,
+        type: 3}
+      propertyPath: m_text
+      value: 'Toleko
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189775903651794084, guid: 9e3562343496df64faf3d69b9923db5d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189775903651794084, guid: 9e3562343496df64faf3d69b9923db5d,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6317421326845636935, guid: 9e3562343496df64faf3d69b9923db5d,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2277,6 +2299,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6527541263882283107, guid: 9e3562343496df64faf3d69b9923db5d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.62994766
       objectReference: {fileID: 0}
     - target: {fileID: 6733830815496607570, guid: 9e3562343496df64faf3d69b9923db5d,
         type: 3}
