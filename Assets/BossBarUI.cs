@@ -35,7 +35,7 @@ public class BossBarUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.currentBoss)
+        if (!GameManager.currentBoss||!GameManager.currentBoss.gameObject.activeInHierarchy)
         {
             bossBar.transform.localScale = Scaled(0);
         }

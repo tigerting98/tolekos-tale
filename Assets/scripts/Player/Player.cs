@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     [SerializeField] Bullet fireFocus = default, fireUnfocus = default;
     public event Action ActivateSpell;
     public event Action ChangeMode;
+    public bool shootingEnabled = true;
     public DamageType mode;
     // Start is called before the first frame update
 
@@ -96,7 +97,7 @@ public class Player : MonoBehaviour
             isFocus = false;
         }
 
-        if (Input.GetKey(KeyCode.Z))
+        if (shootingEnabled&&Input.GetKey(KeyCode.Z))
         {
             isFiring = true;
         }
@@ -119,7 +120,7 @@ public class Player : MonoBehaviour
             ChangeMode?.Invoke();
 
         }
-        if (Input.GetKeyDown(KeyCode.X)) {
+        if (shootingEnabled&&Input.GetKeyDown(KeyCode.X)) {
            ActivateSpell?.Invoke();
         }
     }

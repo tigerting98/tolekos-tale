@@ -19,8 +19,9 @@ MonoBehaviour:
   damagetaker: {fileID: 2134442949467112846}
   collider: {fileID: 1435747790013368352}
   enemyAudio: {fileID: 5026594268607588289}
-  name: Boss
+  name: fireboss
   bosshealth: {fileID: 4965199016690712829}
+  hitbox: {fileID: 0}
 --- !u!1001 &2208875181019130472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28,6 +29,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: listOfHp.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: listOfHp.Array.data[2]
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: listOfHp.Array.data[3]
+      value: 18000
+      objectReference: {fileID: 0}
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: listOfHp.Array.data[0]
+      value: 30000
+      objectReference: {fileID: 0}
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: listOfHp.Array.data[1]
+      value: 32000
+      objectReference: {fileID: 0}
     - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: WaterMultiplier
@@ -103,6 +129,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6237686821007657055, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: m_Color.r
@@ -111,13 +147,19 @@ PrefabInstance:
     - target: {fileID: 6237686821007657055, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6237686821007657055, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6237686821007657055, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 60ed6bd4fafce2b4cb5e7e7c43ec19b7,
+        type: 3}
     m_RemovedComponents:
     - {fileID: -4821386601786655032, guid: accf02acb6bfae242b167b6bda0e8e8e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: accf02acb6bfae242b167b6bda0e8e8e, type: 3}

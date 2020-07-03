@@ -14,6 +14,10 @@ public class DialogueManager : MonoBehaviour
         OnNextLine = () => GetNextLine(dialogue, OnFinishDialogue);
         OnNextLine();
         yield return new WaitForSeconds(0.3f);
+        if (GameManager.player)
+        {
+            GameManager.player.shootingEnabled = false;
+        }
         GameManager.gameInput.OnPressZ += OnNextLine;
         GameManager.gameInput.OnPressEnter += OnNextLine;
 
@@ -33,6 +37,9 @@ public class DialogueManager : MonoBehaviour
             GameManager.dialogueUI.SetInactive();
             GameManager.gameInput.OnPressZ -= OnNextLine;
             GameManager.gameInput.OnPressEnter -= OnNextLine;
+            if (GameManager.player) {
+                GameManager.player.shootingEnabled = true;
+            }
             OnFinishDialogue();
 
         }

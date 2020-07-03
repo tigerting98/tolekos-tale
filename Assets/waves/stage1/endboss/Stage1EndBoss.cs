@@ -72,8 +72,7 @@ public class Stage1EndBoss : EnemyBossWave
 
         currentBoss = Instantiate(boss, initialPosition, Quaternion.identity);
         GameManager.currentBoss = currentBoss;
-        //SwitchToBoss();
-        Destroy(bossImage);
+        SwitchToBoss();
         currentBoss.shooting.StartShooting(Pattern1(currentBoss));
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
         

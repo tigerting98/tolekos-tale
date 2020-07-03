@@ -55,6 +55,15 @@ MonoBehaviour:
     type: 3}
   fireprefab: {fileID: 1806583198196191237, guid: 376fe122084c8144cabfe9db0cabdb01,
     type: 3}
-  waterBoss: {fileID: 0}
-  earthBoss: {fileID: 0}
-  fireBoss: {fileID: 0}
+  waterimageprefab: {fileID: 5282458767116229179, guid: e7d9bf71b2b2fe743b9a4c84e1c80b29,
+    type: 3}
+  earthimageprefab: {fileID: -1393600079109880518, guid: 2c31eb44c2a57994d96591c69ba12063,
+    type: 3}
+  fireimageprefab: {fileID: -2705754089135847788, guid: 2e4c2147836edf74bb9e15019860af02,
+    type: 3}
+  movespeed: 10
+  waterspawnlocation: {x: -1, y: 2}
+  earthspawnlocation: {x: 0, y: 2}
+  firespawnlocation: {x: 1, y: 2}
+  preFightDialogue1: {fileID: 11400000, guid: 71b739f075976bd46bb984bbb527a2b6, type: 2}
+  preFightDialogue2: {fileID: 11400000, guid: 1a32d309840691047b8c562175f50424, type: 2}
