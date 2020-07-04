@@ -46,7 +46,12 @@ MonoBehaviour:
   bulletSpawnSound: {fileID: 0}
   boss: {fileID: 0}
   bossImage: {fileID: 0}
-  namesOfSpellCards: []
+  namesOfSpellCards:
+  - Water girl\n~Icicles and Snowflakes~
+  - 
+  - 
+  - 
+  - 
   nextLevel: {fileID: 0}
   ui: {fileID: 9172258930565150853, guid: 61f657deda4becf43bcb58ed87351be1, type: 3}
   waterprefab: {fileID: 1806583198196191237, guid: 831046c0a97f4d845886a24da33b496c,
@@ -67,3 +72,25 @@ MonoBehaviour:
   firespawnlocation: {x: 1, y: 2}
   preFightDialogue1: {fileID: 11400000, guid: 71b739f075976bd46bb984bbb527a2b6, type: 2}
   preFightDialogue2: {fileID: 11400000, guid: 1a32d309840691047b8c562175f50424, type: 2}
+  firedmg1: 350
+  fireshotRate1: 0.2
+  fireSpeed1: 2.1
+  fireanglespread1: 18
+  fireradius1: 0.5
+  earthdmg1: 400
+  earthshotRate1: 1.5
+  earthspeed1: 1.4
+  earthspread1: 20
+  earthnumber1: 30
+  waterdmg1: 365
+  watershotrate1: 0.12
+  waterangularvel1: 73
+  waterspeed1: 1.5
+  circledist1: 1
+  circlespeed1: 1
+  waterspeeddiff: 0.3
+  waternumber1: 5
+  movespeed1: 0.5
+  radiusmovement1: 1
+  waterorigin1: {x: 0, y: 2.5}
+  startingPoint2: {x: 0, y: 2.1}

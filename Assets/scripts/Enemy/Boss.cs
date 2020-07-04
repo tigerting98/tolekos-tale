@@ -20,11 +20,14 @@ public class Boss : Enemy
     // Update is called once per frame
 
     protected void SetUpBar() {
-        bar.SetVisible();
-        bar.SetTaker(gameObject.GetComponent<DamageTaker>());
-        bar.SetTitle(name);
-        bar.SetHealth(gameObject.GetComponent<Health>());
-        bar.bosshealth = bosshealth;
+        if (bar)
+        {
+            bar.SetVisible();
+            bar.SetTaker(gameObject.GetComponent<DamageTaker>());
+            bar.SetTitle(name);
+            bar.SetHealth(gameObject.GetComponent<Health>());
+            bar.bosshealth = bosshealth;
+        }
     }
     public override void OnEnable()
     {

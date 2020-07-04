@@ -8,6 +8,7 @@ public class Stage5Boss : Boss
     public override void OnEnable()
     {
         GameManager.enemies.Add(gameObject.GetInstanceID(), gameObject);
+        SetUpBar();
 
     }
     public void SetUpBossHealthbar(BossHealthBar bar) {

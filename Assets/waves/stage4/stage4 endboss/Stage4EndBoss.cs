@@ -69,6 +69,11 @@ public class Stage4EndBoss : EnemyBossWave
 
     }
     IEnumerator PreFight1() {
+        try
+        {
+            GameObject.Find("stage4quad").GetComponent<Animator>().SetTrigger("StopMoving");
+        }
+        catch (Exception ex) { Debug.Log(ex.ToString()); }
         BulletOrientation circle = Instantiate(fireCircle, spawnLocation, Quaternion.identity);
         yield return new WaitForSeconds(delaybeforeSpinning);
         circle.SetCustomAngularVel(t => spinAcceleration * t);

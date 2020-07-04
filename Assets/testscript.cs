@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class testscript : MonoBehaviour
+public class BossBarUI : MonoBehaviour
 {
     [SerializeField] BossHealth health;
     [SerializeField] Image hpbar;
@@ -20,6 +20,7 @@ public class testscript : MonoBehaviour
         if (health) {
             hpbar.fillAmount = health.GetCurrentHP() / health.maxHP;
        }
+        transform.rotation = Quaternion.identity;
     }
 }
 
