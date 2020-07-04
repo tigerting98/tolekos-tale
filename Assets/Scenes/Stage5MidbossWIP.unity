@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -576,6 +576,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1245088903}
   - component: {fileID: 1245088902}
+  - component: {fileID: 1245088907}
+  - component: {fileID: 1245088906}
+  - component: {fileID: 1245088905}
+  - component: {fileID: 1245088904}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -647,6 +651,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1245088904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245088901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6dd4eefcb8d594493474757143088d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  deathEffects: {fileID: 0}
+  movement: {fileID: 0}
+  shooting: {fileID: 0}
+  damagetaker: {fileID: 0}
+  collider: {fileID: 0}
+  enemyAudio: {fileID: 0}
+  name: Boss
+  bosshealth: {fileID: 0}
+  hitbox: {fileID: 0}
+--- !u!114 &1245088905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245088901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d26f0cb3646b7428497ac7fbe77bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentVelocity: {x: 0, y: 0}
+  time: 0
+  destroyBoundary: 4.5
+--- !u!114 &1245088906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245088901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0149cb00bda4e47a7d0283c69e15eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 0}
+  deathSound: {fileID: 0}
+  hp: {fileID: 0}
+  canDie: 1
+  experience: 10
+--- !u!114 &1245088907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245088901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206ef2f95d7fd614e93bb7bc55d3bcf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 1000
+  canDie: 1
 --- !u!1001 &1252413216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1387,7 +1459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1931965795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,7 +1472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc63cd80b636e541abd0b885eb3e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e, type: 3}
+  wave: {fileID: 3696897607128456916, guid: a5221c94acbfd4744a9bf0b8b2b0ad65, type: 3}
   playerLevel: 20
 --- !u!4 &1931965796
 Transform:
