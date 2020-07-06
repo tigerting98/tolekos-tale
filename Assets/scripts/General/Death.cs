@@ -25,13 +25,16 @@ public class Death : MonoBehaviour
     {
         
     }
-    public virtual void Die()
-    {
+    protected void GeneralDie() {
         OnDeath?.Invoke();
         PlayerStats.GainEXP(this.experience);
         GameObject exp = Instantiate(explosion, transform.position, Quaternion.identity);
         AudioManager.current.PlaySFX(deathSound);
         Destroy(exp, 1f);
+    }
+    public virtual void Die()
+    {
+        GeneralDie();
 
          Destroy(gameObject);
         

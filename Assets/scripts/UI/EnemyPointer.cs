@@ -32,7 +32,7 @@ public class EnemyPointer : MonoBehaviour
         if (GameManager.currentBoss)
         {
             sprite.enabled = true;
-            transform.position = new Vector2(GameManager.currentBoss.transform.position.x, transform.position.y);
+            transform.position = new Vector2(GameManager.currentBoss.transform.position.x, -4.2f);
         }
         else {
             sprite.enabled = false;

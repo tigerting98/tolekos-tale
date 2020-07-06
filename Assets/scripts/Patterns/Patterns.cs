@@ -3,6 +3,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class Patterns : MonoBehaviour
@@ -48,7 +49,25 @@ public class Patterns : MonoBehaviour
         
     }
 
+    public static List<Bullet> RingAroundBossAimAtPlayer(Bullet bullet, float dmg, Vector2 centre, float radius, float speed, int number) {
+        List<Bullet> bullets = new List<Bullet>();
+        for (int i = 0; i < number; i++) {
+            Vector2 pos = centre + new Polar(radius, i * 360 / number).rect;
+            float angle = Functions.AimAt(pos, GameManager.playerPosition);
+            bullets.Add(ShootStraight(bullet, dmg, pos, angle, speed));
+        }
+        return bullets;
+    }
 
+    public static List<Bullet> BulletSpreadingOut(Bullet bullet, float dmg, Vector2 origin, float initialSpeed, float speedDiff, float angle, int number) {
+        List<Bullet> bullets = new List<Bullet>();
+        for (int i = 0; i < number; i++)
+        {
+
+            bullets.Add(ShootStraight(bullet, dmg, origin, angle, initialSpeed + speedDiff*i));
+        }
+        return bullets;
+    }
 
     public static float AimAt(Vector2 shooter, Vector2 target)
     {

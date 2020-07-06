@@ -72,12 +72,16 @@ MonoBehaviour:
   firespawnlocation: {x: 1, y: 2}
   preFightDialogue1: {fileID: 11400000, guid: 71b739f075976bd46bb984bbb527a2b6, type: 2}
   preFightDialogue2: {fileID: 11400000, guid: 1a32d309840691047b8c562175f50424, type: 2}
-  firedmg1: 350
+  blue: {r: 0, g: 0.77201605, b: 1, a: 1}
+  green: {r: 0, g: 1, b: 0.10847831, a: 1}
+  red: {r: 1, g: 0, b: 0, a: 1}
+  pointer: {fileID: 8580154745028077592, guid: 7d36aae527e49f0468cc33726fd90704, type: 3}
+  firedmg1: 210
   fireshotRate1: 0.2
   fireSpeed1: 2.1
   fireanglespread1: 18
   fireradius1: 0.5
-  earthdmg1: 400
+  earthdmg1: 210
   earthshotRate1: 1.5
   earthspeed1: 1.4
   earthspread1: 20
@@ -94,3 +98,35 @@ MonoBehaviour:
   radiusmovement1: 1
   waterorigin1: {x: 0, y: 2.5}
   startingPoint2: {x: 0, y: 2.1}
+  snowflakedmg2: 375
+  snowflakespinningVel2: 24
+  snowflakerandomfactor2: 5
+  snowspeedmin: 3
+  snowspeedmax: 4
+  spawnRatesnow: 0.08
+  icicledmg2: 385
+  spreadrange2: 15
+  anglepershot2: 4.1
+  shotrateicicle2: 0.07
+  iciclespeed2: 1.9
+  spawnradius2: 0.5
+  startingPoint3: {x: 0, y: 1.5}
+  y3: 3
+  radius3: 1
+  bulletspeed3nonmain: 2.5
+  bulletdmg3nonmain: 215
+  bulletpulserate3: 1
+  bossmovespeed3: 0.5
+  x3: 3
+  ringnumber3: 15
+  angularvel3: 201
+  shotrate3: 0.045
+  pulseduration3: 1.5
+  bulletspeed3main: 2
+  bulletspeeddiff3: 0.15
+  bulletdmg3main: 390
+  delay3: 0.5
+  bigdmg3: 900
+  bigspeed3: 0.5
+  bigduration3: 3
+  number3main: 3

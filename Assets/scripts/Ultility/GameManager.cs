@@ -7,6 +7,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static PauseMenu pauseMenu;
+    public static DeathScene deathMenu;
+    public static bool death = false;
     public static Player player;
     public static Camera mainCamera;
     public static SceneLoader sceneLoader;

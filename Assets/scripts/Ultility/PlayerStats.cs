@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    public static int deathCount = 0;
     public static int baseDmg = 10;
     public static int baseMaxHP = 1000;
     public static Player player;
@@ -25,7 +26,7 @@ public class PlayerStats : MonoBehaviour
     public static int gold = 0;
     public static event Action OnGainExp;
     public static event Action OnGainGold;
-    public static event Action OnUseBomb;
+    public static event Action OnUpdateBomb;
     public static int maxBomb = 10;
     public static int bombCount = 3;
 
@@ -34,7 +35,7 @@ public class PlayerStats : MonoBehaviour
 
     public static void UseBomb() {
         bombCount--;
-        OnUseBomb?.Invoke();
+        OnUpdateBomb?.Invoke();
     }
     public static void AddGold(int gold) {
         PlayerStats.gold += gold;
@@ -61,6 +62,7 @@ public class PlayerStats : MonoBehaviour
 
     public static void Reset()
     {
+        deathCount = 0;
         bombDamage = 1000;
         playerLevel = 1;
         exp = 0;
@@ -72,7 +74,7 @@ public class PlayerStats : MonoBehaviour
         bombCount = 3;
         OnGainExp = null;
         OnGainGold = null;
-        OnUseBomb = null;
+        OnUpdateBomb = null;
     }
     public static void LevelUp()
     {

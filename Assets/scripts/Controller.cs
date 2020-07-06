@@ -5,22 +5,21 @@ using UnityEngine.EventSystems;
 
 public class Controller : MonoBehaviour
 {
-    [SerializeField] PauseMenu PauseMenu = default;
-    [SerializeField] GameObject resumeButton = default;
+   
     
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && !GameManager.death)
+        {
             Time.timeScale = 0;
-            if (GameManager.player) {
+            if (GameManager.player)
+            {
                 GameManager.player.enabled = false;
                 GameManager.gameInput.enabled = false;
             }
-            PauseMenu.gameObject.SetActive(true);
+            GameManager.pauseMenu.gameObject.SetActive(true);
             gameObject.SetActive(false);
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(resumeButton);
 
         }
     }

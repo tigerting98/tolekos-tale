@@ -21,7 +21,7 @@ public class BombText : MonoBehaviour
             bombSprites.Add(bomb);
         }
         UpdateBomb();
-        PlayerStats.OnUseBomb += UpdateBomb;
+        PlayerStats.OnUpdateBomb += UpdateBomb;
     }
 
     // Update is called once per frame
@@ -36,6 +36,6 @@ public class BombText : MonoBehaviour
 
     private void OnDestroy()
     {
-        PlayerStats.OnUseBomb -= UpdateBomb;
+        PlayerStats.OnUpdateBomb -= UpdateBomb;
     }
 }

@@ -8,7 +8,6 @@ using System.Transactions;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] SceneLoader loader = default;
     [SerializeField] TextMeshProUGUI text = default;
     [SerializeField] Controller controller = default;
     [SerializeField] GameObject warningMenu = default;
@@ -17,14 +16,21 @@ public class PauseMenu : MonoBehaviour
     private GameObject lastSelected;
     private void Awake()
     {
+        GameManager.pauseMenu = this;
         warningMenu.SetActive(false);
         gameObject.SetActive(false);
+
     }
 
     private void OnEnable() {
-        lastSelected = EventSystem.current.currentSelectedGameObject;
+        EventSystem.current.SetSelectedGameObject(null);
+        StartCoroutine("Enable");
     }
-
+    IEnumerator Enable() {
+        yield return new WaitForSecondsRealtime(0.1f);
+        EventSystem.current.SetSelectedGameObject(resumeButton.gameObject);
+        lastSelected = resumeButton.gameObject;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -33,7 +39,7 @@ public class PauseMenu : MonoBehaviour
         if (current != lastSelected && current != null) {
             lastSelected = current;
         }
-        if (EventSystem.current.currentSelectedGameObject == null && lastSelected.activeInHierarchy) 
+        if (EventSystem.current.currentSelectedGameObject == null && lastSelected&&lastSelected.activeInHierarchy) 
         {
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -73,7 +79,7 @@ public class PauseMenu : MonoBehaviour
     public void Quit()
     {
         Resume();
-        loader.ReturnToStartPage();
+        GameManager.sceneLoader.ReturnToStartPage();
     }
     public void OpenWarning()
     {
