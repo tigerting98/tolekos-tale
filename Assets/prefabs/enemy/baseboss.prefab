@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6313726}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -322,6 +322,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: -2720052727061517675}
   hpbar: {fileID: 6403130509708914724}
+  emptyhpbar: {fileID: 992308745437133869}
+  reducedOpacity: 0.25
+  radiusbeforeReducing: 1.3
 --- !u!1001 &957944300902104566
 PrefabInstance:
   m_ObjectHideFlags: 0

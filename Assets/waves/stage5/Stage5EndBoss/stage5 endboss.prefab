@@ -48,7 +48,7 @@ MonoBehaviour:
   bossImage: {fileID: 0}
   namesOfSpellCards:
   - Water girl\n~Icicles and Snowflakes~
-  - 
+  - Earth prison ~Morphing Rock Walls~
   - 
   - 
   - 
@@ -130,3 +130,37 @@ MonoBehaviour:
   bigspeed3: 0.5
   bigduration3: 3
   number3main: 3
+  treerockspeed4: 3
+  treerockdmg4: 1000
+  shotRate4: 0.06
+  unitspercircle4: 1.5
+  acceleration4: 0.3
+  time4: 5
+  delay4: 3
+  dmg4ball: 390
+  size4: 0.65
+  spacing4: 1.2
+  randomfactor4: 0.5
+  pulseRate4: 8
+  startingPoint5: {x: 0, y: 2.5}
+  y5: 3
+  radius5: 0.8
+  bulletspeed5nonmain: 1.4
+  bulletdmg5nonmain: 388
+  bossmovespeed5: 1.2
+  x5: 3
+  angularvel5: 63
+  shotrate5nonmain: 0.8
+  magiccirclenumber5: 5
+  bulletnumber5nonmain: 5
+  shotrate5: 0.08
+  bulletspeed5main: 2.4
+  bulletdmg5main: 500
+  bigdmg5: 900
+  bigspeed5: 0.4
+  bigduration5: 1
+  radiusmain5: 0.5
+  boundaryx: 3
+  maxstepx: 0.8
+  movementpulseduration5: 4
+  startingPoint6: {x: 0, y: 2}

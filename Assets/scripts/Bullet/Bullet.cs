@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour, IPooledObject
 {
 
     public Movement movement;
+    public bool destroyOnDeath = true;
     public BulletOrientation orientation;
     public DamageDealer damageDealer;
     public GameObject explosion;

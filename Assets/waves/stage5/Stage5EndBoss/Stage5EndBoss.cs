@@ -41,6 +41,19 @@ public class Stage5EndBoss : EnemyBossWave
     [SerializeField] int ringnumber3;
     [SerializeField] float angularvel3, shotrate3, pulseduration3, bulletspeed3main, bulletspeeddiff3, bulletdmg3main, delay3, bigdmg3 = 900, bigspeed3 = 3f, bigduration3 = 0.5f;
     [SerializeField] int number3main;
+    [Header("Pattern4")]
+    [SerializeField] float treerockspeed4;
+    [SerializeField] float treerockdmg4;
+    [SerializeField] float shotRate4, unitspercircle4, acceleration4, time4, delay4, dmg4ball, size4 = 0.65f;
+    [SerializeField] float spacing4 = 1.3f, randomfactor4 = 0.5f, pulseRate4 = 7f;
+    [Header("Pattern5")]
+    [SerializeField] Vector2 startingPoint5;
+    [SerializeField] float y5, radius5, bulletspeed5nonmain, bulletdmg5nonmain, bossmovespeed5,x5, angularvel5, shotrate5nonmain;
+    [SerializeField] int magiccirclenumber5, bulletnumber5nonmain;
+    [SerializeField] float shotrate5, bulletspeed5main, bulletdmg5main, bigdmg5 = 900, bigspeed5 = 3f, bigduration5 = 0.5f, radiusmain5;
+    [SerializeField] float boundaryx, maxstepx, movementpulseduration5;
+    [Header("Pattern6")]
+    [SerializeField] Vector2 startingPoint6;
     public override void SpawnWave() {
         waterCircle = GameManager.gameData.waterCircle;
         earthCircle = GameManager.gameData.earthCircle;
@@ -160,35 +173,192 @@ public class Stage5EndBoss : EnemyBossWave
         earthBoss.shooting.StartShooting(MoveLeftAndRight(fireimage, true, x3, y3, bossmovespeed3));
         earthBoss.shooting.StartShooting(MoveLeftAndRight(waterimage, false, x3, y3, bossmovespeed3));
         earthBoss.shooting.StartShooting(Pattern3Main());
+        earthBoss.bosshealth.OnLifeDepleted += EndPhase3;
+    }
+    public void EndPhase3() {
+        earthBoss.bosshealth.OnLifeDepleted -= EndPhase3;
+        SwitchToImage(DamageType.Earth);
+        EndPhase();
+       
+        Invoke("StartPhase4", endPhaseTransition);
+
+    }
+    public void StartPhase4() {
+        float time1 = fireimage.MoveTo(new Vector2(4.5f, 4.5f), movespeed);
+        float time3 = waterimage.MoveTo(new Vector2(-4.5f, 4.5f), movespeed);
+        SpellCardUI(namesOfSpellCards[1]);
+        Invoke("Phase4", spellCardTransition);
+
+    }
+    public void Phase4() {
+        SwitchToBoss(DamageType.Earth);
+        earthBoss.shooting.StartShooting(Functions.RepeatCustomAction(
+            i => {
+                int r = i % 4;
+                SummonRocks(r == 1 || r == 2, r == 2 || r == 3);
+            }, pulseRate4));
+        earthBoss.bosshealth.OnLifeDepleted += EndPhase4;
+    }
+    public void EndPhase4() {
+        earthBoss.bosshealth.OnLifeDepleted -= EndPhase4;
+        EndPhase();
+        SwitchToImage(DamageType.Earth);
+        float time1 = fireimage.MoveTo(startingPoint5, movespeed / 3);
+        float time2 = earthimage.MoveTo(new Vector2(x5,y5), movespeed / 3);
+        float time3 = waterimage.MoveTo(new Vector2(-x5, y5), movespeed / 1.5f);
+        Invoke("Phase5", Math.Max(time1, time2));
+
+    }
+    public void Phase5() {
+        fireBoss = Instantiate(fireprefab, fireimage.transform.position, Quaternion.identity);
+        fireBoss.SetUpBossHealthbar(bossUI.fireHealthBar);
+        Stage5BossPointer firePointer = Instantiate(pointer, new Vector2(0, -4.2f), Quaternion.identity);
+        firePointer.trackingBoss = fireBoss;
+        firePointer.sprite.color = red;
+        SwitchToBoss(DamageType.Fire);
+        SpinningMagicCircles(waterCircle, waterimage.transform, false, 0, GameManager.gameData.snowflake);
+        SpinningMagicCircles(earthCircle, earthimage.transform, true, shotrate5nonmain/2, GameManager.gameData.leafBullet2);
+        fireBoss.shooting.StartShooting(Functions.RepeatAction(
+            ()=> {
+                Vector2 pos = Functions.RandomLocation(fireBoss.transform.position, radiusmain5);
+                ShootChangingBullet2(pos, bigduration5, UnityEngine.Random.Range(0f, 360f));
+
+            },shotrate5));
+        fireBoss.shooting.StartShooting(Functions.RepeatAction(
+            () =>
+            {
+                float currentx = fireBoss.transform.position.x;
+                float x = currentx + (currentx < boundaryx - maxstepx ? currentx > -boundaryx + maxstepx ? UnityEngine.Random.Range(-maxstepx, maxstepx) :
+                UnityEngine.Random.Range(0, maxstepx) : UnityEngine.Random.Range(-maxstepx, 0));
+                fireBoss.movement.MoveTo(new Vector2(x, fireBoss.transform.position.y), bossmovespeed5);
+            }, movementpulseduration5));
+        fireBoss.bosshealth.OnLifeDepleted += EndPhase5;
+    }
+    public void EndPhase5() {
+        fireBoss.bosshealth.OnLifeDepleted -= EndPhase5;
+        EndPhase();
+        SwitchToImage(DamageType.Fire);
+        Invoke("StartPhase6", endPhaseTransition);
+    }
+    public void StartPhase6() {
+        SpellCardUI(namesOfSpellCards[2]);
+        float time1 = waterimage.MoveTo(new Vector2(4.5f, 4.5f), movespeed);
+        float time3 = earthimage.MoveTo(new Vector2(-4.5f, 4.5f), movespeed);
+        float time2 = fireimage.MoveTo(startingPoint6, movespeed);
+        Invoke("Phase6", spellCardTransition);
+           
+    }
+    public void Phase6() {
+        SwitchToBoss(DamageType.Fire);
+    }
+    
+    List<Bullet> SpinningMagicCircles(Bullet magicCircle, Transform origin, bool clockwise, float delay, Bullet bullet) {
+        List<Bullet> buls = new List<Bullet>();
+        float circleangularvelocity = clockwise ? -angularvel5 : angularvel5;
+        for (int i = 0; i < magiccirclenumber5; i++) {
+            float angle = i * 360 / magiccirclenumber5;
+            Bullet circle = Instantiate(magicCircle, (Vector2)(origin.position) + new Polar(radius5, angle).rect, Quaternion.identity);
+            circle.movement.SetPolarPath(t => new Polar(radius5, angle + circleangularvelocity * t));
+            circle.transform.localScale *= 0.5f;
+            circle.GetComponent<Shooting>().StartShootingAfter(Functions.RepeatAction(
+                () => Patterns.RingOfBullets(bullet, bulletdmg5nonmain, circle.transform.position, bulletnumber5nonmain,
+                Functions.AimAt(circle.transform.position, origin.position), bulletspeed5nonmain), shotrate5nonmain), delay);
+            buls.Add(circle);
+          
+        }
+        return buls;
+    }
+    List<Bullet> SummonRocks(bool horizontal, bool up) {
+
+        List<Bullet> buls = new List<Bullet>();
+        for (float i = -3.9f + UnityEngine.Random.Range(0, randomfactor4); i < 3.9f; i += spacing4) {
+            if (horizontal)
+            {
+                buls.Add(SummonRockHorizontal(i, up));
+            }
+            else {
+                buls.Add(SummonRockVertical(i, up));
+            }
+        }
+        return buls;
+    }
+    Bullet SummonRockVertical(float x, bool up) {
+        Bullet ball = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Earth);
+        Bullet treerock = Patterns.ShootStraight(GameManager.gameData.treeRockBullet, treerockdmg4, new Vector2(x, up? -4.2f:4.2f), up?90:-90, treerockspeed4);
+        treerock.GetComponent<Shooting>().StartShooting(Functions.RepeatCustomAction(
+            i => {
+                Vector2 pos = treerock.transform.position;
+                float angle = (up?(pos.y+4f):(4f - pos.y)) / unitspercircle4 * 360f;
+                Bullet bul = Patterns.ShootCustomBullet(ball, dmg4ball, pos,
+             t => t < delay4 - i * shotRate4 + time4 && t > delay4 - i * shotRate4 ? new Polar(acceleration4, angle).rect : new Vector2(0, 0), MovementMode.Acceleration);
+                bul.transform.localScale *= 0.6f;
+           } , shotRate4));
+        return treerock;
+    }
+    Bullet SummonRockHorizontal(float y, bool left) {
+        Bullet ball = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Earth);
+        Bullet treerock = Patterns.ShootStraight(GameManager.gameData.treeRockBullet, treerockdmg4, new Vector2(left ? -4.2f : 4.2f, y), left ? 0 : 180, treerockspeed4);
+        treerock.GetComponent<Shooting>().StartShooting(Functions.RepeatCustomAction(
+            i => {
+                Vector2 pos = treerock.transform.position;
+                float angle = (left ? (pos.x + 4f) : (4f - pos.x)) / unitspercircle4 * 360f;
+                Bullet bul = Patterns.ShootCustomBullet(ball, dmg4ball, pos,
+             t => t < delay4 - i * shotRate4 + time4 && t > delay4 - i * shotRate4 ? new Polar(acceleration4, angle).rect : new Vector2(0, 0), MovementMode.Acceleration);
+                bul.transform.localScale *= size4;
+            }, shotRate4));
+        return treerock;
+
     }
     IEnumerator Pattern3Main() {
         while (earthBoss) {
             for (int i = 0; earthBoss && i < pulseduration3 / shotrate3 + 1; i++)
             {
-                earthBoss.shooting.StartCoroutine(ShootChangingBullet(earthBoss.transform.position, bigduration3, -angularvel3 * shotrate3 * i));
+                ShootChangingBullet1(earthBoss.transform.position, bigduration3, -angularvel3 * shotrate3 * i);
                 yield return new WaitForSeconds(shotrate3);
             }
-            yield return new WaitForSeconds(delay3);
+                yield return new WaitForSeconds(delay3);
             for (int i = 0; earthBoss && i < pulseduration3 / shotrate3 + 1; i++)
             {
-                earthBoss.shooting.StartCoroutine(ShootChangingBullet(earthBoss.transform.position, bigduration3, 180 + angularvel3 * shotrate3 * i));
+                ShootChangingBullet1(earthBoss.transform.position, bigduration3, 180 + angularvel3 * shotrate3 * i);
                 yield return new WaitForSeconds(shotrate3);
             }
             yield return new WaitForSeconds(delay3);
         }
     }
-    
+  
 
-    IEnumerator ShootChangingBullet(Vector2 origin, float duration, float angle) {
-        Bullet bul = Patterns.BurstShoot(GameManager.gameData.rockBullet, bigdmg3, origin, angle,bigspeed3*5, bigspeed3, 0.5f);
+    Bullet ShootChangingBullet2(Vector2 origin, float duration, float angle)
+    {
+        Bullet bul = Patterns.BurstShoot(GameManager.gameData.fireStarBullet, bigdmg5, origin, angle, bigspeed5 * 5, bigspeed5, 0.5f);
+        ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > duration);
+        trigger.OnTriggerEvent += movement =>
+        {
+              Bullet bullet = Patterns.ShootStraight(GameManager.gameData.fireShortLaser, bulletdmg5main, movement.transform.position, 
+                Functions.AimAt(movement.transform.position, GameManager.playerPosition), bulletspeed5main);
+            bullet.transform.localScale *= 0.7f;
+            movement.GetComponent<Bullet>().Deactivate();
+        };
+        bul.movement.triggers.Add(trigger);
+
+        return bul;
+
+    }
+
+    Bullet ShootChangingBullet1(Vector2 origin, float duration, float angle) {
+        Bullet bul = Patterns.BurstShoot(GameManager.gameData.rockBullet, bigdmg3, origin, angle,bigspeed3*5, bigspeed3, 0.3f);
         bul.transform.localScale *= 1.5f;
-        yield return new WaitForSeconds(duration);
-        if (bul) {
-            Patterns.BulletSpreadingOut(GameManager.gameData.leafBullet3, bulletdmg3main, bul.transform.position, bulletspeed3main, bulletspeeddiff3
+        ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > duration);
+        trigger.OnTriggerEvent += movement =>
+        {
+            List<Bullet> buls = Patterns.BulletSpreadingOut(GameManager.gameData.leafBullet3, bulletdmg3main, movement.transform.position, bulletspeed3main, bulletspeeddiff3
                 , angle, number3main);
-            bul.Deactivate();
-            
-        }
+            Functions.Scale(buls, 0.8f);
+            movement.GetComponent<Bullet>().Deactivate();
+        };
+        bul.movement.triggers.Add(trigger);
+
+        return bul;    
+        
     }
     IEnumerator MoveLeftAndRight(Movement move, bool left, float x, float y, float speed) {
         bool movetoleft = left;
@@ -217,7 +387,7 @@ public class Stage5EndBoss : EnemyBossWave
         float time = circle.movement.MoveTo((Vector2)boss.transform.position + location, speed);
         circle.transform.parent = boss.transform;
         yield return new WaitForSeconds(time);
-        if (circle) {
+        if (circle&&circle.gameObject.activeInHierarchy) {
             EnemyPatterns.StartFanningPattern(GameManager.gameData.ellipseBullet.GetItem(DamageType.Water), waterdmg1, circle.GetComponent<Shooting>(),
                 waterspeed1, (left ? -1 : 1) * waterangularvel1, left ? 0 : 180, 1, watershotrate1, waternumber1, waterspeeddiff);
                 
@@ -256,7 +426,7 @@ public class Stage5EndBoss : EnemyBossWave
 
     }
     public void SetUp() {
-        GameObject obj = GameObject.FindObjectOfType<Canvas>().gameObject;
+        GameObject obj = GameObject.Find("gamecanvas");
         bossUI = Instantiate(ui, obj.transform);
         bossUI.transform.localPosition = new Vector2(622, 294);
     }

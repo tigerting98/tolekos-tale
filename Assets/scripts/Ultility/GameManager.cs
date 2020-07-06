@@ -95,7 +95,27 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public static void DestroyAllEnemyBulletsOnDeath() {
+        List<Bullet> toDestroy = new List<Bullet>();
+        foreach (GameObject obj in enemyBullets.Values)
+        {
+            if (obj.TryGetComponent<Bullet>(out Bullet comp))
+            {
+                if (comp.destroyOnDeath)
+                { toDestroy.Add(comp); }
+            }
+        }
 
+        for (int i = 0; i < toDestroy.Count; i++)
+        {
+            GameObject particleEffect = Instantiate(toDestroy[i].explosion, toDestroy[i].transform.position, Quaternion.identity);
+            Destroy(particleEffect, 0.5f);
+            if (toDestroy[i])
+            {
+                toDestroy[i].Deactivate();
+            }
+        }
+    }
     public static void SummonEndBoss() {
 
         OnSummonEndBoss?.Invoke();

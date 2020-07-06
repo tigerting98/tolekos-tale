@@ -1,6 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1764055504055405460
+--- !u!114 &3790279843920862788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3787462808507935226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978b1695037bf83418579d61fd3ac9b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &2190012841346939439
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,8 +21,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1600894606670411424, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
-      propertyPath: damage
-      value: 95
+      propertyPath: destroyOnImpact
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600894606670411424, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: damageOverTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
@@ -70,58 +87,44 @@ PrefabInstance:
     - target: {fileID: 3092768192575656917, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: m_Name
-      value: arrow
+      value: treerock
       objectReference: {fileID: 0}
     - target: {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.18102242
+      value: -0.14804746
       objectReference: {fileID: 0}
     - target: {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.07407885
+      value: 1.2172207
       objectReference: {fileID: 0}
     - target: {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.07407885
+      value: 0.24342956
       objectReference: {fileID: 0}
     - target: {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: m_Offset.y
-      value: 7.721921e-10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3092768192575656919, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 076f5445ce7f0cd418deb0f150141896,
+      objectReference: {fileID: 21300000, guid: 36b35d450d235634b9066d20777d4cb4,
         type: 3}
-    - target: {fileID: 3092768192575656919, guid: 3118ceb8e2dd93e4bb557208bb39870e,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092768192575656919, guid: 3118ceb8e2dd93e4bb557208bb39870e,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092768192575656919, guid: 3118ceb8e2dd93e4bb557208bb39870e,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5304289742371261883, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: bulletPoolID
-      value: stage1arrow
+      value: treerock-0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3118ceb8e2dd93e4bb557208bb39870e, type: 3}
+--- !u!1 &3787462808507935226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3092768192575656917, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2190012841346939439}
+  m_PrefabAsset: {fileID: 0}

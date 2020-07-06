@@ -208,6 +208,9 @@ public class Stage2EndBoss : EnemyBossWave
         Bullet magicCircle1 = EnemyPatterns.SummonMagicCircle(magicCircle, 0,currentBoss.transform, timeToRadius, 210, radius, 0);
         Bullet magicCircle2 = EnemyPatterns.SummonMagicCircle(magicCircle, 0,currentBoss.transform, timeToRadius, 330, radius, 0);
         Bullet magicCircleTop = EnemyPatterns.SummonMagicCircle(magicCircle,0, currentBoss.transform, timeToRadius, 90, radius, 0);
+        magicCircle1.orientation.StartRotating(180);
+        magicCircle2.orientation.StartRotating(-180);
+        magicCircleTop.orientation.StartRotating(97);
         yield return new WaitForSeconds(timeToRadius);
         Shooting top = magicCircleTop.GetComponent<Shooting>();
         top.StartShooting(EnemyPatterns.ShootAtPlayerWithLines(bigBullets.GetItem(DamageType.Fire), dmg1Big, magicCircleTop.transform, bigBulletSpeed1, bigBulletShotRate, bigBulletSpread, bigBulletNumber));

@@ -78,10 +78,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1776018412723234701, guid: 2ac31b5c7e8b5414d90856945636fca1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776018412723234701, guid: 2ac31b5c7e8b5414d90856945636fca1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8922343843710056934, guid: 2ac31b5c7e8b5414d90856945636fca1,
         type: 3}
       propertyPath: bulletPoolID
       value: firecicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8922343843710056934, guid: 2ac31b5c7e8b5414d90856945636fca1,
+        type: 3}
+      propertyPath: destroyOnDeath
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ac31b5c7e8b5414d90856945636fca1, type: 3}

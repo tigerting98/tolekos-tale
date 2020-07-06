@@ -1,5 +1,7 @@
-﻿using System;
+﻿
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEditor.Build;
 using UnityEngine;
 //a list of useful utility functions commonly used
@@ -153,4 +155,12 @@ public class Functions : MonoBehaviour
             return number;
         }
     }
+
+    public static List<T> Scale<T>(List<T> list, float factor) where T : MonoBehaviour{
+        foreach (T item in list) {
+            item.transform.localScale *= factor;
+        }
+        return list;
+    } 
+
 }

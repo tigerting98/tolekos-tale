@@ -47,7 +47,7 @@ public class DeathScene : MonoBehaviour
         GameManager.player.enabled = true;
         GameManager.gameInput.enabled = true;
         PlayerStats.playerCurrentHP = PlayerStats.playerMaxHP;
-        GameManager.DestoryAllEnemyBullets();
+        GameManager.DestroyAllEnemyBulletsOnDeath();
         Time.timeScale = 1f;
         GameManager.death = false;
         gameObject.SetActive(false);

@@ -42,6 +42,7 @@ public class Stage3MidBoss : EnemyBossWave
         float time = bossImage.GetComponent<Movement>().MoveTo(new Vector2(0, spawnLocationY), initialMoveSpeed);
         yield return new WaitForSeconds(time);
         Instantiate(slamEffect, new Vector2(0, spawnLocationY-0.5f), Quaternion.Euler(-90, 0, 0));
+        Destroy(actualCircle.gameObject);
         StartCoroutine(DialogueManager.StartDialogue(preFightDialogue2, Phase1));
 
     }
@@ -49,7 +50,6 @@ public class Stage3MidBoss : EnemyBossWave
     void Phase1() {
         currentBoss = Instantiate(boss, new Vector2(0, spawnLocationY), Quaternion.identity);
         GameManager.currentBoss = currentBoss;
-        actualCircle.transform.SetParent(currentBoss.transform);
         SwitchToBoss();
         currentBoss.shooting.StartCoroutine(Pattern1());
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
@@ -131,6 +131,7 @@ public class Stage3MidBoss : EnemyBossWave
 
     IEnumerator ShootRing(Bullet ring, Bullet ball, Vector2 origin, Vector2 target, float timeToExplode) {
         Bullet ring1 = GameManager.bulletpools.SpawnBullet(ring, origin);
+        ring1.transform.localScale *= 0.5f;
         ring1.movement.destroyBoundary = 5f;
         ring1.movement.MoveTo(target, ringspeed);
         yield return new WaitForSeconds(timeToExplode);
