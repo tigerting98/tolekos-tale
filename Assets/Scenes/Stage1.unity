@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1097,8 +1097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59aff7a11b8e56445bf77e45a576cb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseMenu: {fileID: 0}
-  resumeButton: {fileID: 0}
 --- !u!4 &803639199
 Transform:
   m_ObjectHideFlags: 0
@@ -1786,7 +1784,22 @@ PrefabInstance:
     - target: {fileID: 6037562340857074996, guid: 037c2df11cacda746ba784ee1ea87cf4,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.41960785
+      value: 0.38431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037562340857074996, guid: 037c2df11cacda746ba784ee1ea87cf4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037562340857074996, guid: 037c2df11cacda746ba784ee1ea87cf4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037562340857074996, guid: 037c2df11cacda746ba784ee1ea87cf4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6037562340857074997, guid: 037c2df11cacda746ba784ee1ea87cf4,
         type: 3}
