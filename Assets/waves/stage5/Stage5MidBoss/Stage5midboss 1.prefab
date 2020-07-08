@@ -67,6 +67,17 @@ MonoBehaviour:
   frequency: 0.2
   shotRate1: 0.17
   lines1: 3
-  bookBullet: {fileID: 0}
-  pageBullet: {fileID: 0}
-  groundLaser: {fileID: 0}
+  ringDamage: 300
+  pageDamage: 200
+  laserDamage: 100
+  ringSpeed: 2.5
+  pageSpeedMinY: 0.8
+  pageSpeedMaxY: 1.5
+  pageXFactor: 2
+  laserPositionFactor: 0.3
+  ringPulseRate: 1.4
+  pageShotRate: 0.1
+  laserShotRate: 1.5
+  laserCooldown: 15
+  numberOfBulletsPerRing: 10
+  numberOfLasersPairs: 8

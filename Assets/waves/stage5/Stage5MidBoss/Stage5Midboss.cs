@@ -21,11 +21,11 @@ public class Stage5Midboss : EnemyBossWave
     [SerializeField] int lines1 = 1;
 
     [Header("Pattern2")]
-    [SerializeField] Bullet bookBullet;
-    [SerializeField] Bullet pageBullet;
+    [SerializeField] float ringDamage = 300f, pageDamage = 200f, laserDamage = 100f;
+    [SerializeField] float ringSpeed = 2f, pageSpeedMinY = 1f, pageSpeedMaxY = 2f, pageXFactor = 0.5f, laserPositionFactor = 0.3f;
+    [SerializeField] float ringPulseRate = 2f, pageShotRate = 0.1f, laserShotRate = 1f, laserCooldown = 3f;
+    [SerializeField] int numberOfBulletsPerRing = 20, numberOfLasersPairs = 5;
 
-    [Header("Pattern3")]
-    [SerializeField] Bullet groundLaser;
 
     public override void SpawnWave() {
         
@@ -60,12 +60,13 @@ public class Stage5Midboss : EnemyBossWave
     }
     void StartPhase2() {
         SpellCardUI(namesOfSpellCards[1]);
-        bossImage.GetComponent<Movement>().MoveTo(spawnLocation, 3f);
+        bossImage.GetComponent<Movement>().MoveTo(new Vector2(1f, 2f), 3f);
         Invoke("Phase2", spellCardTransition);
     }
     void Phase2() {
         SwitchToBoss();
         currentBoss.transform.rotation = Quaternion.identity;
+        currentBoss.movement.SetPolarPath(t => new Polar(1f, 103 * t));
         currentBoss.shooting.StartCoroutine(Pattern2());
         currentBoss.bosshealth.OnLifeDepleted  += EndPhase2;
     }
@@ -88,6 +89,11 @@ public class Stage5Midboss : EnemyBossWave
 
     IEnumerator Pattern2()
     {
+        currentBoss.shooting.StartShooting(Functions.RepeatAction(() => Patterns.RingOfBullets(GameManager.gameData.bigBullet.GetItem(DamageType.Water), ringDamage, currentBoss.transform.position, numberOfBulletsPerRing, Random.Range(0f, 360f), ringSpeed), ringPulseRate));
+        currentBoss.shooting.StartShooting(Functions.RepeatAction(() => SpawnRandomVerticalBullet(true), pageShotRate));
+        currentBoss.shooting.StartShooting(Functions.RepeatAction(() => SpawnRandomVerticalBullet(false), pageShotRate));
+        currentBoss.shooting.StartShooting(Functions.RepeatAction(() => currentBoss.shooting.StartShooting(SpawnLaserPillars(true, laserShotRate, numberOfLasersPairs)), laserCooldown));
+        currentBoss.shooting.StartShooting(Functions.RepeatAction(() => currentBoss.shooting.StartShooting(SpawnLaserPillars(false, laserShotRate, numberOfLasersPairs)), laserCooldown));
         yield return new WaitForSeconds(1f);
     }
 
@@ -144,6 +150,39 @@ public class Stage5Midboss : EnemyBossWave
         bullet.movement.triggers.Add(reflectOnBound);
         return bullet;
 
+    }
+
+    Bullet SpawnRandomVerticalBullet(bool down)
+    {
+        Vector2 origin = down ? new Vector2(Random.Range(-4f, 4f), 4.2f) : new Vector2(Random.Range(-4f, 4f), -4.2f);
+        Bullet bul = GameManager.bulletpools.SpawnBullet(GameManager.gameData.pageBullet, origin);
+        bul.SetDamage(pageDamage);
+        float speed = down ? Random.Range(-pageSpeedMaxY, -pageSpeedMinY) : Random.Range(pageSpeedMinY, pageSpeedMaxY);
+        bul.movement.SetAcceleration(new Vector2(0, speed), t => new Vector2(UnityEngine.Random.Range(-pageXFactor, pageXFactor), 0));
+        return bul;
+    }
+
+    IEnumerator SpawnLaserPillars(bool goRight, float timeBetweenPulse, int numOfLasers)
+    {
+        float spacing = 8f / numOfLasers;
+        float spacingRandomOffset = laserPositionFactor * spacing;
+        float startingXOffset = Random.Range(spacingRandomOffset, spacing - spacingRandomOffset);
+        
+        Vector2 spawn = goRight ? new Vector2(-4 + startingXOffset, -4f) : new Vector2(4 - startingXOffset, -4f);
+        
+        for (int i = 0; i < numOfLasers; i ++) 
+        {
+            Bullet laser = Instantiate(GameManager.gameData.fireBeam2, spawn, Quaternion.Euler(0, 0, 90));
+            laser.orientation.SetFixedOrientation(90);
+            Destroy(laser.gameObject, 2f);
+            
+            float deltaX = Random.Range(spacing - spacingRandomOffset, spacing + spacingRandomOffset);
+            float deltaXDirection = goRight ? deltaX : -deltaX;
+
+            spawn.x += deltaXDirection;
+
+            yield return new WaitForSeconds(laserShotRate);
+        }
     }
 
     void End()
