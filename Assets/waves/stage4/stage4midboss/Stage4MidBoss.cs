@@ -110,9 +110,9 @@ public class Stage4MidBoss : EnemyBossWave
             float angle = Functions.AimAt(currentBoss.transform.position, GameManager.playerPosition);
             currentBoss.transform.rotation = Quaternion.Euler(0, 0, angle + 90);
             Bullet firebeam = GameManager.bulletpools.SpawnBullet(GameManager.gameData.fireBeam, currentBoss.transform.position+ Quaternion.Euler(0, 0, angle) * new Vector2(0.5f, 0), 
-                Quaternion.Euler(0, 0, angle));
+                Quaternion.identity);
             firebeam.SetDamage(firebeamdmg);
-            firebeam.orientation.enabled = false;
+            firebeam.orientation.SetFixedOrientation(-90);
             firebeam.transform.parent = currentBoss.transform;
             yield return new WaitForSeconds(laserDelay);
             bossOrientation.enabled = true;

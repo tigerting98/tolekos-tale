@@ -48,6 +48,7 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : Component
     public void ReturnToPool(T tobeReturned) {
         if (tobeReturned&&pooledObject)
         {
+            tobeReturned.transform.parent = pooledObject.transform.parent;
             tobeReturned.transform.localScale = pooledObject.transform.localScale;
             tobeReturned.gameObject.SetActive(false);
             objectPool.Enqueue(tobeReturned);

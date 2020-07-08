@@ -49,7 +49,7 @@ MonoBehaviour:
   namesOfSpellCards:
   - Water girl\n~Icicles and Snowflakes~
   - Earth prison ~Morphing Rock Walls~
-  - 
+  - Fire Wheel ~Cartwheels Of Flame~
   - 
   - 
   nextLevel: {fileID: 0}
@@ -77,18 +77,18 @@ MonoBehaviour:
   red: {r: 1, g: 0, b: 0, a: 1}
   pointer: {fileID: 8580154745028077592, guid: 7d36aae527e49f0468cc33726fd90704, type: 3}
   firedmg1: 210
-  fireshotRate1: 0.2
-  fireSpeed1: 2.1
-  fireanglespread1: 18
+  fireshotRate1: 0.18
+  fireSpeed1: 2.6
+  fireanglespread1: 15
   fireradius1: 0.5
   earthdmg1: 210
-  earthshotRate1: 1.5
+  earthshotRate1: 1.34
   earthspeed1: 1.4
   earthspread1: 20
   earthnumber1: 30
   waterdmg1: 365
-  watershotrate1: 0.12
-  waterangularvel1: 73
+  watershotrate1: 0.07
+  waterangularvel1: 143
   waterspeed1: 1.5
   circledist1: 1
   circlespeed1: 1
@@ -113,16 +113,16 @@ MonoBehaviour:
   startingPoint3: {x: 0, y: 1.5}
   y3: 3
   radius3: 1
-  bulletspeed3nonmain: 2.5
+  bulletspeed3nonmain: 3.1
   bulletdmg3nonmain: 215
-  bulletpulserate3: 1
+  bulletpulserate3: 0.8
   bossmovespeed3: 0.5
   x3: 3
   ringnumber3: 15
   angularvel3: 201
   shotrate3: 0.045
   pulseduration3: 1.5
-  bulletspeed3main: 2
+  bulletspeed3main: 2.2
   bulletspeeddiff3: 0.15
   bulletdmg3main: 390
   delay3: 0.5
@@ -134,18 +134,18 @@ MonoBehaviour:
   treerockdmg4: 1000
   shotRate4: 0.06
   unitspercircle4: 1.5
-  acceleration4: 0.3
+  acceleration4: 0.4
   time4: 5
   delay4: 3
   dmg4ball: 390
-  size4: 0.65
+  size4: 0.73
   spacing4: 1.2
   randomfactor4: 0.5
   pulseRate4: 8
   startingPoint5: {x: 0, y: 2.5}
   y5: 3
   radius5: 0.8
-  bulletspeed5nonmain: 1.4
+  bulletspeed5nonmain: 1.8
   bulletdmg5nonmain: 388
   bossmovespeed5: 1.2
   x5: 3
@@ -154,7 +154,7 @@ MonoBehaviour:
   magiccirclenumber5: 5
   bulletnumber5nonmain: 5
   shotrate5: 0.08
-  bulletspeed5main: 2.4
+  bulletspeed5main: 3.4
   bulletdmg5main: 500
   bigdmg5: 900
   bigspeed5: 0.4
@@ -164,3 +164,22 @@ MonoBehaviour:
   maxstepx: 0.8
   movementpulseduration5: 4
   startingPoint6: {x: 0, y: 2}
+  wheelspeed6: 1.8
+  angularvel6: 75
+  shotrate6wheel: 3
+  dmg6wheel: 2500
+  movespeed6: 10
+  spreadangle6: 43
+  wheelsize: 1.4
+  wheellines6: 1
+  left6: {x: -3, y: 3}
+  right6: {x: 3, y: 3}
+  firespeed6: 2
+  firedmg6: 410
+  firepulserate6: 3
+  fireshotrate6: 0.3
+  bigdmg6: 500
+  delay6: 1
+  firenumbersperpulse6: 5
+  numberoffirebullets: 35
+  bignumber: 15

@@ -10,10 +10,8 @@ public class BulletOrientation : MonoBehaviour
     [SerializeField] Movement movement;
     public float angle = 0;
     bool custom = false;
-    public bool absolute = false;
     public OrientationMode mode = OrientationMode.position;
-    Vector2 prev = new Vector2(0, 0);
-    Func<float, float> orientationOverTime;
+     Func<float, float> orientationOverTime;
     Func<float, float> angularVelOverTime;
     float timer = 0;
     void Start()
@@ -65,8 +63,6 @@ public class BulletOrientation : MonoBehaviour
     public void Reset()
     {
         custom = false;
-        absolute = false;
-        prev = new Vector2(0, 0);
         orientationOverTime = null;
         timer = 0;
         angle = 0;
@@ -76,16 +72,8 @@ public class BulletOrientation : MonoBehaviour
 
 
     public float FindRotation() {
-        Vector2 diff;
-        if (absolute)
-        {
-            diff = (Vector2)transform.position - prev;
-        }
-        else
-        {
-             diff = movement.currentVelocity;
-        }
-        return  Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x);
+        
+        return  Mathf.Rad2Deg * Mathf.Atan2(movement.currentVelocity.y, movement.currentVelocity.x);
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -112,9 +100,11 @@ public class BulletOrientation : MonoBehaviour
             
 
         }
+        if (transform.parent) {
+            angle +=transform.parent.rotation.eulerAngles.z;
+            }
         angle = Functions.modulo(angle, 360);
         transform.rotation = Quaternion.Euler(0,0,angle);
-            prev = transform.position;
     }
 
 

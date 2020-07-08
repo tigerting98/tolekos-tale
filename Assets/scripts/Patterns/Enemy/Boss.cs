@@ -8,7 +8,7 @@ public class Boss : Enemy
     protected BossHealthBar bar;
     public BossHealth bosshealth;
     public Collider2D hitbox;
-
+    public BossMagicCircle magicCircle;
    
     public override void Start()
     {

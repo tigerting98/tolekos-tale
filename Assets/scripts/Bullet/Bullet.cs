@@ -18,7 +18,13 @@ public class Bullet : MonoBehaviour, IPooledObject
     public SFX spawnSound = default;
     public void Deactivate()
     {
-        
+        if (orientation) {
+            orientation.enabled = true;
+        }
+        if (movement)
+        {
+            movement.enabled = true;
+        }
         GameManager.bulletpools.DeactivateBullet(this);
     }
 

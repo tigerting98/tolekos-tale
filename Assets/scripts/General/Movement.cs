@@ -222,6 +222,7 @@ public class Movement : MonoBehaviour
         homingSpeed = 0;
         ResetTimer();
         moving = true;
+        CancelInvoke();
         mode = MovementMode.Velocity;
         destroyBoundary = 4.5f;
         ResetTriggers();

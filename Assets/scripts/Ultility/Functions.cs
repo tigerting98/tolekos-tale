@@ -112,7 +112,9 @@ public class Functions : MonoBehaviour
         Vector2 diff = target - shooter;
         return Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x);
     }
-
+    public static float AimAtPlayer(Transform transform) {
+        return AimAt(transform.position, GameManager.playerPosition);
+    }
     public static bool WithinBounds(Vector2 pos, float minx, float maxx, float miny, float maxy) {
         return pos.x < maxx && pos.x > minx && pos.y < maxy && pos.y > miny;
     }

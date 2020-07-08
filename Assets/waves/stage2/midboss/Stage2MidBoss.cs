@@ -41,6 +41,7 @@ public class Stage2MidBoss : EnemyBossWave
     IEnumerator PreFight2() {
         bossImage = Instantiate(image, spawnLocation, Quaternion.identity);
         yield return new WaitForSeconds(1f);
+        Destroy(actualCircle.gameObject);
         StartCoroutine(DialogueManager.StartDialogue(preFightDialogue2, Phase1));
 
     }
@@ -48,7 +49,7 @@ public class Stage2MidBoss : EnemyBossWave
     void Phase1() {
         currentBoss = Instantiate(boss, spawnLocation, Quaternion.identity);
         GameManager.currentBoss = currentBoss;
-        actualCircle.transform.SetParent(currentBoss.transform);
+       // actualCircle.transform.SetParent(currentBoss.transform);
         SwitchToBoss();
         currentBoss.shooting.StartCoroutine(Pattern1());
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
