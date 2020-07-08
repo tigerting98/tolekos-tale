@@ -18,6 +18,7 @@ public class GameData : MonoBehaviour
     public Bullet snowflake, icicle;
     public Bullet treeRockBullet;
     public Bullet fireWheel;
+public Bullet pageBullet;
     public EnemyPack ghosts, linemonster, mushrooms;
     public Enemy waterFairy;
     public Enemy patternSprite, treeant;
