@@ -95,6 +95,8 @@ MonoBehaviour:
     type: 3}
   fireWheel: {fileID: 2794776825522783396, guid: 8f7e146b09c6dc54fac7f27e7e3fa628,
     type: 3}
+  pageBullet: {fileID: 3393592486164367828, guid: 6871f2b1366941d43bcdfe9ae9476a69,
+    type: 3}
   ghosts: {fileID: 11400000, guid: f9bc86bb33e833e42b241d21cac03812, type: 2}
   linemonster: {fileID: 11400000, guid: e17c5ae1cdbaddd45a4fe548718245ab, type: 2}
   mushrooms: {fileID: 11400000, guid: 6bbd3837208b3f340abf41594e72f4b6, type: 2}
