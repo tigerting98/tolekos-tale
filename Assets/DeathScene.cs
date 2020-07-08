@@ -36,7 +36,8 @@ public class DeathScene : MonoBehaviour
     }
     private void ReturnToMain()
     {
-        GameManager.player = null; 
+        
+        Revive();
         GameManager.sceneLoader.ReturnToStartPage();
  
     }
