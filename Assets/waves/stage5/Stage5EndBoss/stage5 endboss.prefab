@@ -183,3 +183,34 @@ MonoBehaviour:
   firenumbersperpulse6: 5
   numberoffirebullets: 35
   bignumber: 15
+  startingPoint7: {x: 0, y: 2}
+  movementradius7: 1.6
+  freq7: 0.1
+  earthPillarspacingY: 1.4
+  earthpillarspacingX: 0.8
+  earthpillarspawnmin: 4.3
+  earthpillarspawnmax: 3.8
+  earthPillarmovementX: 4
+  earthPillarmovementY: 0.3
+  earthpillarpulseRate: 6
+  earthpillardmg: 2000
+  numberOfEarthpillars: 8
+  firepillarspacingX: 1.4
+  firepillarspacingY: 0.5
+  firepillarspawnmin: -4.2
+  firepillarspawnmax: -3.9
+  firePillarmovementX: 0.35
+  firePillarmovementY: 4
+  firepillarpulseRate: 6
+  firepillardmg: 2000
+  numberOffirepillars: 8
+  numberofsnowflakes7: 23
+  snowflakeshotrate7: 1
+  snowflakedmg7: 410
+  snowflakeangularvel7: 14
+  snowflakeradialvel7: 1
+  startingPoint8: {x: 0, y: 2}
+  radius8: 2
+  angularvel8: 30
+  laserdmg8: 2000
+  thickness8: 0.5

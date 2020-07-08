@@ -9,12 +9,19 @@ public class PlayerDamageTaker : DamageTaker
     public override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
-        AudioManager.current.PlaySFX(hitSFX);
+        DamageDealer dmg = collision.GetComponent<DamageDealer>();
+        if (dmg && !dmg.DamageOverTime())
+        { AudioManager.current.PlaySFX(hitSFX); 
+        }
     }
     public override void OnTriggerStay2D(Collider2D collision)
     {
         base.OnTriggerStay2D(collision);
-        AudioManager.current.PlaySFX(stayHitSFX);
+        DamageDealer dmg = collision.GetComponent<DamageDealer>();
+        if (dmg && dmg.DamageOverTime())
+        {
+            AudioManager.current.PlaySFX(stayHitSFX);
+        }
     }
     
 }

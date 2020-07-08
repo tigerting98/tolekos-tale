@@ -61,6 +61,21 @@ public class Stage5EndBoss : EnemyBossWave
     [SerializeField] Vector2 left6, right6;
     [SerializeField] float firespeed6 = 3f, firedmg6 = 410, firepulserate6 = 3f, fireshotrate6 = 0.3f, bigdmg6 = 500, delay6;
     [SerializeField] int firenumbersperpulse6 = 5, numberoffirebullets = 30, bignumber = 10;
+    [Header("Pattern7")]
+    [SerializeField] Vector2 startingPoint7 = new Vector2(0,2);
+    [SerializeField] float movementradius7 = 1f, freq7 = 2f;
+    [SerializeField] float earthPillarspacingY = 0.5f, earthpillarspacingX = 0.5f, earthpillarspawnmin = 4.5f, earthpillarspawnmax = 3.5f;
+    [SerializeField] float earthPillarmovementX = 3f, earthPillarmovementY = 0.2f, earthpillarpulseRate = 5f, earthpillardmg = 2000f;
+    [SerializeField] int numberOfEarthpillars = 10;
+    [SerializeField] float firepillarspacingX = 0.5f, firepillarspacingY = 0.5f, firepillarspawnmin = 4.2f, firepillarspawnmax = 3.9f;
+    [SerializeField] float firePillarmovementX = 0.3f, firePillarmovementY = 3f, firepillarpulseRate = 5f, firepillardmg = 2000f;
+    [SerializeField] int numberOffirepillars = 10;
+    [SerializeField] int numberofsnowflakes7;
+    [SerializeField] float snowflakeshotrate7, snowflakedmg7, snowflakeangularvel7, snowflakeradialvel7;
+    [Header("Pattern8")]
+    [SerializeField] Vector2 startingPoint8 = new Vector2(0, 2);
+    [SerializeField] float radius8, angularvel8, laserdmg8, thickness8 = 0.5f;
+    bool[] donebools7 = new bool[3] { false, false, false};
     public override void SpawnWave() {
         waterCircle = GameManager.gameData.waterCircle;
         earthCircle = GameManager.gameData.earthCircle;
@@ -223,6 +238,7 @@ public class Stage5EndBoss : EnemyBossWave
         firePointer.trackingBoss = fireBoss;
         firePointer.sprite.color = red;
         SwitchToBoss(DamageType.Fire);
+
         SpinningMagicCircles(waterCircle, waterimage.transform, false, 0, GameManager.gameData.snowflake);
         SpinningMagicCircles(earthCircle, earthimage.transform, true, shotrate5nonmain/2, GameManager.gameData.leafBullet2);
         fireBoss.shooting.StartShooting(Functions.RepeatAction(
@@ -288,7 +304,149 @@ public class Stage5EndBoss : EnemyBossWave
         fireBoss.bosshealth.OnLifeDepleted -= EndPhase6;
         EndPhase();
         SwitchToImage(DamageType.Fire);
+        fireimage.MoveTo(startingPoint7 + new Vector2(movementradius7, 0), movespeed);
+        waterimage.MoveTo(startingPoint7 - new Vector2(movementradius7, 0), movespeed);
+        earthimage.MoveTo(startingPoint7, movespeed);
+        Invoke("StartPhase7", endPhaseTransition);
+    }
 
+    public void StartPhase7() {
+        SpellCardUI(namesOfSpellCards[3]);
+        Invoke("Phase7", spellCardTransition);
+    }
+    public void Phase7() {
+        
+        SwitchToBoss(DamageType.Water);
+        SwitchToBoss(DamageType.Earth);
+        SwitchToBoss(DamageType.Fire);
+        waterBoss.transform.position = startingPoint7 - new Vector2(movementradius7, 0);
+        earthimage.transform.position = startingPoint7;
+        fireimage.transform.position = startingPoint7 + new Vector2(movementradius7, 0);
+        MoveInCircle(waterBoss.movement, -90);
+        MoveInCircle(earthBoss.movement, 0);
+        MoveInCircle(fireBoss.movement, 90);
+        waterBoss.bosshealth.OnLifeDepleted += OneDownWater;
+        earthBoss.shooting.StartShooting(EarthPillar());
+        fireBoss.shooting.StartShooting(FirePillar());
+        earthBoss.bosshealth.OnLifeDepleted += OneDownEarth;
+        fireBoss.bosshealth.OnLifeDepleted += OneDownFire;
+        waterBoss.shooting.StartShooting(Functions.RepeatCustomAction(
+            i =>
+            {
+                Patterns.CustomRing(angle => Patterns.ShootCustomBullet(
+                    GameManager.gameData.snowflake, snowflakedmg7, waterBoss.transform.position,
+                    t => new Polar(snowflakeradialvel7 * t, angle + (i % 2 == 0 ? -1 : 1) * snowflakeangularvel7 * t).rect, MovementMode.Position
+                    ), 0, numberofsnowflakes7);
+            }, snowflakeshotrate7));
+    }
+    public void OneDownWater() {
+        donebools7[0] = true;
+        waterBoss.shooting.StopAllCoroutines();
+        SwitchToImage(DamageType.Water);
+        waterBoss.bosshealth.OnLifeDepleted -= OneDownWater;
+        GoNext();
+        
+    }
+    public void OneDownEarth()
+    {
+        donebools7[1] = true;
+        earthBoss.shooting.StopAllCoroutines();
+        SwitchToImage(DamageType.Earth);
+        earthBoss.bosshealth.OnLifeDepleted -= OneDownEarth;
+        GoNext();
+    }
+    public void OneDownFire()
+    {
+        donebools7[2] = true;
+        fireBoss.shooting.StopAllCoroutines();
+        SwitchToImage(DamageType.Fire);
+        fireBoss.bosshealth.OnLifeDepleted -= OneDownFire;
+        GoNext();
+    }
+    public void GoNext() {
+        GameManager.DestoryAllEnemyBullets();
+        foreach (bool bl in donebools7)
+        {
+            if (!bl)
+            {
+                return;
+            }
+        }
+        EndPhase7();
+    }
+    public void EndPhase7() {
+        EndPhase();
+        waterimage.MoveTo(startingPoint8 + new Polar(radius8, 90).rect, movespeed);
+        earthimage.MoveTo(startingPoint8 + new Polar(radius8, -30).rect, movespeed);
+        fireimage.MoveTo(startingPoint8 + new Polar(radius8, -150).rect, movespeed);
+        Invoke("StartPhase8", endPhaseTransition);
+    }
+    public void StartPhase8() {
+        SpellCardUI(namesOfSpellCards[4]);
+        Invoke("Phase8", spellCardTransition);
+    }
+    public void Phase8() {
+        SwitchToBoss(DamageType.Water);
+        SwitchToBoss(DamageType.Earth);
+        SwitchToBoss(DamageType.Fire);
+        Pattern8Movement(waterBoss.movement, DamageType.Water, 90);
+        Pattern8Movement(earthBoss.movement, DamageType.Earth, -30);
+        Pattern8Movement(fireBoss.movement, DamageType.Fire, -150);
+    }
+    public void Pattern8Movement(Movement move, DamageType type, float angle) {
+        Vector2 start = startingPoint8 + new Polar(radius8, angle).rect;
+        move.transform.position = start;
+        move.ResetTimer();
+        move.SetPolarPath(t => new Polar(radius8, angle + angularvel8 * -t));
+        Bullet bul = Instantiate(GameManager.gameData.stage5lines.GetItem(type), start,Quaternion.Euler(0,0, angle - 150));
+        bul.SetDamage(laserdmg8);
+        bul.transform.localScale = new Vector2(Mathf.Sqrt(3)*radius8 / 3f, thickness8);
+        bul.orientation.angle = angle - 150;
+        bul.transform.parent = move.transform.parent;
+        bul.orientation.StartRotating(-angularvel8);
+        
+    }
+
+    IEnumerator EarthPillar() {
+        while (earthBoss) {
+            float y = UnityEngine.Random.Range(earthpillarspawnmin, earthpillarspawnmax);
+            float x = -4f;
+            for (int i = 0; i < numberOfEarthpillars; i++) {
+                Bullet pillar = Patterns.ShootCustomBullet(GameManager.gameData.earthPillar, earthpillardmg, new Vector2(x, y)
+                    , t => new Vector2(earthPillarmovementX, -earthPillarmovementY), MovementMode.Velocity);
+                y -= earthPillarspacingY;
+                x -= earthpillarspacingX;
+                pillar.orientation.SetFixedOrientation(0);
+                pillar.transform.localScale = new Vector2(1.3f, 0.6f);
+                pillar.movement.destroyBoundary = 20f;
+            }
+            yield return new WaitForSeconds(earthpillarpulseRate);
+        }
+    }
+    IEnumerator FirePillar()
+    {
+        while (fireBoss)
+        {
+            float x = UnityEngine.Random.Range(firepillarspawnmin, firepillarspawnmax);
+            float y = 4f;
+            for (int i = 0; i < numberOffirepillars; i++)
+            {
+                Bullet pillar = Patterns.ShootCustomBullet(GameManager.gameData.firePillar, firepillardmg, new Vector2(x, y)
+                    , t => new Vector2(firePillarmovementX, -firePillarmovementY), MovementMode.Velocity);
+                y += firepillarspacingY;
+                x += firepillarspacingX;
+                pillar.orientation.SetFixedOrientation(-90);
+                pillar.transform.localScale = new Vector2(1.5f, 0.3f);
+                pillar.movement.destroyBoundary = 20f;
+            }
+            yield return new WaitForSeconds(firepillarpulseRate);
+        }
+    }
+    void MoveInCircle(Movement movement, float originAngle) {
+        movement.ResetTimer();
+        movement.SetCustomPath(t => new Vector2(movementradius7 * Mathf.Sin(2*Mathf.PI*freq7 * t + Mathf.Deg2Rad * originAngle)
+            , movementradius7 * Mathf.Sin(2 * Mathf.PI * freq7 * t + Mathf.Deg2Rad * originAngle) * Mathf.Cos(2 * Mathf.PI * freq7 * t + Mathf.Deg2Rad * originAngle)));
+        
     }
     IEnumerator SubPattern6() {
         Action<Bullet,int, float> Shoot = (bul,number, dmg) => Patterns.RingOfBullets(bul, dmg, fireBoss.transform.position, number, 0, firespeed6);

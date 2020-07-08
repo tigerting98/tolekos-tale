@@ -51,6 +51,7 @@ MonoBehaviour:
   bigBullet: {fileID: 11400000, guid: 6583d2f611a41f24fa8dea759fa2b553, type: 2}
   arrowBullet: {fileID: 11400000, guid: 93521daa990d365478ecda6f7b65cc39, type: 2}
   ellipseBullet: {fileID: 11400000, guid: db9c7a3e4381a7d458143ac16c0b25c4, type: 2}
+  stage5lines: {fileID: 11400000, guid: 575bf650e4b1b124bbc2e360b5710194, type: 2}
   leafBullet1: {fileID: 6539465222748635732, guid: 75e9840902b09f04d99b4903c8b1963e,
     type: 3}
   leafBullet2: {fileID: 3230586137576200462, guid: f7d5a767ef2995c49b4ef75e0b8eddbe,
@@ -68,6 +69,10 @@ MonoBehaviour:
   fireCircle: {fileID: 350400323087982558, guid: 0cbe869c9fa14e044baba49ffca1742a,
     type: 3}
   mushroomPillar: {fileID: 6063934732109912144, guid: 27b76d1befe82fa48b84f891c7496a45,
+    type: 3}
+  earthPillar: {fileID: 1610268316135621660, guid: 6c4200f18bbf9a343ba9ba925922a94b,
+    type: 3}
+  firePillar: {fileID: 1610268316135621660, guid: 9ac722801f5d76b40b1aa36c08a6241b,
     type: 3}
   fireBullet: {fileID: 2977784430267972987, guid: a36b8f5427bc05a44a8ae4995df1d732,
     type: 3}
