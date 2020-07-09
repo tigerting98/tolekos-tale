@@ -60,7 +60,7 @@ The number of enemies spawned and the region in which they can spawn can be conf
         yield return new WaitForSeconds(timeToPoint);
         if (enemy)
         {
-        enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayer(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate), 0.5f, stationaryTime + 0.5f);
+        enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayer(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate,null), 0.5f, stationaryTime + 0.5f);
         }
         yield return new WaitForSeconds(stationaryTime + 1f);
         if (enemy)

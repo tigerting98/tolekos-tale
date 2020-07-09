@@ -47,7 +47,7 @@ public class WavePattern2 : EnemyWave
             en.SetEnemy(stats, false);
             en.movement.SetSpeed(new Vector2(left ? movespeed : -movespeed, 0));
             en.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(bullet, dmg
-                , en.transform, shotSpeed, shotRate), delay);
+                , en.transform, shotSpeed, shotRate,null), delay);
 
         }
         , spawnRate, number));

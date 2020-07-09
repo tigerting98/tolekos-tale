@@ -49,7 +49,6 @@ public class Stage2MidBoss : EnemyBossWave
     void Phase1() {
         currentBoss = Instantiate(boss, spawnLocation, Quaternion.identity);
         GameManager.currentBoss = currentBoss;
-       // actualCircle.transform.SetParent(currentBoss.transform);
         SwitchToBoss();
         currentBoss.shooting.StartCoroutine(Pattern1());
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
@@ -77,18 +76,17 @@ public class Stage2MidBoss : EnemyBossWave
     void StartPattern2() {
         SwitchToBoss();
         currentBoss.shooting.StartCoroutine(EnemyPatterns.BorderOfWaveAndParticle(waterBullet, dmg2,
-            currentBoss.transform, bulletPattern2Speed, pattern2ShotRate, numberOfLines2, pattern2angularvel));
+            currentBoss.transform, bulletPattern2Speed, pattern2ShotRate, numberOfLines2, pattern2angularvel,null));
    
     }
     IEnumerator Pattern1() {
         List<Bullet> magicCircles = Patterns.CustomRing(
 
             angle =>  Patterns.ShootCustomBullet(GameManager.gameData.waterCircle,0, currentBoss.transform.position, Movement.RotatePath(
-             angle, t => new Polar(t > timeToRadius ? radius + (float)(radiusVariance*Math.Sin(t-timeToRadius)) : radius * t / timeToRadius, angularVel * t).rect), MovementMode.Position)
+             angle, t => new Polar(t > timeToRadius ? radius + (float)(radiusVariance*Math.Sin(t-timeToRadius)) : radius * t / timeToRadius, angularVel * t).rect), MovementMode.Position, null)
             , 0, numberofMagicCircles);
 
         yield return new WaitForSeconds(delayBeforeShooting);
-        currentBoss.enemyAudio.PlayAudioForXTimeAndPause(bulletSpawnSound, pattern1ShotRate, pattern1BulletsPerPulse, pattern1PulseRate);
         int i = 0;
         foreach (Bullet bul in magicCircles) {
             bul.transform.SetParent(currentBoss.transform);
@@ -97,7 +95,7 @@ public class Stage2MidBoss : EnemyBossWave
             Shooting shooting = bul.GetComponent<Shooting>();          
             shooting.StartCoroutine(EnemyPatterns.RepeatSubPatternWithInterval(
                 ()=> EnemyPatterns.PulsingLines(waterBullet, dmg1, bul.transform, bulletPattern1Speed, 
-                y%2==0? 0:Patterns.AimAt(bul.transform.position, GameManager.playerPosition), pattern1ShotRate, numberOfLines, pattern1BulletsPerPulse), shooting, pattern1PulseRate));
+                y%2==0? 0:Functions.AimAtPlayer(bul.transform), pattern1ShotRate, numberOfLines, pattern1BulletsPerPulse, bulletSpawnSound), shooting, pattern1PulseRate));
             i++;
         }
      

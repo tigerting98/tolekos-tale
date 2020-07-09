@@ -49,10 +49,9 @@ public class Stage1Wave2 : EnemyWave
         float time1 = enemy.movement.MoveTo(new Vector2(x + Random.Range(-randomFactor, randomFactor), stopY), moveSpeed);
         yield return new WaitForSeconds(time1);
         if (enemy) {
-            float angle = Patterns.AimAt(enemy.transform.position, GameManager.playerPosition);
+            float angle = Functions.AimAtPlayer(enemy.transform);
             Patterns.ExplodingRingOfBullets(GameManager.gameData.smallRoundBullet.GetItem(Random.Range(0, 3)), dmg
-                , enemy.transform.position, number, angle, initialSpeed, finalSpeed, burstRadius / initialSpeed) ;
-            enemy.enemyAudio.PlayAudioTimes(bulletSpawnSound, 0, 1);
+                , enemy.transform.position, number, angle, initialSpeed, finalSpeed, burstRadius / initialSpeed, bulletSpawnSound) ;
             yield return new WaitForSeconds(stopTime);
             if (enemy) {
                 enemy.movement.StartMoving();

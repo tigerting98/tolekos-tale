@@ -62,7 +62,7 @@ public class WavePattern9 : EnemyWave
         Vector2 position = new Vector2(xPos, yPos);
         Enemy enemy = Instantiate(this.enemy, position, Quaternion.identity);
         enemy.SetEnemy(stats, false);
-        enemy.shooting.StartShooting(EnemyPatterns.ConstantSpinningStraightBullets(bullet, bulletDamage, enemy.transform, bulletSpeed, angularVelocity, 0, numberOfLines, shotRate));
+        enemy.shooting.StartShooting(EnemyPatterns.ConstantSpinningStraightBullets(bullet, bulletDamage, enemy.transform, bulletSpeed, angularVelocity, 0, numberOfLines, shotRate,null));
         yield return new WaitForSeconds(activeTime);
         if (enemy)
         {

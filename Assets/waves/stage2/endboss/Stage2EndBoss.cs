@@ -137,11 +137,11 @@ public class Stage2EndBoss : EnemyBossWave
 
 
         currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomAction(i => Patterns.RingOfBullets(smallBullet, dmg3circle, (Vector2)currentBoss.transform.position + new Polar(radius3, i * angleperPulse3).rect
-            , numberOfsmallBullet3, UnityEngine.Random.Range(0, 360), smallspeed3), pulseRate3), time);
+            , numberOfsmallBullet3, UnityEngine.Random.Range(0, 360), smallspeed3,null), pulseRate3), time);
         currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomAction(i => Patterns.RingOfBullets(arrowBullet, dmg3arrow, (Vector2)currentBoss.transform.position + Functions.RandomLocation(-1,1,-1,1)
-            , numberOfsmallBullet3, UnityEngine.Random.Range(0, 360), smallspeed3), pulseRate3), time + UnityEngine.Random.Range(0, pulseRate3));
+            , numberOfsmallBullet3, UnityEngine.Random.Range(0, 360), smallspeed3,null), pulseRate3), time + UnityEngine.Random.Range(0, pulseRate3));
         currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomAction(i => Patterns.ShootMultipleStraightBullet(bigBullets.GetItem(i % 4), dmg3Big,
-            currentBoss.transform.position, largespeed3, Patterns.AimAt(currentBoss.transform.position, GameManager.playerPosition), spreadAngleLarge3, numberOfLargeBullet3), shotRateLarge3), time);
+            currentBoss.transform.position, largespeed3, Functions.AimAtPlayer(currentBoss.transform), spreadAngleLarge3, numberOfLargeBullet3,null), shotRateLarge3), time);
         currentBoss.bosshealth.OnLifeDepleted += EndPhase3;
     }
 
@@ -187,7 +187,7 @@ public class Stage2EndBoss : EnemyBossWave
         SwitchToBoss();
         float time = currentBoss.movement.MoveTo(new Vector2(0,2), bossmovespeed);
         currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomAction(i => Patterns.ShootMultipleStraightBullet(bigBullets.GetItem(i % 4), dmg5Big,
-           currentBoss.transform.position, bossShootSpeed5, Patterns.AimAt(currentBoss.transform.position, GameManager.playerPosition), bossshootSpread5, bossShootNumber5), bossShootRate5), time);
+           currentBoss.transform.position, bossShootSpeed5, Functions.AimAtPlayer(currentBoss.transform), bossshootSpread5, bossShootNumber5,null), bossShootRate5), time);
         currentBoss.shooting.StartShootingAfter(SummonWaterFairy(), time);
         currentBoss.shooting.StartShootingAfter(SummonSlime(), time);
         currentBoss.health.OnDeath += EndPhase5;
@@ -205,15 +205,15 @@ public class Stage2EndBoss : EnemyBossWave
 
 
     IEnumerator Pattern1() {
-        Bullet magicCircle1 = EnemyPatterns.SummonMagicCircle(magicCircle, 0,currentBoss.transform, timeToRadius, 210, radius, 0);
-        Bullet magicCircle2 = EnemyPatterns.SummonMagicCircle(magicCircle, 0,currentBoss.transform, timeToRadius, 330, radius, 0);
-        Bullet magicCircleTop = EnemyPatterns.SummonMagicCircle(magicCircle,0, currentBoss.transform, timeToRadius, 90, radius, 0);
+        Bullet magicCircle1 = EnemyPatterns.SummonMagicCircle(magicCircle, 0,currentBoss.transform, timeToRadius, 210, radius, 0,null);
+        Bullet magicCircle2 = EnemyPatterns.SummonMagicCircle(magicCircle, 0,currentBoss.transform, timeToRadius, 330, radius, 0,null);
+        Bullet magicCircleTop = EnemyPatterns.SummonMagicCircle(magicCircle,0, currentBoss.transform, timeToRadius, 90, radius, 0,null);
         magicCircle1.orientation.StartRotating(180);
         magicCircle2.orientation.StartRotating(-180);
         magicCircleTop.orientation.StartRotating(97);
         yield return new WaitForSeconds(timeToRadius);
         Shooting top = magicCircleTop.GetComponent<Shooting>();
-        top.StartShooting(EnemyPatterns.ShootAtPlayerWithLines(bigBullets.GetItem(DamageType.Fire), dmg1Big, magicCircleTop.transform, bigBulletSpeed1, bigBulletShotRate, bigBulletSpread, bigBulletNumber));
+        top.StartShooting(EnemyPatterns.ShootAtPlayerWithLines(bigBullets.GetItem(DamageType.Fire), dmg1Big, magicCircleTop.transform, bigBulletSpeed1, bigBulletShotRate, bigBulletSpread, bigBulletNumber,null));
         Bullet bul = ellipseBullet;
         SubPattern1(magicCircle1, true, bul, dmg1ellipse);
         SubPattern1(magicCircle2, false, bul, dmg1ellipse);
@@ -223,13 +223,13 @@ public class Stage2EndBoss : EnemyBossWave
     void SubPattern1(Bullet magicCircle, bool left, Bullet bul , float dmg){
         Shooting shooting = magicCircle.GetComponent<Shooting>();
         float angular = left ? angularVel : -angularVel;
-        Functions.StartMultipleCustomCoroutines(shooting, i => Functions.RepeatAction(() => EnemyPatterns.OutAndSpinRingOfBullets(bul, dmg, magicCircle.transform, initialSpeed1, radius1, finalSpeed1, angular, smallBulletdelay1, 0, numberPerRings1), pulseRate1), numberOfRings1, shotRate1);
+        Functions.StartMultipleCustomCoroutines(shooting, i => Functions.RepeatAction(() => EnemyPatterns.OutAndSpinRingOfBullets(bul, dmg, magicCircle.transform, initialSpeed1, radius1, finalSpeed1, angular, smallBulletdelay1, 0, numberPerRings1,null), pulseRate1), numberOfRings1, shotRate1);
     }
 
 
 
     IEnumerator SummonLine(Bullet bul, float dmg, bool left, float y, float duration) {
-        return Functions.RepeatActionXTimes(() => Patterns.ShootStraight(bul, dmg, new Vector2(left ? -4.1f : 4.1f, y), left ? 0 : 180,lineBulletSpeed2), lineshotRate2,  (int)(duration / lineshotRate2));
+        return Functions.RepeatActionXTimes(() => Patterns.ShootStraight(bul, dmg, new Vector2(left ? -4.1f : 4.1f, y), left ? 0 : 180,lineBulletSpeed2,null), lineshotRate2,  (int)(duration / lineshotRate2));
     }
 
 
@@ -237,17 +237,17 @@ public class Stage2EndBoss : EnemyBossWave
         while (currentBoss) {
             float time = currentBoss.movement.MoveTo(Functions.RandomLocation(1, 3, 1, 3), bossmovespeed);
 
-            currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(smallBullet, dmg2circle, currentBoss.transform, circleBulletSpeed, CircleBullets2shotRate, spread2, numberOfCircleBullets2), time, pulseDuration2);
+            currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(smallBullet, dmg2circle, currentBoss.transform, circleBulletSpeed, CircleBullets2shotRate, spread2, numberOfCircleBullets2,null), time, pulseDuration2);
             yield return new WaitForSeconds(circlebulletpulseRate2);
         }
     }
 
     void SmallBullets(Vector2 position, Bullet smallBullet,float dmg, int number) {
-        float angle = Patterns.AimAt(new Vector2(0, 0), position);
+        float angle = Functions.AimAt(new Vector2(0, 0), position);
         float shootangle = (Mathf.RoundToInt(angle / 90 + 2) % 4) * 90;
         for (int i = 0; i < number; i++)
         {
-            Patterns.ShootStraight(smallBullet, dmg, position, shootangle + UnityEngine.Random.Range(-90f, 90f), finalSpeed4);
+            Patterns.ShootStraight(smallBullet, dmg, position, shootangle + UnityEngine.Random.Range(-90f, 90f), finalSpeed4,null);
         }
         
 
@@ -255,7 +255,7 @@ public class Stage2EndBoss : EnemyBossWave
     Bullet ShootRain(Bullet bigBullet, float dmgBig, Vector2 playerPosition) {
         Vector2 spawn = Functions.RandomLocation(currentBoss.transform.position, spawnradius4);
 
-        Bullet bul = Patterns.ShootStraight(bigBullet, dmgBig, spawn, Patterns.AimAt(spawn, playerPosition), initialSpeed4);
+        Bullet bul = Patterns.ShootStraight(bigBullet, dmgBig, spawn, Functions.AimAt(spawn, playerPosition), initialSpeed4,null);
         bul.movement.triggers.Add(triggerEvent);
         return bul;
     }
@@ -276,9 +276,9 @@ public class Stage2EndBoss : EnemyBossWave
             fairy.shooting.StartShootingAfter(
                 Functions.RepeatAction(() =>
                 {
-                    float angle = Patterns.AimAt(fairy.transform.position, GameManager.playerPosition);
+                    float angle = Functions.AimAtPlayer(fairy.transform);
                     fairy.shooting.StartShootingFor(EnemyPatterns.ShootSine(pointedBullet, dmg5fairy, fairy.transform, angle,
-                    speedbulletfairy, shotRatefairy, fairyangularVel, fairyamp), 0, fairypulseDuration);
+                    speedbulletfairy, shotRatefairy, fairyangularVel, fairyamp,null), 0, fairypulseDuration);
                 }, fairypulseRate), time);
             Destroy(fairy.gameObject, 15f);
             yield return new WaitForSeconds(spawnRatefairy);
@@ -295,9 +295,9 @@ public class Stage2EndBoss : EnemyBossWave
         while (true)
         {
             Enemy en = Instantiate(slime, currentBoss.transform.position, Quaternion.identity);
-            float angle = Patterns.AimAt(en.transform.position, GameManager.playerPosition);
+            float angle = Functions.AimAtPlayer(en.transform);
             en.movement.SetSpeed(Quaternion.Euler(0, 0, angle) * new Vector2(speedslime, 0));
-            en.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandomAngle(smallBullet, dmg5ball,  en.transform, speedbulletslime, shotRateslime, numberofShotsSlime), 0.5f);
+            en.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandomAngle(smallBullet, dmg5ball,  en.transform, speedbulletslime, shotRateslime, numberofShotsSlime,null), 0.5f);
             en.movement.triggers.Add(triggerEvent);
             yield return new WaitForSeconds(spawnRateslime);
         }
@@ -305,8 +305,8 @@ public class Stage2EndBoss : EnemyBossWave
 
     void SlimeOut(Vector2 pos) {
         float angle = UnityEngine.Random.Range(0f, 360f);
-        Patterns.RingOfBullets(arrowBullet, dmg5arrow, pos, numberofexplodingBullets, angle, explodingBulletSpeedSlow);
-        Patterns.RingOfBullets(arrowBullet, dmg5arrow, pos, numberofexplodingBullets, angle, explodingBulletSpeedFast);
+        Patterns.RingOfBullets(arrowBullet, dmg5arrow, pos, numberofexplodingBullets, angle, explodingBulletSpeedSlow,null);
+        Patterns.RingOfBullets(arrowBullet, dmg5arrow, pos, numberofexplodingBullets, angle, explodingBulletSpeedFast,null);
     }
 
 

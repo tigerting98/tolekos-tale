@@ -67,7 +67,8 @@ public class WavePattern5 : EnemyWave
 
         if (en)
         {
-            en.shooting.StartCoroutine(Functions.RepeatCustomActionXTimes(i => Patterns.RingOfBullets(bullet, bulletDamage, en.transform.position, bulletsPerRing, 0, bulletSpeed), shotRate, numberOfRings));
+            en.shooting.StartCoroutine(Functions.RepeatCustomActionXTimes(
+                i => Patterns.RingOfBullets(bullet, bulletDamage, en.transform.position, bulletsPerRing, 0, bulletSpeed,null), shotRate, numberOfRings));
         }
 
         yield return new WaitForSeconds(stationaryTime);

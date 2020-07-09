@@ -71,14 +71,14 @@ Along with the number of projectiles per ring and how long the enemy remains act
 
         if (enemy)
         {
-            enemy.shooting.StartCoroutine(Functions.RepeatAction(()=>Patterns.RingOfBullets(bigBullet, bulletDamage, enemy.transform.position, numberOfBigBulletsPerRing, RandomOffset(), bigBulletSpeed)
+            enemy.shooting.StartCoroutine(Functions.RepeatAction(()=>Patterns.RingOfBullets(bigBullet, bulletDamage, enemy.transform.position, numberOfBigBulletsPerRing, RandomOffset(), bigBulletSpeed,null)
                                                                 , timeBetweenBigBulletRing));
             enemy.shooting.StartCoroutine(
                 Functions.RepeatAction(()=>{
                     float offset = RandomOffset();
                     enemy.shooting.StartCoroutine
                     (Functions.RepeatActionXTimes(
-                        ()=>Patterns.RingOfBullets(smallBullet, bulletDamage, enemy.transform.position, numberOfSmallBulletsPerRing, offset, smallBulletSpeed),
+                        ()=>Patterns.RingOfBullets(smallBullet, bulletDamage, enemy.transform.position, numberOfSmallBulletsPerRing, offset, smallBulletSpeed,null),
                     smallBulletRingFireRate, numberOfSmallBulletRingsPerPulse));
                 }, 
                 timeBetweenSmallBulletPulse));   

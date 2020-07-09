@@ -6,7 +6,7 @@ public class Stage3Wave3 : WavePattern4
 {
     public override void SetUp()
     {
-        this.enemy = GameManager.gameData.greenSlime;
-        this.bullet = GameManager.gameData.leafBullet1;
+        enemy = GameManager.gameData.greenSlime;
+        bullet = GameManager.gameData.leafBullet1;
     }
 }

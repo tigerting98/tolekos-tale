@@ -29,12 +29,15 @@ public class AudioManager : MonoBehaviour
    
 
     public void PlaySFX(SFX sfx) {
-        if (!coolDownDictionary.ContainsKey(sfx.id))
-        { 
-            SFXPlayer.PlayOneShot(sfx.clip, sfx.volume);
-            if (sfx.cooldownTime > 0)
-            { 
-                coolDownDictionary.Add(sfx.id, new CoolDown(sfx.cooldownTime)); 
+        if (sfx)
+        {
+            if (!coolDownDictionary.ContainsKey(sfx.id))
+            {
+                SFXPlayer.PlayOneShot(sfx.clip, sfx.volume);
+                if (sfx.cooldownTime > 0)
+                {
+                    coolDownDictionary.Add(sfx.id, new CoolDown(sfx.cooldownTime));
+                }
             }
         }
     }

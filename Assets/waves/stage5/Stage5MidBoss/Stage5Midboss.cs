@@ -89,7 +89,7 @@ public class Stage5Midboss : EnemyBossWave
 
     IEnumerator Pattern2()
     {
-        currentBoss.shooting.StartShooting(Functions.RepeatAction(() => Patterns.RingOfBullets(GameManager.gameData.bigBullet.GetItem(DamageType.Water), ringDamage, currentBoss.transform.position, numberOfBulletsPerRing, Random.Range(0f, 360f), ringSpeed), ringPulseRate));
+        currentBoss.shooting.StartShooting(Functions.RepeatAction(() => Patterns.RingOfBullets(GameManager.gameData.bigBullet.GetItem(DamageType.Water), ringDamage, currentBoss.transform.position, numberOfBulletsPerRing, Random.Range(0f, 360f), ringSpeed,null), ringPulseRate));
         currentBoss.shooting.StartShooting(Functions.RepeatAction(() => SpawnRandomVerticalBullet(true), pageShotRate));
         currentBoss.shooting.StartShooting(Functions.RepeatAction(() => SpawnRandomVerticalBullet(false), pageShotRate));
         currentBoss.shooting.StartShooting(Functions.RepeatAction(() => currentBoss.shooting.StartShooting(SpawnLaserPillars(true, laserShotRate, numberOfLasersPairs)), laserCooldown));
@@ -146,7 +146,7 @@ public class Stage5Midboss : EnemyBossWave
 
             }
         };
-        Bullet bullet = Patterns.ShootStraight(bul, dmg, origin, initialAngle, initialSpeed);
+        Bullet bullet = Patterns.ShootStraight(bul, dmg, origin, initialAngle, initialSpeed,null);
         bullet.movement.triggers.Add(reflectOnBound);
         return bullet;
 

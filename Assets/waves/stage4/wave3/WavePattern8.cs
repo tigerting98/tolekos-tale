@@ -62,12 +62,12 @@ public class WavePattern8 : EnemyWave
         Enemy enemy = Instantiate(this.enemy, new Vector2(initialX, yPos), Quaternion.identity);
         enemy.SetEnemy(stats, false);
         float offset = Random.Range(0f, 360f);
-        enemy.deathEffects.OnDeath += () => Patterns.RingOfBullets(ringBullet, bulletDamage, enemy.transform.position, numberOfBulletsInDeathRing, offset, ringSpeed);
+        enemy.deathEffects.OnDeath += () => Patterns.RingOfBullets(ringBullet, bulletDamage, enemy.transform.position, numberOfBulletsInDeathRing, offset, ringSpeed,null);
         float timeToMove = enemy.movement.MoveTo(new Vector2(-initialX, yPos), moveSpeed);
         enemy.shooting.StartCoroutine(
             Functions.RepeatAction(
                 () => enemy.shooting.StartShootingFor(
-                    EnemyPatterns.ShootAtPlayer(lineBullet, bulletDamage, enemy.transform, bulletSpeed, shotRate), 0, numberOfBulletsPerLine * shotRate),
+                    EnemyPatterns.ShootAtPlayer(lineBullet, bulletDamage, enemy.transform, bulletSpeed, shotRate,null), 0, numberOfBulletsPerLine * shotRate),
                 numberOfBulletsPerLine * shotRate + pulseRate));
         Destroy(enemy.gameObject, timeToMove);
         yield return new WaitForSeconds(0.1f);

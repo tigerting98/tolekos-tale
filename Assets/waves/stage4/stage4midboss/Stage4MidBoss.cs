@@ -45,14 +45,14 @@ public class Stage4MidBoss : EnemyBossWave
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
         currentBoss.GetComponent<BulletOrientation>().SetCustomOrientation(
-                    t => 90 + Functions.AimAt(currentBoss.transform.position, GameManager.playerPosition));
+                    t => 90 + Functions.AimAtPlayer(currentBoss.transform));
         currentBoss.shooting.StartShooting(Functions.RepeatAction(() => {
-            float angle = Functions.AimAt(currentBoss.transform.position, GameManager.playerPosition);
+            float angle = Functions.AimAtPlayer(currentBoss.transform);
             Patterns.ShootStraight(fireBullet, dmgfirebullet1, 
                 Functions.RandomLocation(currentBoss.transform.position + Quaternion.Euler(0,0,angle) * new Vector2(0.5f, 0), 0.3f), angle + UnityEngine.Random.Range(-fireSpreadAngle, fireSpreadAngle),
-                UnityEngine.Random.Range(firebullet1Min, firebullet1Max));
+                UnityEngine.Random.Range(firebullet1Min, firebullet1Max),null);
         }, shotSpeed));
-        currentBoss.shooting.StartShooting(EnemyPatterns.PulsingBulletsRandomAngle(fireRoundBall, dmgfireball1, currentBoss.transform, fireballspeed1, fireballshotRate, fireballLines1));
+        currentBoss.shooting.StartShooting(EnemyPatterns.PulsingBulletsRandomAngle(fireRoundBall, dmgfireball1, currentBoss.transform, fireballspeed1, fireballshotRate, fireballLines1,null));
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
     }
 
@@ -98,7 +98,7 @@ public class Stage4MidBoss : EnemyBossWave
         Bullet circle = GameManager.bulletpools.SpawnBullet(firebul, origin);
         float time = circle.movement.MoveTo(end, speed);
         yield return new WaitForSeconds(time);
-        circle.StartCoroutine(EnemyPatterns.ConstantSpinningStraightBullets(bul, dmg, circle.transform, bulletspeed, angularvel, startAngle, 4, shotRate));
+        circle.StartCoroutine(EnemyPatterns.ConstantSpinningStraightBullets(bul, dmg, circle.transform, bulletspeed, angularvel, startAngle, 4, shotRate,null));
         circle.orientation.StartRotating(angularvel, 90 + startAngle);
     }
 
@@ -107,7 +107,7 @@ public class Stage4MidBoss : EnemyBossWave
         while (true) {
             bossOrientation.enabled = false;
             yield return new WaitForSeconds(0.01f);
-            float angle = Functions.AimAt(currentBoss.transform.position, GameManager.playerPosition);
+            float angle = Functions.AimAtPlayer(currentBoss.transform);
             currentBoss.transform.rotation = Quaternion.Euler(0, 0, angle + 90);
             Bullet firebeam = GameManager.bulletpools.SpawnBullet(GameManager.gameData.fireBeam, currentBoss.transform.position+ Quaternion.Euler(0, 0, angle) * new Vector2(0.5f, 0), 
                 Quaternion.identity);
@@ -119,7 +119,7 @@ public class Stage4MidBoss : EnemyBossWave
             bossOrientation.angle = angle + 90;
             bossOrientation.SetCustomAngularVel(t =>
             {
-                float theta = Functions.modulo(Functions.AimAt(bossOrientation.transform.position, GameManager.playerPosition) - (
+                float theta = Functions.modulo(Functions.AimAtPlayer(bossOrientation.transform) - (
                     bossOrientation.angle - 90), 360f);
                 return theta > 180 ? -laserangularVel : laserangularVel;
             });

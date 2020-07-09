@@ -46,14 +46,13 @@ public class Stage1MidBoss : EnemyBossWave
         {
             for (int i = 0; i < numberofPulses; i++)
             {
-                currentBoss.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(GameManager.gameData.smallRoundBullet.GetAllItems(), dmgBall, currentBoss.transform, ballSpeed, ballShotRate, ballNumber),
+                currentBoss.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(GameManager.gameData.smallRoundBullet.GetAllItems(), dmgBall, 
+                    currentBoss.transform, ballSpeed, ballShotRate, ballNumber,bulletSpawnSound),
                   delay * i);
-                currentBoss.enemyAudio.PlayAudio(bulletSpawnSound, ballShotRate, delay * i);
             }
             while (currentBoss) {
                 currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(GameManager.gameData.pointedBullet.GetItem(UnityEngine.Random.Range(0, 4)), dmgPointed, currentBoss.transform,
-                    straightSpeed, straightShotRate, spreadAngle, straightLines), 0, straightPulseTime);
-                currentBoss.enemyAudio.PlayAudioDuration(bulletSpawnSound, straightShotRate, straightPulseTime);
+                    straightSpeed, straightShotRate, spreadAngle, straightLines, bulletSpawnSound), 0, straightPulseTime);
                 yield return new WaitForSeconds(pauseTime);
             }
         }

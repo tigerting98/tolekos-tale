@@ -109,7 +109,7 @@ public class Stage3MidBoss : EnemyBossWave
         for (int i = 0; i < number; i++)
         {
             float initialSpeed = UnityEngine.Random.Range(initialspeed1min, intialspeed1max);
-            bullets.Add(EnemyPatterns.FallingBullet(bul, dmg, origin, 90 + UnityEngine.Random.Range(-anglerange1, anglerange1), acceleration1, initialSpeed * 2 / acceleration1, initialSpeed));
+            bullets.Add(EnemyPatterns.FallingBullet(bul, dmg, origin, 90 + UnityEngine.Random.Range(-anglerange1, anglerange1), acceleration1, initialSpeed * 2 / acceleration1, initialSpeed,null));
         }
         return bullets;
     }
@@ -139,7 +139,7 @@ public class Stage3MidBoss : EnemyBossWave
         {
             ring1.Deactivate();
             Patterns.ExplodingRingOfBullets(ball, ballDmg, target, numberOfBulletsPerRing, UnityEngine.Random.Range(0f, 360f),
-                bulletspeedfast, bulletspeedslow, bulletspeedtime);
+                bulletspeedfast, bulletspeedslow, bulletspeedtime,null);
         }
 
         

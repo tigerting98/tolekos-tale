@@ -97,8 +97,7 @@ public class Stage1EndBoss : EnemyBossWave
         currentBoss.bosshealth.OnLifeDepleted += EndPhase2;
         currentBoss.shooting.StartShootingAfter(RainOfArrows(), 0.3f);
         currentBoss.shooting.StartShootingAfter(MoveLeftAndRight(), 0.3f);
-        currentBoss.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(arrow, arrow.damageDealer.damage, currentBoss.transform, arrowSpeed, shotRate), 0.3f);
-        currentBoss.enemyAudio.PlayAudio(pattern2SFX, shotRate, 0.3f);
+        currentBoss.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(arrow, arrow.damageDealer.damage, currentBoss.transform, arrowSpeed, shotRate, pattern2SFX), 0.3f);
   
     }
 
@@ -159,7 +158,6 @@ public class Stage1EndBoss : EnemyBossWave
                         Destroy(explode.gameObject, 1.2f);
                         ExplodingAndBack(pos);
                         punchbul.Deactivate();
-                        pattern3smashSFX.PlayClip();
 
 
                     }
@@ -180,8 +178,9 @@ public class Stage1EndBoss : EnemyBossWave
         return Functions.RepeatAction(() =>
             {
                 float offset = UnityEngine.Random.Range(0f, 360f);
-                enemy.enemyAudio.PlayAudioTimes(pattern1SFX, pattern1SpawnRate, pattern1Number);
-                Patterns.CustomRing((angle) => enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), dmg1, enemy.transform, angle, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing)), offset, numberOfCone);
+                Patterns.CustomRing((angle) => enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(
+                    GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), dmg1, 
+                    enemy.transform, angle, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing,pattern1SFX)), offset, numberOfCone);
             }, pattern1PulseRate);
      
         
@@ -210,7 +209,7 @@ public class Stage1EndBoss : EnemyBossWave
                     t =>
                     new Vector2(0, t < maxRadiusPattern3 / initialSpeedPattern3 ?
                     initialSpeedPattern3 : t < maxRadiusPattern3 / initialSpeedPattern3 + shortDelayPattern3 ?
-                    0 : -finalSpeedPattern3)), MovementMode.Velocity);
+                    0 : -finalSpeedPattern3)), MovementMode.Velocity, pattern3smashSFX);
                 bul.movement.destroyBoundary = 6f;
                 return bul;
             }, 0, numberOfBulletsPattern3); 

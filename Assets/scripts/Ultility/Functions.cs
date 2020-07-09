@@ -105,7 +105,7 @@ public class Functions : MonoBehaviour
 
         return obj;
     }
-
+    
     public static float AimAt(Vector2 shooter, Vector2 target)
     {
 

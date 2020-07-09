@@ -55,7 +55,7 @@ public class WavePattern1 : EnemyWave
             enemy.movement.SetAcceleration(new Vector2((left ? 1 : -1) * startSpeed, 0), t => new Vector2((left ? 1 : -1) * (t < time ? -acc : acc), 0));
             if (Random.Range(0f, 1f) < shootChance)
             {
-                enemy.shooting.StartShootingFor(EnemyPatterns.PulsingBulletsRandomAngle(bullet, dmg, enemy.transform, bulletSpeed, shotRate, lines), time, shotRate * bulletNumber);
+                enemy.shooting.StartShootingFor(EnemyPatterns.PulsingBulletsRandomAngle(bullet, dmg, enemy.transform, bulletSpeed, shotRate, lines,null), time, shotRate * bulletNumber);
             }
         }, spawnRate, number);
     }

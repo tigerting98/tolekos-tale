@@ -43,7 +43,7 @@ public class Stage3Wave2 : EnemyWave
         float time = em.movement.MoveTo(spawnPos, enterSpeed);
         em.shooting.StartShootingFor(Functions.RepeatCustomAction(i =>
         {
-            float angle = Patterns.AimAt(em.transform.position, GameManager.playerPosition) + Random.Range(-angleRange, angleRange);
+            float angle = Functions.AimAtPlayer(em.transform) + Random.Range(-angleRange, angleRange);
             LeafDroppingBullet(em.transform.position, angle);
 
         }, shotRate), time, shootingduration + time);

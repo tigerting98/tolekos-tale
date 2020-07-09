@@ -57,12 +57,12 @@ public class WavePattern3 : EnemyWave
     {
         Enemy en = Instantiate(enemy, new Vector2(left ? -4.1f : 4.1f, y), Quaternion.identity);
         en.SetEnemy(stats, false);
-        en.deathEffects.OnDeath += () => Patterns.ExplodingRingOfBullets(bulletexplode, dmgexplode, en.transform.position, numberOfExplode, 0, fastspeed, slowspeed, radius / fastspeed);
+        en.deathEffects.OnDeath += () => Patterns.ExplodingRingOfBullets(bulletexplode, dmgexplode, en.transform.position, numberOfExplode, 0, fastspeed, slowspeed, radius / fastspeed,null);
         en.movement.SetSpeed(movespeed, left ? 0 : 180);
         en.movement.destroyBoundary = 4.5f;
         if (Random.Range(0f, 1f) < shotChance)
         {
-            en.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(bulletnormal, dmg, en.transform, shotSpeed, shotRate), delay);
+            en.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(bulletnormal, dmg, en.transform, shotSpeed, shotRate,null), delay);
         }
         return en;
     }
