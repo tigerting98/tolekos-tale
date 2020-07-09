@@ -109,6 +109,12 @@ PrefabInstance:
       propertyPath: bulletPoolID
       value: ball-0
       objectReference: {fileID: 0}
+    - target: {fileID: 5304289742371261883, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: spawnSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 361b4d9ef8067dc4ca43f90aad39380e,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 3092768192575656918, guid: 3118ceb8e2dd93e4bb557208bb39870e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3118ceb8e2dd93e4bb557208bb39870e, type: 3}

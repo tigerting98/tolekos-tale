@@ -118,5 +118,10 @@ PrefabInstance:
       propertyPath: bulletPoolID
       value: waterline-0
       objectReference: {fileID: 0}
+    - target: {fileID: 5304289742371261883, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: destroyOnDeath
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3118ceb8e2dd93e4bb557208bb39870e, type: 3}

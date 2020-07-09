@@ -55,7 +55,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnSound
       value: 
-      objectReference: {fileID: 11400000, guid: d9e8782d7baf07d45a5bd9bfb2e6d3c6,
+      objectReference: {fileID: 11400000, guid: d7ba27c42f8abce4cacc8c6065ba5ea4,
         type: 2}
     - target: {fileID: 5502227822980241576, guid: e3e5c0f0c7f411145b640e71a32ef105,
         type: 3}

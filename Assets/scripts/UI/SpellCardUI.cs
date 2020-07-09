@@ -12,6 +12,8 @@ public class SpellCardUI : MonoBehaviour
     [SerializeField] SFX spellCardSFX;
 
     public void SetImage(Sprite sprite) {
+        float ratio = sprite.rect.size.y / sprite.rect.size.x;
+        image.transform.localScale = new Vector2(1 / ratio, 1);
         image.sprite = sprite;
     }
 

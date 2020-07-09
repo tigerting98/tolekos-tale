@@ -62,6 +62,7 @@ public class Movement : MonoBehaviour
     //move to a location and then stopping afterwards
     public float MoveTo(Vector2 end, float speed) {
         StartMoving();
+        CancelInvoke();
         Vector2 diff = end - (Vector2)transform.position;
         float timeTaken = diff.magnitude / speed;
         SetSpeed(diff / timeTaken);

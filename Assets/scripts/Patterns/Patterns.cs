@@ -68,7 +68,13 @@ public class Patterns : MonoBehaviour
         }
         return bullets;
     }
-
+    public static List<Bullet> SpirallingOutwardsRing(Bullet bul, float dmg, Vector2 origin, float radialvel, float angularvel, int number, float offset)
+    {
+        return Patterns.CustomRing(angle => Patterns.ShootCustomBullet(
+                      bul, dmg,  origin,
+                      t => new Polar(radialvel * t, angle + angularvel * t).rect, MovementMode.Position
+                      ), offset, number);
+    }
     public static float AimAt(Vector2 shooter, Vector2 target)
     {
 

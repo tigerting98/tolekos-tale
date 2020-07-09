@@ -38,6 +38,7 @@ MonoBehaviour:
   name: waterboss
   bosshealth: {fileID: 4965199016690712829}
   hitbox: {fileID: 0}
+  magicCircle: {fileID: 0}
 --- !u!1001 &2208875181019130472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53,22 +54,22 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[2]
-      value: 15000
+      value: 14000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[3]
-      value: 18000
+      value: 15000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[0]
-      value: 30000
+      value: 28000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[1]
-      value: 32000
+      value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}

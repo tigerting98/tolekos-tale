@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
             SFXPlayer = GetComponent<AudioSource>();
         }
     }
+   
 
     public void PlaySFX(SFX sfx) {
         if (!coolDownDictionary.ContainsKey(sfx.id))

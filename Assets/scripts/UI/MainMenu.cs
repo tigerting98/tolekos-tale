@@ -7,83 +7,49 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject instructionMenu;
     public GameObject instructionButton, startButton, instructionBackButton;
-    public GameObject startPointer, instructionPointer, instructionBackPointer, quitPointer;
 
-    private GameObject previousSelection;
+    private GameObject lastSelected;
     void Awake()
     {
-        instructionMenu.SetActive(false);
-        instructionPointer.SetActive(false);
-        quitPointer.SetActive(false);
+       
         
     }
     private void Start()
     {
-        EventSystem.current.SetSelectedGameObject(null);
-        startPointer.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(startButton);
-        previousSelection = startButton;
+        instructionMenu.SetActive(false);
+        Invoke("SetStart", 0.01f);
     }
-
+    void SetStart() {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(startButton);
+        lastSelected = startButton;
+    }
+    void SetBack() {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(instructionBackButton);
+    }
 
     void Update()
     {
-        GameObject currentSelection = EventSystem.current.currentSelectedGameObject;
-        if (currentSelection != previousSelection && currentSelection != null) { 
-            if (currentSelection == startButton) 
+
+        GameObject current = EventSystem.current.currentSelectedGameObject;
+        if (current != lastSelected && current != null)
+        {
+            lastSelected = current;
+        }
+
+        if (current == null && lastSelected&&lastSelected.activeInHierarchy)
+        {
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow))
             {
-                instructionBackPointer.SetActive(false);
-                quitPointer.SetActive(false);
-                instructionPointer.SetActive(false);
-                startPointer.SetActive(true);
-            } 
-            else if (currentSelection == instructionButton)
-            {
-                instructionBackPointer.SetActive(false);
-                quitPointer.SetActive(false);
-                startPointer.SetActive(false);
-                instructionPointer.SetActive(true);
-            } 
-            else if (currentSelection == instructionBackButton) 
-            {
-                quitPointer.SetActive(false);
-                startPointer.SetActive(false);
-                instructionPointer.SetActive(false);
-                instructionBackPointer.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(lastSelected);
             }
-            else
-            {
-                instructionBackPointer.SetActive(false);
-                startPointer.SetActive(false);
-                instructionPointer.SetActive(false);
-                quitPointer.SetActive(true);
-            }
-            previousSelection = currentSelection;
-        } else if (currentSelection == null) {
-            quitPointer.SetActive(false);
-            startPointer.SetActive(false);
-            instructionPointer.SetActive(false);
-            instructionBackPointer.SetActive(false);
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow)) 
-            {
-                if (instructionMenu.activeInHierarchy) 
-                {
-                    EventSystem.current.SetSelectedGameObject(instructionBackButton);
-                    instructionBackPointer.SetActive(true);
-                } 
-                else 
-                {
-                EventSystem.current.SetSelectedGameObject(startButton);
-                startPointer.SetActive(true);
-                }
-            }    
         }
     }
 
     public void OpenInstructionMenu() {
         instructionMenu.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(instructionBackButton);
+        Invoke("SetBack", 0.01f);
 
     }
     public void CloseInstructionMenu() {

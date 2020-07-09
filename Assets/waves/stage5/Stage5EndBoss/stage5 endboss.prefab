@@ -46,13 +46,18 @@ MonoBehaviour:
   bulletSpawnSound: {fileID: 0}
   boss: {fileID: 0}
   bossImage: {fileID: 0}
+  bossPortrait: {fileID: 0}
   namesOfSpellCards:
   - Water girl\n~Icicles and Snowflakes~
-  - Earth prison ~Morphing Rock Walls~
-  - Fire Wheel ~Cartwheels Of Flame~
-  - 
-  - 
+  - Earth prison \n~Morphing Rock Walls~
+  - Fire Wheel\n ~Cartwheels Of Flame~
+  - TriColor Force \n~Shifting Elements~
+  - Great Convergence \n~The Trio Ultimate Spell~
   nextLevel: {fileID: 0}
+  waterportrait: {fileID: 21300000, guid: 7d35374c70d2753408d8c5a81b774b25, type: 3}
+  earthportrait: {fileID: 21300000, guid: dc50d3d1baa938a4fabf9da11f21d98a, type: 3}
+  fireportrait: {fileID: 21300000, guid: 60ed6bd4fafce2b4cb5e7e7c43ec19b7, type: 3}
+  combineportrait: {fileID: 21300000, guid: 63828bc0822d6d547a6dc051edd0abb9, type: 3}
   ui: {fileID: 9172258930565150853, guid: 61f657deda4becf43bcb58ed87351be1, type: 3}
   waterprefab: {fileID: 1806583198196191237, guid: 831046c0a97f4d845886a24da33b496c,
     type: 3}
@@ -77,12 +82,12 @@ MonoBehaviour:
   red: {r: 1, g: 0, b: 0, a: 1}
   pointer: {fileID: 8580154745028077592, guid: 7d36aae527e49f0468cc33726fd90704, type: 3}
   firedmg1: 210
-  fireshotRate1: 0.18
-  fireSpeed1: 2.6
+  fireshotRate1: 0.2
+  fireSpeed1: 1.8
   fireanglespread1: 15
   fireradius1: 0.5
   earthdmg1: 210
-  earthshotRate1: 1.34
+  earthshotRate1: 1.5
   earthspeed1: 1.4
   earthspread1: 20
   earthnumber1: 30
@@ -92,10 +97,10 @@ MonoBehaviour:
   waterspeed1: 1.5
   circledist1: 1
   circlespeed1: 1
-  waterspeeddiff: 0.3
-  waternumber1: 5
-  movespeed1: 0.5
-  radiusmovement1: 1
+  waterspeeddiff: 0.2
+  waternumber1: 4
+  movespeed1: 0.3
+  radiusmovement1: 0.8
   waterorigin1: {x: 0, y: 2.5}
   startingPoint2: {x: 0, y: 2.1}
   snowflakedmg2: 375
@@ -211,6 +216,24 @@ MonoBehaviour:
   snowflakeradialvel7: 1
   startingPoint8: {x: 0, y: 2}
   radius8: 2
-  angularvel8: 30
+  angularvel8: 23
   laserdmg8: 2000
   thickness8: 0.5
+  shotRate8: 0.6
+  shotspeed8: 2
+  shot8dmg: 700
+  firedmg8: 400
+  firespread8: 43
+  firespeed8: 2.3
+  firenumber8: 4
+  snowdmg8: 400
+  snowradialvel8: 1.1
+  snowangularvel8: 13
+  snownumber8: 25
+  leafdmg8: 400
+  minspeed8leaf: 1.5
+  speeddiff8leaf: 0.2
+  leafspreadangle8: 32
+  leafsize8: 0.9
+  leaflines8: 4
+  leafperline8: 5

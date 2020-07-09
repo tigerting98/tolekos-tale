@@ -9,9 +9,11 @@ using UnityEditor.Experimental.Rendering;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 public class Stage5EndBoss : EnemyBossWave
 {
+    [SerializeField] Sprite waterportrait, earthportrait, fireportrait, combineportrait;
     [SerializeField] Stage5EndBossUI ui;
     [SerializeField] Stage5Boss waterprefab, earthprefab, fireprefab;
     Stage5Boss waterBoss, earthBoss, fireBoss;
@@ -75,7 +77,16 @@ public class Stage5EndBoss : EnemyBossWave
     [Header("Pattern8")]
     [SerializeField] Vector2 startingPoint8 = new Vector2(0, 2);
     [SerializeField] float radius8, angularvel8, laserdmg8, thickness8 = 0.5f;
+    [SerializeField] float shotRate8, shotspeed8, shot8dmg;
+    [SerializeField] float firedmg8, firespread8, firespeed8;
+    [SerializeField] int firenumber8;
+    [SerializeField] float snowdmg8, snowradialvel8, snowangularvel8;
+    [SerializeField] int snownumber8;
+    [SerializeField] float leafdmg8= 400, minspeed8leaf = 1.5f, speeddiff8leaf = 0.2f, leafspreadangle8 = 30f, leafsize8 = 0.8f;
+    [SerializeField] int leaflines8 = 3, leafperline8 = 5;
+
     bool[] donebools7 = new bool[3] { false, false, false};
+    bool[] donebools8 = new bool[3] { false, false, false };
     public override void SpawnWave() {
         waterCircle = GameManager.gameData.waterCircle;
         earthCircle = GameManager.gameData.earthCircle;
@@ -150,7 +161,7 @@ public class Stage5EndBoss : EnemyBossWave
         fireimage.MoveTo(new Vector2(4.5f, 4.5f), movespeed);
         earthimage.MoveTo(new Vector2(-4.5f, 4.5f), movespeed);
         waterimage.MoveTo(startingPoint2, movespeed);
-        SpellCardUI(namesOfSpellCards[0]);
+        SpellCardUI(namesOfSpellCards[0], waterportrait);
         Invoke("Phase2", spellCardTransition);
     }
     public void Phase2() {
@@ -208,7 +219,7 @@ public class Stage5EndBoss : EnemyBossWave
     public void StartPhase4() {
         float time1 = fireimage.MoveTo(new Vector2(4.5f, 4.5f), movespeed);
         float time3 = waterimage.MoveTo(new Vector2(-4.5f, 4.5f), movespeed);
-        SpellCardUI(namesOfSpellCards[1]);
+        SpellCardUI(namesOfSpellCards[1], earthportrait);
         Invoke("Phase4", spellCardTransition);
 
     }
@@ -264,7 +275,7 @@ public class Stage5EndBoss : EnemyBossWave
         Invoke("StartPhase6", endPhaseTransition);
     }
     public void StartPhase6() {
-        SpellCardUI(namesOfSpellCards[2]);
+        SpellCardUI(namesOfSpellCards[2],fireportrait);
         waterimage.MoveTo(new Vector2(4.5f, 4.5f), movespeed);
         earthimage.MoveTo(new Vector2(-4.5f, 4.5f), movespeed);
         fireimage.MoveTo(startingPoint6, movespeed);
@@ -304,14 +315,14 @@ public class Stage5EndBoss : EnemyBossWave
         fireBoss.bosshealth.OnLifeDepleted -= EndPhase6;
         EndPhase();
         SwitchToImage(DamageType.Fire);
-        fireimage.MoveTo(startingPoint7 + new Vector2(movementradius7, 0), movespeed);
-        waterimage.MoveTo(startingPoint7 - new Vector2(movementradius7, 0), movespeed);
+        fireimage.MoveTo(startingPoint7 + new Vector2(movementradius7, 0), movespeed/1.5f);
+        waterimage.MoveTo(startingPoint7 - new Vector2(movementradius7, 0), movespeed/1.5f);
         earthimage.MoveTo(startingPoint7, movespeed);
         Invoke("StartPhase7", endPhaseTransition);
     }
 
     public void StartPhase7() {
-        SpellCardUI(namesOfSpellCards[3]);
+        SpellCardUI(namesOfSpellCards[3], combineportrait);
         Invoke("Phase7", spellCardTransition);
     }
     public void Phase7() {
@@ -333,16 +344,16 @@ public class Stage5EndBoss : EnemyBossWave
         waterBoss.shooting.StartShooting(Functions.RepeatCustomAction(
             i =>
             {
-                Patterns.CustomRing(angle => Patterns.ShootCustomBullet(
-                    GameManager.gameData.snowflake, snowflakedmg7, waterBoss.transform.position,
-                    t => new Polar(snowflakeradialvel7 * t, angle + (i % 2 == 0 ? -1 : 1) * snowflakeangularvel7 * t).rect, MovementMode.Position
-                    ), 0, numberofsnowflakes7);
+                Patterns.SpirallingOutwardsRing(GameManager.gameData.snowflake, snowflakedmg7, waterBoss.transform.position, snowflakeradialvel7,
+                   (i % 2 == 0 ? -1 : 1) * snowflakeangularvel7, numberofsnowflakes7, 0);
+               
             }, snowflakeshotrate7));
     }
     public void OneDownWater() {
         donebools7[0] = true;
         waterBoss.shooting.StopAllCoroutines();
         SwitchToImage(DamageType.Water);
+        waterimage.GetComponent<Movement>().MoveTo(new Vector2(0, 5f), movespeed / 3);
         waterBoss.bosshealth.OnLifeDepleted -= OneDownWater;
         GoNext();
         
@@ -352,6 +363,7 @@ public class Stage5EndBoss : EnemyBossWave
         donebools7[1] = true;
         earthBoss.shooting.StopAllCoroutines();
         SwitchToImage(DamageType.Earth);
+        earthimage.GetComponent<Movement>().MoveTo(new Vector2(0, 5f), movespeed / 3);
         earthBoss.bosshealth.OnLifeDepleted -= OneDownEarth;
         GoNext();
     }
@@ -360,11 +372,12 @@ public class Stage5EndBoss : EnemyBossWave
         donebools7[2] = true;
         fireBoss.shooting.StopAllCoroutines();
         SwitchToImage(DamageType.Fire);
+        fireimage.GetComponent<Movement>().MoveTo(new Vector2(0, 5f), movespeed / 3);
         fireBoss.bosshealth.OnLifeDepleted -= OneDownFire;
         GoNext();
     }
     public void GoNext() {
-        GameManager.DestoryAllEnemyBullets();
+        PlayLifeDepletedSound();
         foreach (bool bl in donebools7)
         {
             if (!bl)
@@ -376,13 +389,13 @@ public class Stage5EndBoss : EnemyBossWave
     }
     public void EndPhase7() {
         EndPhase();
-        waterimage.MoveTo(startingPoint8 + new Polar(radius8, 90).rect, movespeed);
-        earthimage.MoveTo(startingPoint8 + new Polar(radius8, -30).rect, movespeed);
-        fireimage.MoveTo(startingPoint8 + new Polar(radius8, -150).rect, movespeed);
+        waterimage.MoveTo(startingPoint8 + new Polar(radius8, 90).rect, movespeed/1.5f);
+        earthimage.MoveTo(startingPoint8 + new Polar(radius8, -30).rect, movespeed/1.5f);
+        fireimage.MoveTo(startingPoint8 + new Polar(radius8, -150).rect, movespeed/1.5f);
         Invoke("StartPhase8", endPhaseTransition);
     }
     public void StartPhase8() {
-        SpellCardUI(namesOfSpellCards[4]);
+        SpellCardUI(namesOfSpellCards[4], combineportrait);
         Invoke("Phase8", spellCardTransition);
     }
     public void Phase8() {
@@ -392,6 +405,109 @@ public class Stage5EndBoss : EnemyBossWave
         Pattern8Movement(waterBoss.movement, DamageType.Water, 90);
         Pattern8Movement(earthBoss.movement, DamageType.Earth, -30);
         Pattern8Movement(fireBoss.movement, DamageType.Fire, -150);
+        waterBoss.bosshealth.OnDeath += OneDownWater8;
+        earthBoss.bosshealth.OnDeath += OneDownEarth8;
+        fireBoss.bosshealth.OnDeath += OneDownFire8;
+        fireBoss.shooting.StartShooting(Functions.RepeatAction(()=> ShootFire8(fireBoss.transform), shotRate8));
+        waterBoss.shooting.StartShooting(Functions.RepeatCustomAction(
+            i => ShootWater8(waterBoss.transform, i % 2 == 0), shotRate8));
+        earthBoss.shooting.StartShooting(Functions.RepeatAction(() => ShootEarth8(earthBoss.transform), shotRate8));
+    }
+    public void OneDownWater8()
+    {
+        donebools8[0] = true;
+        waterBoss.shooting.StopAllCoroutines();
+        SwitchToImage(DamageType.Water);
+        waterimage.GetComponent<Movement>().MoveTo(new Vector2(0, 5f), movespeed / 3);
+        waterBoss.bosshealth.OnLifeDepleted -= OneDownWater8;
+        GoNext8();
+
+    }
+    public void OneDownEarth8()
+    {
+        donebools8[1] = true;
+        earthBoss.shooting.StopAllCoroutines();
+        SwitchToImage(DamageType.Earth);
+        earthimage.GetComponent<Movement>().MoveTo(new Vector2(0, 5f), movespeed / 3);
+        earthBoss.bosshealth.OnLifeDepleted -= OneDownEarth8;
+        GoNext8();
+    }
+    public void OneDownFire8()
+    {
+        donebools8[2] = true;
+        fireBoss.shooting.StopAllCoroutines();
+        SwitchToImage(DamageType.Fire);
+        fireimage.GetComponent<Movement>().MoveTo(new Vector2(0, 5f), movespeed / 3);
+        fireBoss.bosshealth.OnLifeDepleted -= OneDownFire8;
+        GoNext8();
+    }
+    public void GoNext8()
+    {
+        foreach (bool bl in donebools8)
+        {
+            if (!bl)
+            {
+                return;
+            }
+        }
+        EndPhase8();
+    }
+    void EndPhase8() {
+        EndPhase();
+        GameManager.CollectEverything();
+        Invoke("StartDialogue", 1f);
+    }
+    void StartDialogue() { 
+        
+    }
+    public Bullet ShootWater8(Transform origin, bool clockwise) {
+        float angle = Functions.AimAt(origin.position, startingPoint8);
+        float time = radius8 / shotspeed8;
+        Bullet water = Patterns.ShootStraight(GameManager.gameData.icicle, shot8dmg, origin.position, angle, shotspeed8);
+
+        ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > time);
+        trigger.OnTriggerEvent += movement => 
+        {
+            Patterns.SpirallingOutwardsRing(GameManager.gameData.snowflake, snowdmg8, movement.transform.position, snowradialvel8, (clockwise ? -1 : 1) * snowangularvel8,
+                snownumber8, angle);
+            movement.GetComponent<Bullet>().Deactivate();
+        };
+       water.movement.triggers.Add(trigger);
+        return water;
+    }
+    public Bullet ShootFire8(Transform origin) {
+        float angle = Functions.AimAt(origin.position, startingPoint8);
+        float time = radius8 / shotspeed8;
+        Bullet fire = Patterns.ShootStraight(GameManager.gameData.fireBall, shot8dmg, origin.position, angle, shotspeed8);
+
+        ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > time);
+        trigger.OnTriggerEvent += movement =>
+        {
+            Patterns.ShootMultipleStraightBullet(GameManager.gameData.fireShortLaser, firedmg8,
+                movement.transform.position, firespeed8, angle, firespread8, firenumber8);
+            movement.GetComponent<Bullet>().Deactivate();
+        };
+        fire.movement.triggers.Add(trigger);
+        return fire;
+    }
+    public Bullet ShootEarth8(Transform origin)
+    {
+        float angle = Functions.AimAt(origin.position, startingPoint8);
+        float time = radius8 / shotspeed8;
+        Bullet earth = Patterns.ShootStraight(GameManager.gameData.rockBullet, shot8dmg, origin.position, angle, shotspeed8);
+
+        ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > time);
+        Bullet leaf = GameManager.gameData.leafBullet2;
+        trigger.OnTriggerEvent += movement =>
+        {
+            for (int i = 0; i < leaflines8; i++) {
+                List<Bullet> buls = Patterns.ShootMultipleStraightBullet(leaf, leafdmg8, movement.transform.position, minspeed8leaf + i * speeddiff8leaf, angle, leafspreadangle8, leaflines8);
+                Functions.Scale(buls, leafsize8);
+            }
+            movement.GetComponent<Bullet>().Deactivate();
+        };
+        earth.movement.triggers.Add(trigger);
+        return earth;
     }
     public void Pattern8Movement(Movement move, DamageType type, float angle) {
         Vector2 start = startingPoint8 + new Polar(radius8, angle).rect;
@@ -402,7 +518,7 @@ public class Stage5EndBoss : EnemyBossWave
         bul.SetDamage(laserdmg8);
         bul.transform.localScale = new Vector2(Mathf.Sqrt(3)*radius8 / 3f, thickness8);
         bul.orientation.angle = angle - 150;
-        bul.transform.parent = move.transform.parent;
+        bul.transform.parent = move.transform;
         bul.orientation.StartRotating(-angularvel8);
         
     }
@@ -637,9 +753,9 @@ public class Stage5EndBoss : EnemyBossWave
 
     }
     public void SetUp() {
-        GameObject obj = GameObject.Find("gamecanvas");
+        GameObject obj = GameObject.Find("gamecanvas/stats UI");
         bossUI = Instantiate(ui, obj.transform);
-        bossUI.transform.localPosition = new Vector2(622, 294);
+        bossUI.transform.localPosition = new Vector2(0,273);
     }
     public override void EndPhase()
     {
@@ -670,7 +786,15 @@ public class Stage5EndBoss : EnemyBossWave
 
     }
 
+    public virtual void SpellCardUI(string name, Sprite image)
+    {
+        currentUI = Instantiate(GameManager.gameData.spellcardUI);
+        
+        currentUI.SetImage(image);
+        currentUI.PlaySFX();
+        currentUI.SetText(name.Replace("\\n", "\n"));
 
+    }
     protected virtual void SwitchToImage(DamageType type)
     {
         GameObject image = (type == DamageType.Water ? waterimage : type==DamageType.Earth ? earthimage : fireimage).gameObject;

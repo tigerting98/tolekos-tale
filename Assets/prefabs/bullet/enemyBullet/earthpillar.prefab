@@ -109,6 +109,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 0514d40c6fed8f34ca4a5bb80138023b,
         type: 3}
+    - target: {fileID: 3092768192575656919, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 5304289742371261883, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: bulletPoolID

@@ -20,7 +20,7 @@ public class PlayerPattern : MonoBehaviour
     public static void EarthFocusedMode(Bullet bullet, Player player)
     {
       
-         Patterns.ShootStraight(bullet, bullet.damageDealer.damage, player.transform.position, 90, player.bulletSpeed/2);
+         Patterns.ShootStraight(bullet, bullet.damageDealer.damage, player.transform.position, 90, player.bulletSpeed/1.5f);
   
 
 

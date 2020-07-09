@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointer: {fileID: 5379652814400382106}
+  buttonSFX: {fileID: 11400000, guid: c255ff9997ae2804894afba388a98cc3, type: 2}
 --- !u!1 &5379652814400382106
 GameObject:
   m_ObjectHideFlags: 0

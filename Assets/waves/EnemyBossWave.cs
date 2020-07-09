@@ -9,9 +9,9 @@ public class EnemyBossWave : EnemyWave
     protected static float spellCardTransition = 1.7f;
     public Boss boss;
 
-    public GameObject bossImage;
+    [HideInInspector] public GameObject bossImage;
     [Header("Audio")]
-
+    public Sprite bossPortrait;
     protected SpellCardUI currentUI;
     protected Boss currentBoss;
     [SerializeField] protected List<string> namesOfSpellCards;
@@ -74,6 +74,10 @@ public class EnemyBossWave : EnemyWave
     public virtual void SpellCardUI(string name)
     {
         currentUI = Instantiate(GameManager.gameData.spellcardUI);
+        if (!bossPortrait) {
+            bossPortrait = bossImage.GetComponent<SpriteRenderer>().sprite;
+        }
+        currentUI.SetImage(bossPortrait);
         currentUI.PlaySFX();
         currentUI.SetText(name.Replace("\\n", "\n"));
 
