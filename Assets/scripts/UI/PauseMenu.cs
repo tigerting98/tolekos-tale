@@ -51,17 +51,18 @@ public class PauseMenu : MonoBehaviour
     public void StatsText() {
         int curHP = GameManager.player ? (int)GameManager.player.health.GetCurrentHP() : 0;
         StringBuilder txt = new StringBuilder(1000);
+        txt.Append(string.Format("Difficulty: {0}\n", GameManager.difficultyLevel.ToString()));
         txt.Append(string.Format("Level: {0}\n", PlayerStats.playerLevel));
         txt.Append(string.Format("EXP: {0}/{1}\n", PlayerStats.exp, PlayerStats.expToLevelUp));
         txt.Append(string.Format("Health: {0}/{1}\n", curHP, (int)PlayerStats.playerMaxHP));
-        txt.Append("Damages\n");
         txt.Append(string.Format("Water Unfocus Damage: {0}\n", PlayerStats.damage));
         txt.Append(string.Format("Water Focus Damage: {0}\n", PlayerStats.damage));
         txt.Append(string.Format("Earth Unfocus Damage: {0}\n", PlayerStats.damage));
         txt.Append(string.Format("Earth Focus Damage: {0}\n", PlayerStats.damage* PlayerStats.earthFocusDaamgeRatio));
         txt.Append(string.Format("Fire Unfocus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireUnfocusDamageRatio));
         txt.Append(string.Format("Fire Focus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireFocusDamageRatio));
-        txt.Append(string.Format("Bomb Damage: {0} per part", PlayerStats.bombDamage));
+        txt.Append(string.Format("Bomb Damage: {0} per part\n", PlayerStats.bombDamage));
+        txt.Append(string.Format("Number Of Deaths: {0}\n", PlayerStats.deathCount));
         text.text = txt.ToString() ;
     
     }

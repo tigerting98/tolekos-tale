@@ -31,10 +31,14 @@ public class PlayerStats : MonoBehaviour
     public static int bombCount = 3;
 
     public static float bombDamage = 1000;
-    
 
+    
     public static void UseBomb() {
         bombCount--;
+        OnUpdateBomb?.Invoke();
+    }
+    public static void GainBomb(int x) {
+        bombCount += x;
         OnUpdateBomb?.Invoke();
     }
     public static void AddGold(int gold) {

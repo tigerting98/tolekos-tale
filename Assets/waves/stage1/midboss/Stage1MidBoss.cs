@@ -38,6 +38,7 @@ public class Stage1MidBoss : EnemyBossWave
     }
     IEnumerator BossPatterns() {
         currentBoss = Instantiate(boss, new Vector2(0, 4.2f), Quaternion.identity);
+        currentBoss.GetComponent<BasicDroppable>().otherDrops.Add(GameManager.gameData.defaultBombDrop);
         GameManager.currentBoss = currentBoss;
         currentBoss.bosshealth.OnDeath += Defeated;
         float time = currentBoss.movement.MoveTo(new Vector2(0, endY), movementSpeed);

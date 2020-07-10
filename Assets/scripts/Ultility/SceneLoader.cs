@@ -20,20 +20,7 @@ public class SceneLoader : MonoBehaviour
         }
         
     }
-    private void Start()
-    {
-        GameManager.OnGameover += OnGameOverEvent;
-    }
 
-    private void OnDestroy()
-    {
-        GameManager.OnGameover -= OnGameOverEvent;
-    }
-    public void OnGameOverEvent(bool victory) {
-
-        GameManager.victory = victory;
-        EndScene();
-    }
     public void QuitGame()
     {
         Application.Quit();
@@ -43,7 +30,10 @@ public class SceneLoader : MonoBehaviour
     public void LoadScene(string str) {
         SceneManager.LoadScene(str);
     }
-
+    public void LoadStartGame(int i) {
+        GameManager.difficultyLevel = (Difficulty)i;
+        LoadShopScene(GameManager.gameData.beforeStage1);
+    }
     public void LoadShopScene(LevelDescription levelDescription) {
         GameManager.levelDescription = levelDescription;
         SceneManager.LoadScene("Shop Scene");
@@ -53,17 +43,9 @@ public class SceneLoader : MonoBehaviour
     public void ReturnToStartPage() {
         LoadScene("StartPage");
     }
-    public void EndScene()
-    {
-        StartCoroutine(WaitAndLoad("EndScene"));
 
-    }
 
-  
-    IEnumerator WaitAndLoad(string str) {
-        yield return new WaitForSeconds(2f);
-        LoadScene(str);
-    }
+
 
    
   

@@ -42,6 +42,9 @@ public class Stage4MidBoss : EnemyBossWave
 
     void StartPhase1() {
         currentBoss = Instantiate(boss, spawnLocation, Quaternion.identity);
+        BasicDroppable droppable = currentBoss.GetComponent<BasicDroppable>();
+        droppable.otherDrops.Add(GameManager.gameData.defaultBombDrop);
+        droppable.otherDrops.Add(GameManager.gameData.lifeDrop1000);
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
         currentBoss.GetComponent<BulletOrientation>().SetCustomOrientation(

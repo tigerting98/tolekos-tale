@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class MainMenu : MonoBehaviour
 {
     public GameObject instructionMenu;
-    public GameObject instructionButton, startButton, instructionBackButton;
-
+    public GameObject instructionButton, startButton, instructionBackButton, QuitButton;
+    public GameObject difficultySelectionMenu, normalButton;
     private GameObject lastSelected;
     void Awake()
     {
@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         instructionMenu.SetActive(false);
+        difficultySelectionMenu.SetActive(false);
         Invoke("SetStart", 0.01f);
     }
     void SetStart() {
@@ -45,6 +46,40 @@ public class MainMenu : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(lastSelected);
             }
         }
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (difficultySelectionMenu.activeInHierarchy) {
+                CloseDifficultySelection();
+            }
+            else if (lastSelected == instructionBackButton)
+            {
+                CloseInstructionMenu();
+            }
+            else {
+                SetToQuitButton();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && difficultySelectionMenu.activeInHierarchy) {
+            CloseDifficultySelection();
+        }
+    }
+
+    public void SelectDifficulty() {
+        difficultySelectionMenu.SetActive(true);
+        Invoke("SelectDifficultyDelay", 0.01f);
+    }
+    public void SelectDifficultyDelay() {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(normalButton);
+    }
+    public void CloseDifficultySelection() {
+        difficultySelectionMenu.SetActive(false);
+        lastSelected.GetComponent<ButtonPointer>().OnDeselect(null);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(startButton);
+    }
+    public void SetToQuitButton() {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(QuitButton);
     }
 
     public void OpenInstructionMenu() {

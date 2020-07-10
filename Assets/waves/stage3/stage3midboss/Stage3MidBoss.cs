@@ -18,8 +18,8 @@ public class Stage3MidBoss : EnemyBossWave
     [Header("Pattern1")]
     [SerializeField] float movementSpeed1, pulseRate1, pauseDuration1, x1, y1, dmg1,anglerange1, initialspeed1min, intialspeed1max, acceleration1;
     [SerializeField] int pulses1, bulletsperPulse1;
-    [Header("Pattern1")]
-    [SerializeField] float y2, ringspeed, bulletspeedfast, bulletspeedtime, bulletspeedslow, radiusAroundPlayer, ballDmg, pulserate2, timetoExplode;
+    [Header("Pattern2")]
+    [SerializeField] float y2, ringspeed, bulletspeedfast, bulletspeedtime, bulletspeedslow, radiusAroundPlayer, starDmg, pulserate2, timetoExplode;
     [SerializeField] int numberOfRings, numberOfBulletsPerRing;
 
 
@@ -49,6 +49,7 @@ public class Stage3MidBoss : EnemyBossWave
 
     void Phase1() {
         currentBoss = Instantiate(boss, new Vector2(0, spawnLocationY), Quaternion.identity);
+        currentBoss.GetComponent<BasicDroppable>().otherDrops.Add(GameManager.gameData.defaultBombDrop);
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
         currentBoss.shooting.StartCoroutine(Pattern1());
@@ -119,9 +120,9 @@ public class Stage3MidBoss : EnemyBossWave
         while (true)
         {
             Bullet ring = GameManager.gameData.earthCircle;
-            Bullet ball = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Earth);
+            Bullet star = GameManager.gameData.starBullet.GetItem(DamageType.Earth);
             Functions.StartMultipleCustomCoroutines(currentBoss.shooting,
-                    i => ShootRing(ring, ball, currentBoss.transform.position,
+                    i => ShootRing(ring, star, currentBoss.transform.position,
                    GameManager.playerPosition + (Vector2)(Quaternion.Euler(0, 0, i * 360f / numberOfRings) * new Vector2(radiusAroundPlayer, 0))
                    , timetoExplode), numberOfRings);
             yield return new WaitForSeconds(pulserate2);
@@ -129,7 +130,7 @@ public class Stage3MidBoss : EnemyBossWave
     
     }
 
-    IEnumerator ShootRing(Bullet ring, Bullet ball, Vector2 origin, Vector2 target, float timeToExplode) {
+    IEnumerator ShootRing(Bullet ring, Bullet star, Vector2 origin, Vector2 target, float timeToExplode) {
         Bullet ring1 = GameManager.bulletpools.SpawnBullet(ring, origin);
         ring1.transform.localScale *= 0.5f;
         ring1.movement.destroyBoundary = 5f;
@@ -138,7 +139,7 @@ public class Stage3MidBoss : EnemyBossWave
         if (ring1&&ring1.gameObject.activeInHierarchy)
         {
             ring1.Deactivate();
-            Patterns.ExplodingRingOfBullets(ball, ballDmg, target, numberOfBulletsPerRing, UnityEngine.Random.Range(0f, 360f),
+            Patterns.ExplodingRingOfBullets(star, starDmg, target, numberOfBulletsPerRing, UnityEngine.Random.Range(0f, 360f),
                 bulletspeedfast, bulletspeedslow, bulletspeedtime,null);
         }
 

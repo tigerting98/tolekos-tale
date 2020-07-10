@@ -47,6 +47,7 @@ MonoBehaviour:
   boss: {fileID: 6857358497036807141, guid: b02337ff7beacc24aae2ed42bdcb486e, type: 3}
   bossImage: {fileID: 6034030427296860853, guid: 2a0e4074c7cb37045aa045d56c8bed1f,
     type: 3}
+  bossPortrait: {fileID: 0}
   namesOfSpellCards:
   - Angry Fish \n ~Underwater Prison~
   - Playful Fish\n ~High Pressure Jet~
@@ -138,4 +139,4 @@ MonoBehaviour:
   explodingBulletSpeedFast: 2
   explodingBulletSpeedSlow: 1
   dmg5arrow: 215
-  dmg5ball: 230
+  dmg5star: 200

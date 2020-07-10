@@ -48,6 +48,7 @@ public class Stage2MidBoss : EnemyBossWave
 
     void Phase1() {
         currentBoss = Instantiate(boss, spawnLocation, Quaternion.identity);
+        currentBoss.GetComponent<BasicDroppable>().otherDrops.Add(GameManager.gameData.lifeDrop300);
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
         currentBoss.shooting.StartCoroutine(Pattern1());

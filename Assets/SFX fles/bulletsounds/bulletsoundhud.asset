@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e4dc7d24b225640a1bf1ebc2260221, type: 3}
   m_Name: bulletsoundhud
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 16c4fc19dd33b6846aaeff1f52b51138, type: 3}
   volume: 0.1
-  id: 
-  cooldownTime: 0.01
+  id: bulletsound-loud
+  cooldownTime: 0.07

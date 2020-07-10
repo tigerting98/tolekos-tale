@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reset : MonoBehaviour
+public class BombDrop : Collectible
 {
+    public int bombAmount = 1;
     // Start is called before the first frame update
-    private void Start()
+    protected override void Collect()
     {
-        PlayerStats.Reset();
-        GameManager.Reset();
+        PlayerStats.GainBomb(bombAmount);
     }
 }

@@ -34,10 +34,10 @@ public class Health : MonoBehaviour
         OnDeath?.Invoke();
     }
 
-    public virtual void Heal(float dmg)
+    public virtual void Heal(float amount){
+        float newHP = amount + currentHP;
+        currentHP = Mathf.Clamp(newHP, 0, maxHP);
 
-    {
-        currentHP += dmg;
     }
     public virtual float GetCurrentHP()
     {

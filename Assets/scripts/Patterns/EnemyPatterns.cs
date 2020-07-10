@@ -161,11 +161,12 @@ public class EnemyPatterns : MonoBehaviour {
     {
        
         return Functions.RepeatCustomActionXTimes(i => {
-            Vector2 start = spawner.position - Quaternion.Euler(0, 0, angle) * new Vector2(0, (spacing * i) / 2);
+            Vector2 start = (Vector2)spawner.position - new Polar((spacing * i) / 2, angle+90).rect;
+
             for (int j = 0; j < i + 1; j++)
             {
                 
-                Bullet bul = Patterns.ShootStraight(bullet, dmg, start + new Polar(spacing * j, angle).rect, angle, speed, sfx);
+                Bullet bul = Patterns.ShootStraight(bullet, dmg, start + new Polar(spacing * j, angle+90).rect, angle, speed, sfx);
             }
 
         }, spawnRate, number);

@@ -96,7 +96,7 @@ MonoBehaviour:
   name: The Big Bad One
   bosshealth: {fileID: -2720052727061517675}
   hitbox: {fileID: 957944301124248136}
-  magicCircle: {fileID: 0}
+  magicCircle: {fileID: 2325484512941947509}
 --- !u!114 &-2720052727061517675
 MonoBehaviour:
   m_ObjectHideFlags: 0

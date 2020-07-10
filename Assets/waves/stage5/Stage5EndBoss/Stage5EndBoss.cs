@@ -48,7 +48,7 @@ public class Stage5EndBoss : EnemyBossWave
     [Header("Pattern4")]
     [SerializeField] float treerockspeed4;
     [SerializeField] float treerockdmg4;
-    [SerializeField] float shotRate4, unitspercircle4, acceleration4, time4, delay4, dmg4ball, size4 = 0.65f;
+    [SerializeField] float shotRate4, unitspercircle4, acceleration4, time4, delay4, dmg4star, size4 = 0.65f;
     [SerializeField] float spacing4 = 1.3f, randomfactor4 = 0.5f, pulseRate4 = 7f;
     [Header("Pattern5")]
     [SerializeField] Vector2 startingPoint5;
@@ -84,7 +84,7 @@ public class Stage5EndBoss : EnemyBossWave
     [SerializeField] int snownumber8;
     [SerializeField] float leafdmg8= 400, minspeed8leaf = 1.5f, speeddiff8leaf = 0.2f, leafspreadangle8 = 30f, leafsize8 = 0.8f;
     [SerializeField] int leaflines8 = 3, leafperline8 = 5;
-
+    [SerializeField] Dialogue endDialogue;
     bool[] donebools7 = new bool[3] { false, false, false};
     bool[] donebools8 = new bool[3] { false, false, false };
     public override void SpawnWave() {
@@ -457,8 +457,8 @@ public class Stage5EndBoss : EnemyBossWave
         GameManager.CollectEverything();
         Invoke("StartDialogue", 1f);
     }
-    void StartDialogue() { 
-        
+    void StartDialogue() {
+        StartCoroutine(DialogueManager.StartDialogue(endDialogue, NextStage));
     }
     public Bullet ShootWater8(Transform origin, bool clockwise) {
         float angle = Functions.AimAt(origin.position, startingPoint8);
@@ -593,28 +593,30 @@ public class Stage5EndBoss : EnemyBossWave
         return buls;
     }
     Bullet SummonRockVertical(float x, bool up) {
-        Bullet ball = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Earth);
+        Bullet star = GameManager.gameData.starBullet.GetItem(DamageType.Earth);
         Bullet treerock = Patterns.ShootStraight(GameManager.gameData.treeRockBullet, treerockdmg4, new Vector2(x, up? -4.2f:4.2f), up?90:-90, treerockspeed4,null);
         treerock.GetComponent<Shooting>().StartShooting(Functions.RepeatCustomAction(
             i => {
                 Vector2 pos = treerock.transform.position;
                 float angle = (up?(pos.y+4f):(4f - pos.y)) / unitspercircle4 * 360f;
-                Bullet bul = Patterns.ShootCustomBullet(ball, dmg4ball, pos,
+                Bullet bul = Patterns.ShootCustomBullet(star, dmg4star, pos,
              t => t < delay4 - i * shotRate4 + time4 && t > delay4 - i * shotRate4 ? new Polar(acceleration4, angle).rect : new Vector2(0, 0), MovementMode.Acceleration,null);
-                bul.transform.localScale *= 0.6f;
+                bul.transform.localScale *= size4;
+                bul.orientation.SetFixedOrientation(0);
            } , shotRate4));
         return treerock;
     }
     Bullet SummonRockHorizontal(float y, bool left) {
-        Bullet ball = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Earth);
+        Bullet star = GameManager.gameData.starBullet.GetItem(DamageType.Earth);
         Bullet treerock = Patterns.ShootStraight(GameManager.gameData.treeRockBullet, treerockdmg4, new Vector2(left ? -4.2f : 4.2f, y), left ? 0 : 180, treerockspeed4,null);
         treerock.GetComponent<Shooting>().StartShooting(Functions.RepeatCustomAction(
             i => {
                 Vector2 pos = treerock.transform.position;
                 float angle = (left ? (pos.x + 4f) : (4f - pos.x)) / unitspercircle4 * 360f;
-                Bullet bul = Patterns.ShootCustomBullet(ball, dmg4ball, pos,
+                Bullet bul = Patterns.ShootCustomBullet(star, dmg4star, pos,
              t => t < delay4 - i * shotRate4 + time4 && t > delay4 - i * shotRate4 ? new Polar(acceleration4, angle).rect : new Vector2(0, 0), MovementMode.Acceleration,null);
                 bul.transform.localScale *= size4;
+                bul.orientation.SetFixedOrientation(0);
             }, shotRate4));
         return treerock;
 
@@ -656,7 +658,7 @@ public class Stage5EndBoss : EnemyBossWave
     }
     Bullet ShootChangingBullet2(Vector2 origin, float duration, float angle)
     {
-        Bullet bul = Patterns.BurstShoot(GameManager.gameData.fireStarBullet, bigdmg5, origin, angle, bigspeed5 * 5, bigspeed5, 0.5f,null);
+        Bullet bul = Patterns.BurstShoot(GameManager.gameData.starBullet.GetItem(DamageType.Fire), bigdmg5, origin, angle, bigspeed5 * 5, bigspeed5, 0.5f,null);
         ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > duration);
         trigger.OnTriggerEvent += movement =>
         {

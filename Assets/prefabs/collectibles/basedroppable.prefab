@@ -10,14 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3377429458789957455}
   - component: {fileID: 8854691961517944296}
-  - component: {fileID: 1662005806613484499}
   - component: {fileID: 436736753496249731}
-  - component: {fileID: 7094970196663169445}
   - component: {fileID: 6069761932101896273}
   - component: {fileID: 2993064914125355269}
   - component: {fileID: 5612613406960387370}
   m_Layer: 12
-  m_Name: coin
+  m_Name: basedroppable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 27
   m_Sprite: {fileID: 21300000, guid: 5690af7c327ee1d42a07f557c7c002fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -87,25 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1662005806613484499
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3936336863789526100}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07a929192aa020044a21640c9a9cd048, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &436736753496249731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,20 +101,7 @@ MonoBehaviour:
   movement: {fileID: 6069761932101896273}
   initialSpeed: 2.5
   gravity: 1.5
---- !u!114 &7094970196663169445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3936336863789526100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 706d0e5393105394bafe122522bfff4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectible: {fileID: 436736753496249731}
-  goldAmount: 11
+  endSpeed: 0
 --- !u!114 &6069761932101896273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentVelocity: {x: 0, y: 0}
+  time: 0
+  destroyBoundary: 4.5
 --- !u!50 &2993064914125355269
 Rigidbody2D:
   serializedVersion: 4

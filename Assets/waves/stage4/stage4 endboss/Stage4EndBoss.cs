@@ -13,6 +13,7 @@ public class Stage4EndBoss : EnemyBossWave
     [SerializeField] float delaybeforeSpinning, delaybeforeparticle, spinAcceleration, delayBeforeDialogue = 2f;
     [SerializeField] GameObject image;
     [SerializeField] Vector2 spawnLocation;
+    Bullet star;
     [Header("Pattern1")]
     [SerializeField] float period1 = 0.5f, shootSpeed1 = 3f, spread1 = 50f, timeperPulse1 = 5f, shotRate1 = 0.05f;
     [SerializeField] float delaystart1 = 0.5f, angularvel = 10f, totaltimemove1 = 3f;
@@ -65,6 +66,7 @@ public class Stage4EndBoss : EnemyBossWave
     }
     public override void SpawnWave()
     {
+        star = GameManager.gameData.starBullet.GetItem(DamageType.Fire);
         StartCoroutine(PreFight1());
 
     }
@@ -186,7 +188,6 @@ public class Stage4EndBoss : EnemyBossWave
     void Phase5() {
         SwitchToBoss();
         Bullet fire = GameManager.gameData.fireBullet;
-        Bullet star = GameManager.gameData.fireStarBullet;
         float time = currentBoss.movement.MoveTo(spawnLocation, speed1);
         currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomAction(
             i =>
@@ -237,6 +238,7 @@ public class Stage4EndBoss : EnemyBossWave
     }
     void EndPhase6() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase6;
+        Instantiate(GameManager.gameData.defaultBombDrop, currentBoss.transform.position, Quaternion.identity);
         EndPhase();
         StartCoroutine(DialogueManager.StartDialogue(midFightDialogue, StartPhase7));
     }
@@ -375,7 +377,7 @@ public class Stage4EndBoss : EnemyBossWave
 
     }
     Bullet  Pattern4Bullet(float angle, Vector2 origin, float delay, float acceleration, float totalAccelerationTime) {
-        Bullet bul = Patterns.ShootCustomBullet(GameManager.gameData.fireStarBullet, dmg4, origin, 
+        Bullet bul = Patterns.ShootCustomBullet(star, dmg4, origin, 
             Movement.RotatePath(angle, t => new Vector2(t<delay? 0 : t< delay + totalAccelerationTime? acceleration:0,0)), MovementMode.Acceleration,null);
         bul.transform.localScale = 0.8f * bul.transform.localScale;
         return bul;
@@ -415,7 +417,7 @@ public class Stage4EndBoss : EnemyBossWave
             for (int i = 0; i < numberofBullets; i++)
             {
                 float speed = UnityEngine.Random.Range(minSpeed2, maxSpeed2);
-                Bullet bul = Patterns.ShootStraight(GameManager.gameData.fireStarBullet, dmg2star, location, UnityEngine.Random.Range(0f, 360f),
+                Bullet bul = Patterns.ShootStraight(star, dmg2star, location, UnityEngine.Random.Range(0f, 360f),
                     speed,null);
                 bul.orientation.StartRotating(maxangularvel * speed / maxSpeed2);
 

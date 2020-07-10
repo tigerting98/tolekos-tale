@@ -46,7 +46,7 @@ public class Stage2EndBoss : EnemyBossWave
     [Header("SlimeBehavior")]
     [SerializeField] float spawnRateslime, shotRateslime, speedbulletslime, speedslime;
     [SerializeField] int numberofShotsSlime, numberofexplodingBullets;
-    [SerializeField] float explodingBulletSpeedFast, explodingBulletSpeedSlow, dmg5arrow, dmg5ball;
+    [SerializeField] float explodingBulletSpeedFast, explodingBulletSpeedSlow, dmg5arrow, dmg5star;
     
     public override void SpawnWave() {
         ellipseBullet = GameManager.gameData.ellipseBullet.GetItem(DamageType.Water);
@@ -297,7 +297,7 @@ public class Stage2EndBoss : EnemyBossWave
             Enemy en = Instantiate(slime, currentBoss.transform.position, Quaternion.identity);
             float angle = Functions.AimAtPlayer(en.transform);
             en.movement.SetSpeed(Quaternion.Euler(0, 0, angle) * new Vector2(speedslime, 0));
-            en.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandomAngle(smallBullet, dmg5ball,  en.transform, speedbulletslime, shotRateslime, numberofShotsSlime,null), 0.5f);
+            en.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandomAngle(GameManager.gameData.starBullet.GetItem(DamageType.Water), dmg5star,  en.transform, speedbulletslime, shotRateslime, numberofShotsSlime,null), 0.5f);
             en.movement.triggers.Add(triggerEvent);
             yield return new WaitForSeconds(spawnRateslime);
         }

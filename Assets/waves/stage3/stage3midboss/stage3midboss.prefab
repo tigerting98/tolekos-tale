@@ -47,6 +47,7 @@ MonoBehaviour:
   boss: {fileID: 5510918016240705999, guid: 655c0fb2cddbb6344a3d33e197ae459b, type: 3}
   bossImage: {fileID: 6034030427296860853, guid: 8ff239ce2cc6efa4e8342769fa9a0840,
     type: 3}
+  bossPortrait: {fileID: 0}
   namesOfSpellCards:
   - Spore Attack\n ~Exploding Spores of Delight~
   nextLevel: {fileID: 0}
@@ -74,12 +75,12 @@ MonoBehaviour:
   bulletsperPulse1: 16
   y2: 2
   ringspeed: 18
-  bulletspeedfast: 5
-  bulletspeedtime: 0.2
-  bulletspeedslow: 2
+  bulletspeedfast: 4
+  bulletspeedtime: 0.15
+  bulletspeedslow: 1.5
   radiusAroundPlayer: 1.25
-  ballDmg: 310
+  starDmg: 310
   pulserate2: 3.5
   timetoExplode: 1.75
   numberOfRings: 10
-  numberOfBulletsPerRing: 10
+  numberOfBulletsPerRing: 16

@@ -314,6 +314,11 @@ PrefabInstance:
       propertyPath: hp
       value: 
       objectReference: {fileID: 3791484520724432895}
+    - target: {fileID: 5664283095083113196, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: experience
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 6237686821007657055, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: m_Sprite

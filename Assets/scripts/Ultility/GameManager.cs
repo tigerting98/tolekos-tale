@@ -2,20 +2,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
-
+public enum Difficulty { Easy, Normal, Hard, Lunatic}
 public class GameManager : MonoBehaviour
 {
     public static PauseMenu pauseMenu;
     public static DeathScene deathMenu;
+    public static Difficulty difficultyLevel = Difficulty.Normal;
     public static bool death = false;
     public static Player player;
     public static Camera mainCamera;
     public static SceneLoader sceneLoader;
     public static BossHealthBar bossHealthBar;
     public static Vector2 playerPosition;
-    public static bool victory = false;
     public static GameData gameData;
     public static Hashtable enemies = new Hashtable();
     public static Hashtable enemyBullets = new Hashtable();
@@ -34,8 +35,7 @@ public class GameManager : MonoBehaviour
     public static Boss currentBoss = null;
 
     public static void Reset() {
-        victory = false;
-
+        difficultyLevel = Difficulty.Normal;
         enemies = new Hashtable();
         enemyBullets = new Hashtable();
         collectibles = new Hashtable();
@@ -45,10 +45,7 @@ public class GameManager : MonoBehaviour
     }
  
 
-    public static void InvokeGameOverEvent(bool victory) {
-        OnGameover?.Invoke(victory);
 
-    }
 
     public static void CollectEverything() {
         foreach (GameObject collectible in collectibles.Values) {

@@ -46,12 +46,12 @@ MonoBehaviour:
   spellcardUI: {fileID: 1440613776595574203, guid: fbc60427d3170024288c8cb4b5ba2fa5,
     type: 3}
   lifeDepletedSFX: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
-  UIButtonSFX: {fileID: 11400000, guid: c255ff9997ae2804894afba388a98cc3, type: 2}
   pointedBullet: {fileID: 11400000, guid: 41aa83ad522d4c441b420119f326348b, type: 2}
   smallRoundBullet: {fileID: 11400000, guid: f6d3e6216ead4c946a5abcd2fba1d3b8, type: 2}
   bigBullet: {fileID: 11400000, guid: 6583d2f611a41f24fa8dea759fa2b553, type: 2}
   arrowBullet: {fileID: 11400000, guid: 93521daa990d365478ecda6f7b65cc39, type: 2}
   ellipseBullet: {fileID: 11400000, guid: db9c7a3e4381a7d458143ac16c0b25c4, type: 2}
+  starBullet: {fileID: 11400000, guid: a7621db965d645a4f81ac55721e4273d, type: 2}
   stage5lines: {fileID: 11400000, guid: 575bf650e4b1b124bbc2e360b5710194, type: 2}
   leafBullet1: {fileID: 6539465222748635732, guid: 75e9840902b09f04d99b4903c8b1963e,
     type: 3}
@@ -76,8 +76,6 @@ MonoBehaviour:
   firePillar: {fileID: 1610268316135621660, guid: 9ac722801f5d76b40b1aa36c08a6241b,
     type: 3}
   fireBullet: {fileID: 2977784430267972987, guid: a36b8f5427bc05a44a8ae4995df1d732,
-    type: 3}
-  fireStarBullet: {fileID: 2977784430267972987, guid: 1af983311e2a83b4899430ed42b385c7,
     type: 3}
   fireBall: {fileID: 4476901400571525787, guid: 20a940596bd094e44ab3cfd83f742306,
     type: 3}
@@ -111,4 +109,11 @@ MonoBehaviour:
   greenSlime: {fileID: 1209050533006121410, guid: 62802f75734c5af4aa142ed5c7c3e5b7,
     type: 3}
   playerDialogueSprite: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea,
+    type: 3}
+  beforeStage1: {fileID: 11400000, guid: 584894196419c274ebfd1f0c5af91a84, type: 2}
+  defaultBombDrop: {fileID: -7423590585076364611, guid: fab1fd212dcec79459be6b0966e927d7,
+    type: 3}
+  lifeDrop1000: {fileID: 3964053958901176655, guid: dc8d56776ffc2664395db493c91e366d,
+    type: 3}
+  lifeDrop300: {fileID: 6089450588346147660, guid: e751cc5aa6eea7544811ecdbecb6e759,
     type: 3}

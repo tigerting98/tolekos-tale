@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelTester : Level
+public class LevelTester : LevelLoader
 {
     [SerializeField] int playerLevel = 1;
+    [SerializeField] Difficulty difficulty = Difficulty.Normal;
     bool uped = false;
-    public override void Update()
+    public void Update()
     {
         if (!uped)
         {

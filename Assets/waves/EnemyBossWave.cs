@@ -37,7 +37,6 @@ public class EnemyBossWave : EnemyWave
     }
     public virtual void NextStage()
     {
-        GameManager.victory = true;
         GameManager.sceneLoader.LoadShopScene(nextLevel);
 
 

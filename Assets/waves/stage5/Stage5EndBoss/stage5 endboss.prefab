@@ -53,7 +53,7 @@ MonoBehaviour:
   - Fire Wheel\n ~Cartwheels Of Flame~
   - TriColor Force \n~Shifting Elements~
   - Great Convergence \n~The Trio Ultimate Spell~
-  nextLevel: {fileID: 0}
+  nextLevel: {fileID: 11400000, guid: 381b96fb81b94554daacb9630680f967, type: 2}
   waterportrait: {fileID: 21300000, guid: 7d35374c70d2753408d8c5a81b774b25, type: 3}
   earthportrait: {fileID: 21300000, guid: dc50d3d1baa938a4fabf9da11f21d98a, type: 3}
   fireportrait: {fileID: 21300000, guid: 60ed6bd4fafce2b4cb5e7e7c43ec19b7, type: 3}
@@ -137,13 +137,13 @@ MonoBehaviour:
   number3main: 3
   treerockspeed4: 3
   treerockdmg4: 1000
-  shotRate4: 0.06
+  shotRate4: 0.07
   unitspercircle4: 1.5
   acceleration4: 0.4
   time4: 5
   delay4: 3
-  dmg4ball: 390
-  size4: 0.73
+  dmg4star: 408
+  size4: 0.75
   spacing4: 1.2
   randomfactor4: 0.5
   pulseRate4: 8
@@ -237,3 +237,4 @@ MonoBehaviour:
   leafsize8: 0.9
   leaflines8: 4
   leafperline8: 5
+  endDialogue: {fileID: 11400000, guid: a037602f1009efa48bb73808e6873c18, type: 2}

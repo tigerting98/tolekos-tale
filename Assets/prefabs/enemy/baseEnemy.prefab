@@ -109,7 +109,6 @@ MonoBehaviour:
   shooting: {fileID: 1872046831142302336}
   damagetaker: {fileID: 1041419548464534032}
   collider: {fileID: 520085438}
-  enemyAnimation: {fileID: 0}
   enemyAudio: {fileID: -3013257962938568609}
 --- !u!58 &520085438
 CircleCollider2D:
@@ -188,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentVelocity: {x: 0, y: 0}
+  time: 0
   destroyBoundary: 4.5
 --- !u!114 &1041419548464534032
 MonoBehaviour:
@@ -235,7 +235,7 @@ MonoBehaviour:
   chanceToDropCoins: 0.8
   maxGold: 100
   minGold: 10
-  coin: {fileID: 7094970196663169445, guid: 44e052c241147834c8f5af260bcdc767, type: 3}
+  coin: {fileID: 1787336694827337279, guid: 995ccbf5f51d0614281c048fe4d6f99d, type: 3}
   otherDrops: []
 --- !u!114 &-3013257962938568609
 MonoBehaviour:
