@@ -1,0 +1,221 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6483323039708404437
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shotRate1
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: bulletspeed1
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: rockSpawnRate2
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: rockspeed2
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: leafshotRate2
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: leafSpread2
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: leafSped2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: leaflines2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: movespeed2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: delay2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shotRate3
+      value: 0.497
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: leafnumbers3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: spawnRate4
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: ratio4first
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: ratio4next
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: mushroomlines
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: numberOfPillars
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: numberofLeafPerLines5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: leafspeed5
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: leafspreadAngle5
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shootSpeed6l
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shootSpeed6r
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shotRate6l
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: numberofLines6r
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: numberofBulletsPerLine6r
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shootrate6
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shotSpeed6
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: pulseDuration6l
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: pulsePause6l
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: finalSpeed6l
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522323344577174238, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_Name
+      value: s3endeasy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c94d68b1c1eb49744864ba4839cdce23, type: 3}

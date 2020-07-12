@@ -13,10 +13,13 @@ struct WavePattern6Subwave
 }
 public class WavePattern6 : EnemyWave
 {
-/* 
-Creates a swarm of small enemies with randomized positions that constantly shoot bullets aimed at the player, resulting in a constant stream of bullets.
-The number of enemies spawned and the region in which they can spawn can be configured.
-*/
+    /* 
+    Creates a swarm of small enemies with randomized positions that constantly shoot bullets aimed at the player, resulting in a constant stream of bullets.
+    The number of enemies spawned and the region in which they can spawn can be configured.
+    */
+    [SerializeField] bool harder = false;
+    [SerializeField] int lines = 1;
+    [SerializeField] float spread = 20f;
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] EnemyStats stats;
     [SerializeField] float bulletSpeed = 5f;
@@ -60,7 +63,11 @@ The number of enemies spawned and the region in which they can spawn can be conf
         yield return new WaitForSeconds(timeToPoint);
         if (enemy)
         {
-        enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayer(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate,null), 0.5f, stationaryTime + 0.5f);
+            if (harder)
+            { enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate, spread, lines, null), 0.5f, stationaryTime + 0.5f);  }
+            else {
+                enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayer(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate, null), 0.5f, stationaryTime + 0.5f);
+            }
         }
         yield return new WaitForSeconds(stationaryTime + 1f);
         if (enemy)

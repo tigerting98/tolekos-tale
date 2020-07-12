@@ -78,14 +78,7 @@ public class Patterns : MonoBehaviour
                       t => new Polar(radialvel * t, angle + angularvel * t).rect, MovementMode.Position, sfx
                       ), offset, number);
     }
-    /*
-    public static float AimAt(Vector2 shooter, Vector2 target)
-    {
 
-        Vector2 diff = target - shooter;
-        return Mathf.Rad2Deg * Mathf.Atan2(diff.y, diff.x);
-    }
-    */
     public static List<Bullet> RingOfBullets(Bullet bullet, float dmg, Vector2 origin, int number, float offset, float speed, SFX sfx) {
         
         return CustomRing(theta => ShootStraight(bullet, dmg, origin, theta, speed, sfx), offset, number);  

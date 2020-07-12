@@ -40,11 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7016885204452351669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 176f17d871b920e409f5a389aeb5b90d, type: 3}
+  m_Script: {fileID: 11500000, guid: fa8942f0ff43e7b4cb8d56fe81728711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
-  waves:
-  - {fileID: 3173305245034243894, guid: a20372eab7536e148a2ced32d13a4c17, type: 3}
-  - {fileID: -7528520830067927667, guid: cf580bb5911c9ee478bf5bc7247e0428, type: 3}
-  - {fileID: 7044746377690088705, guid: c4e586825e71c1a41b2639bf5073a7a5, type: 3}
+  level: {fileID: 0}
+  background: {fileID: 0}
+  playerLevel: 1
+  difficulty: 1

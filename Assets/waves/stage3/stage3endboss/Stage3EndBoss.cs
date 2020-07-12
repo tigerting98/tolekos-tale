@@ -12,15 +12,19 @@ public class Stage3EndBoss : EnemyBossWave
     [SerializeField] float initialMoveSpeed;
     [SerializeField] float spawnLocationY;
     [SerializeField] Dialogue preFightDialogue1, preFightDialogue2;
+    [SerializeField] bool harder = false;
     [Header("Pattern1")]
     [SerializeField] float bulletspeed1;
     [SerializeField] float topBulletSpread, sideBulletSpread, sideOriginAngle, rockdmg1, leafdmg1, bossSpeed1, shotRate1, shotPulseDuration1, pause1, minipause1;
+    [SerializeField] float harderangularspeed1, harderradivalvel1, hardershotrate1, harderdmg1;
+    [SerializeField] int hardernumber1, harderbulletsperring1;
 
     [SerializeField] Vector2 topPosition1, rightPosition1, leftPosition1;
     Bullet rock, leaf1, leaf2, leaf3;
     [Header("Pattern2")]
     [SerializeField] float rockspeed2, rockSpawnRate2, x2, y2, movespeed2, delay2, leafshotRate2, leafSpread2, leafSped2, leafdmg2;
     [SerializeField] int leaflines2;
+    [SerializeField] float harderangle2 = 20f;
     [Header("Pattern3")]
     [SerializeField] float angularvel = 30, firstspeed = 1f, speeddiff = 0.1f, y3 = 1, leaf3dmg = 200, shotRate3 = 0.1f, leaf3scale = 0.5f;
 
@@ -37,6 +41,8 @@ public class Stage3EndBoss : EnemyBossWave
     [SerializeField] Vector2 topRight, topLeft;
     [SerializeField] int numberOfPillars = 3, numberofLeafPerLines5 = 3, numberOfLeafLine5 = 10;
     [SerializeField] float pillarSpeed1 = 2f, pillarSpeed2 = 6f, pillarSpeed3= 3f, bossmovespeed5 = 8f, leafspeed5 = 4f, leafspeeddiff5 = 0.1f;
+    [SerializeField] int hardernumber5 = 40;
+    [SerializeField] float harderspeed5 = 2f, harderdmg5 = 400f;
     [SerializeField] float delaypillar1 = 1f, delaypillar2 = 0.5f, pillarRate = 6f, leafspreadAngle5 = 15f, pillardmg = 1500;
     [Header("Pattern6")]
     [SerializeField] Vector2 bossPosition6;
@@ -122,6 +128,11 @@ public class Stage3EndBoss : EnemyBossWave
             yield return new WaitForSeconds(time3);
             currentBoss.shooting.StartShootingFor(BarrageOfReflectingBullets(rock, rockdmg1,
                 90 - sideBulletSpread, 90 + sideBulletSpread, bulletspeed1, shotRate1), 0, shotPulseDuration1);
+            currentBoss.shooting.StartShooting(Functions.RepeatCustomActionXTimes(i =>
+            {
+                Patterns.SpirallingOutwardsRing(GameManager.gameData.starBullet.GetItem(DamageType.Earth),
+                    harderdmg1, currentBoss.transform.position, harderradivalvel1, (i % 2 == 0 ? -1 : 1) * harderangularspeed1, harderbulletsperring1, 0, null);
+            }, hardershotrate1, hardernumber1));
             yield return new WaitForSeconds(shotPulseDuration1 + pause1);
         }
 
@@ -137,7 +148,7 @@ public class Stage3EndBoss : EnemyBossWave
     void StartPattern2()
     {
         SwitchToBoss();
-        currentBoss.shooting.StartShooting(RockEmergingFromGround());
+        currentBoss.shooting.StartShooting(RockEmergingFromGround(harder? harderangle2:0));
         currentBoss.shooting.StartShooting(MoveLeftAndRight2());
         currentBoss.bosshealth.OnLifeDepleted += EndPhase2;
     }
@@ -316,8 +327,10 @@ public class Stage3EndBoss : EnemyBossWave
         currentBoss.shooting.StartShooting(Functions.RepeatCustomActionXTimes(
             i => Patterns.ShootMultipleStraightBullet(leaf1, leafdmg1, pillar.transform.position, leafspeed5 + i * leafspeeddiff5,
             pillarlocation == 0 ? 180 : pillarlocation == 1 ? -90 : 0, leafspreadAngle5, numberOfLeafLine5,null), 0.02f, numberofLeafPerLines5));
-                 
-       
+        if (harder)
+        {
+            Patterns.RingOfBullets(GameManager.gameData.arrowBullet.GetItem(DamageType.Earth), harderdmg5, pillar.transform.position, hardernumber5, UnityEngine.Random.Range(0f, 360f), harderspeed5, null);
+        }
         yield return new WaitForSeconds(delaypillar2);
         pillar.movement.SetSpeed(pillarSpeed3, pillarlocation == 0 ? 180 : pillarlocation == 1 ? 270 : 0);
 
@@ -357,10 +370,10 @@ public class Stage3EndBoss : EnemyBossWave
 
     }
 
-    IEnumerator RockEmergingFromGround()
+    IEnumerator RockEmergingFromGround(float angle)
     {
         return Functions.RepeatAction(() =>
-            Patterns.ShootStraight(rock, rockdmg1, new Vector2(UnityEngine.Random.Range(-4f, 4f), -4), 90, rockspeed2,null), rockSpawnRate2);
+            Patterns.ShootStraight(rock, rockdmg1, new Vector2(UnityEngine.Random.Range(-4f, 4f), -4), 90+ UnityEngine.Random.Range(-angle, angle), rockspeed2,null), rockSpawnRate2);
 
     }
 

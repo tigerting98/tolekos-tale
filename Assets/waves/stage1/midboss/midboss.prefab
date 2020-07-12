@@ -134,7 +134,12 @@ PrefabInstance:
     - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: minGold
-      value: 80
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743518642967432458, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
+      propertyPath: maxGold
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5507576598559653833, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -209,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 5664283095083113196, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: experience
-      value: 50
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6035025132276865919, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}

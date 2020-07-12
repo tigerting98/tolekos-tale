@@ -8,6 +8,7 @@
 
         enemy = GameManager.gameData.ghosts.GetItem(DamageType.Earth);
         bulletnormal = GameManager.gameData.ellipseBullet.GetItem(DamageType.Earth);
-        bulletexplode = GameManager.gameData.leafBullet3;
+        bulletexplode1 = GameManager.gameData.leafBullet3;
+        bulletexplode2 = GameManager.gameData.starBullet.GetItem(DamageType.Earth);
     }
 }

@@ -6,11 +6,38 @@ using UnityEngine.Assertions;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] LevelData level;
+    [SerializeField] LevelData easyLevel, normalLevel, hardLevel, lunaticLevel;
+    LevelData level;
     [SerializeField] Animator background;
 
+    protected virtual void Awake()
+    {
+        ChooseLevel(GameManager.difficultyLevel);
+    }
+    protected virtual void ChooseLevel(Difficulty difficulty) {
+        switch (difficulty) {
+            case Difficulty.Easy:
+                level = easyLevel;
+                break;
+            case Difficulty.Normal:
+                level = normalLevel;
+                break;
+            case Difficulty.Hard:
+                level = hardLevel;
+                break;
+            case Difficulty.Lunatic:
+                level = lunaticLevel;
+                break;
+            default:
+                level = normalLevel;
+                break;
+        }
+    }
     public virtual void Start()
     {
+        if (!level) {
+            level = normalLevel;
+        }
         if (!background) {
             background = FindObjectOfType<Background>().GetComponent<Animator>();
         }

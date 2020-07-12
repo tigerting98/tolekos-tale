@@ -13,6 +13,7 @@ public class Stage2EndBoss : EnemyBossWave
      Bullet ellipseBullet, pointedBullet, smallBullet, arrowBullet;
     BulletPack bigBullets;
     Bullet magicCircle;
+    [SerializeField] bool harder = false;
 
     [Header("Pattern 1")]
     [SerializeField] float timeToRadius, radius;
@@ -25,17 +26,17 @@ public class Stage2EndBoss : EnemyBossWave
     [SerializeField] float lineBulletSpeed2, circleBulletSpeed, lineshotRate2, spacing, delay, lineduration, pulseRate2, dmg2line = 150;
     [SerializeField] float CircleBullets2shotRate, spread2, circlebulletpulseRate2, bossmovespeed, pulseDuration2, dmg2circle = 200;
     [SerializeField] int numberOfCircleBullets2;
-
+    [SerializeField] float hardAngularVel2;
     [Header("Pattern 3")]
     [SerializeField] float radius3, pulseRate3, angleperPulse3, smallspeed3;
     [SerializeField] int numberOfsmallBullet3, numberOfLargeBullet3;
     [SerializeField] float shotRateLarge3, spreadAngleLarge3, largespeed3, dmg3arrow = 200, dmg3circle = 200, dmg3Big= 300;
 
-
     [Header("Pattern 4")]
     [SerializeField] float spawnradius4, initialSpeed4, finalSpeed4, shotRate4, pulseRate4, dmg4pointed = 300, dmg4arrow = 200;
     [SerializeField] int spawnRatio4, numberPerPulse4;
     ActionTrigger<Movement> triggerEvent;
+    [SerializeField] int harderlines4;
     [Header("Patttern5")]
     [SerializeField] Enemy waterfairy, slime;
     [SerializeField] float bossShootRate5, bossShootSpeed5, bossshootSpread5, dmg5Big = 300; 
@@ -98,27 +99,32 @@ public class Stage2EndBoss : EnemyBossWave
 
     void Pattern2() {
         SwitchToBoss();
-         float y = 4f;
-         int i = 0;
-         while (y > -4.1f) {
-            float y1 = y;
-            int i1 = i;
-             currentBoss.shooting.StartShootingAfter(EnemyPatterns.RepeatSubPatternWithInterval(() => SummonLine(pointedBullet, dmg2line, i1 % 2 == 0, y1, lineduration)
-             , currentBoss.shooting, pulseRate2), delay * i1);
-             i++;
-             y -= spacing / 2;
-         }
-         y = 4f - spacing / 4;
-        i = 0;
-         while (y > -4.1f)
-         {
-            float y1 = y;
-            int i1 = i;
-            currentBoss.shooting.StartShootingAfter(EnemyPatterns.RepeatSubPatternWithInterval(() => SummonLine(pointedBullet, dmg2line, i1 % 2 == 0, y1, lineduration)
-              , currentBoss.shooting, pulseRate2), pulseRate2 / 2 + delay * i1) ;
-             i++;
-             y -= spacing / 2;
-         }
+       
+            float y = 4f;
+            int i = 0;
+            while (y > -4.1f)
+            {
+                float y1 = y;
+                int i1 = i;
+
+                currentBoss.shooting.StartShootingAfter(EnemyPatterns.RepeatSubPatternWithInterval(() => SummonLine(pointedBullet, dmg2line, i1 % 2 == 0, y1, lineduration)
+               , currentBoss.shooting, pulseRate2), delay * i1);
+
+                i++;
+                y -= spacing / 2;
+            }
+            y = 4f - spacing / 4;
+            i = 0;
+            while (y > -4.1f)
+            {
+                float y1 = y;
+                int i1 = i;
+                currentBoss.shooting.StartShootingAfter(EnemyPatterns.RepeatSubPatternWithInterval(() => SummonLine(pointedBullet, dmg2line, i1 % 2 == 0, y1, lineduration)
+                  , currentBoss.shooting, pulseRate2), pulseRate2 / 2 + delay * i1);
+                i++;
+                y -= spacing / 2;
+   
+             }
         currentBoss.shooting.StartCoroutine(MovingAndShooting());
         currentBoss.bosshealth.OnLifeDepleted += EndPhase2;
 
@@ -165,8 +171,13 @@ public class Stage2EndBoss : EnemyBossWave
             SmallBullets(movement.transform.position, arrowBullet, dmg4arrow, spawnRatio4);
             movement.RemoveObject();
         };
-        currentBoss.shooting.StartShootingAfter(EnemyPatterns.RepeatSubPatternWithInterval(pulseOfRain, currentBoss.shooting, pulseRate4),time);
-  
+        currentBoss.shooting.StartShootingAfter(EnemyPatterns.RepeatSubPatternWithInterval(()=>pulseOfRain(0), currentBoss.shooting, pulseRate4),time);
+        if (harder) {
+            for (int i = 1; i < harderlines4; i++) {
+                int j = i;
+                currentBoss.shooting.StartShootingAfter(EnemyPatterns.RepeatSubPatternWithInterval(() => pulseOfRain(j*360f/harderlines4), currentBoss.shooting, pulseRate4), time);
+            }
+        }
         currentBoss.bosshealth.OnLifeDepleted += EndPhase4;
     }
 
@@ -229,15 +240,20 @@ public class Stage2EndBoss : EnemyBossWave
 
 
     IEnumerator SummonLine(Bullet bul, float dmg, bool left, float y, float duration) {
-        return Functions.RepeatActionXTimes(() => Patterns.ShootStraight(bul, dmg, new Vector2(left ? -4.1f : 4.1f, y), left ? 0 : 180,lineBulletSpeed2,null), lineshotRate2,  (int)(duration / lineshotRate2));
+        return Functions.RepeatActionXTimes(() => Patterns.ShootStraight(bul, dmg, new Vector2(left ? -4.1f : 4.1f, y), left ?  0 : 180,lineBulletSpeed2,null), lineshotRate2,  (int)(duration / lineshotRate2));
     }
 
 
     IEnumerator MovingAndShooting() {
         while (currentBoss) {
             float time = currentBoss.movement.MoveTo(Functions.RandomLocation(1, 3, 1, 3), bossmovespeed);
-
-            currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(smallBullet, dmg2circle, currentBoss.transform, circleBulletSpeed, CircleBullets2shotRate, spread2, numberOfCircleBullets2,null), time, pulseDuration2);
+            if (!harder)
+            { currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(smallBullet, dmg2circle, currentBoss.transform, circleBulletSpeed, CircleBullets2shotRate, spread2, numberOfCircleBullets2, null), time, pulseDuration2); }
+            else {
+                currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomActionXTimes(i =>
+                Patterns.SpirallingOutwardsRing(smallBullet, dmg2circle, currentBoss.transform.position, circleBulletSpeed, (i%2==0?-1:1)*hardAngularVel2 ,numberOfCircleBullets2,0,null), CircleBullets2shotRate, (int)(pulseDuration2/CircleBullets2shotRate) +1), time);
+            }
+            
             yield return new WaitForSeconds(circlebulletpulseRate2);
         }
     }
@@ -252,19 +268,19 @@ public class Stage2EndBoss : EnemyBossWave
         
 
     }
-    Bullet ShootRain(Bullet bigBullet, float dmgBig, Vector2 playerPosition) {
+    Bullet ShootRain(Bullet bigBullet, float dmgBig, Vector2 playerPosition, float angle) {
         Vector2 spawn = Functions.RandomLocation(currentBoss.transform.position, spawnradius4);
 
-        Bullet bul = Patterns.ShootStraight(bigBullet, dmgBig, spawn, Functions.AimAt(spawn, playerPosition), initialSpeed4,null);
+        Bullet bul = Patterns.ShootStraight(bigBullet, dmgBig, spawn, Functions.AimAt(spawn, playerPosition) + angle, initialSpeed4,null);
         bul.movement.triggers.Add(triggerEvent);
         return bul;
     }
 
 
 
-    IEnumerator pulseOfRain() {
+    IEnumerator pulseOfRain(float angle) {
         Vector2 pos = GameManager.playerPosition;
-        return Functions.RepeatActionXTimes(() => ShootRain(pointedBullet, dmg4pointed, pos),shotRate4, numberPerPulse4) ;
+        return Functions.RepeatActionXTimes(() => ShootRain(pointedBullet, dmg4pointed, pos, angle),shotRate4, numberPerPulse4) ;
     }
     IEnumerator SummonWaterFairy() {
    

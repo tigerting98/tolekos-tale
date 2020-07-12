@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 [System.Serializable]
@@ -19,6 +20,14 @@ The time between each pulse of small bullets and time between each wave of big b
 Along with the number of projectiles per ring and how long the enemy remains active.
 */
 {
+    //harder version
+    [Header("Harder Version")]
+    [SerializeField] bool harder = false;
+    protected Bullet harderBullet;
+    [SerializeField] int hardernumber = 40;
+    [SerializeField] float harderradialvel = 3f, harderangularvel = 13f, harderpulseRate = 2f, harderdmg = 400f;
+    //
+    [Header("Settings")]
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] EnemyStats stats;
     [SerializeField] float bigBulletSpeed = 2f;
@@ -81,14 +90,16 @@ Along with the number of projectiles per ring and how long the enemy remains act
                         ()=>Patterns.RingOfBullets(smallBullet, bulletDamage, enemy.transform.position, numberOfSmallBulletsPerRing, offset, smallBulletSpeed,null),
                     smallBulletRingFireRate, numberOfSmallBulletRingsPerPulse));
                 }, 
-                timeBetweenSmallBulletPulse));   
+                timeBetweenSmallBulletPulse));
+            enemy.shooting.StartShooting(Functions.RepeatCustomAction(
+                i => Patterns.SpirallingOutwardsRing(harderBullet, harderdmg, enemy.transform.position, harderradialvel, (i % 2 == 0 ? -1 : 1) * harderangularvel, hardernumber, 0, null), harderpulseRate));
         }
 
         yield return new WaitForSeconds(stationaryTime);
 
         if(enemy)
         {
-            enemy.StopAllCoroutines();
+            enemy.shooting.StopAllCoroutines();
             float timeToEnd = enemy.movement.MoveTo(initialPos, moveSpeed);
             Destroy(enemy.gameObject, timeToEnd);
         }

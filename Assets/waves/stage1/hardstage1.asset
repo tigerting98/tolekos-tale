@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773601d4f4ae6e54688117054c1664fa, type: 3}
+  m_Name: hardstage1
+  m_EditorClassIdentifier: 
+  wavesFirstHalf:
+  - {fileID: 8627996406350052997, guid: 75f2346d5a98d9c4cbcf27cf66da4a04, type: 3}
+  - {fileID: 146563047424933430, guid: bb331b9e39228a345bb4206843660d46, type: 3}
+  - {fileID: 715638237376865890, guid: 16c03d6a63b76b54384089005285d9cc, type: 3}
+  timesFirstHalf:
+  - 3
+  - 10
+  - 25
+  midBoss: {fileID: 3684875986617803060, guid: 0a476f70f9926c441a35aa2145eca6b0, type: 3}
+  wavesSecondHalf:
+  - {fileID: 4493350343652315800, guid: d657df6e61cf5ca41a561bbecf4b9230, type: 3}
+  timesSecondHalf:
+  - 3
+  endBoss: {fileID: 169482568752748078, guid: 4f515dd073640d5428abd361c7a9836d, type: 3}

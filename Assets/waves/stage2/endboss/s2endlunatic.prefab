@@ -1,0 +1,221 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8080190478979446010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: harder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: numberPerRings1
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: numberOfRings1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: bigBulletSpread
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: bigBulletNumber
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: finalSpeed1
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: bigBulletSpeed1
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: spread2
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: numberOfCircleBullets2
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: spacing
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: pulseRate3
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: numberOfsmallBullet3
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: numberOfLargeBullet3
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: spreadAngleLarge3
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: shotRateLarge3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: largespeed3
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: smallspeed3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: spawnRatio4
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: harderlines4
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: spawnRatefairy
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: shotRateslime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: spawnRateslime
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: speedbulletslime
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: speedslime
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: numberofexplodingBullets
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: explodingBulletSpeedFast
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: explodingBulletSpeedSlow
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: hardAngularVel2
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: CircleBullets2shotRate
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: numberPerPulse4
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522323344577174238, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_Name
+      value: s2endlunatic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: 30f815afdf89a074e94ebfac0a892cd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30f815afdf89a074e94ebfac0a892cd6, type: 3}

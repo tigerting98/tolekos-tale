@@ -654,9 +654,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8942f0ff43e7b4cb8d56fe81728711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 11400000, guid: bf42d950668a97d4380e6595dcaedf65, type: 2}
+  easyLevel: {fileID: 11400000, guid: 43004aa00ed23ad45b83bca2d117299e, type: 2}
+  normalLevel: {fileID: 11400000, guid: bf42d950668a97d4380e6595dcaedf65, type: 2}
+  hardLevel: {fileID: 11400000, guid: 5fbe9d72247bb7040ac65ba93c3aa637, type: 2}
+  lunaticLevel: {fileID: 11400000, guid: efecc12219ebb6b47ba558b271c2d3c9, type: 2}
   background: {fileID: 1605513546}
-  playerLevel: 1
+  playerLevel: 5
+  difficulty: 3
 --- !u!95 &1605513546 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 446215419749746356, guid: 95962e6eb692fdd46989e32ab1c69bc8,
@@ -957,10 +961,39 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: bf42d950668a97d4380e6595dcaedf65,
         type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: normalLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: bf42d950668a97d4380e6595dcaedf65,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: easyLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 43004aa00ed23ad45b83bca2d117299e,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: lunaticLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: efecc12219ebb6b47ba558b271c2d3c9,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: hardLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 5fbe9d72247bb7040ac65ba93c3aa637,
+        type: 2}
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_Name
       value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2276b1da7d62f1a47842690fb722f6bc, type: 3}
@@ -1907,8 +1940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc63cd80b636e541abd0b885eb3e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6, type: 3}
-  playerLevel: 6
+  wave: {fileID: 6553425793147867557, guid: 280cdf5dd79783d4f9aabfc57bd3365d, type: 3}
+  playerLevel: 600
 --- !u!4 &1931965796
 Transform:
   m_ObjectHideFlags: 0

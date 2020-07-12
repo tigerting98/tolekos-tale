@@ -1,0 +1,246 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4857762045533652880
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: harder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: hardernumber1
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: harderbulletsperring1
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: harderdmg1
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: hardershotrate1
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: harderradivalvel1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: harderangularspeed1
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: pause1
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: minipause1
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: leafSpread2
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: leafshotRate2
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: leafnumbers3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shotRate3
+      value: 0.241
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: pulseRate4
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: harderdmg3
+      value: 325
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: ratio4first
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: ratio4next
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: spawnRate4
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: pillarRate
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shootSpeed6l
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: angleSpread6l
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: finalSpeed6l
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: pulseDuration6l
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: pulsePause6l
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: numberofLines6r
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shootSpeed6r
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: pulserate6r
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shootrate6
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: shotSpeed6
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: hardernumber5
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: harderspeed5
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: harderangle2
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: rockSpawnRate2
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: speedsmall4
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2248102024064073189, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: numberofLeafPerLines5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522323344577174238, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_Name
+      value: s3endlunatic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916288215380762352, guid: c94d68b1c1eb49744864ba4839cdce23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c94d68b1c1eb49744864ba4839cdce23, type: 3}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,17 +30,24 @@ public class AudioManager : MonoBehaviour
    
 
     public void PlaySFX(SFX sfx) {
-        if (sfx)
+        try
         {
-            if (!coolDownDictionary.ContainsKey(sfx.id))
+            if (sfx)
             {
-                SFXPlayer.PlayOneShot(sfx.clip, sfx.volume);
-                if (sfx.cooldownTime > 0)
+                if (!coolDownDictionary.ContainsKey(sfx.id))
                 {
-                    coolDownDictionary.Add(sfx.id, new CoolDown(sfx.cooldownTime));
+                    SFXPlayer.PlayOneShot(sfx.clip, sfx.volume);
+                    if (sfx.cooldownTime > 0)
+                    {
+                        coolDownDictionary.Add(sfx.id, new CoolDown(sfx.cooldownTime));
+                    }
                 }
             }
         }
+        catch (Exception ex) {
+            Debug.Log(ex);
+        }
+
     }
     private void Update()
     {

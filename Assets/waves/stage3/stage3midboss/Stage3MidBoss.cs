@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
@@ -15,13 +16,16 @@ public class Stage3MidBoss : EnemyBossWave
     [SerializeField] float spawnLocationY;
     [SerializeField] float spawnDelay;
     [SerializeField] Dialogue preFightDialogue1, preFightDialogue2;
+    [SerializeField] bool harder = false;
     [Header("Pattern1")]
     [SerializeField] float movementSpeed1, pulseRate1, pauseDuration1, x1, y1, dmg1,anglerange1, initialspeed1min, intialspeed1max, acceleration1;
     [SerializeField] int pulses1, bulletsperPulse1;
+    [SerializeField] float harderdmg, harderspeed1;
+    [SerializeField] int hardernumber1ring;
     [Header("Pattern2")]
     [SerializeField] float y2, ringspeed, bulletspeedfast, bulletspeedtime, bulletspeedslow, radiusAroundPlayer, starDmg, pulserate2, timetoExplode;
     [SerializeField] int numberOfRings, numberOfBulletsPerRing;
-
+    [SerializeField] float harderdmg2, harderspeed2;
 
 
 
@@ -100,6 +104,10 @@ public class Stage3MidBoss : EnemyBossWave
             FallingBullets(leaf, dmg1, currentBoss.transform.position, bulletsperPulse1) , pulseRate1, pulses1));
             left = !left;
         yield return new WaitForSeconds(pauseDuration1 + time);
+            if (currentBoss && harder) {
+                Patterns.RingOfBullets(GameManager.gameData.bigBullet.GetItem(DamageType.Earth), harderdmg, currentBoss.transform.position, hardernumber1ring,
+                    UnityEngine.Random.Range(0f, 360f), harderspeed1, null);
+            }
         }
     }
 
@@ -138,9 +146,14 @@ public class Stage3MidBoss : EnemyBossWave
         yield return new WaitForSeconds(timeToExplode);
         if (ring1&&ring1.gameObject.activeInHierarchy)
         {
+
+            Patterns.ExplodingRingOfBullets(star, starDmg, ring1.transform.position, numberOfBulletsPerRing, UnityEngine.Random.Range(0f, 360f),
+                bulletspeedfast, bulletspeedslow, bulletspeedtime, null);
+            if (harder) {
+                Patterns.RingOfBullets(GameManager.gameData.arrowBullet.GetItem(DamageType.Earth), harderdmg2, ring1.transform.position, numberOfBulletsPerRing, UnityEngine.Random.Range(0f, 360f)
+                    , harderspeed2, null);
+            }
             ring1.Deactivate();
-            Patterns.ExplodingRingOfBullets(star, starDmg, target, numberOfBulletsPerRing, UnityEngine.Random.Range(0f, 360f),
-                bulletspeedfast, bulletspeedslow, bulletspeedtime,null);
         }
 
         

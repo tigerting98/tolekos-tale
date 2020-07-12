@@ -1,16 +1,29 @@
-﻿using System;
+﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.Assertions;
+
 
 public class EnemyPatterns : MonoBehaviour {
 
     //shoots constant speed bullet at a target angle that is fast at first then slow in a constant rate
-    public static IEnumerator ExplodingLineAtPlayer(Bullet bullet, float dmg, Transform enemy, float intialSpeed, float finalSpeed, int number, float minTime, float maxTime, float shotRate, SFX sfx)
+    public static IEnumerator ExplodingLinesAtPlayer(Bullet bullet, float dmg, Transform enemy, float intialSpeed, float finalSpeed, int number, float minTime, float maxTime, float shotRate, int lines, float spread, SFX sfx)
     {
-        return Functions.RepeatAction(() => Patterns.ExplodingLine(bullet, dmg, enemy.position, 
-            Functions.AimAtPlayer(enemy), intialSpeed, finalSpeed, number, minTime, maxTime, sfx), shotRate);
+        return Functions.RepeatAction(() => {
+            float angle = Functions.AimAtPlayer(enemy);
+            Patterns.ExplodingLine(bullet, dmg, enemy.position,
+        angle, intialSpeed, finalSpeed, number, minTime, maxTime, sfx);
+            for (int i = 0; i < lines; i++) {
+                Patterns.ExplodingLine(bullet, dmg, enemy.position,
+            angle + spread*(i-1), intialSpeed, finalSpeed, number, minTime, maxTime, sfx);
+                Patterns.ExplodingLine(bullet, dmg, enemy.position,
+            angle - spread * (i-1), intialSpeed, finalSpeed, number, minTime, maxTime, sfx);
+            }
+
+            
+            }, shotRate);
 
     }
 
@@ -58,6 +71,7 @@ public class EnemyPatterns : MonoBehaviour {
 
 
     }
+   
 
     //shoots circles of bullets, each with different random offset angle
     public static IEnumerator PulsingBulletsRandomAngle(Bullet bullet, float dmg, Transform enemy, float speed, float shotRate, int lines, SFX sfx) {

@@ -8,6 +8,7 @@ public class GameData : MonoBehaviour
     public SFX lifeDepletedSFX;
     public BulletPack pointedBullet, smallRoundBullet, bigBullet, arrowBullet, ellipseBullet, starBullet;
     public BulletPack stage5lines;
+    public Bullet punchBullet, stage1arrowBullet, explosionBullet;
     public Bullet leafBullet1, leafBullet2, leafBullet3, rockBullet;
     public Bullet whiteArrowBullet;
     public Bullet waterCircle, earthCircle, fireCircle;

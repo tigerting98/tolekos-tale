@@ -1,0 +1,221 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1680380068200786851
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: shotRate1
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: spread1
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: numberofbulletsperexplosion2min
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: numberofbulletsperexplosion2max
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: fastSpawnRate2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: slowSpawnRate2
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: fireballpulserate
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: fireballpulsetime
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: spreadlaser3
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: numberOfCircles3
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: fireballspread3
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: fireballNumber3
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: lasershotRate3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: timeBetweenCircles4
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: shotRate4
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: arcAngle5
+      value: 183
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: shotRateMax
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: shotRateMin
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: spacing6Min
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: spacing6Max
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: pulseRate6
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: angularvel6
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: numberOfLasers
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: numberOfBigBullet6
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: numberOfBullets6
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: shotinterval7
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: numberMin7
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: numberMax7
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: laserShotRate7
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: shotRate7
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311698847181242526, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311698847181242526, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311698847181242526, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311698847181242526, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311698847181242526, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311698847181242526, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311698847181242526, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311698847181242526, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311698847181242526, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311698847181242526, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311698847181242526, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586624695929014435, guid: 4e29abe66fca5514bb314d5f4b19442e,
+        type: 3}
+      propertyPath: m_Name
+      value: s4endeasy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e29abe66fca5514bb314d5f4b19442e, type: 3}

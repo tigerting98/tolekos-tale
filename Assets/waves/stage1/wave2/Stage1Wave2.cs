@@ -17,7 +17,7 @@ public class Stage1Wave2 : EnemyWave
     [SerializeField] float min = 0.3f;
     [SerializeField] float max = 0.7f;
     [Header("Bullet Behavior")]
-    [SerializeField] float bulletCount = 10f;
+    [SerializeField] int bulletCount = 10;
     [SerializeField] float initialSpeed = 10f;
     [SerializeField] float burstRadius = 1f;
     [SerializeField] float finalSpeed = 1f;
@@ -51,7 +51,7 @@ public class Stage1Wave2 : EnemyWave
         if (enemy) {
             float angle = Functions.AimAtPlayer(enemy.transform);
             Patterns.ExplodingRingOfBullets(GameManager.gameData.smallRoundBullet.GetItem(Random.Range(0, 3)), dmg
-                , enemy.transform.position, number, angle, initialSpeed, finalSpeed, burstRadius / initialSpeed, bulletSpawnSound) ;
+                , enemy.transform.position, bulletCount, angle, initialSpeed, finalSpeed, burstRadius / initialSpeed, bulletSpawnSound) ;
             yield return new WaitForSeconds(stopTime);
             if (enemy) {
                 enemy.movement.StartMoving();

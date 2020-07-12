@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: damage
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 1809697292816246204, guid: 3118ceb8e2dd93e4bb557208bb39870e,
+        type: 3}
+      propertyPath: destroyBoundary
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3092768192575656912, guid: 3118ceb8e2dd93e4bb557208bb39870e,
         type: 3}
       propertyPath: m_LocalPosition.x

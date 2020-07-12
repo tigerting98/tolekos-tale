@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: b204757fec9a25c4485dc63aabf2772a, type: 3}
   volume: 0.05
+  id: sound-wind-s1w2
+  cooldownTime: 0.01

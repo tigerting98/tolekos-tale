@@ -7,6 +7,7 @@ using UnityEngine.SocialPlatforms;
 public class Stage4MidBoss : EnemyBossWave
 {
     // Start is called before the first frame update
+    [SerializeField] bool harder = false;
     [SerializeField] ParticleSystem spawnEffect;
     [SerializeField] GameObject image;
     [SerializeField] Vector2 spawnLocation;
@@ -23,6 +24,8 @@ public class Stage4MidBoss : EnemyBossWave
     [SerializeField] Vector2 fireCircleLocationLeft, fireCircleLocationRight;
     [SerializeField] float angularvel2 = 90, shotRate2 = 0.1f, bulletspeed2 = 2f, bulletdmg2 = 250;
     [SerializeField] float laserDelay = 1.5f, delaytoNextLaser = 4f, laserangularVel = 45f, firebeamdmg = 1000, spinDuration;
+    [SerializeField] float hardershotrate2 = 0.5f, harderspeed2 = 0.8f, harderdmg2 = 400f;
+    [SerializeField] int hardernumber2 = 30;
     public override void SpawnWave()
     {
         fireBullet = GameManager.gameData.fireBullet;
@@ -101,7 +104,11 @@ public class Stage4MidBoss : EnemyBossWave
         Bullet circle = GameManager.bulletpools.SpawnBullet(firebul, origin);
         float time = circle.movement.MoveTo(end, speed);
         yield return new WaitForSeconds(time);
-        circle.StartCoroutine(EnemyPatterns.ConstantSpinningStraightBullets(bul, dmg, circle.transform, bulletspeed, angularvel, startAngle, 4, shotRate,null));
+        circle.GetComponent<Shooting>().StartShooting(EnemyPatterns.ConstantSpinningStraightBullets(bul, dmg, circle.transform, bulletspeed, angularvel, startAngle, 4, shotRate,null));
+        if (harder) {
+            circle.GetComponent<Shooting>().StartShooting(EnemyPatterns.PulsingBullets(
+                GameManager.gameData.arrowBullet.GetItem(DamageType.Fire), harderdmg2, circle.transform, harderspeed2, hardershotrate2, hardernumber2, null));
+        }
         circle.orientation.StartRotating(angularvel, 90 + startAngle);
     }
 

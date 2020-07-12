@@ -53,6 +53,12 @@ MonoBehaviour:
   ellipseBullet: {fileID: 11400000, guid: db9c7a3e4381a7d458143ac16c0b25c4, type: 2}
   starBullet: {fileID: 11400000, guid: a7621db965d645a4f81ac55721e4273d, type: 2}
   stage5lines: {fileID: 11400000, guid: 575bf650e4b1b124bbc2e360b5710194, type: 2}
+  punchBullet: {fileID: 911972999547948889, guid: 7a6f9c6c80d58864d9bec85e519acf80,
+    type: 3}
+  stage1arrowBullet: {fileID: 5901879662736442927, guid: 87f08c4007157814fac1e28576c5f6e9,
+    type: 3}
+  explosionBullet: {fileID: 911972999547948889, guid: 9ecd7e71157ad364284fe4a6a2b0c127,
+    type: 3}
   leafBullet1: {fileID: 6539465222748635732, guid: 75e9840902b09f04d99b4903c8b1963e,
     type: 3}
   leafBullet2: {fileID: 3230586137576200462, guid: f7d5a767ef2995c49b4ef75e0b8eddbe,

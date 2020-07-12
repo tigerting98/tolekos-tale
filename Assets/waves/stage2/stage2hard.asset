@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773601d4f4ae6e54688117054c1664fa, type: 3}
+  m_Name: stage2hard
+  m_EditorClassIdentifier: 
+  wavesFirstHalf:
+  - {fileID: 6161664294940699601, guid: b70282b0a40c73d4088bdcf367cd32d5, type: 3}
+  - {fileID: 3152239111217822667, guid: 2729f44d63c6689488306740b4491520, type: 3}
+  timesFirstHalf:
+  - 4
+  - 16
+  midBoss: {fileID: 7186277840138350450, guid: c9f0a76a82ccbb04b8ecb0b29978e8de, type: 3}
+  wavesSecondHalf:
+  - {fileID: 701909513911422440, guid: 1e07f7506ddfb784089b538fdd31bf2a, type: 3}
+  - {fileID: 7044864718151713340, guid: e323d7103f78b1a43b6d074312110452, type: 3}
+  timesSecondHalf:
+  - 4
+  - 4
+  endBoss: {fileID: 6553425793147867557, guid: 9165de00d991dfa4b9fe5460b635718e, type: 3}

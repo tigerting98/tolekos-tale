@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Net.NetworkInformation;
-using System.Security.Policy;
-using UnityEditor;
-using UnityEditor.Experimental.Rendering;
-using UnityEditor.ShaderGraph.Internal;
+
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
-using UnityEngine.UI;
 
 public class Stage5EndBoss : EnemyBossWave
 {

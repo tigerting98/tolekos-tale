@@ -13,18 +13,23 @@ public class Stage4EndBoss : EnemyBossWave
     [SerializeField] float delaybeforeSpinning, delaybeforeparticle, spinAcceleration, delayBeforeDialogue = 2f;
     [SerializeField] GameObject image;
     [SerializeField] Vector2 spawnLocation;
+    [SerializeField] bool harder = false;
     Bullet star;
     [Header("Pattern1")]
     [SerializeField] float period1 = 0.5f, shootSpeed1 = 3f, spread1 = 50f, timeperPulse1 = 5f, shotRate1 = 0.05f;
     [SerializeField] float delaystart1 = 0.5f, angularvel = 10f, totaltimemove1 = 3f;
     [SerializeField] float delaytoNext = 2f, bounds = 0.8f, speed1 = 7f;
     [SerializeField] float fireBalldmg1 = 300f, fireBeamdmg1 = 3000f;
+    [SerializeField] float arrowdmgharder1 = 300, arrowspeedharder1 = 0.8f, arrowpulserateharder1 = 0.5f;
+    [SerializeField] int arrownumber1= 40;
     [Header("Pattern2")]
     [SerializeField] GameObject explosionCircle;
     [SerializeField] float delay2 = 1.5f, slowSpawnRate2 = 0.1f, fastSpawnRate2= 0.05f;
     [SerializeField] int numberofbulletsperexplosion2min = 10, numberofbulletsperexplosion2max = 30;
     [SerializeField] float maxSpeed2 =5, minSpeed2 = 1, dmg2star = 300f;
     [SerializeField] float maxangularvel = 500f;
+    [SerializeField] float harderpulserate2 = 0.5f, harderradius2= 1f, harderspeed2 = 2.3f, harderdmg2 = 400;
+    [SerializeField] int hardernumber2= 10;
     [SerializeField] Dictionary<int, GameObject> explosionCircles2 = new Dictionary<int, GameObject>();
     [Header("Pattern3")]
     [SerializeField] float fireballdmg3 = 350f, fireballspeed3, fireballshotrate, fireballpulserate, fireballpulsetime, fireballspread3 = 20f;
@@ -32,6 +37,7 @@ public class Stage4EndBoss : EnemyBossWave
     [SerializeField] int fireballNumber3, numberOfCircles3, numberoflasers3;
     [SerializeField] float y3, x3, delayBetweenEach3=0.05f, lasershotRate3= 0.5f, spreadlaser3 = 10, laserspeed = 2f;
     [SerializeField] Vector2 bossLocation3;
+    [SerializeField] float harderangularvel3 = 14f;
     [Header("Pattern4")]
     [SerializeField] float dmg4;
     [SerializeField] float speed4circle, radialVel4;
@@ -41,6 +47,7 @@ public class Stage4EndBoss : EnemyBossWave
     [SerializeField] float arcAngle5= 320f, arcshotRate5 = 1f, arcspeed5 = 3f, spacingAngle5 = 1f,firearcdmg5= 500f;
     [SerializeField] float speedBullet5Min = 2f, speedBullet5Max = 4f, shotRateMax = 0.1f, shotRateMin = 0.05f, stardmg5 = 300f, maxSpin5 = 500f;
     [SerializeField] int bulletCountMultiplier = 2;
+    [SerializeField] float harderanglerange5 = 20f;
     [Header("Pattern6")]
     [SerializeField] float delay6 = 0.3f, spacing6Min = 0.8f, spacing6Max = 1f, startMinX6 = -4f, startMaxX6 = -3.5f, laserduration6 = 3f, dmglaser6= 1000, pulseRate6 = 5f,magiccirclespeed = 20f;
     [SerializeField] float fireballdmg6 = 300f, radialvel6 = 2f, angularvel6 = 10f, delayBetweenPulse6 = 0.5f, pulseRate6bullet = 3f, xpositionCircle = 2.5f, yposmin6 = -1.5f, yposMax6 = 3f;
@@ -51,6 +58,7 @@ public class Stage4EndBoss : EnemyBossWave
     [SerializeField] float minSpeed7 = 1f, maxSpeed7 = 5f, shotRate7=0.3f,shotinterval7 = 0.05f, shotdmg7= 150f;
     [SerializeField] int numberMin7 = 3, numberMax7 = 7;
     [SerializeField] ParticleSystem deathEffect;
+    [SerializeField] float harderanglerange7;
     [Header("Dialogues")]
     [SerializeField] Dialogue midFightDialogue, endDialogue;
     protected override void SwitchToBoss()
@@ -98,6 +106,11 @@ public class Stage4EndBoss : EnemyBossWave
              Functions.AimAtPlayer(currentBoss.transform)), time);
             
             }, delaytoNext + timeperPulse1));
+        if (harder)
+        {
+            currentBoss.shooting.StartShooting(EnemyPatterns.PulsingBullets(GameManager.gameData.ellipseBullet.GetItem(DamageType.Fire), arrowdmgharder1, currentBoss.transform,
+              arrowspeedharder1, arrowpulserateharder1, arrownumber1, null));
+        }
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
     }
     void EndPhase1() {
@@ -116,6 +129,11 @@ public class Stage4EndBoss : EnemyBossWave
             i=> currentBoss.shooting.StartShooting(SummonExplosion(Functions.RandomLocation(-3.5f,3.5f,-3.5f,3.5f)
             , (int)((numberofbulletsperexplosion2max-numberofbulletsperexplosion2min)*(1-currentBoss.bosshealth.GetCurrentHP()/maxHP))+ numberofbulletsperexplosion2min))
              ,i=> (slowSpawnRate2- fastSpawnRate2) * currentBoss.bosshealth.GetCurrentHP() / maxHP+ fastSpawnRate2));
+        if (harder) {
+            currentBoss.shooting.StartShooting(Functions.RepeatAction(
+                () => Patterns.RingAroundBossAimAtPlayer(GameManager.gameData.fireBall, harderdmg2, currentBoss.transform.position, harderradius2, harderspeed2, hardernumber2, null),
+                harderpulserate2));
+        }
         currentBoss.bosshealth.OnLifeDepleted += EndPhase2;
     }
 
@@ -139,10 +157,11 @@ public class Stage4EndBoss : EnemyBossWave
     {
         SwitchToBoss();
         float time = currentBoss.movement.MoveTo(bossLocation3, speed1);
-        currentBoss.shooting.StartShootingAfter(Functions.RepeatAction(
-            () => currentBoss.shooting.StartShooting(Phase3BossPulse(Functions.AimAtPlayer(currentBoss.transform))),
-            fireballpulserate), time);
-        for (int i = 0; i < numberOfCircles3; i++)
+    
+         currentBoss.shooting.StartShootingAfter(Functions.RepeatAction(
+              () => currentBoss.shooting.StartShooting(Phase3BossPulse(Functions.AimAtPlayer(currentBoss.transform))),
+              fireballpulserate), time);
+         for (int i = 0; i < numberOfCircles3; i++)
         {
             Bullet circle = GameManager.bulletpools.SpawnBullet(GameManager.gameData.fireCircle, currentBoss.transform.position);
             circle.movement.MoveTo(new Vector2(-x3 + i * 2 * x3 / (numberOfCircles3 - 1), y3), speed1);
@@ -202,7 +221,8 @@ public class Stage4EndBoss : EnemyBossWave
             i=> {
                 for (int j = 0; j < bulletCountMultiplier; j++) {
                     float speed = UnityEngine.Random.Range(speedBullet5Min, speedBullet5Max);
-                    Bullet star2 = Patterns.ShootStraight(star, stardmg5, new Vector2(UnityEngine.Random.Range(-3.9f, 3.9f), 4.1f), -90,
+                    Bullet star2 = Patterns.ShootStraight(star, stardmg5, new Vector2(UnityEngine.Random.Range(-3.9f, 3.9f), 4.1f),
+                        -90 + (harder? UnityEngine.Random.Range(-harderanglerange5, harderanglerange5):0),
                         speed,null);
                     star2.orientation.StartRotating(speed / speedBullet5Max * maxSpin5);
                 }
@@ -280,9 +300,10 @@ public class Stage4EndBoss : EnemyBossWave
     IEnumerator Phase7ShortLine(int number, bool up, float speed) {
         Bullet bul = GameManager.gameData.ellipseBullet.GetItem(DamageType.Fire);
         Vector2 pos = new Vector2(UnityEngine.Random.Range(-3.9f, 3.9f), up? -4.1f: 4.1f);
+        float randomfactor = harder ? UnityEngine.Random.Range(-harderanglerange7, harderanglerange7) :0;
         return Functions.RepeatActionXTimes(
             () => Patterns.ShootStraight(bul, shotdmg7, pos,
-            up ? 90 : 270, speed,null), shotinterval7, number);
+            up ? 90 + randomfactor: 270 + randomfactor, speed,null), shotinterval7, number);
     }
     void EndPhase7() {
 
@@ -431,7 +452,18 @@ public class Stage4EndBoss : EnemyBossWave
 
     IEnumerator Phase3BossPulse(float angle) {
         Bullet fireball = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Fire);
-        return Functions.RepeatActionXTimes(()=>Patterns.ShootMultipleStraightBullet(fireball, fireballdmg3, currentBoss.transform.position, fireballspeed3,
-            angle, fireballspread3, fireballNumber3,null), fireballshotrate, (int)(fireballpulsetime / fireballshotrate));
+        if (!harder)
+        {
+            return Functions.RepeatActionXTimes(() => Patterns.ShootMultipleStraightBullet(fireball, fireballdmg3, currentBoss.transform.position, fireballspeed3,
+                angle, fireballspread3, fireballNumber3, null), fireballshotrate, (int)(fireballpulsetime / fireballshotrate));
+        }
+        else {
+            return Functions.RepeatCustomActionXTimes(i => Patterns.SpirallingOutwardsRing(
+                        fireball, fireballdmg3, currentBoss.transform.position, fireballspeed3, (i % 2 == 0 ? 1 : -1) * harderangularvel3, fireballNumber3, 0, null),
+                        fireballshotrate, (int)(fireballpulsetime / fireballshotrate));
+        }
+ 
+        
     }
+
 }

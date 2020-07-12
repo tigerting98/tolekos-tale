@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.UI;
@@ -20,6 +21,7 @@ public class WavePattern3 : EnemyWave
     [Header("subwave")]
     [SerializeField] float movespeed, spawnRate;
     [SerializeField] EnemyStats stats;
+    [SerializeField] bool harder = false;
     protected Enemy enemy;
     [SerializeField] List<WavePattern3SubWave> subwaves;
     [Header("Bullet Behavior")]
@@ -28,7 +30,9 @@ public class WavePattern3 : EnemyWave
     [Header("Explode Behavior")]
     [SerializeField] float dmgexplode = 150, fastspeed = 5, slowspeed = 1, radius = 1;
     [SerializeField] int numberOfExplode = 5;
-    protected Bullet bulletexplode;
+    protected Bullet bulletexplode1, bulletexplode2;
+    [SerializeField] float harderbulletspeed2;
+    
 
     public virtual void SetUp() { 
         
@@ -57,7 +61,12 @@ public class WavePattern3 : EnemyWave
     {
         Enemy en = Instantiate(enemy, new Vector2(left ? -4.1f : 4.1f, y), Quaternion.identity);
         en.SetEnemy(stats, false);
-        en.deathEffects.OnDeath += () => Patterns.ExplodingRingOfBullets(bulletexplode, dmgexplode, en.transform.position, numberOfExplode, 0, fastspeed, slowspeed, radius / fastspeed,null);
+        en.deathEffects.OnDeath += () =>
+        {
+            Patterns.ExplodingRingOfBullets(bulletexplode1, dmgexplode, en.transform.position, numberOfExplode, 0, fastspeed, slowspeed, radius / fastspeed, null);
+            if (harder)
+            { Patterns.RingOfBullets(bulletexplode2, dmgexplode, en.transform.position, numberOfExplode, 360f/(numberOfExplode*2), harderbulletspeed2, null); }
+        };
         en.movement.SetSpeed(movespeed, left ? 0 : 180);
         en.movement.destroyBoundary = 4.5f;
         if (Random.Range(0f, 1f) < shotChance)

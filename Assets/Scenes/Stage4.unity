@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1505,9 +1505,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8942f0ff43e7b4cb8d56fe81728711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 11400000, guid: 267d196d20feaef43a47912a6f9f52ee, type: 2}
+  easyLevel: {fileID: 11400000, guid: 376edf650e575dc4e93eba2185b9550b, type: 2}
+  normalLevel: {fileID: 11400000, guid: 267d196d20feaef43a47912a6f9f52ee, type: 2}
+  hardLevel: {fileID: 11400000, guid: 56a5b6edfa32bf542bd9e8d47fc7dcd8, type: 2}
+  lunaticLevel: {fileID: 11400000, guid: d5b173c0d014a804f8a236b3f378ede5, type: 2}
   background: {fileID: 1605513546}
   playerLevel: 17
+  difficulty: 3
 --- !u!95 &1605513546 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 446215419749746356, guid: 95962e6eb692fdd46989e32ab1c69bc8,
@@ -1808,10 +1812,39 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 267d196d20feaef43a47912a6f9f52ee,
         type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: normalLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 267d196d20feaef43a47912a6f9f52ee,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: easyLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 376edf650e575dc4e93eba2185b9550b,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: lunaticLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: d5b173c0d014a804f8a236b3f378ede5,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: hardLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 56a5b6edfa32bf542bd9e8d47fc7dcd8,
+        type: 2}
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_Name
       value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2276b1da7d62f1a47842690fb722f6bc, type: 3}
@@ -1929,8 +1962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc63cd80b636e541abd0b885eb3e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e, type: 3}
-  playerLevel: 1000
+  wave: {fileID: 3141672594095841008, guid: f87c38c0b2f520a43b29ab286f926feb, type: 3}
+  playerLevel: 100
 --- !u!4 &1931965796
 Transform:
   m_ObjectHideFlags: 0

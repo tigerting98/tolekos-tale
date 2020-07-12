@@ -17,7 +17,6 @@ public class WavePattern5 : EnemyWave
     [SerializeField] EnemyStats stats;
     [SerializeField] float bulletSpeed = 5f;
     [SerializeField] float shotRate = 0.5f;
-    [SerializeField] float shotAngle = 20f;
     [SerializeField] int numberOfRings = 3;
     [SerializeField] int bulletsPerRing = 10;
     [SerializeField] float bulletDamage = 10f;
@@ -42,7 +41,6 @@ public class WavePattern5 : EnemyWave
 
     IEnumerator SpawnSubwave(float spawnDelay, float startX, float endY, bool summonBoss) 
     {
-        Enemy enemy = this.enemy;
         yield return new WaitForSeconds(spawnDelay);
         StartCoroutine(SpawnEnemy(moveSpeed, new Vector2(startX, 4.2f), new Vector2(startX, endY)));
         StartCoroutine(SpawnEnemy(moveSpeed, new Vector2(-startX, 4.2f), new Vector2(-startX, endY)));

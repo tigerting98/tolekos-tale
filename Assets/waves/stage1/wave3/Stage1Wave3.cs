@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-
+using System.Configuration;
 using UnityEngine;
 
 
@@ -24,7 +24,8 @@ public class Stage1Wave3 : EnemyWave
     [SerializeField] float maxTime = 1f;
     [SerializeField] float chanceofShooting = 0.3f;
     [SerializeField] float dmg = 50;
-
+    [SerializeField] int lines = 0;
+    [SerializeField] float spread = 0;
     [Header("Boss SpawnTime")]
     [SerializeField] float bossDelay = 5f;
 
@@ -80,7 +81,7 @@ public class Stage1Wave3 : EnemyWave
         if (chanceofShooting > Random.Range(0f, 1f))
         {
             newEnemy.shooting.StartShootingAfter
-              (EnemyPatterns.ExplodingLineAtPlayer(bullet, dmg, newEnemy.transform, initialSpeed, finalSpeed, bulletCount, minTime, maxTime, shotRate, bulletSpawnSound), shotRate / 2);
+              (EnemyPatterns.ExplodingLinesAtPlayer(bullet, dmg, newEnemy.transform, initialSpeed, finalSpeed, bulletCount, minTime, maxTime, shotRate, lines, spread, bulletSpawnSound), shotRate / 2);
 
         }
         newEnemy.DestroyAfter(time);

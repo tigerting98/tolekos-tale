@@ -1,7 +1,7 @@
-﻿using System;
+﻿
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+
 using UnityEngine;
 
 
@@ -18,10 +18,10 @@ public class Stage1EndBoss : EnemyBossWave
     [SerializeField] SFX pattern2SFX;
     [SerializeField] SFX pattern3smashSFX;
     [SerializeField] SFX pattern3tpSFX;
-   
+    [SerializeField] bool harder = false;
     [Header("Pattern1")]
-    [SerializeField]
-    BulletPack pattern1ConePack;
+    [SerializeField] int number1;
+    [SerializeField] float speed1, shotrate1, dmg1ball;
     [SerializeField]
     int pattern1Number = 5, numberOfCone = 5;
     [SerializeField] float pattern1PulseRate = 1f, pattern1SpawnRate = 0.05f, pattern1Spacing = 0.05f, pattern1Speed = 3f, dmg1 =100;
@@ -30,9 +30,9 @@ public class Stage1EndBoss : EnemyBossWave
     [Header("Pattern2")]
     [SerializeField] float arrowSpawnTimeMax = 0.05f, arrowSpawnTimeMin = 0.01f;
     [SerializeField] float maxSpeed = 5f, minSpeed = 2f;
-    [SerializeField] Bullet arrow;
     [SerializeField] float moveSpeed = 3f;
     [SerializeField] float maxY = 3.5f, minY = 0.5f;
+    [SerializeField] float dmg2 = 100f;
     [Header("Pattern2 Homing Behavior")]
     [SerializeField] float arrowSpeed = 1.5f;
     [SerializeField] float shotRate = 1f;
@@ -44,7 +44,9 @@ public class Stage1EndBoss : EnemyBossWave
     [SerializeField] float pausetime = 2f;
     [SerializeField] Bullet explosion, punch;
     [SerializeField] float punchSpeed = 2f;
-    [SerializeField] float explosionTime;
+    [SerializeField] float punchdmg, explosiondmg;
+    [SerializeField] int number3 = 20;
+    [SerializeField] float speed3harder = 2, dmg3star = 100;
 
 
 
@@ -74,6 +76,10 @@ public class Stage1EndBoss : EnemyBossWave
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
         currentBoss.shooting.StartShooting(Pattern1(currentBoss));
+        if (harder) {
+            currentBoss.shooting.StartShooting(EnemyPatterns.PulsingBullets(GameManager.gameData.smallRoundBullet.GetItem(DamageType.Pure), dmg1ball, currentBoss.transform,
+                speed1, shotrate1, number1, null));
+        }
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
         
     }
@@ -97,7 +103,7 @@ public class Stage1EndBoss : EnemyBossWave
         currentBoss.bosshealth.OnLifeDepleted += EndPhase2;
         currentBoss.shooting.StartShootingAfter(RainOfArrows(), 0.3f);
         currentBoss.shooting.StartShootingAfter(MoveLeftAndRight(), 0.3f);
-        currentBoss.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(arrow, arrow.damageDealer.damage, currentBoss.transform, arrowSpeed, shotRate, pattern2SFX), 0.3f);
+        currentBoss.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(GameManager.gameData.stage1arrowBullet, dmg2, currentBoss.transform, arrowSpeed, shotRate, pattern2SFX), 0.3f);
   
     }
 
@@ -133,6 +139,11 @@ public class Stage1EndBoss : EnemyBossWave
         Animator animator = currentBoss.gameObject.GetComponent<Animator>();
         while (animator) {
             animator.SetTrigger("Disappear");
+            if (harder)
+            {
+                Patterns.RingOfBullets(GameManager.gameData.starBullet.GetItem(UnityEngine.Random.Range(0, 3)),
+                    dmg3star, currentBoss.transform.position, number3, Functions.AimAtPlayer(currentBoss.transform), speed3harder, null);
+             }
             pattern3tpSFX.PlayClip();
             yield return new WaitForSeconds(1f);
             if (animator)
@@ -149,18 +160,19 @@ public class Stage1EndBoss : EnemyBossWave
                     punchbul.movement.SetSpeed(new Vector2(0, -punchSpeed));
                     punchbul.movement.destroyBoundary = 6f;
                     yield return new WaitForSeconds(1 / punchSpeed);
-
-
-                    if (punchbul&&punchbul.gameObject.activeInHierarchy)
+                    ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > 1/punchSpeed);
+                    trigger.OnTriggerEvent += movement =>
                     {
-                        Vector2 pos = punchbul.transform.position;
-                        Bullet explode = Instantiate(explosion, pos, Quaternion.identity);
-                        Destroy(explode.gameObject, 1.2f);
-                        ExplodingAndBack(pos);
-                        punchbul.Deactivate();
+                        Bullet bul = Instantiate(GameManager.gameData.explosionBullet, movement.transform.position, Quaternion.identity);
+                        bul.SetDamage(explosiondmg);
+                        Destroy(bul, 1.2f);
+                        ExplodingAndBack(movement.transform.position);
+                        movement.GetComponent<Bullet>().Deactivate();
+                       
+                    };
+                    punchbul.movement.triggers.Add(trigger);
 
-
-                    }
+                    
                 }
 
             }
@@ -219,9 +231,9 @@ public class Stage1EndBoss : EnemyBossWave
     IEnumerator RainOfArrows() {
         return Functions.RepeatCustomActionCustomTime(i =>
         {
-
-            Bullet bul = GameManager.bulletpools.SpawnBullet(arrow, new Vector2(UnityEngine.Random.Range(-4f, 4f), 4.4f), Quaternion.identity);
-            bul.movement.SetSpeed(new Vector2(0, -UnityEngine.Random.Range(minSpeed, maxSpeed)));
+            Patterns.ShootStraight(GameManager.gameData.stage1arrowBullet,
+               dmg2, new Vector2(UnityEngine.Random.Range(-4f, 4f), 4.4f), -90, UnityEngine.Random.Range(minSpeed, maxSpeed), null);
+          
         }, i => UnityEngine.Random.Range(arrowSpawnTimeMin, arrowSpawnTimeMax));
             
     

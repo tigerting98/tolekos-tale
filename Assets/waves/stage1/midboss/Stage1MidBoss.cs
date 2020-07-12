@@ -8,14 +8,12 @@ public class Stage1MidBoss : EnemyBossWave
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float endY = 2f;
     [Header("Ring Bullet pattern")]
-    [SerializeField] BulletPack balls;
     [SerializeField] int ballNumber;
     [SerializeField] float ballSpeed;
     [SerializeField] float ballShotRate;
     [SerializeField] float delay;
     [SerializeField] float numberofPulses;
     [Header("Straight Bullet pattern")]
-    [SerializeField] BulletPack roundedBullets;
     [SerializeField] int straightLines;
     [SerializeField] float straightSpeed;
     [SerializeField] float straightShotRate;

@@ -9,5 +9,6 @@ public class Stage4Wave2 : WavePattern7
         enemy = GameManager.gameData.linemonster.GetItem(DamageType.Fire);
         bigBullet = GameManager.gameData.bigBullet.GetItem(DamageType.Fire);
         smallBullet = GameManager.gameData.fireBullet;
+        harderBullet = GameManager.gameData.starBullet.GetItem(DamageType.Fire);
     }
 }
