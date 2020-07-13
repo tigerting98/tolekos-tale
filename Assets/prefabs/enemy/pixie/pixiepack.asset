@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2fe1d95e2154242a4613030a6fca57, type: 3}
+  m_Name: pixiepack
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 2495258473278895490, guid: a02faffd2cb12434db0ed6687be37e03, type: 3}
+  - {fileID: 915804866591023232, guid: 41769e72a87d08140b0e1086500471b1, type: 3}
+  - {fileID: 2852953388356437214, guid: 5a59e00a3fa74ba4aba11b151c17efea, type: 3}

@@ -129,6 +129,7 @@ MonoBehaviour:
     type: 3}
   fireFocus: {fileID: 7805036315008413061}
   fireUnfocus: {fileID: 5730222801409559759}
+  shootingEnabled: 1
   mode: 0
 --- !u!50 &1455112021299339000
 Rigidbody2D:

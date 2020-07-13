@@ -10,8 +10,9 @@ public class Patterns : MonoBehaviour
 {
     public static Bullet ShootStraight(Bullet bullet, float dmg, Vector2 origin, float angle, float speed, SFX sfx)
     {
-        return ShootCustomBullet(bullet, dmg, origin, Movement.RotatePath(angle, t => new Vector2(speed, 0)), MovementMode.Velocity, sfx); 
-
+        Bullet bul = ShootCustomBullet(bullet, dmg, origin, Movement.RotatePath(angle, t => new Vector2(speed, 0)), MovementMode.Velocity, sfx);
+        bul.transform.rotation = Quaternion.Euler(0, 0, angle);
+        return bul;
     }
     public static Bullet BurstShoot(Bullet bullet, float dmg, Vector2 origin, float angle, float initialSpeed, float finalSpeed, float time, SFX sfx)
     {
@@ -23,6 +24,7 @@ public class Patterns : MonoBehaviour
         if (sfx) {
             AudioManager.current.PlaySFX(sfx);
         }
+
         bul.SetDamage(dmg);
         bul.movement.SetCustomGraph(function, mode);
         return bul;
@@ -89,7 +91,7 @@ public class Patterns : MonoBehaviour
         return CustomRing(theta => BurstShoot(bullet, dmg, origin, theta, initialSpeed, finalSpeed, time, sfx), offset, number);
 
     }
-
+    
     public static Bullet ShootSinTrajectory(Bullet bullet, float dmg, Vector2 origin, float angle, float speed, float angularVelocity, float amp, SFX sfx) {
         
         return ShootCustomBullet(bullet, dmg, origin, Movement.RotatePath(angle, time => new Vector2(speed * time, (float)(amp * Math.Sin(time * angularVelocity)))), MovementMode.Position,sfx);
@@ -113,10 +115,11 @@ public class Patterns : MonoBehaviour
         if (target == null)
         {
             bullet.movement.SetSpeed(defaultVelocity);
+            bullet.transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(defaultVelocity.y, defaultVelocity.x));
         }
         else {
             bullet.movement.Homing(target, defaultVelocity.magnitude);
-        
+            bullet.transform.rotation = Quaternion.Euler(0, 0, Functions.AimAt(origin, target.transform.position));
         }
         return bullet;
     }

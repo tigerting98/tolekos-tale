@@ -52,6 +52,7 @@ MonoBehaviour:
   arrowBullet: {fileID: 11400000, guid: 93521daa990d365478ecda6f7b65cc39, type: 2}
   ellipseBullet: {fileID: 11400000, guid: db9c7a3e4381a7d458143ac16c0b25c4, type: 2}
   starBullet: {fileID: 11400000, guid: a7621db965d645a4f81ac55721e4273d, type: 2}
+  laserBullet: {fileID: 11400000, guid: f3c85c64088299d49bbc3f970b774f86, type: 2}
   stage5lines: {fileID: 11400000, guid: 575bf650e4b1b124bbc2e360b5710194, type: 2}
   punchBullet: {fileID: 911972999547948889, guid: 7a6f9c6c80d58864d9bec85e519acf80,
     type: 3}
@@ -105,6 +106,7 @@ MonoBehaviour:
   ghosts: {fileID: 11400000, guid: f9bc86bb33e833e42b241d21cac03812, type: 2}
   linemonster: {fileID: 11400000, guid: e17c5ae1cdbaddd45a4fe548718245ab, type: 2}
   mushrooms: {fileID: 11400000, guid: 6bbd3837208b3f340abf41594e72f4b6, type: 2}
+  pixies: {fileID: 11400000, guid: 2d1c3df39d0483c4caeefc914a7e6da8, type: 2}
   waterFairy: {fileID: 8125937657687486251, guid: 58b208128480af14e95154258395709b,
     type: 3}
   patternSprite: {fileID: 6330706413461039320, guid: 0f38cfbd00a6bb545b54edd928d675ba,
@@ -113,6 +115,14 @@ MonoBehaviour:
   midBossMushroomMob: {fileID: 3891478456235747014, guid: 4210db93f65ed3049b0731deeb345d0e,
     type: 3}
   greenSlime: {fileID: 1209050533006121410, guid: 62802f75734c5af4aa142ed5c7c3e5b7,
+    type: 3}
+  candelabra: {fileID: 6134857302716983960, guid: 10fbf30fa5800fa4ea718f8bef45876f,
+    type: 3}
+  watercandle: {fileID: 6134857302716983960, guid: ca485e067aff14346b2a206bf116478f,
+    type: 3}
+  pottedplant: {fileID: 3119230699040671993, guid: c636b84353db18a498edc5ebb82146d0,
+    type: 3}
+  flyingBook: {fileID: 8653138007011878643, guid: 1fde77ccfca5d1a4ca1eb8b90bb6d3e1,
     type: 3}
   playerDialogueSprite: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea,
     type: 3}

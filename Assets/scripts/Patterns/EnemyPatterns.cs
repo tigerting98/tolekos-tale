@@ -127,6 +127,7 @@ public class EnemyPatterns : MonoBehaviour {
 
     //a pattern that looks like a fanning effect
     public static void StartFanningPattern(Bullet bullet, float dmg, Shooting enemy, float speed, float angularVel, float start, int lines, float shotRate, int number, float speedDiff,SFX sfx) {
+        
         Functions.StartMultipleCustomCoroutines(enemy, i => ConstantSpinningStraightBullets(bullet, dmg, enemy.transform, speed + i * speedDiff, angularVel, start, lines, shotRate,sfx), number);
     }
 

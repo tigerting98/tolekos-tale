@@ -6,7 +6,7 @@ public class GameData : MonoBehaviour
 {
     public SpellCardUI spellcardUI;
     public SFX lifeDepletedSFX;
-    public BulletPack pointedBullet, smallRoundBullet, bigBullet, arrowBullet, ellipseBullet, starBullet;
+    public BulletPack pointedBullet, smallRoundBullet, bigBullet, arrowBullet, ellipseBullet, starBullet, laserBullet;
     public BulletPack stage5lines;
     public Bullet punchBullet, stage1arrowBullet, explosionBullet;
     public Bullet leafBullet1, leafBullet2, leafBullet3, rockBullet;
@@ -21,11 +21,13 @@ public class GameData : MonoBehaviour
     public Bullet treeRockBullet;
     public Bullet fireWheel;
     public Bullet pageBullet;
-    public EnemyPack ghosts, linemonster, mushrooms;
+    public EnemyPack ghosts, linemonster, mushrooms, pixies;
     public Enemy waterFairy;
     public Enemy patternSprite, treeant;
     public Enemy midBossMushroomMob;
     public Enemy greenSlime;
+    public Enemy candelabra, watercandle, pottedplant;
+    public Enemy flyingBook;
     public Sprite playerDialogueSprite;
     public LevelDescription beforeStage1;
 

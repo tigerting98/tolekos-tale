@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1780412695915799206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1626574580741225801}
+  - component: {fileID: -5575410777171086195}
+  m_Layer: 0
+  m_Name: s5w1normal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1626574580741225801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780412695915799206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1333305, y: 0.26447168, z: -8.58855}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5575410777171086195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780412695915799206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f23387b03c2ee41b1caf55fabc34bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnSound: {fileID: 0}
+  stats: {fileID: 11400000, guid: 9526cec8a94823c468b02b75d5454426, type: 2}
+  speed: 7
+  moveSpeed: 5
+  smallrounddmg: 450
+  endSpeed: 1.2
+  startSpeed: 4
+  ballSize: 0.8
+  minTime: 0.1
+  maxTime: 0.4
+  shotRate: 1
+  numberOfArcs: 5
+  numberPerArcs: 7
+  starsize: 0.6
+  starsPerShot: 3
+  shotRateStar: 0.1
+  minSpeed: 0.7
+  maxSpeed: 1
+  stardmg: 445
+  water: {x: -1, y: 1.5}
+  earth: {x: 0, y: 1.5}
+  fire: {x: 1, y: 1.5}
+  shootingDuration: 13
