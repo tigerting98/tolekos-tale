@@ -78,6 +78,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b16341d7e1ba1e34fb17d7b17526144f,
         type: 3}
+    - target: {fileID: 5342412700269896471, guid: 1af983311e2a83b4899430ed42b385c7,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 31
+      objectReference: {fileID: 0}
     - target: {fileID: 8572651827905660512, guid: 1af983311e2a83b4899430ed42b385c7,
         type: 3}
       propertyPath: damageType

@@ -28,9 +28,22 @@ public class Stage6EndBoss : EnemyBossWave
     [SerializeField] int numberperring2;
     [Header("Pattern3")]
     [SerializeField] float dmg3;
-    [SerializeField] float circleangularvel3, circlemovespeed3, radius3;
+    [SerializeField] float circleangularvel3, radius3;
     [SerializeField] float shotrate3circle, shotspeed3, shotspeeddiff3, bulletangularvel3;
     [SerializeField] int numberoflines3, numberperlines3;
+    [SerializeField] float movespeeed3, movingbounds3, movingdelaymin3, movingdelaymax3;
+    [Header("Pattern4")]
+    [SerializeField] float dmg4rain;
+    [SerializeField] float anglespreadrain, rainminspeed, rainmaxspeed, rainshotrate;
+    [SerializeField] float earthlaserdmg4, earthspeed4, leafinitialspeed4min,leafinitialspeed4max, leafacc4, leafacctime4, spreadleafangle4, leafdmg4;
+    [SerializeField] int numberofleafs4;
+    [SerializeField] int numberOfsideLasers4;
+    [SerializeField] Vector2 locationright4, locationtop4, locationleft4;
+    [SerializeField] float delayinpulse4, delaybeytweenpulse4, movespeed4, spreadanglelaser4, laserangle4;
+    [Header("Pattern5")]
+    [SerializeField] Vector2 pos5;
+    [SerializeField] float starradius5, starshotrate5, stardmg5, delaybeforemoving5, delaybeforesplitting5, acc5, endspeed5, starspeed5, starttime5, starpulserate5 =5f;
+    [SerializeField] int numberOfStarsperside5;
     public override void SpawnWave()
     {
         Destroy(Instantiate(startparticle, new Vector2(0, 0), Quaternion.identity), 5f);
@@ -112,15 +125,169 @@ public class Stage6EndBoss : EnemyBossWave
         magicCircle3(DamageType.Water, -30);
         magicCircle3(DamageType.Earth, -150);
         magicCircle3(DamageType.Fire, 90);
+        currentBoss.shooting.StartShooting(MoveRandomly());
+        currentBoss.bosshealth.OnLifeDepleted += EndPhase3;
+    }
+    void EndPhase3() {
+        currentBoss.bosshealth.OnLifeDepleted -= EndPhase3;
+        EndPhase();
+        Invoke("StartPhase4", endPhaseTransition);
+    }
+    void StartPhase4() {
 
+        SpellCardUI(namesOfSpellCards[1]);
+        Invoke("Phase4", spellCardTransition);
+    }
+    void Phase4() {
+        SwitchToBoss();
+        ChangePylfer(DamageType.Earth);
+        ChangePylferResist(0.25f, 0.5f, 1.5f, 1f);
+        Bullet rain = GameManager.gameData.raindrop;
+        currentBoss.shooting.StartShooting(Functions.RepeatAction(
+        () => Patterns.ShootStraight(rain, dmg4rain, new Vector2(UnityEngine.Random.Range(-4f, 4f), 4.1f), -90+UnityEngine.Random.Range(-anglespreadrain, anglespreadrain),
+        UnityEngine.Random.Range(rainminspeed, rainmaxspeed), null), rainshotrate
+        ));
+        currentBoss.shooting.StartShooting(Pattern4());
+        currentBoss.bosshealth.OnLifeDepleted += EndPhase4;
+    }
+    void EndPhase4() {
+        currentBoss.bosshealth.OnLifeDepleted -= EndPhase4;
+        EndPhase();
+        Invoke("Phase5", endPhaseTransition);
+    }
+    void Phase5() {
+        SwitchToBoss();
+        float time = currentBoss.movement.MoveTo(pos5, movespeed);
+        currentBoss.shooting.StartShootingAfter(Functions.RepeatAction(
+            () => {
+                float angle2 = UnityEngine.Random.Range(0, 360f);
+                float angle = UnityEngine.Random.Range(0, 360f);
+                currentBoss.shooting.StartShooting(StarPattern(angle, currentBoss.transform.position, DamageType.Pure, 0, 30 + angle2, starttime5));
+                currentBoss.shooting.StartShooting(StarPattern(angle, currentBoss.transform.position, DamageType.Water, starspeed5, 30 + angle2, starttime5));
+                currentBoss.shooting.StartShooting(StarPattern(angle, currentBoss.transform.position, DamageType.Earth, starspeed5, 150 + angle2, starttime5));
+                currentBoss.shooting.StartShooting(StarPattern(angle, currentBoss.transform.position, DamageType.Fire, starspeed5, 270 + angle2, starttime5));
+            }, starpulserate5
+            
+            ), time);
+        currentBoss.bosshealth.OnLifeDepleted += EndPhase5;
+    }
+    void EndPhase5() {
+        currentBoss.bosshealth.OnLifeDepleted -= EndPhase5;
+        EndPhase();
+        Invoke("StartPhase6", endPhaseTransition);
+    }
+    void StartPhase6() {
+        SpellCardUI(namesOfSpellCards[2]);
+        Invoke("Phase6", spellCardTransition);
+    }
+    void Phase6() {
+        SwitchToBoss();
+        ChangePylfer(DamageType.Fire);
+        ChangePylferResist(1.5f, 0.25f, 0.5f, 1f);
+    }
+    IEnumerator StarPattern(float offset, Vector2 origin, DamageType type, float speed, float direction, float timemoving) {
+        GameObject centre = new GameObject();
+        centre.transform.position = origin;
+        centre.AddComponent<Movement>();
+        float angle = offset;
+        for (int i = 0; i < 5; i++) {
+            Vector2 pos = origin + new Polar(starradius5, angle).rect;
+            Vector2 increpos = (new Polar(starradius5, angle - 144).rect - new Polar(starradius5, angle).rect) / numberOfStarsperside5;
+            for (int j = 0; j < numberOfStarsperside5; j++) {
+                Bullet bul =Patterns.ShootStraight(GameManager.gameData.starBullet.GetItem(type), stardmg5, pos, 0, 0, null);
+                
+                bul.transform.parent = centre.transform;
+                pos += increpos;
+                yield return new WaitForSeconds(starshotrate5);
+            }
+            angle -= 144;
+        }
+        yield return new WaitForSeconds(delaybeforemoving5);
+        if (centre)
+        { centre.GetComponent<Movement>().MoveAndStopAfter(new Polar(speed, direction).rect, timemoving); }
+        yield return new WaitForSeconds(delaybeforesplitting5);
+        foreach (Transform child in centre.transform) {
+            child.GetComponent<Movement>().AccelerateTowards(acc5, centre.transform.position, endspeed5);
+        }
+        Destroy(centre, 60f);
+    }
+    IEnumerator Pattern4() {
+        while (currentBoss) {
+            float time1 = currentBoss.movement.MoveTo(locationleft4, movespeed4);
+            yield return new WaitForSeconds(time1);
+            if (currentBoss)
+            {
+                EarthLaser4(180 + laserangle4);
+                for (int i = 1; i < numberOfsideLasers4; i++) {
+                    EarthLaser4(180 + laserangle4 + i* spreadanglelaser4);
+                    EarthLaser4(180 + laserangle4 - i * spreadanglelaser4);
+                }
+
+            }
+            yield return new WaitForSeconds(delayinpulse4);
+            if (currentBoss)
+            {
+                float time2 = currentBoss.movement.MoveTo(locationright4, movespeed4);
+                yield return new WaitForSeconds(time2);
+            }
+            if (currentBoss)
+            {
+                EarthLaser4(-laserangle4);
+                for (int i = 1; i < numberOfsideLasers4; i++)
+                {
+                    EarthLaser4(-laserangle4 + i * spreadanglelaser4);
+                    EarthLaser4(-laserangle4 - i * spreadanglelaser4);
+                }
+
+            }
+            yield return new WaitForSeconds(delayinpulse4);
+            if (currentBoss)
+            {
+                float time3 = currentBoss.movement.MoveTo(locationtop4, movespeed4);
+                yield return new WaitForSeconds(time3);
+            }
+            if (currentBoss)
+            {
+                float angle = Functions.AimAtPlayer(currentBoss.transform);
+                EarthLaser4(angle);
+                for (int i = 1; i < numberOfsideLasers4; i++)
+                {
+                    EarthLaser4(angle + i * spreadanglelaser4);
+                    EarthLaser4(angle - i * spreadanglelaser4);
+                }
+
+            }
+            yield return new WaitForSeconds(delaybeytweenpulse4);
+        }
+    }
+    IEnumerator MoveRandomly() {
+        while (currentBoss) {
+            float time = currentBoss.movement.MoveTo(Functions.RandomLocation(pos2, movingbounds3 ), movespeeed3);
+            yield return new WaitForSeconds(time + UnityEngine.Random.Range(movingdelaymin3, movingdelaymax3));
+        }
     }
 
+    Bullet EarthLaser4(float angle) {
+        Bullet bul = Patterns.ShootStraight(GameManager.gameData.laserBullet.GetItem(DamageType.Earth), earthlaserdmg4, currentBoss.transform.position, angle, earthspeed4, null);
+        ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => !Functions.WithinBounds(movement.transform.position, 4f, 5.5f));
+        trigger.OnTriggerEvent += movement =>
+        {
+            for (int i = 0; i < numberofleafs4; i++)
+            {
+                EnemyPatterns.FallingBullet(GameManager.gameData.leafBullet2, leafdmg4, movement.transform.position,
+                  (movement.transform.position.x > 0 ? 180 : 0) + UnityEngine.Random.Range(-spreadleafangle4, spreadleafangle4), leafacc4, leafacctime4, 
+                  UnityEngine.Random.Range(leafinitialspeed4min, leafinitialspeed4max), null);
+            }
+            movement.GetComponent<Bullet>().Deactivate();
+        };
+        bul.movement.triggers.Add(trigger);
+        return bul;
+    }
     Bullet magicCircle3(DamageType type, float angle) {
         Bullet magicCircle = GameManager.gameData.magicCircles.GetItem(type);
-        Bullet bul = GameManager.gameData.pointedBullet.GetItem(type);
+        Bullet bul = GameManager.gameData.arrowBullet.GetItem(type);
         Bullet circle = GameManager.bulletpools.SpawnBullet(magicCircle, (Vector2)(currentBoss.transform.position) + new Polar(radius3, angle).rect);
         circle.movement.SetPolarPath(t => new Polar(radius3, angle + circleangularvel3 * t));
-        circle.transform.localScale *= 0.5f;
         circle.transform.parent = currentBoss.transform;
         EnemyPatterns.StartFanningPattern(bul, dmg3, circle.GetComponent<Shooting>(), shotspeed3, -bulletangularvel3, 0, numberoflines3, shotrate3circle, numberperlines3, shotspeeddiff3, null);
         return circle;

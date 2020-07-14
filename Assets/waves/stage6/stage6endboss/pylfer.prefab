@@ -41,17 +41,17 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[2]
-      value: 32000
+      value: 25000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[3]
-      value: 38000
+      value: 40000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[4]
-      value: 35000
+      value: 25000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -61,17 +61,17 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[6]
-      value: 41000
-      objectReference: {fileID: 0}
-    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
-        type: 3}
-      propertyPath: listOfHp.Array.data[0]
       value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
+      propertyPath: listOfHp.Array.data[0]
+      value: 25000
+      objectReference: {fileID: 0}
+    - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
+        type: 3}
       propertyPath: listOfHp.Array.data[1]
-      value: 35000
+      value: 40000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -91,17 +91,17 @@ PrefabInstance:
     - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: FireMultiplier
-      value: 0.8
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: WaterMultiplier
-      value: 0.8
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: EarthMultiplier
-      value: 0.8
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 2821433746598605189, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}

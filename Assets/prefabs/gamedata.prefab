@@ -53,6 +53,7 @@ MonoBehaviour:
   ellipseBullet: {fileID: 11400000, guid: db9c7a3e4381a7d458143ac16c0b25c4, type: 2}
   starBullet: {fileID: 11400000, guid: a7621db965d645a4f81ac55721e4273d, type: 2}
   laserBullet: {fileID: 11400000, guid: f3c85c64088299d49bbc3f970b774f86, type: 2}
+  magicCircles: {fileID: 11400000, guid: ecb15ad31fbf67f4383a433a76ff2594, type: 2}
   stage5lines: {fileID: 11400000, guid: 575bf650e4b1b124bbc2e360b5710194, type: 2}
   punchBullet: {fileID: 911972999547948889, guid: 7a6f9c6c80d58864d9bec85e519acf80,
     type: 3}
@@ -102,6 +103,8 @@ MonoBehaviour:
   fireWheel: {fileID: 2794776825522783396, guid: 8f7e146b09c6dc54fac7f27e7e3fa628,
     type: 3}
   pageBullet: {fileID: 3393592486164367828, guid: 6871f2b1366941d43bcdfe9ae9476a69,
+    type: 3}
+  raindrop: {fileID: 1495682739681755773, guid: db7b0965a43ec65459c9d1dea07687cf,
     type: 3}
   ghosts: {fileID: 11400000, guid: f9bc86bb33e833e42b241d21cac03812, type: 2}
   linemonster: {fileID: 11400000, guid: e17c5ae1cdbaddd45a4fe548718245ab, type: 2}
