@@ -47,7 +47,13 @@ MonoBehaviour:
   boss: {fileID: 2465689840817753905, guid: 00be70a7dc810bc44940158e65c4e211, type: 3}
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
-  namesOfSpellCards: []
+  namesOfSpellCards:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   nextLevel: {fileID: 0}
   background: {fileID: 7414380709887408105, guid: abb9119637e23b24cb2d92d8ace9438f,
     type: 3}
@@ -59,3 +65,36 @@ MonoBehaviour:
     type: 3}
   spawnParticle: {fileID: 6110562706618516333, guid: 41e797b206fd7e2429c72ef5bd897d6e,
     type: 3}
+  movespeed: 10
+  defaultPylfer: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+  greenPylfer: {fileID: 21300000, guid: b4444fce837b2424a85b084cc9d3669e, type: 3}
+  redPylfer: {fileID: 21300000, guid: e4ebc54c7d9190c439b0406615213520, type: 3}
+  bluePylfer: {fileID: 21300000, guid: f301cd2bbcba9814b9e0241743d433cc, type: 3}
+  y1: 1
+  buldmg1: 500
+  movespeed1: 2
+  petalCount1: 8
+  bulletperhalfpatel1: 5
+  fastspeed1: 1
+  slowspeed1: 0.65
+  stalkCount: 9
+  stalkTopcount: 2
+  stalktopspeeddiff: 0.1
+  stalktopspread: 2
+  stalktopspeed: 3
+  stalkslowspeed: 0.6
+  pulserate1: 2
+  dmg2: 600
+  pos2: {x: 0, y: 1.5}
+  minspeed2: 0.5
+  maxspeed2: 1.5
+  shotrate2: 0.05
+  delaybeforestop2: 4
+  delaybeforechanging2: 1
+  acc2: 2
+  time2: 1
+  shotrate2ring: 3
+  angularvel2ring: 23
+  radialvel2ring: 1.2
+  ringdmg2: 800
+  numberperring2: 15
