@@ -11,6 +11,8 @@ struct WavePattern9Subwave
     public float angularVelocity;
     public bool summonEndboss;
     public bool summonMidboss;
+    public DamageType type;
+    public bool alternateSpiral;
 }
 public class WavePattern9 : EnemyWave
 {
@@ -21,8 +23,11 @@ public class WavePattern9 : EnemyWave
     [SerializeField] int numberOfLines = 3;
     [SerializeField] List<WavePattern9Subwave> subwaveList;
     [SerializeField] float activeTime = 15f;
+    [SerializeField] bool dependOnType;
     protected Enemy enemy;
+    protected EnemyPack enemies;
     protected Bullet bullet;
+    protected BulletPack bullets;
 
     public virtual void SetUp()
     {
@@ -34,14 +39,14 @@ public class WavePattern9 : EnemyWave
         SetUp();
         foreach (WavePattern9Subwave subwave in subwaveList) 
         {
-            StartCoroutine(SpawnSubwave(subwave.spawnDelay, subwave.xPos, subwave.yPos, subwave.angularVelocity, subwave.summonEndboss, subwave.summonMidboss));
+            StartCoroutine(SpawnSubwave(subwave.spawnDelay, subwave.xPos, subwave.yPos, subwave.angularVelocity, subwave.summonEndboss, subwave.summonMidboss, subwave.type, subwave.alternateSpiral));
         }
     }
 
-    IEnumerator SpawnSubwave(float spawnDelay, float xPos, float yPos, float angularVelocity, bool summonEndboss, bool summonMidboss) 
+    IEnumerator SpawnSubwave(float spawnDelay, float xPos, float yPos, float angularVelocity, bool summonEndboss, bool summonMidboss, DamageType type, bool alternate) 
     {
         yield return new WaitForSeconds(spawnDelay);
-        this.StartCoroutine(SpawnEnemy(xPos, yPos, angularVelocity));
+        this.StartCoroutine(SpawnEnemy(xPos, yPos, angularVelocity, type, alternate));
         yield return new WaitForSeconds(activeTime);
         if (summonEndboss) 
         {
@@ -56,13 +61,23 @@ public class WavePattern9 : EnemyWave
         }
     }
     
-    IEnumerator SpawnEnemy(float xPos, float yPos, float angularVelocity)
+    IEnumerator SpawnEnemy(float xPos, float yPos, float angularVelocity, DamageType type, bool alternate)
     {
         //TODO: Make spawning particle effect
         Vector2 position = new Vector2(xPos, yPos);
-        Enemy enemy = Instantiate(this.enemy, position, Quaternion.identity);
+        Enemy en = dependOnType ? enemies.GetItem(type) : this.enemy;
+        Bullet bul = dependOnType ? bullets.GetItem(type) : this.bullet;
+        Enemy enemy = Instantiate(en, position, Quaternion.identity);
         enemy.SetEnemy(stats, false);
-        enemy.shooting.StartShooting(EnemyPatterns.ConstantSpinningStraightBullets(bullet, bulletDamage, enemy.transform, bulletSpeed, angularVelocity, 0, numberOfLines, shotRate,null));
+        if (alternate)
+        {
+            enemy.shooting.StartShooting(EnemyPatterns.BorderOfWaveAndParticle(bul, bulletDamage, enemy.transform, bulletSpeed, shotRate, numberOfLines, angularVelocity, null));
+        } 
+        else 
+        {
+            enemy.shooting.StartShooting(EnemyPatterns.ConstantSpinningStraightBullets(bul, bulletDamage, enemy.transform, bulletSpeed, angularVelocity, 0, numberOfLines, shotRate,null));
+        }
+
         yield return new WaitForSeconds(activeTime);
         if (enemy)
         {

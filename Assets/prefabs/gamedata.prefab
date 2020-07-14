@@ -107,6 +107,7 @@ MonoBehaviour:
   linemonster: {fileID: 11400000, guid: e17c5ae1cdbaddd45a4fe548718245ab, type: 2}
   mushrooms: {fileID: 11400000, guid: 6bbd3837208b3f340abf41594e72f4b6, type: 2}
   pixies: {fileID: 11400000, guid: 2d1c3df39d0483c4caeefc914a7e6da8, type: 2}
+  libraryMonsters: {fileID: 11400000, guid: d74211630b2a77b439cbd321fc3dea26, type: 2}
   waterFairy: {fileID: 8125937657687486251, guid: 58b208128480af14e95154258395709b,
     type: 3}
   patternSprite: {fileID: 6330706413461039320, guid: 0f38cfbd00a6bb545b54edd928d675ba,

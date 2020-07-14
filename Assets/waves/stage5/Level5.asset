@@ -23,6 +23,12 @@ MonoBehaviour:
   - 25
   - 45
   midBoss: {fileID: 7163120404739174105, guid: a37b4937d12500443930dc2b9e1589d4, type: 3}
-  wavesSecondHalf: []
-  timesSecondHalf: []
+  wavesSecondHalf:
+  - {fileID: 7897652670564822546, guid: 83d01416b6a9dc942a4555ecbb3ec41b, type: 3}
+  - {fileID: 1314461589439652146, guid: 0c948bcb5d3e1e8438b6c39c271a0ecf, type: 3}
+  - {fileID: 8665773328800848476, guid: 5e7194e4b22c0934e831c59436620a58, type: 3}
+  timesSecondHalf:
+  - 0
+  - 15
+  - 20
   endBoss: {fileID: 0}
