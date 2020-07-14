@@ -37,7 +37,7 @@ public class Stage5Wave4 : EnemyWave
                 trigger.OnTriggerEvent += movement =>
                 {
                     Patterns.ShootMultipleStraightBullet(GameManager.gameData.laserBullet.GetItem(subwave.type), bulletdmg,
-movement.transform.position, bulletspeed, Functions.AimAtPlayer(movement.transform), bulletspread, lines, null);
+                    movement.transform.position, bulletspeed, Functions.AimAtPlayer(movement.transform), bulletspread, lines, null);
                     movement.GetComponent<Bullet>().Deactivate();
                 };
                 bul.movement.triggers.Add(trigger);

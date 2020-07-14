@@ -9,7 +9,7 @@ public class BulletOrientation : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] Movement movement;
     public float angle = 0;
-    bool custom = false;
+    public bool custom = false;
     public OrientationMode mode = OrientationMode.position;
      Func<float, float> orientationOverTime;
     Func<float, float> angularVelOverTime;

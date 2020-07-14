@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3490138245831574272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8261824726268202561}
+  - component: {fileID: 3077349933565302834}
+  m_Layer: 0
+  m_Name: s6endnormal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8261824726268202561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3490138245831574272}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0723135, y: -0.7822614, z: -0.032290272}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3077349933565302834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3490138245831574272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eab8e899329ffb41a1213b1cee5076d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnSound: {fileID: 0}
+  boss: {fileID: 2465689840817753905, guid: 00be70a7dc810bc44940158e65c4e211, type: 3}
+  bossImage: {fileID: 0}
+  bossPortrait: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+  namesOfSpellCards: []
+  nextLevel: {fileID: 0}
+  background: {fileID: 7414380709887408105, guid: abb9119637e23b24cb2d92d8ace9438f,
+    type: 3}
+  imageofboss: {fileID: 190458337195914637, guid: 3a64cc6501df5954fae1450235cd8fcc,
+    type: 3}
+  dialogue1: {fileID: 11400000, guid: 535b18b8d0b421d418e54c1d6dc29453, type: 2}
+  dialogue2: {fileID: 11400000, guid: de309a3d004bf01449baecd86318fea7, type: 2}
+  startparticle: {fileID: 6110562706618516333, guid: afd4edbf82e3c4a46a4a06b4e63ee1ea,
+    type: 3}
+  spawnParticle: {fileID: 6110562706618516333, guid: 41e797b206fd7e2429c72ef5bd897d6e,
+    type: 3}
