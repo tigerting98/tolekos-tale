@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd5bb04df3a208499c3d89f3df1940c, type: 3}
   m_Name: circle
   m_EditorClassIdentifier: 
-  objects: []
+  objects:
+  - {fileID: 8420722031687854107, guid: bf1789e7ede57794094bebf2c9bfe24a, type: 3}
+  - {fileID: 8420722031687854107, guid: 90d66b004369f314a8ce1ebc99956d15, type: 3}
+  - {fileID: 350400323087982558, guid: 0cbe869c9fa14e044baba49ffca1742a, type: 3}
