@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2fe1d95e2154242a4613030a6fca57, type: 3}
+  m_Name: libraryMonsters
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 6134857302716983960, guid: ca485e067aff14346b2a206bf116478f, type: 3}
+  - {fileID: 3119230699040671993, guid: c636b84353db18a498edc5ebb82146d0, type: 3}
+  - {fileID: 6134857302716983960, guid: 10fbf30fa5800fa4ea718f8bef45876f, type: 3}
+  - {fileID: 8653138007011878643, guid: 1fde77ccfca5d1a4ca1eb8b90bb6d3e1, type: 3}

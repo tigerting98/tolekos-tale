@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8665773328800848477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8665773328800848479}
+  - component: {fileID: 8665773328800848476}
+  m_Layer: 0
+  m_Name: Stage5Wave7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8665773328800848479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665773328800848477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.34055752, y: 1.7523988, z: -16.673067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8665773328800848476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665773328800848477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6204313cba18e478adee3373f709ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnSound: {fileID: 0}
+  stats: {fileID: 11400000, guid: dcceb9e82b3430c4dad6121f26f29a56, type: 2}
+  bulletSpeed: 1.5
+  shotRate: 0.06
+  bulletDamage: 400
+  numberOfLines: 5
+  subwaveList:
+  - spawnDelay: 0
+    xPos: -3
+    yPos: 2
+    angularVelocity: 113
+    summonEndboss: 0
+    summonMidboss: 0
+    type: 0
+    alternateSpiral: 0
+  - spawnDelay: 0
+    xPos: 0
+    yPos: 3.5
+    angularVelocity: 1
+    summonEndboss: 0
+    summonMidboss: 0
+    type: 1
+    alternateSpiral: 1
+  - spawnDelay: 0
+    xPos: 3
+    yPos: 2
+    angularVelocity: -113
+    summonEndboss: 1
+    summonMidboss: 0
+    type: 2
+    alternateSpiral: 0
+  activeTime: 20
+  dependOnType: 1
