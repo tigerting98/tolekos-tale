@@ -85,19 +85,40 @@ MonoBehaviour:
   stalkslowspeed: 0.6
   pulserate1: 2
   dmg2: 600
-  pos2: {x: 0, y: 1.5}
-  minspeed2: 2
-  maxspeed2: 2.5
-  shotrate2: 0.05
-  delaybeforestop2: 1.7
-  delaybeforechanging2: 1
-  acc2: 1.3
-  time2: 1
-  shotrate2ring: 3
-  angularvel2ring: 23
-  radialvel2ring: 1.2
-  ringdmg2: 800
-  numberperring2: 15
+  pos2: {x: 0, y: 0}
+  waterspeed2: 0.8
+  waterpulserate2: 1.3
+  watershotrate2: 0.01
+  waterspacing2: 0.08
+  waterrandomfactor2: 0.1
+  boundaryY2: 0.75
+  boundaryX2: 3.5
+  maxstepY2: 0.3
+  maxstepX2: 1.6
+  waterstartpos2:
+  - 0
+  - 1.65
+  - 2.45
+  - 3.1
+  - 3.9
+  - 4.9
+  - 6.2
+  - 7.2
+  - 7.8
+  waterendpos2:
+  - 1.2
+  - 2
+  - 2.8
+  - 3.4
+  - 4.4
+  - 5.7
+  - 7
+  - 7.6
+  - 8.2
+  laserdmg2: 1900
+  laserduration2: 2
+  laserpulserate2: 3
+  laserspacing2: 1
   dmg3: 500
   circleangularvel3: 43
   radius3: 1
@@ -146,3 +167,15 @@ MonoBehaviour:
   starttime5: 0.4
   starpulserate5: 9
   numberOfStarsperside5: 20
+  startoffset: -90
+  spacing6: 3
+  shotrate6earth: 0.02
+  earthbulletspeed6: 2
+  earthbulletdmg6: 600
+  angleperarc6: 338
+  arcspacing6: 41
+  bulletpershot6: 4
+  firebulletdmg6: 500
+  firepulserate6: 1.5
+  firecount6: 15
+  firespeed6: 1
