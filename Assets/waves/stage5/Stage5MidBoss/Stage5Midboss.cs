@@ -37,8 +37,9 @@ public class Stage5Midboss : EnemyBossWave
     {
         // Destroy(Instantiate(spawnEffect, spawnLocation - new Vector2(0, 0.5f), Quaternion.Euler(-90,0,0)).gameObject, 5f);
         yield return new WaitForSeconds(0.5f);
-        bossImage = Instantiate(image, spawnLocation, Quaternion.identity);
-        yield return new WaitForSeconds(1f);
+        bossImage = Instantiate(image, new Vector2(0f, 4.3f), Quaternion.identity);
+        float wait = bossImage.GetComponent<Movement>().MoveTo(spawnLocation, 1.5f);
+        yield return new WaitForSeconds(wait);
         StartPhase1();
     }
 
