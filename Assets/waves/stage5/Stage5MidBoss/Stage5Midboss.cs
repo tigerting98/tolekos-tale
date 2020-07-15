@@ -27,12 +27,14 @@ public class Stage5Midboss : EnemyBossWave
     [SerializeField] int numberOfBulletsPerRing = 20, numberOfLasersPairs = 5;
 
 
-    public override void SpawnWave() {
-        
+    public override void SpawnWave()
+    {
+
         StartCoroutine(PreFight());
-    
+
     }
-    IEnumerator PreFight() {
+    IEnumerator PreFight()
+    {
         // Destroy(Instantiate(spawnEffect, spawnLocation - new Vector2(0, 0.5f), Quaternion.Euler(-90,0,0)).gameObject, 5f);
         yield return new WaitForSeconds(0.5f);
         bossImage = Instantiate(image, spawnLocation, Quaternion.identity);
@@ -40,11 +42,13 @@ public class Stage5Midboss : EnemyBossWave
         StartPhase1();
     }
 
-    void StartPhase1() {
+    void StartPhase1()
+    {
         SpellCardUI(namesOfSpellCards[0]);
         Invoke("Phase1", spellCardTransition);
     }
-    void Phase1() {
+    void Phase1()
+    {
         currentBoss = Instantiate(boss, spawnLocation, Quaternion.identity);
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
@@ -53,25 +57,29 @@ public class Stage5Midboss : EnemyBossWave
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
     }
 
-    void EndPhase1() {
+    void EndPhase1()
+    {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase1;
         EndPhase();
         Invoke("StartPhase2", endPhaseTransition);
     }
-    void StartPhase2() {
+    void StartPhase2()
+    {
         SpellCardUI(namesOfSpellCards[1]);
         bossImage.GetComponent<Movement>().MoveTo(new Vector2(1f, 2f), 3f);
         Invoke("Phase2", spellCardTransition);
     }
-    void Phase2() {
+    void Phase2()
+    {
         SwitchToBoss();
         currentBoss.transform.rotation = Quaternion.identity;
         currentBoss.movement.SetPolarPath(t => new Polar(1f, 103 * t));
         currentBoss.shooting.StartCoroutine(Pattern2());
-        currentBoss.bosshealth.OnLifeDepleted  += EndPhase2;
+        currentBoss.bosshealth.OnLifeDepleted += EndPhase2;
     }
 
-    void EndPhase2() {
+    void EndPhase2()
+    {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase2;
         EndPhase();
         Destroy(bossImage.gameObject);
@@ -83,13 +91,13 @@ public class Stage5Midboss : EnemyBossWave
     {
         Bullet circle1 = CreateOffsetCircle(bulletSpawnerOffset, 180f);
         Bullet circle2 = CreateOffsetCircle(-bulletSpawnerOffset, 180f);
-        circle1.GetComponent<Shooting>().StartShooting(EnemyPatterns.CustomSpinningCustomBulletsCustomSpacing(angle => ReflectingBullet(GameManager.gameData.pageBullet, damage1, circle1.transform.position, angle, bulletSpeed1), i => 50f * i,t => -185f + spread * Mathf.Sin(2 * Mathf.PI * frequency * t), lines1, shotRate1));
-        circle2.GetComponent<Shooting>().StartShooting(EnemyPatterns.CustomSpinningCustomBulletsCustomSpacing(angle => ReflectingBullet(GameManager.gameData.pageBullet, damage1, circle2.transform.position, angle, bulletSpeed1), i => 50f * i,t => -95f + spread * Mathf.Sin(2 * Mathf.PI * frequency * -t), lines1, shotRate1));
+        circle1.GetComponent<Shooting>().StartShooting(EnemyPatterns.CustomSpinningCustomBulletsCustomSpacing(angle => ReflectingBullet(GameManager.gameData.pageBullet, damage1, circle1.transform.position, angle, bulletSpeed1), i => 50f * i, t => -185f + spread * Mathf.Sin(2 * Mathf.PI * frequency * t), lines1, shotRate1));
+        circle2.GetComponent<Shooting>().StartShooting(EnemyPatterns.CustomSpinningCustomBulletsCustomSpacing(angle => ReflectingBullet(GameManager.gameData.pageBullet, damage1, circle2.transform.position, angle, bulletSpeed1), i => 50f * i, t => -95f + spread * Mathf.Sin(2 * Mathf.PI * frequency * -t), lines1, shotRate1));
     }
 
     IEnumerator Pattern2()
     {
-        currentBoss.shooting.StartShooting(Functions.RepeatAction(() => Patterns.RingOfBullets(GameManager.gameData.bigBullet.GetItem(DamageType.Water), ringDamage, currentBoss.transform.position, numberOfBulletsPerRing, Random.Range(0f, 360f), ringSpeed,null), ringPulseRate));
+        currentBoss.shooting.StartShooting(Functions.RepeatAction(() => Patterns.RingOfBullets(GameManager.gameData.bigBullet.GetItem(DamageType.Water), ringDamage, currentBoss.transform.position, numberOfBulletsPerRing, Random.Range(0f, 360f), ringSpeed, null), ringPulseRate));
         currentBoss.shooting.StartShooting(Functions.RepeatAction(() => SpawnRandomVerticalBullet(true), pageShotRate));
         currentBoss.shooting.StartShooting(Functions.RepeatAction(() => SpawnRandomVerticalBullet(false), pageShotRate));
         currentBoss.shooting.StartShooting(Functions.RepeatAction(() => currentBoss.shooting.StartShooting(SpawnLaserPillars(true, laserShotRate, numberOfLasersPairs)), laserCooldown));
@@ -98,26 +106,29 @@ public class Stage5Midboss : EnemyBossWave
     }
 
 
-    IEnumerator MoveInTriangle() 
+    IEnumerator MoveInTriangle()
     {
         int index = 0;
-        while (true) 
+        while (true)
         {
             float stationaryTime = Random.Range(minStationaryTime, maxStationaryTime);
             yield return new WaitForSeconds(stationaryTime);
             float timeToMove = currentBoss.movement.MoveTo(trianglePath[index], moveSpeed1);
             yield return new WaitForSeconds(timeToMove);
-            if (index == trianglePath.Count - 1) {
+            if (index == trianglePath.Count - 1)
+            {
                 index = 0;
-            } else {
-                index ++;
+            }
+            else
+            {
+                index++;
             }
         }
     }
 
     Bullet CreateOffsetCircle(float offset, float angularVel)
     {
-        Bullet circle = Instantiate(GameManager.gameData.earthCircle, (Vector2)currentBoss.transform.position + new Vector2(offset, 0f),Quaternion.identity);
+        Bullet circle = Instantiate(GameManager.gameData.earthCircle, (Vector2)currentBoss.transform.position + new Vector2(offset, 0f), Quaternion.identity);
         circle.orientation.StartRotating(angularVel, 0f);
         circle.transform.parent = currentBoss.transform;
         return circle;
@@ -146,7 +157,7 @@ public class Stage5Midboss : EnemyBossWave
 
             }
         };
-        Bullet bullet = Patterns.ShootStraight(bul, dmg, origin, initialAngle, initialSpeed,null);
+        Bullet bullet = Patterns.ShootStraight(bul, dmg, origin, initialAngle, initialSpeed, null);
         bullet.movement.triggers.Add(reflectOnBound);
         return bullet;
 
@@ -167,15 +178,15 @@ public class Stage5Midboss : EnemyBossWave
         float spacing = 8f / numOfLasers;
         float spacingRandomOffset = laserPositionFactor * spacing;
         float startingXOffset = Random.Range(spacingRandomOffset, spacing - spacingRandomOffset);
-        
+
         Vector2 spawn = goRight ? new Vector2(-4 + startingXOffset, -4f) : new Vector2(4 - startingXOffset, -4f);
-        
-        for (int i = 0; i < numOfLasers; i ++) 
+
+        for (int i = 0; i < numOfLasers; i++)
         {
             Bullet laser = Instantiate(GameManager.gameData.fireBeam2, spawn, Quaternion.Euler(0, 0, 90));
             laser.orientation.SetFixedOrientation(90);
             Destroy(laser.gameObject, 2f);
-            
+
             float deltaX = Random.Range(spacing - spacingRandomOffset, spacing + spacingRandomOffset);
             float deltaXDirection = goRight ? deltaX : -deltaX;
 
@@ -185,11 +196,4 @@ public class Stage5Midboss : EnemyBossWave
         }
     }
 
-    void End()
-    {
-        EndPhase();
-        Destroy(bossImage);
-        OnDefeat?.Invoke();
-        DestroyAfter(5);
-    }
 }

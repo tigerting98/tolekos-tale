@@ -1,10 +1,12 @@
 ﻿
+using System;
 using UnityEngine;
 
 //this class is responsible for taking damage upon collision
 public class DamageTaker : MonoBehaviour
 {
     [SerializeField] Health health = default;
+    public Action<DamageDealer> OnDamageTaken;
     public bool vulnerable = true;
     public float FireMultiplier = 1;
     public float WaterMultiplier = 1;
@@ -21,6 +23,7 @@ public class DamageTaker : MonoBehaviour
             DamageDealer dmg = collision.GetComponent<DamageDealer>();
             if (dmg != null && !dmg.DamageOverTime())
             {
+                OnDamageTaken?.Invoke(dmg);
                 health.TakeDamage(GetDamage(dmg));
                 if (dmg.DestroyOnImpact())
                 {
@@ -49,6 +52,7 @@ public class DamageTaker : MonoBehaviour
             DamageDealer dmg = collision.GetComponent<DamageDealer>();
             if (dmg != null && dmg.DamageOverTime())
             {
+                OnDamageTaken?.Invoke(dmg);
                 health.TakeDamage(GetDamage(dmg) * Time.deltaTime);
             }
         }

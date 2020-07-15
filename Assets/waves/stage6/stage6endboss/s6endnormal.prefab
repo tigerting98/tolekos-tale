@@ -70,6 +70,14 @@ MonoBehaviour:
   greenPylfer: {fileID: 21300000, guid: b4444fce837b2424a85b084cc9d3669e, type: 3}
   redPylfer: {fileID: 21300000, guid: e4ebc54c7d9190c439b0406615213520, type: 3}
   bluePylfer: {fileID: 21300000, guid: f301cd2bbcba9814b9e0241743d433cc, type: 3}
+  waterparticle: {fileID: 3033819667958434726, guid: d28024bd8153e7b40aae27e080341f4f,
+    type: 3}
+  earthparticle: {fileID: 643139619901454358, guid: b1f655aa9fd7a0e429b39d81a18abef0,
+    type: 3}
+  fireparticle: {fileID: 643139619901454358, guid: 75faa4a7a93c6b843be418a95970567c,
+    type: 3}
+  pureparticle: {fileID: 5272637207656269214, guid: 53513ea4bf833d24280e213a2e27498a,
+    type: 3}
   y1: 1
   buldmg1: 500
   movespeed1: 2
@@ -128,7 +136,7 @@ MonoBehaviour:
   bulletangularvel3: 67
   numberoflines3: 3
   numberperlines3: 4
-  movespeeed3: 2
+  movespeed3: 1.2
   movingbounds3: 1.5
   movingdelaymin3: 2
   movingdelaymax3: 3
@@ -179,3 +187,39 @@ MonoBehaviour:
   firepulserate6: 1.5
   firecount6: 15
   firespeed6: 1
+  pos7: {x: 0, y: 2}
+  bulletdmg7: 500
+  bulletpulserate7: 2
+  bulletspeed7: 1.2
+  spawnX7: 0.5
+  bounds7: 1
+  movespeed7: 2
+  delaymin7: 1
+  delaymax7: 2
+  bulletcount7: 50
+  pos8: {x: 0, y: 1}
+  bullet8dmg: 900
+  bullet8speed: 2
+  bullet8cooldown: 0.01
+  bulletspread8: 35
+  balldmg8: 700
+  ballangularvel8: 13
+  ballradialvel8: 0.8
+  ballpulserate8: 2
+  ballshotrate8: 0.2
+  ballcount8: 30
+  switchingmin8: 6
+  switchingmax8: 8
+  pos9: {x: 0, y: 1}
+  dmgbullet9: 650
+  shotrate9: 0.37
+  angularvel9: 5.5
+  bulletspeed9: 1.1
+  lines9: 8
+  starlaserdmg9: 800
+  starshotrate9: 0.1
+  laseracc9: 0.98
+  laseracctime9: 3.1
+  starspeed9: 0.7
+  starconvertimemin9: 0.5
+  starconvertimemax9: 1.3

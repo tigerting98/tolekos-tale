@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
-
+using UnityEngine.XR.WSA;
 
 public class EnemyPatterns : MonoBehaviour {
 
@@ -34,6 +34,21 @@ public class EnemyPatterns : MonoBehaviour {
     {
         return ShootAtPlayerWithLines(bullet, dmg, enemy, speed, shotRate, 0, 0, sfx);
 
+    }
+    public static IEnumerator MoveRandomly(Movement movement, float minX, float maxX, float minY, float maxY, float movespeed, float delaymin, float delaymax)
+    {
+        while (movement&&movement.gameObject.activeInHierarchy)
+        {
+            float time = movement.MoveTo(Functions.RandomLocation(minX, maxX, minY, maxY), movespeed);
+            yield return new WaitForSeconds(time + UnityEngine.Random.Range(delaymin, delaymax));
+        }
+    }
+    public static IEnumerator MoveRandomly(Movement movement, Vector2 pos, float bound, float movespeed, float delaymin, float delaymax)
+    {
+  
+        return MoveRandomly(movement, pos.x - bound, pos.x + bound, pos.y -bound, pos.y + bound, movespeed, delaymin, delaymax);
+
+        
     }
 
     //shoots multiple bullets at player, with the centre aimed directly at him

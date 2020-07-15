@@ -73,6 +73,7 @@ public class LevelLoader : MonoBehaviour
     }
     void AfterMidBoss()
     {
+        
         try
         {
 
