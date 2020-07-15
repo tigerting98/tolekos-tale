@@ -176,17 +176,17 @@ MonoBehaviour:
   starpulserate5: 9
   numberOfStarsperside5: 20
   startoffset: -90
-  spacing6: 3
-  shotrate6earth: 0.02
-  earthbulletspeed6: 2
-  earthbulletdmg6: 600
+  spacing6: 2.5
+  shotrate6fire: 0.04
+  firebulletspeed6: 1.3
+  firebulletdmg6: 500
   angleperarc6: 338
   arcspacing6: 41
   bulletpershot6: 4
-  firebulletdmg6: 500
-  firepulserate6: 1.5
-  firecount6: 15
-  firespeed6: 1
+  earthbulletdmg6: 600
+  earthpulserate6: 0.5
+  earthspeed6: 1.8
+  earthcount6: 15
   pos7: {x: 0, y: 2}
   bulletdmg7: 500
   bulletpulserate7: 2
@@ -223,3 +223,41 @@ MonoBehaviour:
   starspeed9: 0.7
   starconvertimemin9: 0.5
   starconvertimemax9: 1.3
+  ellipseangularvel10: 12
+  ellipseradialvel10: 0.9
+  ellipsespacing10: 0.5
+  ellipsepulserate10: 2
+  ellipsedmg10: 510
+  ellipsecount10: 20
+  roundedcount10: 20
+  dmg10rounded: 505
+  roundedpulserate10: 2.1
+  roundedspeed10: 1.3
+  dmg10laser: 600
+  laserspeed10: 2.1
+  laserpulserate10: 1.2
+  laserradius10: 0.5
+  lasercount10: 10
+  firelaserpulserate10: 8
+  firelaserduration10: 5.5
+  firelaserspacing10: 1.6
+  firelaserdm10: 2000
+  fallinganglerange10: 10
+  fallingspeed10min: 0.8
+  fallingspeed10max: 1
+  fallingshotrate10: 0.25
+  fallingdmg10: 615
+  phase4speed10: 1.2
+  phase4pulserate10: 2.8
+  bigcircledmg10: 1000
+  smallcircledmg10: 650
+  arrowsdmg10: 610
+  stardmg10: 620
+  bigcirclecount10: 13
+  smallcirclecount10: 20
+  arrowcount10: 35
+  starcount10: 25
+  bigcircledelay10: 0
+  smallcircledelay10: 0.4
+  arrowdelay10: 0.75
+  stardelay10: 0.6

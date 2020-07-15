@@ -337,38 +337,11 @@ public class Stage3EndBoss : EnemyBossWave
     }
     IEnumerator BarrageOfReflectingBullets(Bullet bul, float dmg, float angleMin, float angleMax, float speed, float shotRate)
     {
-        return Functions.RepeatAction(() => ReflectingBullet(bul, dmg, currentBoss.transform.position,
+        return Functions.RepeatAction(() => Patterns.ReflectingBullet(bul, dmg, currentBoss.transform.position,
             UnityEngine.Random.Range(angleMin, angleMax), speed,null), shotRate);
     }
 
-    Bullet ReflectingBullet(Bullet bul, float dmg, Vector2 origin, float initialAngle, float initialSpeed,SFX sfx)
-    {
-        ActionTrigger<Movement> reflectOnBound = new ActionTrigger<Movement>(
-        movement => !Functions.WithinBounds(movement.transform.position, 4f) && movement.transform.position.y > -4);
-        reflectOnBound.OnTriggerEvent += movement =>
-        {
-            Vector2 pos = movement.transform.position;
-            if (pos.y >= 4)
-            {
-
-
-                movement.transform.position = new Vector2(movement.transform.position.x, 3.99f);
-                movement.graph = Movement.ReflectPathAboutX(movement.graph);
-            }
-            else
-            {
-
-
-                movement.graph = Movement.ReflectPathAboutY(movement.graph);
-                movement.ResetTriggers();
-
-            }
-        };
-        Bullet bullet = Patterns.ShootStraight(bul, dmg, origin, initialAngle, initialSpeed,sfx);
-        bullet.movement.triggers.Add(reflectOnBound);
-        return bullet;
-
-    }
+    
 
     IEnumerator RockEmergingFromGround(float angle)
     {
@@ -398,7 +371,7 @@ public class Stage3EndBoss : EnemyBossWave
         Functions.StartMultipleCustomCoroutines(currentBoss.shooting,
             i => EnemyPatterns.CustomSpinningCustomBulletsCustomSpacing(
                     angle => {
-                        Bullet bul = ReflectingBullet(leaf3, leaf3dmg, currentBoss.transform.position, angle, firstspeed + speeddiff * i,null);
+                        Bullet bul = Patterns.ReflectingBullet(leaf3, leaf3dmg, currentBoss.transform.position, angle, firstspeed + speeddiff * i,null);
                         bul.transform.localScale *= leaf3scale;
                         return bul;
                         },

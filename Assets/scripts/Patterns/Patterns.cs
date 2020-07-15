@@ -29,6 +29,34 @@ public class Patterns : MonoBehaviour
         bul.movement.SetCustomGraph(function, mode);
         return bul;
     }
+    public static Bullet ReflectingBullet(Bullet bul, float dmg, Vector2 origin, float initialAngle, float initialSpeed, SFX sfx)
+    {
+        ActionTrigger<Movement> reflectOnBound = new ActionTrigger<Movement>(
+        movement => !Functions.WithinBounds(movement.transform.position, 4f) && movement.transform.position.y > -4);
+        reflectOnBound.OnTriggerEvent += movement =>
+        {
+            Vector2 pos = movement.transform.position;
+            if (pos.y >= 4)
+            {
+
+
+                movement.transform.position = new Vector2(movement.transform.position.x, 3.99f);
+                movement.graph = Movement.ReflectPathAboutX(movement.graph);
+            }
+            else
+            {
+
+
+                movement.graph = Movement.ReflectPathAboutY(movement.graph);
+                movement.ResetTriggers();
+
+            }
+        };
+        Bullet bullet = ShootStraight(bul, dmg, origin, initialAngle, initialSpeed, sfx);
+        bullet.movement.triggers.Add(reflectOnBound);
+        return bullet;
+
+    }
     public static List<T> CustomRing<T>(Func<float, T> bulletFunction, float offset, int lines)
     {
         return CustomRingWithCustomSpacing<T>(bulletFunction, i => i * 360f / lines, offset, lines);
