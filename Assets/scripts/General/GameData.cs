@@ -23,6 +23,7 @@ public class GameData : MonoBehaviour
     public Bullet fireWheel;
     public Bullet pageBullet;
     public Bullet raindrop;
+    public Bullet featherBullet;
     public EnemyPack ghosts, linemonster, mushrooms, pixies, libraryMonsters;
     public Enemy waterFairy;
     public Enemy patternSprite, treeant;
