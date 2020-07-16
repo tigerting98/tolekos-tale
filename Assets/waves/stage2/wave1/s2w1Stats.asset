@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c516afbddbe14eb458c8e02a00bb86d5, type: 3}
-  m_Name: stats
+  m_Name: s2w1Stats
   m_EditorClassIdentifier: 
   hp: 100
   dmg: 1000
