@@ -7,6 +7,7 @@ public class Stage6MidBoss : EnemyBossWave
     [SerializeField] ParticleSystem spawnEffect;
     [SerializeField] GameObject image;
     [SerializeField] Vector2 spawnLocation;
+    [SerializeField] bool harder = false;
 
     [Header("Pattern1")]
     [SerializeField] float damage1;
@@ -14,13 +15,19 @@ public class Stage6MidBoss : EnemyBossWave
     [SerializeField] float shotRate1 = 0.05f, angularVel1 = 134f, angularVel2 = 134f, delay = 1f, delayRandom = 0.5f, accelerationTime = 5f, acceleration = 1f, accelerationRandom = 0.5f;
     [SerializeField] int lines1 = 1;
 
+    [Header("Pattern1 Harder")]
+    [SerializeField] float bubblePulseRate = 1.5f; 
+    [SerializeField] float radialVelocity = 20f, angularVel3 = 20f; 
+    [SerializeField] int numberOfBulletsPerRing1 = 10;
+
+
     [Header("Pattern2")]
     [SerializeField] float ringDamage = 300f; 
     [SerializeField] float bubbleDamage = 400f;
     [SerializeField] float ringSpeed = 2f, bubbleSpeedMin = 1f, bubbleSpeedMax = 3f, bubbleRandomFactor = 15f;
     [SerializeField] float ringPulseRate = 2f, bubbleShotRate = 0.1f;
     [SerializeField] float moveSpeed = 1.5f;
-    [SerializeField] int numberOfBulletsPerRing = 20, numberOfLasersPairs = 5;
+    [SerializeField] int numberOfBulletsPerRing2 = 20, numberOfLasersPairs = 5;
     private bool homing = false;
 
 
@@ -98,6 +105,10 @@ public class Stage6MidBoss : EnemyBossWave
                 lines1, 
                 shotRate1)
             );
+
+        if (harder) {
+            currentBoss.shooting.StartShooting(Functions.RepeatAction(()=> Patterns.SpirallingOutwardsRing(GameManager.gameData.bigBullet.GetItem(DamageType.Water), damage1, currentBoss.transform.position, radialVelocity, angularVel3, numberOfBulletsPerRing1, Random.Range(0f, 360f), null), bubblePulseRate));
+        }
     }
 
     void Pattern2()
@@ -107,7 +118,7 @@ public class Stage6MidBoss : EnemyBossWave
                 angle => ReflectingBullet(GameManager.gameData.featherBullet, 
                 ringDamage, currentBoss.transform.position, angle, ringSpeed), 
                 Random.Range(0f, 360f), 
-                numberOfBulletsPerRing),
+                numberOfBulletsPerRing2),
             ringPulseRate)
         );
 
