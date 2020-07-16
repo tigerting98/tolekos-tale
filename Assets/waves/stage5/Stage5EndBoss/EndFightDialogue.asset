@@ -16,15 +16,23 @@ MonoBehaviour:
   - left: 0
     speaker: {fileID: 21300000, guid: dc50d3d1baa938a4fabf9da11f21d98a, type: 3}
     isPlayer: 0
-    text: Good job
-    name: earth
-  - left: 0
-    speaker: {fileID: 21300000, guid: 7d35374c70d2753408d8c5a81b774b25, type: 3}
-    isPlayer: 0
-    text: Proceed
-    name: water
+    text: Well, guess we're still no match for you. It would seem that Sylfer is
+      a much better teacher than his younger brother.
+    name: Rook
   - left: 0
     speaker: {fileID: 21300000, guid: 60ed6bd4fafce2b4cb5e7e7c43ec19b7, type: 3}
     isPlayer: 0
-    text: something
-    name: fire
+    text: Finally!! I can now go back to my experiments. Aqua, try not to disturb
+      me again!
+    name: Cain
+  - left: 0
+    speaker: {fileID: 21300000, guid: 7d35374c70d2753408d8c5a81b774b25, type: 3}
+    isPlayer: 0
+    text: Grrr... I'll get you next time...
+    name: Aqua
+  - left: 1
+    speaker: {fileID: 21300000, guid: 60ed6bd4fafce2b4cb5e7e7c43ec19b7, type: 3}
+    isPlayer: 1
+    text: For your sake, I really, really hope there won't be a "next time". I should
+      get going before Pylfer tries anything funny.
+    name: Toleko

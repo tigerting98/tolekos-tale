@@ -16,23 +16,26 @@ MonoBehaviour:
   - left: 1
     speaker: {fileID: 0}
     isPlayer: 1
-    text: Oh no! All 3 of you?
+    text: So you're telling me, instead of practicing your magic, you're just gonna
+      gang up on me with your friends?
     name: Toleko
   - left: 0
     speaker: {fileID: 21300000, guid: dc50d3d1baa938a4fabf9da11f21d98a, type: 3}
     isPlayer: 0
-    text: Well, she dragged me into this so lets get this over with?
-    name: Earth
+    text: Well, she dragged me into this, so let's just get this over with? I personally
+      don't have any qualms with you, Toleko.
+    name: Rook
   - left: 0
     speaker: {fileID: 21300000, guid: 60ed6bd4fafce2b4cb5e7e7c43ec19b7, type: 3}
     isPlayer: 0
-    text: I concur, finish this and i can go back to my fire arts
-    name: Fire
+    text: I concur, let's quickly finish this so that I can go back to experimenting
+      with my spells.
+    name: Cain
   - left: 0
     speaker: {fileID: 21300000, guid: 7d35374c70d2753408d8c5a81b774b25, type: 3}
     isPlayer: 0
-    text: Geez, all of you! Be more pumped up! Today, he dies!
-    name: 
+    text: Seriously?! Be more pumped up! Today, he dies!
+    name: Aqua
   - left: 1
     speaker: {fileID: 0}
     isPlayer: 1
