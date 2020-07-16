@@ -54,7 +54,7 @@ MonoBehaviour:
   spawnEffect: {fileID: 0}
   image: {fileID: 3168229161693621605, guid: 2dc3df2bef7f75647959a415ab1fba74, type: 3}
   spawnLocation: {x: 0, y: 2}
-  harder: 1
+  harder: 0
   damage1: 0
   iniBulletSpeed1: 0.7
   shotRate1: 0.04
@@ -66,10 +66,10 @@ MonoBehaviour:
   acceleration: 0.4
   accelerationRandom: 0.25
   lines1: 7
-  bubblePulseRate: 1.5
-  radialVelocity: 2
-  angularVel3: 73
-  numberOfBulletsPerRing1: 10
+  bubblePulseRate: 2
+  radialVelocity: 2.5
+  angularVel3: 7
+  numberOfBulletsPerRing1: 20
   ringDamage: 300
   bubbleDamage: 100
   ringSpeed: 1.3

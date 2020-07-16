@@ -54,7 +54,7 @@ public class Stage6MidBoss : EnemyBossWave
         currentBoss.GetComponent<BasicDroppable>().otherDrops.Add(GameManager.gameData.lifeDropFull);
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
-        Pattern1();
+        currentBoss.shooting.StartShooting(Pattern1());
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
     }
 
@@ -87,7 +87,7 @@ public class Stage6MidBoss : EnemyBossWave
         GameManager.SummonEndBoss();
     }
 
-    void Pattern1()
+    IEnumerator Pattern1()
     {
         currentBoss.shooting.StartShooting(
             EnemyPatterns.CustomSpinningCustomBulletsCustomSpacing(
@@ -105,9 +105,12 @@ public class Stage6MidBoss : EnemyBossWave
                 lines1, 
                 shotRate1)
             );
+        yield return new WaitForSeconds(bubblePulseRate/2);
 
         if (harder) {
-            currentBoss.shooting.StartShooting(Functions.RepeatAction(()=> Patterns.SpirallingOutwardsRing(GameManager.gameData.bigBullet.GetItem(DamageType.Water), damage1, currentBoss.transform.position, radialVelocity, angularVel3, numberOfBulletsPerRing1, Random.Range(0f, 360f), null), bubblePulseRate));
+            currentBoss.shooting.StartShooting(Functions.RepeatAction(()=> Patterns.SpirallingOutwardsRing(GameManager.gameData.smallRoundBullet.GetItem(DamageType.Water), damage1, currentBoss.transform.position, radialVelocity, angularVel3, numberOfBulletsPerRing1, Random.Range(0f, 360f), null), bubblePulseRate));
+            yield return new WaitForSeconds(bubblePulseRate/2);
+            currentBoss.shooting.StartShooting(Functions.RepeatAction(()=> Patterns.SpirallingOutwardsRing(GameManager.gameData.smallRoundBullet.GetItem(DamageType.Water), damage1, currentBoss.transform.position, radialVelocity, -angularVel3, numberOfBulletsPerRing1, Random.Range(0f, 360f), null), bubblePulseRate));
         }
     }
 

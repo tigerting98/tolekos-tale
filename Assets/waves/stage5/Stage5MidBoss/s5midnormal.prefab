@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7163120404739174106}
   - component: {fileID: 7163120404739174105}
   m_Layer: 0
-  m_Name: Stage5midboss 1
+  m_Name: s5midnormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,6 +55,7 @@ MonoBehaviour:
     type: 3}
   image: {fileID: 2078816057289667661, guid: 5ad59c11f872a9b4898642a47c6077f6, type: 3}
   spawnLocation: {x: 0, y: 2}
+  harder: 0
   damage1: 300
   bulletSpawnerOffset: 1
   minStationaryTime: 1
@@ -69,8 +70,12 @@ MonoBehaviour:
   frequency: 0.2
   shotRate1: 0.17
   lines1: 3
-  ringDamage: 300
-  pageDamage: 200
+  hardRingDamage: 400
+  hardRingPulseRate: 2
+  hardRingSpeed: 1.5
+  hardNumberOfBulletsPerRing: 15
+  ringDamage: 400
+  pageDamage: 350
   laserDamage: 100
   ringSpeed: 2.5
   pageSpeedMinY: 0.8
