@@ -15,27 +15,27 @@ PrefabInstance:
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: fireshotRate1
-      value: 0.16
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: fireSpeed1
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: earthshotRate1
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: earthspeed1
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: earthnumber1
-      value: 34
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
@@ -45,37 +45,37 @@ PrefabInstance:
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: watershotrate1
-      value: 0.06
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: waternumber1
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: iciclespeed2
-      value: 2.1
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: spawnRatesnow
-      value: 0.06
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: shotrateicicle2
-      value: 0.06
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: harderpulserate2
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: harderspeed2
-      value: 1.2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
@@ -85,62 +85,62 @@ PrefabInstance:
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: hardercount2
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: bulletpulserate3
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: number3main
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: shotrate3
-      value: 0.038
+      value: 0.033
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: pulseRate4
-      value: 6
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: shotRate4
-      value: 0.06
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: bulletspeed5nonmain
-      value: 2.2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: shotrate5nonmain
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: magiccirclenumber5
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: bulletnumber5nonmain
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: shotrate5
-      value: 0.06
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: bulletspeed5main
-      value: 3.7
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
@@ -155,27 +155,27 @@ PrefabInstance:
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: bignumber
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: firepulserate6
-      value: 2.5
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: shotrate6wheel
-      value: 2.5
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: angularvel6
-      value: 80
+      value: 89
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: wheelspeed6
-      value: 2
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
@@ -205,7 +205,77 @@ PrefabInstance:
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: shotRate8
-      value: 0.45
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: bulletspeed3nonmain
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: ringnumber3
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: firenumbersperpulse6
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: snowflakeshotrate7
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: firePillarmovementY
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: earthPillarmovementX
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: earthPillarmovementY
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: firePillarmovementX
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: firenumber8
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: snowradialvel8
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: snowangularvel8
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: leafperline8
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: leaflines8
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: leafspreadangle8
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
@@ -265,7 +335,7 @@ PrefabInstance:
     - target: {fileID: 7945233418130177188, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: m_Name
-      value: s5endhard
+      value: s5endlunatic
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44caf957c74ed2f448ca1045220a8c5c, type: 3}

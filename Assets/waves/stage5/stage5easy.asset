@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 773601d4f4ae6e54688117054c1664fa, type: 3}
-  m_Name: Level5
+  m_Name: stage5easy
   m_EditorClassIdentifier: 
   wavesFirstHalf:
-  - {fileID: -5575410777171086195, guid: f5eeb0459e659ca42a3bd8fcda3bd829, type: 3}
-  - {fileID: -5573089182237635463, guid: 8db6a3477eb213045b4c8b1fb3385ab3, type: 3}
-  - {fileID: 4753910137294850354, guid: 4cb9a44ab7eca1449963cedc1687fffa, type: 3}
-  - {fileID: 3843918278566983696, guid: 624f22fd126ab874393a7bb6cce6a76f, type: 3}
+  - {fileID: 3211414030001226229, guid: d82883e0352d16b47b57a047c2c7af02, type: 3}
+  - {fileID: 7991977077008512809, guid: f28b189a8dff4274d8d29eb8c6d805c8, type: 3}
+  - {fileID: 6654447061920415266, guid: 9e30f1913e1ef104dbfbdad9cef29959, type: 3}
+  - {fileID: 5395813606866371464, guid: df489085788e6a443864b5b32c3ebe19, type: 3}
   timesFirstHalf:
   - 3
   - 20
@@ -31,5 +31,4 @@ MonoBehaviour:
   - 0
   - 15
   - 20
-  endBoss: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
-    type: 3}
+  endBoss: {fileID: 7397433557659262872, guid: def95d2649a8f0547b264550bfd99d8b, type: 3}

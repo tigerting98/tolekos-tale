@@ -573,10 +573,10 @@ public class Stage5EndBoss : EnemyBossWave
                 Shoot(GameManager.gameData.bigBullet.GetItem(DamageType.Fire), bignumber, bigdmg6);
             }
             else {
-                Patterns.SpirallingOutwardsRing(GameManager.gameData.bigBullet.GetItem(DamageType.Fire), bigdmg6, fireBoss.transform.position, firespeed6, angularvel6, bignumber,
+                Patterns.SpirallingOutwardsRing(GameManager.gameData.bigBullet.GetItem(DamageType.Fire), bigdmg6, fireBoss.transform.position, firespeed6, harderangularvel6, bignumber,
                     0, null);
                 yield return new WaitForSeconds(fireshotrate6);
-                Patterns.SpirallingOutwardsRing(GameManager.gameData.bigBullet.GetItem(DamageType.Fire), bigdmg6, fireBoss.transform.position, firespeed6, -angularvel6, bignumber,
+                Patterns.SpirallingOutwardsRing(GameManager.gameData.bigBullet.GetItem(DamageType.Fire), bigdmg6, fireBoss.transform.position, firespeed6, -harderangularvel6, bignumber,
                     0, null);
             }
             yield return new WaitForSeconds(fireshotrate6);
@@ -584,7 +584,8 @@ public class Stage5EndBoss : EnemyBossWave
                 Shoot(GameManager.gameData.fireBullet, numberoffirebullets, firedmg6);
                 yield return new WaitForSeconds(fireshotrate6);
             }
-            yield return new WaitForSeconds(firepulserate6 - fireshotrate6 * (1 + firenumbersperpulse6));
+           
+             yield return new WaitForSeconds(firepulserate6 - fireshotrate6 * ((harder?2:1) + firenumbersperpulse6));
         }
     }
     

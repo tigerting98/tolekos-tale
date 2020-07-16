@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773601d4f4ae6e54688117054c1664fa, type: 3}
+  m_Name: stage5lunatic
+  m_EditorClassIdentifier: 
+  wavesFirstHalf:
+  - {fileID: 5201981111958601123, guid: f3bbcf60804912140931468578d375b0, type: 3}
+  - {fileID: 7953782857533889149, guid: 3ff7f1b9b7ced8343bef86e4d1153fdd, type: 3}
+  - {fileID: 8924372539636114599, guid: 4e1b3b30cc3ecc34f92fd7834a803da6, type: 3}
+  - {fileID: 7280362722970381519, guid: e8916da7d45868a4db61d4c541a9a631, type: 3}
+  timesFirstHalf:
+  - 3
+  - 20
+  - 25
+  - 45
+  midBoss: {fileID: 7163120404739174105, guid: a37b4937d12500443930dc2b9e1589d4, type: 3}
+  wavesSecondHalf:
+  - {fileID: 7897652670564822546, guid: 83d01416b6a9dc942a4555ecbb3ec41b, type: 3}
+  - {fileID: 1314461589439652146, guid: 0c948bcb5d3e1e8438b6c39c271a0ecf, type: 3}
+  - {fileID: 8665773328800848476, guid: 5e7194e4b22c0934e831c59436620a58, type: 3}
+  timesSecondHalf:
+  - 0
+  - 15
+  - 20
+  endBoss: {fileID: 8724928883168259153, guid: 97cf587f45180de439b130c45694a2cf, type: 3}
