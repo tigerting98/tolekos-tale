@@ -437,12 +437,16 @@ public class Stage6EndBoss : EnemyBossWave
         currentBoss.shooting.StartShooting(Functions.RepeatAction(
             () =>
             {
-                for (float x = 0; x < 4.5f; x += firelaserspacing10)
+                Bullet bul1 = Instantiate(GameManager.gameData.fireBeam2, new Vector2(0, 4.2f), Quaternion.Euler(0, 0, -90));
+                bul1.SetDamage(firelaserdm10);
+                bul1.orientation.SetFixedOrientation(-90);
+                Destroy(bul1.gameObject, firelaserduration10);
+                for (float x = firelaserspacing10; x < 4.5f; x += firelaserspacing10)
                 {
                     Bullet bul = Instantiate(GameManager.gameData.fireBeam2, new Vector2(x, 4.2f), Quaternion.Euler(0, 0, -90));
                     bul.SetDamage(firelaserdm10);
                     bul.orientation.SetFixedOrientation(-90);
-                    Destroy(bul.gameObject, laserduration2);
+                    Destroy(bul.gameObject, firelaserduration10);
                     Bullet bul2 = Instantiate(GameManager.gameData.fireBeam2, new Vector2(-x, 4.2f), Quaternion.Euler(0, 0, -90));
                     bul2.SetDamage(firelaserdm10);
                     bul2.orientation.SetFixedOrientation(-90);
@@ -555,10 +559,10 @@ public class Stage6EndBoss : EnemyBossWave
         while (currentBoss)
         {
             float currentx = currentBoss.transform.position.x;
-            float x = currentx + (currentx < boundaryX2 - maxstepX2 ? currentx > -boundaryX2 + maxstepX2 ? UnityEngine.Random.Range(-maxstepX2, maxstepX2) :
+            float x = currentx + (currentx < pos2.x+boundaryX2 - maxstepX2 ? currentx > pos2.x-boundaryX2 + maxstepX2 ? UnityEngine.Random.Range(-maxstepX2, maxstepX2) :
                 UnityEngine.Random.Range(0, maxstepX2) : UnityEngine.Random.Range(-maxstepX2, 0));
             float currenty = currentBoss.transform.position.y;
-            float y = currenty + (currentx < pos2.y+boundaryY2 - maxstepY2 ? currentx > pos2.y - boundaryY2 + maxstepY2 ? UnityEngine.Random.Range(-maxstepY2, maxstepY2) :
+            float y = currenty + (currenty < pos2.y+boundaryY2 - maxstepY2 ? currenty > pos2.y - boundaryY2 + maxstepY2 ? UnityEngine.Random.Range(-maxstepY2, maxstepY2) :
                 UnityEngine.Random.Range(0, maxstepY2) : UnityEngine.Random.Range(-maxstepY2, 0));
             float time1 = currentBoss.movement.MoveTo(new Vector2(x, y), movespeed);
             yield return new WaitForSeconds(time1);
@@ -677,8 +681,10 @@ public class Stage6EndBoss : EnemyBossWave
     }
     Bullet magicCircle3(DamageType type, float angle) {
         Bullet magicCircle = GameManager.gameData.magicCircles.GetItem(type);
+        
         Bullet bul = GameManager.gameData.arrowBullet.GetItem(type);
         Bullet circle = GameManager.bulletpools.SpawnBullet(magicCircle, (Vector2)(currentBoss.transform.position) + new Polar(radius3, angle).rect);
+        circle.movement.destroyBoundary = 8f;
         circle.movement.SetPolarPath(t => new Polar(radius3, angle + circleangularvel3 * t));
         circle.transform.parent = currentBoss.transform;
         EnemyPatterns.StartFanningPattern(bul, dmg3, circle.GetComponent<Shooting>(), shotspeed3, -bulletangularvel3, 0, numberoflines3, shotrate3circle, numberperlines3, shotspeeddiff3, null);

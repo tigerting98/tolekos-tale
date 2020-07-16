@@ -97,7 +97,7 @@ MonoBehaviour:
   stalkslowspeed: 0.6
   pulserate1: 2
   dmg2: 600
-  pos2: {x: 0, y: 0}
+  pos2: {x: 0, y: 1}
   waterspeed2: 0.8
   waterpulserate2: 1.3
   watershotrate2: 0.01
@@ -252,15 +252,15 @@ MonoBehaviour:
   fallingshotrate10: 0.25
   fallingdmg10: 615
   phase4speed10: 1.2
-  phase4pulserate10: 2.8
+  phase4pulserate10: 3.2
   bigcircledmg10: 1000
   smallcircledmg10: 650
   arrowsdmg10: 610
   stardmg10: 620
-  bigcirclecount10: 13
+  bigcirclecount10: 15
   smallcirclecount10: 20
-  arrowcount10: 35
-  starcount10: 25
+  arrowcount10: 30
+  starcount10: 20
   bigcircledelay10: 0
   smallcircledelay10: 0.4
   arrowdelay10: 0.75
