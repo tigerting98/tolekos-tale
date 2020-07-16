@@ -6,6 +6,7 @@ using TMPro;
 using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Stage6EndBoss : EnemyBossWave
@@ -17,6 +18,8 @@ public class Stage6EndBoss : EnemyBossWave
     [SerializeField] float movespeed;
     [SerializeField] Sprite defaultPylfer, greenPylfer, redPylfer, bluePylfer;
     [SerializeField] ParticleSystem waterparticle, earthparticle, fireparticle, pureparticle;
+    [SerializeField] ParticleSystem deathparticle;
+    [SerializeField] Dialogue goodEndDialogue, badEndDialogue;
     [Header("Pattern1")]
     [SerializeField] float y1, buldmg1;
     [SerializeField] float movespeed1;
@@ -384,6 +387,28 @@ public class Stage6EndBoss : EnemyBossWave
     public void EndPhase10() {
         currentBoss.bosshealth.OnDeath -= EndPhase10;
         EndPhase();
+        StartCoroutine(DeathAnimation());
+    }
+    void PlayMultipleParticleEffect(ParticleSystem system, int times, Vector2 location) {
+        for (int i = 0; i < times; i++) {
+            Instantiate(system, location, Quaternion.identity);
+        }
+    }
+    IEnumerator DeathAnimation() {
+        PlayMultipleParticleEffect(waterparticle, 15, bossImage.transform.position);
+        yield return new WaitForSeconds(0.2f);
+        PlayMultipleParticleEffect(earthparticle, 15, bossImage.transform.position);
+        yield return new WaitForSeconds(0.2f);
+        PlayMultipleParticleEffect(fireparticle, 15, bossImage.transform.position);
+        yield return new WaitForSeconds(0.2f);
+        PlayMultipleParticleEffect(deathparticle, 1, bossImage.transform.position);
+        Destroy(bossImage.gameObject);
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(DialogueManager.StartDialogue(PlayerStats.deathCount > 0 ? badEndDialogue : goodEndDialogue, LoadNext)); 
+
+    }
+    void LoadNext() {
+        SceneManager.LoadScene("AfterStage6Scene");
     }
     void StartSubPattern2()
     {

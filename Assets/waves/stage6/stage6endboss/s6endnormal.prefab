@@ -78,6 +78,10 @@ MonoBehaviour:
     type: 3}
   pureparticle: {fileID: 5272637207656269214, guid: 53513ea4bf833d24280e213a2e27498a,
     type: 3}
+  deathparticle: {fileID: 4000004312301813610, guid: daf2315e11d0786449b29b2679ae18e8,
+    type: 3}
+  goodEndDialogue: {fileID: 11400000, guid: 9c9e7c08d0382cd4d9a88c9d3d047a56, type: 2}
+  badEndDialogue: {fileID: 11400000, guid: 01b8824eb9eaeed418f1704dcc61c894, type: 2}
   y1: 1
   buldmg1: 500
   movespeed1: 2

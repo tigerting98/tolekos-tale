@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stage5Wave1 : EnemyWave
 {
+    [SerializeField] bool harder = false;
     [SerializeField] EnemyStats stats;
     [SerializeField] float speed = 7f;
     [SerializeField] float moveSpeed;
@@ -36,6 +37,12 @@ public class Stage5Wave1 : EnemyWave
             i => ArcShape(round, smallrounddmg, enemy.transform.position, i % 2 == 0,
             startSpeed, endSpeed, minTime, maxTime, numberPerArcs, numberOfArcs, Functions.AimAtPlayer(enemy.transform), null), shotRate
             ), time);
+        if (harder) {
+            enemy.shooting.StartShootingAfter(Functions.RepeatCustomAction(
+                i => ArcShape(round, smallrounddmg, enemy.transform.position, i % 2 == 1,
+                startSpeed, endSpeed, minTime, maxTime, numberPerArcs, numberOfArcs, Functions.AimAtPlayer(enemy.transform), null), shotRate
+                ), time);
+        }
         enemy.shooting.StartShootingFor(Functions.RepeatAction(
             () =>
             {

@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17957c16a776190419a086cf84410a05, type: 3}
-  m_Name: stage6
+  m_Script: {fileID: 11500000, guid: b54388a81ad299c44b3d776bc27ed6e0, type: 3}
+  m_Name: goodend
   m_EditorClassIdentifier: 
-  levelDescription: Congrats on beating stage 5
-  nextLevelSceneString: Stage6
-  backgroundImage: {fileID: 21300000, guid: 81e4f3673b54cca4dba3bc6eb4b07d9a, type: 3}
+  lines:
+  - left: 0
+    speaker: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+    isPlayer: 0
+    text: good end
+    name: 

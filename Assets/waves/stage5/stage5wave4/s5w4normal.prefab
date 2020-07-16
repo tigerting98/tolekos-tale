@@ -48,7 +48,7 @@ MonoBehaviour:
   shotrate: 0.3
   delay: 2.5
   bulletspeed: 4
-  bulletdmg: 500
+  bulletdmg: 460
   bulletspread: 20
   lines: 1
   stats: {fileID: 11400000, guid: 69d852dda0a2c644fb42509a68a41181, type: 2}

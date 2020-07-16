@@ -1095,27 +1095,27 @@ PrefabInstance:
     - target: {fileID: 8399763170483572903, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_text
-      value: Stage 5
+      value: Stage 6
       objectReference: {fileID: 0}
     - target: {fileID: 8399763171898701282, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 26
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8399763171898701282, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8399763171898701282, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8399763171898701282, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8399763171898701282, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
@@ -1125,7 +1125,7 @@ PrefabInstance:
     - target: {fileID: 8399763171898701282, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_text
-      value: ~Into the Magician's Liar~
+      value: ~The Final Showdown~
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a40eb8481837084459ced4fdbc6942ff, type: 3}
@@ -2058,8 +2058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc63cd80b636e541abd0b885eb3e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29, type: 3}
-  playerLevel: 3000
+  wave: {fileID: 7397433557659262872, guid: def95d2649a8f0547b264550bfd99d8b, type: 3}
+  playerLevel: 250
 --- !u!4 &1931965796
 Transform:
   m_ObjectHideFlags: 0
@@ -2212,6 +2212,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3117035567885284213, guid: 037c2df11cacda746ba784ee1ea87cf4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 3117035567885284213, guid: 037c2df11cacda746ba784ee1ea87cf4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.003
+      objectReference: {fileID: 0}
     - target: {fileID: 6037562340857074996, guid: 037c2df11cacda746ba784ee1ea87cf4,
         type: 3}
       propertyPath: m_Color.a

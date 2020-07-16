@@ -44,12 +44,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnSound: {fileID: 0}
-  deathdmg: 760
-  deathspeed: 2.4
+  harder: 0
+  hardershotrate: 0
+  harderspeed: 0
+  harderdmg: 0
   pulseRate: 1
   shotSpeed: 0.8
   bulletsperPulse: 10
-  shotdmg: 450
+  shotdmg: 375
   shootingDuration: 9
   stats: {fileID: 11400000, guid: c4e0557192d0c724093ab3baec58a924, type: 2}
   subwaves:

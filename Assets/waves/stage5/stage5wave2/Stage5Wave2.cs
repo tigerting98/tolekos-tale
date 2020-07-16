@@ -18,6 +18,8 @@ public struct Stage5Wave2SubWave {
 }
 public class Stage5Wave2 : EnemyWave
 {
+    [SerializeField] bool harder;
+    [SerializeField] float spreadharder;
     [SerializeField] EnemyStats stats;
     public List<Stage5Wave2SubWave> subwaves;
      Enemy water, earth, fire;
@@ -53,6 +55,10 @@ public class Stage5Wave2 : EnemyWave
         yield return new WaitForSeconds(time);
         if (en) {
             Patterns.BulletSpreadingOut(shootingBullet, dmg, en.transform.position, speed, speeddiff, Functions.AimAtPlayer(en.transform), shotnumber, null);
+            if (harder)
+            { Patterns.BulletSpreadingOut(shootingBullet, dmg, en.transform.position, speed, speeddiff, Functions.AimAtPlayer(en.transform)- spreadharder, shotnumber, null);
+                Patterns.BulletSpreadingOut(shootingBullet, dmg, en.transform.position, speed, speeddiff, Functions.AimAtPlayer(en.transform)+spreadharder, shotnumber, null);
+            }
         }
         yield return new WaitForSeconds(subwave.delaybeforemoving);
         if (en) {

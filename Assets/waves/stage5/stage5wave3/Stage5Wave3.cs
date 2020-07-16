@@ -17,6 +17,8 @@ public struct Stage5Wave3SubWave {
 }
 public class Stage5Wave3 : EnemyWave
 {
+    [SerializeField] bool harder;
+    [SerializeField] float hardershotrate, harderspeed, harderdmg;
     [SerializeField] float pulseRate, shotSpeed;
     [SerializeField] int bulletsperPulse;
     [SerializeField] float shotdmg;
@@ -41,6 +43,10 @@ public class Stage5Wave3 : EnemyWave
             en.SetEnemy(stats, false);
             en.shooting.StartShootingFor(EnemyPatterns.PulsingBulletsRandomAngle(GameManager.gameData.pageBullet, shotdmg, en.transform, shotSpeed, 
                 pulseRate * (wave.summonBoss?0.76f:1), bulletsperPulse, null), 0.6f, shootingDuration);
+            if (harder) {
+                en.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayer(GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), harderdmg, en.transform, harderspeed, hardershotrate, null)
+                    ,0.6f, shootingDuration);
+            }
             en.movement.destroyBoundary = 5f;
             en.movement.SetPolarPath(t => new Polar(wave.radius + t * wave.radialvel, startangle + (wave.clockwise ? 1 : -1) * wave.angularvel*t));
             yield return new WaitForSeconds(wave.spawnRate);

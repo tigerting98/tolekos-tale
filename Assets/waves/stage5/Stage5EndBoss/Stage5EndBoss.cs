@@ -19,6 +19,7 @@ public class Stage5EndBoss : EnemyBossWave
     Stage5EndBossUI bossUI;
     [SerializeField] Color blue, green, red;
     [SerializeField] Stage5BossPointer pointer;
+    [SerializeField] bool harder;
     [Header("Pattern1")]
     [SerializeField] float firedmg1;
     [SerializeField] float fireshotRate1 = 0.1f, fireSpeed1 = 3f, fireanglespread1 = 15f, fireradius1 = 0.3f;
@@ -32,6 +33,8 @@ public class Stage5EndBoss : EnemyBossWave
     [SerializeField] Vector2 startingPoint2;
     [SerializeField] float snowflakedmg2 = 415, snowflakespinningVel2 = 187, snowflakerandomfactor2 = 5, snowspeedmin = 3, snowspeedmax = 4, spawnRatesnow = 0.05f;
     [SerializeField] float icicledmg2 = 450f, spreadrange2 = 15f, anglepershot2 = 8.5f, shotrateicicle2 = 0.05f, iciclespeed2 = 2.8f, spawnradius2= 0.5f;
+    [SerializeField] float harderpulserate2, harderspeed2, harderdmg2;
+    [SerializeField] int hardercount2;
     [Header("Pattern3")]
     [SerializeField] Vector2 startingPoint3;
     [SerializeField] float y3, radius3, bulletspeed3nonmain, bulletdmg3nonmain, bulletpulserate3, bossmovespeed3,x3;
@@ -56,6 +59,7 @@ public class Stage5EndBoss : EnemyBossWave
     [SerializeField] Vector2 left6, right6;
     [SerializeField] float firespeed6 = 3f, firedmg6 = 410, firepulserate6 = 3f, fireshotrate6 = 0.3f, bigdmg6 = 500, delay6;
     [SerializeField] int firenumbersperpulse6 = 5, numberoffirebullets = 30, bignumber = 10;
+    [SerializeField] float  harderangularvel6;
     [Header("Pattern7")]
     [SerializeField] Vector2 startingPoint7 = new Vector2(0,2);
     [SerializeField] float movementradius7 = 1f, freq7 = 2f;
@@ -159,6 +163,9 @@ public class Stage5EndBoss : EnemyBossWave
     }
     public void Phase2() {
         SwitchToBoss(DamageType.Water);
+        waterBoss.shooting.StartShooting(EnemyPatterns.PulsingBulletsRandomAngle(
+            GameManager.gameData.bigBullet.GetItem(DamageType.Water), harderdmg2, waterBoss.transform, harderspeed2, harderpulserate2, hardercount2, null)
+            );
         waterBoss.shooting.StartShooting(Functions.RepeatAction(          
             ()=> {
                 float x = UnityEngine.Random.Range(-4.1f, 4.1f);
@@ -561,7 +568,17 @@ public class Stage5EndBoss : EnemyBossWave
     IEnumerator SubPattern6() {
         Action<Bullet,int, float> Shoot = (bul,number, dmg) => Patterns.RingOfBullets(bul, dmg, fireBoss.transform.position, number, 0, firespeed6,null);
         while (fireBoss&fireBoss.enabled) {
-            Shoot(GameManager.gameData.bigBullet.GetItem(DamageType.Fire), bignumber, bigdmg6);
+            if (!harder)
+            {
+                Shoot(GameManager.gameData.bigBullet.GetItem(DamageType.Fire), bignumber, bigdmg6);
+            }
+            else {
+                Patterns.SpirallingOutwardsRing(GameManager.gameData.bigBullet.GetItem(DamageType.Fire), bigdmg6, fireBoss.transform.position, firespeed6, angularvel6, bignumber,
+                    0, null);
+                yield return new WaitForSeconds(fireshotrate6);
+                Patterns.SpirallingOutwardsRing(GameManager.gameData.bigBullet.GetItem(DamageType.Fire), bigdmg6, fireBoss.transform.position, firespeed6, -angularvel6, bignumber,
+                    0, null);
+            }
             yield return new WaitForSeconds(fireshotrate6);
             for (int i = 0; i < firenumbersperpulse6; i++) {
                 Shoot(GameManager.gameData.fireBullet, numberoffirebullets, firedmg6);

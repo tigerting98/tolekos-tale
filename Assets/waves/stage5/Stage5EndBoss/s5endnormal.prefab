@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4668363733852199965}
   - component: {fileID: -4305600891919636960}
   m_Layer: 0
-  m_Name: stage5 endboss
+  m_Name: s5endnormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
