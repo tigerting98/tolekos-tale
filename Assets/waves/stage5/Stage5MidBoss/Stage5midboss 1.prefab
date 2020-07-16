@@ -46,11 +46,13 @@ MonoBehaviour:
   bulletSpawnSound: {fileID: 0}
   boss: {fileID: 6037250190076531618, guid: 41a2d21005d3f8c44b34843694ee34f0, type: 3}
   bossImage: {fileID: 0}
+  bossPortrait: {fileID: 0}
   namesOfSpellCards:
   - Book Fiend\n ~Cascading Scattered Pages~
   - Book Fiend\n ~Grimoire Accident~
   nextLevel: {fileID: 0}
-  spawnEffect: {fileID: 0}
+  spawnEffect: {fileID: 3483778914283871063, guid: 4206a966e2b41f4478c92a30f3b3d846,
+    type: 3}
   image: {fileID: 2078816057289667661, guid: 5ad59c11f872a9b4898642a47c6077f6, type: 3}
   spawnLocation: {x: 0, y: 2}
   damage1: 300

@@ -139,3 +139,5 @@ MonoBehaviour:
     type: 3}
   lifeDrop300: {fileID: 6089450588346147660, guid: e751cc5aa6eea7544811ecdbecb6e759,
     type: 3}
+  lifeDropFull: {fileID: 3365378150724377866, guid: 3cb879ff98f25124e9fb76da6af3a7f5,
+    type: 3}

@@ -8,7 +8,7 @@ public class Stage5Wave6 : WavePattern8
     {
         ringBullet = GameManager.gameData.fireBall;
         lineBullet = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Fire);
-        ringBullets = GameManager.gameData.bigBullet;
+        ringBullets = GameManager.gameData.smallRoundBullet;
         lineBullets = GameManager.gameData.ellipseBullet;
         enemy = GameManager.gameData.flyingBook;
         enemies = GameManager.gameData.libraryMonsters;

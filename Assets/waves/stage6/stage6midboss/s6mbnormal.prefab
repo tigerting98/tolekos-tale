@@ -55,22 +55,24 @@ MonoBehaviour:
   image: {fileID: 3168229161693621605, guid: 2dc3df2bef7f75647959a415ab1fba74, type: 3}
   spawnLocation: {x: 0, y: 2}
   damage1: 0
-  iniBulletSpeed1: 1.5
+  iniBulletSpeed1: 0.7
   shotRate1: 0.04
-  angularVel1: 231
-  angularVel2: 213
-  delay: 1.5
-  accelerationTime: 2
-  acceleration: 0.7
-  lines1: 5
+  angularVel1: 131
+  angularVel2: 143
+  delay: 4
+  delayRandom: 0.3
+  accelerationTime: 3
+  acceleration: 0.4
+  accelerationRandom: 0.25
+  lines1: 7
   ringDamage: 300
   bubbleDamage: 100
-  ringSpeed: 2
-  bubbleSpeedMin: 2
-  bubbleSpeedMax: 4.5
-  bubbleRandomFactor: 30
+  ringSpeed: 1.3
+  bubbleSpeedMin: 1.5
+  bubbleSpeedMax: 2
+  bubbleRandomFactor: 25
   ringPulseRate: 2
-  bubbleShotRate: 0.06
+  bubbleShotRate: 0.2
   moveSpeed: 0.5
   numberOfBulletsPerRing: 20
   numberOfLasersPairs: 5

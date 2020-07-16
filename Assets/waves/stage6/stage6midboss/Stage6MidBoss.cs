@@ -11,7 +11,7 @@ public class Stage6MidBoss : EnemyBossWave
     [Header("Pattern1")]
     [SerializeField] float damage1;
     [SerializeField] float iniBulletSpeed1 = 0.5f;
-    [SerializeField] float shotRate1 = 0.05f, angularVel1 = 134f, angularVel2 = 134f, delay = 1f, accelerationTime = 5f, acceleration = 1f;
+    [SerializeField] float shotRate1 = 0.05f, angularVel1 = 134f, angularVel2 = 134f, delay = 1f, delayRandom = 0.5f, accelerationTime = 5f, acceleration = 1f, accelerationRandom = 0.5f;
     [SerializeField] int lines1 = 1;
 
     [Header("Pattern2")]
@@ -44,6 +44,7 @@ public class Stage6MidBoss : EnemyBossWave
     }
     void Phase1() {
         currentBoss = Instantiate(boss, spawnLocation, Quaternion.identity);
+        currentBoss.GetComponent<BasicDroppable>().otherDrops.Add(GameManager.gameData.lifeDropFull);
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
         Pattern1();
@@ -71,9 +72,13 @@ public class Stage6MidBoss : EnemyBossWave
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase2;
         EndPhase();
         Destroy(bossImage.gameObject);
-        OnDefeat?.Invoke();
+        Invoke("Endboss", 3f);
     }
 
+    void Endboss()
+    {
+        GameManager.SummonEndBoss();
+    }
 
     void Pattern1()
     {
@@ -171,14 +176,15 @@ public class Stage6MidBoss : EnemyBossWave
 
     Bullet AcceleratingBullet(float angle) 
     {
-        float randomizedDelay = delay + Random.Range(-delay/2, delay/2);
+        float randomizedDelay = delay + Random.Range(-delayRandom, delayRandom);
+        float randomizedAcceleration = acceleration + Random.Range(-accelerationRandom, accelerationRandom);
         return Patterns.ShootCustomBullet(GameManager.gameData.featherBullet, 
                                     damage1, 
                                     currentBoss.transform.position, 
                                     time => new Polar(time < randomizedDelay ? iniBulletSpeed1
                                                         : time < accelerationTime 
-                                                        ? (time - randomizedDelay) * acceleration + iniBulletSpeed1
-                                                        : (accelerationTime) * acceleration + iniBulletSpeed1, angle).rect,
+                                                        ? (time - randomizedDelay) * randomizedAcceleration + iniBulletSpeed1
+                                                        : (accelerationTime) * randomizedAcceleration + iniBulletSpeed1, angle).rect,
                                     MovementMode.Velocity, null);
     }
 

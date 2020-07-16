@@ -44,16 +44,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnSound: {fileID: 0}
-  stats: {fileID: 11400000, guid: dcceb9e82b3430c4dad6121f26f29a56, type: 2}
-  bulletSpeed: 1.5
+  stats: {fileID: 11400000, guid: 1dd1833de87081c44b16e7c762793bba, type: 2}
+  bulletSpeed: 1.2
   shotRate: 0.06
-  bulletDamage: 400
+  bulletDamage: 380
   numberOfLines: 5
   subwaveList:
   - spawnDelay: 0
     xPos: -3
     yPos: 2
-    angularVelocity: 113
+    angularVelocity: 71
     summonEndboss: 0
     summonMidboss: 0
     type: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   - spawnDelay: 0
     xPos: 0
     yPos: 3.5
-    angularVelocity: 1
+    angularVelocity: 2
     summonEndboss: 0
     summonMidboss: 0
     type: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
   - spawnDelay: 0
     xPos: 3
     yPos: 2
-    angularVelocity: -113
+    angularVelocity: -71
     summonEndboss: 1
     summonMidboss: 0
     type: 2

@@ -37,6 +37,7 @@ public class GameData : MonoBehaviour
     public BombDrop defaultBombDrop;
     public LifeDrop lifeDrop1000;
     public LifeDrop lifeDrop300;
+    public LifeDrop lifeDropFull;
     private void Awake()
     {
         if (GameManager.gameData == null)
