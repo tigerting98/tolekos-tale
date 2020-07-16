@@ -28,7 +28,7 @@ MonoBehaviour:
   - {fileID: 1314461589439652146, guid: 0c948bcb5d3e1e8438b6c39c271a0ecf, type: 3}
   - {fileID: 8665773328800848476, guid: 5e7194e4b22c0934e831c59436620a58, type: 3}
   timesSecondHalf:
-  - 0
-  - 15
-  - 20
+  - 3
+  - 21
+  - 48
   endBoss: {fileID: 7397433557659262872, guid: def95d2649a8f0547b264550bfd99d8b, type: 3}

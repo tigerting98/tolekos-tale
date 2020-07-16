@@ -48,11 +48,11 @@ MonoBehaviour:
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
   namesOfSpellCards:
-  - Water girl\n~Icicles and Snowflakes~
-  - Earth prison \n~Morphing Rock Walls~
-  - Fire Wheel\n ~Cartwheels Of Flame~
-  - TriColor Force \n~Shifting Elements~
-  - Great Convergence \n~The Trio Ultimate Spell~
+  - Ice Age \n~Icicles and Snowflakes~
+  - Earth Prison \n~Morphing Rock Walls~
+  - Flame Dance \n ~Cartwheels Of Flame~
+  - Tricolor Medley \n~Shifting Elements~
+  - Great Convergence \n~Combination Magic~
   nextLevel: {fileID: 11400000, guid: 381b96fb81b94554daacb9630680f967, type: 2}
   waterportrait: {fileID: 21300000, guid: 7d35374c70d2753408d8c5a81b774b25, type: 3}
   earthportrait: {fileID: 21300000, guid: dc50d3d1baa938a4fabf9da11f21d98a, type: 3}
@@ -81,6 +81,7 @@ MonoBehaviour:
   green: {r: 0, g: 1, b: 0.10847831, a: 1}
   red: {r: 1, g: 0, b: 0, a: 1}
   pointer: {fileID: 8580154745028077592, guid: 7d36aae527e49f0468cc33726fd90704, type: 3}
+  harder: 0
   firedmg1: 210
   fireshotRate1: 0.2
   fireSpeed1: 1.8
@@ -115,6 +116,10 @@ MonoBehaviour:
   shotrateicicle2: 0.07
   iciclespeed2: 1.9
   spawnradius2: 0.5
+  harderpulserate2: 0
+  harderspeed2: 0
+  harderdmg2: 0
+  hardercount2: 0
   startingPoint3: {x: 0, y: 1.5}
   y3: 3
   radius3: 1
@@ -188,6 +193,7 @@ MonoBehaviour:
   firenumbersperpulse6: 5
   numberoffirebullets: 35
   bignumber: 15
+  harderangularvel6: 0
   startingPoint7: {x: 0, y: 2}
   movementradius7: 1.6
   freq7: 0.1

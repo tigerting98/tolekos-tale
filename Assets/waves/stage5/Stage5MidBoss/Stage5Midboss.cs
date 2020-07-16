@@ -7,6 +7,7 @@ public class Stage5Midboss : EnemyBossWave
     [SerializeField] ParticleSystem spawnEffect;
     [SerializeField] GameObject image;
     [SerializeField] Vector2 spawnLocation;
+    [SerializeField] bool harder; 
 
     [Header("Pattern1")]
     [SerializeField] float damage1;
@@ -20,8 +21,14 @@ public class Stage5Midboss : EnemyBossWave
     [SerializeField] float shotRate1 = 0.05f;
     [SerializeField] int lines1 = 1;
 
+    [Header("Pattern1 Harder")]
+    [SerializeField] float hardRingDamage = 400f;
+    [SerializeField] float hardRingPulseRate = 2f, hardRingSpeed = 1.5f;
+    [SerializeField] int hardNumberOfBulletsPerRing = 15;
+
     [Header("Pattern2")]
-    [SerializeField] float ringDamage = 300f, pageDamage = 200f, laserDamage = 100f;
+    [SerializeField] float ringDamage = 300f; 
+    [SerializeField] float pageDamage = 200f, laserDamage = 100f;
     [SerializeField] float ringSpeed = 2f, pageSpeedMinY = 1f, pageSpeedMaxY = 2f, pageXFactor = 0.5f, laserPositionFactor = 0.3f;
     [SerializeField] float ringPulseRate = 2f, pageShotRate = 0.1f, laserShotRate = 1f, laserCooldown = 3f;
     [SerializeField] int numberOfBulletsPerRing = 20, numberOfLasersPairs = 5;
@@ -87,6 +94,9 @@ public class Stage5Midboss : EnemyBossWave
         Bullet circle2 = CreateOffsetCircle(-bulletSpawnerOffset, 180f);
         circle1.GetComponent<Shooting>().StartShooting(EnemyPatterns.CustomSpinningCustomBulletsCustomSpacing(angle => ReflectingBullet(GameManager.gameData.pageBullet, damage1, circle1.transform.position, angle, bulletSpeed1), i => 50f * i,t => -185f + spread * Mathf.Sin(2 * Mathf.PI * frequency * t), lines1, shotRate1));
         circle2.GetComponent<Shooting>().StartShooting(EnemyPatterns.CustomSpinningCustomBulletsCustomSpacing(angle => ReflectingBullet(GameManager.gameData.pageBullet, damage1, circle2.transform.position, angle, bulletSpeed1), i => 50f * i,t => -95f + spread * Mathf.Sin(2 * Mathf.PI * frequency * -t), lines1, shotRate1));
+        if (harder) {
+            currentBoss.shooting.StartShooting(Functions.RepeatAction(() => Patterns.RingOfBullets(GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), hardRingDamage, currentBoss.transform.position, hardNumberOfBulletsPerRing, Random.Range(0f, 360f), hardRingSpeed, null), hardRingPulseRate));
+        }
     }
 
     IEnumerator Pattern2()
