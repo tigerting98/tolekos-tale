@@ -32,7 +32,7 @@ public class PlayerStats : MonoBehaviour
 
     public static float bombDamage = 1000;
 
-    
+    public static float bombDamagePerLevel = 100;
     public static void UseBomb() {
         bombCount--;
         OnUpdateBomb?.Invoke();
@@ -84,6 +84,7 @@ public class PlayerStats : MonoBehaviour
     {
 
         playerLevel++;
+        bombDamage += bombDamagePerLevel;
         expToLevelUp = expFormula(playerLevel);
         damage += dmgGain;
         playerMaxHP += maxHPGain;

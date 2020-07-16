@@ -312,6 +312,7 @@ public class Stage5EndBoss : EnemyBossWave
         fireBoss.bosshealth.OnLifeDepleted += EndPhase6;
     }
     public void EndPhase6() {
+        Instantiate(GameManager.gameData.defaultBombDrop, fireBoss.transform.position, Quaternion.identity);
         fireBoss.bosshealth.OnLifeDepleted -= EndPhase6;
         EndPhase();
         SwitchToImage(DamageType.Fire);

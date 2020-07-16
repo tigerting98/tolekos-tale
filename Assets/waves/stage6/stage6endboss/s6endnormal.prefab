@@ -55,6 +55,7 @@ MonoBehaviour:
   - Mischief \n ~Deadly Candy~
   - Pylfer's Trump Card \n ~Unleash Magic~
   nextLevel: {fileID: 0}
+  harder: 0
   background: {fileID: 7414380709887408105, guid: abb9119637e23b24cb2d92d8ace9438f,
     type: 3}
   imageofboss: {fileID: 190458337195914637, guid: 3a64cc6501df5954fae1450235cd8fcc,
@@ -82,8 +83,12 @@ MonoBehaviour:
     type: 3}
   goodEndDialogue: {fileID: 11400000, guid: 9c9e7c08d0382cd4d9a88c9d3d047a56, type: 2}
   badEndDialogue: {fileID: 11400000, guid: 01b8824eb9eaeed418f1704dcc61c894, type: 2}
+  harderballspeed1: 0
+  harderballpulserate1: 0
+  harderballdmg1: 0
+  harderballcount1: 0
   y1: 1
-  buldmg1: 500
+  buldmg1: 415
   movespeed1: 2
   petalCount1: 8
   bulletperhalfpatel1: 5
@@ -96,7 +101,11 @@ MonoBehaviour:
   stalktopspeed: 3
   stalkslowspeed: 0.6
   pulserate1: 2
-  dmg2: 600
+  harderstarspeed2: 0
+  harderstarspreadangle2: 0
+  harderstardmg2: 0
+  harderstarcount2: 0
+  dmg2: 465
   pos2: {x: 0, y: 1}
   waterspeed2: 0.8
   waterpulserate2: 1.3
@@ -106,7 +115,7 @@ MonoBehaviour:
   boundaryY2: 0.75
   boundaryX2: 3.5
   maxstepY2: 0.3
-  maxstepX2: 1.6
+  maxstepX2: 0.5
   waterstartpos2:
   - 0
   - 1.65
@@ -131,20 +140,23 @@ MonoBehaviour:
   laserduration2: 2
   laserpulserate2: 3
   laserspacing2: 1
-  dmg3: 500
+  harderarrowspeed3: 0
+  harderarrowpulserate3: 0
+  harderarrowcount: 0
+  dmg3: 420
   circleangularvel3: 43
   radius3: 1
-  shotrate3circle: 0.22
+  shotrate3circle: 0.32
   shotspeed3: 0.5
   shotspeeddiff3: 0.15
   bulletangularvel3: 67
   numberoflines3: 3
   numberperlines3: 4
-  movespeed3: 1.2
-  movingbounds3: 1.5
+  movespeed3: 0.9
+  movingbounds3: 1
   movingdelaymin3: 2
   movingdelaymax3: 3
-  dmg4rain: 510
+  dmg4rain: 395
   anglespreadrain: 15
   rainminspeed: 0.8
   rainmaxspeed: 3
@@ -156,7 +168,7 @@ MonoBehaviour:
   leafacc4: 0.6
   leafacctime4: 3.2
   spreadleafangle4: 41
-  leafdmg4: 505
+  leafdmg4: 425
   numberofleafs4: 7
   numberOfsideLasers4: 3
   locationright4: {x: 1, y: 1.5}
@@ -170,7 +182,7 @@ MonoBehaviour:
   pos5: {x: 0, y: 1}
   starradius5: 2
   starshotrate5: 0.03
-  stardmg5: 600
+  stardmg5: 425
   delaybeforemoving5: 0.5
   delaybeforesplitting5: 1
   acc5: 0.5
@@ -183,16 +195,16 @@ MonoBehaviour:
   spacing6: 2.5
   shotrate6fire: 0.04
   firebulletspeed6: 1.3
-  firebulletdmg6: 500
+  firebulletdmg6: 485
   angleperarc6: 338
   arcspacing6: 41
   bulletpershot6: 4
-  earthbulletdmg6: 600
+  earthbulletdmg6: 385
   earthpulserate6: 0.5
   earthspeed6: 1.8
   earthcount6: 15
   pos7: {x: 0, y: 2}
-  bulletdmg7: 500
+  bulletdmg7: 435
   bulletpulserate7: 2
   bulletspeed7: 1.2
   spawnX7: 0.5
@@ -202,11 +214,11 @@ MonoBehaviour:
   delaymax7: 2
   bulletcount7: 50
   pos8: {x: 0, y: 1}
-  bullet8dmg: 900
-  bullet8speed: 2
+  bullet8dmg: 485
+  bullet8speed: 2.5
   bullet8cooldown: 0.01
   bulletspread8: 35
-  balldmg8: 700
+  balldmg8: 425
   ballangularvel8: 13
   ballradialvel8: 0.8
   ballpulserate8: 2
@@ -215,12 +227,12 @@ MonoBehaviour:
   switchingmin8: 6
   switchingmax8: 8
   pos9: {x: 0, y: 1}
-  dmgbullet9: 650
+  dmgbullet9: 495
   shotrate9: 0.37
   angularvel9: 5.5
   bulletspeed9: 1.1
   lines9: 8
-  starlaserdmg9: 800
+  starlaserdmg9: 675
   starshotrate9: 0.1
   laseracc9: 0.98
   laseracctime9: 3.1
@@ -231,32 +243,32 @@ MonoBehaviour:
   ellipseradialvel10: 0.9
   ellipsespacing10: 0.5
   ellipsepulserate10: 2
-  ellipsedmg10: 510
+  ellipsedmg10: 475
   ellipsecount10: 20
   roundedcount10: 20
   dmg10rounded: 505
   roundedpulserate10: 2.1
   roundedspeed10: 1.3
   dmg10laser: 600
-  laserspeed10: 2.1
-  laserpulserate10: 1.2
-  laserradius10: 0.5
-  lasercount10: 10
-  firelaserpulserate10: 8
-  firelaserduration10: 5.5
+  laserspeed10: 4
+  laserpulserate10: 2.5
+  laserradius10: 1
+  lasercount10: 6
+  firelaserpulserate10: 9
+  firelaserduration10: 2.9
   firelaserspacing10: 1.6
-  firelaserdm10: 2000
+  firelaserdm10: 1850
   fallinganglerange10: 10
   fallingspeed10min: 0.8
   fallingspeed10max: 1
-  fallingshotrate10: 0.25
-  fallingdmg10: 615
+  fallingshotrate10: 0.34
+  fallingdmg10: 496
   phase4speed10: 1.2
   phase4pulserate10: 3.2
-  bigcircledmg10: 1000
-  smallcircledmg10: 650
-  arrowsdmg10: 610
-  stardmg10: 620
+  bigcircledmg10: 985
+  smallcircledmg10: 523
+  arrowsdmg10: 431
+  stardmg10: 488
   bigcirclecount10: 15
   smallcirclecount10: 20
   arrowcount10: 30

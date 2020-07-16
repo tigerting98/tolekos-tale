@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773601d4f4ae6e54688117054c1664fa, type: 3}
+  m_Name: stage6hard
+  m_EditorClassIdentifier: 
+  wavesFirstHalf:
+  - {fileID: 5541333601818192104, guid: 327fad3226f4487498f1d60fcdc64e8c, type: 3}
+  timesFirstHalf:
+  - 3
+  midBoss: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2, type: 3}
+  wavesSecondHalf: []
+  timesSecondHalf: []
+  endBoss: {fileID: 5167438715268194460, guid: f5b342243f9db7347a600bd2a497d847, type: 3}

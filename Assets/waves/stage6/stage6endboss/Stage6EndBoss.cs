@@ -11,6 +11,7 @@ using UnityEngine.UI;
 
 public class Stage6EndBoss : EnemyBossWave
 {
+    [SerializeField] bool harder;
     [SerializeField] GameObject background;
     [SerializeField] GameObject imageofboss;
     [SerializeField] Dialogue dialogue1, dialogue2;
@@ -21,6 +22,8 @@ public class Stage6EndBoss : EnemyBossWave
     [SerializeField] ParticleSystem deathparticle;
     [SerializeField] Dialogue goodEndDialogue, badEndDialogue;
     [Header("Pattern1")]
+    [SerializeField] float harderballspeed1, harderballpulserate1, harderballdmg1;
+    [SerializeField] int harderballcount1;
     [SerializeField] float y1, buldmg1;
     [SerializeField] float movespeed1;
     [SerializeField] int petalCount1, bulletperhalfpatel1;
@@ -28,6 +31,8 @@ public class Stage6EndBoss : EnemyBossWave
     [SerializeField] int stalkCount, stalkTopcount;
     [SerializeField] float stalktopspeeddiff, stalktopspread, stalktopspeed, stalkslowspeed, pulserate1;
     [Header("Pattern2")]
+    [SerializeField] float harderstarspeed2, harderstarspreadangle2, harderstardmg2;
+    [SerializeField] int harderstarcount2;
     [SerializeField] float dmg2;
     [SerializeField] Vector2 pos2;
     [SerializeField] float waterspeed2, waterpulserate2, watershotrate2, waterspacing2, waterrandomfactor2;
@@ -36,6 +41,8 @@ public class Stage6EndBoss : EnemyBossWave
     [SerializeField] float laserdmg2;
     [SerializeField] float laserduration2, laserpulserate2, laserspacing2;
     [Header("Pattern3")]
+    [SerializeField] float harderarrowspeed3, harderarrowpulserate3;
+    [SerializeField] int harderarrowcount;
     [SerializeField] float dmg3;
     [SerializeField] float circleangularvel3, radius3;
     [SerializeField] float shotrate3circle, shotspeed3, shotspeeddiff3, bulletangularvel3;
@@ -100,7 +107,7 @@ public class Stage6EndBoss : EnemyBossWave
     public override void EndPhase()
     {
         ChangePylfer(DamageType.Pure);
-        ChangePylferResist(0.8f, 0.8f, 0.8f, 1);
+        ChangePylferResist(0.85f, 0.85f, 0.85f, 1);
         base.EndPhase();
 
     }
@@ -140,6 +147,11 @@ public class Stage6EndBoss : EnemyBossWave
         SwitchToBoss();
         float time = currentBoss.movement.MoveTo(new Vector2(0, y1), movespeed);
         currentBoss.shooting.StartShootingAfter(BossPattern1(), time);
+        if (harder)
+        {
+            currentBoss.shooting.StartShooting(EnemyPatterns.PulsingBulletsRandom(GameManager.gameData.smallRoundBullet.GetAllItems(),
+              harderballdmg1, currentBoss.transform, harderballspeed1, harderballpulserate1, harderballcount1, null));
+                }
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
     }
     void EndPhase1() {
@@ -178,15 +190,20 @@ public class Stage6EndBoss : EnemyBossWave
     }
     void EndPhase2() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase2;
-
+        Instantiate(GameManager.gameData.lifeDrop1000, currentBoss.transform.position, Quaternion.identity);
+        float time= bossImage.GetComponent<Movement>().MoveTo(pos2, movespeed);
         EndPhase();
-        Invoke("Phase3", endPhaseTransition);
+        Invoke("Phase3", Mathf.Max(time,endPhaseTransition));
     }
     void Phase3() {
         SwitchToBoss();
         magicCircle3(DamageType.Water, -30);
         magicCircle3(DamageType.Earth, -150);
         magicCircle3(DamageType.Fire, 90);
+        if (harder) {
+            currentBoss.shooting.StartShooting(EnemyPatterns.PulsingBulletsRandomAngle(GameManager.gameData.arrowBullet.GetItem(DamageType.Pure), dmg3, currentBoss.transform, harderarrowspeed3,
+                harderarrowpulserate3, harderarrowcount, null));
+        }
         currentBoss.shooting.StartShooting(EnemyPatterns.MoveRandomly(currentBoss.movement, pos2, movingbounds3, movespeed3, movingdelaymin3, movingdelaymax3));
         currentBoss.bosshealth.OnLifeDepleted += EndPhase3;
     }
@@ -213,6 +230,7 @@ public class Stage6EndBoss : EnemyBossWave
         currentBoss.bosshealth.OnLifeDepleted += EndPhase4;
     }
     void EndPhase4() {
+        Instantiate(GameManager.gameData.defaultBombDrop, currentBoss.transform.position, Quaternion.identity);
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase4;
         EndPhase();
         Invoke("Phase5", endPhaseTransition);
@@ -256,6 +274,7 @@ public class Stage6EndBoss : EnemyBossWave
         }
     void EndPhase6() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase6;
+        Instantiate(GameManager.gameData.lifeDrop1000, currentBoss.transform.position, Quaternion.identity);
         EndPhase();
         Invoke("Phase7", endPhaseTransition);
     }
@@ -343,6 +362,8 @@ public class Stage6EndBoss : EnemyBossWave
     }
     public void EndPhase9() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase9;
+        Instantiate(GameManager.gameData.defaultBombDrop, currentBoss.transform.position, Quaternion.identity);
+        Instantiate(GameManager.gameData.lifeDrop1000, currentBoss.transform.position, Quaternion.identity);
         EndPhase();
         Invoke("StartPhase10", endPhaseTransition);
     }
@@ -352,6 +373,7 @@ public class Stage6EndBoss : EnemyBossWave
     }
     public void Phase10() {
         SwitchToBoss();
+        ChangePylferResist(0.85f, 0.85f, 0.85f, 0.75f);
         currentBoss.shooting.StartShooting(CheckForSubPhase());
         currentBoss.shooting.StartShooting(Functions.RepeatCustomAction(
             i => Patterns.CustomRing(angle => Patterns.ReflectingBullet(GameManager.gameData.pointedBullet.GetItem(i % 4), dmg10rounded, currentBoss.transform.position,
@@ -366,16 +388,19 @@ public class Stage6EndBoss : EnemyBossWave
             if (subphase == 1 && currentBoss.bosshealth.GetCurrentHP() / bosshp < 0.75f) {
                 subphase = 2;
                 StartSubPattern2();
+                ChangePylferResist(0.85f, 0.85f, 0.85f, 0.5f);
                 Destroy(Instantiate(pureparticle, currentBoss.transform.position, Quaternion.identity).gameObject, 5f);
             }
             else if (subphase == 2 && currentBoss.bosshealth.GetCurrentHP() / bosshp < 0.5f)
             {
                 StartSubPattern3();
+                ChangePylferResist(0.85f, 0.85f, 0.85f, 0.35f);
                 subphase = 3;
                 Destroy(Instantiate(pureparticle, currentBoss.transform.position, Quaternion.identity).gameObject, 5f);
             }
             if (subphase == 3 && currentBoss.bosshealth.GetCurrentHP() / bosshp < 0.25f)
             {
+                ChangePylferResist(0.85f, 0.85f, 0.85f, 0.15f);
                 StartSubPattern4();
                 subphase = 4;
                 Destroy(Instantiate(pureparticle, currentBoss.transform.position, Quaternion.identity).gameObject, 5f);
@@ -567,6 +592,11 @@ public class Stage6EndBoss : EnemyBossWave
             float time1 = currentBoss.movement.MoveTo(new Vector2(x, y), movespeed);
             yield return new WaitForSeconds(time1);
             currentBoss.transform.position = new Vector2(x, y);
+            if (harder)
+            {
+                Patterns.ShootMultipleStraightBullet(GameManager.gameData.starBullet.GetItem(DamageType.Pure), harderstardmg2, currentBoss.transform.position, harderstarspeed2,
+                  Functions.AimAtPlayer(currentBoss.transform), harderstarspreadangle2, harderstarcount2, null);
+            }
             currentBoss.shooting.StartShooting(WaterSubPattern2(true, true, currentBoss.transform.position));
             currentBoss.shooting.StartShooting(WaterSubPattern2(false, true, currentBoss.transform.position));
             currentBoss.shooting.StartShooting(WaterSubPattern2(true, false, currentBoss.transform.position));
