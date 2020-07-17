@@ -76,8 +76,8 @@ MonoBehaviour:
   bubbleSpeedMin: 1.5
   bubbleSpeedMax: 2
   bubbleRandomFactor: 25
-  ringPulseRate: 2
+  ringPulseRate: 1.5
   bubbleShotRate: 0.2
   moveSpeed: 0.5
-  numberOfBulletsPerRing2: 4
+  numberOfBulletsPerRing2: 20
   numberOfLasersPairs: 5

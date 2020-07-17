@@ -145,3 +145,4 @@ MonoBehaviour:
     type: 3}
   lifeDropFull: {fileID: 3365378150724377866, guid: 3cb879ff98f25124e9fb76da6af3a7f5,
     type: 3}
+  waterBolt1: {fileID: 11400000, guid: 1d228b5dce50f3b4298570ba1652e8f5, type: 2}
