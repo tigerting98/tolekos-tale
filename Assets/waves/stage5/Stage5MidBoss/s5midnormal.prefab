@@ -56,7 +56,7 @@ MonoBehaviour:
   image: {fileID: 2078816057289667661, guid: 5ad59c11f872a9b4898642a47c6077f6, type: 3}
   spawnLocation: {x: 0, y: 2}
   harder: 0
-  damage1: 300
+  damage1: 410
   bulletSpawnerOffset: 1
   minStationaryTime: 1
   maxStationaryTime: 2
@@ -82,9 +82,9 @@ MonoBehaviour:
   pageSpeedMaxY: 1.5
   pageXFactor: 2
   laserPositionFactor: 0.3
-  ringPulseRate: 1.4
+  ringPulseRate: 1.6
   pageShotRate: 0.1
-  laserShotRate: 1.5
+  laserShotRate: 2
   laserCooldown: 15
-  numberOfBulletsPerRing: 10
+  numberOfBulletsPerRing: 8
   numberOfLasersPairs: 8

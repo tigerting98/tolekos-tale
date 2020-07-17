@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7897652670564822547
+--- !u!1 &1314461589439652145
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7897652670564822549}
-  - component: {fileID: 7897652670564822546}
+  - component: {fileID: 1314461589439652147}
+  - component: {fileID: 1314461589439652146}
   m_Layer: 0
-  m_Name: Stage5Wave5
+  m_Name: s5w6normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7897652670564822549
+--- !u!4 &1314461589439652147
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7897652670564822547}
+  m_GameObject: {fileID: 1314461589439652145}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.34055752, y: 1.7523988, z: -16.673067}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,35 +31,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7897652670564822546
+--- !u!114 &1314461589439652146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7897652670564822547}
+  m_GameObject: {fileID: 1314461589439652145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1f9e79b400dd747976d4a81be29d15, type: 3}
+  m_Script: {fileID: 11500000, guid: a588a654d4ef6964bb90150f324daa06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnSound: {fileID: 0}
-  delayBeforeMoving: 0.5
-  shotRate: 0.3
-  spawnRate: 0.05
-  moveSpeed: 1.5
-  bulletAccel: 1.3
+  moveSpeed: 2
+  stats: {fileID: 11400000, guid: 68e8a8fd36d465849bcaf3fb44196c0c, type: 2}
   bulletSpeed: 2.5
-  bulletDmg: 410
-  jitterFactor: 0.5
-  stats: {fileID: 11400000, guid: c8996ea966c110f4ab9f130820721d77, type: 2}
-  subwaves:
-  - delay: 0
+  ringSpeed: 1.6
+  shotRate: 0.07
+  pulseRate: 2.5
+  bulletDamage: 410
+  stationaryTime: 1
+  numberOfBulletsInDeathRing: 5
+  numberOfBulletsPerLine: 3
+  subwaveList:
+  - spawnDelay: 0
+    highY: 3.5
+    lowY: 0
+    numberOfEnemies: 20
+    left: 1
     type: 0
-    numOfEnemies: 15
-  - delay: 5
+  - spawnDelay: 8
+    highY: 3.5
+    lowY: 0
+    numberOfEnemies: 20
+    left: 0
     type: 1
-    numOfEnemies: 15
-  - delay: 10
+  - spawnDelay: 16
+    highY: 3.5
+    lowY: 0
+    numberOfEnemies: 20
+    left: 1
     type: 2
-    numOfEnemies: 15
+  spawnRate: 0.25
+  random: 1
+  ringsDependOnType: 1
+  enemyDependOnType: 1

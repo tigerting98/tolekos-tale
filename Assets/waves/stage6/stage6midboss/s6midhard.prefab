@@ -12,6 +12,101 @@ PrefabInstance:
       propertyPath: m_Name
       value: s6midhard
       objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: harder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: shotRate1
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: bubblePulseRate
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: radialVelocity
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: numberOfBulletsPerRing1
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: damage1
+      value: 410
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: ringDamage
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: bubbleDamage
+      value: 420
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: ringSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: bubbleShotRate
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: ringPulseRate
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: numberOfBulletsPerRing2
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: bubbleSpeedMax
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: delay
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: angularVel2
+      value: 131
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: angularVel1
+      value: 121
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: acceleration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: lines1
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 0.55
+      objectReference: {fileID: 0}
     - target: {fileID: 4744811229638266934, guid: 6d173cd9f49397246af2a813387d78f2,
         type: 3}
       propertyPath: m_LocalPosition.x

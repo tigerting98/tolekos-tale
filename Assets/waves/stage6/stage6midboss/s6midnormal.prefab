@@ -57,7 +57,7 @@ MonoBehaviour:
   harder: 0
   damage1: 0
   iniBulletSpeed1: 0.7
-  shotRate1: 0.04
+  shotRate1: 0.05
   angularVel1: 131
   angularVel2: 143
   delay: 4
@@ -79,5 +79,5 @@ MonoBehaviour:
   ringPulseRate: 2
   bubbleShotRate: 0.2
   moveSpeed: 0.5
-  numberOfBulletsPerRing2: 20
+  numberOfBulletsPerRing2: 4
   numberOfLasersPairs: 5
