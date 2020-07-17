@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 5541333601818192104, guid: 327fad3226f4487498f1d60fcdc64e8c, type: 3}
   timesFirstHalf:
   - 3
-  midBoss: {fileID: 4744811229638266921, guid: 6d173cd9f49397246af2a813387d78f2, type: 3}
+  midBoss: {fileID: 4158479612627204268, guid: 83db7b312c986304db2fdf4c80849914, type: 3}
   wavesSecondHalf: []
   timesSecondHalf: []
   endBoss: {fileID: 5167438715268194460, guid: f5b342243f9db7347a600bd2a497d847, type: 3}

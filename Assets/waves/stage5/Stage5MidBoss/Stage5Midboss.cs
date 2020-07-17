@@ -40,7 +40,6 @@ public class Stage5Midboss : EnemyBossWave
     
     }
     IEnumerator PreFight() {
-        // Destroy(Instantiate(spawnEffect, spawnLocation - new Vector2(0, 0.5f), Quaternion.Euler(-90,0,0)).gameObject, 5f);
         yield return new WaitForSeconds(0.5f);
         ParticleSystem spawnfx = Instantiate(spawnEffect, spawnLocation, Quaternion.identity);
         bossImage = Instantiate(image, spawnLocation, Quaternion.identity);
@@ -55,6 +54,7 @@ public class Stage5Midboss : EnemyBossWave
     }
     void Phase1() {
         currentBoss = Instantiate(boss, spawnLocation, Quaternion.identity);
+        currentBoss.GetComponent<BasicDroppable>().otherDrops.Add(GameManager.gameData.defaultBombDrop);
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
         currentBoss.shooting.StartCoroutine(MoveInTriangle());

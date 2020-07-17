@@ -27,7 +27,7 @@ public class Stage6MidBoss : EnemyBossWave
     [SerializeField] float ringSpeed = 2f, bubbleSpeedMin = 1f, bubbleSpeedMax = 3f, bubbleRandomFactor = 15f;
     [SerializeField] float ringPulseRate = 2f, bubbleShotRate = 0.1f;
     [SerializeField] float moveSpeed = 1.5f;
-    [SerializeField] int numberOfBulletsPerRing2 = 20, numberOfLasersPairs = 5;
+    [SerializeField] int numberOfBulletsPerRing2 = 20;
     private bool homing = false;
 
 
@@ -37,7 +37,7 @@ public class Stage6MidBoss : EnemyBossWave
     
     }
     IEnumerator PreFight() {
-        // Destroy(Instantiate(spawnEffect, spawnLocation - new Vector2(0, 0.5f), Quaternion.Euler(-90,0,0)).gameObject, 5f);
+
         yield return new WaitForSeconds(0.5f);
         bossImage = Instantiate(image, spawnLocation + new Vector2(0f, 2.5f), Quaternion.identity);
         float wait = bossImage.GetComponent<Movement>().MoveTo(spawnLocation, 1f);
@@ -52,6 +52,7 @@ public class Stage6MidBoss : EnemyBossWave
     void Phase1() {
         currentBoss = Instantiate(boss, spawnLocation, Quaternion.identity);
         currentBoss.GetComponent<BasicDroppable>().otherDrops.Add(GameManager.gameData.lifeDropFull);
+        currentBoss.GetComponent<BasicDroppable>().otherDrops.Add(GameManager.gameData.defaultBombDrop);
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
         currentBoss.shooting.StartShooting(Pattern1());

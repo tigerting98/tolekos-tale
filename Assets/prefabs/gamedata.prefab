@@ -47,9 +47,14 @@ MonoBehaviour:
     type: 3}
   lifeDepletedSFX: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
   shortarrowSFX: {fileID: 11400000, guid: 94136f1805adc0748a6289604d02cf83, type: 2}
-  longarrowSFX: {fileID: 0}
-  windboltSFX: {fileID: 0}
-  explosionSFX: {fileID: 0}
+  longarrowSFX: {fileID: 11400000, guid: c254def07b7610d4192ae4bec424e8ee, type: 2}
+  windboltSFX: {fileID: 11400000, guid: db48958cbc7a5a64bac15606518d3ace, type: 2}
+  explosionSFX: {fileID: 11400000, guid: 617a6a94ced505c4b87c48d463a2fdb7, type: 2}
+  magicPulse1SFX: {fileID: 11400000, guid: 21f2b90b6d1b06d4c88f5aa05e831ff1, type: 2}
+  waterBolt1: {fileID: 11400000, guid: 1d228b5dce50f3b4298570ba1652e8f5, type: 2}
+  gunSFX: {fileID: 11400000, guid: 5cc50710b614087489487b940f972a22, type: 2}
+  tpSFX: {fileID: 11400000, guid: 90c01456488d43c44864ddd83d5a7fbd, type: 2}
+  magicCircles: {fileID: 11400000, guid: ecb15ad31fbf67f4383a433a76ff2594, type: 2}
   pointedBullet: {fileID: 11400000, guid: 41aa83ad522d4c441b420119f326348b, type: 2}
   smallRoundBullet: {fileID: 11400000, guid: f6d3e6216ead4c946a5abcd2fba1d3b8, type: 2}
   bigBullet: {fileID: 11400000, guid: 6583d2f611a41f24fa8dea759fa2b553, type: 2}
@@ -57,7 +62,6 @@ MonoBehaviour:
   ellipseBullet: {fileID: 11400000, guid: db9c7a3e4381a7d458143ac16c0b25c4, type: 2}
   starBullet: {fileID: 11400000, guid: a7621db965d645a4f81ac55721e4273d, type: 2}
   laserBullet: {fileID: 11400000, guid: f3c85c64088299d49bbc3f970b774f86, type: 2}
-  magicCircles: {fileID: 11400000, guid: ecb15ad31fbf67f4383a433a76ff2594, type: 2}
   stage5lines: {fileID: 11400000, guid: 575bf650e4b1b124bbc2e360b5710194, type: 2}
   punchBullet: {fileID: 911972999547948889, guid: 7a6f9c6c80d58864d9bec85e519acf80,
     type: 3}
@@ -112,6 +116,8 @@ MonoBehaviour:
     type: 3}
   featherBullet: {fileID: 8708216149351136730, guid: 113b21d682db6df47adbe56c73727c06,
     type: 3}
+  flyingBook: {fileID: 8653138007011878643, guid: 1fde77ccfca5d1a4ca1eb8b90bb6d3e1,
+    type: 3}
   ghosts: {fileID: 11400000, guid: f9bc86bb33e833e42b241d21cac03812, type: 2}
   linemonster: {fileID: 11400000, guid: e17c5ae1cdbaddd45a4fe548718245ab, type: 2}
   mushrooms: {fileID: 11400000, guid: 6bbd3837208b3f340abf41594e72f4b6, type: 2}
@@ -132,8 +138,6 @@ MonoBehaviour:
     type: 3}
   pottedplant: {fileID: 3119230699040671993, guid: c636b84353db18a498edc5ebb82146d0,
     type: 3}
-  flyingBook: {fileID: 8653138007011878643, guid: 1fde77ccfca5d1a4ca1eb8b90bb6d3e1,
-    type: 3}
   playerDialogueSprite: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea,
     type: 3}
   beforeStage1: {fileID: 11400000, guid: 584894196419c274ebfd1f0c5af91a84, type: 2}
@@ -145,4 +149,3 @@ MonoBehaviour:
     type: 3}
   lifeDropFull: {fileID: 3365378150724377866, guid: 3cb879ff98f25124e9fb76da6af3a7f5,
     type: 3}
-  waterBolt1: {fileID: 11400000, guid: 1d228b5dce50f3b4298570ba1652e8f5, type: 2}

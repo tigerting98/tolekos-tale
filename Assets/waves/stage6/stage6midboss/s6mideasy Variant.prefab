@@ -100,27 +100,27 @@ PrefabInstance:
     - target: {fileID: 829454870469028723, guid: c847136a01093604cac4097c1ee50ffb,
         type: 3}
       propertyPath: shotRate1
-      value: 0.06
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 829454870469028723, guid: c847136a01093604cac4097c1ee50ffb,
         type: 3}
       propertyPath: moveSpeed
-      value: 0.4
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 829454870469028723, guid: c847136a01093604cac4097c1ee50ffb,
         type: 3}
       propertyPath: bubbleShotRate
-      value: 0.22
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 829454870469028723, guid: c847136a01093604cac4097c1ee50ffb,
         type: 3}
       propertyPath: ringPulseRate
-      value: 1.8
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 829454870469028723, guid: c847136a01093604cac4097c1ee50ffb,
         type: 3}
       propertyPath: numberOfBulletsPerRing2
-      value: 20
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 829454870469028723, guid: c847136a01093604cac4097c1ee50ffb,
         type: 3}
@@ -131,6 +131,16 @@ PrefabInstance:
         type: 3}
       propertyPath: bubbleSpeedMin
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 829454870469028723, guid: c847136a01093604cac4097c1ee50ffb,
+        type: 3}
+      propertyPath: numberOfBulletsPerRing1
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 829454870469028723, guid: c847136a01093604cac4097c1ee50ffb,
+        type: 3}
+      propertyPath: numberOfLasersPairs
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c847136a01093604cac4097c1ee50ffb, type: 3}

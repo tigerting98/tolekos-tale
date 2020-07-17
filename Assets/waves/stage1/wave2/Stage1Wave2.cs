@@ -51,7 +51,7 @@ public class Stage1Wave2 : EnemyWave
         if (enemy) {
             float angle = Functions.AimAtPlayer(enemy.transform);
             Patterns.ExplodingRingOfBullets(GameManager.gameData.smallRoundBullet.GetItem(Random.Range(0, 3)), dmg
-                , enemy.transform.position, bulletCount, angle, initialSpeed, finalSpeed, burstRadius / initialSpeed, bulletSpawnSound) ;
+                , enemy.transform.position, bulletCount, angle, initialSpeed, finalSpeed, burstRadius / initialSpeed, GameManager.gameData.windboltSFX) ;
             yield return new WaitForSeconds(stopTime);
             if (enemy) {
                 enemy.movement.StartMoving();

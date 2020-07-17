@@ -6,7 +6,7 @@ public class PlayerPattern : MonoBehaviour
 {
     public static void EarthUnfocusedMode(Bullet bullet, Player player)
     {
-        float spreadOut = 15;
+        float spreadOut = 10;
         float spreadIn = 5;
         float dmg = bullet.damageDealer.damage;
          Patterns.ShootStraight(bullet, dmg, player.transform.position, 90, player.bulletSpeed,null);
@@ -28,8 +28,8 @@ public class PlayerPattern : MonoBehaviour
     }
     public static void WaterUnfocusedMode(Bullet bullet, Player player)
     {
-        Vector3 spreadOut =  new Vector2(1, 0);
-        Vector3 spreadIn = new Vector2(0.25f, 0);
+        Vector3 spreadOut =  new Vector2(0.4f, 0);
+        Vector3 spreadIn = new Vector2(0.2f, 0);
         float dmg = bullet.damageDealer.damage;
         Patterns.ShootStraight(bullet, dmg, player.transform.position, 90, player.bulletSpeed,null);
         Patterns.ShootStraight(bullet, dmg, player.transform.position + spreadOut, 90, player.bulletSpeed,null);
