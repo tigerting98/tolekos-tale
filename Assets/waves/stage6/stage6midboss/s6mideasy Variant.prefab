@@ -115,7 +115,7 @@ PrefabInstance:
     - target: {fileID: 829454870469028723, guid: c847136a01093604cac4097c1ee50ffb,
         type: 3}
       propertyPath: ringPulseRate
-      value: 2.15
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 829454870469028723, guid: c847136a01093604cac4097c1ee50ffb,
         type: 3}
