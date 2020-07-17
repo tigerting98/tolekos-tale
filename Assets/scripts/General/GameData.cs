@@ -38,6 +38,8 @@ public class GameData : MonoBehaviour
     public LifeDrop lifeDrop1000;
     public LifeDrop lifeDrop300;
     public LifeDrop lifeDropFull;
+    public SFX waterBolt1;
+
     private void Awake()
     {
         if (GameManager.gameData == null)

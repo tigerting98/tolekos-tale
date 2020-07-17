@@ -271,7 +271,7 @@ public class Stage2EndBoss : EnemyBossWave
     Bullet ShootRain(Bullet bigBullet, float dmgBig, Vector2 playerPosition, float angle) {
         Vector2 spawn = Functions.RandomLocation(currentBoss.transform.position, spawnradius4);
 
-        Bullet bul = Patterns.ShootStraight(bigBullet, dmgBig, spawn, Functions.AimAt(spawn, playerPosition) + angle, initialSpeed4,null);
+        Bullet bul = Patterns.ShootStraight(bigBullet, dmgBig, spawn, Functions.AimAt(spawn, playerPosition) + angle, initialSpeed4, GameManager.gameData.waterBolt1);
         bul.movement.triggers.Add(triggerEvent);
         return bul;
     }
