@@ -6,6 +6,11 @@ public class GameData : MonoBehaviour
 {
     public SpellCardUI spellcardUI;
     public SFX lifeDepletedSFX;
+    public SFX shortarrowSFX;
+    public SFX longarrowSFX;
+    public SFX windboltSFX;
+    public SFX explosionSFX;
+    
     public BulletPack pointedBullet, smallRoundBullet, bigBullet, arrowBullet, ellipseBullet, starBullet, laserBullet;
     public BulletPack magicCircles;
     public BulletPack stage5lines;
