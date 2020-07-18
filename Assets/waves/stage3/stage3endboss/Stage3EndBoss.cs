@@ -83,10 +83,12 @@ public class Stage3EndBoss : EnemyBossWave
     }
     IEnumerator PreFight2()
     {
+        AudioManager.current.PlaySFX(GameManager.gameData.flyinginSFX);
         yield return new WaitForSeconds(1f);
         bossImage = Instantiate(image, new Vector2(-4.1f, 4.1f), Quaternion.identity);
         float time = bossImage.GetComponent<Movement>().MoveTo(new Vector2(0, spawnLocationY), initialMoveSpeed);
         yield return new WaitForSeconds(time);
+        AudioManager.current.PlaySFX(GameManager.gameData.slamSFX);
         Instantiate(slamEffect, new Vector2(0, spawnLocationY), Quaternion.identity);
         StartCoroutine(DialogueManager.StartDialogue(preFightDialogue2, Phase1));
 
@@ -119,6 +121,8 @@ public class Stage3EndBoss : EnemyBossWave
                 180 + sideOriginAngle - sideBulletSpread, 180 + sideOriginAngle + sideBulletSpread, bulletspeed1, shotRate1), 0, shotPulseDuration1);
 
             yield return new WaitForSeconds(shotPulseDuration1 + minipause1);
+
+
             float time2 = currentBoss.movement.MoveTo(rightPosition1, bossSpeed1);
             yield return new WaitForSeconds(time2);
             currentBoss.shooting.StartShootingFor(BarrageOfReflectingBullets(leaf1, leafdmg1,
@@ -131,7 +135,7 @@ public class Stage3EndBoss : EnemyBossWave
             currentBoss.shooting.StartShooting(Functions.RepeatCustomActionXTimes(i =>
             {
                 Patterns.SpirallingOutwardsRing(GameManager.gameData.starBullet.GetItem(DamageType.Earth),
-                    harderdmg1, currentBoss.transform.position, harderradivalvel1, (i % 2 == 0 ? -1 : 1) * harderangularspeed1, harderbulletsperring1, 0, null);
+                    harderdmg1, currentBoss.transform.position, harderradivalvel1, (i % 2 == 0 ? -1 : 1) * harderangularspeed1, harderbulletsperring1, 0, GameManager.gameData.magicPulse1SFX);
             }, hardershotrate1, hardernumber1));
             yield return new WaitForSeconds(shotPulseDuration1 + pause1);
         }
@@ -229,6 +233,7 @@ public class Stage3EndBoss : EnemyBossWave
   
     Enemy ShootMushroom(float speed, float angle, DamageType type, float spinningvel, float startOrientation) {
         Enemy mushroom = Instantiate(GameManager.gameData.mushrooms.GetItem(type), currentBoss.transform.position, Quaternion.identity);
+        AudioManager.current.PlaySFX(GameManager.gameData.leaf1SFX);
         mushroom.movement.SetSpeed(speed, angle);
         mushroom.SetEnemy(mushroomStats4, false);
         mushroom.GetComponent<DamageDealer>().damageType = type;
@@ -240,11 +245,11 @@ public class Stage3EndBoss : EnemyBossWave
         ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > delay + movetime);
         trigger.OnTriggerEvent += movement =>
         {
-            Patterns.RingOfBullets(smallBul, smalldmg, movement.transform.position, ratio, explodeoffset, explodespeed,null);
+            Patterns.RingOfBullets(smallBul, smalldmg, movement.transform.position, ratio, explodeoffset, explodespeed,GameManager.gameData.gunSFX);
             movement.RemoveObject();
         };
         Bullet bul = Patterns.ShootCustomBullet(bigBul, bigdmg, pos, 
-            t=> t < movetime ? (Vector2)(Quaternion.Euler(0,0,angle)*new Vector2(speedbig,0)): new Vector2(0,0), MovementMode.Velocity,null);
+            t=> t < movetime ? (Vector2)(Quaternion.Euler(0,0,angle)*new Vector2(speedbig,0)): new Vector2(0,0), MovementMode.Velocity,GameManager.gameData.magicPulse1LouderSFX);
         bul.movement.triggers.Add(trigger);
         return bul;
     }
@@ -320,13 +325,14 @@ public class Stage3EndBoss : EnemyBossWave
             new Vector2(0, pillarSpeed1) : new Vector2(-pillarSpeed1, 0), 0.6f/pillarSpeed1);
         
         yield return new WaitForSeconds(0.6f / pillarSpeed1 + delaypillar1);
+        AudioManager.current.PlaySFX(GameManager.gameData.flyinginSFX);
         float time2 = pillar.movement.MoveTo(pillarlocation == 0 ? new Vector2(4.1f, pos) : pillarlocation == 1 ?
             new Vector2(pos, 4.1f) : new Vector2(-4.1f, pos), pillarSpeed2);
         yield return new WaitForSeconds(time2);
 
         currentBoss.shooting.StartShooting(Functions.RepeatCustomActionXTimes(
             i => Patterns.ShootMultipleStraightBullet(leaf1, leafdmg1, pillar.transform.position, leafspeed5 + i * leafspeeddiff5,
-            pillarlocation == 0 ? 180 : pillarlocation == 1 ? -90 : 0, leafspreadAngle5, numberOfLeafLine5,null), 0.02f, numberofLeafPerLines5));
+            pillarlocation == 0 ? 180 : pillarlocation == 1 ? -90 : 0, leafspreadAngle5, numberOfLeafLine5,GameManager.gameData.slamSFX), 0.02f, numberofLeafPerLines5));
         if (harder)
         {
             Patterns.RingOfBullets(GameManager.gameData.arrowBullet.GetItem(DamageType.Earth), harderdmg5, pillar.transform.position, hardernumber5, UnityEngine.Random.Range(0f, 360f), harderspeed5, null);
@@ -338,7 +344,7 @@ public class Stage3EndBoss : EnemyBossWave
     IEnumerator BarrageOfReflectingBullets(Bullet bul, float dmg, float angleMin, float angleMax, float speed, float shotRate)
     {
         return Functions.RepeatAction(() => Patterns.ReflectingBullet(bul, dmg, currentBoss.transform.position,
-            UnityEngine.Random.Range(angleMin, angleMax), speed,null), shotRate);
+            UnityEngine.Random.Range(angleMin, angleMax), speed,GameManager.gameData.shortarrowSFX), shotRate);
     }
 
     
@@ -360,7 +366,7 @@ public class Stage3EndBoss : EnemyBossWave
         {
             float time1 = currentBoss.movement.MoveTo(left ? rightPos : leftPos, movespeed2);
             currentBoss.shooting.StartShootingFor(
-                EnemyPatterns.ShootAtPlayerWithLines(leaf2, leafdmg2, currentBoss.transform, leafSped2, leafshotRate2, leafSpread2, leaflines2,null), 0, time1);
+                EnemyPatterns.ShootAtPlayerWithLines(leaf2, leafdmg2, currentBoss.transform, leafSped2, leafshotRate2, leafSpread2, leaflines2,GameManager.gameData.shortarrowSFX), 0, time1);
             yield return new WaitForSeconds(time1 + delay2);
             left = !left;
         }
@@ -371,7 +377,7 @@ public class Stage3EndBoss : EnemyBossWave
         Functions.StartMultipleCustomCoroutines(currentBoss.shooting,
             i => EnemyPatterns.CustomSpinningCustomBulletsCustomSpacing(
                     angle => {
-                        Bullet bul = Patterns.ReflectingBullet(leaf3, leaf3dmg, currentBoss.transform.position, angle, firstspeed + speeddiff * i,null);
+                        Bullet bul = Patterns.ReflectingBullet(leaf3, leaf3dmg, currentBoss.transform.position, angle, firstspeed + speeddiff * i,GameManager.gameData.shortarrowSFX);
                         bul.transform.localScale *= leaf3scale;
                         return bul;
                         },

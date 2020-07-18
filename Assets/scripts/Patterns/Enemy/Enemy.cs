@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
     public Shooting shooting;
     public DamageTaker damagetaker;
     public Collider2D collider;
-    public EnemyAudio enemyAudio;
 
     // Start is called before the first frame update
 
@@ -25,10 +24,7 @@ public class Enemy : MonoBehaviour
     {
 
         movement.destroyBoundary = 10f;
-        if (!enemyAudio)
-        {
-            enemyAudio = GetComponent<EnemyAudio>();
-        }
+    
     }
 
     //changes enemy stats given paramters, if the value is <0, it is considered to not change the original

@@ -32,12 +32,12 @@ public class Stage5Wave4 : EnemyWave
         en.shooting.StartShooting(Functions.RepeatAction(
             () =>
             {
-                Bullet bul = Patterns.ShootStraight(GameManager.gameData.starBullet.GetItem(subwave.type), bulletdmg, en.transform.position, 0, 0, null);
+                Bullet bul = Patterns.ShootStraight(GameManager.gameData.starBullet.GetItem(subwave.type), bulletdmg, en.transform.position, 0, 0, GameManager.gameData.clickSFX);
                 ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > delay);
                 trigger.OnTriggerEvent += movement =>
                 {
                     Patterns.ShootMultipleStraightBullet(GameManager.gameData.laserBullet.GetItem(subwave.type), bulletdmg,
-                    movement.transform.position, bulletspeed, Functions.AimAtPlayer(movement.transform), bulletspread, lines, null);
+                    movement.transform.position, bulletspeed, Functions.AimAtPlayer(movement.transform), bulletspread, lines, GameManager.gameData.shortarrowSFX);
                     movement.GetComponent<Bullet>().Deactivate();
                 };
                 bul.movement.triggers.Add(trigger);

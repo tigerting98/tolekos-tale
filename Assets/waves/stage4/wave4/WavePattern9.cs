@@ -28,7 +28,7 @@ public class WavePattern9 : EnemyWave
     protected EnemyPack enemies;
     protected Bullet bullet;
     protected BulletPack bullets;
-
+    protected SFX soundeffect = null;
     public virtual void SetUp()
     {
 
@@ -71,11 +71,11 @@ public class WavePattern9 : EnemyWave
         enemy.SetEnemy(stats, false);
         if (alternate)
         {
-            enemy.shooting.StartShooting(EnemyPatterns.BorderOfWaveAndParticle(bul, bulletDamage, enemy.transform, bulletSpeed, shotRate, numberOfLines, angularVelocity, null));
+            enemy.shooting.StartShooting(EnemyPatterns.BorderOfWaveAndParticle(bul, bulletDamage, enemy.transform, bulletSpeed, shotRate, numberOfLines, angularVelocity, soundeffect));
         } 
         else 
         {
-            enemy.shooting.StartShooting(EnemyPatterns.ConstantSpinningStraightBullets(bul, bulletDamage, enemy.transform, bulletSpeed, angularVelocity, 0, numberOfLines, shotRate,null));
+            enemy.shooting.StartShooting(EnemyPatterns.ConstantSpinningStraightBullets(bul, bulletDamage, enemy.transform, bulletSpeed, angularVelocity, 0, numberOfLines, shotRate,soundeffect));
         }
 
         yield return new WaitForSeconds(activeTime);

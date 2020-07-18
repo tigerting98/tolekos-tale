@@ -54,7 +54,7 @@ PrefabInstance:
     - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: EarthMultiplier
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1823239781229607043, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}

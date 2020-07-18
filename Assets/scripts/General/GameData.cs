@@ -7,6 +7,8 @@ public class GameData : MonoBehaviour
 {
     public SpellCardUI spellcardUI;
     [Header("SFX")]
+    public SFX touhoustreamingSFX;
+    public SFX magicCircleSummonSFX;
     public SFX lifeDepletedSFX;
     public SFX shortarrowSFX;
     public SFX longarrowSFX;
@@ -17,6 +19,20 @@ public class GameData : MonoBehaviour
     public SFX gunSFX;
     public SFX tpSFX;
     public SFX UISFX;
+    public SFX waterpulseSFX;
+    public SFX waterstreaming1SFX;
+    public SFX waterswooshSFX;
+    public SFX leaf1SFX;
+    public SFX slamSFX;
+    public SFX magicPulse1LouderSFX;
+    public SFX flyinginSFX;
+    public SFX firestreamingSFX;
+    public SFX firepulseSFX;
+    public SFX clickSFX;
+    public SFX mastersparkSFX, laser1SFX;
+    public SFX firelizardSummonSFX;
+    public SFX firebossSummonSFX;
+    public SFX kiraSFX;
     [Header("Bullets")]
     public BulletPack magicCircles;
     public BulletPack pointedBullet, smallRoundBullet, bigBullet, arrowBullet, ellipseBullet, starBullet, laserBullet;
@@ -36,6 +52,7 @@ public class GameData : MonoBehaviour
     public Bullet pageBullet;
     public Bullet raindrop;
     public Bullet featherBullet;
+
     [Header("Enemies")]
     public Enemy flyingBook;
     public EnemyPack ghosts, linemonster, mushrooms, pixies, libraryMonsters;

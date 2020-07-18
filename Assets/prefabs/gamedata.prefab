@@ -45,6 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellcardUI: {fileID: 1440613776595574203, guid: fbc60427d3170024288c8cb4b5ba2fa5,
     type: 3}
+  touhoustreamingSFX: {fileID: 11400000, guid: e0cb3a2d559323f499130bd7c25d7c26, type: 2}
+  magicCircleSummonSFX: {fileID: 11400000, guid: 28c9ab7c798eacd4d86b280735ee09a5,
+    type: 2}
   lifeDepletedSFX: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
   shortarrowSFX: {fileID: 11400000, guid: 94136f1805adc0748a6289604d02cf83, type: 2}
   longarrowSFX: {fileID: 11400000, guid: c254def07b7610d4192ae4bec424e8ee, type: 2}
@@ -54,6 +57,24 @@ MonoBehaviour:
   waterBolt1: {fileID: 11400000, guid: 1d228b5dce50f3b4298570ba1652e8f5, type: 2}
   gunSFX: {fileID: 11400000, guid: 5cc50710b614087489487b940f972a22, type: 2}
   tpSFX: {fileID: 11400000, guid: 90c01456488d43c44864ddd83d5a7fbd, type: 2}
+  UISFX: {fileID: 11400000, guid: c255ff9997ae2804894afba388a98cc3, type: 2}
+  waterpulseSFX: {fileID: 11400000, guid: d2ff5b9e5c4bfb54c8a5860e383d21f6, type: 2}
+  waterstreaming1SFX: {fileID: 11400000, guid: e06ce05537426344a8cad66162b92876, type: 2}
+  waterswooshSFX: {fileID: 11400000, guid: b3ff29c089373d64386c3936f231cb18, type: 2}
+  leaf1SFX: {fileID: 11400000, guid: e365597ce8eee424585e0629ccaf28a0, type: 2}
+  slamSFX: {fileID: 11400000, guid: 3a20dd8b407e7d54895d8d6b83781496, type: 2}
+  magicPulse1LouderSFX: {fileID: 11400000, guid: 306ec79f5a8eb63449b31f278f008ccc,
+    type: 2}
+  flyinginSFX: {fileID: 11400000, guid: 37eb1eb6dc5d4734881c59e06aa64200, type: 2}
+  firestreamingSFX: {fileID: 11400000, guid: f886b5155509eea45a6ab7d70f3629ea, type: 2}
+  firepulseSFX: {fileID: 11400000, guid: 89f61ed0ab2c86f4691bd17764fc3856, type: 2}
+  clickSFX: {fileID: 11400000, guid: 1d228b5dce50f3b4298570ba1652e8f5, type: 2}
+  mastersparkSFX: {fileID: 11400000, guid: 44565c4137d7a4c48bab2c7f5eda9dbe, type: 2}
+  laser1SFX: {fileID: 11400000, guid: 157096051bd246e45a4daf2257a98a55, type: 2}
+  firelizardSummonSFX: {fileID: 11400000, guid: 46d124f8840729048a7914e496c013e3,
+    type: 2}
+  firebossSummonSFX: {fileID: 11400000, guid: 70489c940af410c4a977f22ec1fa7283, type: 2}
+  kiraSFX: {fileID: 11400000, guid: 7d8c28f92a4bd604cb7e656227a626ad, type: 2}
   magicCircles: {fileID: 11400000, guid: ecb15ad31fbf67f4383a433a76ff2594, type: 2}
   pointedBullet: {fileID: 11400000, guid: 41aa83ad522d4c441b420119f326348b, type: 2}
   smallRoundBullet: {fileID: 11400000, guid: f6d3e6216ead4c946a5abcd2fba1d3b8, type: 2}

@@ -54,7 +54,7 @@ public class Stage5Wave2 : EnemyWave
        float time = en.movement.MoveTo(new Vector2(subwave.stopX, y), subwave.moveSpeed);
         yield return new WaitForSeconds(time);
         if (en) {
-            Patterns.BulletSpreadingOut(shootingBullet, dmg, en.transform.position, speed, speeddiff, Functions.AimAtPlayer(en.transform), shotnumber, null);
+            Patterns.BulletSpreadingOut(shootingBullet, dmg, en.transform.position, speed, speeddiff, Functions.AimAtPlayer(en.transform), shotnumber, GameManager.gameData.clickSFX);
             if (harder)
             { Patterns.BulletSpreadingOut(shootingBullet, dmg, en.transform.position, speed, speeddiff, Functions.AimAtPlayer(en.transform)- spreadharder, shotnumber, null);
                 Patterns.BulletSpreadingOut(shootingBullet, dmg, en.transform.position, speed, speeddiff, Functions.AimAtPlayer(en.transform)+spreadharder, shotnumber, null);

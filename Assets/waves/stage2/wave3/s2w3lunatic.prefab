@@ -57,6 +57,11 @@ PrefabInstance:
       propertyPath: arrowSpeed2
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -2699760848363402308, guid: 4f49f89e041a5f34c8859a0aaa07475c,
+        type: 3}
+      propertyPath: numberOfBlobs
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4522323344577174238, guid: 4f49f89e041a5f34c8859a0aaa07475c,
         type: 3}
       propertyPath: m_Name

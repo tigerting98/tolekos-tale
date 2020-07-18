@@ -64,9 +64,9 @@ public class WavePattern6 : EnemyWave
         if (enemy)
         {
             if (harder)
-            { enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate, spread, lines, null), 0.5f, stationaryTime + 0.5f);  }
+            { enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate, spread, lines, GameManager.gameData.firestreamingSFX), 0.5f, stationaryTime + 0.5f);  }
             else {
-                enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayer(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate, null), 0.5f, stationaryTime + 0.5f);
+                enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayer(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate, GameManager.gameData.firestreamingSFX), 0.5f, stationaryTime + 0.5f);
             }
         }
         yield return new WaitForSeconds(stationaryTime + 1f);

@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: earthspeed1
-      value: 2.5
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
@@ -150,7 +150,7 @@ PrefabInstance:
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: numberoffirebullets
-      value: 40
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
@@ -160,7 +160,7 @@ PrefabInstance:
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: firepulserate6
-      value: 2.4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
@@ -175,7 +175,7 @@ PrefabInstance:
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: wheelspeed6
-      value: 2.1
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
@@ -220,7 +220,7 @@ PrefabInstance:
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
       propertyPath: firenumbersperpulse6
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}
@@ -276,6 +276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: leafspreadangle8
       value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: fireshotrate6
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
         type: 3}

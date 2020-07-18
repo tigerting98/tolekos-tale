@@ -42,9 +42,9 @@ public class Stage5Wave3 : EnemyWave
             Enemy en = Instantiate(GameManager.gameData.flyingBook, wave.centre + new Polar(wave.radius,startangle).rect , Quaternion.identity);
             en.SetEnemy(stats, false);
             en.shooting.StartShootingFor(EnemyPatterns.PulsingBulletsRandomAngle(GameManager.gameData.pageBullet, shotdmg, en.transform, shotSpeed, 
-                pulseRate * (wave.summonBoss?0.76f:1), bulletsperPulse, null), 0.6f, shootingDuration);
+                pulseRate * (wave.summonBoss?0.76f:1), bulletsperPulse, GameManager.gameData.shortarrowSFX), 0.6f, shootingDuration);
             if (harder) {
-                en.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayer(GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), harderdmg, en.transform, harderspeed, hardershotrate, null)
+                en.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayer(GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), harderdmg, en.transform, harderspeed, hardershotrate, GameManager.gameData.clickSFX)
                     ,0.6f, shootingDuration);
             }
             en.movement.destroyBoundary = 5f;

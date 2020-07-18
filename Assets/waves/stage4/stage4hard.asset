@@ -18,10 +18,10 @@ MonoBehaviour:
   - {fileID: 6054226220132898661, guid: ca2e16569343d0a4bbfad80a268a4fe1, type: 3}
   - {fileID: 5325145269758752528, guid: 46a8a22168a40a24ab7286603c2dd83a, type: 3}
   timesFirstHalf:
-  - 0
-  - 25
-  - 40
+  - 3
+  - 28
   - 43
+  - 46
   midBoss: {fileID: 6920409525955772403, guid: d96f58c1605a7bf41b7c2ea4ab3758d3, type: 3}
   wavesSecondHalf:
   - {fileID: 71157803188820725, guid: 4ac77cdc7e4ea2e4d954aa79c0cdbdf8, type: 3}

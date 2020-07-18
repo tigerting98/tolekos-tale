@@ -34,13 +34,13 @@ public class Stage5Wave1 : EnemyWave
         enemy.SetEnemy(stats, false);
         float time = 2;
         enemy.shooting.StartShootingAfter(Functions.RepeatCustomAction(
-            i => ArcShape(round, smallrounddmg, enemy.transform.position, i % 2 == 0,
-            startSpeed, endSpeed, minTime, maxTime, numberPerArcs, numberOfArcs, Functions.AimAtPlayer(enemy.transform), null), shotRate
+            i => enemy.shooting.StartShooting(ArcShape(round, smallrounddmg, enemy.transform.position, i % 2 == 0,
+            startSpeed, endSpeed, minTime, maxTime, numberPerArcs, numberOfArcs, Functions.AimAtPlayer(enemy.transform))), shotRate
             ), time);
         if (harder) {
             enemy.shooting.StartShootingAfter(Functions.RepeatCustomAction(
-                i => ArcShape(round, smallrounddmg, enemy.transform.position, i % 2 == 1,
-                startSpeed, endSpeed, minTime, maxTime, numberPerArcs, numberOfArcs, Functions.AimAtPlayer(enemy.transform), null), shotRate
+                i => enemy.shooting.StartShooting(ArcShape(round, smallrounddmg, enemy.transform.position, i % 2 == 1,
+                startSpeed, endSpeed, minTime, maxTime, numberPerArcs, numberOfArcs, Functions.AimAtPlayer(enemy.transform))), shotRate
                 ), time);
         }
         enemy.shooting.StartShootingFor(Functions.RepeatAction(
@@ -48,7 +48,7 @@ public class Stage5Wave1 : EnemyWave
             {
                 for (int j = 0; j < starsPerShot; j++)
                 {
-                    Bullet bul = Patterns.ShootStraight(star, stardmg, Functions.RandomLocation(enemy.transform.position, 0.3f), Random.Range(0f, 360f), Random.Range(minSpeed, maxSpeed), null);
+                    Bullet bul = Patterns.ShootStraight(star, stardmg, Functions.RandomLocation(enemy.transform.position, 0.3f), Random.Range(0f, 360f), Random.Range(minSpeed, maxSpeed), GameManager.gameData.clickSFX);
                     bul.transform.localScale *= starsize;
                 }
             }, shotRateStar
@@ -61,18 +61,20 @@ public class Stage5Wave1 : EnemyWave
         }
 
     }
-    List<Bullet> ArcShape(Bullet bul, float dmg, Vector2 origin, bool clockwise, float initialSpeed, float finalSpeed, float minTime, float maxTime, int numberPerArc, int numberOfArcs, float offset, SFX sfx)
+    IEnumerator ArcShape(Bullet bul, float dmg, Vector2 origin, bool clockwise, float initialSpeed, float finalSpeed, float minTime, float maxTime, int numberPerArc, int numberOfArcs, float offset)
     {
-        
-        List<Bullet> buls = new List<Bullet>();
+        AudioManager.current.PlaySFX(GameManager.gameData.magicPulse1SFX);
+        float angle = 360f / (numberOfArcs * numberPerArc);
+        float time = (maxTime - minTime) / (numberPerArc - 1);
         for (int i = 0; i < numberPerArc; i++) 
         {
-            buls.AddRange(
-                Patterns.ExplodingRingOfBullets(bul, dmg, origin, numberOfArcs,
-                offset + (clockwise ? 1 : -1) * i * 360f / (numberOfArcs * numberPerArc), initialSpeed, finalSpeed, minTime + i * (maxTime - minTime) / (numberPerArc - 1),
-                null));
+
+              Functions.Scale(  Patterns.ExplodingRingOfBullets(bul, dmg, origin, numberOfArcs,
+                offset + (clockwise ? 1 : -1) * i * angle, initialSpeed, finalSpeed, minTime + i * time ,
+                null), ballSize);
+            yield return null;
         }
-        Functions.Scale(buls, ballSize);
-        return buls;
+
+
     }
 }

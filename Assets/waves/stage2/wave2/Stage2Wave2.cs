@@ -31,7 +31,7 @@ public class Stage2Wave2 : EnemyWave
         yield return new WaitForSeconds(time);
         if (enemy) {
            
-            EnemyPatterns.StartFanningPattern(bul, dmg, enemy.shooting, minSpeed, angularVel,0,  lines, shotRate, numberPerLine, speedDifference,null);
+            EnemyPatterns.StartFanningPattern(bul, dmg, enemy.shooting, minSpeed, angularVel,0,  lines, shotRate, numberPerLine, speedDifference, GameManager.gameData.waterstreaming1SFX);
         }
         yield return new WaitForSeconds(delay);
         if (enemy) {
@@ -54,8 +54,8 @@ public class Stage2Wave2 : EnemyWave
         enemy.deathEffects.OnDeath += () => StartCoroutine(DestroyAllBullets());
         yield return new WaitForSeconds(time);
         if (enemy) {
-            EnemyPatterns.StartFanningPattern(bul, dmg, enemy.shooting, minSpeed, angularVel2, 180, 1, shotRate2, numberPerLine, speedDifference,null);
-            EnemyPatterns.StartFanningPattern(bul, dmg, enemy.shooting, minSpeed, -angularVel2, 0, 1, shotRate2, numberPerLine, speedDifference,null);
+            EnemyPatterns.StartFanningPattern(bul, dmg, enemy.shooting, minSpeed, angularVel2, 180, 1, shotRate2, numberPerLine, speedDifference, GameManager.gameData.waterstreaming1SFX);
+            EnemyPatterns.StartFanningPattern(bul, dmg, enemy.shooting, minSpeed, -angularVel2, 0, 1, shotRate2, numberPerLine, speedDifference, GameManager.gameData.waterstreaming1SFX);
            
         }
         yield return new WaitForSeconds(beforeBossTime);

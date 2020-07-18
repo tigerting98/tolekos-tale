@@ -1939,7 +1939,7 @@ PrefabInstance:
     - target: {fileID: 7016885204452351669, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609, type: 3}
@@ -2038,7 +2038,7 @@ PrefabInstance:
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2276b1da7d62f1a47842690fb722f6bc, type: 3}
@@ -2156,8 +2156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc63cd80b636e541abd0b885eb3e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: 450005204737027867, guid: c82ba454fc58a7d41a899952045ef461, type: 3}
-  playerLevel: 23
+  wave: {fileID: 8724928883168259153, guid: 97cf587f45180de439b130c45694a2cf, type: 3}
+  playerLevel: 1000
 --- !u!4 &1931965796
 Transform:
   m_ObjectHideFlags: 0

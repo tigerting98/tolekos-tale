@@ -77,14 +77,15 @@ public class Stage2MidBoss : EnemyBossWave
     void StartPattern2() {
         SwitchToBoss();
         currentBoss.shooting.StartCoroutine(EnemyPatterns.BorderOfWaveAndParticle(waterBullet, dmg2,
-            currentBoss.transform, bulletPattern2Speed, pattern2ShotRate, numberOfLines2, pattern2angularvel,null));
+            currentBoss.transform, bulletPattern2Speed, pattern2ShotRate, numberOfLines2, pattern2angularvel,GameManager.gameData.waterstreaming1SFX));
    
     }
     IEnumerator Pattern1() {
         List<Bullet> magicCircles = Patterns.CustomRing(
 
             angle =>  Patterns.ShootCustomBullet(GameManager.gameData.waterCircle,0, currentBoss.transform.position, Movement.RotatePath(
-             angle, t => new Polar(t > timeToRadius ? radius + (float)(radiusVariance*Math.Sin(t-timeToRadius)) : radius * t / timeToRadius, angularVel * t).rect), MovementMode.Position, null)
+             angle, t => new Polar(t > timeToRadius ? radius + (float)(radiusVariance*Math.Sin(t-timeToRadius)) :
+             radius * t / timeToRadius, angularVel * t).rect), MovementMode.Position, GameManager.gameData.magicCircleSummonSFX)
             , 0, numberofMagicCircles);
 
         yield return new WaitForSeconds(delayBeforeShooting);
@@ -96,7 +97,8 @@ public class Stage2MidBoss : EnemyBossWave
             Shooting shooting = bul.GetComponent<Shooting>();          
             shooting.StartCoroutine(EnemyPatterns.RepeatSubPatternWithInterval(
                 ()=> EnemyPatterns.PulsingLines(waterBullet, dmg1, bul.transform, bulletPattern1Speed, 
-                y%2==0? 0:Functions.AimAtPlayer(bul.transform), pattern1ShotRate, numberOfLines, pattern1BulletsPerPulse, bulletSpawnSound), shooting, pattern1PulseRate));
+                y%2==0? 0:Functions.AimAtPlayer(bul.transform), pattern1ShotRate, numberOfLines, 
+                pattern1BulletsPerPulse, GameManager.gameData.shortarrowSFX), shooting, pattern1PulseRate));
             i++;
         }
      

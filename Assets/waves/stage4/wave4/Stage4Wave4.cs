@@ -9,5 +9,6 @@ public class Stage4Wave4 : WavePattern9
         bullet = GameManager.gameData.ellipseBullet.GetItem(DamageType.Fire);
         //TODO: make fire slime
         enemy = GameManager.gameData.linemonster.GetItem(DamageType.Fire);
+        soundeffect = GameManager.gameData.clickSFX;
     }
 }

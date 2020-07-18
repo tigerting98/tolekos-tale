@@ -84,10 +84,12 @@ public class Stage4EndBoss : EnemyBossWave
             GameObject.Find("stage4quad").GetComponent<Animator>().SetTrigger("StopMoving");
         }
         catch (Exception ex) { Debug.Log(ex.ToString()); }
+        AudioManager.current.PlaySFX(GameManager.gameData.magicCircleSummonSFX);
         BulletOrientation circle = Instantiate(fireCircle, spawnLocation, Quaternion.identity);
         yield return new WaitForSeconds(delaybeforeSpinning);
         circle.SetCustomAngularVel(t => spinAcceleration * t);
         yield return new WaitForSeconds(delaybeforeparticle);
+        AudioManager.current.PlaySFX(GameManager.gameData.firebossSummonSFX);
         Destroy(circle.gameObject);
         Destroy(Instantiate(spawnEffect, spawnLocation, Quaternion.Euler(-90, 0, 0)).gameObject, 5f);
         bossImage = Instantiate(image, spawnLocation, Quaternion.identity);
@@ -109,7 +111,7 @@ public class Stage4EndBoss : EnemyBossWave
         if (harder)
         {
             currentBoss.shooting.StartShooting(EnemyPatterns.PulsingBullets(GameManager.gameData.ellipseBullet.GetItem(DamageType.Fire), arrowdmgharder1, currentBoss.transform,
-              arrowspeedharder1, arrowpulserateharder1, arrownumber1, null));
+              arrowspeedharder1, arrowpulserateharder1, arrownumber1, GameManager.gameData.gunSFX));
         }
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
     }
@@ -131,7 +133,7 @@ public class Stage4EndBoss : EnemyBossWave
              ,i=> (slowSpawnRate2- fastSpawnRate2) * currentBoss.bosshealth.GetCurrentHP() / maxHP+ fastSpawnRate2));
         if (harder) {
             currentBoss.shooting.StartShooting(Functions.RepeatAction(
-                () => Patterns.RingAroundBossAimAtPlayer(GameManager.gameData.fireBall, harderdmg2, currentBoss.transform.position, harderradius2, harderspeed2, hardernumber2, null),
+                () => Patterns.RingAroundBossAimAtPlayer(GameManager.gameData.fireBall, harderdmg2, currentBoss.transform.position, harderradius2, harderspeed2, hardernumber2, GameManager.gameData.gunSFX),
                 harderpulserate2));
         }
         currentBoss.bosshealth.OnLifeDepleted += EndPhase2;
@@ -166,7 +168,7 @@ public class Stage4EndBoss : EnemyBossWave
             Bullet circle = GameManager.bulletpools.SpawnBullet(GameManager.gameData.fireCircle, currentBoss.transform.position);
             circle.movement.MoveTo(new Vector2(-x3 + i * 2 * x3 / (numberOfCircles3 - 1), y3), speed1);
             circle.GetComponent<Shooting>().StartShootingAfter(EnemyPatterns.ShootAtPlayerWithLines(
-                GameManager.gameData.fireShortLaser, laserDmg3, circle.transform, laserspeed, lasershotRate3, spreadlaser3, numberoflasers3,null)
+                GameManager.gameData.fireShortLaser, laserDmg3, circle.transform, laserspeed, lasershotRate3, spreadlaser3, numberoflasers3,GameManager.gameData.firestreamingSFX)
                 , delayBetweenEach3 * i + 1.5f);
         }
         currentBoss.bosshealth.OnLifeDepleted += EndPhase3;
@@ -213,7 +215,7 @@ public class Stage4EndBoss : EnemyBossWave
             {
                 float originAngle = 90 + (i % 2 == 0 ? 1 : -1) * arcAngle5 / 2;
                 Patterns.ShootMultipleStraightBullet(fire, firearcdmg5, currentBoss.transform.position, arcspeed5, originAngle,
-                    spacingAngle5, (int)(arcAngle5 / (spacingAngle5 * 2)),null);
+                    spacingAngle5, (int)(arcAngle5 / (spacingAngle5 * 2)),GameManager.gameData.firepulseSFX);
 
             }, arcshotRate5
             ), time);
@@ -252,7 +254,7 @@ public class Stage4EndBoss : EnemyBossWave
 
             }, pulseRate6bullet));
         currentBoss.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandomAngle(
-            GameManager.gameData.bigBullet.GetItem(DamageType.Fire), dmg6Big, currentBoss.transform, speed6Big, shotRatebig6, numberOfBigBullet6,null)
+            GameManager.gameData.bigBullet.GetItem(DamageType.Fire), dmg6Big, currentBoss.transform, speed6Big, shotRatebig6, numberOfBigBullet6,GameManager.gameData.gunSFX)
             , shotRatebig6);
         currentBoss.bosshealth.OnLifeDepleted += EndPhase6;
     }
@@ -322,17 +324,21 @@ public class Stage4EndBoss : EnemyBossWave
     IEnumerator ShootLaserBeams(Bullet lase, Vector2 position, float speed) {
         float time = currentBoss.movement.MoveTo(position, speed);
         yield return new WaitForSeconds(time);
+        float activationtime = 1f;
         float angle = Functions.AimAtPlayer(currentBoss.transform);
         Bullet laser = GameManager.bulletpools.SpawnBullet(lase, currentBoss.transform.position, Quaternion.Euler(0, 0, angle));
         laser.orientation.SetFixedOrientation(angle);
         laser.SetDamage(laserDmg7);
-        yield return new WaitForSeconds(laserLastTime7);
+        yield return new WaitForSeconds(activationtime);
+        AudioManager.current.PlaySFX(GameManager.gameData.mastersparkSFX);
+        yield return new WaitForSeconds(laserLastTime7- activationtime);
         if (laser) {
             laser.GetComponent<Animator>().SetTrigger("FadeOut");
         }
 
     }
     IEnumerator SummonFireCircles( Vector2 position) {
+  
         Bullet fireRoundBall = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Fire);
         Bullet fireCircle = GameManager.bulletpools.SpawnBullet(GameManager.gameData.fireCircle, currentBoss.transform.position);
         float time = fireCircle.movement.MoveTo(position, magiccirclespeed);
@@ -345,7 +351,7 @@ public class Stage4EndBoss : EnemyBossWave
                     Patterns.CustomRing(angle => {
                         int y = i;
                         Bullet bul = Patterns.ShootCustomBullet(fireRoundBall, fireballdmg6, fireCircle.transform.position,
-                t => new Polar(radialvel6 * t, (y % 2 == 0 ? -1 : 1) * angularvel6 * t + angle).rect, MovementMode.Position,null);
+                t => new Polar(radialvel6 * t, (y % 2 == 0 ? -1 : 1) * angularvel6 * t + angle).rect, MovementMode.Position,GameManager.gameData.firepulseSFX);
                         bul.movement.destroyBoundary = 8f;
                         return bul;
                         }, 0, numberOfBullets6);
@@ -383,13 +389,15 @@ public class Stage4EndBoss : EnemyBossWave
                 Destroy(bul.gameObject, laserduration6);
                 Destroy(buls[i].gameObject, laserduration6);
             }
-        }
+        } yield return new WaitForSeconds(1);
+        AudioManager.current.PlaySFX(GameManager.gameData.laser1SFX);
 
     }
     void ShootMagicCircleRadiallyOutward(float startAngle, bool outwards, bool left) {
         Bullet magicCircle = GameManager.bulletpools.SpawnBullet(GameManager.gameData.fireCircle, currentBoss.transform.position);
+        AudioManager.current.PlaySFX(GameManager.gameData.gunSFX);
         magicCircle.movement.Reset();
-        magicCircle.movement.destroyBoundary = 8f;
+        magicCircle.movement.destroyBoundary = 5f;
         magicCircle.movement.SetCustomGraph(t => new Polar((radialVel4*(t+ 0.01f)),Mathf.Rad2Deg*(left?1:-1)*speed4circle/radialVel4 * (Mathf.Log((t+0.01f)/0.01f)) + startAngle).rect, MovementMode.Position);
         magicCircle.GetComponent<Shooting>().StartShooting(Functions.RepeatCustomAction(
             i => Pattern4Bullet(magicCircle.orientation.angle + (outwards? 90: -90), magicCircle.transform.position, delayBeforeMovingOff4 +
@@ -399,7 +407,7 @@ public class Stage4EndBoss : EnemyBossWave
     }
     Bullet  Pattern4Bullet(float angle, Vector2 origin, float delay, float acceleration, float totalAccelerationTime) {
         Bullet bul = Patterns.ShootCustomBullet(star, dmg4, origin, 
-            Movement.RotatePath(angle, t => new Vector2(t<delay? 0 : t< delay + totalAccelerationTime? acceleration:0,0)), MovementMode.Acceleration,null);
+            Movement.RotatePath(angle, t => new Vector2(t<delay? 0 : t< delay + totalAccelerationTime? acceleration:0,0)), MovementMode.Acceleration,GameManager.gameData.clickSFX);
         bul.transform.localScale = 0.8f * bul.transform.localScale;
         return bul;
 
@@ -411,10 +419,11 @@ public class Stage4EndBoss : EnemyBossWave
         Bullet fireBeam = GameManager.gameData.fireBeam;
         currentBoss.shooting.StartShootingFor(EnemyPatterns.CustomSpinningStraightBullets(
             fireBall, fireBalldmg1, currentBoss.transform, shootSpeed1, t => angle + spread1 * Mathf.Sin((float)(2 * Math.PI / period1 * t)),
-            4, shotRate1,null
+            4, shotRate1,GameManager.gameData.firestreamingSFX
             ), 0, timeperPulse1);
          Bullet laserLeft = GameManager.bulletpools.SpawnBullet(fireBeam, currentBoss.transform.position, Quaternion.Euler(0, 0, angle - spread1));
          Bullet laserRight = GameManager.bulletpools.SpawnBullet(fireBeam, currentBoss.transform.position, Quaternion.Euler(0, 0, angle + spread1));
+        AudioManager.current.PlaySFX(GameManager.gameData.laser1SFX);
         laserLeft.SetDamage(fireBeamdmg1);
         laserRight.SetDamage(fireBeamdmg1);
         laserLeft.orientation.SetFixedOrientation(angle - spread1);
@@ -439,7 +448,7 @@ public class Stage4EndBoss : EnemyBossWave
             {
                 float speed = UnityEngine.Random.Range(minSpeed2, maxSpeed2);
                 Bullet bul = Patterns.ShootStraight(star, dmg2star, location, UnityEngine.Random.Range(0f, 360f),
-                    speed,null);
+                    speed,GameManager.gameData.firepulseSFX);
                 bul.orientation.StartRotating(maxangularvel * speed / maxSpeed2);
 
 
@@ -451,15 +460,16 @@ public class Stage4EndBoss : EnemyBossWave
     }
 
     IEnumerator Phase3BossPulse(float angle) {
+        SFX sfx = GameManager.gameData.magicPulse1SFX;
         Bullet fireball = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Fire);
         if (!harder)
         {
             return Functions.RepeatActionXTimes(() => Patterns.ShootMultipleStraightBullet(fireball, fireballdmg3, currentBoss.transform.position, fireballspeed3,
-                angle, fireballspread3, fireballNumber3, null), fireballshotrate, (int)(fireballpulsetime / fireballshotrate));
+                angle, fireballspread3, fireballNumber3, sfx), fireballshotrate, (int)(fireballpulsetime / fireballshotrate));
         }
         else {
             return Functions.RepeatCustomActionXTimes(i => Patterns.SpirallingOutwardsRing(
-                        fireball, fireballdmg3, currentBoss.transform.position, fireballspeed3, (i % 2 == 0 ? 1 : -1) * harderangularvel3, fireballNumber3, 0, null),
+                        fireball, fireballdmg3, currentBoss.transform.position, fireballspeed3, (i % 2 == 0 ? 1 : -1) * harderangularvel3, fireballNumber3, 0, sfx),
                         fireballshotrate, (int)(fireballpulsetime / fireballshotrate));
         }
  

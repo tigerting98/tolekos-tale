@@ -15,4 +15,4 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 35661c47c5e77b04488aa85da78e31d1, type: 3}
   volume: 0.04
   id: shortarrow
-  cooldownTime: 0.01
+  cooldownTime: 0.1

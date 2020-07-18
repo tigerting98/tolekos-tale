@@ -46,6 +46,8 @@ public class Stage3MidBoss : EnemyBossWave
         float time = bossImage.GetComponent<Movement>().MoveTo(new Vector2(0, spawnLocationY), initialMoveSpeed);
         yield return new WaitForSeconds(time);
         Instantiate(slamEffect, new Vector2(0, spawnLocationY-0.5f), Quaternion.Euler(-90, 0, 0));
+
+        AudioManager.current.PlaySFX(GameManager.gameData.slamSFX);
         Destroy(actualCircle.gameObject);
         StartCoroutine(DialogueManager.StartDialogue(preFightDialogue2, Phase1));
 
@@ -106,7 +108,7 @@ public class Stage3MidBoss : EnemyBossWave
         yield return new WaitForSeconds(pauseDuration1 + time);
             if (currentBoss && harder) {
                 Patterns.RingOfBullets(GameManager.gameData.bigBullet.GetItem(DamageType.Earth), harderdmg, currentBoss.transform.position, hardernumber1ring,
-                    UnityEngine.Random.Range(0f, 360f), harderspeed1, null);
+                    UnityEngine.Random.Range(0f, 360f), harderspeed1, GameManager.gameData.gunSFX);
             }
         }
     }
@@ -118,7 +120,8 @@ public class Stage3MidBoss : EnemyBossWave
         for (int i = 0; i < number; i++)
         {
             float initialSpeed = UnityEngine.Random.Range(initialspeed1min, intialspeed1max);
-            bullets.Add(EnemyPatterns.FallingBullet(bul, dmg, origin, 90 + UnityEngine.Random.Range(-anglerange1, anglerange1), acceleration1, initialSpeed * 2 / acceleration1, initialSpeed,null));
+            bullets.Add(EnemyPatterns.FallingBullet(bul, dmg, origin, 90 + UnityEngine.Random.Range(-anglerange1, anglerange1), 
+                acceleration1, initialSpeed * 2 / acceleration1, initialSpeed, GameManager.gameData.windboltSFX));
         }
         return bullets;
     }
@@ -139,7 +142,9 @@ public class Stage3MidBoss : EnemyBossWave
     }
 
     IEnumerator ShootRing(Bullet ring, Bullet star, Vector2 origin, Vector2 target, float timeToExplode) {
+
         Bullet ring1 = GameManager.bulletpools.SpawnBullet(ring, origin);
+        AudioManager.current.PlaySFX(GameManager.gameData.gunSFX);
         ring1.transform.localScale *= 0.5f;
         ring1.movement.destroyBoundary = 5f;
         ring1.movement.MoveTo(target, ringspeed);
@@ -151,7 +156,7 @@ public class Stage3MidBoss : EnemyBossWave
                 bulletspeedfast, bulletspeedslow, bulletspeedtime, null);
             if (harder) {
                 Patterns.RingOfBullets(GameManager.gameData.arrowBullet.GetItem(DamageType.Earth), harderdmg2, ring1.transform.position, numberOfBulletsPerRing, UnityEngine.Random.Range(0f, 360f)
-                    , harderspeed2, null);
+                    , harderspeed2, GameManager.gameData.magicPulse1LouderSFX);
             }
             ring1.Deactivate();
         }

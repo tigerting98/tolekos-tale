@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: curly
   m_EditorClassIdentifier: 
   objects:
-  - {fileID: 3239767897625306659, guid: a45cc3e9b2e7d4746bfb95e9f181953e, type: 3}
+  - {fileID: 9156910735778241713, guid: ed71d482b3e484245a09217635ed0925, type: 3}
   - {fileID: 9156910735778241713, guid: 7ad314b1866e9944faeb81481f383c38, type: 3}
   - {fileID: 4459303641503581329, guid: ba3dc312562f4f243aedede2b586aac4, type: 3}
   - {fileID: 424531980175920826, guid: 7249274281dc04e4cbc1b412a39df9f2, type: 3}

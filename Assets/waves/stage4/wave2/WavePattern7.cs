@@ -80,20 +80,24 @@ Along with the number of projectiles per ring and how long the enemy remains act
 
         if (enemy)
         {
-            enemy.shooting.StartCoroutine(Functions.RepeatAction(()=>Patterns.RingOfBullets(bigBullet, bulletDamage, enemy.transform.position, numberOfBigBulletsPerRing, RandomOffset(), bigBulletSpeed,null)
+            enemy.shooting.StartCoroutine(Functions.RepeatAction(()=>Patterns.RingOfBullets(bigBullet, bulletDamage, enemy.transform.position, numberOfBigBulletsPerRing, RandomOffset(), bigBulletSpeed,
+                GameManager.gameData.gunSFX)
                                                                 , timeBetweenBigBulletRing));
             enemy.shooting.StartCoroutine(
                 Functions.RepeatAction(()=>{
                     float offset = RandomOffset();
                     enemy.shooting.StartCoroutine
                     (Functions.RepeatActionXTimes(
-                        ()=>Patterns.RingOfBullets(smallBullet, bulletDamage, enemy.transform.position, numberOfSmallBulletsPerRing, offset, smallBulletSpeed,null),
+                        ()=>Patterns.RingOfBullets(smallBullet, bulletDamage, enemy.transform.position, numberOfSmallBulletsPerRing, offset, smallBulletSpeed,GameManager.gameData.firepulseSFX),
                     smallBulletRingFireRate, numberOfSmallBulletRingsPerPulse));
                 }, 
                 timeBetweenSmallBulletPulse));
-            enemy.shooting.StartShooting(Functions.RepeatCustomAction(
-                i => Patterns.SpirallingOutwardsRing(harderBullet, harderdmg, enemy.transform.position, harderradialvel, (i % 2 == 0 ? -1 : 1) * harderangularvel, hardernumber, 0, null), harderpulseRate));
-        }
+            if (harder)
+            {
+                enemy.shooting.StartShooting(Functions.RepeatCustomAction(
+                  i => Patterns.SpirallingOutwardsRing(harderBullet, harderdmg, enemy.transform.position, harderradialvel, (i % 2 == 0 ? -1 : 1) * harderangularvel, hardernumber, 0, GameManager.gameData.magicPulse1SFX), harderpulseRate));
+            }
+            }
 
         yield return new WaitForSeconds(stationaryTime);
 

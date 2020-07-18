@@ -56,7 +56,9 @@ public class Stage3Wave2 : EnemyWave
 
     }
     Bullet LeafDroppingBullet(Vector2 origin, float angle) {
+
         Bullet bul = GameManager.bulletpools.SpawnBullet(bullet, origin);
+        AudioManager.current.PlaySFX(GameManager.gameData.shortarrowSFX);
         bul.SetDamage(bulletDmg);
         bul.movement.SetAcceleration(Quaternion.Euler(0, 0, angle) * new Vector2(startSpeed, 0), t => new Vector2(Random.Range(-accelerationFactor, accelerationFactor), 0));
         bul.orientation.SetFixedOrientation(orientationangle);

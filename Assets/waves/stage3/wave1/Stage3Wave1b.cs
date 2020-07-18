@@ -9,5 +9,6 @@ public class Stage3Wave1b : WavePattern1
     {
         enemies.Add(GameManager.gameData.greenSlime);
         bullet = GameManager.gameData.smallRoundBullet.GetItem(DamageType.Earth);
+        pulsingSFX = GameManager.gameData.windboltSFX;
     }
 }

@@ -186,7 +186,7 @@ MonoBehaviour:
   right6: {x: 3, y: 3}
   firespeed6: 2
   firedmg6: 410
-  firepulserate6: 3
+  firepulserate6: 3.5
   fireshotrate6: 0.3
   bigdmg6: 500
   delay6: 1

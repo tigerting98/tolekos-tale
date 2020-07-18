@@ -57,7 +57,6 @@ public class EnemyBossWave : EnemyWave
             PlayLifeDepletedSound();
             currentBoss.shooting.StopAllCoroutines();
             currentBoss.movement.StopMoving();
-            currentBoss.enemyAudio.StopAllCoroutines();
             StartCoroutine(DestroyNonBoss());
             if (currentUI)
             { Destroy(currentUI.gameObject); }
@@ -69,6 +68,8 @@ public class EnemyBossWave : EnemyWave
         
     }
     protected IEnumerator DestroyNonBoss() {
+        GameManager.DestroyAllNonBossEnemy(true);
+        GameManager.DestoryAllEnemyBullets();
         yield return null;
         bool bl = GameManager.DestroyAllNonBossEnemy(true);
         if (bl)

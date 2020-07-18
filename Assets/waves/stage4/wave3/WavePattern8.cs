@@ -86,7 +86,7 @@ public class WavePattern8 : EnemyWave
                         bullet = lineBullet;
                     }
                     enemy.shooting.StartShootingFor(
-                    EnemyPatterns.ShootAtPlayer(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate,null), 0, numberOfBulletsPerLine * shotRate);},
+                    EnemyPatterns.ShootAtPlayer(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate,GameManager.gameData.firestreamingSFX), 0, numberOfBulletsPerLine * shotRate);},
                 numberOfBulletsPerLine * shotRate + pulseRate));
         Destroy(enemy.gameObject, timeToMove);
         yield return new WaitForSeconds(0.1f);

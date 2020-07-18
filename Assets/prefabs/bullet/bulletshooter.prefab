@@ -12,18 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978b1695037bf83418579d61fd3ac9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6207657508261072161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776018412723234696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32aef5404f2a8149a7ca21e400a1e71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5134184374648591796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,10 +24,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761ea01261d39e043bf79e1e0aa02213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnParticles: {fileID: 1486158591509147164, guid: f842d70c95d46f34da5d63689211659f,
-    type: 3}
-  size: 0.7
-  spawnAnimation: 1
 --- !u!1001 &6124464878241054496
 PrefabInstance:
   m_ObjectHideFlags: 0

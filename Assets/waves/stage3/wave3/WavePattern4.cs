@@ -64,7 +64,7 @@ public class WavePattern4 : EnemyWave
             float bulletSpeed = this.bulletSpeed;
             float angle = Functions.AimAtPlayer(en.transform);
             for (int i = 0; i < bulletsPerLine; i++) {
-                Patterns.ShootMultipleStraightBullet(GameManager.gameData.leafBullet1, bulletDamage, en.transform.position, bulletSpeed, angle, shotAngle, lines,null);
+                Patterns.ShootMultipleStraightBullet(GameManager.gameData.leafBullet1, bulletDamage, en.transform.position, bulletSpeed, angle, shotAngle, lines,GameManager.gameData.longarrowSFX);
                 bulletSpeed += 0.5f; 
             }
         } 
