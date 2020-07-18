@@ -65,22 +65,32 @@ PrefabInstance:
     - target: {fileID: 1217529442458032734, guid: f9fabcb17b01a214c9657824e1d003cf,
         type: 3}
       propertyPath: subwaves.Array.data[0].numOfEnemies
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1217529442458032734, guid: f9fabcb17b01a214c9657824e1d003cf,
         type: 3}
       propertyPath: subwaves.Array.data[1].numOfEnemies
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1217529442458032734, guid: f9fabcb17b01a214c9657824e1d003cf,
         type: 3}
       propertyPath: subwaves.Array.data[2].numOfEnemies
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1217529442458032734, guid: f9fabcb17b01a214c9657824e1d003cf,
         type: 3}
       propertyPath: shotRate
       value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217529442458032734, guid: f9fabcb17b01a214c9657824e1d003cf,
+        type: 3}
+      propertyPath: spawnRate
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217529442458032734, guid: f9fabcb17b01a214c9657824e1d003cf,
+        type: 3}
+      propertyPath: jitterFactor
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1217529442458032735, guid: f9fabcb17b01a214c9657824e1d003cf,
         type: 3}

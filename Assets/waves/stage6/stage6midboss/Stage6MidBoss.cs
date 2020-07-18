@@ -27,7 +27,7 @@ public class Stage6MidBoss : EnemyBossWave
     [SerializeField] float ringSpeed = 2f, bubbleSpeedMin = 1f, bubbleSpeedMax = 3f, bubbleRandomFactor = 15f;
     [SerializeField] float ringPulseRate = 2f, bubbleShotRate = 0.1f;
     [SerializeField] float moveSpeed = 1.5f;
-    [SerializeField] int numberOfBulletsPerRing2 = 20, numberOfLasersPairs = 5;
+    [SerializeField] int numberOfBulletsPerRing2 = 20;
     private bool homing = false;
 
 

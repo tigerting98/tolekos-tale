@@ -10,27 +10,37 @@ PrefabInstance:
     - target: {fileID: 8892409674584418258, guid: 12ee7654e135bac4e8e64abcc0c98003,
         type: 3}
       propertyPath: subwaves.Array.data[0].numOfEnemies
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8892409674584418258, guid: 12ee7654e135bac4e8e64abcc0c98003,
         type: 3}
       propertyPath: subwaves.Array.data[1].numOfEnemies
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8892409674584418258, guid: 12ee7654e135bac4e8e64abcc0c98003,
         type: 3}
       propertyPath: subwaves.Array.data[2].numOfEnemies
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8892409674584418258, guid: 12ee7654e135bac4e8e64abcc0c98003,
         type: 3}
       propertyPath: shotRate
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8892409674584418258, guid: 12ee7654e135bac4e8e64abcc0c98003,
         type: 3}
       propertyPath: moveSpeed
-      value: 1.7
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892409674584418258, guid: 12ee7654e135bac4e8e64abcc0c98003,
+        type: 3}
+      propertyPath: spawnRate
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892409674584418258, guid: 12ee7654e135bac4e8e64abcc0c98003,
+        type: 3}
+      propertyPath: bulletAccel
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8892409674584418259, guid: 12ee7654e135bac4e8e64abcc0c98003,
         type: 3}

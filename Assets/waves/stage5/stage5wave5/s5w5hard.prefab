@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: 7897652670564822546, guid: 83d01416b6a9dc942a4555ecbb3ec41b,
         type: 3}
       propertyPath: subwaves.Array.data[1].numOfEnemies
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7897652670564822546, guid: 83d01416b6a9dc942a4555ecbb3ec41b,
         type: 3}
       propertyPath: subwaves.Array.data[2].numOfEnemies
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7897652670564822546, guid: 83d01416b6a9dc942a4555ecbb3ec41b,
         type: 3}
       propertyPath: subwaves.Array.data[0].numOfEnemies
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7897652670564822546, guid: 83d01416b6a9dc942a4555ecbb3ec41b,
         type: 3}
@@ -31,6 +31,16 @@ PrefabInstance:
         type: 3}
       propertyPath: shotRate
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7897652670564822546, guid: 83d01416b6a9dc942a4555ecbb3ec41b,
+        type: 3}
+      propertyPath: spawnRate
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7897652670564822546, guid: 83d01416b6a9dc942a4555ecbb3ec41b,
+        type: 3}
+      propertyPath: jitterFactor
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7897652670564822547, guid: 83d01416b6a9dc942a4555ecbb3ec41b,
         type: 3}
