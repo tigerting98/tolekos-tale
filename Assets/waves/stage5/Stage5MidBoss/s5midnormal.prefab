@@ -68,7 +68,7 @@ MonoBehaviour:
   bulletSpeed1: 1.5
   spread: 135
   frequency: 0.2
-  shotRate1: 0.17
+  shotRate1: 0.21
   lines1: 3
   hardRingDamage: 400
   hardRingPulseRate: 2

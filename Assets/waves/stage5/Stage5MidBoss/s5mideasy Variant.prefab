@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 450005204737027866, guid: c82ba454fc58a7d41a899952045ef461,
         type: 3}
       propertyPath: m_Name
-      value: s5mideasy
+      value: s5mideasy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 450005204737027867, guid: c82ba454fc58a7d41a899952045ef461,
         type: 3}
@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 450005204737027867, guid: c82ba454fc58a7d41a899952045ef461,
         type: 3}
       propertyPath: shotRate1
-      value: 0.2
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 450005204737027867, guid: c82ba454fc58a7d41a899952045ef461,
         type: 3}
@@ -100,12 +100,12 @@ PrefabInstance:
     - target: {fileID: 450005204737027867, guid: c82ba454fc58a7d41a899952045ef461,
         type: 3}
       propertyPath: laserCooldown
-      value: 14
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 450005204737027867, guid: c82ba454fc58a7d41a899952045ef461,
         type: 3}
       propertyPath: pageShotRate
-      value: 0.12
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 450005204737027867, guid: c82ba454fc58a7d41a899952045ef461,
         type: 3}

@@ -26,10 +26,13 @@ public class Stage1MidBoss : EnemyBossWave
 
     public void Defeated() {
         OnDefeat?.Invoke();
-        GameManager.DestoryAllEnemyBullets();
+        StartCoroutine(DestroyAllBullet());
         DestroyAfter(5);
     }
-
+    IEnumerator DestroyAllBullet() {
+        yield return null;
+        GameManager.DestoryAllEnemyBullets();
+    }
     public override void SpawnWave() {
         StartCoroutine(BossPatterns());
     
@@ -46,12 +49,12 @@ public class Stage1MidBoss : EnemyBossWave
             for (int i = 0; i < numberofPulses; i++)
             {
                 currentBoss.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandom(GameManager.gameData.smallRoundBullet.GetAllItems(), dmgBall, 
-                    currentBoss.transform, ballSpeed, ballShotRate, ballNumber,bulletSpawnSound),
+                    currentBoss.transform, ballSpeed, ballShotRate, ballNumber,GameManager.gameData.magicPulse1SFX),
                   delay * i);
             }
             while (currentBoss) {
                 currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(GameManager.gameData.pointedBullet.GetItem(UnityEngine.Random.Range(0, 4)), dmgPointed, currentBoss.transform,
-                    straightSpeed, straightShotRate, spreadAngle, straightLines, bulletSpawnSound), 0, straightPulseTime);
+                    straightSpeed, straightShotRate, spreadAngle, straightLines, GameManager.gameData.shortarrowSFX), 0, straightPulseTime);
                 yield return new WaitForSeconds(pauseTime);
             }
         }

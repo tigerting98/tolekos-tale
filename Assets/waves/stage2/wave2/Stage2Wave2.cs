@@ -27,7 +27,7 @@ public class Stage2Wave2 : EnemyWave
         Enemy enemy = Instantiate(GameManager.gameData.waterFairy, new Vector2(x, 4.1f), Quaternion.identity);
         enemy.SetEnemy(smallStat, true);
         float time = enemy.movement.MoveTo(new Vector2(x, stopY), moveSpeed1);
-        enemy.deathEffects.OnDeath += GameManager.DestoryAllEnemyBullets;
+        enemy.deathEffects.OnDeath += ()=> StartCoroutine(DestroyAllBullets());
         yield return new WaitForSeconds(time);
         if (enemy) {
            
@@ -39,7 +39,10 @@ public class Stage2Wave2 : EnemyWave
             enemy.movement.SetSpeed(new Vector2(0, -moveSpeed2));
         }
     }
-    
+    IEnumerator DestroyAllBullets() {
+        yield return null;
+        GameManager.DestoryAllEnemyBullets();
+    }
     public void SpawnNextHalf() {
         StartCoroutine(SpawnEnemy2());
     }
@@ -48,7 +51,7 @@ public class Stage2Wave2 : EnemyWave
         enemy.SetEnemy(bigStat, true);
         enemy.transform.localScale = 1.5f * enemy.transform.localScale;
         float time = enemy.movement.MoveTo(new Vector2(0, stopY), moveSpeed1);
-        enemy.deathEffects.OnDeath += GameManager.DestoryAllEnemyBullets;
+        enemy.deathEffects.OnDeath += () => StartCoroutine(DestroyAllBullets());
         yield return new WaitForSeconds(time);
         if (enemy) {
             EnemyPatterns.StartFanningPattern(bul, dmg, enemy.shooting, minSpeed, angularVel2, 180, 1, shotRate2, numberPerLine, speedDifference,null);
@@ -56,8 +59,9 @@ public class Stage2Wave2 : EnemyWave
            
         }
         yield return new WaitForSeconds(beforeBossTime);
-        GameManager.DestoryAllEnemyBullets();
         GameManager.DestroyAllNonBossEnemy(false);
+        yield return null;
+        GameManager.DestoryAllEnemyBullets();
         GameManager.SummonMidBoss();
     }
 

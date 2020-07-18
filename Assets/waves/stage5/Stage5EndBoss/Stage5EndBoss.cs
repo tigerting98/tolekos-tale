@@ -789,8 +789,7 @@ public class Stage5EndBoss : EnemyBossWave
             StopAll(waterBoss);
             StopAll(earthBoss);
             StopAll(fireBoss);
-            GameManager.DestoryAllEnemyBullets();
-            GameManager.DestroyAllNonBossEnemy(true);
+            StartCoroutine(DestroyNonBoss());
             if (currentUI)
             { Destroy(currentUI.gameObject); }
         }

@@ -81,7 +81,8 @@ public class Stage1Wave3 : EnemyWave
         if (chanceofShooting > Random.Range(0f, 1f))
         {
             newEnemy.shooting.StartShootingAfter
-              (EnemyPatterns.ExplodingLinesAtPlayer(bullet, dmg, newEnemy.transform, initialSpeed, finalSpeed, bulletCount, minTime, maxTime, shotRate, lines, spread, bulletSpawnSound), shotRate / 2);
+              (EnemyPatterns.ExplodingLinesAtPlayer(bullet, dmg, newEnemy.transform, initialSpeed, finalSpeed, bulletCount, minTime, maxTime, shotRate, 
+              lines, spread, GameManager.gameData.longarrowSFX), shotRate / 2);
 
         }
         newEnemy.DestroyAfter(time);

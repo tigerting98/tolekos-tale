@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public static Hashtable enemyBullets = new Hashtable();
     public static Hashtable collectibles = new Hashtable();
     public static BulletPools bulletpools;
+    public static float SFXVolume = 1f;
+    public static float musicVolume = 1f;
 
     public static event Action<bool> OnGameover;
     public static event Action OnSummonEndBoss;
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public static void DestroyAllNonBossEnemy(bool dropLoot) {
+    public static bool DestroyAllNonBossEnemy(bool dropLoot) {
         List<Enemy> toDestroy= new List<Enemy>();
         foreach (GameObject obj in enemies.Values) {
             if (obj.GetComponent<Boss>() == null)
@@ -70,6 +72,7 @@ public class GameManager : MonoBehaviour
                   Destroy(toDestroy[i].gameObject);
                 }
         }
+        return toDestroy.Count > 0;
         
     }
 

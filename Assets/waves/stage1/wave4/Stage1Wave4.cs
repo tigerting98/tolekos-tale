@@ -104,9 +104,9 @@ public class Stage1Wave4 : EnemyWave
         Bullet bul1 = GameManager.gameData.ellipseBullet.GetItem(Random.Range(0, 4));
         Bullet bul2 = GameManager.gameData.starBullet.GetItem(Random.Range(0, 3));
         enemy.shooting.ShootWhenInBound(EnemyPatterns.PulsingBulletsRandomAngle(bul1, dmg1, enemy.transform,
-            Random.Range(bulletSpeedMin, bulletSpeedMax), shotRate, Random.Range(minLines, maxLines+1),null));
+            Random.Range(bulletSpeedMin, bulletSpeedMax), shotRate, Random.Range(minLines, maxLines+1),GameManager.gameData.gunSFX));
         enemy.shooting.ShootWhenInBound(EnemyPatterns.PulsingBulletsRandomAngle(bul2, dmg1, enemy.transform,
-            Random.Range(bulletSpeedMin, bulletSpeedMax), shotRate, Random.Range(minLines, maxLines + 1),null));
+            Random.Range(bulletSpeedMin, bulletSpeedMax), shotRate, Random.Range(minLines, maxLines + 1), null));
         
     }
 
@@ -122,10 +122,11 @@ public class Stage1Wave4 : EnemyWave
         Enemy enemy = Instantiate(en, new Vector2(x, posY), Quaternion.identity);
         enemy.SetEnemy(stats, false);
         Bullet bul = GameManager.gameData.whiteArrowBullet;
-        tpSFX.PlayClip();
+        
+        AudioManager.current.PlaySFX(GameManager.gameData.tpSFX);
         yield return new WaitForSeconds(delay);
         if (enemy)
-        { enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(bul, dmg2, enemy.transform, bulletSpeed2, shotRate2, angle, lines,null), 0, duration);
+        { enemy.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(bul, dmg2, enemy.transform, bulletSpeed2, shotRate2, angle, lines,GameManager.gameData.shortarrowSFX), 0, duration);
         }
         yield return new WaitForSeconds(duration + pause);
         if (enemy) {

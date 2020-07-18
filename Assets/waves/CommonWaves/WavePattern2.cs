@@ -46,8 +46,8 @@ public class WavePattern2 : EnemyWave
             Enemy en = Instantiate(enemy, new Vector2(left ? -4.1f : 4.1f, y), Quaternion.identity);
             en.SetEnemy(stats, false);
             en.movement.SetSpeed(new Vector2(left ? movespeed : -movespeed, 0));
-            en.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(bullet, dmg
-                , en.transform, shotSpeed, shotRate,null), delay);
+            en.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayer(bullet, dmg
+                , en.transform, shotSpeed, shotRate, GameManager.gameData.shortarrowSFX), delay, (4f/movespeed)-delay);
 
         }
         , spawnRate, number));

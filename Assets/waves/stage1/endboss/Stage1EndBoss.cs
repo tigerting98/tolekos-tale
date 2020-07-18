@@ -13,11 +13,6 @@ public class Stage1EndBoss : EnemyBossWave
     [SerializeField] Dialogue midFightDialogue;
     [SerializeField] Dialogue endFightDialogue;
 
-    [Header("Audio")]
-    [SerializeField] SFX pattern1SFX;
-    [SerializeField] SFX pattern2SFX;
-    [SerializeField] SFX pattern3smashSFX;
-    [SerializeField] SFX pattern3tpSFX;
     [SerializeField] bool harder = false;
     [Header("Pattern1")]
     [SerializeField] int number1;
@@ -78,7 +73,7 @@ public class Stage1EndBoss : EnemyBossWave
         currentBoss.shooting.StartShooting(Pattern1(currentBoss));
         if (harder) {
             currentBoss.shooting.StartShooting(EnemyPatterns.PulsingBullets(GameManager.gameData.smallRoundBullet.GetItem(DamageType.Pure), dmg1ball, currentBoss.transform,
-                speed1, shotrate1, number1, null));
+                speed1, shotrate1, number1, GameManager.gameData.magicPulse1SFX));
         }
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
         
@@ -103,7 +98,7 @@ public class Stage1EndBoss : EnemyBossWave
         currentBoss.bosshealth.OnLifeDepleted += EndPhase2;
         currentBoss.shooting.StartShootingAfter(RainOfArrows(), 0.3f);
         currentBoss.shooting.StartShootingAfter(MoveLeftAndRight(), 0.3f);
-        currentBoss.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(GameManager.gameData.stage1arrowBullet, dmg2, currentBoss.transform, arrowSpeed, shotRate, pattern2SFX), 0.3f);
+        currentBoss.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(GameManager.gameData.stage1arrowBullet, dmg2, currentBoss.transform, arrowSpeed, shotRate, GameManager.gameData.longarrowSFX), 0.3f);
   
     }
 
@@ -141,10 +136,10 @@ public class Stage1EndBoss : EnemyBossWave
             animator.SetTrigger("Disappear");
             if (harder)
             {
-                Patterns.RingOfBullets(GameManager.gameData.starBullet.GetItem(UnityEngine.Random.Range(0, 3)),
+                Patterns.RingOfBullets(GameManager.gameData.starBullet.GetItem(Random.Range(0, 3)),
                     dmg3star, currentBoss.transform.position, number3, Functions.AimAtPlayer(currentBoss.transform), speed3harder, null);
              }
-            pattern3tpSFX.PlayClip();
+            AudioManager.current.PlaySFX(GameManager.gameData.tpSFX);
             yield return new WaitForSeconds(1f);
             if (animator)
             {
@@ -192,7 +187,7 @@ public class Stage1EndBoss : EnemyBossWave
                 float offset = UnityEngine.Random.Range(0f, 360f);
                 Patterns.CustomRing((angle) => enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(
                     GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), dmg1, 
-                    enemy.transform, angle, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing,pattern1SFX)), offset, numberOfCone);
+                    enemy.transform, angle, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing, GameManager.gameData.shortarrowSFX)), offset, numberOfCone);
             }, pattern1PulseRate);
      
         
@@ -221,7 +216,7 @@ public class Stage1EndBoss : EnemyBossWave
                     t =>
                     new Vector2(0, t < maxRadiusPattern3 / initialSpeedPattern3 ?
                     initialSpeedPattern3 : t < maxRadiusPattern3 / initialSpeedPattern3 + shortDelayPattern3 ?
-                    0 : -finalSpeedPattern3)), MovementMode.Velocity, pattern3smashSFX);
+                    0 : -finalSpeedPattern3)), MovementMode.Velocity, GameManager.gameData.explosionSFX);
                 bul.movement.destroyBoundary = 6f;
                 return bul;
             }, 0, numberOfBulletsPattern3); 

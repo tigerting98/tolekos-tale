@@ -1,13 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Policy;
 using UnityEngine;
 // this class holds a list of prefabs that are commonly used in the game
 public class GameData : MonoBehaviour
 {
     public SpellCardUI spellcardUI;
+    [Header("SFX")]
     public SFX lifeDepletedSFX;
-    public BulletPack pointedBullet, smallRoundBullet, bigBullet, arrowBullet, ellipseBullet, starBullet, laserBullet;
+    public SFX shortarrowSFX;
+    public SFX longarrowSFX;
+    public SFX windboltSFX;
+    public SFX explosionSFX;
+    public SFX magicPulse1SFX;
+    public SFX waterBolt1;
+    public SFX gunSFX;
+    public SFX tpSFX;
+    public SFX UISFX;
+    [Header("Bullets")]
     public BulletPack magicCircles;
+    public BulletPack pointedBullet, smallRoundBullet, bigBullet, arrowBullet, ellipseBullet, starBullet, laserBullet;
     public BulletPack stage5lines;
     public Bullet punchBullet, stage1arrowBullet, explosionBullet;
     public Bullet leafBullet1, leafBullet2, leafBullet3, rockBullet;
@@ -24,21 +36,21 @@ public class GameData : MonoBehaviour
     public Bullet pageBullet;
     public Bullet raindrop;
     public Bullet featherBullet;
+    [Header("Enemies")]
+    public Enemy flyingBook;
     public EnemyPack ghosts, linemonster, mushrooms, pixies, libraryMonsters;
     public Enemy waterFairy;
     public Enemy patternSprite, treeant;
     public Enemy midBossMushroomMob;
     public Enemy greenSlime;
     public Enemy candelabra, watercandle, pottedplant;
-    public Enemy flyingBook;
     public Sprite playerDialogueSprite;
     public LevelDescription beforeStage1;
-
+    [Header("Drops")]
     public BombDrop defaultBombDrop;
     public LifeDrop lifeDrop1000;
     public LifeDrop lifeDrop300;
     public LifeDrop lifeDropFull;
-    public SFX waterBolt1;
 
     private void Awake()
     {

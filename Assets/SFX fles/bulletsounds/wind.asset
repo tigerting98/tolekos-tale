@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9e4dc7d24b225640a1bf1ebc2260221, type: 3}
-  m_Name: shortarrowSFX 1
+  m_Name: wind
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 35661c47c5e77b04488aa85da78e31d1, type: 3}
-  volume: 0.15
-  id: shortarrtow-sfx
-  cooldownTime: 0.01
+  clip: {fileID: 8300000, guid: b204757fec9a25c4485dc63aabf2772a, type: 3}
+  volume: 0.05
+  id: sound-wind-s1w2
+  cooldownTime: 0.2

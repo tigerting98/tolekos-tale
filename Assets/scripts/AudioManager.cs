@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
             {
                 if (!coolDownDictionary.ContainsKey(sfx.id))
                 {
-                    SFXPlayer.PlayOneShot(sfx.clip, sfx.volume);
+                    SFXPlayer.PlayOneShot(sfx.clip, sfx.volume*GameManager.SFXVolume);
                     if (sfx.cooldownTime > 0)
                     {
                         coolDownDictionary.Add(sfx.id, new CoolDown(sfx.cooldownTime));

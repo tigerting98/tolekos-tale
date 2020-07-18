@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9e4dc7d24b225640a1bf1ebc2260221, type: 3}
-  m_Name: wind
+  m_Name: explosionSFX
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: b204757fec9a25c4485dc63aabf2772a, type: 3}
-  volume: 0.05
-  id: sound-wind-s1w2
-  cooldownTime: 0.01
+  clip: {fileID: 8300000, guid: 7bf3aaffda320e14796fd6518146a3d4, type: 3}
+  volume: 0.45
+  id: longerexplosionbulletSFX
+  cooldownTime: 0.5

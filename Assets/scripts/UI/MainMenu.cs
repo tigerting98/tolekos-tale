@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject instructionMenu;
-    public GameObject instructionButton, startButton, instructionBackButton, QuitButton;
+    public GameObject instructionButton, startButton, instructionBackButton, QuitButton, settingsButton;
     public GameObject difficultySelectionMenu, normalButton;
-    private GameObject lastSelected;
+    public GameObject settingsMenu;
+    public GameObject lastSelected;
     void Awake()
     {
        
@@ -29,9 +31,12 @@ public class MainMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(instructionBackButton);
     }
-
+    public void StartGame(int i) {
+        GameManager.sceneLoader.LoadStartGame(i);
+    }
     void Update()
     {
+
 
         GameObject current = EventSystem.current.currentSelectedGameObject;
         if (current != lastSelected && current != null)
@@ -86,6 +91,15 @@ public class MainMenu : MonoBehaviour
         instructionMenu.SetActive(true);
         Invoke("SetBack", 0.01f);
 
+    }
+    public void OpenSettingsMenu() {
+        settingsMenu.SetActive(true);
+    }
+    public void CloseSettingsMenu() {
+        settingsMenu.GetComponent<SettingMenu>().backButton.GetComponent<ButtonPointer>().OnDeselect(null);
+        settingsMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(settingsButton);
     }
     public void CloseInstructionMenu() {
         instructionMenu.SetActive(false);

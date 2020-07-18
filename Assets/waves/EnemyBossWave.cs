@@ -58,8 +58,7 @@ public class EnemyBossWave : EnemyWave
             currentBoss.shooting.StopAllCoroutines();
             currentBoss.movement.StopMoving();
             currentBoss.enemyAudio.StopAllCoroutines();
-            GameManager.DestoryAllEnemyBullets();
-            GameManager.DestroyAllNonBossEnemy(true);
+            StartCoroutine(DestroyNonBoss());
             if (currentUI)
             { Destroy(currentUI.gameObject); }
             SwitchToImage();
@@ -68,6 +67,13 @@ public class EnemyBossWave : EnemyWave
             Debug.Log(ex);
         }
         
+    }
+    protected IEnumerator DestroyNonBoss() {
+        yield return null;
+        bool bl = GameManager.DestroyAllNonBossEnemy(true);
+        if (bl)
+        { yield return null; }
+        GameManager.DestoryAllEnemyBullets();
     }
 
     public virtual void SpellCardUI(string name)
