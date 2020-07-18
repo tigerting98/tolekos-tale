@@ -25,7 +25,7 @@ public class LevelLoader : MonoBehaviour
             case Difficulty.Hard:
                 level = hardLevel;
                 break;
-            case Difficulty.Lunatic:
+            case Difficulty.Nightmare:
                 level = lunaticLevel;
                 break;
             default:

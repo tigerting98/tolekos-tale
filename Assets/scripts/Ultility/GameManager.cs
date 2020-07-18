@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-public enum Difficulty { Easy, Normal, Hard, Lunatic}
+public enum Difficulty { Easy, Normal, Hard, Nightmare}
 public class GameManager : MonoBehaviour
 {
     public static PauseMenu pauseMenu;
