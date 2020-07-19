@@ -172,7 +172,7 @@ MonoBehaviour:
   healthbar: {fileID: 4956400454607403870}
   healthtext: {fileID: 4956400455219333202}
   goldText: {fileID: 826458845}
-  bombDmgText: {fileID: 1941106833}
+  playerStatsText: {fileID: 0}
 --- !u!1 &759990871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1280,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4775f58f657575b4ab4e023078f0383f, type: 2}
   - {fileID: 11400000, guid: f01cd06fba29e784ebfcf86ff6bf14c3, type: 2}
   - {fileID: 11400000, guid: ee6b926d06362e441b071ca19b8fc9b7, type: 2}
+  - {fileID: 11400000, guid: a888d55fee0bbb74b8cabf05694eb72e, type: 2}
+  - {fileID: 11400000, guid: 1569b0dd4f9fea84eab75661315de196, type: 2}
+  - {fileID: 11400000, guid: 632d91124e4bd62419e80c969590183a, type: 2}
   shopButton: {fileID: 3358136378841623323, guid: a5b3440e3ee455e4092c22b9656534ba,
     type: 3}
   system: {fileID: 0}

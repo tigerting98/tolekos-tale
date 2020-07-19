@@ -9,6 +9,7 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] LevelData easyLevel, normalLevel, hardLevel, lunaticLevel;
     LevelData level;
     [SerializeField] Animator background;
+    [SerializeField] SFX stageTheme, bossTheme;
 
     protected virtual void Awake()
     {
@@ -33,8 +34,13 @@ public class LevelLoader : MonoBehaviour
                 break;
         }
     }
+    public void PlayBossFightTheme() {
+
+        AudioManager.current.music.ChangeTrack(bossTheme);
+    }
     public virtual void Start()
     {
+        AudioManager.current.music.ChangeTrack(stageTheme);
         if (!level) {
             level = normalLevel;
         }
@@ -49,7 +55,7 @@ public class LevelLoader : MonoBehaviour
             EnemyWave wave = Instantiate(level.wavesFirstHalf[i]);
             StartCoroutine(SpawnWaveAfter(wave, level.timesFirstHalf[i]));
         }
-
+        GameManager.OnPlayBossTheme += PlayBossFightTheme;
         GameManager.OnSummonMidBoss += MidBoss;
         GameManager.OnSummonEndBoss += FinalBoss;
     }
@@ -107,6 +113,7 @@ public class LevelLoader : MonoBehaviour
     }
     private void OnDestroy()
     {
+        GameManager.OnPlayBossTheme -= PlayBossFightTheme;
         GameManager.OnSummonEndBoss -= FinalBoss;
         GameManager.OnSummonMidBoss -= MidBoss;
     }

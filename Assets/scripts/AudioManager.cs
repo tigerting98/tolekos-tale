@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
         }
     }
     public static AudioManager current;
+    public MusicManager music;
     public AudioSource SFXPlayer;
     public Dictionary<string, CoolDown> coolDownDictionary = new Dictionary<string, CoolDown>();
     private void Awake()

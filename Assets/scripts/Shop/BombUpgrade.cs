@@ -5,12 +5,17 @@ using UnityEngine;
 public class BombUpgrade : ShopItem
 {
     // Start is called before the first frame update
-    public int UpgradeAmount;
+    public float multiplier = 1.25f;
+    public int level = 1;
 
-   
+    public override bool Buyable()
+    {
+        return base.Buyable() && PlayerStats.bombLevel +1  == level;
+    }
     public override void Buy()
     {
         base.Buy();
-        PlayerStats.bombDamage += UpgradeAmount;
+        PlayerStats.bombLevel = level;
+        PlayerStats.bombEffectiveness = multiplier;
     }
 }

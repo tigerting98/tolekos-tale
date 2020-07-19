@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public static float musicVolume = 1f;
 
     public static event Action<bool> OnGameover;
+    public static event Action OnPlayBossTheme;
     public static event Action OnSummonEndBoss;
     public static event Action OnSummonMidBoss;
     public static GamePlayerInput gameInput;
@@ -115,6 +116,9 @@ public class GameManager : MonoBehaviour
                 toDestroy[i].Deactivate();
             }
         }
+    }
+    public static void PlayEndBossMusic() {
+        OnPlayBossTheme?.Invoke();
     }
     public static void SummonEndBoss() {
 

@@ -1361,7 +1361,7 @@ PrefabInstance:
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2276b1da7d62f1a47842690fb722f6bc, type: 3}
@@ -1808,7 +1808,9 @@ MonoBehaviour:
   hardLevel: {fileID: 11400000, guid: 399d07d143092a64dba87eab06e17972, type: 2}
   lunaticLevel: {fileID: 11400000, guid: ce71c3396abaaf94b8f001a006e15886, type: 2}
   background: {fileID: 1605513546}
-  playerLevel: 30
+  stageTheme: {fileID: 11400000, guid: 9c2970917e0e9c2449a7f354a0ef204e, type: 2}
+  bossTheme: {fileID: 11400000, guid: e425e7b636c4f6b4392bc3d8782c38c7, type: 2}
+  playerLevel: 1000
   difficulty: 1
 --- !u!95 &1605513546 stripped
 Animator:
@@ -2037,7 +2039,7 @@ PrefabInstance:
     - target: {fileID: 7016885204452351669, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609, type: 3}

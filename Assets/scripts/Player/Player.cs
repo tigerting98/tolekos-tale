@@ -128,23 +128,26 @@ public class Player : MonoBehaviour
     void SetDamageType() {
         if (mode == DamageType.Water) {
             hitsprite.color = water;
-            damageTaker.WaterMultiplier = 1;
-            damageTaker.EarthMultiplier = GameManager.StrongMultiplier;
-            damageTaker.FireMultiplier = GameManager.WeakMultiplier;
+            damageTaker.WaterMultiplier = 1 * PlayerStats.damageMultiplier;
+            damageTaker.EarthMultiplier = GameManager.StrongMultiplier * PlayerStats.damageMultiplier;
+            damageTaker.FireMultiplier = GameManager.WeakMultiplier * PlayerStats.damageMultiplier;
+            damageTaker.PureMultiplier = PlayerStats.damageMultiplier;
         }
         else if (mode == DamageType.Earth)
         {
             hitsprite.color = earth;
-            damageTaker.WaterMultiplier = GameManager.WeakMultiplier;
-            damageTaker.EarthMultiplier = 1;
-            damageTaker.FireMultiplier = GameManager.StrongMultiplier;
+            damageTaker.WaterMultiplier = GameManager.WeakMultiplier * PlayerStats.damageMultiplier;
+            damageTaker.EarthMultiplier = 1 * PlayerStats.damageMultiplier;
+            damageTaker.FireMultiplier = GameManager.StrongMultiplier * PlayerStats.damageMultiplier;
+            damageTaker.PureMultiplier = PlayerStats.damageMultiplier;
         }
         if (mode == DamageType.Fire)
         {
             hitsprite.color = fire;
-            damageTaker.WaterMultiplier = GameManager.StrongMultiplier;
-            damageTaker.EarthMultiplier = GameManager.WeakMultiplier;
-            damageTaker.FireMultiplier = 1;
+            damageTaker.WaterMultiplier = GameManager.StrongMultiplier * PlayerStats.damageMultiplier;
+            damageTaker.EarthMultiplier = GameManager.WeakMultiplier * PlayerStats.damageMultiplier;
+            damageTaker.FireMultiplier = 1 * PlayerStats.damageMultiplier;
+            damageTaker.PureMultiplier = PlayerStats.damageMultiplier;
         }
     }
     void CheckFocus() {

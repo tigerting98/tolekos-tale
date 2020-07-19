@@ -11,11 +11,13 @@ public class BetweenStagesScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] Button nextStageButton;
     [SerializeField] Button shopButton;
+    [SerializeField] SFX music;
     private GameObject lastSelected;
 
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.current.music.ChangeTrack(music);
         if (GameManager.levelDescription != null) {
             background.sprite = GameManager.levelDescription.backgroundImage;
             text.text = GameManager.levelDescription.levelDescription;

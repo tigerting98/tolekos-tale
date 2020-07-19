@@ -15,6 +15,7 @@ public class PlayerDeath : Death
 
     void OpenDeathMenu() {
         GameManager.deathMenu.gameObject.SetActive(true);
+        AudioManager.current.music.source.Pause();
         Time.timeScale = 0;
         if (GameManager.player)
         {

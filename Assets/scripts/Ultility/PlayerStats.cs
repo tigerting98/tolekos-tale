@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using System.Security.Policy;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -20,7 +21,10 @@ public class PlayerStats : MonoBehaviour
     public static float fireFocusDamageRatio = 35f;
     public static float fireUnfocusDamageRatio = 25f;
     public static float earthFocusDaamgeRatio = 8f;
-    
+    public static float damageMultiplier = 1f;
+    public static int hardenSkinLevel = 0;
+    public static int bombLevel = 0;
+    public static float bombEffectiveness = 1;
     public static float earthFocusedShotRateRatio = 2f;
     public static float baseShotRate = 0.1f;
     public static int gold = 0;
@@ -66,6 +70,10 @@ public class PlayerStats : MonoBehaviour
 
     public static void Reset()
     {
+        bombLevel = 0;
+        bombEffectiveness = 1;
+        hardenSkinLevel = 0;
+        damageMultiplier = 1;
         deathCount = 0;
         bombDamage = 1000;
         playerLevel = 1;

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: click
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: a68a4855e76c3e74ca6ca4fff8673990, type: 3}
-  volume: 0.03
+  volume: 0.06
   id: clicksound-0
   cooldownTime: 0.05

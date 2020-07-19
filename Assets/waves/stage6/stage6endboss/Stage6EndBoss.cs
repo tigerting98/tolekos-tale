@@ -142,6 +142,7 @@ public class Stage6EndBoss : EnemyBossWave
         StartCoroutine(DialogueManager.StartDialogue(dialogue2, Phase1));
     }
     void Phase1() {
+        GameManager.PlayEndBossMusic();
         currentBoss = Instantiate(boss, new Vector2(0, 0), Quaternion.identity);
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();

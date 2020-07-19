@@ -13,16 +13,19 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject warningMenu = default;
     [SerializeField] GameObject warningBackButton = default;
     [SerializeField] GameObject resumeButton = default;
-    private GameObject lastSelected;
+    [SerializeField] GameObject settingButton = default;
+    [SerializeField] GameObject settingMenu;
+    public GameObject lastSelected;
     private void Awake()
     {
         GameManager.pauseMenu = this;
         warningMenu.SetActive(false);
         gameObject.SetActive(false);
-
+        settingMenu.SetActive(false);
     }
 
     private void OnEnable() {
+        
         EventSystem.current.SetSelectedGameObject(null);
         StartCoroutine("Enable");
     }
@@ -61,14 +64,16 @@ public class PauseMenu : MonoBehaviour
         txt.Append(string.Format("Earth Focus Damage: {0}\n", PlayerStats.damage* PlayerStats.earthFocusDaamgeRatio));
         txt.Append(string.Format("Fire Unfocus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireUnfocusDamageRatio));
         txt.Append(string.Format("Fire Focus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireFocusDamageRatio));
-        txt.Append(string.Format("Bomb Damage: {0} per part\n", PlayerStats.bombDamage));
+        txt.Append(string.Format("Bomb Damage: {0} per part\n", PlayerStats.bombDamage*PlayerStats.bombEffectiveness));
         txt.Append(string.Format("Number Of Deaths: {0}\n", PlayerStats.deathCount));
         text.text = txt.ToString() ;
     
     }
 
     public void Resume() {
+
         Time.timeScale = 1f;
+        AudioManager.current.music.source.Play();
         gameObject.SetActive(false);
         if (GameManager.player) {
             GameManager.player.enabled = true;
@@ -94,6 +99,20 @@ public class PauseMenu : MonoBehaviour
         warningMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(resumeButton);
+
+    }
+    public void OpenSetting()
+    {
+        settingMenu.SetActive(true);
+        
+    }
+
+    public void CloseSetting()
+    {
+        settingMenu.GetComponent<SettingMenu>().backButton.GetComponent<ButtonPointer>().OnDeselect(null);
+        settingMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(settingButton);
 
     }
 }

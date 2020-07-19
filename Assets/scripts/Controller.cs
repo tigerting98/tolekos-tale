@@ -18,8 +18,10 @@ public class Controller : MonoBehaviour
                 GameManager.player.enabled = false;
                 GameManager.gameInput.enabled = false;
             }
+            AudioManager.current.music.source.Pause();
             GameManager.pauseMenu.gameObject.SetActive(true);
             gameObject.SetActive(false);
+
 
         }
     }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: pulsemagicSFX
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 16c4fc19dd33b6846aaeff1f52b51138, type: 3}
-  volume: 0.13
+  volume: 0.2
   id: pulsingSFX-1
   cooldownTime: 0.06

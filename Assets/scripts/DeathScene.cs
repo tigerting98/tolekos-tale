@@ -42,6 +42,7 @@ public class DeathScene : MonoBehaviour
  
     }
     private void Revive() {
+        AudioManager.current.music.source.Play();
         GameManager.player.gameObject.SetActive(true);
         GameManager.player.transform.position = new Vector2(0, -3.5f);
         GameManager.player.health.ResetHP();

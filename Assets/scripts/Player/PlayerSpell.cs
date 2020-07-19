@@ -21,7 +21,7 @@ public class PlayerSpell : MonoBehaviour
     void CastSpell() {
         if (PlayerStats.bombCount > 0) {
             PlayerStats.UseBomb();
-            Instantiate(defaultSpell, transform.position, Quaternion.identity).SetDamage(PlayerStats.bombDamage);
+            Instantiate(defaultSpell, transform.position, Quaternion.identity).SetDamage(PlayerStats.bombDamage*PlayerStats.bombEffectiveness);
 
             StartCoroutine(Invul());
         }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: gunSFX-1
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 2872cbd48d9555042907409a5f0a8c4a, type: 3}
-  volume: 0.1
+  volume: 0.14
   id: gunSFX-0
   cooldownTime: 0.03

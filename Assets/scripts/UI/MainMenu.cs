@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour
     public GameObject difficultySelectionMenu, normalButton;
     public GameObject settingsMenu;
     public GameObject lastSelected;
+    public GameObject creditMenu, creditBackButton, creditButton;
+    public SFX mainMenuMusic;
     void Awake()
     {
        
@@ -18,8 +20,10 @@ public class MainMenu : MonoBehaviour
     }
     private void Start()
     {
+        AudioManager.current.music.PlayTrack(mainMenuMusic);
         instructionMenu.SetActive(false);
         difficultySelectionMenu.SetActive(false);
+        creditMenu.SetActive(false);
         Invoke("SetStart", 0.01f);
     }
     void SetStart() {
@@ -30,6 +34,11 @@ public class MainMenu : MonoBehaviour
     void SetBack() {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(instructionBackButton);
+    }
+    void SetCredit()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(creditBackButton);
     }
     public void StartGame(int i) {
         GameManager.sceneLoader.LoadStartGame(i);
@@ -58,6 +67,10 @@ public class MainMenu : MonoBehaviour
             else if (lastSelected == instructionBackButton)
             {
                 CloseInstructionMenu();
+            }
+            else if (lastSelected == creditBackButton)
+            {
+                CloseCreditMenu();
             }
             else {
                 SetToQuitButton();
@@ -92,6 +105,10 @@ public class MainMenu : MonoBehaviour
         Invoke("SetBack", 0.01f);
 
     }
+    public void OpenCreditMenu() {
+        creditMenu.SetActive(true);
+        Invoke("SetCredit", 0.01f);
+    }
     public void OpenSettingsMenu() {
         settingsMenu.SetActive(true);
     }
@@ -105,6 +122,13 @@ public class MainMenu : MonoBehaviour
         instructionMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(instructionButton);
+
+    }
+    public void CloseCreditMenu()
+    {
+        creditMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(creditButton);
 
     }
 }
