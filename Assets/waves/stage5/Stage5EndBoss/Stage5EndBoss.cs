@@ -14,7 +14,7 @@ public class Stage5EndBoss : EnemyBossWave
     Movement waterimage, earthimage, fireimage;
     [SerializeField] float movespeed = 10f;
     [SerializeField] Vector2 waterspawnlocation, earthspawnlocation, firespawnlocation;
-    [SerializeField] Dialogue preFightDialogue1, preFightDialogue2;
+    [SerializeField] Dialogue preFightDialogue1, preFightDialogue2, preFightDialogue3;
     Bullet waterCircle, earthCircle, fireCircle;
     Stage5EndBossUI bossUI;
     [SerializeField] Color blue, green, red;
@@ -119,8 +119,12 @@ public class Stage5EndBoss : EnemyBossWave
         fireimage.destroyBoundary = 10f;
         float time2 = fireimage.MoveTo(firespawnlocation, movespeed);
         yield return new WaitForSeconds(Math.Max(time1, time2));
-        StartCoroutine(DialogueManager.StartDialogue(preFightDialogue2, Phase1));
+        StartCoroutine(DialogueManager.StartDialogue(preFightDialogue2, PreFight3));
 
+    }
+    public void PreFight3() {
+        GameManager.PlayEndBossMusic();
+        StartCoroutine(DialogueManager.StartDialogue(preFightDialogue3, Phase1));
     }
     public void Phase1() {
         waterBoss = Instantiate(waterprefab, waterimage.transform.position, Quaternion.identity);

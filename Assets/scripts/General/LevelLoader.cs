@@ -9,7 +9,8 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] LevelData easyLevel, normalLevel, hardLevel, lunaticLevel;
     LevelData level;
     [SerializeField] Animator background;
-    [SerializeField] SFX stageTheme, bossTheme;
+    [SerializeField] MusicTrack stageTheme, bossTheme;
+
 
     protected virtual void Awake()
     {
@@ -35,11 +36,12 @@ public class LevelLoader : MonoBehaviour
         }
     }
     public void PlayBossFightTheme() {
-
         AudioManager.current.music.ChangeTrack(bossTheme);
     }
+
     public virtual void Start()
     {
+
         AudioManager.current.music.ChangeTrack(stageTheme);
         if (!level) {
             level = normalLevel;

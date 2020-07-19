@@ -13,6 +13,7 @@ public class Stage2EndBoss : EnemyBossWave
      Bullet ellipseBullet, pointedBullet, smallBullet, arrowBullet;
     BulletPack bigBullets;
     Bullet magicCircle;
+    [SerializeField] ParticleSystem spawnEffect;
     [SerializeField] bool harder = false;
 
     [Header("Pattern 1")]
@@ -72,9 +73,12 @@ public class Stage2EndBoss : EnemyBossWave
     }
 
     IEnumerator AfterDialogue1() {
+        AudioManager.current.PlaySFX(GameManager.gameData.splashSFX);
+       Destroy( Instantiate(spawnEffect, new Vector2(0, spawnY), Quaternion.identity).gameObject, 5f);
         bossImage = Instantiate(image, new Vector2(0, spawnY), Quaternion.identity);
         
         yield return new WaitForSeconds(0.5f);
+        GameManager.PlayEndBossMusic();
         StartCoroutine(DialogueManager.StartDialogue(dialogue2, Phase1));
     }
 
@@ -251,7 +255,7 @@ public class Stage2EndBoss : EnemyBossWave
         while (currentBoss) {
             float time = currentBoss.movement.MoveTo(Functions.RandomLocation(1, 3, 1, 3), bossmovespeed);
             if (!harder)
-            { currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(smallBullet, dmg2circle, currentBoss.transform, circleBulletSpeed, CircleBullets2shotRate, spread2, numberOfCircleBullets2, null), time, pulseDuration2); }
+            { currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(smallBullet, dmg2circle, currentBoss.transform, circleBulletSpeed, CircleBullets2shotRate, spread2, numberOfCircleBullets2, GameManager.gameData.waterpulseSFX), time, pulseDuration2); }
             else {
                 currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomActionXTimes(i =>
                 Patterns.SpirallingOutwardsRing(smallBullet, dmg2circle, currentBoss.transform.position, circleBulletSpeed,

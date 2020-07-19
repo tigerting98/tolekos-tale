@@ -11,7 +11,7 @@ public class BetweenStagesScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] Button nextStageButton;
     [SerializeField] Button shopButton;
-    [SerializeField] SFX music;
+    [SerializeField] MusicTrack music;
     private GameObject lastSelected;
 
     // Start is called before the first frame update

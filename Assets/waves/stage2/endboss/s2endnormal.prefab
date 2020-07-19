@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5916288215380762352}
   - component: {fileID: 3085221276502336863}
   m_Layer: 0
-  m_Name: stage2endboss
+  m_Name: s2endnormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,6 +59,9 @@ MonoBehaviour:
   dialogue2: {fileID: 11400000, guid: ec2e8f9130dbf8a449e71e819ba14534, type: 2}
   endDialogue: {fileID: 11400000, guid: 453877f5855fc4f4a924eef106134e2d, type: 2}
   spawnY: 2
+  spawnEffect: {fileID: 110962008307411691, guid: 0740e3334e362c542a593321c0d97fd1,
+    type: 3}
+  harder: 0
   timeToRadius: 1
   radius: 1
   bigBulletSpeed1: 1
@@ -91,6 +94,7 @@ MonoBehaviour:
   pulseDuration2: 3
   dmg2circle: 225
   numberOfCircleBullets2: 5
+  hardAngularVel2: 0
   radius3: 1
   pulseRate3: 0.5
   angleperPulse3: 15
@@ -112,6 +116,7 @@ MonoBehaviour:
   dmg4arrow: 215
   spawnRatio4: 2
   numberPerPulse4: 70
+  harderlines4: 0
   waterfairy: {fileID: 1721693820931709140, guid: e8c0a44795a259243af3c6fb387fdf24,
     type: 3}
   slime: {fileID: 6225057521292802004, guid: 3adcdee03569c964798f37ef83eed667, type: 3}

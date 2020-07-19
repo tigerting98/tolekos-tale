@@ -55,6 +55,7 @@ MonoBehaviour:
   nextLevel: {fileID: 11400000, guid: 5de849c1ee2620e4cafdade913add7b8, type: 2}
   key: {fileID: 6034030427296860853, guid: d75a1ff5e7e7ac349bbe294fb3d3ada1, type: 3}
   preFight1: {fileID: 11400000, guid: 10fb73424127ed1419cf8b969a678d5f, type: 2}
+  preFight2: {fileID: 11400000, guid: b752a8755ba63954ea9a9339e6ead8c3, type: 2}
   fireCircle: {fileID: 7336651296054420115, guid: 6f8bf7ae6164a6a45a31fc8fe157db7a,
     type: 3}
   spawnEffect: {fileID: 1064576369312752990, guid: 1ca4f0e3fbb0aa745ac0ce6a6cffd349,

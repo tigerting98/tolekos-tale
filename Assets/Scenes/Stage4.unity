@@ -1505,6 +1505,8 @@ MonoBehaviour:
   hardLevel: {fileID: 11400000, guid: 56a5b6edfa32bf542bd9e8d47fc7dcd8, type: 2}
   lunaticLevel: {fileID: 11400000, guid: d5b173c0d014a804f8a236b3f378ede5, type: 2}
   background: {fileID: 1605513546}
+  stageTheme: {fileID: 0}
+  bossTheme: {fileID: 0}
   playerLevel: 17
   difficulty: 3
 --- !u!95 &1605513546 stripped
@@ -1830,6 +1832,18 @@ PrefabInstance:
       propertyPath: hardLevel
       value: 
       objectReference: {fileID: 11400000, guid: 56a5b6edfa32bf542bd9e8d47fc7dcd8,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: bossTheme
+      value: 
+      objectReference: {fileID: 11400000, guid: 82d7427f8fa820b42a0ad5e392e7501a,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: stageTheme
+      value: 
+      objectReference: {fileID: 11400000, guid: 308461d463003624a96cbf6003c55da3,
         type: 2}
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}

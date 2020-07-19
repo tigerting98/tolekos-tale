@@ -82,7 +82,7 @@ public class Stage1Wave3 : EnemyWave
         {
             newEnemy.shooting.StartShootingAfter
               (EnemyPatterns.ExplodingLinesAtPlayer(bullet, dmg, newEnemy.transform, initialSpeed, finalSpeed, bulletCount, minTime, maxTime, shotRate, 
-              lines, spread, GameManager.gameData.longarrowSFX), shotRate / 2);
+              lines, spread, GameManager.gameData.waterpulseSFX), shotRate / 2);
 
         }
         newEnemy.DestroyAfter(time);

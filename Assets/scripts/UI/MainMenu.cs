@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject lastSelected;
     public GameObject creditMenu, creditBackButton, creditButton;
-    public SFX mainMenuMusic;
+    public MusicTrack mainMenuMusic;
     void Awake()
     {
        

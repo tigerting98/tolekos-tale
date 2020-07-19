@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: firesound-1
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 7bcc0ab0d8387ba41a809fb877dfb52b, type: 3}
-  volume: 0.07
+  volume: 0.11
   id: firestreaming sound-1
   cooldownTime: 0.15

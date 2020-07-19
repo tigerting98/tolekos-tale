@@ -578,6 +578,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 725044daed840384ca450592368e3a6e,
         type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: stageTheme
+      value: 
+      objectReference: {fileID: 11400000, guid: b8c91cacce0468d4f9791e8f4b158e5e,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: bossTheme
+      value: 
+      objectReference: {fileID: 11400000, guid: 25c02418834d2234f85ad444c9a89e17,
+        type: 2}
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_Name
@@ -586,7 +598,7 @@ PrefabInstance:
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2276b1da7d62f1a47842690fb722f6bc, type: 3}
@@ -763,6 +775,8 @@ MonoBehaviour:
   hardLevel: {fileID: 11400000, guid: 725044daed840384ca450592368e3a6e, type: 2}
   lunaticLevel: {fileID: 11400000, guid: 9f7fe4b33dec8c946bd8879333cf9761, type: 2}
   background: {fileID: 1605513546}
+  stageTheme: {fileID: 11400000, guid: b8c91cacce0468d4f9791e8f4b158e5e, type: 2}
+  bossTheme: {fileID: 11400000, guid: 25c02418834d2234f85ad444c9a89e17, type: 2}
   playerLevel: 12
   difficulty: 3
 --- !u!95 &1605513546 stripped
@@ -992,7 +1006,7 @@ PrefabInstance:
     - target: {fileID: 7016885204452351669, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609, type: 3}

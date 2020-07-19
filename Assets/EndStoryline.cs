@@ -12,12 +12,14 @@ public class EndStoryline : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] GameObject ending;
     [SerializeField] GameObject badendtext;
+    [SerializeField] MusicTrack victoryTrack, defeatTrack;
     bool next = false;
     int number = 0;
     int max = 0;
     public void Start()
     {
         max = PlayerStats.deathCount == 0 ? wonDialogue.Count : lostDialogue.Count;
+        AudioManager.current.music.ChangeTrack(PlayerStats.deathCount == 0 ? victoryTrack : defeatTrack);
         SetText(0);
     }
     public void SetText(int i) {
@@ -25,7 +27,7 @@ public class EndStoryline : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.KeypadEnter))) {
             if (next) {
                 GameManager.sceneLoader.LoadScene("CreditScene");
             }
@@ -37,7 +39,8 @@ public class EndStoryline : MonoBehaviour
                     ShowEnding();
             }
             else {
-                SetText(number);
+                    if (number < max)
+                    { SetText(number); }
             }
 
 

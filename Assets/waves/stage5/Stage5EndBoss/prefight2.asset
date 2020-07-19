@@ -31,13 +31,3 @@ MonoBehaviour:
     text: I concur, let's quickly finish this so that I can go back to experimenting
       with my spells.
     name: Cain
-  - left: 0
-    speaker: {fileID: 21300000, guid: 7d35374c70d2753408d8c5a81b774b25, type: 3}
-    isPlayer: 0
-    text: Seriously?! Be more pumped up! Today, he dies!
-    name: Aqua
-  - left: 1
-    speaker: {fileID: 0}
-    isPlayer: 1
-    text: We shall see about that!
-    name: Toleko

@@ -61,6 +61,7 @@ MonoBehaviour:
   spawnLocationY: 2.5
   preFightDialogue1: {fileID: 11400000, guid: 4265b6bff2cda0f498374508cd873d70, type: 2}
   preFightDialogue2: {fileID: 11400000, guid: d47df1cd860a12f428c4e1b1a09c8881, type: 2}
+  preFightDialogue3: {fileID: 11400000, guid: 9ece80f2c9c79804bbfd908812f27698, type: 2}
   harder: 0
   bulletspeed1: 2.63
   topBulletSpread: 80

@@ -77,6 +77,7 @@ MonoBehaviour:
   firespawnlocation: {x: 1, y: 2}
   preFightDialogue1: {fileID: 11400000, guid: 71b739f075976bd46bb984bbb527a2b6, type: 2}
   preFightDialogue2: {fileID: 11400000, guid: 1a32d309840691047b8c562175f50424, type: 2}
+  preFightDialogue3: {fileID: 11400000, guid: 5cef4b9c39edffd4eb75906bd6e76b92, type: 2}
   blue: {r: 0, g: 0.77201605, b: 1, a: 1}
   green: {r: 0, g: 1, b: 0.10847831, a: 1}
   red: {r: 1, g: 0, b: 0, a: 1}

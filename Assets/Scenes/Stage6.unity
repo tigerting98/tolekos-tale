@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1353,6 +1353,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ce71c3396abaaf94b8f001a006e15886,
         type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: stageTheme
+      value: 
+      objectReference: {fileID: 11400000, guid: 0255b913adfe26449a45889c25709e76,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: bossTheme
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f18e43fe06d0694aa08df81fdaea68a,
+        type: 2}
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_Name
@@ -1808,8 +1820,8 @@ MonoBehaviour:
   hardLevel: {fileID: 11400000, guid: 399d07d143092a64dba87eab06e17972, type: 2}
   lunaticLevel: {fileID: 11400000, guid: ce71c3396abaaf94b8f001a006e15886, type: 2}
   background: {fileID: 1605513546}
-  stageTheme: {fileID: 11400000, guid: 9c2970917e0e9c2449a7f354a0ef204e, type: 2}
-  bossTheme: {fileID: 11400000, guid: e425e7b636c4f6b4392bc3d8782c38c7, type: 2}
+  stageTheme: {fileID: 11400000, guid: 0255b913adfe26449a45889c25709e76, type: 2}
+  bossTheme: {fileID: 11400000, guid: 5f18e43fe06d0694aa08df81fdaea68a, type: 2}
   playerLevel: 1000
   difficulty: 1
 --- !u!95 &1605513546 stripped

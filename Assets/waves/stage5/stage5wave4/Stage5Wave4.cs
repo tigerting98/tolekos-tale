@@ -32,7 +32,7 @@ public class Stage5Wave4 : EnemyWave
         en.shooting.StartShooting(Functions.RepeatAction(
             () =>
             {
-                Bullet bul = Patterns.ShootStraight(GameManager.gameData.starBullet.GetItem(subwave.type), bulletdmg, en.transform.position, 0, 0, GameManager.gameData.clickSFX);
+                Bullet bul = Patterns.ShootStraight(GameManager.gameData.starBullet.GetItem(subwave.type), bulletdmg, en.transform.position, 0, 0, GameManager.gameData.kirasoftSFX);
                 ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > delay);
                 trigger.OnTriggerEvent += movement =>
                 {

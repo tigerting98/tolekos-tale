@@ -597,7 +597,7 @@ MonoBehaviour:
   text: {fileID: 162877634}
   nextStageButton: {fileID: 2062395540}
   shopButton: {fileID: 1055031384}
-  music: {fileID: 11400000, guid: 607112946fe4eb34bbec0c5768d50fed, type: 2}
+  music: {fileID: 11400000, guid: b0086a33ed4919c499e87434b723a801, type: 2}
 --- !u!1 &1134189399
 GameObject:
   m_ObjectHideFlags: 0

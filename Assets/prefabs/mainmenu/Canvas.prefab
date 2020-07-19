@@ -3037,7 +3037,7 @@ PrefabInstance:
     - target: {fileID: 4261432139381196632, guid: d57f98505ce4d784ea5ca3d631543e9d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4261432139381196635, guid: d57f98505ce4d784ea5ca3d631543e9d,
         type: 3}
@@ -3187,7 +3187,7 @@ PrefabInstance:
     - target: {fileID: 9021152018200202089, guid: d57f98505ce4d784ea5ca3d631543e9d,
         type: 3}
       propertyPath: m_Text
-      value: Music credis here
+      value: 'Music are used from: wingless-seraph.net'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d57f98505ce4d784ea5ca3d631543e9d, type: 3}

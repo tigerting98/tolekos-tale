@@ -7,7 +7,7 @@ public class Stage4EndBoss : EnemyBossWave
 {
     // Start is called before the first frame update
     [SerializeField] GameObject key;
-    [SerializeField] Dialogue preFight1;
+    [SerializeField] Dialogue preFight1, preFight2;
     [SerializeField] BulletOrientation fireCircle;
     [SerializeField] ParticleSystem spawnEffect;
     [SerializeField] float delaybeforeSpinning, delaybeforeparticle, spinAcceleration, delayBeforeDialogue = 2f;
@@ -94,8 +94,12 @@ public class Stage4EndBoss : EnemyBossWave
         Destroy(Instantiate(spawnEffect, spawnLocation, Quaternion.Euler(-90, 0, 0)).gameObject, 5f);
         bossImage = Instantiate(image, spawnLocation, Quaternion.identity);
         yield return new WaitForSeconds(delayBeforeDialogue);
-        StartCoroutine(DialogueManager.StartDialogue(preFight1, Phase1));
+        StartCoroutine(DialogueManager.StartDialogue(preFight1, PreFight2));
 
+    }
+    void PreFight2() {
+        GameManager.PlayEndBossMusic();
+        StartCoroutine(DialogueManager.StartDialogue(preFight2, Phase1));
     }
     void Phase1() {
         currentBoss = Instantiate(boss, spawnLocation, Quaternion.identity);

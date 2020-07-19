@@ -11,7 +11,7 @@ public class Stage3EndBoss : EnemyBossWave
     [SerializeField] ParticleSystem slamEffect;
     [SerializeField] float initialMoveSpeed;
     [SerializeField] float spawnLocationY;
-    [SerializeField] Dialogue preFightDialogue1, preFightDialogue2;
+    [SerializeField] Dialogue preFightDialogue1, preFightDialogue2, preFightDialogue3;
     [SerializeField] bool harder = false;
     [Header("Pattern1")]
     [SerializeField] float bulletspeed1;
@@ -90,10 +90,13 @@ public class Stage3EndBoss : EnemyBossWave
         yield return new WaitForSeconds(time);
         AudioManager.current.PlaySFX(GameManager.gameData.slamSFX);
         Instantiate(slamEffect, new Vector2(0, spawnLocationY), Quaternion.identity);
-        StartCoroutine(DialogueManager.StartDialogue(preFightDialogue2, Phase1));
+        StartCoroutine(DialogueManager.StartDialogue(preFightDialogue2, PreFight3));
 
     }
-
+    void PreFight3() {
+        GameManager.PlayEndBossMusic();
+        StartCoroutine(DialogueManager.StartDialogue(preFightDialogue3, Phase1));
+    }
     void Phase1()
     {
         currentBoss = Instantiate(boss, new Vector2(0, spawnLocationY), Quaternion.identity);

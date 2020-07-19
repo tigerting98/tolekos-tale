@@ -127,7 +127,7 @@ public class Stage4MidBoss : EnemyBossWave
             firebeam.orientation.SetFixedOrientation(-90);
             firebeam.transform.parent = currentBoss.transform;
             yield return new WaitForSeconds(laserDelay);
-            AudioManager.current.PlaySFX(GameManager.gameData.mastersparkSFX);
+            AudioManager.current.PlaySFX(GameManager.gameData.laser1SFX);
             bossOrientation.enabled = true;
             bossOrientation.angle = angle + 90;
             bossOrientation.SetCustomAngularVel(t =>

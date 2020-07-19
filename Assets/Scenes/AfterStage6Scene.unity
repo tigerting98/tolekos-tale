@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1032,6 +1032,8 @@ MonoBehaviour:
   text: {fileID: 1056570716}
   ending: {fileID: 1315147259}
   badendtext: {fileID: 174163973}
+  victoryTrack: {fileID: 11400000, guid: 2071b5d5e6e941a41a694e1d526d4740, type: 2}
+  defeatTrack: {fileID: 11400000, guid: dc1feca580500064580bb16c902b0d22, type: 2}
 --- !u!1001 &2042097821
 PrefabInstance:
   m_ObjectHideFlags: 0

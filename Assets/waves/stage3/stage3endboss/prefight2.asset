@@ -35,8 +35,3 @@ MonoBehaviour:
     isPlayer: 0
     text: Because you're so annoying! I'm gonna shut you up once and for all!!
     name: Sally the Mushroomancer
-  - left: 1
-    speaker: {fileID: 0}
-    isPlayer: 1
-    text: Looks like she's stopped listening to me...
-    name: Toleko

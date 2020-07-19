@@ -2228,6 +2228,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 0b0160bf34ffe014792287f68431f484,
         type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: stageTheme
+      value: 
+      objectReference: {fileID: 11400000, guid: bbbbf164a9e9b284c9f663f93db5c13f,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: bossTheme
+      value: 
+      objectReference: {fileID: 11400000, guid: d503d9beb4ea6474cbdc1f6f4f7fccb6,
+        type: 2}
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_Name

@@ -56,11 +56,8 @@ MonoBehaviour:
   preBossFight: {fileID: 11400000, guid: ba2349c965a0de6438725b6fd43189ae, type: 2}
   midFightDialogue: {fileID: 11400000, guid: bc5387209a12d5043adab232250cc8f8, type: 2}
   endFightDialogue: {fileID: 11400000, guid: f4a429c7a5636854e8330983014f9a78, type: 2}
-  pattern1SFX: {fileID: 11400000, guid: cacb82c8e502ed043afc6f42f574999b, type: 2}
-  pattern2SFX: {fileID: 11400000, guid: c254def07b7610d4192ae4bec424e8ee, type: 2}
-  pattern3smashSFX: {fileID: 11400000, guid: 32edd8a8667b3434186b14295e8dbe38, type: 2}
-  pattern3tpSFX: {fileID: 11400000, guid: dae60ebf79fe0cc499aa0608fbe8cf6d, type: 2}
-  harder1: 0
+  preBossFight2: {fileID: 11400000, guid: 8738aba26dcf9024398ae91e54383b56, type: 2}
+  harder: 0
   number1: 0
   speed1: 0
   shotrate1: 0
@@ -97,3 +94,6 @@ MonoBehaviour:
   punchSpeed: 2
   punchdmg: 500
   explosiondmg: 500
+  number3: 20
+  speed3harder: 2
+  dmg3star: 100

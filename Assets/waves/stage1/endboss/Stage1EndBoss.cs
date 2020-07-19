@@ -12,7 +12,7 @@ public class Stage1EndBoss : EnemyBossWave
     [SerializeField] Dialogue preBossFight;
     [SerializeField] Dialogue midFightDialogue;
     [SerializeField] Dialogue endFightDialogue;
-
+    [SerializeField] Dialogue preBossFight2;
     [SerializeField] bool harder = false;
     [Header("Pattern1")]
     [SerializeField] int number1;
@@ -59,9 +59,12 @@ public class Stage1EndBoss : EnemyBossWave
         bg.SetSpeed(new Vector2(0, -0.8f));
         bg.StopMovingAfter(10);
         yield return new WaitForSeconds(12);
-        StartCoroutine(DialogueManager.StartDialogue(preBossFight, StartBossFight));
+        StartCoroutine(DialogueManager.StartDialogue(preBossFight, PreFight2));
     }
-   
+    void PreFight2() {
+        GameManager.PlayEndBossMusic();
+        StartCoroutine(DialogueManager.StartDialogue(preBossFight2, StartBossFight));
+    }
 
    
     void StartBossFight() {
