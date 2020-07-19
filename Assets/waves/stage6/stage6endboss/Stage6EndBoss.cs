@@ -1,13 +1,10 @@
-﻿using System;
+﻿
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Policy;
-using TMPro;
-using UnityEditor.VersionControl;
+
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Stage6EndBoss : EnemyBossWave
 {

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Security.Policy;
+﻿
 using UnityEngine;
 // this class holds a list of prefabs that are commonly used in the game
 public class GameData : MonoBehaviour
@@ -33,10 +31,8 @@ public class GameData : MonoBehaviour
     public SFX firelizardSummonSFX;
     public SFX firebossSummonSFX;
     public SFX kiraSFX;
-
     public SFX kirasoftSFX;
     public SFX splashSFX;
-
     public SFX bookFiendSummonSFX;
 
     [Header("Bullets")]
@@ -66,7 +62,6 @@ public class GameData : MonoBehaviour
     public Enemy patternSprite, treeant;
     public Enemy midBossMushroomMob;
     public Enemy greenSlime;
-    public Enemy candelabra, watercandle, pottedplant;
     public Sprite playerDialogueSprite;
     public LevelDescription beforeStage1;
     [Header("Drops")]

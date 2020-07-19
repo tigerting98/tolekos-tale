@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
-using System.Security.Policy;
+
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour

@@ -1710,11 +1710,9 @@ MonoBehaviour:
   hardLevel: {fileID: 11400000, guid: c57645d0241552043b386e75b276ebbb, type: 2}
   lunaticLevel: {fileID: 11400000, guid: 0d5da9565bdd38f4e99dd8d6d8654a29, type: 2}
   background: {fileID: 1605513546}
-
   stageTheme: {fileID: 11400000, guid: bb7e4b9a0202c26499a99a6effb91d58, type: 2}
   bossTheme: {fileID: 11400000, guid: 401d5d5f41d85d246ad7dda625c2a510, type: 2}
-  playerLevel: 25
-
+  playerLevel: 1
   difficulty: 1
 --- !u!95 &1605513546 stripped
 Animator:
@@ -2054,7 +2052,7 @@ PrefabInstance:
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2276b1da7d62f1a47842690fb722f6bc, type: 3}
@@ -2159,7 +2157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1931965795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2172,10 +2170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc63cd80b636e541abd0b885eb3e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
-  wave: {fileID: 4753910137294850354, guid: 4cb9a44ab7eca1449963cedc1687fffa, type: 3}
-
-  playerLevel: 1000
+  wave: {fileID: 0}
+  playerLevel: 1
 --- !u!4 &1931965796
 Transform:
   m_ObjectHideFlags: 0

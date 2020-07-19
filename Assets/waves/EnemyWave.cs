@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class EnemyWave : MonoBehaviour
 {
-    [Header("Audio")]
-    public SFX bulletSpawnSound = default;
+    
     public virtual void SpawnWave() { }
 
     public void DestroyAfter(float sec) {

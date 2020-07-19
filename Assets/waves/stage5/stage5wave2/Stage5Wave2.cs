@@ -29,9 +29,7 @@ public class Stage5Wave2 : EnemyWave
     // Start is called before the first frame update
     public override void SpawnWave()
     {
-        water = GameManager.gameData.watercandle;
-        earth = GameManager.gameData.pottedplant;
-        fire = GameManager.gameData.candelabra;
+
         foreach (Stage5Wave2SubWave subwave in subwaves) {
             StartCoroutine(SpawnSubWave(subwave));
         }
@@ -40,7 +38,7 @@ public class Stage5Wave2 : EnemyWave
         yield return new WaitForSeconds(subwave.delay);
         for (int i = 0; i < subwave.number; i ++)
         {
-            Enemy en = subwave.type == DamageType.Earth ? earth : subwave.type == DamageType.Water ? water : fire;
+            Enemy en = GameManager.gameData.libraryMonsters.GetItem(subwave.type);
             Bullet bul = subwave.type == DamageType.Earth ? GameManager.gameData.leafBullet2 : 
                 subwave.type == DamageType.Water ? GameManager.gameData.icicle  : GameManager.gameData.fireBall;
             StartCoroutine(SpawnEnemy(en, bul, subwave.minY + (subwave.up? subwave.number - 1-i: i)*(subwave.maxY - subwave.minY)/(subwave.number-1), subwave));
