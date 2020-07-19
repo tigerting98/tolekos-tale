@@ -75,6 +75,7 @@ MonoBehaviour:
     type: 2}
   firebossSummonSFX: {fileID: 11400000, guid: 70489c940af410c4a977f22ec1fa7283, type: 2}
   kiraSFX: {fileID: 11400000, guid: 7d8c28f92a4bd604cb7e656227a626ad, type: 2}
+  bookFiendSummonSFX: {fileID: 11400000, guid: 972ea140ab443274e99022ee9bcf348b, type: 2}
   magicCircles: {fileID: 11400000, guid: ecb15ad31fbf67f4383a433a76ff2594, type: 2}
   pointedBullet: {fileID: 11400000, guid: 41aa83ad522d4c441b420119f326348b, type: 2}
   smallRoundBullet: {fileID: 11400000, guid: f6d3e6216ead4c946a5abcd2fba1d3b8, type: 2}
