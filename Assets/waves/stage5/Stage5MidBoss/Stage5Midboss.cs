@@ -33,16 +33,25 @@ public class Stage5Midboss : EnemyBossWave
     [SerializeField] float ringPulseRate = 2f, pageShotRate = 0.1f, laserShotRate = 1f, laserCooldown = 3f;
     [SerializeField] int numberOfBulletsPerRing = 20, numberOfLasersPairs = 5;
 
+    private SFX pulse;
+    private SFX pageStream;
+    private SFX laser;
+    private SFX spawn;
+
 
     public override void SpawnWave() {
         
         StartCoroutine(PreFight());
-    
+        pulse = GameManager.gameData.gunSFX;
+        pageStream = GameManager.gameData.shortarrowSFX;
+        laser = GameManager.gameData.laser1SFX;
+        spawn = GameManager.gameData.bookFiendSummonSFX;
     }
     IEnumerator PreFight() {
         yield return new WaitForSeconds(0.5f);
         ParticleSystem spawnfx = Instantiate(spawnEffect, spawnLocation, Quaternion.identity);
         bossImage = Instantiate(image, spawnLocation, Quaternion.identity);
+        AudioManager.current.PlaySFX(spawn);
         Destroy(spawnfx, 3f);
         yield return new WaitForSeconds(1f);
         StartPhase1();
@@ -95,13 +104,13 @@ public class Stage5Midboss : EnemyBossWave
         circle1.GetComponent<Shooting>().StartShooting(EnemyPatterns.CustomSpinningCustomBulletsCustomSpacing(angle => ReflectingBullet(GameManager.gameData.pageBullet, damage1, circle1.transform.position, angle, bulletSpeed1), i => 50f * i,t => -185f + spread * Mathf.Sin(2 * Mathf.PI * frequency * t), lines1, shotRate1));
         circle2.GetComponent<Shooting>().StartShooting(EnemyPatterns.CustomSpinningCustomBulletsCustomSpacing(angle => ReflectingBullet(GameManager.gameData.pageBullet, damage1, circle2.transform.position, angle, bulletSpeed1), i => 50f * i,t => -95f + spread * Mathf.Sin(2 * Mathf.PI * frequency * -t), lines1, shotRate1));
         if (harder) {
-            currentBoss.shooting.StartShooting(Functions.RepeatAction(() => Patterns.RingOfBullets(GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), hardRingDamage, currentBoss.transform.position, hardNumberOfBulletsPerRing, Random.Range(0f, 360f), hardRingSpeed, null), hardRingPulseRate));
+            currentBoss.shooting.StartShooting(Functions.RepeatAction(() => Patterns.RingOfBullets(GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), hardRingDamage, currentBoss.transform.position, hardNumberOfBulletsPerRing, Random.Range(0f, 360f), hardRingSpeed, pulse), hardRingPulseRate));
         }
     }
 
     IEnumerator Pattern2()
     {
-        currentBoss.shooting.StartShooting(Functions.RepeatAction(() => Patterns.RingOfBullets(GameManager.gameData.bigBullet.GetItem(DamageType.Water), ringDamage, currentBoss.transform.position, numberOfBulletsPerRing, Random.Range(0f, 360f), ringSpeed,null), ringPulseRate));
+        currentBoss.shooting.StartShooting(Functions.RepeatAction(() => Patterns.RingOfBullets(GameManager.gameData.bigBullet.GetItem(DamageType.Water), ringDamage, currentBoss.transform.position, numberOfBulletsPerRing, Random.Range(0f, 360f), ringSpeed, pulse), ringPulseRate));
         currentBoss.shooting.StartShooting(Functions.RepeatAction(() => SpawnRandomVerticalBullet(true), pageShotRate));
         currentBoss.shooting.StartShooting(Functions.RepeatAction(() => SpawnRandomVerticalBullet(false), pageShotRate));
         currentBoss.shooting.StartShooting(Functions.RepeatAction(() => currentBoss.shooting.StartShooting(SpawnLaserPillars(true, laserShotRate, numberOfLasersPairs)), laserCooldown));
@@ -160,6 +169,7 @@ public class Stage5Midboss : EnemyBossWave
         };
         Bullet bullet = Patterns.ShootStraight(bul, dmg, origin, initialAngle, initialSpeed,null);
         bullet.movement.triggers.Add(reflectOnBound);
+        AudioManager.current.PlaySFX(pageStream);
         return bullet;
 
     }
@@ -193,8 +203,15 @@ public class Stage5Midboss : EnemyBossWave
 
             spawn.x += deltaXDirection;
 
+            currentBoss.shooting.StartCoroutine(PlayLaserSFX());
+
             yield return new WaitForSeconds(laserShotRate);
         }
     }
 
+    IEnumerator PlayLaserSFX()
+    {
+        yield return new WaitForSeconds(1f);
+        AudioManager.current.PlaySFX(laser);
+    }
 }

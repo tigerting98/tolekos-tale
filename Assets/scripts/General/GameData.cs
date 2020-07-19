@@ -33,8 +33,12 @@ public class GameData : MonoBehaviour
     public SFX firelizardSummonSFX;
     public SFX firebossSummonSFX;
     public SFX kiraSFX;
+
     public SFX kirasoftSFX;
     public SFX splashSFX;
+
+    public SFX bookFiendSummonSFX;
+
     [Header("Bullets")]
     public BulletPack magicCircles;
     public BulletPack pointedBullet, smallRoundBullet, bigBullet, arrowBullet, ellipseBullet, starBullet, laserBullet;
