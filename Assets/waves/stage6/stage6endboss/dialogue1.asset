@@ -16,5 +16,5 @@ MonoBehaviour:
   - left: 1
     speaker: {fileID: 0}
     isPlayer: 1
-    text: Where am I?
+    text: What? What happened? Where am I...
     name: Toleko
