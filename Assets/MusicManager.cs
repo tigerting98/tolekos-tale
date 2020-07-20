@@ -15,9 +15,9 @@ public class MusicManager : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
     public void PlayTrack(MusicTrack track) {
-        StopAllCoroutines();
         if (track)
         {
+            StopAllCoroutines();
             this.track = track;
             volume = 1;
             if (track.looping)
@@ -47,10 +47,10 @@ public class MusicManager : MonoBehaviour
         }
     }
     public void ChangeTrack(MusicTrack track) {
-        StopAllCoroutines();
         if (track)
         {
-           StartCoroutine(Change(track));
+            StopAllCoroutines();
+            StartCoroutine(Change(track));
         }
     }
      IEnumerator Change(MusicTrack track) {
