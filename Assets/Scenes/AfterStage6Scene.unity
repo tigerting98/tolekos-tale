@@ -1022,11 +1022,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wonDialogue:
-  - 22
-  - 2333
+  - Pylfer retreated from his own laboratory after being defeated by a "mere apprentice"
+    again, leaving behind a giggling Sylfer and an exasperated Toleko.
+  - '"Master Sylfer," Toleko began, "Why don''t you just teleport out of there instead
+    of making me go through all these hurdles just so that you can bring us home
+    immediately with you magic?"'
+  - '"Well, you already know this, but while Pylfer is somewhat misguided, he is
+    still my brother. I''ve got to keep an eye on what that idiot is up to and make
+    sure he doesn''t do anything too stupid," answered Sylfer.'
+  - '"Besides, what better way to learn magic than to put it into practice, right?"'
+  - '"Fine, I guess," sighed Toleko. With a snap of Sylfer''s wrinkled fingers, they
+    were transported back to their tower. Toleko promptly began preparing dinner
+    with the ingredients he had foraged earlier. And so, the day comes to an end.'
   lostDialogue:
-  - 232
-  - 11
+  - 'For once, Pylfer''s teleport spell actually worked as intended, bringing Sylfer
+    with him. Toleko cursed loudly and broke a nearby chair with a bolt of water. '
+  - Unable to gather any solid leads, Toleko had no choice but to return home, feeling
+    defeated. The shock of Pylfer's teleport actually working for once had made him
+    forget something very important, but he just couldn't remember what.
+  - With a sigh of resignment, he had a lonely dinner, and retired to his room. "Well,
+    I can always try and track him down tomorrow..."
   goodendcolor: {r: 0.1827594, g: 1, b: 0, a: 1}
   badendcolor: {r: 1, g: 0.0179291, b: 0, a: 1}
   text: {fileID: 1056570716}
