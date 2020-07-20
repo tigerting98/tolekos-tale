@@ -25,9 +25,13 @@ public class BetweenStagesScript : MonoBehaviour
                 () => GameManager.sceneLoader.LoadScene(GameManager.levelDescription.nextLevelSceneString));
         
         }
+        Invoke("SetUp", 0.01f);
+        
+    }
+    void SetUp() {
         EventSystem.current.SetSelectedGameObject(shopButton.gameObject);
         lastSelected = shopButton.gameObject;
-        
+
     }
     private void Update() {
         GameObject current = EventSystem.current.currentSelectedGameObject;
