@@ -16,5 +16,5 @@ MonoBehaviour:
     it with his magic and retrievied the third and final key required to unlock the
     gate to Pylfer's castle. \nWith the 3 keys in tow, he headed back to the castle,
     eager to get this over and done with so that he can go home and take a long bath."
-  nextLevelSceneString: EndScene
+  nextLevelSceneString: Stage5
   backgroundImage: {fileID: 21300000, guid: 81e4f3673b54cca4dba3bc6eb4b07d9a, type: 3}

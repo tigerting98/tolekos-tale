@@ -13,7 +13,6 @@ public class GameData : MonoBehaviour
     public SFX windboltSFX;
     public SFX explosionSFX;
     public SFX magicPulse1SFX;
-    public SFX waterBolt1;
     public SFX gunSFX;
     public SFX tpSFX;
     public SFX UISFX;
