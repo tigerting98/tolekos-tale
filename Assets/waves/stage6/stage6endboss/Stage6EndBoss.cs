@@ -145,7 +145,7 @@ public class Stage6EndBoss : EnemyBossWave
     }
     void StartDialogue3() {
         GameManager.PlayEndBossMusic();
-        StartCoroutine(DialogueManager.StartDialogue(dialogue2, Phase1));
+        StartCoroutine(DialogueManager.StartDialogue(dialogue3, Phase1));
     }
     void Phase1() {
         currentBoss = Instantiate(boss, new Vector2(0, 0), Quaternion.identity);
@@ -455,13 +455,13 @@ public class Stage6EndBoss : EnemyBossWave
     void StartSubPattern2()
     {
         currentBoss.shooting.StartShooting(Functions.RepeatCustomAction(
-                    i => Patterns.RingAroundBossAimAtPlayer(GameManager.gameData.laserBullet.GetItem(i % 4), dmg10laser, currentBoss.transform.position, laserradius10, laserspeed10, lasercount10, GameManager.gameData.longarrowSFX)
+                    i => Patterns.RingAroundBossAimAtPlayer(GameManager.gameData.laserBullet.GetItem(i % 4), dmg10laser, currentBoss.transform.position, laserradius10, laserspeed10, lasercount10, GameManager.gameData.gunSFX)
                     , laserpulserate10));
         currentBoss.shooting.StartShooting(Functions.RepeatCustomAction(
             i =>
             {
                 Patterns.SpirallingOutwardsRing(GameManager.gameData.ellipseBullet.GetItem(i % 4), ellipsedmg10, (Vector2)currentBoss.transform.position - new Vector2(ellipsespacing10, 0),
-                   ellipseradialvel10, ellipseangularvel10, ellipsecount10, 0, GameManager.gameData.gunSFX);
+                   ellipseradialvel10, ellipseangularvel10, ellipsecount10, 0, GameManager.gameData.magicPulse1SFX);
                 Patterns.SpirallingOutwardsRing(GameManager.gameData.ellipseBullet.GetItem(3 - (i % 4)), ellipsedmg10, (Vector2)currentBoss.transform.position + new Vector2(ellipsespacing10, 0),
                    ellipseradialvel10, -ellipseangularvel10, ellipsecount10, 0, null);
             }, ellipsepulserate10

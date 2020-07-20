@@ -16,6 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 735053820141ab44791acb253515ab3d, type: 3}
   description: Improves harden skin to provide 25% damage resistance. Requires Harden
     Skin Level 1
-  cost: 10000
+  cost: 5000
   hardenSkinLevel: 2
   damageMultiplier: 0.75

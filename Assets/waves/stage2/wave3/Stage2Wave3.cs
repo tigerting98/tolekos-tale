@@ -38,7 +38,7 @@ public class Stage2Wave3 : EnemyWave
         fairy.SetEnemy(fairyStat, true);
         float time = fairy.movement.MoveTo(new Vector2(0, stopY), movespeed1);
         yield return new WaitForSeconds(time);
-        fairy.shooting.StartShootingFor(EnemyPatterns.ConstantSpinningStraightBullets(arrow, dmgarrow2, fairy.transform, arrowSpeed2, angularvelarrow, 180, 3, shotratearrow,GameManager.gameData.shortarrowSFX), 0, shootingduration);
+        fairy.shooting.StartShootingFor(EnemyPatterns.ConstantSpinningStraightBullets(arrow, dmgarrow2, fairy.transform, arrowSpeed2, angularvelarrow, 180, 3, shotratearrow,GameManager.gameData.waterpulseSFX), 0, shootingduration);
         fairy.shooting.StartShootingFor(EnemyPatterns.ConstantSpinningStraightBullets(arrow, dmgarrow2, fairy.transform, arrowSpeed2, -angularvelarrow, 0, 3, shotratearrow,null), 0, shootingduration);
         fairy.shooting.StartShootingFor(EnemyPatterns.ConstantSpinningStraightBullets(ball, dmgball2, fairy.transform, ballSpeed2, angularvelball, -135, 3, shotrateball, null), 0, shootingduration);
         fairy.shooting.StartShootingFor(EnemyPatterns.ConstantSpinningStraightBullets(ball, dmgball2, fairy.transform, ballSpeed2, -angularvelball, -45, 3, shotrateball,null), 0, shootingduration);

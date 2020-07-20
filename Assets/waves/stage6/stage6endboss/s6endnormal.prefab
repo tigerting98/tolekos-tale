@@ -61,7 +61,7 @@ MonoBehaviour:
     type: 3}
   dialogue1: {fileID: 11400000, guid: 535b18b8d0b421d418e54c1d6dc29453, type: 2}
   dialogue2: {fileID: 11400000, guid: de309a3d004bf01449baecd86318fea7, type: 2}
-  dialogue3: {fileID: 0}
+  dialogue3: {fileID: 11400000, guid: ed3d01a6138bab043a00066fcb585fe6, type: 2}
   startparticle: {fileID: 6110562706618516333, guid: afd4edbf82e3c4a46a4a06b4e63ee1ea,
     type: 3}
   spawnParticle: {fileID: 6110562706618516333, guid: 41e797b206fd7e2429c72ef5bd897d6e,

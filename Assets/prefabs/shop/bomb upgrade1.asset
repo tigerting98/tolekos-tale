@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Bomb Upgrade Level 1
   icon: {fileID: 21300000, guid: ca9699084da87244d89d93fb29ad6481, type: 3}
   description: Improves your bomb effectiveness to 1.25x
-  cost: 5000
+  cost: 3000
   multiplier: 1.25
   level: 1
