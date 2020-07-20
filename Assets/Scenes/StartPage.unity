@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -815,6 +815,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681040301427808046, guid: e2f4ad6eee1145d44a93c42775a46178,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Free music used is taken from: wingless-seraph.net'
       objectReference: {fileID: 0}
     - target: {fileID: 3160163252060795065, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
