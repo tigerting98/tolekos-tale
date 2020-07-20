@@ -9,14 +9,15 @@ public class MusicManager : MonoBehaviour
     public AudioSource source;
     bool fadeOut;
     MusicTrack track;
+
     private void Awake()
     {
         source = GetComponent<AudioSource>();
     }
     public void PlayTrack(MusicTrack track) {
-        StopAllCoroutines();
         if (track)
         {
+            StopAllCoroutines();
             this.track = track;
             volume = 1;
             if (track.looping)
@@ -45,17 +46,17 @@ public class MusicManager : MonoBehaviour
             source.volume = track.volume * GameManager.musicVolume * volume;
         }
     }
-    public Coroutine ChangeTrack(MusicTrack track) {
+    public void ChangeTrack(MusicTrack track) {
         if (track)
         {
-            return StartCoroutine(Change(track));
+            StopAllCoroutines();
+            StartCoroutine(Change(track));
         }
-        return null;
     }
      IEnumerator Change(MusicTrack track) {
         
         fadeOut = true;
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.4f);
         fadeOut = false;
         PlayTrack(track);
 
@@ -68,7 +69,7 @@ public class MusicManager : MonoBehaviour
                 fadeOut = false;
             }
             else {
-                volume -= Time.deltaTime;
+                volume -= Time.deltaTime*3f;
                 if (track)
                 { source.volume = track.volume * GameManager.musicVolume * volume; }
             }
