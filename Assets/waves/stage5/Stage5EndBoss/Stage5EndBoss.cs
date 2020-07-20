@@ -339,6 +339,9 @@ public class Stage5EndBoss : EnemyBossWave
         SwitchToBoss(DamageType.Water);
         SwitchToBoss(DamageType.Earth);
         SwitchToBoss(DamageType.Fire);
+        waterBoss.GetComponent<DamageTaker>().PureMultiplier = 0.25f;
+        earthBoss.GetComponent<DamageTaker>().PureMultiplier = 0.25f;
+        fireBoss.GetComponent<DamageTaker>().PureMultiplier = 0.25f;
         waterBoss.transform.position = startingPoint7 - new Vector2(movementradius7, 0);
         earthimage.transform.position = startingPoint7;
         fireimage.transform.position = startingPoint7 + new Vector2(movementradius7, 0);

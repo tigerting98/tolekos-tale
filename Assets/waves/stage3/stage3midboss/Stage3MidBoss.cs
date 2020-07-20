@@ -45,6 +45,7 @@ public class Stage3MidBoss : EnemyBossWave
         bossImage = Instantiate(image, new Vector2(0, 4.1f), Quaternion.identity);
         float time = bossImage.GetComponent<Movement>().MoveTo(new Vector2(0, spawnLocationY), initialMoveSpeed);
         yield return new WaitForSeconds(time);
+        StartCoroutine(GameManager.maincamera.ShakeCamera(0.2f, 0.3f));
         Instantiate(slamEffect, new Vector2(0, spawnLocationY-0.5f), Quaternion.Euler(-90, 0, 0));
 
         AudioManager.current.PlaySFX(GameManager.gameData.slamSFX);
@@ -151,12 +152,12 @@ public class Stage3MidBoss : EnemyBossWave
         yield return new WaitForSeconds(timeToExplode);
         if (ring1&&ring1.gameObject.activeInHierarchy)
         {
-
+            currentBoss.shooting.StartCoroutine(GameManager.maincamera.ShakeCamera(0.09f, 0.1f));
             Patterns.ExplodingRingOfBullets(star, starDmg, ring1.transform.position, numberOfBulletsPerRing, UnityEngine.Random.Range(0f, 360f),
-                bulletspeedfast, bulletspeedslow, bulletspeedtime, null);
+                bulletspeedfast, bulletspeedslow, bulletspeedtime, GameManager.gameData.magicPulse1LouderSFX);
             if (harder) {
                 Patterns.RingOfBullets(GameManager.gameData.arrowBullet.GetItem(DamageType.Earth), harderdmg2, ring1.transform.position, numberOfBulletsPerRing, UnityEngine.Random.Range(0f, 360f)
-                    , harderspeed2, GameManager.gameData.magicPulse1LouderSFX);
+                    , harderspeed2, null);
             }
             ring1.Deactivate();
         }

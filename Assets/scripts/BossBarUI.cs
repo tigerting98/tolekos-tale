@@ -12,7 +12,7 @@ public class BossBarUI : MonoBehaviour
     [SerializeField] float radiusbeforeReducing = 1.5f;
     private void Awake()
     {
-        gameObject.GetComponent<Canvas>().worldCamera = GameManager.mainCamera;
+        gameObject.GetComponent<Canvas>().worldCamera = GameManager.maincamera.GetComponent<Camera>();
         if (!health) {
             health = transform.parent.GetComponent<BossHealth>();
         }
@@ -20,6 +20,7 @@ public class BossBarUI : MonoBehaviour
 
     private void Update()
     {
+        transform.rotation = Quaternion.identity;
         if (health) {
             hpbar.fillAmount = health.GetCurrentHP() / health.maxHP;
        }

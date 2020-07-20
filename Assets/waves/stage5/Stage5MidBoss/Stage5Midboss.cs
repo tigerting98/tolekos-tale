@@ -49,6 +49,7 @@ public class Stage5Midboss : EnemyBossWave
     }
     IEnumerator PreFight() {
         yield return new WaitForSeconds(0.5f);
+        StartCoroutine(GameManager.maincamera.ShakeCamera(0.2f, 0.2f));
         ParticleSystem spawnfx = Instantiate(spawnEffect, spawnLocation, Quaternion.identity);
         bossImage = Instantiate(image, spawnLocation, Quaternion.identity);
         AudioManager.current.PlaySFX(spawn);

@@ -99,6 +99,8 @@ public class Stage6EndBoss : EnemyBossWave
     public override void SpawnWave()
     {
         Destroy(Instantiate(startparticle, new Vector2(0, 0), Quaternion.identity), 5f);
+        StartCoroutine(GameManager.maincamera.ShakeCamera(0.23f, 2f));
+        AudioManager.current.PlaySFX(GameManager.gameData.stage6TpSFX);
         Invoke("StartAnimation", 0.8f);
     }
     public override void EndPhase()
@@ -131,6 +133,7 @@ public class Stage6EndBoss : EnemyBossWave
         bossImage = Instantiate(imageofboss, new Vector2(0, 0), Quaternion.identity);
     }
     public void SpawnAnimation() {
+        AudioManager.current.PlaySFX(GameManager.gameData.pylferTpSFX);
         Destroy(Instantiate(spawnParticle, new Vector2(0, 0), Quaternion.identity), 5);
         Invoke("SpawnBossImage", 0.5f);
         Invoke("StartDialogue2", 2f);
@@ -703,6 +706,7 @@ public class Stage6EndBoss : EnemyBossWave
         ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => !Functions.WithinBounds(movement.transform.position, 4f, 5.5f));
         trigger.OnTriggerEvent += movement =>
         {
+            currentBoss.shooting.StartCoroutine(GameManager.maincamera.ShakeCamera(0.06f, 0.1f));
             for (int i = 0; i < numberofleafs4; i++)
             {
                 EnemyPatterns.FallingBullet(GameManager.gameData.leafBullet2, leafdmg4, movement.transform.position,

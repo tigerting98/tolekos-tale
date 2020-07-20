@@ -11,7 +11,7 @@ public class SFX : ScriptableObject
     public float cooldownTime = 0.01f;
 
     public void PlayClip() {
-        AudioSource.PlayClipAtPoint(clip, GameManager.mainCamera.transform.position, volume);
+        AudioSource.PlayClipAtPoint(clip, GameManager.maincamera.transform.position, volume);
     
     }
 }

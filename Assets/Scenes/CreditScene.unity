@@ -334,7 +334,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Developer/Programmer
+  m_text: Lead Designer/Story Writer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c, type: 2}
   m_sharedMaterial: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,
@@ -404,10 +404,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 2.2965698}
   m_textInfo:
     textComponent: {fileID: 140072818}
-    characterCount: 20
+    characterCount: 26
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 2
+    spaceCount: 2
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ting Xiao
+  m_text: Toingers
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c, type: 2}
   m_sharedMaterial: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,
@@ -1098,10 +1098,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 680942919}
-    characterCount: 9
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Andromeda
+  m_text: Breeze
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c, type: 2}
   m_sharedMaterial: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,
@@ -1255,7 +1255,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1010131916}
-    characterCount: 9
+    characterCount: 6
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pooty (Aloysius) / Ting Xiao
+  m_text: Pooty/ Toingers
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c, type: 2}
   m_sharedMaterial: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,
@@ -1461,10 +1461,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1424266489}
-    characterCount: 28
+    characterCount: 15
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 4
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1663,7 +1663,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Design/Art/ SFX
+  m_text: Design/Art/ Programming
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c, type: 2}
   m_sharedMaterial: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,
@@ -1733,7 +1733,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 2.2965698}
   m_textInfo:
     textComponent: {fileID: 1599698362}
-    characterCount: 15
+    characterCount: 23
     spriteCount: 0
     spaceCount: 1
     wordCount: 3
@@ -2243,7 +2243,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pooty (Aloysius)
+  m_text: Pooty
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c, type: 2}
   m_sharedMaterial: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,
@@ -2313,10 +2313,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1671909506}
-    characterCount: 16
+    characterCount: 5
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1

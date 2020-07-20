@@ -70,8 +70,8 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!114 &-4821386601786655032
@@ -92,7 +92,6 @@ MonoBehaviour:
   shooting: {fileID: 1491137777662742390}
   damagetaker: {fileID: 232094586145697766}
   collider: {fileID: 957944301124248136}
-  enemyAudio: {fileID: 0}
   name: The Big Bad One
   bosshealth: {fileID: -2720052727061517675}
   hitbox: {fileID: 957944301124248136}

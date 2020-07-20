@@ -56,6 +56,7 @@ public class EnemyBossWave : EnemyWave
         {
             PlayLifeDepletedSound();
             currentBoss.shooting.StopAllCoroutines();
+            GameManager.maincamera.Reset();
             currentBoss.movement.StopMoving();
             StartCoroutine(DestroyNonBoss());
             if (currentUI)

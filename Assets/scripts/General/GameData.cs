@@ -34,7 +34,8 @@ public class GameData : MonoBehaviour
     public SFX kirasoftSFX;
     public SFX splashSFX;
     public SFX bookFiendSummonSFX;
-
+    public SFX stage6TpSFX;
+    public SFX pylferTpSFX;
     [Header("Bullets")]
     public BulletPack magicCircles;
     public BulletPack pointedBullet, smallRoundBullet, bigBullet, arrowBullet, ellipseBullet, starBullet, laserBullet;

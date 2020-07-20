@@ -166,7 +166,7 @@ public class Stage1EndBoss : EnemyBossWave
                         Destroy(bul, 1.2f);
                         ExplodingAndBack(movement.transform.position);
                         movement.GetComponent<Bullet>().Deactivate();
-                       
+                        currentBoss.shooting.StartShooting(GameManager.maincamera.ShakeCamera(0.12f, 0.2f));
                     };
                     punchbul.movement.triggers.Add(trigger);
 

@@ -89,6 +89,7 @@ public class Stage3EndBoss : EnemyBossWave
         float time = bossImage.GetComponent<Movement>().MoveTo(new Vector2(0, spawnLocationY), initialMoveSpeed);
         yield return new WaitForSeconds(time);
         AudioManager.current.PlaySFX(GameManager.gameData.slamSFX);
+        StartCoroutine(GameManager.maincamera.ShakeCamera(0.2f, 0.4f));
         Instantiate(slamEffect, new Vector2(0, spawnLocationY), Quaternion.identity);
         StartCoroutine(DialogueManager.StartDialogue(preFightDialogue2, PreFight3));
 
@@ -285,9 +286,11 @@ public class Stage3EndBoss : EnemyBossWave
                 }
             }
             yield return new WaitForSeconds(delayinitial4);
+            currentBoss.StartCoroutine(GameManager.maincamera.ShakeCamera(0.15f, 0.2f));
             foreach (Enemy en in enemies) {
                 if (en)
                 {
+               
                     DamageType type = en.GetComponent<DamageDealer>().damageType;
                     float shootAngle = en.GetComponent<BulletOrientation>().angle;
                     Bullet small = GameManager.gameData.arrowBullet.GetItem(type);
@@ -332,7 +335,7 @@ public class Stage3EndBoss : EnemyBossWave
         float time2 = pillar.movement.MoveTo(pillarlocation == 0 ? new Vector2(4.1f, pos) : pillarlocation == 1 ?
             new Vector2(pos, 4.1f) : new Vector2(-4.1f, pos), pillarSpeed2);
         yield return new WaitForSeconds(time2);
-
+        currentBoss.shooting.StartShooting(GameManager.maincamera.ShakeCamera(0.15f, 0.2f));
         currentBoss.shooting.StartShooting(Functions.RepeatCustomActionXTimes(
             i => Patterns.ShootMultipleStraightBullet(leaf1, leafdmg1, pillar.transform.position, leafspeed5 + i * leafspeeddiff5,
             pillarlocation == 0 ? 180 : pillarlocation == 1 ? -90 : 0, leafspreadAngle5, numberOfLeafLine5,GameManager.gameData.slamSFX), 0.02f, numberofLeafPerLines5));

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static Difficulty difficultyLevel = Difficulty.Normal;
     public static bool death = false;
     public static Player player;
-    public static Camera mainCamera;
+    public static MainCamera maincamera;
     public static SceneLoader sceneLoader;
     public static BossHealthBar bossHealthBar;
     public static Vector2 playerPosition;

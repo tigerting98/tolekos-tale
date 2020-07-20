@@ -78,6 +78,8 @@ MonoBehaviour:
   kirasoftSFX: {fileID: 11400000, guid: 3b03731d773bb064ebbb5e3dc5495807, type: 2}
   splashSFX: {fileID: 11400000, guid: 4e4f5bfb491b2f34ba3b58ae70865185, type: 2}
   bookFiendSummonSFX: {fileID: 11400000, guid: 972ea140ab443274e99022ee9bcf348b, type: 2}
+  stage6TpSFX: {fileID: 11400000, guid: bc1b29fa9ad78c24184e8d6368182703, type: 2}
+  pylferTpSFX: {fileID: 11400000, guid: a3ff0ea01f1bbbf4f8669e609c9ff904, type: 2}
   magicCircles: {fileID: 11400000, guid: ecb15ad31fbf67f4383a433a76ff2594, type: 2}
   pointedBullet: {fileID: 11400000, guid: 41aa83ad522d4c441b420119f326348b, type: 2}
   smallRoundBullet: {fileID: 11400000, guid: f6d3e6216ead4c946a5abcd2fba1d3b8, type: 2}

@@ -90,6 +90,7 @@ public class Stage4EndBoss : EnemyBossWave
         circle.SetCustomAngularVel(t => spinAcceleration * t);
         yield return new WaitForSeconds(delaybeforeparticle);
         AudioManager.current.PlaySFX(GameManager.gameData.firebossSummonSFX);
+        StartCoroutine(GameManager.maincamera.ShakeCamera(0.1f, 0.2f));
         Destroy(circle.gameObject);
         Destroy(Instantiate(spawnEffect, spawnLocation, Quaternion.Euler(-90, 0, 0)).gameObject, 5f);
         bossImage = Instantiate(image, spawnLocation, Quaternion.identity);
@@ -334,6 +335,7 @@ public class Stage4EndBoss : EnemyBossWave
         laser.orientation.SetFixedOrientation(angle);
         laser.SetDamage(laserDmg7);
         yield return new WaitForSeconds(activationtime);
+        currentBoss.shooting.StartShooting(GameManager.maincamera.ShakeCamera(0.06f, laserLastTime7 - activationtime));
         AudioManager.current.PlaySFX(GameManager.gameData.mastersparkSFX);
         yield return new WaitForSeconds(laserLastTime7- activationtime);
         if (laser) {
@@ -411,7 +413,7 @@ public class Stage4EndBoss : EnemyBossWave
     }
     Bullet  Pattern4Bullet(float angle, Vector2 origin, float delay, float acceleration, float totalAccelerationTime) {
         Bullet bul = Patterns.ShootCustomBullet(star, dmg4, origin, 
-            Movement.RotatePath(angle, t => new Vector2(t<delay? 0 : t< delay + totalAccelerationTime? acceleration:0,0)), MovementMode.Acceleration,GameManager.gameData.clickSFX);
+            Movement.RotatePath(angle, t => new Vector2(t<delay? 0 : t< delay + totalAccelerationTime? acceleration:0,0)), MovementMode.Acceleration,GameManager.gameData.kirasoftSFX);
         bul.transform.localScale = 0.8f * bul.transform.localScale;
         return bul;
 

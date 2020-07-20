@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -570,28 +570,40 @@ PrefabInstance:
     - target: {fileID: 4792630399227786596, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4792630399227786596, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4792630399227786596, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4792630399227786596, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4792630399227786596, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4792630399227786596, guid: a40eb8481837084459ced4fdbc6942ff,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 06f5489a82c80a54bb73f130c985ac39,
+        type: 2}
+    - target: {fileID: 4792630399227786596, guid: a40eb8481837084459ced4fdbc6942ff,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1337794397159478764, guid: 06f5489a82c80a54bb73f130c985ac39,
+        type: 2}
     - target: {fileID: 4853745077996040261, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1125,7 +1137,7 @@ PrefabInstance:
     - target: {fileID: 8399763171898701282, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_text
-      value: ~Into the Magician's Liar~
+      value: ~Into the Magician's Lair~
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a40eb8481837084459ced4fdbc6942ff, type: 3}
@@ -1941,7 +1953,7 @@ PrefabInstance:
     - target: {fileID: 7016885204452351669, guid: e8c289207a49e244f88c972421a74609,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7016885204452351668, guid: e8c289207a49e244f88c972421a74609, type: 3}
@@ -2052,7 +2064,7 @@ PrefabInstance:
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2276b1da7d62f1a47842690fb722f6bc, type: 3}
@@ -2406,7 +2418,7 @@ PrefabInstance:
     - target: {fileID: 9090528654541230099, guid: e2df86e25871e2e41b9473eac39cc4cc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9090528654541230099, guid: e2df86e25871e2e41b9473eac39cc4cc,
         type: 3}
