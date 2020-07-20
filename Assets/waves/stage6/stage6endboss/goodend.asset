@@ -16,5 +16,31 @@ MonoBehaviour:
   - left: 0
     speaker: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
     isPlayer: 0
-    text: good end
-    name: 
+    text: Enough of this!! It's time for for my ultimate spell!
+    name: Pylfer
+  - left: 0
+    speaker: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+    isPlayer: 0
+    text: TELEPORT!!
+    name: Pylfer
+  - left: 1
+    speaker: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+    isPlayer: 1
+    text: Don't you dare try and run!
+    name: Toleko
+  - left: 1
+    speaker: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+    isPlayer: 1
+    text: ...
+    name: Toleko
+  - left: 1
+    speaker: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+    isPlayer: 1
+    text: Wait... he left Master Sylfer behind. What a buffoon.
+    name: Pylfer
+  - left: 1
+    speaker: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+    isPlayer: 1
+    text: No matter, it's time to head home. I sure hope I have enough time to make
+      dinner...
+    name: Toleko
