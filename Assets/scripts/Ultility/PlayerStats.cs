@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static int deathCount = 1;
+    public static int deathCount = 0;
     public static int baseDmg = 10;
     public static int baseMaxHP = 1000;
     public static Player player;
