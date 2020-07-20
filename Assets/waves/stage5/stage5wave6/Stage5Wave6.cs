@@ -12,5 +12,6 @@ public class Stage5Wave6 : WavePattern8
         lineBullets = GameManager.gameData.ellipseBullet;
         enemy = GameManager.gameData.flyingBook;
         enemies = GameManager.gameData.libraryMonsters;
+        soundeffect = GameManager.gameData.clickSFX;
     }
 }

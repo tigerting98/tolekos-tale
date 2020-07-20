@@ -15,8 +15,10 @@ public class Stage5Wave5 : EnemyWave
     [SerializeField] float shotRate, spawnRate, moveSpeed, bulletAccel, bulletSpeed, bulletDmg, jitterFactor;
     [SerializeField] EnemyStats stats;
     [SerializeField] List<Stage5Wave5SubWave> subwaves;
+    private SFX soundeffect;
 
     public override void SpawnWave() {
+        soundeffect = GameManager.gameData.kirasoftSFX;
         foreach (Stage5Wave5SubWave subwave in subwaves) {
             StartCoroutine(SpawnEnemy(subwave));
         }
@@ -32,7 +34,7 @@ public class Stage5Wave5 : EnemyWave
         en.shooting.StartShooting(Functions.RepeatAction(
             () =>
             {
-                Bullet bul = Patterns.ShootStraight(GameManager.gameData.smallRoundBullet.GetItem(subwave.type), bulletDmg, en.transform.position, 0, 0, null);
+                Bullet bul = Patterns.ShootStraight(GameManager.gameData.smallRoundBullet.GetItem(subwave.type), bulletDmg, en.transform.position, 0, 0, soundeffect);
                 ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > delayBeforeMoving);
                 trigger.OnTriggerEvent += movement =>
                 {

@@ -38,6 +38,7 @@ public class WavePattern8 : EnemyWave
     protected Enemy enemy;
     protected Bullet lineBullet;
     protected Bullet ringBullet;
+    protected SFX soundeffect = null;
 
     public virtual void SetUp()
     {
@@ -86,7 +87,7 @@ public class WavePattern8 : EnemyWave
                         bullet = lineBullet;
                     }
                     enemy.shooting.StartShootingFor(
-                    EnemyPatterns.ShootAtPlayer(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate,GameManager.gameData.firestreamingSFX), 0, numberOfBulletsPerLine * shotRate);},
+                    EnemyPatterns.ShootAtPlayer(bullet, bulletDamage, enemy.transform, bulletSpeed, shotRate, soundeffect), 0, numberOfBulletsPerLine * shotRate);},
                 numberOfBulletsPerLine * shotRate + pulseRate));
         Destroy(enemy.gameObject, timeToMove);
         yield return new WaitForSeconds(0.1f);

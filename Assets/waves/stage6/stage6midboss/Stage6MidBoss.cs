@@ -29,10 +29,11 @@ public class Stage6MidBoss : EnemyBossWave
     [SerializeField] float moveSpeed = 1.5f;
     [SerializeField] int numberOfBulletsPerRing2 = 20;
     private bool homing = false;
-
+    private SFX featherSoundEffect;
 
     public override void SpawnWave() {
         
+        soundeffect = GameManager.gameData.clickSFX;
         StartCoroutine(PreFight());
     
     }
@@ -118,11 +119,13 @@ public class Stage6MidBoss : EnemyBossWave
     void Pattern2()
     {  
         currentBoss.shooting.StartShooting(Functions.RepeatAction(
-            () => Patterns.CustomRing(
+            () => {
+                AudioManager.current.PlaySFX(GameManager.gameData.gunSFX);
+                Patterns.CustomRing(
                 angle => ReflectingBullet(GameManager.gameData.featherBullet, 
                 ringDamage, currentBoss.transform.position, angle, ringSpeed), 
                 Random.Range(0f, 360f), 
-                numberOfBulletsPerRing2),
+                numberOfBulletsPerRing2);},
             ringPulseRate)
         );
 
@@ -134,7 +137,7 @@ public class Stage6MidBoss : EnemyBossWave
                 Functions.AimAtPlayer(currentBoss.transform) + Random.Range(-bubbleRandomFactor, 
                 bubbleRandomFactor), 
             Random.Range(bubbleSpeedMin, bubbleSpeedMax), 
-            null);
+            GameManager.gameData.waterstreaming1SFX);
             bul.transform.localScale *= 0.2f;}, 
         bubbleShotRate));
     }
@@ -200,7 +203,7 @@ public class Stage6MidBoss : EnemyBossWave
                                                         : time < accelerationTime 
                                                         ? (time - randomizedDelay) * randomizedAcceleration + iniBulletSpeed1
                                                         : (accelerationTime) * randomizedAcceleration + iniBulletSpeed1, angle).rect,
-                                    MovementMode.Velocity, null);
+                                    MovementMode.Velocity, featherSoundEffect);
     }
 
     void End()
