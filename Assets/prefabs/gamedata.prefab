@@ -54,7 +54,6 @@ MonoBehaviour:
   windboltSFX: {fileID: 11400000, guid: db48958cbc7a5a64bac15606518d3ace, type: 2}
   explosionSFX: {fileID: 11400000, guid: 617a6a94ced505c4b87c48d463a2fdb7, type: 2}
   magicPulse1SFX: {fileID: 11400000, guid: 21f2b90b6d1b06d4c88f5aa05e831ff1, type: 2}
-  waterBolt1: {fileID: 11400000, guid: 1d228b5dce50f3b4298570ba1652e8f5, type: 2}
   gunSFX: {fileID: 11400000, guid: 5cc50710b614087489487b940f972a22, type: 2}
   tpSFX: {fileID: 11400000, guid: 90c01456488d43c44864ddd83d5a7fbd, type: 2}
   UISFX: {fileID: 11400000, guid: c255ff9997ae2804894afba388a98cc3, type: 2}
@@ -80,6 +79,7 @@ MonoBehaviour:
   bookFiendSummonSFX: {fileID: 11400000, guid: 972ea140ab443274e99022ee9bcf348b, type: 2}
   stage6TpSFX: {fileID: 11400000, guid: bc1b29fa9ad78c24184e8d6368182703, type: 2}
   pylferTpSFX: {fileID: 11400000, guid: a3ff0ea01f1bbbf4f8669e609c9ff904, type: 2}
+  playershootSFX: {fileID: 11400000, guid: 6e4721a9f3937854295b8b176424ea2f, type: 2}
   magicCircles: {fileID: 11400000, guid: ecb15ad31fbf67f4383a433a76ff2594, type: 2}
   pointedBullet: {fileID: 11400000, guid: 41aa83ad522d4c441b420119f326348b, type: 2}
   smallRoundBullet: {fileID: 11400000, guid: f6d3e6216ead4c946a5abcd2fba1d3b8, type: 2}

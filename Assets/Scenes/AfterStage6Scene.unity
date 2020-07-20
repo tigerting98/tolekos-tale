@@ -246,7 +246,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Try Clearing the Game Without Dying On Normal And Above!
+  m_text: Try Clearing the Game Without Dying!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c, type: 2}
   m_sharedMaterial: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,

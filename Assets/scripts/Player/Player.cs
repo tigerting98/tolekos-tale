@@ -169,6 +169,7 @@ public class Player : MonoBehaviour
         }
         else {
             if (isFiring) {
+                AudioManager.current.PlaySFX(GameManager.gameData.playershootSFX);
                 if (mode == DamageType.Water)
                 {
                     if (isFocus)
