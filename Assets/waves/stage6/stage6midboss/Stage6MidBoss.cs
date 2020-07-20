@@ -33,7 +33,7 @@ public class Stage6MidBoss : EnemyBossWave
 
     public override void SpawnWave() {
         
-        soundeffect = GameManager.gameData.clickSFX;
+        featherSoundEffect = GameManager.gameData.clickSFX;
         StartCoroutine(PreFight());
     
     }
