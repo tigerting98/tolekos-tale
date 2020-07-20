@@ -56,7 +56,7 @@ public class MusicManager : MonoBehaviour
      IEnumerator Change(MusicTrack track) {
         
         fadeOut = true;
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.4f);
         fadeOut = false;
         PlayTrack(track);
 
@@ -69,7 +69,7 @@ public class MusicManager : MonoBehaviour
                 fadeOut = false;
             }
             else {
-                volume -= Time.deltaTime;
+                volume -= Time.deltaTime*3f;
                 if (track)
                 { source.volume = track.volume * GameManager.musicVolume * volume; }
             }
