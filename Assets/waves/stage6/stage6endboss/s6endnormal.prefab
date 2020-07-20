@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eab8e899329ffb41a1213b1cee5076d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   boss: {fileID: 2465689840817753905, guid: 00be70a7dc810bc44940158e65c4e211, type: 3}
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
@@ -62,6 +61,7 @@ MonoBehaviour:
     type: 3}
   dialogue1: {fileID: 11400000, guid: 535b18b8d0b421d418e54c1d6dc29453, type: 2}
   dialogue2: {fileID: 11400000, guid: de309a3d004bf01449baecd86318fea7, type: 2}
+  dialogue3: {fileID: 0}
   startparticle: {fileID: 6110562706618516333, guid: afd4edbf82e3c4a46a4a06b4e63ee1ea,
     type: 3}
   spawnParticle: {fileID: 6110562706618516333, guid: 41e797b206fd7e2429c72ef5bd897d6e,
@@ -81,8 +81,13 @@ MonoBehaviour:
     type: 3}
   deathparticle: {fileID: 4000004312301813610, guid: daf2315e11d0786449b29b2679ae18e8,
     type: 3}
+  generalendDialogue: {fileID: 11400000, guid: 47a90955273d1714ea47b4efd21b09b9, type: 2}
   goodEndDialogue: {fileID: 11400000, guid: 9c9e7c08d0382cd4d9a88c9d3d047a56, type: 2}
   badEndDialogue: {fileID: 11400000, guid: 01b8824eb9eaeed418f1704dcc61c894, type: 2}
+  tpAway: {fileID: 2412252678472305718, guid: 346f452037eaad84eae9103008e64c28, type: 3}
+  tpAwayParticle: {fileID: 3866698331861468935, guid: bfad38ae9eb61454aa65c59b33272829,
+    type: 3}
+  tpAwaySFX: {fileID: 11400000, guid: 577b5e73ff12d6e49a85bc04f31269b6, type: 2}
   harderballspeed1: 0
   harderballpulserate1: 0
   harderballdmg1: 0

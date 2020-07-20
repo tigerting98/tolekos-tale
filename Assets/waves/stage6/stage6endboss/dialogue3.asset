@@ -10,17 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b54388a81ad299c44b3d776bc27ed6e0, type: 3}
-  m_Name: badend
+  m_Name: dialogue3
   m_EditorClassIdentifier: 
   lines:
   - left: 1
-    speaker: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+    speaker: {fileID: 0}
     isPlayer: 1
-    text: Dammit!! For once he didn't mess up his teleportation spell and ACTUALLY
-      took Master Sylfer with him.
-    name: Toleko
-  - left: 1
-    speaker: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
-    isPlayer: 1
-    text: Now I have to go track him down. Could this day get any worse?
+    text: Okay, I guess I'll just have to brute force my way through this problem...
+      again.
     name: Toleko

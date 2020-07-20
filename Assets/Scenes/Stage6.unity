@@ -2170,7 +2170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc63cd80b636e541abd0b885eb3e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: 7163120404739174105, guid: a37b4937d12500443930dc2b9e1589d4, type: 3}
+  wave: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29, type: 3}
   playerLevel: 1000
 --- !u!4 &1931965796
 Transform:

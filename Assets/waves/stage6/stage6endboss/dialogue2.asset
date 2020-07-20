@@ -47,9 +47,3 @@ MonoBehaviour:
     isPlayer: 1
     text: '*Sigh* '
     name: Toleko
-  - left: 1
-    speaker: {fileID: 0}
-    isPlayer: 1
-    text: Okay, I guess I'll just have to brute force my way through this problem...
-      again.
-    name: Toleko

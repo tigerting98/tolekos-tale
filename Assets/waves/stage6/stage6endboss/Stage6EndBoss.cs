@@ -11,13 +11,15 @@ public class Stage6EndBoss : EnemyBossWave
     [SerializeField] bool harder;
     [SerializeField] GameObject background;
     [SerializeField] GameObject imageofboss;
-    [SerializeField] Dialogue dialogue1, dialogue2;
+    [SerializeField] Dialogue dialogue1, dialogue2, dialogue3;
     [SerializeField] ParticleSystem startparticle, spawnParticle;
     [SerializeField] float movespeed;
     [SerializeField] Sprite defaultPylfer, greenPylfer, redPylfer, bluePylfer;
     [SerializeField] ParticleSystem waterparticle, earthparticle, fireparticle, pureparticle;
     [SerializeField] ParticleSystem deathparticle;
-    [SerializeField] Dialogue goodEndDialogue, badEndDialogue;
+    [SerializeField] Dialogue generalendDialogue, goodEndDialogue, badEndDialogue;
+    [SerializeField] GameObject tpAway, tpAwayParticle;
+    [SerializeField] SFX tpAwaySFX;
     [Header("Pattern1")]
     [SerializeField] float harderballspeed1, harderballpulserate1, harderballdmg1;
     [SerializeField] int harderballcount1;
@@ -139,10 +141,13 @@ public class Stage6EndBoss : EnemyBossWave
         Invoke("StartDialogue2", 2f);
     }
     void StartDialogue2() {
+        StartCoroutine(DialogueManager.StartDialogue(dialogue2, StartDialogue3));
+    }
+    void StartDialogue3() {
+        GameManager.PlayEndBossMusic();
         StartCoroutine(DialogueManager.StartDialogue(dialogue2, Phase1));
     }
     void Phase1() {
-        GameManager.PlayEndBossMusic();
         currentBoss = Instantiate(boss, new Vector2(0, 0), Quaternion.identity);
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
@@ -430,10 +435,19 @@ public class Stage6EndBoss : EnemyBossWave
         PlayMultipleParticleEffect(fireparticle, 15, bossImage.transform.position);
         yield return new WaitForSeconds(0.2f);
         PlayMultipleParticleEffect(deathparticle, 1, bossImage.transform.position);
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(DialogueManager.StartDialogue(generalendDialogue, ()=>StartCoroutine(TeleportAway())));
+
+    }
+    IEnumerator TeleportAway() {
+        Destroy(Instantiate(tpAway, bossImage.transform.position, Quaternion.identity), 5f);
+        Destroy(Instantiate(tpAwayParticle, bossImage.transform.position, Quaternion.identity), 5f);
+        yield return new WaitForSeconds(0.5f);
+        AudioManager.current.PlaySFX(tpAwaySFX);
+        yield return new WaitForSeconds(2.15f);
         Destroy(bossImage.gameObject);
         yield return new WaitForSeconds(1f);
-        StartCoroutine(DialogueManager.StartDialogue(PlayerStats.deathCount > 0 ? badEndDialogue : goodEndDialogue, LoadNext)); 
-
+        StartCoroutine(DialogueManager.StartDialogue(PlayerStats.deathCount > 0 ? badEndDialogue : goodEndDialogue, LoadNext));
     }
     void LoadNext() {
         SceneManager.LoadScene("AfterStage6Scene");
