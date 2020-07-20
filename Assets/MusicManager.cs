@@ -9,6 +9,7 @@ public class MusicManager : MonoBehaviour
     public AudioSource source;
     bool fadeOut;
     MusicTrack track;
+
     private void Awake()
     {
         source = GetComponent<AudioSource>();
@@ -45,12 +46,12 @@ public class MusicManager : MonoBehaviour
             source.volume = track.volume * GameManager.musicVolume * volume;
         }
     }
-    public Coroutine ChangeTrack(MusicTrack track) {
+    public void ChangeTrack(MusicTrack track) {
+        StopAllCoroutines();
         if (track)
         {
-            return StartCoroutine(Change(track));
+           StartCoroutine(Change(track));
         }
-        return null;
     }
      IEnumerator Change(MusicTrack track) {
         
