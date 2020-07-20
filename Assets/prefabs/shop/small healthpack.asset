@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: small healthpack
   m_EditorClassIdentifier: 
   itemName: Small Healthpack
-  icon: {fileID: 21300000, guid: 0452d3f889081f34f9b41878966b2a22, type: 3}
+  icon: {fileID: 21300000, guid: 8446955c9826ccb40937335610d39f4d, type: 3}
   description: Heals 100 HP
   cost: 100
   HealthGain: 100
