@@ -19,7 +19,6 @@ public class BetweenStagesScript : MonoBehaviour
     {
         AudioManager.current.music.ChangeTrack(music);
         if (GameManager.levelDescription != null) {
-            background.sprite = GameManager.levelDescription.backgroundImage;
             text.text = GameManager.levelDescription.levelDescription;
             nextStageButton.onClick.AddListener(
                 () => GameManager.sceneLoader.LoadScene(GameManager.levelDescription.nextLevelSceneString));
