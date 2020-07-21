@@ -30,7 +30,7 @@ public class GamePlayerInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z)) {
             OnPressZ?.Invoke();
         }
-        if (Input.GetKeyDown(KeyCode.KeypadEnter)) {
+        if (Input.GetKeyDown(KeyCode.Return)) {
             OnPressEnter?.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.C))

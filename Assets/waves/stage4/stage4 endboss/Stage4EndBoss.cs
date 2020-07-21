@@ -313,8 +313,10 @@ public class Stage4EndBoss : EnemyBossWave
             up ? 90 + randomfactor: 270 + randomfactor, speed,null), shotinterval7, number);
     }
     void EndPhase7() {
-
-        currentBoss.bosshealth.OnDeath -= EndPhase7;
+        if (currentBoss)
+        {
+            currentBoss.bosshealth.OnDeath -= EndPhase7;
+        }
         EndPhase();
         Vector2 pos = bossImage.transform.position;
         Destroy(bossImage.gameObject);

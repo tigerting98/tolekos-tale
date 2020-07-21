@@ -418,7 +418,10 @@ public class Stage6EndBoss : EnemyBossWave
         currentBoss.bosshealth.OnDeath += EndPhase10;
     }
     public void EndPhase10() {
-        currentBoss.bosshealth.OnDeath -= EndPhase10;
+        if (currentBoss)
+        {
+            currentBoss.bosshealth.OnDeath -= EndPhase10;
+        }
         EndPhase();
         StartCoroutine(DeathAnimation());
     }

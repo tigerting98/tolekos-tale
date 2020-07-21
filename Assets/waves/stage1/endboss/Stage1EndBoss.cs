@@ -125,9 +125,13 @@ public class Stage1EndBoss : EnemyBossWave
     }
 
     void EndStage() {
-        currentBoss.bosshealth.OnDeath -= EndStage;
+        if (currentBoss)
+        {
+            currentBoss.bosshealth.OnDeath -= EndStage;
+        }
         try
         {
+
             EndPhase();
             Invoke("Collect", 0.1f);
         }

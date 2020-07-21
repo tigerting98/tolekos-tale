@@ -8,7 +8,7 @@ public class CreditScene : MonoBehaviour
     [SerializeField] float delay;
     private void Update()
     {
-        if (next&&(Input.GetKeyDown(KeyCode.Z)|| Input.GetKeyDown(KeyCode.KeypadEnter))) {
+        if (next&&(Input.GetKeyDown(KeyCode.Z)|| Input.GetKeyDown(KeyCode.Return))) {
             GameManager.sceneLoader.LoadScene("StartPage");
         }
     }
