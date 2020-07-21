@@ -58,12 +58,12 @@ public class PauseMenu : MonoBehaviour
         txt.Append(string.Format("Level: {0}\n", PlayerStats.playerLevel));
         txt.Append(string.Format("EXP: {0}/{1}\n", PlayerStats.exp, PlayerStats.expToLevelUp));
         txt.Append(string.Format("Health: {0}/{1}\n", curHP, (int)PlayerStats.playerMaxHP));
-        txt.Append(string.Format("Water Unfocus Damage: {0}\n", PlayerStats.damage));
-        txt.Append(string.Format("Water Focus Damage: {0}\n", PlayerStats.damage));
-        txt.Append(string.Format("Earth Unfocus Damage: {0}\n", PlayerStats.damage));
-        txt.Append(string.Format("Earth Focus Damage: {0}\n", PlayerStats.damage* PlayerStats.earthFocusDaamgeRatio));
-        txt.Append(string.Format("Fire Unfocus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireUnfocusDamageRatio));
-        txt.Append(string.Format("Fire Focus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireFocusDamageRatio));
+        txt.Append(string.Format("Water Unfocus Damage: {0}\n", PlayerStats.damage * PlayerStats.shotDamageMultiplier));
+        txt.Append(string.Format("Water Focus Damage: {0}\n", PlayerStats.damage * PlayerStats.shotDamageMultiplier ));
+        txt.Append(string.Format("Earth Unfocus Damage: {0}\n", PlayerStats.damage * PlayerStats.shotDamageMultiplier));
+        txt.Append(string.Format("Earth Focus Damage: {0}\n", PlayerStats.damage* PlayerStats.earthFocusDaamgeRatio * PlayerStats.shotDamageMultiplier));
+        txt.Append(string.Format("Fire Unfocus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireUnfocusDamageRatio * PlayerStats.shotDamageMultiplier));
+        txt.Append(string.Format("Fire Focus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireFocusDamageRatio * PlayerStats.shotDamageMultiplier));
         txt.Append(string.Format("Bomb Damage: {0} per part\n", PlayerStats.bombDamage*PlayerStats.bombEffectiveness));
         txt.Append(string.Format("Number Of Deaths: {0}\n", PlayerStats.deathCount));
         text.text = txt.ToString() ;

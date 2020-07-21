@@ -23,6 +23,8 @@ public class PlayerStats : MonoBehaviour
     public static float damageMultiplier = 1f;
     public static int hardenSkinLevel = 0;
     public static int bombLevel = 0;
+    public static int shotDamageUpgradeLevel = 0;
+    public static float shotDamageMultiplier = 1f;
     public static float bombEffectiveness = 1;
     public static float earthFocusedShotRateRatio = 2f;
     public static float baseShotRate = 0.1f;
@@ -70,6 +72,8 @@ public class PlayerStats : MonoBehaviour
 
     public static void Reset()
     {
+        shotDamageUpgradeLevel = 0;
+        shotDamageMultiplier = 1;
         bombLevel = 0;
         bombEffectiveness = 1;
         hardenSkinLevel = 0;

@@ -31,8 +31,10 @@ public class PlayerShop : MonoBehaviour
         healthtext.text = ((int)PlayerStats.playerCurrentHP).ToString() + "/" + ((int)PlayerStats.playerMaxHP).ToString();
         healthbar.value = PlayerStats.playerCurrentHP / PlayerStats.playerMaxHP;
         goldText.text = "Gold: " + PlayerStats.gold.ToString();
-        playerStatsText.text = string.Format("Harden Skin Level: {0}\nDamage Reduction: {1} %\nBomb Upgrade Level: {2}\nBomb Damage: {3}"
-            , PlayerStats.hardenSkinLevel, (int)(100*(1- PlayerStats.damageMultiplier)), PlayerStats.bombLevel, PlayerStats.bombDamage*PlayerStats.bombEffectiveness);
+        playerStatsText.text = string.Format("Attack Upgrade Level: {4}\nAttack Damage Multiplier: {5}\nHarden Skin Level: {0}\nDamage Reduction: {1} %\nBomb Upgrade Level: {2}\n" +
+            "Bomb Damage: {3}"
+            , PlayerStats.hardenSkinLevel, (int)(100*(1- PlayerStats.damageMultiplier)), PlayerStats.bombLevel, PlayerStats.bombDamage*PlayerStats.bombEffectiveness,
+            PlayerStats.shotDamageUpgradeLevel, PlayerStats.shotDamageMultiplier);
 
 
     }

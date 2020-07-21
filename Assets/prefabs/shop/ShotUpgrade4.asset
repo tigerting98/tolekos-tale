@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c7fc36c52c66448b13ee0fe644a215, type: 3}
+  m_Name: ShotUpgrade4
+  m_EditorClassIdentifier: 
+  itemName: Attack Upgrade Level 4
+  icon: {fileID: 21300000, guid: d26e639c0839ac54da38864994fddc25, type: 3}
+  description: Increases your shot attack damage multiplier to 1.4x. Requires Attack
+    Upgrade Level 3.
+  cost: 2500
+  multiplier: 1.4
+  level: 4
