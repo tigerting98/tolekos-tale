@@ -15,8 +15,8 @@ MonoBehaviour:
   wavesFirstHalf:
   - {fileID: 3211414030001226229, guid: d82883e0352d16b47b57a047c2c7af02, type: 3}
   - {fileID: 7991977077008512809, guid: f28b189a8dff4274d8d29eb8c6d805c8, type: 3}
-  - {fileID: 6654447061920415266, guid: 9e30f1913e1ef104dbfbdad9cef29959, type: 3}
   - {fileID: 5395813606866371464, guid: df489085788e6a443864b5b32c3ebe19, type: 3}
+  - {fileID: 6654447061920415266, guid: 9e30f1913e1ef104dbfbdad9cef29959, type: 3}
   timesFirstHalf:
   - 3
   - 20
