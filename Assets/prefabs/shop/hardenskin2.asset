@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: hardenskin2
   m_EditorClassIdentifier: 
   itemName: Harden Skin Level 2
-  icon: {fileID: 21300000, guid: 735053820141ab44791acb253515ab3d, type: 3}
-  description: Improves harden skin to provide 30% damage resistance. Requires Harden
+  icon: {fileID: 21300000, guid: 4f000c5a5f2aa5d49953259e2b2a9050, type: 3}
+  description: Improves harden skin to provide 20% damage resistance. Requires Harden
     Skin Level 1
-  cost: 5000
+  cost: 1500
   hardenSkinLevel: 2
-  damageMultiplier: 0.6
+  damageMultiplier: 0.8

@@ -42,6 +42,7 @@ public class PlayerStats : MonoBehaviour
     }
     public static void GainBomb(int x) {
         bombCount += x;
+        bombCount = bombCount > 10 ? 10 : bombCount;
         OnUpdateBomb?.Invoke();
     }
     public static void AddGold(int gold) {

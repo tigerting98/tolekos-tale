@@ -14,7 +14,8 @@ public class Shop : MonoBehaviour
     [SerializeField] GameObject shopList;
     [SerializeField] PlayerShop playerShop;
     [SerializeField] ItemDescription itemDescription;
-    [SerializeField] List<ShopItem> items;
+    // [SerializeField] List<ShopItem> items;
+    [SerializeField] List<ShopItemList> items;
     [SerializeField] ShopButton shopButton;
     [SerializeField] EventSystem system;
     [SerializeField] Button backButton;

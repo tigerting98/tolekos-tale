@@ -13,6 +13,7 @@ public class ShopButton : MonoBehaviour, ISelectHandler
     [SerializeField] ItemDescription itemDescription;
     [SerializeField] TextMeshProUGUI costIcon, itemNameIcon;
     [SerializeField] Color available, unavailable, noGold;
+    public ShopItemList list;
     public ShopItem item;
     public event Action OnBoughtItem;
 
@@ -20,16 +21,20 @@ public class ShopButton : MonoBehaviour, ISelectHandler
     {
         GetComponent<Button>().onClick.AddListener(BuyItem);
     }
-    public void SetUp(ShopItem item, ItemDescription itemDescription)
-    {
+
+    public void SetUp(ShopItemList list, ItemDescription itemDescription) {
+        this.list = list;
+        this.itemDescription = itemDescription;
+        Refresh();
+
+    }
+    public void Refresh() {
+        item = list.ChooseItem();
         itemIcon.sprite = item.icon;
         costIcon.text = "Price: " + item.cost.ToString();
         itemNameIcon.text = item.itemName;
-        this.item = item;
-        this.itemDescription = itemDescription;
         SetColor();
     }
-
     public void SetColor() {
         if (item.Buyable())
         {
@@ -59,6 +64,8 @@ public class ShopButton : MonoBehaviour, ISelectHandler
     public void BuyItem() {
         if (item.Buyable()) {
             item.Buy();
+            Refresh();
+            itemDescription.SetDescription(item);
             OnBoughtItem?.Invoke();
         }
     

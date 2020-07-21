@@ -46,7 +46,7 @@ MonoBehaviour:
     speaker: {fileID: 21300000, guid: b7e8c8f7f54b4af4597986c9b05e51ea, type: 3}
     isPlayer: 1
     text: Your idiot of an employer Pylfer has kidnapped my master again, for the
-      3rd time is month! I need to bring him back to the tower.
+      3rd time this month! I need to bring him back to the tower.
     name: Toleko
   - left: 0
     speaker: {fileID: 21300000, guid: 4362fb7448bc2a843bd408f48667dfa8, type: 3}
