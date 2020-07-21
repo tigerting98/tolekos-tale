@@ -34,8 +34,7 @@ MonoBehaviour:
   shooting: {fileID: 726792229771978014}
   damagetaker: {fileID: 2134442949467112846}
   collider: {fileID: 0}
-  enemyAudio: {fileID: 5026594268607588289}
-  name: fireboss
+  name: Cain
   bosshealth: {fileID: 4965199016690712829}
   hitbox: {fileID: 0}
   magicCircle: {fileID: 0}
@@ -246,18 +245,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 978b1695037bf83418579d61fd3ac9b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5026594268607588289 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6585824635358334377, guid: accf02acb6bfae242b167b6bda0e8e8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2208875181019130472}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3498075766297734567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32aef5404f2a8149a7ca21e400a1e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4965199016690712829 stripped

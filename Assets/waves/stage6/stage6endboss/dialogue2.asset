@@ -19,9 +19,9 @@ MonoBehaviour:
     text: Pylfer, you and your games again. How about you just hand over Master Sylfer
       and I can leave you alone.
     name: Toleko
-  - left: 1
+  - left: 0
     speaker: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
-    isPlayer: 1
+    isPlayer: 0
     text: What disrespect! You talk big for a mere apprentice. You are naive to think
       that the Great Pylfer would just bow down to your pathetic existence.
     name: Pylfer

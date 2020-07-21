@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -125,8 +126,14 @@ public class Stage1EndBoss : EnemyBossWave
 
     void EndStage() {
         currentBoss.bosshealth.OnDeath -= EndStage;
-        EndPhase();
-        Invoke("Collect", 0.1f);
+        try
+        {
+            EndPhase();
+            Invoke("Collect", 0.1f);
+        }
+        catch (Exception ex) {
+            Debug.Log(ex);
+        }
         StartCoroutine(DialogueManager.StartDialogue(endFightDialogue, NextStage));
     
     }
@@ -136,46 +143,48 @@ public class Stage1EndBoss : EnemyBossWave
     IEnumerator Pattern3() {
         Animator animator = currentBoss.gameObject.GetComponent<Animator>();
         while (animator) {
-            animator.SetTrigger("Disappear");
-            if (harder)
-            {
-                Patterns.RingOfBullets(GameManager.gameData.starBullet.GetItem(Random.Range(0, 3)),
-                    dmg3star, currentBoss.transform.position, number3, Functions.AimAtPlayer(currentBoss.transform), speed3harder, null);
-             }
-            AudioManager.current.PlaySFX(GameManager.gameData.tpSFX);
-            yield return new WaitForSeconds(1f);
-            if (animator)
-            {
-                currentBoss.transform.position = GameManager.playerPosition + new Vector2(0, 1f);
-                animator.SetTrigger("Appear");
-            }
-            if (animator)
-            {
-                yield return new WaitForSeconds(0.8f);
-                if (currentBoss)
+           
+                animator.SetTrigger("Disappear");
+                if (harder)
                 {
-                    Bullet punchbul = GameManager.bulletpools.SpawnBullet(punch, currentBoss.transform.position);
-                    punchbul.movement.SetSpeed(new Vector2(0, -punchSpeed));
-                    punchbul.movement.destroyBoundary = 6f;
-                    yield return new WaitForSeconds(1 / punchSpeed);
-                    ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > 1/punchSpeed);
-                    trigger.OnTriggerEvent += movement =>
-                    {
-                        Bullet bul = Instantiate(GameManager.gameData.explosionBullet, movement.transform.position, Quaternion.identity);
-                        bul.SetDamage(explosiondmg);
-                        Destroy(bul, 1.2f);
-                        ExplodingAndBack(movement.transform.position);
-                        movement.GetComponent<Bullet>().Deactivate();
-                        currentBoss.shooting.StartShooting(GameManager.maincamera.ShakeCamera(0.12f, 0.2f));
-                    };
-                    punchbul.movement.triggers.Add(trigger);
-
-                    
+                    Patterns.RingOfBullets(GameManager.gameData.starBullet.GetItem(UnityEngine.Random.Range(0, 3)),
+                        dmg3star, currentBoss.transform.position, number3, Functions.AimAtPlayer(currentBoss.transform), speed3harder, null);
                 }
+                AudioManager.current.PlaySFX(GameManager.gameData.tpSFX);
+                yield return new WaitForSeconds(1f);
+                if (animator)
+                {
+                    currentBoss.transform.position = GameManager.playerPosition + new Vector2(0, 1f);
+                    animator.SetTrigger("Appear");
+                }
+                if (animator)
+                {
+                    yield return new WaitForSeconds(0.8f);
+                    if (currentBoss)
+                    {
+                        Bullet punchbul = GameManager.bulletpools.SpawnBullet(punch, currentBoss.transform.position);
+                        punchbul.movement.SetSpeed(new Vector2(0, -punchSpeed));
+                        punchbul.movement.destroyBoundary = 6f;
+                        ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > 1 / punchSpeed);
+                        trigger.OnTriggerEvent += movement =>
+                        {
+                            Bullet bul = Instantiate(GameManager.gameData.explosionBullet, movement.transform.position, Quaternion.identity);
+                            bul.SetDamage(explosiondmg);
+                            Destroy(bul, 1.2f);
+                            ExplodingAndBack(movement.transform.position);
+                            movement.GetComponent<Bullet>().Deactivate();
+                            currentBoss.shooting.StartShooting(GameManager.maincamera.ShakeCamera(0.12f, 0.2f));
+                        };
+                        punchbul.movement.triggers.Add(trigger);
 
+
+                    }
+
+                }
+                yield return new WaitForSeconds(pausetime + 1/punchSpeed);
             }
-            yield return new WaitForSeconds(pausetime);
-        }
+          
+        
 
     }
 

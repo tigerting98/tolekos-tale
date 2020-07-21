@@ -58,7 +58,13 @@ public class EnemyBossWave : EnemyWave
             currentBoss.shooting.StopAllCoroutines();
             GameManager.maincamera.Reset();
             currentBoss.movement.StopMoving();
-            StartCoroutine(DestroyNonBoss());
+            try
+            {
+                StartCoroutine(DestroyNonBoss());
+            }
+            catch (Exception ex) {
+                Debug.Log(ex);
+            }
             if (currentUI)
             { Destroy(currentUI.gameObject); }
             SwitchToImage();
