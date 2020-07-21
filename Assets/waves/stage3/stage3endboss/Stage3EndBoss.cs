@@ -232,6 +232,7 @@ public class Stage3EndBoss : EnemyBossWave
         
         EndPhase();
         Destroy(bossImage);
+        Invoke("Collect", 0.1f);
         StartCoroutine(DialogueManager.StartDialogue(endDialogue, NextStage));
     }
   

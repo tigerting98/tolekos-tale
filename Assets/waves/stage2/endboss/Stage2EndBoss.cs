@@ -211,6 +211,7 @@ public class Stage2EndBoss : EnemyBossWave
     void EndPhase5() {
         EndPhase();
         Destroy(bossImage);
+        Invoke("Collect", 0.1f);
         Invoke("EndDialogue", endPhaseTransition);
     }
 

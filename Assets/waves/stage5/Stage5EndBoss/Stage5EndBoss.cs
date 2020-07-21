@@ -429,6 +429,7 @@ public class Stage5EndBoss : EnemyBossWave
     {
         donebools8[0] = true;
         waterBoss.shooting.StopAllCoroutines();
+        Invoke("Collect", 0.1f);
         SwitchToImage(DamageType.Water);
         waterimage.GetComponent<Movement>().MoveTo(new Vector2(0, 5f), movespeed / 3);
         waterBoss.bosshealth.OnLifeDepleted -= OneDownWater8;
@@ -439,6 +440,7 @@ public class Stage5EndBoss : EnemyBossWave
     {
         donebools8[1] = true;
         earthBoss.shooting.StopAllCoroutines();
+        Invoke("Collect", 0.1f);
         SwitchToImage(DamageType.Earth);
         earthimage.GetComponent<Movement>().MoveTo(new Vector2(0, 5f), movespeed / 3);
         earthBoss.bosshealth.OnLifeDepleted -= OneDownEarth8;
@@ -448,6 +450,7 @@ public class Stage5EndBoss : EnemyBossWave
     {
         donebools8[2] = true;
         fireBoss.shooting.StopAllCoroutines();
+        Invoke("Collect", 0.1f);
         SwitchToImage(DamageType.Fire);
         fireimage.GetComponent<Movement>().MoveTo(new Vector2(0, 5f), movespeed / 3);
         fireBoss.bosshealth.OnLifeDepleted -= OneDownFire8;

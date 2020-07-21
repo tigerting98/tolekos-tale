@@ -322,9 +322,11 @@ public class Stage4EndBoss : EnemyBossWave
         Destroy(bossImage.gameObject);
         Instantiate(key, pos, Quaternion.identity);
         Instantiate(deathEffect, pos, Quaternion.Euler(-90, 0, 0));
+        Invoke("Collect", 0.1f); 
         Invoke("EndDialogue", 1f);
     }
     void EndDialogue() {
+
         StartCoroutine(DialogueManager.StartDialogue(endDialogue, NextStage));
     }
 

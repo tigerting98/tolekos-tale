@@ -33,7 +33,13 @@ public class EnemyBossWave : EnemyWave
    
     public virtual void Collect()
     {
-        GameManager.CollectEverything();
+        try
+        {
+            GameManager.CollectEverything();
+        }
+        catch (Exception ex) {
+            Debug.Log(ex);
+        }
     }
     public virtual void NextStage()
     {
