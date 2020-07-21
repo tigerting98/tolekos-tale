@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[0]
-      value: 24350
+      value: 28000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[1]
-      value: 26500
+      value: 28000
       objectReference: {fileID: 0}
     - target: {fileID: 232094586145697766, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}

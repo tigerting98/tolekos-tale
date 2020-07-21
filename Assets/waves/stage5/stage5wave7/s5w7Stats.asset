@@ -15,8 +15,8 @@ MonoBehaviour:
   hp: 5000
   dmg: 3000
   goldchance: 1
-  maxGold: 225
-  minGold: 200
+  maxGold: 300
+  minGold: 250
   exp: 100
   customResist: 0
   type: 3

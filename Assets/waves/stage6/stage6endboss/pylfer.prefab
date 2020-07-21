@@ -41,7 +41,7 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[2]
-      value: 25000
+      value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[4]
-      value: 25000
+      value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -61,12 +61,12 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[6]
-      value: 29000
+      value: 35000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[0]
-      value: 25000
+      value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
       propertyPath: listOfHp.Array.data[7]
-      value: 35000
+      value: 40000
       objectReference: {fileID: 0}
     - target: {fileID: -2720052727061517675, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}
