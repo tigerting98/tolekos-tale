@@ -45,12 +45,12 @@ PrefabInstance:
     - target: {fileID: -4008127955605949803, guid: 39cf8955cb2cfac4fae60a2839560160,
         type: 3}
       propertyPath: dmgBall
-      value: 28
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: -4008127955605949803, guid: 39cf8955cb2cfac4fae60a2839560160,
         type: 3}
       propertyPath: dmgPointed
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4522323344577174238, guid: 39cf8955cb2cfac4fae60a2839560160,
         type: 3}

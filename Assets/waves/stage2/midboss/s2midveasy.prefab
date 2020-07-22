@@ -65,12 +65,12 @@ PrefabInstance:
     - target: {fileID: 6041894570374783255, guid: 01707a271c98e6e45896c8bb4c2efa20,
         type: 3}
       propertyPath: dmg1
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6041894570374783255, guid: 01707a271c98e6e45896c8bb4c2efa20,
         type: 3}
       propertyPath: dmg2
-      value: 55
+      value: 61
       objectReference: {fileID: 0}
     - target: {fileID: 8799780127626820670, guid: 01707a271c98e6e45896c8bb4c2efa20,
         type: 3}

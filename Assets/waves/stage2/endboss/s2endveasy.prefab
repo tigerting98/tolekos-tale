@@ -155,7 +155,7 @@ PrefabInstance:
     - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
         type: 3}
       propertyPath: dmg2line
-      value: 60
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
         type: 3}
@@ -195,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
         type: 3}
       propertyPath: dmg5fairy
-      value: 58
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 3085221276502336863, guid: 30f815afdf89a074e94ebfac0a892cd6,
         type: 3}

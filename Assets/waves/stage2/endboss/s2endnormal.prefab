@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a903c0df0a3504542a57f4c84c433bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   boss: {fileID: 6857358497036807141, guid: b02337ff7beacc24aae2ed42bdcb486e, type: 3}
   bossImage: {fileID: 6034030427296860853, guid: 2a0e4074c7cb37045aa045d56c8bed1f,
     type: 3}
@@ -86,7 +85,7 @@ MonoBehaviour:
   delay: 0.1
   lineduration: 7
   pulseRate2: 20
-  dmg2line: 180
+  dmg2line: 230
   CircleBullets2shotRate: 0.6
   spread2: 15
   circlebulletpulseRate2: 5
@@ -134,7 +133,7 @@ MonoBehaviour:
   fairyangularVel: 10
   fairyamp: 0.2
   fairyY: 3
-  dmg5fairy: 175
+  dmg5fairy: 230
   spawnRateslime: 3
   shotRateslime: 2
   speedbulletslime: 2

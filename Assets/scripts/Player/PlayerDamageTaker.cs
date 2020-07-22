@@ -12,7 +12,7 @@ public class PlayerDamageTaker : DamageTaker
         DamageDealer dmg = collision.GetComponent<DamageDealer>();
         if (dmg && !dmg.DamageOverTime())
         { AudioManager.current.PlaySFX(hitSFX);
-            GameManager.DestroyNonDPSEnemyBulletsInRadius(0.6f);
+            GameManager.DestroyNonDPSEnemyBulletsInRadius(PlayerStats.hitBarrierRadius);
         }
     }
     public override void OnTriggerStay2D(Collider2D collision)

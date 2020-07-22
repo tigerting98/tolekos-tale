@@ -1282,6 +1282,7 @@ MonoBehaviour:
   - {fileID: -6787760544962538256, guid: 94e1927008cb9504cb13f79511b33b38, type: 3}
   - {fileID: 6263335963304946983, guid: 7108c0ce77a9db347b978625f6d78fd6, type: 3}
   - {fileID: 6880572518521112087, guid: 7ad36fae1df8e9048bfc15655ae5e94a, type: 3}
+  - {fileID: -7970895780342319502, guid: 8c550db00a2b9de47b728604364b771e, type: 3}
   shopButton: {fileID: 3358136378841623323, guid: a5b3440e3ee455e4092c22b9656534ba,
     type: 3}
   system: {fileID: 0}

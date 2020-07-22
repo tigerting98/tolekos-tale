@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e1608a44a84e84bb7d75b089e26a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 11400000, guid: cacb82c8e502ed043afc6f42f574999b, type: 2}
   boss: {fileID: 6857358497036807141, guid: 306c26b2885068d4a9b504b6495f3071, type: 3}
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
@@ -66,11 +65,11 @@ MonoBehaviour:
   bulletPattern1Speed: 3.5
   pattern1ShotRate: 0.1
   pattern1PulseRate: 2
-  dmg1: 130
+  dmg1: 180
   numberOfLines: 8
   pattern1BulletsPerPulse: 8
   bulletPattern2Speed: 3
   pattern2ShotRate: 0.05
   pattern2angularvel: 1.5
-  dmg2: 175
+  dmg2: 185
   numberOfLines2: 8

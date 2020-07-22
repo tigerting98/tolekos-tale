@@ -1,5 +1,5 @@
 ﻿using System;
-
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -23,13 +23,15 @@ public class PlayerStats : MonoBehaviour
     public static float earthFocusDaamgeRatio = 4.4f;
     public static float damageMultiplier = 1f;
     public static int hardenSkinLevel = 0;
+    public static int hitBarrierLevel = 0;
+    public static float hitBarrierRadius = 0.4f;
     public static int bombLevel = 0;
     public static int shotDamageUpgradeLevel = 0;
     public static float shotDamageMultiplier = 1f;
     public static float bombEffectiveness = 1;
     public static float earthFocusedShotRateRatio = 2f;
     public static float baseShotRate = 0.1f;
-    public static int gold = 100000;
+    public static int gold = 0;
     public static event Action OnGainExp;
     public static event Action OnGainGold;
     public static event Action OnUpdateBomb;
@@ -73,6 +75,8 @@ public class PlayerStats : MonoBehaviour
 
     public static void Reset()
     {
+        hitBarrierLevel = 0;
+        hitBarrierRadius = 0.4f;
         shotDamageUpgradeLevel = 0;
         shotDamageMultiplier = 1;
         bombLevel = 0;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e4dc7d24b225640a1bf1ebc2260221, type: 3}
   m_Name: playerHitSFX
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 47b3566d44ea9b94bbc961a855a4a6a6, type: 3}
+  clip: {fileID: 8300000, guid: 79c7483c7126f16438b17d85de1b0264, type: 3}
   volume: 0.3
   id: playerHit
-  cooldownTime: 0.01
+  cooldownTime: 0.1

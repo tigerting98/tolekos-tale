@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc44f8ae3eaa98649b3e4255e41f616b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   boss: {fileID: 1792903561220353094, guid: 0c6fd512b0f90fe47a13203753d96cc4, type: 3}
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
@@ -68,7 +67,7 @@ MonoBehaviour:
   pattern1SpawnRate: 0.06
   pattern1Spacing: 0.15
   pattern1Speed: 4
-  dmg1: 85
+  dmg1: 120
   arrowSpawnTimeMax: 0.08
   arrowSpawnTimeMin: 0.04
   maxSpeed: 5
@@ -76,7 +75,7 @@ MonoBehaviour:
   moveSpeed: 0.5
   maxY: 3.5
   minY: 0.5
-  dmg2: 95
+  dmg2: 110
   arrowSpeed: 1.5
   shotRate: 1
   explodingBullet: {fileID: 911972999547948889, guid: 9ecd7e71157ad364284fe4a6a2b0c127,
@@ -86,7 +85,7 @@ MonoBehaviour:
   maxRadiusPattern3: 1
   shortDelayPattern3: 0.15
   finalSpeedPattern3: 2
-  dmg3: 100
+  dmg3: 150
   pausetime: 3.4
   explosion: {fileID: 911972999547948889, guid: 9ecd7e71157ad364284fe4a6a2b0c127,
     type: 3}

@@ -43,14 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be94ea66fd495944b0f08ae00e7e302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   stopY: 2
   stopX: 2
   movespeed1: 7
   movespeed2: 2
   spawnRate: 5
   ballDmg1: 225
-  pointedDmg1: 175
+  pointedDmg1: 230
   pulseRate: 2
   pulseDuration: 1.5
   ghostStat: {fileID: 11400000, guid: 2f9f15b999656794d83d91cd2ac020a6, type: 2}

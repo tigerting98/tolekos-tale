@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: -2699760848363402308, guid: 4f49f89e041a5f34c8859a0aaa07475c,
         type: 3}
       propertyPath: pointedDmg1
-      value: 55
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: -2699760848363402308, guid: 4f49f89e041a5f34c8859a0aaa07475c,
         type: 3}

@@ -90,32 +90,32 @@ PrefabInstance:
     - target: {fileID: -6244987563998859826, guid: eb88e63802a68364dab6bfa84c42fe95,
         type: 3}
       propertyPath: dmg1
-      value: 28
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -6244987563998859826, guid: eb88e63802a68364dab6bfa84c42fe95,
         type: 3}
       propertyPath: dmg2
-      value: 32
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: -6244987563998859826, guid: eb88e63802a68364dab6bfa84c42fe95,
         type: 3}
       propertyPath: dmg3star
-      value: 100
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: -6244987563998859826, guid: eb88e63802a68364dab6bfa84c42fe95,
         type: 3}
       propertyPath: punchdmg
-      value: 100
+      value: 166
       objectReference: {fileID: 0}
     - target: {fileID: -6244987563998859826, guid: eb88e63802a68364dab6bfa84c42fe95,
         type: 3}
       propertyPath: explosiondmg
-      value: 100
+      value: 166
       objectReference: {fileID: 0}
     - target: {fileID: -6244987563998859826, guid: eb88e63802a68364dab6bfa84c42fe95,
         type: 3}
       propertyPath: dmg3
-      value: 33
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4522323344577174238, guid: eb88e63802a68364dab6bfa84c42fe95,
         type: 3}

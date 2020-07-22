@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5916288215380762352}
   - component: {fileID: -4008127955605949803}
   m_Layer: 0
-  m_Name: Stage1MidBoss
+  m_Name: s1midnormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,25 +43,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd377fdb50a3824bbbf680dd6d5b281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 11400000, guid: 1ae9de8bd4ea5e04884441c847e4f6ec, type: 2}
   boss: {fileID: 1792903561220353094, guid: 4e4612d5cfe5a9a41968e3289cd8357e, type: 3}
   bossImage: {fileID: 0}
+  bossPortrait: {fileID: 0}
   namesOfSpellCards: []
   nextLevel: {fileID: 0}
   movementSpeed: 5
   endY: 2
-  balls: {fileID: 0}
   ballNumber: 20
   ballSpeed: 2
   ballShotRate: 4
   delay: 0.2
   numberofPulses: 2
-  roundedBullets: {fileID: 0}
   straightLines: 2
   straightSpeed: 4
   straightShotRate: 0.1
   spreadAngle: 30
   straightPulseTime: 1
   pauseTime: 2
-  dmgBall: 85
-  dmgPointed: 75
+  dmgBall: 100
+  dmgPointed: 95
