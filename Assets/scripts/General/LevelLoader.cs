@@ -6,7 +6,7 @@ using UnityEngine.Assertions;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] LevelData easyLevel, normalLevel, hardLevel, lunaticLevel;
+    [SerializeField] LevelData veryeasyLevel, easyLevel, normalLevel, hardLevel, lunaticLevel;
     LevelData level;
     [SerializeField] Animator background;
     [SerializeField] MusicTrack stageTheme, bossTheme;
@@ -18,6 +18,9 @@ public class LevelLoader : MonoBehaviour
     }
     protected virtual void ChooseLevel(Difficulty difficulty) {
         switch (difficulty) {
+            case Difficulty.VeryEasy:
+                level = veryeasyLevel;
+                break;
             case Difficulty.Easy:
                 level = easyLevel;
                 break;

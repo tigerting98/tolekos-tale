@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 8182809026893680725, guid: f3532d1cf39ed1f458d62ccd69a681e7,
         type: 3}
       propertyPath: shotRate
-      value: 0.6
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8182809026893680725, guid: f3532d1cf39ed1f458d62ccd69a681e7,
         type: 3}
@@ -85,12 +85,12 @@ PrefabInstance:
     - target: {fileID: 8182809026893680725, guid: f3532d1cf39ed1f458d62ccd69a681e7,
         type: 3}
       propertyPath: numberPerLine
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8182809026893680725, guid: f3532d1cf39ed1f458d62ccd69a681e7,
         type: 3}
       propertyPath: dmg
-      value: 40
+      value: 48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3532d1cf39ed1f458d62ccd69a681e7, type: 3}

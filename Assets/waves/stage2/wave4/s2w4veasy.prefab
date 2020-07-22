@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: -6778047189204771702, guid: 913f84ba4dd3195478c49d3b595d3724,
         type: 3}
       propertyPath: shotSpeed
-      value: 1
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: -6778047189204771702, guid: 913f84ba4dd3195478c49d3b595d3724,
         type: 3}
       propertyPath: shotRate
-      value: 2
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: -6778047189204771702, guid: 913f84ba4dd3195478c49d3b595d3724,
         type: 3}
       propertyPath: dmg
-      value: 20
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 4522323344577174238, guid: 913f84ba4dd3195478c49d3b595d3724,
         type: 3}

@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: -6712740408659368872, guid: 8d7d8976bfae392459795f6775798caa,
         type: 3}
       propertyPath: lines
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -6712740408659368872, guid: 8d7d8976bfae392459795f6775798caa,
         type: 3}
       propertyPath: bulletNumber
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -6712740408659368872, guid: 8d7d8976bfae392459795f6775798caa,
         type: 3}
@@ -25,7 +25,7 @@ PrefabInstance:
     - target: {fileID: -6712740408659368872, guid: 8d7d8976bfae392459795f6775798caa,
         type: 3}
       propertyPath: dmg
-      value: 30
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 4522323344577174238, guid: 8d7d8976bfae392459795f6775798caa,
         type: 3}
