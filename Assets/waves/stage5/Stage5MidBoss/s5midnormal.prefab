@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4dd742420fdfc247960cfb0a8577afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   boss: {fileID: 6037250190076531618, guid: 41a2d21005d3f8c44b34843694ee34f0, type: 3}
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
@@ -76,7 +75,7 @@ MonoBehaviour:
   hardNumberOfBulletsPerRing: 15
   ringDamage: 400
   pageDamage: 350
-  laserDamage: 100
+  laserDamage: 2000
   ringSpeed: 2.5
   pageSpeedMinY: 0.8
   pageSpeedMaxY: 1.5

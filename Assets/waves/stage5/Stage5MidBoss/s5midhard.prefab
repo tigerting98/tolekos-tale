@@ -25,7 +25,7 @@ PrefabInstance:
     - target: {fileID: 7163120404739174105, guid: a37b4937d12500443930dc2b9e1589d4,
         type: 3}
       propertyPath: laserDamage
-      value: 0
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 7163120404739174105, guid: a37b4937d12500443930dc2b9e1589d4,
         type: 3}

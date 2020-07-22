@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4052846805003458516, guid: 3318e395511fdf348b744de6e630c7cf,
         type: 3}
       propertyPath: m_Name
-      value: s5midlunatic
+      value: s5midlunatic Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4052846805003458517, guid: 3318e395511fdf348b744de6e630c7cf,
         type: 3}
@@ -51,6 +51,11 @@ PrefabInstance:
         type: 3}
       propertyPath: pageSpeedMaxY
       value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052846805003458517, guid: 3318e395511fdf348b744de6e630c7cf,
+        type: 3}
+      propertyPath: laserDamage
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 4052846805003458518, guid: 3318e395511fdf348b744de6e630c7cf,
         type: 3}

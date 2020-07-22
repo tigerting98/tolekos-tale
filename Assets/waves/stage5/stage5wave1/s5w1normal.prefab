@@ -43,12 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f23387b03c2ee41b1caf55fabc34bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   harder: 0
   stats: {fileID: 11400000, guid: 9526cec8a94823c468b02b75d5454426, type: 2}
   speed: 7
   moveSpeed: 5
-  smallrounddmg: 3
+  smallrounddmg: 330
   endSpeed: 1.2
   startSpeed: 4
   ballSize: 0.8
