@@ -11,7 +11,8 @@ public class PlayerDamageTaker : DamageTaker
         base.OnTriggerEnter2D(collision);
         DamageDealer dmg = collision.GetComponent<DamageDealer>();
         if (dmg && !dmg.DamageOverTime())
-        { AudioManager.current.PlaySFX(hitSFX); 
+        { AudioManager.current.PlaySFX(hitSFX);
+            GameManager.DestroyNonDPSEnemyBulletsInRadius(0.6f);
         }
     }
     public override void OnTriggerStay2D(Collider2D collision)
