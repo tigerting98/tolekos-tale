@@ -72,6 +72,7 @@ public class Stage1EndBoss : EnemyBossWave
         Vector2 initialPosition = new Vector2(bossImage.transform.position.x, bossImage.transform.position.y);
 
         currentBoss = Instantiate(boss, initialPosition, Quaternion.identity);
+        currentBoss.movement.destroyBoundary = 10f;
         GameManager.currentBoss = currentBoss;
         SwitchToBoss();
         currentBoss.shooting.StartShooting(Pattern1(currentBoss));
@@ -147,7 +148,7 @@ public class Stage1EndBoss : EnemyBossWave
     IEnumerator Pattern3() {
         Animator animator = currentBoss.gameObject.GetComponent<Animator>();
         while (animator) {
-           
+            bool up = true;
                 animator.SetTrigger("Disappear");
                 if (harder)
                 {
@@ -158,7 +159,10 @@ public class Stage1EndBoss : EnemyBossWave
                 yield return new WaitForSeconds(1f);
                 if (animator)
                 {
-                    currentBoss.transform.position = GameManager.playerPosition + new Vector2(0, 1f);
+                if (GameManager.playerPosition.y > 0) {
+                    up = false;
+                }
+                    currentBoss.transform.position = GameManager.playerPosition + new Vector2(0, up?1:-1);
                     animator.SetTrigger("Appear");
                 }
                 if (animator)
@@ -167,7 +171,7 @@ public class Stage1EndBoss : EnemyBossWave
                     if (currentBoss)
                     {
                         Bullet punchbul = GameManager.bulletpools.SpawnBullet(punch, currentBoss.transform.position);
-                        punchbul.movement.SetSpeed(new Vector2(0, -punchSpeed));
+                        punchbul.movement.SetSpeed(new Vector2(0, up? -punchSpeed: punchSpeed));
                         punchbul.movement.destroyBoundary = 6f;
                         ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > 1 / punchSpeed);
                         trigger.OnTriggerEvent += movement =>
