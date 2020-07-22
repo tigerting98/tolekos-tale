@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 9148505106253702173}
   - component: {fileID: 5848256235747065785}
   - component: {fileID: 7759331548773298606}
+  - component: {fileID: 1741241418997497210}
   m_Layer: 13
   m_Name: 'magnetic '
   m_TagString: Untagged
@@ -398,6 +399,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
+--- !u!50 &1741241418997497210
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267696967837762940}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &458815793820479076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -766,15 +788,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8718795c743f5424caff02427c272469, type: 3}
---- !u!1 &7985819461488737577 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4402132239284667985, guid: 8718795c743f5424caff02427c272469,
-    type: 3}
-  m_PrefabInstance: {fileID: 6036186413701299064}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7963614063382368396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4413711544693713908, guid: 8718795c743f5424caff02427c272469,
+    type: 3}
+  m_PrefabInstance: {fileID: 6036186413701299064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7985819461488737577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4402132239284667985, guid: 8718795c743f5424caff02427c272469,
     type: 3}
   m_PrefabInstance: {fileID: 6036186413701299064}
   m_PrefabAsset: {fileID: 0}
