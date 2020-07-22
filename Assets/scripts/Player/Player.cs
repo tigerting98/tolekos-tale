@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
     public void SetPlayerBulletDamage(float dmg) {
         waterBullet.damageDealer.damage = dmg * PlayerStats.shotDamageMultiplier;
 
-        earthUnfocusBullet.damageDealer.damage = dmg * PlayerStats.shotDamageMultiplier;
+        earthUnfocusBullet.damageDealer.damage = dmg * PlayerStats.earthUnfocusRatio*PlayerStats.shotDamageMultiplier;
         earthFocusBullet.damageDealer.damage = dmg*PlayerStats.earthFocusDaamgeRatio * PlayerStats.shotDamageMultiplier;
         fireFocus.damageDealer.damage = dmg * PlayerStats.fireFocusDamageRatio * PlayerStats.shotDamageMultiplier;
         fireUnfocus.damageDealer.damage = dmg * PlayerStats.fireUnfocusDamageRatio * PlayerStats.shotDamageMultiplier;

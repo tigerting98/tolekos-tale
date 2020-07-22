@@ -60,7 +60,7 @@ public class PauseMenu : MonoBehaviour
         txt.Append(string.Format("Health: {0}/{1}\n", curHP, (int)PlayerStats.playerMaxHP));
         txt.Append(string.Format("Water Unfocus Damage: {0}\n", PlayerStats.damage * PlayerStats.shotDamageMultiplier));
         txt.Append(string.Format("Water Focus Damage: {0}\n", PlayerStats.damage * PlayerStats.shotDamageMultiplier ));
-        txt.Append(string.Format("Earth Unfocus Damage: {0}\n", PlayerStats.damage * PlayerStats.shotDamageMultiplier));
+        txt.Append(string.Format("Earth Unfocus Damage: {0}\n", PlayerStats.damage * PlayerStats.shotDamageMultiplier* PlayerStats.earthUnfocusRatio));
         txt.Append(string.Format("Earth Focus Damage: {0}\n", PlayerStats.damage* PlayerStats.earthFocusDaamgeRatio * PlayerStats.shotDamageMultiplier));
         txt.Append(string.Format("Fire Unfocus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireUnfocusDamageRatio * PlayerStats.shotDamageMultiplier));
         txt.Append(string.Format("Fire Focus Damage: {0} per second\n", PlayerStats.damage * PlayerStats.fireFocusDamageRatio * PlayerStats.shotDamageMultiplier));

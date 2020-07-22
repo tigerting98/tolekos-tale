@@ -17,9 +17,10 @@ public class PlayerStats : MonoBehaviour
     public static Func<int, int> expFormula = level => 100 + 25 * (level - 1);
     public static float dmgGain = 1;
     public static float maxHPGain = 100;
-    public static float fireFocusDamageRatio = 35f;
-    public static float fireUnfocusDamageRatio = 25f;
-    public static float earthFocusDaamgeRatio = 8f;
+    public static float earthUnfocusRatio = 0.9f;
+    public static float fireFocusDamageRatio = 40f;
+    public static float fireUnfocusDamageRatio = 30f;
+    public static float earthFocusDaamgeRatio = 4.4f;
     public static float damageMultiplier = 1f;
     public static int hardenSkinLevel = 0;
     public static int bombLevel = 0;
@@ -28,7 +29,7 @@ public class PlayerStats : MonoBehaviour
     public static float bombEffectiveness = 1;
     public static float earthFocusedShotRateRatio = 2f;
     public static float baseShotRate = 0.1f;
-    public static int gold = 0;
+    public static int gold = 100000;
     public static event Action OnGainExp;
     public static event Action OnGainGold;
     public static event Action OnUpdateBomb;
