@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -200,7 +200,7 @@ PrefabInstance:
     - target: {fileID: 63510166101350281, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.04840088
+      value: -0.048339844
       objectReference: {fileID: 0}
     - target: {fileID: 123633948513986673, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
@@ -596,13 +596,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 06f5489a82c80a54bb73f130c985ac39,
+      objectReference: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c,
         type: 2}
     - target: {fileID: 4792630399227786596, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -1337794397159478764, guid: 06f5489a82c80a54bb73f130c985ac39,
+      objectReference: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,
         type: 2}
     - target: {fileID: 4853745077996040261, guid: a40eb8481837084459ced4fdbc6942ff,
         type: 3}
@@ -2182,7 +2182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc63cd80b636e541abd0b885eb3e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: 7897652670564822546, guid: 83d01416b6a9dc942a4555ecbb3ec41b, type: 3}
+  wave: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c, type: 3}
   playerLevel: 1000
 --- !u!4 &1931965796
 Transform:
