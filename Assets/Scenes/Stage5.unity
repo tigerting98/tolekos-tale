@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1717,6 +1717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8942f0ff43e7b4cb8d56fe81728711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  veryeasyLevel: {fileID: 11400000, guid: 8391e1c358228bc4bb7801d4f463b0b2, type: 2}
   easyLevel: {fileID: 11400000, guid: 4585430745b642d42b040ea8731804d4, type: 2}
   normalLevel: {fileID: 11400000, guid: d339c70a2cd9c184994ea43f57492fdb, type: 2}
   hardLevel: {fileID: 11400000, guid: c57645d0241552043b386e75b276ebbb, type: 2}
@@ -2055,6 +2056,12 @@ PrefabInstance:
       propertyPath: stageTheme
       value: 
       objectReference: {fileID: 11400000, guid: bb7e4b9a0202c26499a99a6effb91d58,
+        type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: veryeasyLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 8391e1c358228bc4bb7801d4f463b0b2,
         type: 2}
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
