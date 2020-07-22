@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 8675268422706216010, guid: 508300248b1687e4896d41c2e17c9c8c,
         type: 3}
       propertyPath: m_Name
-      value: s3w3aeasy
+      value: s3w3easy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 508300248b1687e4896d41c2e17c9c8c, type: 3}

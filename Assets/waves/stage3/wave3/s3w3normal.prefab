@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6774885630410534488}
   - component: {fileID: 6865967758086555011}
   m_Layer: 0
-  m_Name: s3w3anormal
+  m_Name: s3w3normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a2939d94f14634094e0a19ec1d3b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   moveSpeed: 2
   delay: 0
   number: 5
