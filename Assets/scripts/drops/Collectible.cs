@@ -26,11 +26,16 @@ public class Collectible : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Collect();
-        if (collectSFX) {
-            AudioManager.current.PlaySFX(collectSFX);
+        if (!collision.GetComponent<CollectibleMagnet>())
+        {
+            Collect();
+
+            if (collectSFX)
+            {
+                AudioManager.current.PlaySFX(collectSFX);
+            }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
     protected virtual void Collect(){

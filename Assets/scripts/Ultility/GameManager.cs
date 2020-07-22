@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     public static void CollectEverything() {
         foreach (GameObject collectible in collectibles.Values) {
-            collectible.GetComponent<Movement>().Homing(player.gameObject, 5f);
+            collectible.GetComponent<Movement>().Homing(player.gameObject, 3.5f);
         }
 
     }
