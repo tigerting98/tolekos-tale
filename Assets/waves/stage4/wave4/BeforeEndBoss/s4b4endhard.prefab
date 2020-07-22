@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7255629957415309759, guid: d228d026a32bbef49945b2d9628dc139,
         type: 3}
       propertyPath: bulletSpeed
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7255629957415309759, guid: d228d026a32bbef49945b2d9628dc139,
         type: 3}
@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 7255629957415309759, guid: d228d026a32bbef49945b2d9628dc139,
         type: 3}
       propertyPath: numberOfLines
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8810873078175065731, guid: d228d026a32bbef49945b2d9628dc139,
         type: 3}

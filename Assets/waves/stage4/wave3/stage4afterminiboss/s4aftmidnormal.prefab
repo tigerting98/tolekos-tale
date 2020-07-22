@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7004499206004944613}
   - component: {fileID: 6402490802107694836}
   m_Layer: 0
-  m_Name: AfterminiBossStreams
+  m_Name: s4aftmidnormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,16 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f98e961cb20f4e4a9b0e145502bbbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   moveSpeed: 3.5
   stats: {fileID: 11400000, guid: 2bc22f1d450dbef4aa98364171969031, type: 2}
   bulletSpeed: 2.75
   ringSpeed: 2
-  shotRate: 0.2
-  pulseRate: 3
+  shotRate: 0.1
+  pulseRate: 2.5
   bulletDamage: 310
   stationaryTime: 1
-  numberOfBulletsInDeathRing: 10
+  numberOfBulletsInDeathRing: 8
   numberOfBulletsPerLine: 5
   subwaveList:
   - spawnDelay: 0
@@ -60,9 +59,14 @@ MonoBehaviour:
     lowY: 1
     numberOfEnemies: 30
     left: 1
+    type: 0
   - spawnDelay: 0.25
     highY: 3
     lowY: 1
     numberOfEnemies: 30
     left: 0
+    type: 0
   spawnRate: 0.5
+  random: 0
+  ringsDependOnType: 0
+  enemyDependOnType: 0

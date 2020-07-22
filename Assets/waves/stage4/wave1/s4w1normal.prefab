@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1957461059014814332}
   - component: {fileID: 1957461059014814331}
   m_Layer: 0
-  m_Name: Stage4Wave1
+  m_Name: s4w1normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,16 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d327632d39f4d40a9fb2111202503b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   harder: 0
   lines: 1
   spread: 20
   moveSpeed: 5
   stats: {fileID: 11400000, guid: 4fef43c2b7a4d1a40bc88a20d5141b77, type: 2}
-  bulletSpeed: 3
-  shotRate: 0.15
+  bulletSpeed: 2.5
+  shotRate: 0.3
   bulletDamage: 310
-  stationaryTime: 10
+  stationaryTime: 6
   subwaveList:
   - spawnDelay: 0
     highY: 3.5

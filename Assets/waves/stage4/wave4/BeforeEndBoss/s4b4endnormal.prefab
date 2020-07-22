@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8907301381967435620}
   - component: {fileID: 7255629957415309759}
   m_Layer: 0
-  m_Name: BeforeEndBoss
+  m_Name: s4b4endnormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,12 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a945f0ef3aa40b44db201c6a6f34a8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   stats: {fileID: 11400000, guid: aad28aca85557f84692371875a9dc3da, type: 2}
-  bulletSpeed: 1.2
+  bulletSpeed: 0.8
   shotRate: 0.1
   bulletDamage: 345
-  numberOfLines: 10
+  numberOfLines: 8
   subwaveList:
   - spawnDelay: 0
     xPos: -2
@@ -56,10 +55,15 @@ MonoBehaviour:
     angularVelocity: 69
     summonEndboss: 0
     summonMidboss: 0
+    type: 0
+    alternateSpiral: 0
   - spawnDelay: 0
     xPos: 2
     yPos: 1.5
     angularVelocity: -69
     summonEndboss: 1
     summonMidboss: 0
+    type: 0
+    alternateSpiral: 0
   activeTime: 20
+  dependOnType: 0
