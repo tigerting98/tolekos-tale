@@ -832,7 +832,7 @@ PrefabInstance:
         shot pattern and damage resistances. Also determines damage taken by enemies
         depending on their element. \nFire > Earth > Water > Fire.\nEnemies are colour-coded
         based on their element.\n\nLeft Shift - Focus: Slow down and make hitbox
-        visible"
+        visible\n\nEsc - Pause during gameplay"
       objectReference: {fileID: 0}
     - target: {fileID: 771832227910839632, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
@@ -842,12 +842,12 @@ PrefabInstance:
     - target: {fileID: 771832227910839635, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000015259
+      value: -10.9
       objectReference: {fileID: 0}
     - target: {fileID: 771832227910839635, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 595.88855
+      value: 617.7528
       objectReference: {fileID: 0}
     - target: {fileID: 771832227910839635, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
@@ -1255,7 +1255,7 @@ PrefabInstance:
     - target: {fileID: 3670361701666311699, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 158.8
+      value: 136.97
       objectReference: {fileID: 0}
     - target: {fileID: 3670361701666311699, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
@@ -1539,7 +1539,7 @@ PrefabInstance:
     - target: {fileID: 5522588896228119116, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5877343443867524762, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
