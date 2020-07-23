@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517, y: 0.0055485}
-  m_SizeDelta: {x: 1165.3069, y: 314.7436}
+  m_AnchoredPosition: {x: -0.000030517, y: -0.0000076293945}
+  m_SizeDelta: {x: 1165.3069, y: 556.5883}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8185263890365988003
 CanvasRenderer:
@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.400024, y: -0.000045776367}
+  m_AnchoredPosition: {x: 12.400024, y: -0.000061035156}
   m_SizeDelta: {x: -45.58264, y: -44.714966}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8185263890655547266
@@ -141,7 +141,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 321b8c43ad556ea49b568913f114366d, type: 3}
-    m_FontSize: 80
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -152,14 +152,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Arrow up/down/left/right - movement
-
-    Z - Shoot
-
-    X - Spell (Not
-    implemented yet)
-
-    C - Change Shot Mode
-
-    Left Shift - Slow down and make
-    hitbox visible'
+  m_Text: "Arrow up/down/left/right - movement\n\nZ - Shoot\n\nX - Spell: Global
+    AoE damage and clears enemy bullets\n\nC - Change Element: Changes player shot
+    pattern and damage resistances. Also determines damage taken by enemies depending
+    on their element. \nFire > Earth > Water > Fire. \">\" indicates \"strong against\"\nEnemies
+    are colour-coded based on their element.\n\nLeft Shift - Focus: Slow down and
+    make hitbox visible"
