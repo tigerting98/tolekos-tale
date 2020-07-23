@@ -43,13 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcfe7df08f3c20b4e8cdfe5392281087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   boss: {fileID: 2465689840817753905, guid: 54f9879fedb5a404fa6117b9c69309af, type: 3}
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
   namesOfSpellCards:
-  - Absolute Chaos\n~Explosions Everywhere!~
-  - Fire Wheel\n ~Star-Spangled Conflagration~
+  - Absolute Chaos\n~Blinding Starfall~
+  - Fire Wheel\n ~Conflagration~
   - Pandemonium\n~Geysers Of Flame~
   - Last Resort\n~Meltdown~
   nextLevel: {fileID: 11400000, guid: 5de849c1ee2620e4cafdade913add7b8, type: 2}
