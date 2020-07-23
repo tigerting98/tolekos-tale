@@ -827,26 +827,12 @@ PrefabInstance:
     - target: {fileID: 771832227654884989, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
       propertyPath: m_Text
-      value: 'Arrow up/down/left/right - movement
-
-
-        Z - Shoot
-
-
-        X
-        - Spell: Global AoE damage and clears enemy bullets
-
-
-        C - Change
-        Element: Changes player shot pattern and damage resistances. Also determines
-        damage taken by enemies depending on their element. Fire > Earth > Water
-        > Fire.
-
-        Enemies are colour-coded based on their element.
-
-
-        Left
-        Shift - Focus: Slow down and make hitbox visible'
+      value: "Arrow up/down/left/right - movement\n\nZ - Shoot\n\nX - Spell: Global
+        AoE damage and clears enemy bullets\n\nC - Change Element: Changes player
+        shot pattern and damage resistances. Also determines damage taken by enemies
+        depending on their element. \nFire > Earth > Water > Fire.\nEnemies are colour-coded
+        based on their element.\n\nLeft Shift - Focus: Slow down and make hitbox
+        visible"
       objectReference: {fileID: 0}
     - target: {fileID: 771832227910839632, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
