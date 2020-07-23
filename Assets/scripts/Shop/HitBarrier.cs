@@ -13,7 +13,7 @@ public class HitBarrier : ShopItem
     public override void Buy()
     {
         base.Buy();
-        PlayerStats.hardenSkinLevel = hitBarrierLevel;
-        PlayerStats.damageMultiplier = hitBarrierRadius;
+        PlayerStats.hitBarrierLevel = hitBarrierLevel;
+        PlayerStats.hitBarrierRadius = hitBarrierRadius;
     }
 }
