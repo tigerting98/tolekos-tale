@@ -158,7 +158,7 @@ MonoBehaviour:
     type: 3}
   greenSlime: {fileID: 1209050533006121410, guid: 62802f75734c5af4aa142ed5c7c3e5b7,
     type: 3}
-  playerDialogueSprite: {fileID: 21300000, guid: 731c6fb30b776d44ab1b55a997a83b0a,
+  playerDialogueSprite: {fileID: 21300000, guid: 3221f0b7349d26d4faac43402d0d6e42,
     type: 3}
   beforeStage1: {fileID: 11400000, guid: 584894196419c274ebfd1f0c5af91a84, type: 2}
   defaultBombDrop: {fileID: -7423590585076364611, guid: fab1fd212dcec79459be6b0966e927d7,
