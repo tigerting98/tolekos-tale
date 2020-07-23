@@ -30,7 +30,7 @@ public class PlayerStats : MonoBehaviour
     public static float bombEffectiveness = 1;
     public static float earthFocusedShotRateRatio = 2f;
     public static float baseShotRate = 0.1f;
-    public static int gold = 0;
+    public static int gold =9580;
     public static event Action OnGainExp;
     public static event Action OnGainGold;
     public static event Action OnUpdateBomb;

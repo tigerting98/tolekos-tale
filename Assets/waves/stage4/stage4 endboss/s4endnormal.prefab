@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 2465689840817753905, guid: 54f9879fedb5a404fa6117b9c69309af, type: 3}
   bossImage: {fileID: 0}
-  bossPortrait: {fileID: 0}
+  bossPortrait: {fileID: 21300000, guid: 81b8c6732a10b8341af07089de6eab45, type: 3}
   namesOfSpellCards:
   - Absolute Chaos\n~Blinding Starfall~
   - Fire Wheel\n ~Conflagration~
