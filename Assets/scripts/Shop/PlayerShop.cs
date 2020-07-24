@@ -13,6 +13,7 @@ public class PlayerShop : MonoBehaviour
     [SerializeField] Text healthtext;
     [SerializeField] TextMeshProUGUI goldText;
     [SerializeField] TextMeshProUGUI playerStatsText;
+    [SerializeField] TextMeshProUGUI playerlevel;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class PlayerShop : MonoBehaviour
         }
 
         Refresh();
+        playerlevel.text = "Level: " + PlayerStats.playerLevel;
     }
 
     public void Refresh() {
