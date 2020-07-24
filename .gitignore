@@ -59,4 +59,4 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Visual Studio Code miscellaneous files
-*.vscode
+.vscode/
