@@ -43,7 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629594111c8aa60419bef43143074b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellcardUI: {fileID: 1440613776595574203, guid: fbc60427d3170024288c8cb4b5ba2fa5,
+  spellcardUI: {fileID: 1440613776595574203, guid: 3022bacece781ad46a7ee4f0434a251f,
+    type: 3}
+  playerSpellCardUI: {fileID: 1440613776595574202, guid: fbc60427d3170024288c8cb4b5ba2fa5,
     type: 3}
   touhoustreamingSFX: {fileID: 11400000, guid: e0cb3a2d559323f499130bd7c25d7c26, type: 2}
   magicCircleSummonSFX: {fileID: 11400000, guid: 28c9ab7c798eacd4d86b280735ee09a5,

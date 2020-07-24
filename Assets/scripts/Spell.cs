@@ -11,6 +11,7 @@ public class Spell : MonoBehaviour
     void Start()
     {
         AudioManager.current.PlaySFX(sfx);
+        Destroy(Instantiate(GameManager.gameData.playerSpellCardUI), 4f);
         Invoke("DestroyBomb", invulTimer + 2f);
     }
 

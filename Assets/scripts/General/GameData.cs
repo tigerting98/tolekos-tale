@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameData : MonoBehaviour
 {
     public SpellCardUI spellcardUI;
+    public GameObject playerSpellCardUI;
     [Header("SFX")]
     public SFX touhoustreamingSFX;
     public SFX magicCircleSummonSFX;

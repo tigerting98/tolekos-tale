@@ -782,9 +782,6 @@ public class Stage6EndBoss : EnemyBossWave
 
     IEnumerator FlowerPattern(DamageType type1, DamageType type2, DamageType type3, DamageType type4, float offset) {
         AudioManager.current.PlaySFX(GameManager.gameData.magicPulse1LouderSFX);
-        // currentBoss.shooting.StartShooting(FlowerStalks(type4, stalktopspeed, stalkslowspeed, offset));
-        // yield return null;
-
         SingleFlower(type3, fastspeed1 * 3, slowspeed1 * 3, offset);
         yield return null;
         SingleFlower(type2, fastspeed1 * 2, slowspeed1 * 2, offset);
@@ -798,52 +795,41 @@ public class Stage6EndBoss : EnemyBossWave
         Bullet bul = GameManager.gameData.starBullet.GetItem(type);
         float speed = fastspeed;
         float diff = (fastspeed - slowspeed) / (stalkCount - 1);
-        //int z = 0;
         float stalkspeed = fastspeed +  stalktopspeeddiff;
         for (int j = 1; j <= stalkTopcount; j++)
         {
-
             Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, offset + j * stalktopspread, stalkspeed, null);
             Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, offset - j * stalktopspread, stalkspeed, null);
             stalkspeed += stalktopspeeddiff;
             yield return null;
-        }
-        
+        }     
         for (int i = 0; i < stalkCount; i++) {
             Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, offset, speed, null);
             speed -= diff;
-            yield return null;
-            
-        }
-        
-        
+            yield return null;           
+        }       
     }
 
     void SingleFlower(DamageType type, float fastspeed, float slowspeed, float offset)
     {
-
         float incre = 360f / (petalCount1 * bulletperhalfpatel1 * 2);
         float angle = offset;
         float speed = slowspeed;
         float speedincre = (fastspeed - slowspeed) / bulletperhalfpatel1;
         Bullet bul = GameManager.gameData.ellipseBullet.GetItem(type);
       
-            for (int j = 0; j < bulletperhalfpatel1; j++)
-            {
-                Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, angle, speed, null);
-   
-                angle += incre;
-                speed += speedincre;
-            }
-            for (int j = 0; j < bulletperhalfpatel1; j++)
-            {
+       for (int j = 0; j < bulletperhalfpatel1; j++)
+       {
             Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, angle, speed, null);
             angle += incre;
-                speed -= speedincre;
-            }
-
-        
-
+            speed += speedincre;
+       }
+       for (int j = 0; j < bulletperhalfpatel1; j++)
+       {
+            Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, angle, speed, null);
+            angle += incre;
+            speed -= speedincre;
+       }
     }
 
     private void Update()
