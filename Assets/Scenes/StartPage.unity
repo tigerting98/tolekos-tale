@@ -827,12 +827,13 @@ PrefabInstance:
     - target: {fileID: 771832227654884989, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
       propertyPath: m_Text
-      value: "Arrow up/down/left/right - movement\n\nZ - Shoot\n\nX - Spell: Global
-        AoE Pure damage and clears enemy bullets\n\nC - Change Element: Changes player
-        shot pattern and damage resistances. Also determines damage taken by enemies
-        depending on their element. \nWater < Earth < Fire < Water.\nEnemies are
-        colour-coded based on their element.\n\nLeft Shift - Focus: Slow down and
-        make hitbox visible\n\nEsc - Pause during gameplay"
+      value: "Arrow keys - movement\n\nZ - Shoot/Confirmation/Progress dialogue\n\nX
+        - Spell: Global AoE Pure damage and clears enemy bullets\n\nC - Change Element:
+        Changes player shot pattern and damage resistances. Also determines damage
+        taken by enemies depending on their element. \nWater < Earth < Fire < Water.
+        Pure (yellow) is unaffected.\nEnemies are colour-coded based on their element.\n\nLeft
+        Shift - Focus: Slow down and make hitbox visible\n\nEsc - Pause during gameplay/Back
+        in Menus"
       objectReference: {fileID: 0}
     - target: {fileID: 771832227910839632, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
@@ -1706,7 +1707,7 @@ PrefabInstance:
     - target: {fileID: 6747588786803013107, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
       propertyPath: m_text
-      value: Toleko's Tale v1.0.0
+      value: Toleko's Tale v1.0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6747588786803013107, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}
