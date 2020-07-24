@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,9 +20,15 @@ public class DialogueUI : MonoBehaviour
         SetInactive();
     }
     void AcceptSprite(Image image, Sprite sprite) {
-        float ratio = sprite.rect.size.y / sprite.rect.size.x;
-        image.transform.localScale = new Vector2(1/ratio, 1);
-        image.sprite = sprite;
+        try
+        {
+            float ratio = sprite.rect.size.y / sprite.rect.size.x;
+            image.transform.localScale = new Vector2(1 / ratio, 1);
+            image.sprite = sprite;
+        }
+        catch (Exception ex) {
+            Debug.Log(ex);
+        }
     }
     public void ReceiveNewLine(Line line) {
         if (line.left)

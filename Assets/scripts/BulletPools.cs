@@ -50,6 +50,25 @@ public class BulletPools : MonoBehaviour
         return SpawnBullet(bullet, bullet.transform.position);
     }
 
+    public void PreWarmBullets(Bullet bullet, int quantity) {
+        BulletPool pool;
+        if (bulletpools.ContainsKey(bullet.bulletPoolID))
+        {
+            pool = bulletpools[bullet.bulletPoolID];
+            if (!pool.pooledObject)
+            {
+                pool.pooledObject = bullet;
+            }
+
+        }
+        else
+        {
+            pool = Instantiate(bulletPool);
+            pool.pooledObject = bullet;
+            bulletpools.Add(bullet.bulletPoolID, pool);
+        }
+        pool.PreWarmPool(quantity);
+    }
     //place a bullet back to the pool
     public void DeactivateBullet(Bullet bullet) {
         if (bullet)

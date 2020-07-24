@@ -101,9 +101,29 @@ public class Stage6EndBoss : EnemyBossWave
     public override void SpawnWave()
     {
         Destroy(Instantiate(startparticle, new Vector2(0, 0), Quaternion.identity), 5f);
+        StartCoroutine(PreWarmBullets());
         StartCoroutine(GameManager.maincamera.ShakeCamera(0.23f, 2f));
         AudioManager.current.PlaySFX(GameManager.gameData.stage6TpSFX);
         Invoke("StartAnimation", 0.8f);
+    }
+    public IEnumerator PreWarmBullets() {
+
+        GameManager.bulletpools.PreWarmBullets(GameManager.gameData.ellipseBullet.GetItem(0), 40);
+        yield return null;
+        GameManager.bulletpools.PreWarmBullets(GameManager.gameData.ellipseBullet.GetItem(1), 40);
+        yield return null;
+        GameManager.bulletpools.PreWarmBullets(GameManager.gameData.ellipseBullet.GetItem(2), 40);
+        yield return null;
+        GameManager.bulletpools.PreWarmBullets(GameManager.gameData.ellipseBullet.GetItem(3), 40);
+        yield return null;
+        GameManager.bulletpools.PreWarmBullets(GameManager.gameData.starBullet.GetItem(0), 114);
+        yield return null;
+        GameManager.bulletpools.PreWarmBullets(GameManager.gameData.starBullet.GetItem(1), 114);
+        yield return null;
+        GameManager.bulletpools.PreWarmBullets(GameManager.gameData.starBullet.GetItem(2), 114);
+        yield return null;
+        GameManager.bulletpools.PreWarmBullets(GameManager.gameData.starBullet.GetItem(3), 114);
+        yield return null;
     }
     public override void EndPhase()
     {
@@ -762,59 +782,70 @@ public class Stage6EndBoss : EnemyBossWave
 
     IEnumerator FlowerPattern(DamageType type1, DamageType type2, DamageType type3, DamageType type4, float offset) {
         AudioManager.current.PlaySFX(GameManager.gameData.magicPulse1LouderSFX);
-        currentBoss.shooting.StartShooting(FlowerStalks(type4, stalktopspeed, stalkslowspeed, offset));
+        // currentBoss.shooting.StartShooting(FlowerStalks(type4, stalktopspeed, stalkslowspeed, offset));
+        // yield return null;
+
+        SingleFlower(type3, fastspeed1 * 3, slowspeed1 * 3, offset);
+        yield return null;
+        SingleFlower(type2, fastspeed1 * 2, slowspeed1 * 2, offset);
         yield return null;
         SingleFlower(type1, fastspeed1, slowspeed1, offset);
         yield return null;
-        SingleFlower(type2, fastspeed1*2, slowspeed1*2, offset);
-        yield return null;
-        SingleFlower(type3, fastspeed1*3, slowspeed1*3, offset);
+        currentBoss.shooting.StartShooting(FlowerStalks(type4, stalktopspeed, stalkslowspeed, offset));
     }
 
     IEnumerator FlowerStalks(DamageType type, float fastspeed, float slowspeed, float offset) {
         Bullet bul = GameManager.gameData.starBullet.GetItem(type);
-        float speed = slowspeed;
+        float speed = fastspeed;
         float diff = (fastspeed - slowspeed) / (stalkCount - 1);
-        int z = 0;
+        //int z = 0;
+        float stalkspeed = fastspeed +  stalktopspeeddiff;
+        for (int j = 1; j <= stalkTopcount; j++)
+        {
+
+            Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, offset + j * stalktopspread, stalkspeed, null);
+            Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, offset - j * stalktopspread, stalkspeed, null);
+            stalkspeed += stalktopspeeddiff;
+            yield return null;
+        }
+        
         for (int i = 0; i < stalkCount; i++) {
             Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, offset, speed, null);
-            speed += diff;
-            z++;
-            if (z > 3) {
-                yield return null;
-                z = 0;
-            }
+            speed -= diff;
+            yield return null;
+            
         }
-        for (int j = 1; j <= stalkTopcount; j++) {
-            Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, offset + j * stalktopspread , fastspeed + (j-stalkTopcount)*stalktopspeeddiff, null);
-            Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, offset - j * stalktopspread, fastspeed + (j - stalkTopcount) * stalktopspeeddiff, null);
         
-        }
         
     }
-    void SingleFlower(DamageType type, float fastspeed, float slowspeed, float offset) {
-       
+
+    void SingleFlower(DamageType type, float fastspeed, float slowspeed, float offset)
+    {
+
         float incre = 360f / (petalCount1 * bulletperhalfpatel1 * 2);
         float angle = offset;
         float speed = slowspeed;
         float speedincre = (fastspeed - slowspeed) / bulletperhalfpatel1;
         Bullet bul = GameManager.gameData.ellipseBullet.GetItem(type);
-        for (int i = 0; i < petalCount1; i++) {
-            for (int j = 0; j < bulletperhalfpatel1; j++) {
-                Patterns.ShootStraight(bul, buldmg1, currentBoss.transform.position, angle, speed, null);
+      
+            for (int j = 0; j < bulletperhalfpatel1; j++)
+            {
+                Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, angle, speed, null);
+   
                 angle += incre;
                 speed += speedincre;
             }
             for (int j = 0; j < bulletperhalfpatel1; j++)
             {
-                Patterns.ShootStraight(bul, buldmg1, currentBoss.transform.position, angle, speed, null);
-                angle += incre;
+            Patterns.RingOfBullets(bul, buldmg1, currentBoss.transform.position, petalCount1, angle, speed, null);
+            angle += incre;
                 speed -= speedincre;
             }
 
-        }
-       
+        
+
     }
+
     private void Update()
     {
         if (cooldown8 > 0) {

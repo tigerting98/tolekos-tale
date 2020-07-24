@@ -21,6 +21,7 @@ public class LevelTester : LevelLoader
         }
         uped = true;
     }
+    
     protected override void Awake()
     {
         GameManager.difficultyLevel = difficulty;

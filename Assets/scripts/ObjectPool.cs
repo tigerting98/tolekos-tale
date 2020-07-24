@@ -43,7 +43,16 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : Component
         
         }
     }
-
+    public void PreWarmPool(int quantity) {
+        if (pooledObject) { 
+            for (int i=0; i < quantity; i++) {
+                T obj = Instantiate(pooledObject, new Vector2(5f, 5f), Quaternion.identity);
+                obj.gameObject.SetActive(false);
+                objectPool.Enqueue(obj);
+            
+            }
+        }
+    }
     //return an object back to its pool
     public void ReturnToPool(T tobeReturned) {
         if (tobeReturned&&pooledObject)
