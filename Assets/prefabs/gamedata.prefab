@@ -171,3 +171,10 @@ MonoBehaviour:
     type: 3}
   lifeDropFull: {fileID: 3365378150724377866, guid: 3cb879ff98f25124e9fb76da6af3a7f5,
     type: 3}
+  levels:
+  - {fileID: 11400000, guid: 584894196419c274ebfd1f0c5af91a84, type: 2}
+  - {fileID: 11400000, guid: 1a32aca0baf75b248927de00041c87f3, type: 2}
+  - {fileID: 11400000, guid: da9b8a33890d10445b92bca40dd8857b, type: 2}
+  - {fileID: 11400000, guid: d73e175741a50b54fac65e5db4aedec6, type: 2}
+  - {fileID: 11400000, guid: 5de849c1ee2620e4cafdade913add7b8, type: 2}
+  - {fileID: 11400000, guid: 381b96fb81b94554daacb9630680f967, type: 2}

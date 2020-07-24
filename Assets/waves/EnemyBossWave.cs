@@ -43,7 +43,14 @@ public class EnemyBossWave : EnemyWave
     }
     public virtual void NextStage()
     {
-        GameManager.sceneLoader.LoadShopScene(nextLevel);
+        if (GameManager.practiceMode)
+        {
+            GameManager.sceneLoader.LoadScene("StartPage");
+        }
+        else
+        {
+            GameManager.sceneLoader.LoadShopScene(nextLevel);
+        }
 
 
     }

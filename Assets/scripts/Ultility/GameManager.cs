@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public static BulletPools bulletpools;
     public static float SFXVolume = 1f;
     public static float musicVolume = 1f;
-
+    public static bool practiceMode = false;
     public static event Action<bool> OnGameover;
     public static event Action OnPlayBossTheme;
     public static event Action OnSummonEndBoss;
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     public static Boss currentBoss = null;
 
     public static void Reset() {
+        practiceMode = false;
         difficultyLevel = Difficulty.Normal;
         enemies = new Hashtable();
         enemyBullets = new Hashtable();

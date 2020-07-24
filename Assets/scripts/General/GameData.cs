@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using System.Collections.Generic;
 // this class holds a list of prefabs that are commonly used in the game
 public class GameData : MonoBehaviour
 {
@@ -65,13 +66,13 @@ public class GameData : MonoBehaviour
     public Enemy midBossMushroomMob;
     public Enemy greenSlime;
     public Sprite playerDialogueSprite;
-    public LevelDescription beforeStage1;
     [Header("Drops")]
     public BombDrop defaultBombDrop;
     public LifeDrop lifeDrop1000;
     public LifeDrop lifeDrop300;
     public LifeDrop lifeDropFull;
-
+    [Header("Levels")]
+    public List<LevelDescription> levels;
     private void Awake()
     {
         if (GameManager.gameData == null)

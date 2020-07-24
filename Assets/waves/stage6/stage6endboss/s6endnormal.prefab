@@ -238,7 +238,7 @@ MonoBehaviour:
   bulletspeed9: 1.1
   lines9: 8
   starlaserdmg9: 675
-  starshotrate9: 0.1
+  starshotrate9: 0.14
   laseracc9: 0.98
   laseracctime9: 3.1
   starspeed9: 0.7

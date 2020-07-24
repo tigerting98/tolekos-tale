@@ -32,7 +32,7 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadStartGame(int i) {
         GameManager.difficultyLevel = (Difficulty)i;
-        LoadShopScene(GameManager.gameData.beforeStage1);
+        LoadShopScene(GameManager.gameData.levels[0]);
     }
     public void LoadShopScene(LevelDescription levelDescription) {
         GameManager.levelDescription = levelDescription;

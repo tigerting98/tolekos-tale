@@ -96,14 +96,24 @@ public class PlayerStats : MonoBehaviour
         OnGainGold = null;
         OnUpdateBomb = null;
     }
-    public static void LevelUp()
-    {
-
+    public static void LevelUpBeforeHand() {
         playerLevel++;
         bombDamage += bombDamagePerLevel;
         expToLevelUp = expFormula(playerLevel);
         damage += dmgGain;
         playerMaxHP += maxHPGain;
+    }
+    public static void LevelUpBeforeHand(int i) {
+        while (playerLevel < i) {
+            LevelUpBeforeHand();
+        }
+        playerCurrentHP = playerMaxHP;
+
+    }
+    public static void LevelUp()
+    {
+
+        LevelUpBeforeHand();
         player.Level();
     }
 

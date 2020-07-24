@@ -473,7 +473,14 @@ public class Stage6EndBoss : EnemyBossWave
         StartCoroutine(DialogueManager.StartDialogue(PlayerStats.deathCount > 0 ? badEndDialogue : goodEndDialogue, LoadNext));
     }
     void LoadNext() {
-        SceneManager.LoadScene("AfterStage6Scene");
+        if (GameManager.practiceMode)
+        {
+            SceneManager.LoadScene("StartPage");
+        }
+        else
+        {
+            SceneManager.LoadScene("AfterStage6Scene");
+        }
     }
     void StartSubPattern2()
     {

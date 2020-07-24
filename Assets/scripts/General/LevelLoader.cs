@@ -38,13 +38,14 @@ public class LevelLoader : MonoBehaviour
                 break;
         }
     }
+
     public void PlayBossFightTheme() {
         AudioManager.current.music.ChangeTrack(bossTheme);
     }
 
     public virtual void Start()
     {
-
+       
         AudioManager.current.music.ChangeTrack(stageTheme);
         if (!level) {
             level = normalLevel;

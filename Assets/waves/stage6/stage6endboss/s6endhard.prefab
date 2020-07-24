@@ -267,6 +267,11 @@ PrefabInstance:
       propertyPath: switchingmax8
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: starshotrate9
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 3490138245831574272, guid: 3563e6c57ca2cc64db002695b358ef29,
         type: 3}
       propertyPath: m_Name
