@@ -16,6 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 334bff94cbcd1c54995f4095d3d09885, type: 3}
   description: Increases your shot attack damage multiplier to 1.2x. Requires Attack
     Upgrade Level 1.
-  cost: 1500
+  cost: 1750
   multiplier: 1.2
   level: 2

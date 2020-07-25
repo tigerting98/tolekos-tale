@@ -218,7 +218,7 @@ public class Stage6EndBoss : EnemyBossWave
     }
     void EndPhase2() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase2;
-        Instantiate(GameManager.gameData.lifeDrop1000, currentBoss.transform.position, Quaternion.identity);
+        Instantiate(GameManager.gameData.lifeDrop300, currentBoss.transform.position, Quaternion.identity);
         float time= bossImage.GetComponent<Movement>().MoveTo(pos2, movespeed);
         EndPhase();
         Invoke("Phase3", Mathf.Max(time,endPhaseTransition));
@@ -302,7 +302,7 @@ public class Stage6EndBoss : EnemyBossWave
         }
     void EndPhase6() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase6;
-        Instantiate(GameManager.gameData.lifeDrop1000, currentBoss.transform.position, Quaternion.identity);
+        Instantiate(GameManager.gameData.lifeDrop300, currentBoss.transform.position, Quaternion.identity);
         EndPhase();
         Invoke("Phase7", endPhaseTransition);
     }

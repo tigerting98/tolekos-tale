@@ -16,6 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 033af7eb5c04207489e6cffcc0baa222, type: 3}
   description: Improves your bullet clear radius upon hit to 1 unit. Screen width
     is 8 units. Requires Hit Barrier Upgrade Level 1.
-  cost: 4000
+  cost: 5000
   hitBarrierLevel: 2
   hitBarrierRadius: 1

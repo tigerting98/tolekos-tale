@@ -16,6 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 9b28b73993fcf504f8e06a76935a36b7, type: 3}
   description: Improves your bomb effectiveness to 1.5x. Requires Bomb Upgrade Level 
     2.
-  cost: 2500
+  cost: 4000
   multiplier: 1.5
   level: 3

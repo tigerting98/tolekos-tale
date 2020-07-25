@@ -15,5 +15,5 @@ MonoBehaviour:
   itemName: Minor Restore Health
   icon: {fileID: 21300000, guid: 8446955c9826ccb40937335610d39f4d, type: 3}
   description: Heals 100 HP
-  cost: 100
+  cost: 130
   HealthGain: 100
