@@ -89,7 +89,32 @@ public class Stage2EndBoss : EnemyBossWave
         SwitchToBoss();
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
     }
+    IEnumerator Pattern1()
+    {
+        Bullet magicCircle1 = EnemyPatterns.SummonMagicCircle(magicCircle, 0, currentBoss.transform, timeToRadius, 210, radius, 0, GameManager.gameData.magicCircleSummonSFX);
+        Bullet magicCircle2 = EnemyPatterns.SummonMagicCircle(magicCircle, 0, currentBoss.transform, timeToRadius, 330, radius, 0, null);
+        Bullet magicCircleTop = EnemyPatterns.SummonMagicCircle(magicCircle, 0, currentBoss.transform, timeToRadius, 90, radius, 0, null);
+        magicCircle1.orientation.StartRotating(180);
+        magicCircle2.orientation.StartRotating(-180);
+        magicCircleTop.orientation.StartRotating(97);
+        yield return new WaitForSeconds(timeToRadius);
+        Shooting top = magicCircleTop.GetComponent<Shooting>();
+        top.StartShooting(EnemyPatterns.ShootAtPlayerWithLines(bigBullets.GetItem(DamageType.Fire), dmg1Big,
+            magicCircleTop.transform, bigBulletSpeed1, bigBulletShotRate, bigBulletSpread, bigBulletNumber, GameManager.gameData.gunSFX));
+        Bullet bul = ellipseBullet;
+        SubPattern1(magicCircle1, true, bul, dmg1ellipse);
+        SubPattern1(magicCircle2, false, bul, dmg1ellipse);
+    }
 
+
+    void SubPattern1(Bullet magicCircle, bool left, Bullet bul, float dmg)
+    {
+        Shooting shooting = magicCircle.GetComponent<Shooting>();
+        float angular = left ? angularVel : -angularVel;
+        Functions.StartMultipleCustomCoroutines(shooting, i => Functions.RepeatAction(
+            () => EnemyPatterns.OutAndSpinRingOfBullets(bul, dmg, magicCircle.transform, initialSpeed1, radius1, finalSpeed1, angular,
+            smallBulletdelay1, 0, numberPerRings1, GameManager.gameData.magicPulse1SFX), pulseRate1), numberOfRings1, shotRate1);
+    }
     void EndPhase1() {
         EndPhase();
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase1;
@@ -133,6 +158,29 @@ public class Stage2EndBoss : EnemyBossWave
         currentBoss.bosshealth.OnLifeDepleted += EndPhase2;
 
 
+    }
+    IEnumerator SummonLine(Bullet bul, float dmg, bool left, float y, float duration)
+    {
+        return Functions.RepeatActionXTimes(() => Patterns.ShootStraight(bul, dmg, new Vector2(left ? -4.1f : 4.1f, y), left ? 0 : 180, lineBulletSpeed2, null), lineshotRate2, (int)(duration / lineshotRate2));
+    }
+
+
+    IEnumerator MovingAndShooting()
+    {
+        while (currentBoss)
+        {
+            float time = currentBoss.movement.MoveTo(Functions.RandomLocation(1, 3, 1, 3), bossmovespeed);
+            if (!harder)
+            { currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(smallBullet, dmg2circle, currentBoss.transform, circleBulletSpeed, CircleBullets2shotRate, spread2, numberOfCircleBullets2, GameManager.gameData.waterpulseSFX), time, pulseDuration2); }
+            else
+            {
+                currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomActionXTimes(i =>
+                Patterns.SpirallingOutwardsRing(smallBullet, dmg2circle, currentBoss.transform.position, circleBulletSpeed,
+                (i % 2 == 0 ? -1 : 1) * hardAngularVel2, numberOfCircleBullets2, 0, GameManager.gameData.waterpulseSFX), CircleBullets2shotRate, (int)(pulseDuration2 / CircleBullets2shotRate) + 1), time);
+            }
+
+            yield return new WaitForSeconds(circlebulletpulseRate2);
+        }
     }
     void EndPhase2()
     {
@@ -184,7 +232,33 @@ public class Stage2EndBoss : EnemyBossWave
         }
         currentBoss.bosshealth.OnLifeDepleted += EndPhase4;
     }
+    void SmallBullets(Vector2 position, Bullet smallBullet, float dmg, int number)
+    {
+        float angle = Functions.AimAt(new Vector2(0, 0), position);
+        float shootangle = (Mathf.RoundToInt(angle / 90 + 2) % 4) * 90;
+        for (int i = 0; i < number; i++)
+        {
+            Patterns.ShootStraight(smallBullet, dmg, position, shootangle + UnityEngine.Random.Range(-90f, 90f), finalSpeed4, null);
+        }
 
+
+    }
+    Bullet ShootRain(Bullet bigBullet, float dmgBig, Vector2 playerPosition, float angle)
+    {
+        Vector2 spawn = Functions.RandomLocation(currentBoss.transform.position, spawnradius4);
+
+        Bullet bul = Patterns.ShootStraight(bigBullet, dmgBig, spawn, Functions.AimAt(spawn, playerPosition) + angle, initialSpeed4, GameManager.gameData.waterstreaming1SFX);
+        bul.movement.triggers.Add(triggerEvent);
+        return bul;
+    }
+
+
+
+    IEnumerator pulseOfRain(float angle)
+    {
+        Vector2 pos = GameManager.playerPosition;
+        return Functions.RepeatActionXTimes(() => ShootRain(pointedBullet, dmg4pointed, pos, angle), shotRate4, numberPerPulse4);
+    }
     void EndPhase4() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase4;
         EndPhase();
@@ -208,6 +282,55 @@ public class Stage2EndBoss : EnemyBossWave
         currentBoss.health.OnDeath += EndPhase5;
     }
 
+
+    IEnumerator SummonWaterFairy()
+    {
+
+        while (true)
+        {
+            float x = UnityEngine.Random.Range(-3.5f, 3.5f);
+            Enemy fairy = Instantiate(waterfairy, new Vector2(x, 4.1f), Quaternion.identity);
+            float time = fairy.movement.MoveTo(new Vector2(x, fairyY), speedfairy);
+            fairy.shooting.StartShootingAfter(
+                Functions.RepeatAction(() =>
+                {
+                    float angle = Functions.AimAtPlayer(fairy.transform);
+                    fairy.shooting.StartShootingFor(EnemyPatterns.ShootSine(pointedBullet, dmg5fairy, fairy.transform, angle,
+                    speedbulletfairy, shotRatefairy, fairyangularVel, fairyamp, null), 0, fairypulseDuration);
+                    AudioManager.current.PlaySFX(GameManager.gameData.waterswooshSFX);
+                }, fairypulseRate), time);
+            Destroy(fairy.gameObject, 15f);
+            yield return new WaitForSeconds(spawnRatefairy);
+        }
+
+    }
+    IEnumerator SummonSlime()
+    {
+        triggerEvent = new ActionTrigger<Movement>(movement => !Functions.WithinBounds(movement.transform.position, 4f));
+        triggerEvent.OnTriggerEvent += movement =>
+        {
+            SlimeOut(movement.transform.position);
+            movement.RemoveObject();
+        };
+        while (true)
+        {
+            Enemy en = Instantiate(slime, currentBoss.transform.position, Quaternion.identity);
+            float angle = Functions.AimAtPlayer(en.transform);
+            en.movement.SetSpeed(Quaternion.Euler(0, 0, angle) * new Vector2(speedslime, 0));
+            en.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandomAngle(GameManager.gameData.starBullet.GetItem(DamageType.Water), dmg5star,
+                en.transform, speedbulletslime, shotRateslime, numberofShotsSlime, GameManager.gameData.magicPulse1SFX), 0.5f);
+            en.movement.triggers.Add(triggerEvent);
+            yield return new WaitForSeconds(spawnRateslime);
+        }
+    }
+
+    void SlimeOut(Vector2 pos)
+    {
+        float angle = UnityEngine.Random.Range(0f, 360f);
+        Patterns.RingOfBullets(arrowBullet, dmg5arrow, pos, numberofexplodingBullets, angle, explodingBulletSpeedSlow, GameManager.gameData.waterpulseSFX);
+        Patterns.RingOfBullets(arrowBullet, dmg5arrow, pos, numberofexplodingBullets, angle, explodingBulletSpeedFast, null);
+    }
+
     void EndPhase5() {
         EndPhase();
         Destroy(bossImage);
@@ -220,121 +343,11 @@ public class Stage2EndBoss : EnemyBossWave
     }
 
 
-    IEnumerator Pattern1() {
-        Bullet magicCircle1 = EnemyPatterns.SummonMagicCircle(magicCircle, 0,currentBoss.transform, timeToRadius, 210, radius, 0,GameManager.gameData.magicCircleSummonSFX);
-        Bullet magicCircle2 = EnemyPatterns.SummonMagicCircle(magicCircle, 0,currentBoss.transform, timeToRadius, 330, radius, 0,null);
-        Bullet magicCircleTop = EnemyPatterns.SummonMagicCircle(magicCircle,0, currentBoss.transform, timeToRadius, 90, radius, 0,null);
-        magicCircle1.orientation.StartRotating(180);
-        magicCircle2.orientation.StartRotating(-180);
-        magicCircleTop.orientation.StartRotating(97);
-        yield return new WaitForSeconds(timeToRadius);
-        Shooting top = magicCircleTop.GetComponent<Shooting>();
-        top.StartShooting(EnemyPatterns.ShootAtPlayerWithLines(bigBullets.GetItem(DamageType.Fire), dmg1Big,
-            magicCircleTop.transform, bigBulletSpeed1, bigBulletShotRate, bigBulletSpread, bigBulletNumber,GameManager.gameData.gunSFX));
-        Bullet bul = ellipseBullet;
-        SubPattern1(magicCircle1, true, bul, dmg1ellipse);
-        SubPattern1(magicCircle2, false, bul, dmg1ellipse);
-    }
-
-
-    void SubPattern1(Bullet magicCircle, bool left, Bullet bul , float dmg){
-        Shooting shooting = magicCircle.GetComponent<Shooting>();
-        float angular = left ? angularVel : -angularVel;
-        Functions.StartMultipleCustomCoroutines(shooting, i => Functions.RepeatAction(
-            () => EnemyPatterns.OutAndSpinRingOfBullets(bul, dmg, magicCircle.transform, initialSpeed1, radius1, finalSpeed1, angular, 
-            smallBulletdelay1, 0, numberPerRings1,GameManager.gameData.magicPulse1SFX), pulseRate1), numberOfRings1, shotRate1);
-    }
+    
 
 
 
-    IEnumerator SummonLine(Bullet bul, float dmg, bool left, float y, float duration) {
-        return Functions.RepeatActionXTimes(() => Patterns.ShootStraight(bul, dmg, new Vector2(left ? -4.1f : 4.1f, y), left ?  0 : 180,lineBulletSpeed2,null), lineshotRate2,  (int)(duration / lineshotRate2));
-    }
-
-
-    IEnumerator MovingAndShooting() {
-        while (currentBoss) {
-            float time = currentBoss.movement.MoveTo(Functions.RandomLocation(1, 3, 1, 3), bossmovespeed);
-            if (!harder)
-            { currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(smallBullet, dmg2circle, currentBoss.transform, circleBulletSpeed, CircleBullets2shotRate, spread2, numberOfCircleBullets2, GameManager.gameData.waterpulseSFX), time, pulseDuration2); }
-            else {
-                currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomActionXTimes(i =>
-                Patterns.SpirallingOutwardsRing(smallBullet, dmg2circle, currentBoss.transform.position, circleBulletSpeed,
-                (i%2==0?-1:1)*hardAngularVel2 ,numberOfCircleBullets2,0,GameManager.gameData.waterpulseSFX), CircleBullets2shotRate, (int)(pulseDuration2/CircleBullets2shotRate) +1), time);
-            }
-            
-            yield return new WaitForSeconds(circlebulletpulseRate2);
-        }
-    }
-
-    void SmallBullets(Vector2 position, Bullet smallBullet,float dmg, int number) {
-        float angle = Functions.AimAt(new Vector2(0, 0), position);
-        float shootangle = (Mathf.RoundToInt(angle / 90 + 2) % 4) * 90;
-        for (int i = 0; i < number; i++)
-        {
-            Patterns.ShootStraight(smallBullet, dmg, position, shootangle + UnityEngine.Random.Range(-90f, 90f), finalSpeed4,null);
-        }
-        
-
-    }
-    Bullet ShootRain(Bullet bigBullet, float dmgBig, Vector2 playerPosition, float angle) {
-        Vector2 spawn = Functions.RandomLocation(currentBoss.transform.position, spawnradius4);
-
-        Bullet bul = Patterns.ShootStraight(bigBullet, dmgBig, spawn, Functions.AimAt(spawn, playerPosition) + angle, initialSpeed4, GameManager.gameData.waterstreaming1SFX);
-        bul.movement.triggers.Add(triggerEvent);
-        return bul;
-    }
-
-
-
-    IEnumerator pulseOfRain(float angle) {
-        Vector2 pos = GameManager.playerPosition;
-        return Functions.RepeatActionXTimes(() => ShootRain(pointedBullet, dmg4pointed, pos, angle),shotRate4, numberPerPulse4) ;
-    }
-    IEnumerator SummonWaterFairy() {
-   
-        while (true)
-        {
-            float x = UnityEngine.Random.Range(-3.5f, 3.5f);
-            Enemy fairy = Instantiate(waterfairy, new Vector2(x, 4.1f), Quaternion.identity);
-            float time = fairy.movement.MoveTo(new Vector2(x, fairyY), speedfairy);
-            fairy.shooting.StartShootingAfter(
-                Functions.RepeatAction(() =>
-                {
-                    float angle = Functions.AimAtPlayer(fairy.transform);
-                    fairy.shooting.StartShootingFor(EnemyPatterns.ShootSine(pointedBullet, dmg5fairy, fairy.transform, angle,
-                    speedbulletfairy, shotRatefairy, fairyangularVel, fairyamp,null), 0, fairypulseDuration);
-                    AudioManager.current.PlaySFX(GameManager.gameData.waterswooshSFX);
-                }, fairypulseRate), time);
-            Destroy(fairy.gameObject, 15f);
-            yield return new WaitForSeconds(spawnRatefairy);
-        }
-        
-    }
-    IEnumerator SummonSlime() {
-        triggerEvent = new ActionTrigger<Movement>(movement => !Functions.WithinBounds(movement.transform.position, 4f));
-        triggerEvent.OnTriggerEvent += movement =>
-        {
-            SlimeOut(movement.transform.position);
-            movement.RemoveObject();
-        };
-        while (true)
-        {
-            Enemy en = Instantiate(slime, currentBoss.transform.position, Quaternion.identity);
-            float angle = Functions.AimAtPlayer(en.transform);
-            en.movement.SetSpeed(Quaternion.Euler(0, 0, angle) * new Vector2(speedslime, 0));
-            en.shooting.StartShootingAfter(EnemyPatterns.PulsingBulletsRandomAngle(GameManager.gameData.starBullet.GetItem(DamageType.Water), dmg5star,  
-                en.transform, speedbulletslime, shotRateslime, numberofShotsSlime, GameManager.gameData.magicPulse1SFX), 0.5f);
-            en.movement.triggers.Add(triggerEvent);
-            yield return new WaitForSeconds(spawnRateslime);
-        }
-    }
-
-    void SlimeOut(Vector2 pos) {
-        float angle = UnityEngine.Random.Range(0f, 360f);
-        Patterns.RingOfBullets(arrowBullet, dmg5arrow, pos, numberofexplodingBullets, angle, explodingBulletSpeedSlow, GameManager.gameData.waterpulseSFX);
-        Patterns.RingOfBullets(arrowBullet, dmg5arrow, pos, numberofexplodingBullets, angle, explodingBulletSpeedFast,null);
-    }
+ 
 
 
     

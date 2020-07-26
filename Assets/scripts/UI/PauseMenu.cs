@@ -5,6 +5,7 @@ using TMPro;
 using System.Text;
 using UnityEngine.EventSystems;
 using System.Transactions;
+using UnityEditor.U2D.Path.GUIFramework;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -15,13 +16,16 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject resumeButton = default;
     [SerializeField] GameObject settingButton = default;
     [SerializeField] GameObject settingMenu;
+    [SerializeField] GameObject controlButton, controlMenu, controlBackButton;
     public GameObject lastSelected;
+
     private void Awake()
     {
         GameManager.pauseMenu = this;
         warningMenu.SetActive(false);
         gameObject.SetActive(false);
         settingMenu.SetActive(false);
+        controlMenu.SetActive(false);
     }
 
     private void OnEnable() {
@@ -48,6 +52,10 @@ public class PauseMenu : MonoBehaviour
             {
                 EventSystem.current.SetSelectedGameObject(lastSelected);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Escape)&&controlMenu.gameObject.activeInHierarchy) {
+            CloseControls();
+         
         }
     }
 
@@ -106,7 +114,22 @@ public class PauseMenu : MonoBehaviour
         settingMenu.SetActive(true);
         
     }
+    public void OpenControls() {
+        controlMenu.SetActive(true);
+        StartCoroutine(ControlsOpen());
+    }
+    IEnumerator ControlsOpen() {
+        yield return new WaitForSecondsRealtime(0.01f);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controlBackButton);
+    }
+    public void CloseControls()
+    {
+        controlMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controlButton);
 
+    }
     public void CloseSetting()
     {
         settingMenu.GetComponent<SettingMenu>().backButton.GetComponent<ButtonPointer>().OnDeselect(null);

@@ -43,7 +43,7 @@ public class Stage4MidBoss : EnemyBossWave
         StartCoroutine(DialogueManager.StartDialogue(prefightDialogue, StartPhase1));
 
     }
-
+    //Phase 1
     void StartPhase1() {
         currentBoss = Instantiate(boss, spawnLocation, Quaternion.identity);
         BasicDroppable droppable = currentBoss.GetComponent<BasicDroppable>();
@@ -69,6 +69,7 @@ public class Stage4MidBoss : EnemyBossWave
         Invoke("StartPhase2", endPhaseTransition);
 
     }
+    //Phase 2 (Spinning Laser and fire balls)
     void StartPhase2() {
         SpellCardUI(namesOfSpellCards[0]);
         Invoke("Phase2", spellCardTransition);
@@ -100,7 +101,7 @@ public class Stage4MidBoss : EnemyBossWave
         currentBoss.shooting.StartShooting(ShootFireBeam());
 
     }
-
+    //Fireball subcomponent of pattern 2
     IEnumerator ShootFireCircle(Bullet firebul, Vector2 origin, Vector2 end, float speed, Bullet bul, float dmg, float startAngle, float angularvel, float bulletspeed, float shotRate) {
         Bullet circle = GameManager.bulletpools.SpawnBullet(firebul, origin);
         AudioManager.current.PlaySFX(GameManager.gameData.gunSFX);
@@ -113,7 +114,7 @@ public class Stage4MidBoss : EnemyBossWave
         }
         circle.orientation.StartRotating(angularvel, 90 + startAngle);
     }
-
+    //Rotating firebeam of pattern 2
     IEnumerator ShootFireBeam() {
         BulletOrientation bossOrientation = currentBoss.GetComponent<BulletOrientation>();
         while (true) {

@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4261432139381196635
 RectTransform:
   m_ObjectHideFlags: 0
@@ -162,12 +162,12 @@ PrefabInstance:
     - target: {fileID: 8185263890365988013, guid: 3bea8caaa3cd2d2459209c29543ea27c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000030517
+      value: -0.000000040402
       objectReference: {fileID: 0}
     - target: {fileID: 8185263890365988013, guid: 3bea8caaa3cd2d2459209c29543ea27c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0055485
+      value: -10.9
       objectReference: {fileID: 0}
     - target: {fileID: 8185263890365988013, guid: 3bea8caaa3cd2d2459209c29543ea27c,
         type: 3}
@@ -177,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 8185263890365988013, guid: 3bea8caaa3cd2d2459209c29543ea27c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 314.7436
+      value: 617.7528
       objectReference: {fileID: 0}
     - target: {fileID: 8185263890365988013, guid: 3bea8caaa3cd2d2459209c29543ea27c,
         type: 3}
@@ -217,17 +217,13 @@ PrefabInstance:
     - target: {fileID: 8185263890655547267, guid: 3bea8caaa3cd2d2459209c29543ea27c,
         type: 3}
       propertyPath: m_Text
-      value: 'Arrow up/down/left/right - movement
-
-        Z - Shoot
-
-        X -
-        Spell
-
-        C - Change Shot Mode
-
-        Left Shift - Slow down and make
-        hitbox visible'
+      value: "Arrow keys - movement\n\nZ - Shoot/Confirmation/Progress dialogue\n\nX
+        - Spell: Global AoE Pure damage and clears enemy bullets\n\nC - Change Element:
+        Changes player shot pattern and damage resistances. Also determines damage
+        taken by enemies depending on their element. \nWater < Earth < Fire < Water.
+        Pure (yellow) is unaffected.\nEnemies are colour-coded based on their element.\n\nLeft
+        Shift - Focus: Slow down and make hitbox visible\n\nEsc - Pause during gameplay/Back
+        in Menus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bea8caaa3cd2d2459209c29543ea27c, type: 3}
@@ -424,12 +420,12 @@ PrefabInstance:
     - target: {fileID: 7423603762784619281, guid: 96120c68904dd52438b06421849bf85d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -920
+      value: -960
       objectReference: {fileID: 0}
     - target: {fileID: 7423603762784619281, guid: 96120c68904dd52438b06421849bf85d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 234
+      value: 136.97
       objectReference: {fileID: 0}
     - target: {fileID: 7423603762784619281, guid: 96120c68904dd52438b06421849bf85d,
         type: 3}
