@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
+//Stores the information of the player stats
 public class PlayerStats : MonoBehaviour
 {
     public static int deathCount = 0;
@@ -71,7 +71,7 @@ public class PlayerStats : MonoBehaviour
         OnGainExp?.Invoke();
 
     }
-
+    //Reset the player back to default
     public static void Reset()
     {
         hitBarrierLevel = 0;

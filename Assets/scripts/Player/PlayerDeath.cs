@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Controls the player's death
 public class PlayerDeath : Death
 {
     // Start is called before the first frame update

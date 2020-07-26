@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+//This controls the continue page
 public class DeathScene : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI deathText;
@@ -41,6 +41,7 @@ public class DeathScene : MonoBehaviour
         GameManager.sceneLoader.ReturnToStartPage();
  
     }
+    //Remvoe all bullets and return the player back to the game
     private void Revive() {
         AudioManager.current.music.source.Play();
         GameManager.player.gameObject.SetActive(true);

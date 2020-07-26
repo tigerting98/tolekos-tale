@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This class is used for easy testing for waves
 public class TestWave : MonoBehaviour
 {
     [SerializeField] EnemyWave wave;

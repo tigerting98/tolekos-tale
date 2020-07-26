@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using UnityEngine.UI;
+//This controls the main menu of the game
 public class MainMenu : MonoBehaviour
 {
     public GameObject instructionMenu;
@@ -22,6 +23,7 @@ public class MainMenu : MonoBehaviour
        
         
     }
+    //Set up the action listeners
     private void Start()
     {
         AudioManager.current.music.PlayTrack(mainMenuMusic);

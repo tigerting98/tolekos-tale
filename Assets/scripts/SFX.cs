@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 [CreateAssetMenu(fileName = "SFX/sound", menuName = "Create SFX")]
+//This is an sfx file which contains the clip to be played, the volume and its cooldown
 public class SFX : ScriptableObject
 {
     public AudioClip clip;

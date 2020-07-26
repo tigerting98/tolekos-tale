@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This controls player input for dialogue
 public class GamePlayerInput : MonoBehaviour
 {
     public event Action OnHoldZ;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+// This is to open the pause menu
 public class Controller : MonoBehaviour
 {
    

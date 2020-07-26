@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This class is used to suck in collectibles into the player
 public class CollectibleMagnet : MonoBehaviour
 {
     [SerializeField] float speed;

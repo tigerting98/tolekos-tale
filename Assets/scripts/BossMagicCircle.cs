@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This controls the beahvior of the v boss magic circle around the boss
 public class BossMagicCircle : MonoBehaviour
 {
     // Start is called before the first frame update

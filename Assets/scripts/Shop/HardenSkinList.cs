@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This encompass the harden skin skill tree
 public class HardenSkinList : ShopItemList
 {
     public override ShopItem ChooseItem()

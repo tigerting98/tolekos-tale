@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+//Setting menu used in the pause screen
 public class SettingPauseMenu : SettingMenu
 {
     [SerializeField] PauseMenu pauseMenu;

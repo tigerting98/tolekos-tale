@@ -5,13 +5,14 @@ using TMPro;
 using UnityEngine.PlayerLoop;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
+//This class displays the number of bombs a player have in the UI
 public class BombText : MonoBehaviour
 {
     [SerializeField] int maxBombs;
     [SerializeField] GameObject bombSprite;
     [SerializeField] GameObject bombLocation;
     List<GameObject> bombSprites;
-
+    //Initialise all the bombs sprites and deactivate the currently unused ones
     void Start()
     {
         bombSprites = new List<GameObject>();
@@ -24,7 +25,7 @@ public class BombText : MonoBehaviour
         PlayerStats.OnUpdateBomb += UpdateBomb;
     }
 
-    // Update is called once per frame
+    //Checks to see which bomb sprite need to be set visible
     void UpdateBomb()
     {
        

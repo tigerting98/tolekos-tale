@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Shop Item/Harden Skin")]
+//This upgrade improve the damage resistance of a player
 public class HardenSkin : ShopItem
 {
     // Start is called before the first frame update

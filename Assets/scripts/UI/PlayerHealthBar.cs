@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Controls the player health bar
 public class PlayerHealthBar : HealthBar
 {
     // Start is called before the first frame update

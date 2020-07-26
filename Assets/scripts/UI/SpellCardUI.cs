@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem.LowLevel;
-
+//This controls the spellc ard UI canvas that happens when a boss uses a spellcard
 public class SpellCardUI : MonoBehaviour
 {
     [SerializeField] Image image;

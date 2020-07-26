@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
-
+//This global class controls the game system and allows for classes to interact with each other
 public enum Difficulty { VeryEasy, Easy, Normal, Hard, Nightmare}
 public class GameManager : MonoBehaviour
 {

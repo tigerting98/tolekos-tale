@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
-
+//This is to control a certain shop button, each is associated with its own tree
 public class ShopButton : MonoBehaviour, ISelectHandler
 {
 

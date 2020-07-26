@@ -66,7 +66,7 @@ public class Stage1EndBoss : EnemyBossWave
         GameManager.PlayEndBossMusic();
         StartCoroutine(DialogueManager.StartDialogue(preBossFight2, StartBossFight));
     }
-
+    //Phase 1
    
     void StartBossFight() {
         Vector2 initialPosition = new Vector2(bossImage.transform.position.x, bossImage.transform.position.y);
@@ -82,6 +82,21 @@ public class Stage1EndBoss : EnemyBossWave
         }
         currentBoss.bosshealth.OnLifeDepleted += EndPhase1;
         
+    }
+
+    IEnumerator Pattern1(Enemy enemy)
+    {
+
+
+        return Functions.RepeatAction(() =>
+        {
+            float offset = UnityEngine.Random.Range(0f, 360f);
+            Patterns.CustomRing((angle) => enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(
+                GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), dmg1,
+                enemy.transform, angle, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing, GameManager.gameData.shortarrowSFX)), offset, numberOfCone);
+        }, pattern1PulseRate);
+
+
     }
 
     void EndPhase1() {
@@ -106,6 +121,35 @@ public class Stage1EndBoss : EnemyBossWave
         currentBoss.shooting.StartShootingAfter(EnemyPatterns.ShootAtPlayer(GameManager.gameData.stage1arrowBullet, dmg2, currentBoss.transform, arrowSpeed, shotRate, GameManager.gameData.longarrowSFX), 0.3f);
   
     }
+    IEnumerator MoveLeftAndRight()
+    {
+        bool left = true;
+        while (true)
+        {
+            float toX = left ? -3.5f : 3.5f;
+            float toY = UnityEngine.Random.Range(minY, maxY);
+            float time = currentBoss.movement.MoveTo(new Vector2(toX, toY), moveSpeed);
+            left = !left;
+            yield return new WaitForSeconds(time);
+
+        }
+
+
+    }
+
+
+    IEnumerator RainOfArrows()
+    {
+        return Functions.RepeatCustomActionCustomTime(i =>
+        {
+            Patterns.ShootStraight(GameManager.gameData.stage1arrowBullet,
+               dmg2, new Vector2(UnityEngine.Random.Range(-4f, 4f), 4.4f), -90, UnityEngine.Random.Range(minSpeed, maxSpeed), null);
+
+        }, i => UnityEngine.Random.Range(arrowSpawnTimeMin, arrowSpawnTimeMax));
+
+
+    }
+
 
     void EndPhase2() {
         currentBoss.bosshealth.OnLifeDepleted -= EndPhase2;
@@ -124,6 +168,76 @@ public class Stage1EndBoss : EnemyBossWave
         currentBoss.shooting.StartShooting(Pattern3());
         currentBoss.bosshealth.OnDeath += EndStage;
     }
+
+    List<Bullet> ExplodingAndBack(Vector2 pos)
+    {
+
+        return Patterns.CustomRing(
+            angle => {
+                Bullet bul = Patterns.ShootCustomBullet(GameManager.gameData.smallRoundBullet.GetItem(DamageType.Pure), dmg3, pos, Movement.RotatePath(angle,
+                        t =>
+                        new Vector2(0, t < maxRadiusPattern3 / initialSpeedPattern3 ?
+                        initialSpeedPattern3 : t < maxRadiusPattern3 / initialSpeedPattern3 + shortDelayPattern3 ?
+                        0 : -finalSpeedPattern3)), MovementMode.Velocity, GameManager.gameData.explosionSFX);
+                bul.movement.destroyBoundary = 6f;
+                return bul;
+            }, 0, numberOfBulletsPattern3);
+
+    }
+    IEnumerator Pattern3()
+    {
+        Animator animator = currentBoss.gameObject.GetComponent<Animator>();
+        while (animator)
+        {
+            bool up = true;
+            animator.SetTrigger("Disappear");
+            if (harder)
+            {
+                Patterns.RingOfBullets(GameManager.gameData.starBullet.GetItem(UnityEngine.Random.Range(0, 3)),
+                    dmg3star, currentBoss.transform.position, number3, Functions.AimAtPlayer(currentBoss.transform), speed3harder, null);
+            }
+            AudioManager.current.PlaySFX(GameManager.gameData.tpSFX);
+            yield return new WaitForSeconds(1f);
+            if (animator)
+            {
+                if (GameManager.playerPosition.y > 0)
+                {
+                    up = false;
+                }
+                currentBoss.transform.position = GameManager.playerPosition + new Vector2(0, up ? 1 : -1);
+                animator.SetTrigger("Appear");
+            }
+            if (animator)
+            {
+                yield return new WaitForSeconds(0.8f);
+                if (currentBoss)
+                {
+                    Bullet punchbul = GameManager.bulletpools.SpawnBullet(punch, currentBoss.transform.position);
+                    punchbul.movement.SetSpeed(new Vector2(0, up ? -punchSpeed : punchSpeed));
+                    punchbul.movement.destroyBoundary = 6f;
+                    ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > 1 / punchSpeed);
+                    trigger.OnTriggerEvent += movement =>
+                    {
+                        Bullet bul = Instantiate(GameManager.gameData.explosionBullet, movement.transform.position, Quaternion.identity);
+                        bul.SetDamage(explosiondmg);
+                        Destroy(bul, 1.2f);
+                        ExplodingAndBack(movement.transform.position);
+                        movement.GetComponent<Bullet>().Deactivate();
+                        currentBoss.shooting.StartShooting(GameManager.maincamera.ShakeCamera(0.12f, 0.2f));
+                    };
+                    punchbul.movement.triggers.Add(trigger);
+
+
+                }
+
+            }
+            yield return new WaitForSeconds(pausetime + 1 / punchSpeed);
+        }
+
+
+
+    }
+
 
     void EndStage() {
         if (currentBoss)
@@ -145,115 +259,12 @@ public class Stage1EndBoss : EnemyBossWave
 
     
 
-    IEnumerator Pattern3() {
-        Animator animator = currentBoss.gameObject.GetComponent<Animator>();
-        while (animator) {
-            bool up = true;
-                animator.SetTrigger("Disappear");
-                if (harder)
-                {
-                    Patterns.RingOfBullets(GameManager.gameData.starBullet.GetItem(UnityEngine.Random.Range(0, 3)),
-                        dmg3star, currentBoss.transform.position, number3, Functions.AimAtPlayer(currentBoss.transform), speed3harder, null);
-                }
-                AudioManager.current.PlaySFX(GameManager.gameData.tpSFX);
-                yield return new WaitForSeconds(1f);
-                if (animator)
-                {
-                if (GameManager.playerPosition.y > 0) {
-                    up = false;
-                }
-                    currentBoss.transform.position = GameManager.playerPosition + new Vector2(0, up?1:-1);
-                    animator.SetTrigger("Appear");
-                }
-                if (animator)
-                {
-                    yield return new WaitForSeconds(0.8f);
-                    if (currentBoss)
-                    {
-                        Bullet punchbul = GameManager.bulletpools.SpawnBullet(punch, currentBoss.transform.position);
-                        punchbul.movement.SetSpeed(new Vector2(0, up? -punchSpeed: punchSpeed));
-                        punchbul.movement.destroyBoundary = 6f;
-                        ActionTrigger<Movement> trigger = new ActionTrigger<Movement>(movement => movement.time > 1 / punchSpeed);
-                        trigger.OnTriggerEvent += movement =>
-                        {
-                            Bullet bul = Instantiate(GameManager.gameData.explosionBullet, movement.transform.position, Quaternion.identity);
-                            bul.SetDamage(explosiondmg);
-                            Destroy(bul, 1.2f);
-                            ExplodingAndBack(movement.transform.position);
-                            movement.GetComponent<Bullet>().Deactivate();
-                            currentBoss.shooting.StartShooting(GameManager.maincamera.ShakeCamera(0.12f, 0.2f));
-                        };
-                        punchbul.movement.triggers.Add(trigger);
-
-
-                    }
-
-                }
-                yield return new WaitForSeconds(pausetime + 1/punchSpeed);
-            }
-          
-        
-
-    }
-
- 
-
-
-    IEnumerator Pattern1(Enemy enemy) {
   
-
-        return Functions.RepeatAction(() =>
-            {
-                float offset = UnityEngine.Random.Range(0f, 360f);
-                Patterns.CustomRing((angle) => enemy.shooting.StartCoroutine(EnemyPatterns.ConePattern(
-                    GameManager.gameData.ellipseBullet.GetItem(DamageType.Pure), dmg1, 
-                    enemy.transform, angle, pattern1Speed, pattern1SpawnRate, pattern1Number, pattern1Spacing, GameManager.gameData.shortarrowSFX)), offset, numberOfCone);
-            }, pattern1PulseRate);
-     
-        
-        }
-    
-    
-    IEnumerator MoveLeftAndRight() {
-        bool left = true;
-        while (true) {
-            float toX = left ? -3.5f : 3.5f;
-            float toY = UnityEngine.Random.Range(minY, maxY);
-            float time = currentBoss.movement.MoveTo(new Vector2(toX, toY), moveSpeed);
-            left = !left;
-            yield return new WaitForSeconds(time);
-        
-        }
-       
-    
-    }
-
-    List<Bullet> ExplodingAndBack(Vector2 pos) {
-       
-        return Patterns.CustomRing(
-            angle => {
-            Bullet bul = Patterns.ShootCustomBullet(GameManager.gameData.smallRoundBullet.GetItem(DamageType.Pure), dmg3, pos, Movement.RotatePath(angle,
-                    t =>
-                    new Vector2(0, t < maxRadiusPattern3 / initialSpeedPattern3 ?
-                    initialSpeedPattern3 : t < maxRadiusPattern3 / initialSpeedPattern3 + shortDelayPattern3 ?
-                    0 : -finalSpeedPattern3)), MovementMode.Velocity, GameManager.gameData.explosionSFX);
-                bul.movement.destroyBoundary = 6f;
-                return bul;
-            }, 0, numberOfBulletsPattern3); 
-
-    }
-
-    IEnumerator RainOfArrows() {
-        return Functions.RepeatCustomActionCustomTime(i =>
-        {
-            Patterns.ShootStraight(GameManager.gameData.stage1arrowBullet,
-               dmg2, new Vector2(UnityEngine.Random.Range(-4f, 4f), 4.4f), -90, UnityEngine.Random.Range(minSpeed, maxSpeed), null);
-          
-        }, i => UnityEngine.Random.Range(arrowSpawnTimeMin, arrowSpawnTimeMax));
-            
-    
-    }
  
+
+
+    
+   
 
  
 

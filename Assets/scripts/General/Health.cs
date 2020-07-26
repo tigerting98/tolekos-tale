@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//This class is responsible for the health of any unit
 public class Health : MonoBehaviour
 {
     public float maxHP = 1000;

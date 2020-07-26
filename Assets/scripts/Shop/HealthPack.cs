@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Shop Item/HealthPack")]
+//This item heals the player
 public class HealthPack : ShopItem
 {
     public int HealthGain;

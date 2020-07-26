@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// This component encompass the drops an enemy would drop in the game
 public class BasicDroppable : MonoBehaviour
 {
     [SerializeField] Death death;

@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using UnityEngine;
-
+//This class holds the simple bullet pattern movements
 public class Patterns : MonoBehaviour
 {
     public static Bullet ShootStraight(Bullet bullet, float dmg, Vector2 origin, float angle, float speed, SFX sfx)

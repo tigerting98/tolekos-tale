@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 [CreateAssetMenu(menuName = "Enemy Stats")]
+//Holds the information of the enemy
 public class EnemyStats : ScriptableObject
 { 
     public float hp = 100, dmg = 1000, goldchance = 0.3f;

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This is to form the level tree for bomb upgrades
 public class BombUpgradeList : ShopItemList
 {
     public override ShopItem ChooseItem()

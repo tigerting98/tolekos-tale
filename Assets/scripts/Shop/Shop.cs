@@ -7,14 +7,13 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.UI;
-
+//This is to control the shop behavior
 public class Shop : MonoBehaviour
 {
     [SerializeField] GameObject intoShop;
     [SerializeField] GameObject shopList;
     [SerializeField] PlayerShop playerShop;
     [SerializeField] ItemDescription itemDescription;
-    // [SerializeField] List<ShopItem> items;
     [SerializeField] List<ShopItemList> items;
     [SerializeField] ShopButton shopButton;
     [SerializeField] EventSystem system;

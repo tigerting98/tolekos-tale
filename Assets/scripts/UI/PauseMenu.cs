@@ -4,9 +4,8 @@ using UnityEngine;
 using TMPro;
 using System.Text;
 using UnityEngine.EventSystems;
-using System.Transactions;
-using UnityEditor.U2D.Path.GUIFramework;
 
+//This class cxontrols the pause menu of the game
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI text = default;

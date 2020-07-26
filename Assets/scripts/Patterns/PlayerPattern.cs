@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Provides the functions in which the player uses to shoot
 public class PlayerPattern : MonoBehaviour
 {
     public static void EarthUnfocusedMode(Bullet bullet, Player player)

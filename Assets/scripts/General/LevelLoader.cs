@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
-
+//This class loads a level data to render the level out
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] LevelData veryeasyLevel, easyLevel, normalLevel, hardLevel, lunaticLevel;
