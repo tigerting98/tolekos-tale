@@ -1,6 +1,6 @@
 # Toleko's Tale
 ## A 2D bullet hell game 
-Hi, we are Team Pokka Ice Lemon Tea. This is the repo for our gamem, Toleko's Tale, that we are making for NUS Orbital 2020.
+Hi, we are Team Pokka Ice Lemon Tea. This is the repo for our game, Toleko's Tale, that we are making for NUS Orbital 2020.
 
 ## README
 We have shifted our readme to Google Docs for easier editing and collaboration.
