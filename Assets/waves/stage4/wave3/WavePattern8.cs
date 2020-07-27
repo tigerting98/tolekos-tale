@@ -62,7 +62,7 @@ public class WavePattern8 : EnemyWave
 
     IEnumerator SpawnEnemy(float speed, float upperYBound, float lowerYBound, bool left, DamageType type)
     {
-        float yPos = UnityEngine.Random.Range(lowerYBound, upperYBound);
+        float yPos = GameManager.SupplyRandomFloat(lowerYBound, upperYBound);
         float initialX = left ? -4.2f : 4.2f;
         Enemy en = enemyDependOnType ? enemies.GetItem(type) : this.enemy;
         Enemy enemy = Instantiate(en, new Vector2(initialX, yPos), Quaternion.identity);

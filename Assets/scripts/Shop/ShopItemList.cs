@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//A generic shop item list to store the tree of a shop item
 public class ShopItemList : MonoBehaviour
 {
     public List<ShopItem> shopitemlist;

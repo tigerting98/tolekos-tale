@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This controls the player spellcard
 public class PlayerSpell : MonoBehaviour
 {
     public Spell defaultSpell;

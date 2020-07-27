@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+//This class is responsible for the scene in between stages
 public class BetweenStagesScript : MonoBehaviour
 {
     [SerializeField] Image background;
@@ -27,6 +27,7 @@ public class BetweenStagesScript : MonoBehaviour
         Invoke("SetUp", 0.01f);
         
     }
+    //Default selection is the shop button
     void SetUp() {
         EventSystem.current.SetSelectedGameObject(shopButton.gameObject);
         lastSelected = shopButton.gameObject;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(menuName ="Shop Item/Shop Item")]
+//A base class for shop items that can be purchased
 public class ShopItem : ScriptableObject
 {
     public string itemName;

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This class is responsible for the movement behavior of a game object
 public enum MovementMode { Position, Velocity, Acceleration, Homing }
 public class Movement : MonoBehaviour
 {

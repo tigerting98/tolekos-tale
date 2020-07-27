@@ -51,7 +51,7 @@ public class WavePattern3 : EnemyWave
         yield return new WaitForSeconds(timing);
         StartCoroutine(Functions.RepeatCustomActionXTimes(i =>
         {
-            float y = Random.Range(miny, maxy);
+            float y = GameManager.SupplyRandomFloat(miny, maxy);
             SpawnEnemy(y, left, shotChance);
         }, spawnRate, number));
 

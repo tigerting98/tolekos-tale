@@ -1,6 +1,7 @@
 ﻿using System;
 
 using UnityEngine;
+//This controls the orientaiton of the bullet
 public enum OrientationMode {velocity, position }
 [RequireComponent(typeof(Movement))]
 
@@ -33,7 +34,7 @@ public class BulletOrientation : MonoBehaviour
     {
         Reset();
     }
-
+    //Causes the object to rotate constantly
     public void StartRotating(float angularVel, float startAngle) {
         angle = startAngle;
         SetCustomAngularVel(t => angularVel);
@@ -60,6 +61,7 @@ public class BulletOrientation : MonoBehaviour
         angularVelOverTime = fun;
         mode = OrientationMode.velocity;
     }
+    //Reset to the original parameters
     public void Reset()
     {
         custom = false;

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// This class extends to allow for the multiple health bars boss have.
 public class BossHealth : Health
 {
     [HideInInspector]public int numberOfLifes = 1;

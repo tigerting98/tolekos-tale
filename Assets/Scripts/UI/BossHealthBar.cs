@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+//This extends the healthbar to cater to the multiple healthbars in the boss UI
 public class BossHealthBar : HealthBar
 {
     [SerializeField] GameObject lifeLocation;
@@ -24,7 +24,7 @@ public class BossHealthBar : HealthBar
             DrawLives();
         }
     }
-
+    //Reinitailise the life count display.
     public void DrawLives() {
         for (int i = 0; i < lifeImages.Count; i++) {
             lifeImages[i].SetActive(false);

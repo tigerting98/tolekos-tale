@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This class is responsible for the audio in the game
 public class AudioManager : MonoBehaviour
 {
     public class CoolDown {
@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public MusicManager music;
     public AudioSource SFXPlayer;
     public Dictionary<string, CoolDown> coolDownDictionary = new Dictionary<string, CoolDown>();
+    //The singleton pattern
     private void Awake()
     {
         if (current) {
@@ -28,7 +29,7 @@ public class AudioManager : MonoBehaviour
             SFXPlayer = GetComponent<AudioSource>();
         }
     }
-   
+   //Play a sound if it has not be played recently
 
     public void PlaySFX(SFX sfx) {
         try
@@ -50,6 +51,7 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+    //Update the cooldowns of sounds
     private void Update()
     {
         List<string> tobeRemoved = new List<string>();

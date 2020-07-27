@@ -3,17 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
-
+//This class loads a level data to render the level out
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] LevelData veryeasyLevel, easyLevel, normalLevel, hardLevel, lunaticLevel;
     LevelData level;
     [SerializeField] Animator background;
     [SerializeField] MusicTrack stageTheme, bossTheme;
+    [SerializeField] int goldSeed;
 
-
+    void generateSeed() {
+        GameManager.randomCounter = 0;
+        for (int i = 0; i < 10000; i++) {
+            GameManager.randomvalues[i] = UnityEngine.Random.Range(0, 1f);
+        }
+    }
     protected virtual void Awake()
     {
+        UnityEngine.Random.InitState(goldSeed);
+        generateSeed();
         ChooseLevel(GameManager.difficultyLevel);
     }
     protected virtual void ChooseLevel(Difficulty difficulty) {

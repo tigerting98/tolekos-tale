@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
+//Stores the information of the player stats
 public class PlayerStats : MonoBehaviour
 {
     public static int deathCount = 0;
@@ -30,7 +30,7 @@ public class PlayerStats : MonoBehaviour
     public static float bombEffectiveness = 1;
     public static float earthFocusedShotRateRatio = 2f;
     public static float baseShotRate = 0.1f;
-    public static int gold =9580;
+    public static int gold =0;
     public static event Action OnGainExp;
     public static event Action OnGainGold;
     public static event Action OnUpdateBomb;
@@ -71,7 +71,7 @@ public class PlayerStats : MonoBehaviour
         OnGainExp?.Invoke();
 
     }
-
+    //Reset the player back to default
     public static void Reset()
     {
         hitBarrierLevel = 0;

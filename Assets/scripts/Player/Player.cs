@@ -5,7 +5,7 @@ using System.Threading;
 //using System.Numerics;
 
 using UnityEngine;
-
+//THis class controls the player and player inputs
 [RequireComponent(typeof(PlayerHealth))]
 [RequireComponent(typeof(Death))]
 public class Player : MonoBehaviour

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//This class encompass the behavior for the boss circular hp bar
 public class BossBarUI : MonoBehaviour
 {
     [SerializeField] BossHealth health;
@@ -32,6 +33,7 @@ public class BossBarUI : MonoBehaviour
             ChangeOpacity(1);
         }
     }
+    //Changes transparency if the player is near the boss
     void ChangeOpacity(float opacity) {
         Color hp = hpbar.color;
         hp.a = opacity;

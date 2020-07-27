@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -662,6 +662,7 @@ MonoBehaviour:
   background: {fileID: 1605513546}
   stageTheme: {fileID: 0}
   bossTheme: {fileID: 0}
+  goldSeed: 28
   playerLevel: 5
   difficulty: 0
 --- !u!95 &1605513546 stripped
@@ -1006,6 +1007,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6973a8785854cf245b9b4b6d555aaa7e,
         type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: goldSeed
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_Name

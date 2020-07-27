@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Encompass the spell a player can use
 public class Spell : MonoBehaviour
 {
 

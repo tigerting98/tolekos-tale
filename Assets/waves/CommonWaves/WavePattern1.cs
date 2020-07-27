@@ -48,13 +48,13 @@ public class WavePattern1 : EnemyWave
         float r = 4.1f;
         yield return Functions.RepeatActionXTimes(() =>
         {
-            Enemy enemy = Instantiate(en, new Vector2(left ? -r : r, Random.Range(ymin, ymax)), Quaternion.identity);
+            Enemy enemy = Instantiate(en, new Vector2(left ? -r : r, GameManager.SupplyRandomFloat(ymin, ymax)), Quaternion.identity);
             enemy.SetEnemy(stats, false);
-            float startSpeed = Random.Range(startMoveMin, startMoveMax);
+            float startSpeed = GameManager.SupplyRandomFloat(startMoveMin, startMoveMax);
             float time = 2 * r / startSpeed;
             float acc = startSpeed / time;
             enemy.movement.SetAcceleration(new Vector2((left ? 1 : -1) * startSpeed, 0), t => new Vector2((left ? 1 : -1) * (t < time ? -acc : acc), 0));
-            if (Random.Range(0f, 1f) < shootChance)
+            if (GameManager.SupplyRandomFloat() < shootChance)
             {
                 enemy.shooting.StartShootingFor(EnemyPatterns.PulsingBulletsRandomAngle(bullet, dmg, enemy.transform, bulletSpeed, shotRate, lines,pulsingSFX), time, shotRate * bulletNumber);
             }

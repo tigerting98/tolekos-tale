@@ -2,9 +2,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using UnityEngine;
-
+//This global class controls the game system and allows for classes to interact with each other
 public enum Difficulty { VeryEasy, Easy, Normal, Hard, Nightmare}
 public class GameManager : MonoBehaviour
 {
@@ -32,12 +33,15 @@ public class GameManager : MonoBehaviour
     public static GamePlayerInput gameInput;
     public static DialogueUI dialogueUI;
     public const float WeakMultiplier = 0.5f, StrongMultiplier = 1.5f;
-
+    public static int randomCounter = 0;
+    public static float[] randomvalues = Enumerable.Repeat(-1f, 10000).ToArray();
     public static LevelDescription levelDescription = null;
 
     public static Boss currentBoss = null;
 
     public static void Reset() {
+        randomCounter = 0;
+        randomvalues = Enumerable.Repeat(-1f, 10000).ToArray();
         practiceMode = false;
         difficultyLevel = Difficulty.Normal;
         enemies = new Hashtable();
@@ -47,8 +51,23 @@ public class GameManager : MonoBehaviour
         levelDescription = null;
         currentBoss = null;
     }
- 
 
+    public static float SupplyRandomFloat() {
+        if (randomCounter >= 10000) {
+            randomCounter = 0;
+        }   
+
+        float z= randomvalues[randomCounter];
+        randomCounter++;
+        return z<0? UnityEngine.Random.Range(0,1f): z;
+    }
+    public static int SupplyRandomInt(int start, int end) {
+        return (int)(SupplyRandomFloat() * (end - start)) + start;
+        
+    }
+    public static float SupplyRandomFloat(float start, float end) { 
+        return SupplyRandomFloat() * (end - start) +start;
+    }
 
 
     public static void CollectEverything() {

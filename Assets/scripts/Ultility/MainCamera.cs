@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This is to contorl the camera and allow for camera shakes
 public class MainCamera : MonoBehaviour
 {
     // Start is called before the first frame update

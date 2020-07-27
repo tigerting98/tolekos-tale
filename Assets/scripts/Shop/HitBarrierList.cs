@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This encompass the hit barrier upgrade tree
 public class HitBarrierList : ShopItemList
 {
     public override ShopItem ChooseItem()

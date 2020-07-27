@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This class is used for easy testing of a level
 public class LevelTester : LevelLoader
 {
     [SerializeField] int playerLevel = 1;

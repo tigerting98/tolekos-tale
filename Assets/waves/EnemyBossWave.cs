@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This extends the enemywave class and have multiple functions that bosses uses
 public class EnemyBossWave : EnemyWave
 {
     protected static float endPhaseTransition = 0.2f;

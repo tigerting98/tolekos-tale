@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Diagnostics;
-
+//This class is responsible for the healthbar UI element
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI text = default;

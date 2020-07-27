@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+//This sets the behavior for the UI button pointer
 public class ButtonPointer : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     [SerializeField] GameObject pointer;

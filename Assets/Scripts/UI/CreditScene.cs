@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//This is used to control the credit scene. Allows player to move on after the credits is finished flashing
 public class CreditScene : MonoBehaviour
 {
     bool next = false;

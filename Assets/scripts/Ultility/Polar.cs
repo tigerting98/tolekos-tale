@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Ultility class to deal with circular movement
 public class Polar 
 {
     public float r;

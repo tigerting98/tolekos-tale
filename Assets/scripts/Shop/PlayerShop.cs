@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+//Control the stats displayed of a the player in the shop
 public class PlayerShop : MonoBehaviour
 {
     List<GameObject> bombs = new List<GameObject>();
