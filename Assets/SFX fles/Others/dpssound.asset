@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: dpssound
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: dd7fd75ea1385d94687c688bf962d8ca, type: 3}
-  volume: 0.25
+  volume: 0.5
   id: player DOT sound
   cooldownTime: 0.05

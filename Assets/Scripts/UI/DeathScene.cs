@@ -19,6 +19,7 @@ public class DeathScene : MonoBehaviour
     }
     private void OnEnable()
     {
+        Cursor.visible = true;
         EventSystem.current.SetSelectedGameObject(null);
         StartCoroutine(Enable());
     }
@@ -43,6 +44,7 @@ public class DeathScene : MonoBehaviour
     }
     //Remvoe all bullets and return the player back to the game
     private void Revive() {
+        Cursor.visible = false;
         AudioManager.current.music.source.Play();
         GameManager.player.gameObject.SetActive(true);
         GameManager.player.transform.position = new Vector2(0, -3.5f);

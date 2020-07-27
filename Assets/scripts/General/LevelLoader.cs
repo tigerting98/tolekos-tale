@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.InputSystem;
 //This class loads a level data to render the level out
 public class LevelLoader : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class LevelLoader : MonoBehaviour
     }
     protected virtual void Awake()
     {
+        Cursor.visible = false;
         UnityEngine.Random.InitState(goldSeed);
         generateSeed();
         ChooseLevel(GameManager.difficultyLevel);
@@ -130,5 +132,6 @@ public class LevelLoader : MonoBehaviour
         GameManager.OnPlayBossTheme -= PlayBossFightTheme;
         GameManager.OnSummonEndBoss -= FinalBoss;
         GameManager.OnSummonMidBoss -= MidBoss;
+        Cursor.visible = true;
     }
 }
