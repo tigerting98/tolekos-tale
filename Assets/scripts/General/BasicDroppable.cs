@@ -8,6 +8,9 @@ public class BasicDroppable : MonoBehaviour
     public float chanceToDropCoins=0.35f;
     public int maxGold=100;
     public int minGold=10;
+    bool set = false;
+    int goldDrop;
+    bool drop;
     [SerializeField] Coin coin;
     public List<Collectible> otherDrops = new List<Collectible>();
     private void Start()
@@ -15,12 +18,21 @@ public class BasicDroppable : MonoBehaviour
         if (death) {
             death.OnDeath += DropItems;
         }
+        if (!set)
+        {
+            SetDrop();
+        }
+    }
+    public void SetDrop() {
+        drop = GameManager.SupplyRandomFloat() <= chanceToDropCoins;
+        goldDrop = GameManager.SupplyRandomInt(minGold, maxGold + 1);
+        set = true;
     }
     void DropItems() {
         
-        if (Random.Range(0f, 1f) <= chanceToDropCoins) {
+        if (drop) {
             Coin coin = Instantiate(this.coin, transform.position, Quaternion.identity);
-            coin.goldAmount = Random.Range(minGold, maxGold + 1);
+            coin.goldAmount = goldDrop;
         }
         if (otherDrops.Count > 0) {
             foreach (Collectible otherDrop in otherDrops) {

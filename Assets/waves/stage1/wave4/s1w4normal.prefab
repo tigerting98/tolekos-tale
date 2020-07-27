@@ -43,13 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f5dc48881bd1f489897fc69c6c51d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   moveSpeedMin: 2.5
   moveSpeedMax: 2.7
-  centreminX: -3
-  centremaxX: 3
-  centreminY: -3
-  centremaxY: 3
+  centreminX: -1.5
+  centremaxX: 1.5
+  centreminY: -1.5
+  centremaxY: 1.5
   minSpawnY: 0
   stats: {fileID: 11400000, guid: 4cfc299847d6eac48a2fd68fda2213d7, type: 2}
   spawnRateMin: 0.8

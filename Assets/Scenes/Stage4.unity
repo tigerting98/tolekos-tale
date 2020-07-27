@@ -1523,6 +1523,7 @@ MonoBehaviour:
   background: {fileID: 1605513546}
   stageTheme: {fileID: 0}
   bossTheme: {fileID: 0}
+  goldSeed: 61
   playerLevel: 17
   difficulty: 1
 --- !u!95 &1605513546 stripped
@@ -1867,6 +1868,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 659a1a0efc8da2049876dffb314a93e4,
         type: 2}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: goldSeed
+      value: 61
+      objectReference: {fileID: 0}
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}
       propertyPath: m_Name
@@ -1993,7 +1999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc63cd80b636e541abd0b885eb3e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: -245436105591341741, guid: 4e29abe66fca5514bb314d5f4b19442e, type: 3}
+  wave: {fileID: 3663187308776522448, guid: bc12811580301be41a03ed5c04680a36, type: 3}
   playerLevel: 100
 --- !u!4 &1931965796
 Transform:

@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour
             {
                 droppable.minGold = minGold;
             }
+            droppable.SetDrop();
 
         }
         if (deathEffects && exp > -1) {

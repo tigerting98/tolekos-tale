@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.SceneManagement;
 //Global class responsible for changing scenes
 public class SceneLoader : MonoBehaviour
 {
-
+    
     private void Awake()
     {
         if (GameManager.sceneLoader == null)

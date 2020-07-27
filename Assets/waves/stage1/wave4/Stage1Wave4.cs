@@ -69,7 +69,7 @@ public class Stage1Wave4 : EnemyWave
 
     void SpawnEnemy() {
         float boundary = 4.2f;
-        float ran = Random.Range(0f, 1f);
+        float ran = GameManager.SupplyRandomFloat();
         float sideChance = (boundary - minSpawnY) / ((boundary - minSpawnY) * 2 + boundary*2);
         Vector2 spawnLocation;
         if (ran < sideChance)
@@ -87,10 +87,10 @@ public class Stage1Wave4 : EnemyWave
         
         }
 
-        Vector2 pivot = new Vector2(Random.Range(centreminX, centremaxX), Random.Range(centreminY, centremaxY));
+        Vector2 pivot = new Vector2(GameManager.SupplyRandomFloat(centreminX, centremaxX), GameManager.SupplyRandomFloat(centreminY, centremaxY));
         Enemy enemy = Instantiate(en, spawnLocation, Quaternion.identity);
         en.SetEnemy(stats, false);
-        enemy.movement.SetSpeed((pivot - spawnLocation).normalized * Random.Range(moveSpeedMin, moveSpeedMax));
+        enemy.movement.SetSpeed((pivot - spawnLocation).normalized * GameManager.SupplyRandomFloat(moveSpeedMin, moveSpeedMax));
         enemy.movement.destroyBoundary = 4.5f;
         SetShooting(enemy);
 

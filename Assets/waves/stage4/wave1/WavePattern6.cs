@@ -53,9 +53,9 @@ public class WavePattern6 : EnemyWave
 
     IEnumerator SpawnEnemy(float speed, float upperYBound, float lowerYBound)
     {
-        float yPos = UnityEngine.Random.Range(lowerYBound, upperYBound);
-        float xPos = UnityEngine.Random.Range(-3.7f, 3.7f);
-        float leftRightChance = Random.Range(0f, 1f);
+        float yPos = GameManager.SupplyRandomFloat(lowerYBound, upperYBound);
+        float xPos = GameManager.SupplyRandomFloat(-3.7f, 3.7f);
+        float leftRightChance = GameManager.SupplyRandomFloat();
         float initialX = leftRightChance >= 0.50f ? 4.2f : -4.2f;
         Enemy enemy = Instantiate(this.enemy, new Vector2(initialX, yPos), Quaternion.identity);
         enemy.SetEnemy(stats, false);

@@ -73,8 +73,10 @@ public class GameData : MonoBehaviour
     public LifeDrop lifeDropFull;
     [Header("Levels")]
     public List<LevelDescription> levels;
+
     private void Awake()
     {
+       
         if (GameManager.gameData == null)
         {
             GameManager.gameData = this;

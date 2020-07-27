@@ -10,10 +10,18 @@ public class LevelLoader : MonoBehaviour
     LevelData level;
     [SerializeField] Animator background;
     [SerializeField] MusicTrack stageTheme, bossTheme;
+    [SerializeField] int goldSeed;
 
-
+    void generateSeed() {
+        GameManager.randomCounter = 0;
+        for (int i = 0; i < 10000; i++) {
+            GameManager.randomvalues[i] = UnityEngine.Random.Range(0, 1f);
+        }
+    }
     protected virtual void Awake()
     {
+        UnityEngine.Random.InitState(goldSeed);
+        generateSeed();
         ChooseLevel(GameManager.difficultyLevel);
     }
     protected virtual void ChooseLevel(Difficulty difficulty) {
