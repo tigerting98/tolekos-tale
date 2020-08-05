@@ -37,8 +37,8 @@ public class Stage3Wave2 : EnemyWave
     }
     IEnumerator SpawnEnemy()
     {
-        Vector2 spawnPos = Functions.RandomLocation(-xBound, xBound, minY, maxY);
-        Enemy em = Instantiate(enemy, new Vector2(Random.Range(-4f,4f), 4.1f), Quaternion.identity);
+        Vector2 spawnPos = Functions.RandomLocation(-xBound, xBound, minY, maxY, true);
+        Enemy em = Instantiate(enemy, new Vector2(GameManager.SupplyRandomFloat(-4f,4f), 4.1f), Quaternion.identity);
         em.SetEnemy(stats, false);
         float time = em.movement.MoveTo(spawnPos, enterSpeed);
         em.shooting.StartShootingFor(Functions.RepeatCustomAction(i =>

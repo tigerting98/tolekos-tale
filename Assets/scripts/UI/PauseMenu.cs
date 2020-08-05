@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     private void OnEnable() {
-        
+        Cursor.visible = true;
         EventSystem.current.SetSelectedGameObject(null);
         StartCoroutine("Enable");
     }
@@ -78,7 +78,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Resume() {
-
+        Cursor.visible = false;
         Time.timeScale = 1f;
         AudioManager.current.music.source.Play();
         gameObject.SetActive(false);

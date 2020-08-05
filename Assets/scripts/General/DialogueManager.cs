@@ -26,22 +26,30 @@ public class DialogueManager : MonoBehaviour
 
     static void GetNextLine(Dialogue dialogue, Action OnFinishDialogue)
     {
-        if (currentDialogueLine < dialogue.lines.Count)
+        if (GameManager.dialogueUI.typing)
         {
-            GameManager.dialogueUI.ReceiveNewLine(dialogue.lines[currentDialogueLine]);
-            currentDialogueLine++;
+            GameManager.dialogueUI.FinishLine();
         }
         else
         {
-
-            GameManager.dialogueUI.SetInactive();
-            GameManager.gameInput.OnPressZ -= OnNextLine;
-            GameManager.gameInput.OnPressEnter -= OnNextLine;
-            if (GameManager.player) {
-                GameManager.player.shootingEnabled = true;
+            if (currentDialogueLine < dialogue.lines.Count)
+            {
+                GameManager.dialogueUI.ReceiveNewLine(dialogue.lines[currentDialogueLine]);
+                currentDialogueLine++;
             }
-            OnFinishDialogue();
+            else
+            {
 
+                GameManager.dialogueUI.SetInactive();
+                GameManager.gameInput.OnPressZ -= OnNextLine;
+                GameManager.gameInput.OnPressEnter -= OnNextLine;
+                if (GameManager.player)
+                {
+                    GameManager.player.shootingEnabled = true;
+                }
+                OnFinishDialogue();
+
+            }
         }
 
     }

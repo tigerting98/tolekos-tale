@@ -6,7 +6,6 @@ using UnityEngine;
 public enum MovementMode { Position, Velocity, Acceleration, Homing }
 public class Movement : MonoBehaviour
 {
- 
 
     public Func<float, Vector2> graph = time => new Vector2(0,0);
     [HideInInspector]public Vector2 currentVelocity;

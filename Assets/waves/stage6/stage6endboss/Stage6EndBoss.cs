@@ -189,7 +189,7 @@ public class Stage6EndBoss : EnemyBossWave
         {
             currentBoss.shooting.StartShooting(FlowerPattern((DamageType)(i % 4), (DamageType)((i + 1) % 4), (DamageType)((i + 2) % 4), (DamageType)((i + 3) % 4), UnityEngine.Random.Range(0, 360f)));
             yield return new WaitForSeconds(pulserate1);
-            float time = currentBoss.movement.MoveTo(Functions.RandomLocation(-1, 1, y1, y1), movespeed1);
+            float time = currentBoss.movement.MoveTo(Functions.RandomLocation(-1, 1, y1, y1, false), movespeed1);
             yield return new WaitForSeconds(time);
             i++;
 
@@ -264,7 +264,7 @@ public class Stage6EndBoss : EnemyBossWave
     }
     void Phase2() {
         SwitchToBoss();
-        boss.transform.position = pos2;
+        currentBoss.transform.position = pos2;
         ChangePylfer(DamageType.Water);
         ChangePylferResist(0.5f, 1.5f, 0.25f, 1f);
         currentBoss.shooting.StartShooting(WaterPattern2());
@@ -291,6 +291,7 @@ public class Stage6EndBoss : EnemyBossWave
     //Phase 2 Water subpattern
     IEnumerator WaterPattern2()
     {
+        yield return null;
         while (currentBoss)
         {
             float currentx = currentBoss.transform.position.x;
@@ -898,6 +899,8 @@ public class Stage6EndBoss : EnemyBossWave
         }
         else
         {
+            if (PlayerStats.deathCount == 0)
+            { SaveManager.ClearDifficulty(GameManager.difficultyLevel); }
             SceneManager.LoadScene("AfterStage6Scene");
         }
     }

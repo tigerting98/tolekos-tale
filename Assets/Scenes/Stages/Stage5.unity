@@ -1726,6 +1726,7 @@ MonoBehaviour:
   stageTheme: {fileID: 11400000, guid: bb7e4b9a0202c26499a99a6effb91d58, type: 2}
   bossTheme: {fileID: 11400000, guid: 401d5d5f41d85d246ad7dda625c2a510, type: 2}
   goldSeed: 11
+  stagelevel: 5
   playerLevel: 1000
   difficulty: 4
 --- !u!95 &1605513546 stripped
@@ -2068,6 +2069,11 @@ PrefabInstance:
         type: 3}
       propertyPath: goldSeed
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780548393384240110, guid: 2276b1da7d62f1a47842690fb722f6bc,
+        type: 3}
+      propertyPath: stagelevel
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3780548393384240111, guid: 2276b1da7d62f1a47842690fb722f6bc,
         type: 3}

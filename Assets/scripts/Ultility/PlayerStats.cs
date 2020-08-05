@@ -31,8 +31,8 @@ public class PlayerStats : MonoBehaviour
     public static float earthFocusedShotRateRatio = 2f;
     public static float baseShotRate = 0.1f;
     public static int gold =0;
-    public static event Action OnGainExp;
-    public static event Action OnGainGold;
+    public static event Action<int> OnGainExp;
+    public static event Action<int> OnGainGold;
     public static event Action OnUpdateBomb;
     public static int maxBomb = 10;
     public static int bombCount = 3;
@@ -51,7 +51,7 @@ public class PlayerStats : MonoBehaviour
     }
     public static void AddGold(int gold) {
         PlayerStats.gold += gold;
-        OnGainGold?.Invoke();
+        OnGainGold?.Invoke(gold);
     }
     public static void ReduceGold(int gold)
     {
@@ -68,7 +68,7 @@ public class PlayerStats : MonoBehaviour
             LevelUp();
 
         }
-        OnGainExp?.Invoke();
+        OnGainExp?.Invoke(gainedEXP);
 
     }
     //Reset the player back to default

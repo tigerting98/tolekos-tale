@@ -39,7 +39,7 @@ public class EnemyPatterns : MonoBehaviour {
     {
         while (movement&&movement.gameObject.activeInHierarchy)
         {
-            float time = movement.MoveTo(Functions.RandomLocation(minX, maxX, minY, maxY), movespeed);
+            float time = movement.MoveTo(Functions.RandomLocation(minX, maxX, minY, maxY, false), movespeed);
             yield return new WaitForSeconds(time + UnityEngine.Random.Range(delaymin, delaymax));
         }
     }

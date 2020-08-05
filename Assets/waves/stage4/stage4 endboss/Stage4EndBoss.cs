@@ -109,7 +109,7 @@ public class Stage4EndBoss : EnemyBossWave
         SwitchToBoss();
         GameManager.currentBoss = currentBoss;
         currentBoss.shooting.StartShooting(Functions.RepeatCustomAction(i => {
-            float time = currentBoss.movement.MoveTo(Functions.RandomLocation(spawnLocation-new Vector2(0,bounds/2), bounds), speed1);
+            float time = currentBoss.movement.MoveTo(Functions.RandomLocation(spawnLocation-new Vector2(0,bounds/2), bounds, false), speed1);
             currentBoss.shooting.StartShootingAfter(PulsePhase1(
 
              Functions.AimAtPlayer(currentBoss.transform)), time);
@@ -162,7 +162,7 @@ public class Stage4EndBoss : EnemyBossWave
         SwitchToBoss();
         float maxHP = currentBoss.bosshealth.maxHP;
         currentBoss.shooting.StartShooting(Functions.RepeatCustomActionCustomTime(
-            i=> currentBoss.shooting.StartShooting(SummonExplosion(Functions.RandomLocation(-3.5f,3.5f,-3.5f,3.5f)
+            i=> currentBoss.shooting.StartShooting(SummonExplosion(Functions.RandomLocation(-3.5f,3.5f,-3.5f,3.5f, false)
             , (int)((numberofbulletsperexplosion2max-numberofbulletsperexplosion2min)*(1-currentBoss.bosshealth.GetCurrentHP()/maxHP))+ numberofbulletsperexplosion2min))
              ,i=> (slowSpawnRate2- fastSpawnRate2) * currentBoss.bosshealth.GetCurrentHP() / maxHP+ fastSpawnRate2));
         if (harder) {
@@ -351,7 +351,7 @@ public class Stage4EndBoss : EnemyBossWave
             i => currentBoss.shooting.StartShooting(SummonLasers(UnityEngine.Random.Range(startMinX6, startMaxX6))), pulseRate6));
         currentBoss.shooting.StartShooting(Functions.RepeatCustomAction(
             i => {
-                float time = currentBoss.movement.MoveTo(i % 2 == 0 ? Functions.RandomLocation(-3, -1, 1, 3) : Functions.RandomLocation(1, 3, 1, 3), speed1);
+                float time = currentBoss.movement.MoveTo(i % 2 == 0 ? Functions.RandomLocation(-3, -1, 1, 3, false) : Functions.RandomLocation(1, 3, 1, 3, false), speed1);
                 float ypos = UnityEngine.Random.Range(yposmin6, yposMax6);
                 currentBoss.shooting.StartShootingAfter(SummonFireCircles(new Vector2(xpositionCircle, ypos)), time);
                 currentBoss.shooting.StartShootingAfter(SummonFireCircles(new Vector2(-xpositionCircle, ypos)), time);

@@ -48,7 +48,7 @@ public class Stage5Wave1 : EnemyWave
             {
                 for (int j = 0; j < starsPerShot; j++)
                 {
-                    Bullet bul = Patterns.ShootStraight(star, stardmg, Functions.RandomLocation(enemy.transform.position, 0.3f), Random.Range(0f, 360f), Random.Range(minSpeed, maxSpeed), GameManager.gameData.clickSFX);
+                    Bullet bul = Patterns.ShootStraight(star, stardmg, Functions.RandomLocation(enemy.transform.position, 0.3f, false), Random.Range(0f, 360f), Random.Range(minSpeed, maxSpeed), GameManager.gameData.clickSFX);
                     bul.transform.localScale *= starsize;
                 }
             }, shotRateStar

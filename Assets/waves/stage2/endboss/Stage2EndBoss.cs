@@ -169,7 +169,7 @@ public class Stage2EndBoss : EnemyBossWave
     {
         while (currentBoss)
         {
-            float time = currentBoss.movement.MoveTo(Functions.RandomLocation(1, 3, 1, 3), bossmovespeed);
+            float time = currentBoss.movement.MoveTo(Functions.RandomLocation(1, 3, 1, 3, false), bossmovespeed);
             if (!harder)
             { currentBoss.shooting.StartShootingFor(EnemyPatterns.ShootAtPlayerWithLines(smallBullet, dmg2circle, currentBoss.transform, circleBulletSpeed, CircleBullets2shotRate, spread2, numberOfCircleBullets2, GameManager.gameData.waterpulseSFX), time, pulseDuration2); }
             else
@@ -196,7 +196,7 @@ public class Stage2EndBoss : EnemyBossWave
 
         currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomAction(i => Patterns.RingOfBullets(smallBullet, dmg3circle, (Vector2)currentBoss.transform.position + new Polar(radius3, i * angleperPulse3).rect
             , numberOfsmallBullet3, UnityEngine.Random.Range(0, 360), smallspeed3, GameManager.gameData.waterpulseSFX), pulseRate3), time);
-        currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomAction(i => Patterns.RingOfBullets(arrowBullet, dmg3arrow, (Vector2)currentBoss.transform.position + Functions.RandomLocation(-1,1,-1,1)
+        currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomAction(i => Patterns.RingOfBullets(arrowBullet, dmg3arrow, (Vector2)currentBoss.transform.position + Functions.RandomLocation(-1,1,-1,1, false)
             , numberOfsmallBullet3, UnityEngine.Random.Range(0, 360), smallspeed3,null), pulseRate3), time + UnityEngine.Random.Range(0, pulseRate3));
         currentBoss.shooting.StartShootingAfter(Functions.RepeatCustomAction(i => Patterns.ShootMultipleStraightBullet(bigBullets.GetItem(i % 4), dmg3Big,
             currentBoss.transform.position, largespeed3, Functions.AimAtPlayer(currentBoss.transform), spreadAngleLarge3, numberOfLargeBullet3,GameManager.gameData.gunSFX), shotRateLarge3), time);
@@ -245,7 +245,7 @@ public class Stage2EndBoss : EnemyBossWave
     }
     Bullet ShootRain(Bullet bigBullet, float dmgBig, Vector2 playerPosition, float angle)
     {
-        Vector2 spawn = Functions.RandomLocation(currentBoss.transform.position, spawnradius4);
+        Vector2 spawn = Functions.RandomLocation(currentBoss.transform.position, spawnradius4, false);
 
         Bullet bul = Patterns.ShootStraight(bigBullet, dmgBig, spawn, Functions.AimAt(spawn, playerPosition) + angle, initialSpeed4, GameManager.gameData.waterstreaming1SFX);
         bul.movement.triggers.Add(triggerEvent);

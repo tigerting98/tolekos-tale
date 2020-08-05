@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.InputSystem;
 //This class loads a level data to render the level out
 public class LevelLoader : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] Animator background;
     [SerializeField] MusicTrack stageTheme, bossTheme;
     [SerializeField] int goldSeed;
-
+    [SerializeField] int stagelevel;
     void generateSeed() {
         GameManager.randomCounter = 0;
         for (int i = 0; i < 10000; i++) {
@@ -20,9 +21,11 @@ public class LevelLoader : MonoBehaviour
     }
     protected virtual void Awake()
     {
+        Cursor.visible = false;
         UnityEngine.Random.InitState(goldSeed);
         generateSeed();
         ChooseLevel(GameManager.difficultyLevel);
+        SaveManager.UnlockNewStage(GameManager.difficultyLevel, stagelevel);
     }
     protected virtual void ChooseLevel(Difficulty difficulty) {
         switch (difficulty) {
@@ -130,5 +133,6 @@ public class LevelLoader : MonoBehaviour
         GameManager.OnPlayBossTheme -= PlayBossFightTheme;
         GameManager.OnSummonEndBoss -= FinalBoss;
         GameManager.OnSummonMidBoss -= MidBoss;
+        Cursor.visible = true;
     }
 }

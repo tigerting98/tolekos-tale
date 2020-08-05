@@ -17,7 +17,7 @@ public class Collectible : MonoBehaviour
         GameManager.collectibles.Add(GetInstanceID(), gameObject);
     }
     //Set its movement to go up and then accelerate downwards
-    private void Start()
+    protected virtual void Start()
     {      
         if (!movement) {
             movement = GetComponent<Movement>();
