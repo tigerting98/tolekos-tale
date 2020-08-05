@@ -56,7 +56,7 @@ public class Stage4MidBoss : EnemyBossWave
         currentBoss.shooting.StartShooting(Functions.RepeatAction(() => {
             float angle = Functions.AimAtPlayer(currentBoss.transform);
             Patterns.ShootStraight(fireBullet, dmgfirebullet1, 
-                Functions.RandomLocation(currentBoss.transform.position + Quaternion.Euler(0,0,angle) * new Vector2(0.5f, 0), 0.3f), angle + UnityEngine.Random.Range(-fireSpreadAngle, fireSpreadAngle),
+                Functions.RandomLocation(currentBoss.transform.position + Quaternion.Euler(0,0,angle) * new Vector2(0.5f, 0), 0.3f, false), angle + UnityEngine.Random.Range(-fireSpreadAngle, fireSpreadAngle),
                 UnityEngine.Random.Range(firebullet1Min, firebullet1Max), GameManager.gameData.firestreamingSFX);
         }, shotSpeed));
         currentBoss.shooting.StartShooting(EnemyPatterns.PulsingBulletsRandomAngle(fireRoundBall, dmgfireball1, currentBoss.transform, fireballspeed1, fireballshotRate, fireballLines1,GameManager.gameData.magicPulse1SFX));

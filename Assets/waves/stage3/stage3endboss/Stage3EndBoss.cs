@@ -404,7 +404,7 @@ public class Stage3EndBoss : EnemyBossWave
         yield return new WaitForSeconds(Math.Max(time1, time2));
         mushroomLeft.shooting.StartShooting(Functions.RepeatAction(() =>
             Functions.StartMultipleCustomCoroutines(mushroomLeft.shooting,
-            i => UpThenHomeBullet(leaf2, leafdmg2, Functions.RandomLocation(mushroomLeft.transform.position, 0.5f), shootSpeed6l,
+            i => UpThenHomeBullet(leaf2, leafdmg2, Functions.RandomLocation(mushroomLeft.transform.position, 0.5f, false), shootSpeed6l,
             90 + UnityEngine.Random.Range(-angleSpread6l, angleSpread6l), deacceleration6l, finalSpeed6l), (int)(pulseDuration6l / shotRate6l), shotRate6l)
             , pulseDuration6l + pulsePause6l));
         mushroomRight.shooting.StartShooting(Functions.RepeatAction(

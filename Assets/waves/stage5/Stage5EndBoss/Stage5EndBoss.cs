@@ -134,7 +134,7 @@ public class Stage5EndBoss : EnemyBossWave
         float timeearth = earthimage.MoveTo(new Vector2(-3.5f, 3.5f), movespeed);
         float timefire = fireimage.MoveTo(new Vector2(3.5f, 3.5f), movespeed);
         waterBoss.shooting.StartShootingAfter(Functions.RepeatAction(
-            ()=>Patterns.ShootStraight(GameManager.gameData.fireBall, firedmg1, Functions.RandomLocation(fireimage.transform.position, fireradius1),
+            ()=>Patterns.ShootStraight(GameManager.gameData.fireBall, firedmg1, Functions.RandomLocation(fireimage.transform.position, fireradius1, false),
             Functions.AimAtPlayer(fireimage.transform) + UnityEngine.Random.Range(-fireanglespread1, fireanglespread1), fireSpeed1,null),
             fireshotRate1
             ),timefire );
@@ -213,7 +213,7 @@ public class Stage5EndBoss : EnemyBossWave
             i =>
             {
                 float angle = i * -anglepershot2 + UnityEngine.Random.Range(-spreadrange2, spreadrange2)-90;
-                warpingIcicle(iciclespeed2, angle, Functions.RandomLocation(waterBoss.transform.position, spawnradius2));
+                warpingIcicle(iciclespeed2, angle, Functions.RandomLocation(waterBoss.transform.position, spawnradius2, false));
             }, shotrateicicle2));
         waterBoss.bosshealth.OnLifeDepleted += EndPhase2;
     }
@@ -429,7 +429,7 @@ public class Stage5EndBoss : EnemyBossWave
         SpinningMagicCircles(earthCircle, earthimage.transform, true, shotrate5nonmain/2, GameManager.gameData.leafBullet2);
         fireBoss.shooting.StartShooting(Functions.RepeatAction(
             ()=> {
-                Vector2 pos = Functions.RandomLocation(fireBoss.transform.position, radiusmain5);
+                Vector2 pos = Functions.RandomLocation(fireBoss.transform.position, radiusmain5, false);
                 ShootChangingBullet2(pos, bigduration5, UnityEngine.Random.Range(0f, 360f));
 
             },shotrate5));

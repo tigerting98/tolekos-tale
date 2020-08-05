@@ -9,6 +9,9 @@ public class DialogueUI : MonoBehaviour
 {
     [SerializeField] Image leftImage, rightImage;
     [SerializeField] TextMeshProUGUI speakerName, content;
+    public bool typing = false;
+    int currentcharacter=0, textlength=0;
+    Line line;
 
     private void Awake()
     {
@@ -43,9 +46,33 @@ public class DialogueUI : MonoBehaviour
             rightImage.gameObject.SetActive(true);
             AcceptSprite(rightImage, line.isPlayer ? GameManager.gameData.playerDialogueSprite : line.speaker);
         }
-
+        this.line = line;
         speakerName.text = line.name;
+        typing = true;
+        currentcharacter = 0;
+        textlength = line.text.Length;
+        StartCoroutine(StartTyping());
+    }
+    public void FinishLine() {
+        currentcharacter = textlength;
         content.text = line.text;
+        typing = false;
+        
+    }
+    IEnumerator StartTyping() {
+        while (typing)
+        {
+            if (currentcharacter < textlength)
+            {
+                currentcharacter++;
+                content.text = line.text.Substring(0, currentcharacter);
+            }
+            if (currentcharacter == textlength) {
+                typing = false;
+            }
+            yield return new WaitForSeconds(0.02f);
+        }
+
     }
     public void SetActive() {
         gameObject.SetActive(true);

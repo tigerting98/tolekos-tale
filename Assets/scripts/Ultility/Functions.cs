@@ -72,12 +72,18 @@ public class Functions : MonoBehaviour
 
 
     }
-    public static Vector2 RandomLocation(float minX, float maxX, float minY, float maxY) {
-        return new Vector2(UnityEngine.Random.Range(minX, maxX), UnityEngine.Random.Range(minY, maxY));
+    public static Vector2 RandomLocation(float minX, float maxX, float minY, float maxY, bool seeded) {
+        if (!seeded)
+        {
+            return new Vector2(UnityEngine.Random.Range(minX, maxX), UnityEngine.Random.Range(minY, maxY));
+        }
+        else {
+            return new Vector2(GameManager.SupplyRandomFloat(minX, maxX), GameManager.SupplyRandomFloat(minY, maxY));
+        }
     }
 
-    public static Vector2 RandomLocation(Vector2 origin, float bounds) {
-        return origin + RandomLocation(-bounds, bounds, -bounds, bounds);
+    public static Vector2 RandomLocation(Vector2 origin, float bounds, bool seeded) {
+        return origin + RandomLocation(-bounds, bounds, -bounds, bounds, seeded);
     }
 
     public static GameObject GetNearestEnemy(Vector2 origin)

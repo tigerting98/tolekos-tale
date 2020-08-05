@@ -12,7 +12,7 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] Animator background;
     [SerializeField] MusicTrack stageTheme, bossTheme;
     [SerializeField] int goldSeed;
-
+    [SerializeField] int stagelevel;
     void generateSeed() {
         GameManager.randomCounter = 0;
         for (int i = 0; i < 10000; i++) {
@@ -25,6 +25,7 @@ public class LevelLoader : MonoBehaviour
         UnityEngine.Random.InitState(goldSeed);
         generateSeed();
         ChooseLevel(GameManager.difficultyLevel);
+        SaveManager.UnlockNewStage(GameManager.difficultyLevel, stagelevel);
     }
     protected virtual void ChooseLevel(Difficulty difficulty) {
         switch (difficulty) {

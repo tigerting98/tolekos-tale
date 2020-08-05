@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
+using System;
 //This controls the main menu of the game
 public class MainMenu : MonoBehaviour
 {
@@ -18,10 +20,19 @@ public class MainMenu : MonoBehaviour
     public List<Button> difficultyButtons;
     Difficulty chosenPracticeModeDifficulty;
     GameObject practiceModepreviouslySelected;
+    public GameObject clearMenu;
+    public List<TextMeshProUGUI> clearobjects;
+    SaveData data;
     void Awake()
     {
-       
+
+
         
+        
+        
+        data = SaveManager.LoadData();
+                //data.print();
+
     }
     //Set up the action listeners
     private void Start()
@@ -40,7 +51,7 @@ public class MainMenu : MonoBehaviour
         practicemodeStagesButtons[3].onClick.AddListener(() => StartPracticeGame(16, 3));
         practicemodeStagesButtons[4].onClick.AddListener(() => StartPracticeGame(23, 4));
         practicemodeStagesButtons[5].onClick.AddListener(() => StartPracticeGame(28, 5));
-
+        clearMenu.SetActive(false);
         instructionMenu.SetActive(false);
         difficultySelectionMenu.SetActive(false);
         creditMenu.SetActive(false);
@@ -85,13 +96,35 @@ public class MainMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(practicemodeStagesButtons[0].gameObject);
         practiceModepreviouslySelected.GetComponent<ButtonPointer>().OnSelect(null);
+        for (int i = 0; i < 6; i++) {
+            try
+            {
+                TextMeshProUGUI text = practicemodeStagesButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+                Color z = text.color;
+                if (data.acceessible[(int)chosenPracticeModeDifficulty, i])
+                {
+                    z.a = 1f;
+                }
+                else
+                {
+                    z.a = 0.3f;
+                }
+                text.color = z;
+            }
+            catch (Exception ex) {
+                Debug.Log(ex);
+            }
+            }
     }
     public void StartPracticeGame(int level, int stage) {
-        GameManager.practiceMode = true;
-        GameManager.difficultyLevel = chosenPracticeModeDifficulty;
-        PlayerStats.LevelUpBeforeHand(level);
-        PlayerStats.gold = 99999;
-        GameManager.sceneLoader.LoadShopScene(GameManager.gameData.levels[stage]);
+        if (data.acceessible[(int)chosenPracticeModeDifficulty, stage])
+        {
+            GameManager.practiceMode = true;
+            GameManager.difficultyLevel = chosenPracticeModeDifficulty;
+            PlayerStats.LevelUpBeforeHand(level);
+            PlayerStats.gold = 99999;
+            GameManager.sceneLoader.LoadShopScene(GameManager.gameData.levels[stage]);
+        }
 
     }
     public void CloseStageSelection() {
@@ -102,6 +135,29 @@ public class MainMenu : MonoBehaviour
     }
     public void SetPracticeMode(bool bo) {
         GameManager.practiceMode = bo;
+        if (!bo) {
+            clearMenu.SetActive(true);
+            for (int i = 0; i < 5; i++)
+            {
+                try
+                {
+                    Color c = clearobjects[i].color;
+                    if (data.cleared[i])
+                    {
+                        c.a = 1f;
+                    }
+                    else
+                    {
+                        c.a = 0.1f;
+                    }
+                    clearobjects[i].color = c;
+                }
+                catch (Exception ex) {
+                    Debug.Log(ex);
+                }
+                
+            }
+        }
     }
     void Update()
     {
@@ -164,6 +220,7 @@ public class MainMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(difficultyButtons[2].gameObject);
     }
     public void CloseDifficultySelection() {
+        clearMenu.SetActive(false);
         difficultySelectionMenu.SetActive(false);
         lastSelected.GetComponent<ButtonPointer>().OnDeselect(null);
         EventSystem.current.SetSelectedGameObject(null);
