@@ -329,6 +329,7 @@ MonoBehaviour:
   available: {r: 0.061599493, g: 1, b: 0, a: 1}
   unavailable: {r: 0.4339623, g: 0.43191528, b: 0.43191528, a: 1}
   noGold: {r: 1, g: 0, b: 0, a: 1}
+  list: {fileID: 0}
   item: {fileID: 0}
 --- !u!114 &8709639064847843906
 MonoBehaviour:
@@ -387,6 +388,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointer: {fileID: 5986925743820414133}
   buttonSFX: {fileID: 11400000, guid: c255ff9997ae2804894afba388a98cc3, type: 2}
+  onclickparticle: {fileID: 1667420557061180797, guid: 03ffcb4a218263e49b02c5a5f3334daf,
+    type: 3}
+  size: 20
 --- !u!1 &5858538300393868628
 GameObject:
   m_ObjectHideFlags: 0

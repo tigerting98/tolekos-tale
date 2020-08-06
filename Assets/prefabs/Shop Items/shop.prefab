@@ -173,6 +173,7 @@ MonoBehaviour:
   healthtext: {fileID: 4956400455219333202}
   goldText: {fileID: 826458845}
   playerStatsText: {fileID: 0}
+  playerlevel: {fileID: 0}
 --- !u!1 &759990871
 GameObject:
   m_ObjectHideFlags: 0
