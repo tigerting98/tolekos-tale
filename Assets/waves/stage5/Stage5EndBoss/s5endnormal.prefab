@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7712cbcd0416514784424348294e6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   boss: {fileID: 0}
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
@@ -54,10 +53,10 @@ MonoBehaviour:
   - Tricolor Medley \n~Shifting Elements~
   - Great Convergence \n~Combination Magic~
   nextLevel: {fileID: 11400000, guid: 381b96fb81b94554daacb9630680f967, type: 2}
-  waterportrait: {fileID: 21300000, guid: 7d35374c70d2753408d8c5a81b774b25, type: 3}
+  waterportrait: {fileID: 21300000, guid: b07b347120140b64c8d493d07d82416f, type: 3}
   earthportrait: {fileID: 21300000, guid: dc50d3d1baa938a4fabf9da11f21d98a, type: 3}
-  fireportrait: {fileID: 21300000, guid: 60ed6bd4fafce2b4cb5e7e7c43ec19b7, type: 3}
-  combineportrait: {fileID: 21300000, guid: 63828bc0822d6d547a6dc051edd0abb9, type: 3}
+  fireportrait: {fileID: 21300000, guid: 48cbb5a392e61d044b941c74ffb9e84a, type: 3}
+  combineportrait: {fileID: 21300000, guid: 27bab9b6fb03d1b4c937be86bf3a3d2b, type: 3}
   ui: {fileID: 9172258930565150853, guid: 61f657deda4becf43bcb58ed87351be1, type: 3}
   waterprefab: {fileID: 1806583198196191237, guid: 831046c0a97f4d845886a24da33b496c,
     type: 3}
