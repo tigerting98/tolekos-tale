@@ -26,7 +26,7 @@ MonoBehaviour:
       don't have any qualms with you, Toleko.
     name: Rook
   - left: 0
-    speaker: {fileID: 21300000, guid: 60ed6bd4fafce2b4cb5e7e7c43ec19b7, type: 3}
+    speaker: {fileID: 21300000, guid: 48cbb5a392e61d044b941c74ffb9e84a, type: 3}
     isPlayer: 0
     text: I concur, let's quickly finish this so that I can go back to experimenting
       with my spells.
