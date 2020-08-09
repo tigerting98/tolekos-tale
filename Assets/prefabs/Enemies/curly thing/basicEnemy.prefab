@@ -110,6 +110,12 @@ PrefabInstance:
       propertyPath: damagetaker
       value: 
       objectReference: {fileID: 6770098591039646590}
+    - target: {fileID: 6619159339048187305, guid: 43f1d414ba5b63b43b68bb4e0ccda89e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 71039802bb2f1a04e998a464b4afe069,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43f1d414ba5b63b43b68bb4e0ccda89e, type: 3}
 --- !u!114 &6770098591039646590 stripped
