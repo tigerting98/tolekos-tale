@@ -238,6 +238,17 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 2.5773926
       objectReference: {fileID: 0}
+    - target: {fileID: 4178830751118662761, guid: 63aebeef72dc50f4b94fb29c809fc154,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178830751118662761, guid: 63aebeef72dc50f4b94fb29c809fc154,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c1c4afb2afce0f14389ae590d11e4a32,
+        type: 2}
     - target: {fileID: 8209921890817917353, guid: 63aebeef72dc50f4b94fb29c809fc154,
         type: 3}
       propertyPath: m_Name

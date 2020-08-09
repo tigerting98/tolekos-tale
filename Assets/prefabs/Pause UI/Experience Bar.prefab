@@ -106,6 +106,7 @@ MonoBehaviour:
   text: {fileID: 3311493129153039512}
   slider: {fileID: 3311493128422948756}
   leveltext: {fileID: 438698084803106439}
+  updatetext: {fileID: 0}
 --- !u!1 &3311493128871022420
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,8 +246,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: db69c64db69b75a48800f370d45096ea, type: 3}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 7379f1e67f7fb414c816573572b97149, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -397,7 +398,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f6512e9d3bf025945acbc045b5e77fc6, type: 3}
+    m_Font: {fileID: 12800000, guid: 7379f1e67f7fb414c816573572b97149, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0

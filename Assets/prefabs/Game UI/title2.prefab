@@ -29,25 +29,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2373928523019750149, guid: 0a1d2b1b5393323429de5b84c5868142,
         type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c,
-        type: 2}
-    - target: {fileID: 2373928523019750149, guid: 0a1d2b1b5393323429de5b84c5868142,
-        type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,
+      objectReference: {fileID: 2464364717378356963, guid: c1c4afb2afce0f14389ae590d11e4a32,
         type: 2}
-    - target: {fileID: 2373928523019750149, guid: 0a1d2b1b5393323429de5b84c5868142,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 2373928523019750149, guid: 0a1d2b1b5393323429de5b84c5868142,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2373928523019750149, guid: 0a1d2b1b5393323429de5b84c5868142,
         type: 3}
@@ -69,32 +58,36 @@ PrefabInstance:
       propertyPath: m_margin.w
       value: -2.8606262
       objectReference: {fileID: 0}
-    - target: {fileID: 2373928524562673216, guid: 0a1d2b1b5393323429de5b84c5868142,
+    - target: {fileID: 2373928523019750149, guid: 0a1d2b1b5393323429de5b84c5868142,
         type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c,
-        type: 2}
+      propertyPath: m_text
+      value: ~Journey to Mt. Fireblast~
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373928523019750149, guid: 0a1d2b1b5393323429de5b84c5868142,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 2373928524562673216, guid: 0a1d2b1b5393323429de5b84c5868142,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,
+      objectReference: {fileID: 2464364717378356963, guid: c1c4afb2afce0f14389ae590d11e4a32,
         type: 2}
     - target: {fileID: 2373928524562673216, guid: 0a1d2b1b5393323429de5b84c5868142,
         type: 3}
-      propertyPath: m_fontSize
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 2373928524562673216, guid: 0a1d2b1b5393323429de5b84c5868142,
-        type: 3}
       propertyPath: m_fontSizeBase
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2373928524562673216, guid: 0a1d2b1b5393323429de5b84c5868142,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373928524562673216, guid: 0a1d2b1b5393323429de5b84c5868142,
+        type: 3}
+      propertyPath: m_text
+      value: Stage 4
       objectReference: {fileID: 0}
     - target: {fileID: 2373928524562673217, guid: 0a1d2b1b5393323429de5b84c5868142,
         type: 3}
@@ -154,7 +147,7 @@ PrefabInstance:
     - target: {fileID: 2373928524562673217, guid: 0a1d2b1b5393323429de5b84c5868142,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -284.93
+      value: -233.71997
       objectReference: {fileID: 0}
     - target: {fileID: 2373928524562673217, guid: 0a1d2b1b5393323429de5b84c5868142,
         type: 3}

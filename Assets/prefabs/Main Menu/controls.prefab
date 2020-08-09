@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4261432139381196635
 RectTransform:
   m_ObjectHideFlags: 0
@@ -225,6 +225,17 @@ PrefabInstance:
         Shift - Focus: Slow down and make hitbox visible\n\nEsc - Pause during gameplay/Back
         in Menus"
       objectReference: {fileID: 0}
+    - target: {fileID: 8185263890655547267, guid: 3bea8caaa3cd2d2459209c29543ea27c,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 7379f1e67f7fb414c816573572b97149,
+        type: 3}
+    - target: {fileID: 8185263890655547267, guid: 3bea8caaa3cd2d2459209c29543ea27c,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 36
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bea8caaa3cd2d2459209c29543ea27c, type: 3}
 --- !u!224 &9021152017919031367 stripped
@@ -274,13 +285,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c,
+      objectReference: {fileID: 11400000, guid: c1c4afb2afce0f14389ae590d11e4a32,
         type: 2}
     - target: {fileID: 3170698762602153030, guid: 96120c68904dd52438b06421849bf85d,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,
+      objectReference: {fileID: 2464364717378356963, guid: c1c4afb2afce0f14389ae590d11e4a32,
         type: 2}
     - target: {fileID: 3170698762602153030, guid: 96120c68904dd52438b06421849bf85d,
         type: 3}
@@ -295,12 +306,17 @@ PrefabInstance:
     - target: {fileID: 3170698762602153030, guid: 96120c68904dd52438b06421849bf85d,
         type: 3}
       propertyPath: m_fontSize
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3170698762602153030, guid: 96120c68904dd52438b06421849bf85d,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 200
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170698762602153030, guid: 96120c68904dd52438b06421849bf85d,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4703474718447155980, guid: 96120c68904dd52438b06421849bf85d,
         type: 3}
@@ -540,17 +556,17 @@ PrefabInstance:
     - target: {fileID: 2871685464182001508, guid: a31ea4ae2bbae1e4b987b82e6b2ac1b3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000015259
+      value: -0.000022888
       objectReference: {fileID: 0}
     - target: {fileID: 2871685464182001508, guid: a31ea4ae2bbae1e4b987b82e6b2ac1b3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -145
+      value: -173
       objectReference: {fileID: 0}
     - target: {fileID: 2871685464182001508, guid: a31ea4ae2bbae1e4b987b82e6b2ac1b3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 506.01013
+      value: 583.72766
       objectReference: {fileID: 0}
     - target: {fileID: 2871685464182001508, guid: a31ea4ae2bbae1e4b987b82e6b2ac1b3,
         type: 3}
@@ -602,6 +618,12 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2871685464182001509, guid: a31ea4ae2bbae1e4b987b82e6b2ac1b3,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 7379f1e67f7fb414c816573572b97149,
+        type: 3}
     - target: {fileID: 2871685464182001511, guid: a31ea4ae2bbae1e4b987b82e6b2ac1b3,
         type: 3}
       propertyPath: m_Name
