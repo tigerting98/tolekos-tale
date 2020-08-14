@@ -1,0 +1,286 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &966684751409133276
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: bulletperhalfpatel1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: pulserate1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: waterpulserate2
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: laserpulserate2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: laserspacing2
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: shotrate3circle
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: numberperlines3
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: rainshotrate
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: anglespreadrain
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: numberOfsideLasers4
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: numberofleafs4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: numberOfStarsperside5
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: starpulserate5
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: arcspacing6
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: angleperarc6
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: earthpulserate6
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: earthspeed6
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: earthcount6
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: bulletpulserate7
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: bulletcount7
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: bullet8cooldown
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: bullet8speed
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: ballcount8
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: ballangularvel8
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: shotrate9
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: starshotrate9
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: ellipsepulserate10
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: ellipsecount10
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: roundedcount10
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: roundedpulserate10
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: laserspeed10
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: laserpulserate10
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: lasercount10
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: firelaserpulserate10
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: firelaserduration10
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: firelaserspacing10
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: fallinganglerange10
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: fallingshotrate10
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: bigcirclecount10
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: smallcirclecount10
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: arrowcount10
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: starcount10
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077349933565302834, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: phase4pulserate10
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490138245831574272, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_Name
+      value: s6endeasy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261824726268202561, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261824726268202561, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261824726268202561, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261824726268202561, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261824726268202561, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261824726268202561, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261824726268202561, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261824726268202561, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261824726268202561, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261824726268202561, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261824726268202561, guid: 3563e6c57ca2cc64db002695b358ef29,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3563e6c57ca2cc64db002695b358ef29, type: 3}

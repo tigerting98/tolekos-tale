@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - End
+  - Enemy Bullet
+  - Player Bullet
   layers:
   - Default
   - TransparentFX
@@ -18,10 +20,10 @@ TagManager:
   - Player bullet
   - Enemy
   - Enemy bullet
-  - 
-  - 
-  - 
-  - 
+  - Collectible
+  - Collectible Hitbox
+  - Spell
+  - Enemy Laser
   - 
   - 
   - 

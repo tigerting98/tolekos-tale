@@ -1,0 +1,246 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7945233418130177188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4668363733852199965}
+  - component: {fileID: -4305600891919636960}
+  m_Layer: 0
+  m_Name: s5endnormal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4668363733852199965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945233418130177188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1301.1193, y: 948.6191, z: -90.908165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4305600891919636960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945233418130177188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7712cbcd0416514784424348294e6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 0}
+  bossImage: {fileID: 0}
+  bossPortrait: {fileID: 0}
+  namesOfSpellCards:
+  - Ice Age \n~Icicles and Snowflakes~
+  - Earth Prison \n~Morphing Rock Walls~
+  - Flame Dance \n ~Cartwheels Of Flame~
+  - Tricolor Medley \n~Shifting Elements~
+  - Great Convergence \n~Combination Magic~
+  nextLevel: {fileID: 11400000, guid: 381b96fb81b94554daacb9630680f967, type: 2}
+  waterportrait: {fileID: 21300000, guid: b07b347120140b64c8d493d07d82416f, type: 3}
+  earthportrait: {fileID: 21300000, guid: dc50d3d1baa938a4fabf9da11f21d98a, type: 3}
+  fireportrait: {fileID: 21300000, guid: 48cbb5a392e61d044b941c74ffb9e84a, type: 3}
+  combineportrait: {fileID: 21300000, guid: 27bab9b6fb03d1b4c937be86bf3a3d2b, type: 3}
+  ui: {fileID: 9172258930565150853, guid: 61f657deda4becf43bcb58ed87351be1, type: 3}
+  waterprefab: {fileID: 1806583198196191237, guid: 831046c0a97f4d845886a24da33b496c,
+    type: 3}
+  earthprefab: {fileID: 1806583198196191237, guid: 5a6498164dd0bd847be21c40d5417005,
+    type: 3}
+  fireprefab: {fileID: 1806583198196191237, guid: 376fe122084c8144cabfe9db0cabdb01,
+    type: 3}
+  waterimageprefab: {fileID: 5282458767116229179, guid: e7d9bf71b2b2fe743b9a4c84e1c80b29,
+    type: 3}
+  earthimageprefab: {fileID: -1393600079109880518, guid: 2c31eb44c2a57994d96591c69ba12063,
+    type: 3}
+  fireimageprefab: {fileID: -2705754089135847788, guid: 2e4c2147836edf74bb9e15019860af02,
+    type: 3}
+  movespeed: 10
+  waterspawnlocation: {x: -1, y: 2}
+  earthspawnlocation: {x: 0, y: 2}
+  firespawnlocation: {x: 1, y: 2}
+  preFightDialogue1: {fileID: 11400000, guid: 71b739f075976bd46bb984bbb527a2b6, type: 2}
+  preFightDialogue2: {fileID: 11400000, guid: 1a32d309840691047b8c562175f50424, type: 2}
+  preFightDialogue3: {fileID: 11400000, guid: 5cef4b9c39edffd4eb75906bd6e76b92, type: 2}
+  blue: {r: 0, g: 0.77201605, b: 1, a: 1}
+  green: {r: 0, g: 1, b: 0.10847831, a: 1}
+  red: {r: 1, g: 0, b: 0, a: 1}
+  pointer: {fileID: 8580154745028077592, guid: 7d36aae527e49f0468cc33726fd90704, type: 3}
+  harder: 0
+  firedmg1: 210
+  fireshotRate1: 0.2
+  fireSpeed1: 1.8
+  fireanglespread1: 15
+  fireradius1: 0.5
+  earthdmg1: 210
+  earthshotRate1: 1.5
+  earthspeed1: 1.4
+  earthspread1: 20
+  earthnumber1: 30
+  waterdmg1: 365
+  watershotrate1: 0.07
+  waterangularvel1: 143
+  waterspeed1: 1.5
+  circledist1: 1
+  circlespeed1: 1
+  waterspeeddiff: 0.2
+  waternumber1: 4
+  movespeed1: 0.3
+  radiusmovement1: 0.8
+  waterorigin1: {x: 0, y: 2.5}
+  startingPoint2: {x: 0, y: 2.1}
+  snowflakedmg2: 375
+  snowflakespinningVel2: 24
+  snowflakerandomfactor2: 5
+  snowspeedmin: 3
+  snowspeedmax: 4
+  spawnRatesnow: 0.08
+  icicledmg2: 385
+  spreadrange2: 15
+  anglepershot2: 4.1
+  shotrateicicle2: 0.07
+  iciclespeed2: 1.9
+  spawnradius2: 0.5
+  harderpulserate2: 0
+  harderspeed2: 0
+  harderdmg2: 0
+  hardercount2: 0
+  startingPoint3: {x: 0, y: 1.5}
+  y3: 3
+  radius3: 1
+  bulletspeed3nonmain: 3.1
+  bulletdmg3nonmain: 215
+  bulletpulserate3: 0.8
+  bossmovespeed3: 0.5
+  x3: 3
+  ringnumber3: 15
+  angularvel3: 201
+  shotrate3: 0.045
+  pulseduration3: 1.5
+  bulletspeed3main: 2.2
+  bulletspeeddiff3: 0.15
+  bulletdmg3main: 390
+  delay3: 0.5
+  bigdmg3: 900
+  bigspeed3: 0.5
+  bigduration3: 3
+  number3main: 3
+  treerockspeed4: 3
+  treerockdmg4: 1000
+  shotRate4: 0.07
+  unitspercircle4: 1.5
+  acceleration4: 0.4
+  time4: 5
+  delay4: 3
+  dmg4star: 408
+  size4: 0.75
+  spacing4: 1.2
+  randomfactor4: 0.5
+  pulseRate4: 8
+  startingPoint5: {x: 0, y: 2.5}
+  y5: 3
+  radius5: 0.8
+  bulletspeed5nonmain: 1.8
+  bulletdmg5nonmain: 388
+  bossmovespeed5: 1.2
+  x5: 3
+  angularvel5: 63
+  shotrate5nonmain: 0.8
+  magiccirclenumber5: 5
+  bulletnumber5nonmain: 5
+  shotrate5: 0.08
+  bulletspeed5main: 3.4
+  bulletdmg5main: 500
+  bigdmg5: 900
+  bigspeed5: 0.4
+  bigduration5: 1
+  radiusmain5: 0.5
+  boundaryx: 3
+  maxstepx: 0.8
+  movementpulseduration5: 4
+  startingPoint6: {x: 0, y: 2}
+  wheelspeed6: 1.8
+  angularvel6: 75
+  shotrate6wheel: 3
+  dmg6wheel: 2500
+  movespeed6: 10
+  spreadangle6: 43
+  wheelsize: 1.4
+  wheellines6: 1
+  left6: {x: -3, y: 3}
+  right6: {x: 3, y: 3}
+  firespeed6: 2
+  firedmg6: 410
+  firepulserate6: 3.5
+  fireshotrate6: 0.3
+  bigdmg6: 500
+  delay6: 1
+  firenumbersperpulse6: 5
+  numberoffirebullets: 35
+  bignumber: 15
+  harderangularvel6: 0
+  startingPoint7: {x: 0, y: 2}
+  movementradius7: 1.6
+  freq7: 0.1
+  earthPillarspacingY: 1.4
+  earthpillarspacingX: 0.8
+  earthpillarspawnmin: 4.3
+  earthpillarspawnmax: 3.8
+  earthPillarmovementX: 4
+  earthPillarmovementY: 0.3
+  earthpillarpulseRate: 6
+  earthpillardmg: 2000
+  numberOfEarthpillars: 8
+  firepillarspacingX: 1.4
+  firepillarspacingY: 0.5
+  firepillarspawnmin: -4.2
+  firepillarspawnmax: -3.9
+  firePillarmovementX: 0.35
+  firePillarmovementY: 4
+  firepillarpulseRate: 6
+  firepillardmg: 2000
+  numberOffirepillars: 8
+  numberofsnowflakes7: 23
+  snowflakeshotrate7: 1
+  snowflakedmg7: 410
+  snowflakeangularvel7: 14
+  snowflakeradialvel7: 1
+  startingPoint8: {x: 0, y: 2}
+  radius8: 2
+  angularvel8: 23
+  laserdmg8: 2000
+  thickness8: 0.5
+  shotRate8: 0.6
+  shotspeed8: 2
+  shot8dmg: 700
+  firedmg8: 400
+  firespread8: 43
+  firespeed8: 2.3
+  firenumber8: 4
+  snowdmg8: 400
+  snowradialvel8: 1.1
+  snowangularvel8: 13
+  snownumber8: 25
+  leafdmg8: 400
+  minspeed8leaf: 1.5
+  speeddiff8leaf: 0.2
+  leafspreadangle8: 32
+  leafsize8: 0.9
+  leaflines8: 4
+  leafperline8: 5
+  endDialogue: {fileID: 11400000, guid: a037602f1009efa48bb73808e6873c18, type: 2}

@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6907845975779757171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 322804062939560472}
+  - component: {fileID: 915536548896371474}
+  m_Layer: 0
+  m_Name: gamedata
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &322804062939560472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6907845975779757171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0376514, y: -2.672111, z: -2.71153}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &915536548896371474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6907845975779757171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629594111c8aa60419bef43143074b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellcardUI: {fileID: 1440613776595574203, guid: 3022bacece781ad46a7ee4f0434a251f,
+    type: 3}
+  playerSpellCardUI: {fileID: 1440613776595574202, guid: fbc60427d3170024288c8cb4b5ba2fa5,
+    type: 3}
+  touhoustreamingSFX: {fileID: 11400000, guid: e0cb3a2d559323f499130bd7c25d7c26, type: 2}
+  magicCircleSummonSFX: {fileID: 11400000, guid: 28c9ab7c798eacd4d86b280735ee09a5,
+    type: 2}
+  lifeDepletedSFX: {fileID: 11400000, guid: 6b9366a3fb6a4e246ac14ef3918849ff, type: 2}
+  shortarrowSFX: {fileID: 11400000, guid: 94136f1805adc0748a6289604d02cf83, type: 2}
+  longarrowSFX: {fileID: 11400000, guid: c254def07b7610d4192ae4bec424e8ee, type: 2}
+  windboltSFX: {fileID: 11400000, guid: db48958cbc7a5a64bac15606518d3ace, type: 2}
+  explosionSFX: {fileID: 11400000, guid: 617a6a94ced505c4b87c48d463a2fdb7, type: 2}
+  magicPulse1SFX: {fileID: 11400000, guid: 21f2b90b6d1b06d4c88f5aa05e831ff1, type: 2}
+  gunSFX: {fileID: 11400000, guid: 5cc50710b614087489487b940f972a22, type: 2}
+  tpSFX: {fileID: 11400000, guid: 90c01456488d43c44864ddd83d5a7fbd, type: 2}
+  UISFX: {fileID: 11400000, guid: c255ff9997ae2804894afba388a98cc3, type: 2}
+  waterpulseSFX: {fileID: 11400000, guid: d2ff5b9e5c4bfb54c8a5860e383d21f6, type: 2}
+  waterstreaming1SFX: {fileID: 11400000, guid: e06ce05537426344a8cad66162b92876, type: 2}
+  waterswooshSFX: {fileID: 11400000, guid: b3ff29c089373d64386c3936f231cb18, type: 2}
+  leaf1SFX: {fileID: 11400000, guid: e365597ce8eee424585e0629ccaf28a0, type: 2}
+  slamSFX: {fileID: 11400000, guid: 3a20dd8b407e7d54895d8d6b83781496, type: 2}
+  magicPulse1LouderSFX: {fileID: 11400000, guid: 306ec79f5a8eb63449b31f278f008ccc,
+    type: 2}
+  flyinginSFX: {fileID: 11400000, guid: 37eb1eb6dc5d4734881c59e06aa64200, type: 2}
+  firestreamingSFX: {fileID: 11400000, guid: f886b5155509eea45a6ab7d70f3629ea, type: 2}
+  firepulseSFX: {fileID: 11400000, guid: 89f61ed0ab2c86f4691bd17764fc3856, type: 2}
+  clickSFX: {fileID: 11400000, guid: 1d228b5dce50f3b4298570ba1652e8f5, type: 2}
+  mastersparkSFX: {fileID: 11400000, guid: 44565c4137d7a4c48bab2c7f5eda9dbe, type: 2}
+  laser1SFX: {fileID: 11400000, guid: 157096051bd246e45a4daf2257a98a55, type: 2}
+  firelizardSummonSFX: {fileID: 11400000, guid: 46d124f8840729048a7914e496c013e3,
+    type: 2}
+  firebossSummonSFX: {fileID: 11400000, guid: 70489c940af410c4a977f22ec1fa7283, type: 2}
+  kiraSFX: {fileID: 11400000, guid: 7d8c28f92a4bd604cb7e656227a626ad, type: 2}
+  kirasoftSFX: {fileID: 11400000, guid: 3b03731d773bb064ebbb5e3dc5495807, type: 2}
+  splashSFX: {fileID: 11400000, guid: 4e4f5bfb491b2f34ba3b58ae70865185, type: 2}
+  bookFiendSummonSFX: {fileID: 11400000, guid: 972ea140ab443274e99022ee9bcf348b, type: 2}
+  stage6TpSFX: {fileID: 11400000, guid: bc1b29fa9ad78c24184e8d6368182703, type: 2}
+  pylferTpSFX: {fileID: 11400000, guid: a3ff0ea01f1bbbf4f8669e609c9ff904, type: 2}
+  playershootSFX: {fileID: 11400000, guid: 6e4721a9f3937854295b8b176424ea2f, type: 2}
+  magicCircles: {fileID: 11400000, guid: ecb15ad31fbf67f4383a433a76ff2594, type: 2}
+  pointedBullet: {fileID: 11400000, guid: 41aa83ad522d4c441b420119f326348b, type: 2}
+  smallRoundBullet: {fileID: 11400000, guid: f6d3e6216ead4c946a5abcd2fba1d3b8, type: 2}
+  bigBullet: {fileID: 11400000, guid: 6583d2f611a41f24fa8dea759fa2b553, type: 2}
+  arrowBullet: {fileID: 11400000, guid: 93521daa990d365478ecda6f7b65cc39, type: 2}
+  ellipseBullet: {fileID: 11400000, guid: db9c7a3e4381a7d458143ac16c0b25c4, type: 2}
+  starBullet: {fileID: 11400000, guid: a7621db965d645a4f81ac55721e4273d, type: 2}
+  laserBullet: {fileID: 11400000, guid: f3c85c64088299d49bbc3f970b774f86, type: 2}
+  stage5lines: {fileID: 11400000, guid: 575bf650e4b1b124bbc2e360b5710194, type: 2}
+  punchBullet: {fileID: 911972999547948889, guid: 7a6f9c6c80d58864d9bec85e519acf80,
+    type: 3}
+  stage1arrowBullet: {fileID: 5901879662736442927, guid: 87f08c4007157814fac1e28576c5f6e9,
+    type: 3}
+  explosionBullet: {fileID: 911972999547948889, guid: 9ecd7e71157ad364284fe4a6a2b0c127,
+    type: 3}
+  leafBullet1: {fileID: 6539465222748635732, guid: 75e9840902b09f04d99b4903c8b1963e,
+    type: 3}
+  leafBullet2: {fileID: 3230586137576200462, guid: f7d5a767ef2995c49b4ef75e0b8eddbe,
+    type: 3}
+  leafBullet3: {fileID: 5063213686787385824, guid: 487d6beaf8d07824b971e41f7f0b838a,
+    type: 3}
+  rockBullet: {fileID: 4298244740041365992, guid: 3c57a44023bd12c48ad13951bf82627c,
+    type: 3}
+  whiteArrowBullet: {fileID: 8666329801328841485, guid: a7c8ba91d620fce408a9031c3a0b0d87,
+    type: 3}
+  waterCircle: {fileID: 8420722031687854107, guid: bf1789e7ede57794094bebf2c9bfe24a,
+    type: 3}
+  earthCircle: {fileID: 8420722031687854107, guid: 90d66b004369f314a8ce1ebc99956d15,
+    type: 3}
+  fireCircle: {fileID: 350400323087982558, guid: 0cbe869c9fa14e044baba49ffca1742a,
+    type: 3}
+  mushroomPillar: {fileID: 6063934732109912144, guid: 27b76d1befe82fa48b84f891c7496a45,
+    type: 3}
+  earthPillar: {fileID: 1610268316135621660, guid: 6c4200f18bbf9a343ba9ba925922a94b,
+    type: 3}
+  firePillar: {fileID: 1610268316135621660, guid: 9ac722801f5d76b40b1aa36c08a6241b,
+    type: 3}
+  fireBullet: {fileID: 2977784430267972987, guid: a36b8f5427bc05a44a8ae4995df1d732,
+    type: 3}
+  fireBall: {fileID: 4476901400571525787, guid: 20a940596bd094e44ab3cfd83f742306,
+    type: 3}
+  fireBeam: {fileID: 3090917607954520784, guid: b2b1892a7cc093b4d901f60a59a4dda3,
+    type: 3}
+  fireShortLaser: {fileID: 4898057403704986435, guid: b10fb58a4b8d86e499eb57094648a48d,
+    type: 3}
+  fireBeam2: {fileID: 3090917607954520784, guid: 883c7b79d3cf62b4cb9f0f6aeca34fed,
+    type: 3}
+  masterSpark: {fileID: 3090917607954520784, guid: f6052499a504f4047a221ba6638beb33,
+    type: 3}
+  snowflake: {fileID: 1441733293924869471, guid: 2534479959764bc45bad20c5aabaf836,
+    type: 3}
+  icicle: {fileID: 1441733293924869471, guid: ea594d45ed2d46146ad53ffdfcf22a9d, type: 3}
+  treeRockBullet: {fileID: 6339065487557572500, guid: c653df151a594584cb3fa7cd4258b132,
+    type: 3}
+  fireWheel: {fileID: 2794776825522783396, guid: 8f7e146b09c6dc54fac7f27e7e3fa628,
+    type: 3}
+  pageBullet: {fileID: 3393592486164367828, guid: 6871f2b1366941d43bcdfe9ae9476a69,
+    type: 3}
+  raindrop: {fileID: 1495682739681755773, guid: db7b0965a43ec65459c9d1dea07687cf,
+    type: 3}
+  featherBullet: {fileID: 8708216149351136730, guid: 113b21d682db6df47adbe56c73727c06,
+    type: 3}
+  flyingBook: {fileID: 8653138007011878643, guid: 1fde77ccfca5d1a4ca1eb8b90bb6d3e1,
+    type: 3}
+  ghosts: {fileID: 11400000, guid: f9bc86bb33e833e42b241d21cac03812, type: 2}
+  linemonster: {fileID: 11400000, guid: e17c5ae1cdbaddd45a4fe548718245ab, type: 2}
+  mushrooms: {fileID: 11400000, guid: 6bbd3837208b3f340abf41594e72f4b6, type: 2}
+  pixies: {fileID: 11400000, guid: 2d1c3df39d0483c4caeefc914a7e6da8, type: 2}
+  libraryMonsters: {fileID: 11400000, guid: d74211630b2a77b439cbd321fc3dea26, type: 2}
+  waterFairy: {fileID: 8125937657687486251, guid: 58b208128480af14e95154258395709b,
+    type: 3}
+  patternSprite: {fileID: 6330706413461039320, guid: 0f38cfbd00a6bb545b54edd928d675ba,
+    type: 3}
+  treeant: {fileID: 1673228067095624031, guid: 7fda2911b15819c48a6fbc617cae385f, type: 3}
+  midBossMushroomMob: {fileID: 3891478456235747014, guid: 4210db93f65ed3049b0731deeb345d0e,
+    type: 3}
+  greenSlime: {fileID: 1209050533006121410, guid: 62802f75734c5af4aa142ed5c7c3e5b7,
+    type: 3}
+  playerDialogueSprite: {fileID: 21300000, guid: 3221f0b7349d26d4faac43402d0d6e42,
+    type: 3}
+  beforeStage1: {fileID: 11400000, guid: 584894196419c274ebfd1f0c5af91a84, type: 2}
+  defaultBombDrop: {fileID: -7423590585076364611, guid: fab1fd212dcec79459be6b0966e927d7,
+    type: 3}
+  lifeDrop1000: {fileID: 3964053958901176655, guid: dc8d56776ffc2664395db493c91e366d,
+    type: 3}
+  lifeDrop300: {fileID: 6089450588346147660, guid: e751cc5aa6eea7544811ecdbecb6e759,
+    type: 3}
+  lifeDropFull: {fileID: 3365378150724377866, guid: 3cb879ff98f25124e9fb76da6af3a7f5,
+    type: 3}
+  levels:
+  - {fileID: 11400000, guid: 584894196419c274ebfd1f0c5af91a84, type: 2}
+  - {fileID: 11400000, guid: 1a32aca0baf75b248927de00041c87f3, type: 2}
+  - {fileID: 11400000, guid: da9b8a33890d10445b92bca40dd8857b, type: 2}
+  - {fileID: 11400000, guid: d73e175741a50b54fac65e5db4aedec6, type: 2}
+  - {fileID: 11400000, guid: 5de849c1ee2620e4cafdade913add7b8, type: 2}
+  - {fileID: 11400000, guid: 381b96fb81b94554daacb9630680f967, type: 2}

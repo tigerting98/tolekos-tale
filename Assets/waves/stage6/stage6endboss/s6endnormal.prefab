@@ -1,0 +1,284 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3490138245831574272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8261824726268202561}
+  - component: {fileID: 3077349933565302834}
+  m_Layer: 0
+  m_Name: s6endnormal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8261824726268202561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3490138245831574272}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0723135, y: -0.7822614, z: -0.032290272}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3077349933565302834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3490138245831574272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eab8e899329ffb41a1213b1cee5076d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 2465689840817753905, guid: 00be70a7dc810bc44940158e65c4e211, type: 3}
+  bossImage: {fileID: 0}
+  bossPortrait: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+  namesOfSpellCards:
+  - Polarization \n ~Hot And Cold Trap~
+  - Force of Nature \n ~Typhoon~
+  - Flame Swirl \n ~Forest Fire~
+  - Magic Barrier \n ~Shifting Pylfer~
+  - Mischief \n ~Deadly Candy~
+  - Pylfer's Trump Card \n ~Unleash Magic~
+  nextLevel: {fileID: 0}
+  harder: 0
+  background: {fileID: 7414380709887408105, guid: abb9119637e23b24cb2d92d8ace9438f,
+    type: 3}
+  imageofboss: {fileID: 190458337195914637, guid: 3a64cc6501df5954fae1450235cd8fcc,
+    type: 3}
+  dialogue1: {fileID: 11400000, guid: 535b18b8d0b421d418e54c1d6dc29453, type: 2}
+  dialogue2: {fileID: 11400000, guid: de309a3d004bf01449baecd86318fea7, type: 2}
+  dialogue3: {fileID: 11400000, guid: ed3d01a6138bab043a00066fcb585fe6, type: 2}
+  startparticle: {fileID: 6110562706618516333, guid: afd4edbf82e3c4a46a4a06b4e63ee1ea,
+    type: 3}
+  spawnParticle: {fileID: 6110562706618516333, guid: 41e797b206fd7e2429c72ef5bd897d6e,
+    type: 3}
+  movespeed: 10
+  defaultPylfer: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+  greenPylfer: {fileID: 21300000, guid: b4444fce837b2424a85b084cc9d3669e, type: 3}
+  redPylfer: {fileID: 21300000, guid: e4ebc54c7d9190c439b0406615213520, type: 3}
+  bluePylfer: {fileID: 21300000, guid: f301cd2bbcba9814b9e0241743d433cc, type: 3}
+  waterparticle: {fileID: 3033819667958434726, guid: d28024bd8153e7b40aae27e080341f4f,
+    type: 3}
+  earthparticle: {fileID: 643139619901454358, guid: b1f655aa9fd7a0e429b39d81a18abef0,
+    type: 3}
+  fireparticle: {fileID: 643139619901454358, guid: 75faa4a7a93c6b843be418a95970567c,
+    type: 3}
+  pureparticle: {fileID: 5272637207656269214, guid: 53513ea4bf833d24280e213a2e27498a,
+    type: 3}
+  deathparticle: {fileID: 4000004312301813610, guid: daf2315e11d0786449b29b2679ae18e8,
+    type: 3}
+  generalendDialogue: {fileID: 11400000, guid: 47a90955273d1714ea47b4efd21b09b9, type: 2}
+  goodEndDialogue: {fileID: 11400000, guid: 9c9e7c08d0382cd4d9a88c9d3d047a56, type: 2}
+  badEndDialogue: {fileID: 11400000, guid: 01b8824eb9eaeed418f1704dcc61c894, type: 2}
+  tpAway: {fileID: 2412252678472305718, guid: 346f452037eaad84eae9103008e64c28, type: 3}
+  tpAwayParticle: {fileID: 3866698331861468935, guid: bfad38ae9eb61454aa65c59b33272829,
+    type: 3}
+  tpAwaySFX: {fileID: 11400000, guid: 577b5e73ff12d6e49a85bc04f31269b6, type: 2}
+  harderballspeed1: 0
+  harderballpulserate1: 0
+  harderballdmg1: 0
+  harderballcount1: 0
+  y1: 1
+  buldmg1: 415
+  movespeed1: 2
+  petalCount1: 8
+  bulletperhalfpatel1: 5
+  fastspeed1: 1
+  slowspeed1: 0.65
+  stalkCount: 9
+  stalkTopcount: 2
+  stalktopspeeddiff: 0.1
+  stalktopspread: 2
+  stalktopspeed: 3
+  stalkslowspeed: 0.6
+  pulserate1: 2
+  harderstarspeed2: 0
+  harderstarspreadangle2: 0
+  harderstardmg2: 0
+  harderstarcount2: 0
+  dmg2: 465
+  pos2: {x: 0, y: 1}
+  waterspeed2: 0.8
+  waterpulserate2: 1.3
+  watershotrate2: 0.01
+  waterspacing2: 0.08
+  waterrandomfactor2: 0.1
+  boundaryY2: 0.75
+  boundaryX2: 3.5
+  maxstepY2: 0.3
+  maxstepX2: 0.5
+  waterstartpos2:
+  - 0
+  - 1.65
+  - 2.45
+  - 3.1
+  - 3.9
+  - 4.9
+  - 6.2
+  - 7.2
+  - 7.8
+  waterendpos2:
+  - 1.2
+  - 2
+  - 2.8
+  - 3.4
+  - 4.4
+  - 5.7
+  - 7
+  - 7.6
+  - 8.2
+  laserdmg2: 1900
+  laserduration2: 2
+  laserpulserate2: 3
+  laserspacing2: 1
+  harderarrowspeed3: 0
+  harderarrowpulserate3: 0
+  harderarrowcount: 0
+  dmg3: 420
+  circleangularvel3: 43
+  radius3: 1
+  shotrate3circle: 0.32
+  shotspeed3: 0.5
+  shotspeeddiff3: 0.15
+  bulletangularvel3: 67
+  numberoflines3: 3
+  numberperlines3: 4
+  movespeed3: 0.9
+  movingbounds3: 1
+  movingdelaymin3: 2
+  movingdelaymax3: 3
+  dmg4rain: 395
+  anglespreadrain: 15
+  rainminspeed: 0.8
+  rainmaxspeed: 3
+  rainshotrate: 0.12
+  earthlaserdmg4: 890
+  earthspeed4: 2
+  leafinitialspeed4min: 1.3
+  leafinitialspeed4max: 2.8
+  leafacc4: 0.6
+  leafacctime4: 3.2
+  spreadleafangle4: 41
+  leafdmg4: 425
+  numberofleafs4: 7
+  numberOfsideLasers4: 3
+  locationright4: {x: 1, y: 1.5}
+  locationtop4: {x: 0, y: 2}
+  locationleft4: {x: -1, y: 1.5}
+  delayinpulse4: 1
+  delaybeytweenpulse4: 2
+  movespeed4: 2
+  spreadanglelaser4: 8
+  laserangle4: 10
+  pos5: {x: 0, y: 1}
+  starradius5: 2
+  starshotrate5: 0.03
+  stardmg5: 425
+  delaybeforemoving5: 0.5
+  delaybeforesplitting5: 1
+  acc5: 0.5
+  endspeed5: 1.4
+  starspeed5: 5
+  starttime5: 0.4
+  starpulserate5: 9
+  numberOfStarsperside5: 20
+  startoffset: -90
+  spacing6: 2.5
+  shotrate6fire: 0.04
+  firebulletspeed6: 1.3
+  firebulletdmg6: 485
+  angleperarc6: 338
+  arcspacing6: 41
+  bulletpershot6: 4
+  earthbulletdmg6: 385
+  earthpulserate6: 0.5
+  earthspeed6: 1.8
+  earthcount6: 15
+  pos7: {x: 0, y: 2}
+  bulletdmg7: 435
+  bulletpulserate7: 2
+  bulletspeed7: 1.2
+  spawnX7: 0.5
+  bounds7: 1
+  movespeed7: 2
+  delaymin7: 1
+  delaymax7: 2
+  bulletcount7: 50
+  pos8: {x: 0, y: 1}
+  bullet8dmg: 485
+  bullet8speed: 2.5
+  bullet8cooldown: 0.01
+  bulletspread8: 35
+  balldmg8: 425
+  ballangularvel8: 13
+  ballradialvel8: 0.8
+  ballpulserate8: 2
+  ballshotrate8: 0.2
+  ballcount8: 30
+  switchingmin8: 6
+  switchingmax8: 8
+  pos9: {x: 0, y: 1}
+  dmgbullet9: 495
+  shotrate9: 0.37
+  angularvel9: 5.5
+  bulletspeed9: 1.1
+  lines9: 8
+  starlaserdmg9: 675
+  starshotrate9: 0.14
+  laseracc9: 0.98
+  laseracctime9: 3.1
+  starspeed9: 0.7
+  starconvertimemin9: 0.5
+  starconvertimemax9: 1.3
+  ellipseangularvel10: 12
+  ellipseradialvel10: 0.9
+  ellipsespacing10: 0.5
+  ellipsepulserate10: 2
+  ellipsedmg10: 475
+  ellipsecount10: 20
+  roundedcount10: 20
+  dmg10rounded: 505
+  roundedpulserate10: 2.1
+  roundedspeed10: 1.3
+  dmg10laser: 600
+  laserspeed10: 4
+  laserpulserate10: 2.5
+  laserradius10: 1
+  lasercount10: 6
+  firelaserpulserate10: 9
+  firelaserduration10: 2.9
+  firelaserspacing10: 1.6
+  firelaserdm10: 1850
+  fallinganglerange10: 10
+  fallingspeed10min: 0.8
+  fallingspeed10max: 1
+  fallingshotrate10: 0.34
+  fallingdmg10: 496
+  phase4speed10: 1.2
+  phase4pulserate10: 3.2
+  bigcircledmg10: 985
+  smallcircledmg10: 523
+  arrowsdmg10: 431
+  stardmg10: 488
+  bigcirclecount10: 15
+  smallcirclecount10: 20
+  arrowcount10: 30
+  starcount10: 20
+  bigcircledelay10: 0
+  smallcircledelay10: 0.4
+  arrowdelay10: 0.75
+  stardelay10: 0.6

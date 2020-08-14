@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4522323344577174238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5916288215380762352}
+  - component: {fileID: -6712740408659368872}
+  m_Layer: 0
+  m_Name: Stage2Wave1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5916288215380762352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27233347, y: 0.19923896, z: 0.9743871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6712740408659368872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5770e01f8149d074eb79e28c1dbdff0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnSound: {fileID: 0}
+  ymin: 1
+  ymax: 3.5
+  startMoveMax: 5
+  startMoveMin: 3
+  spawnRate: 0.7
+  bulletSpeed: 2
+  shotRate: 0.1
+  bulletNumber: 3
+  lines: 10
+  subwaves:
+  - number: 20
+    startTime: 0
+    left: 1
+    enemyid: 0
+    shootChance: 0.3
+  - number: 20
+    startTime: 0
+    left: 0
+    enemyid: 1
+    shootChance: 0.3
+  - number: 5
+    startTime: 3
+    left: 1
+    enemyid: 1
+    shootChance: 0.2
+  - number: 6
+    startTime: 9
+    left: 0
+    enemyid: 0
+    shootChance: 0.1
+  - number: 4
+    startTime: 13
+    left: 0
+    enemyid: 1
+    shootChance: 0.1
+  - number: 7
+    startTime: 18
+    left: 0
+    enemyid: 1
+    shootChance: 0.1
+  - number: 5
+    startTime: 27
+    left: 1
+    enemyid: 0
+    shootChance: 0.1
+  - number: 10
+    startTime: 38
+    left: 0
+    enemyid: 1
+    shootChance: 0.1
+  - number: 13
+    startTime: 45
+    left: 0
+    enemyid: 0
+    shootChance: 0.1
+  - number: 9
+    startTime: 55
+    left: 1
+    enemyid: 1
+    shootChance: 0.1
+  stats: {fileID: 11400000, guid: 1f26a21c71ec6d84eb8b7e9a7cad5e11, type: 2}
+  dmg: 165

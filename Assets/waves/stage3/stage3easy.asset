@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773601d4f4ae6e54688117054c1664fa, type: 3}
+  m_Name: stage3easy
+  m_EditorClassIdentifier: 
+  wavesFirstHalf:
+  - {fileID: 1321190786553508434, guid: f1edc70ee48886146a7e0f24347f1ca0, type: 3}
+  - {fileID: 77210204435185243, guid: 1c21c799f7d91a343a77948eeb14cc43, type: 3}
+  - {fileID: 8889752093911560135, guid: ec422e7576322cc419d7ba5742bced0b, type: 3}
+  timesFirstHalf:
+  - 3
+  - 3
+  - 15
+  midBoss: {fileID: 5423160984164451851, guid: aeab84abd5e68234c8492dbe76fd8dbf, type: 3}
+  wavesSecondHalf:
+  - {fileID: 2172968441370602741, guid: 1ae7dd2d91c776345b65778a37f91d09, type: 3}
+  - {fileID: 7917091881019837292, guid: bd894cbd6e551684abca29641840f415, type: 3}
+  timesSecondHalf:
+  - 3
+  - 18
+  endBoss: {fileID: 4121990936563538126, guid: 2dc8e6b63668ae94daa3e1868fa23037, type: 3}

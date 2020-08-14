@@ -1,0 +1,281 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4407408142725171825
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: harder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: fireshotRate1
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: fireSpeed1
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: earthshotRate1
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: earthspeed1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: earthnumber1
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: waterspeed1
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: watershotrate1
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: waternumber1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: iciclespeed2
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: spawnRatesnow
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: shotrateicicle2
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: harderpulserate2
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: harderspeed2
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: harderdmg2
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: hardercount2
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: bulletpulserate3
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: number3main
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: shotrate3
+      value: 0.038
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: pulseRate4
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: shotRate4
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: bulletspeed5nonmain
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: shotrate5nonmain
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: magiccirclenumber5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: bulletnumber5nonmain
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: shotrate5
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: bulletspeed5main
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: harderangularvel6
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: numberoffirebullets
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: bignumber
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: firepulserate6
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: shotrate6wheel
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: angularvel6
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: wheelspeed6
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: earthpillarpulseRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: firepillarpulseRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: numberofsnowflakes7
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: snowflakeangularvel7
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: snowflakeradialvel7
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: shotRate8
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: firenumbersperpulse6
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4305600891919636960, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: fireshotrate6
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668363733852199965, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945233418130177188, guid: 44caf957c74ed2f448ca1045220a8c5c,
+        type: 3}
+      propertyPath: m_Name
+      value: s5endhard
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44caf957c74ed2f448ca1045220a8c5c, type: 3}

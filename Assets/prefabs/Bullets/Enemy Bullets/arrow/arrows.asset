@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd5bb04df3a208499c3d89f3df1940c, type: 3}
+  m_Name: arrows
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 3959654444819504285, guid: d64bd1ee72f1dbf48bdb1fd0ba26381a, type: 3}
+  - {fileID: 797186986401250010, guid: eeb801fc03953de418c383b644caac12, type: 3}
+  - {fileID: 7258710860371053353, guid: 1defae0e4a862534aa92a7be6f79f0f6, type: 3}
+  - {fileID: 1291399341478699713, guid: 6b12f009a4f614d43ac72e92c291de04, type: 3}
+  - {fileID: 8666329801328841485, guid: a7c8ba91d620fce408a9031c3a0b0d87, type: 3}

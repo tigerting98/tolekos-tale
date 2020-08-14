@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54388a81ad299c44b3d776bc27ed6e0, type: 3}
+  m_Name: dialogue2
+  m_EditorClassIdentifier: 
+  lines:
+  - left: 1
+    speaker: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
+    isPlayer: 1
+    text: Pylfer, you and your games again. How about you just hand over Master Sylfer
+      and I can leave you alone.
+    name: Toleko
+  - left: 0
+    speaker: {fileID: 21300000, guid: 2f8b59eaff68aa24ea5a481f6d846a19, type: 3}
+    isPlayer: 0
+    text: What disrespect! You talk big for a mere apprentice. You are naive to think
+      that the Great Pylfer would just bow down to your pathetic existence.
+    name: Pylfer
+  - left: 1
+    speaker: {fileID: 0}
+    isPlayer: 1
+    text: Well, it was worth a shot. Also, may I remind you that I was literally
+      here last week, asking the exact same thing?
+    name: Toleko
+  - left: 1
+    speaker: {fileID: 0}
+    isPlayer: 1
+    text: Do you really want to be humiliated again?
+    name: Toleko
+  - left: 0
+    speaker: {fileID: 21300000, guid: 2f8b59eaff68aa24ea5a481f6d846a19, type: 3}
+    isPlayer: 0
+    text: Silence!! You only won because I let you!! Don't think I'll go so easy
+      on you this time
+    name: Pylfer
+  - left: 1
+    speaker: {fileID: 0}
+    isPlayer: 1
+    text: '*Sigh* '
+    name: Toleko

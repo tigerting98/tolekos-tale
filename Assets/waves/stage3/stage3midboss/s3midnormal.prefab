@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4522323344577174238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5916288215380762352}
+  - component: {fileID: -5194968770029176298}
+  m_Layer: 0
+  m_Name: stage3midboss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5916288215380762352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27233347, y: 0.19923896, z: 0.9743871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5194968770029176298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d4588b231f405b499545020ce20404c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnSound: {fileID: 0}
+  boss: {fileID: 5510918016240705999, guid: 655c0fb2cddbb6344a3d33e197ae459b, type: 3}
+  bossImage: {fileID: 6034030427296860853, guid: 8ff239ce2cc6efa4e8342769fa9a0840,
+    type: 3}
+  bossPortrait: {fileID: 0}
+  namesOfSpellCards:
+  - Spore Attack\n ~Exploding Spores of Delight~
+  nextLevel: {fileID: 0}
+  earthCircle: {fileID: 3435677033397378573, guid: b734662aac5843d4ab894c7b4971b14d,
+    type: 3}
+  image: {fileID: 6034030427296860853, guid: 8ff239ce2cc6efa4e8342769fa9a0840, type: 3}
+  slamEffect: {fileID: 1279058984129278453, guid: f8590b96d0ecb1a42bdcc9b6af4a2f6b,
+    type: 3}
+  initialMoveSpeed: 8
+  spawnLocationY: 2
+  spawnDelay: 2
+  preFightDialogue1: {fileID: 11400000, guid: dcd809ca07433f54fb40a908149ae0b1, type: 2}
+  preFightDialogue2: {fileID: 11400000, guid: 269e871347715874685458971901de7b, type: 2}
+  movementSpeed1: 2.5
+  pulseRate1: 0.23
+  pauseDuration1: 2
+  x1: 3.5
+  y1: 2
+  dmg1: 325
+  anglerange1: 40
+  initialspeed1min: 2
+  intialspeed1max: 3
+  acceleration1: 2
+  pulses1: 12
+  bulletsperPulse1: 16
+  y2: 2
+  ringspeed: 18
+  bulletspeedfast: 4
+  bulletspeedtime: 0.15
+  bulletspeedslow: 1.5
+  radiusAroundPlayer: 1.25
+  starDmg: 310
+  pulserate2: 3.5
+  timetoExplode: 1.75
+  numberOfRings: 10
+  numberOfBulletsPerRing: 16

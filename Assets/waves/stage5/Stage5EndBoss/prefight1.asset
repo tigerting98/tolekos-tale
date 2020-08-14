@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54388a81ad299c44b3d776bc27ed6e0, type: 3}
+  m_Name: prefight1
+  m_EditorClassIdentifier: 
+  lines:
+  - left: 0
+    speaker: {fileID: 21300000, guid: b07b347120140b64c8d493d07d82416f, type: 3}
+    isPlayer: 0
+    text: Stop where you are!
+    name: Aqua
+  - left: 1
+    speaker: {fileID: 21300000, guid: b07b347120140b64c8d493d07d82416f, type: 3}
+    isPlayer: 1
+    text: Are you really looking for another beating after the last time I came here?
+    name: Toleko
+  - left: 0
+    speaker: {fileID: 21300000, guid: b07b347120140b64c8d493d07d82416f, type: 3}
+    isPlayer: 0
+    text: Well, this time I brought friends. You don't stand a chance!
+    name: Aqua

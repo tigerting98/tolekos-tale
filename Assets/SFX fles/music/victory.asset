@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdcf58e44f968d4684b840b86c96134, type: 3}
+  m_Name: victory
+  m_EditorClassIdentifier: 
+  volume: 0.2
+  looping: 1
+  mainBody: {fileID: 8300000, guid: e400ffc01305819419604f1f6a8ed1b9, type: 3}
+  introBody: {fileID: 8300000, guid: ea9653902cb91414092938dda5a3c9e0, type: 3}
+  delay: 32.862

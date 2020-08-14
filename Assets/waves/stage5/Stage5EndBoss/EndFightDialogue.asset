@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54388a81ad299c44b3d776bc27ed6e0, type: 3}
+  m_Name: EndFightDialogue
+  m_EditorClassIdentifier: 
+  lines:
+  - left: 0
+    speaker: {fileID: 21300000, guid: dc50d3d1baa938a4fabf9da11f21d98a, type: 3}
+    isPlayer: 0
+    text: Well, guess we're still no match for you. It would seem that Sylfer is
+      a much better teacher than his younger brother.
+    name: Rook
+  - left: 0
+    speaker: {fileID: 21300000, guid: 48cbb5a392e61d044b941c74ffb9e84a, type: 3}
+    isPlayer: 0
+    text: Finally!! I can now go back to my experiments. Aqua, try not to disturb
+      me again!
+    name: Cain
+  - left: 0
+    speaker: {fileID: 21300000, guid: b07b347120140b64c8d493d07d82416f, type: 3}
+    isPlayer: 0
+    text: Grrr... I'll get you next time...
+    name: Aqua
+  - left: 1
+    speaker: {fileID: 21300000, guid: 48cbb5a392e61d044b941c74ffb9e84a, type: 3}
+    isPlayer: 1
+    text: For your sake, I really, really hope there won't be a "next time". I should
+      get going before Pylfer tries anything funny.
+    name: Toleko

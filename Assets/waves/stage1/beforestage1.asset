@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17957c16a776190419a086cf84410a05, type: 3}
+  m_Name: beforestage1
+  m_EditorClassIdentifier: 
+  levelDescription: "Toleko was returning to the tower picking mushrooms in the forest.\nMaking
+    his way up the cobblestone staircase, he sensed something amiss.\nThe usual clanking
+    of glass and the occasional maniacal giggles that came from Old Sylfer were replaced
+    by silence.  \r\nToleko rushed up into the main laboratory, only to find his
+    master missing. \r\nAnd so begins Toleko's journey."
+  nextLevelSceneString: Stage1

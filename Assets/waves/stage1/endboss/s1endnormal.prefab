@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4522323344577174238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5916288215380762352}
+  - component: {fileID: -6244987563998859826}
+  m_Layer: 0
+  m_Name: s1endnormal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5916288215380762352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27233347, y: 0.19923896, z: 0.9743871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6244987563998859826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522323344577174238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc44f8ae3eaa98649b3e4255e41f616b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1792903561220353094, guid: 0c6fd512b0f90fe47a13203753d96cc4, type: 3}
+  bossImage: {fileID: 0}
+  bossPortrait: {fileID: 0}
+  namesOfSpellCards:
+  - Divine Archery\n ~Heavenly Arrow Barrage~
+  - Muscle Madness\n~Explosive Tricep Contraction~
+  nextLevel: {fileID: 11400000, guid: 1a32aca0baf75b248927de00041c87f3, type: 2}
+  background: {fileID: -9162131273511116121, guid: bbf1ec97531c67a4fb422744b1b8a8e7,
+    type: 3}
+  preBossFight: {fileID: 11400000, guid: ba2349c965a0de6438725b6fd43189ae, type: 2}
+  midFightDialogue: {fileID: 11400000, guid: bc5387209a12d5043adab232250cc8f8, type: 2}
+  endFightDialogue: {fileID: 11400000, guid: f4a429c7a5636854e8330983014f9a78, type: 2}
+  preBossFight2: {fileID: 11400000, guid: 8738aba26dcf9024398ae91e54383b56, type: 2}
+  harder: 0
+  number1: 0
+  speed1: 0
+  shotrate1: 0
+  dmg1ball: 0
+  pattern1Number: 10
+  numberOfCone: 8
+  pattern1PulseRate: 1.5
+  pattern1SpawnRate: 0.06
+  pattern1Spacing: 0.15
+  pattern1Speed: 4
+  dmg1: 120
+  arrowSpawnTimeMax: 0.08
+  arrowSpawnTimeMin: 0.04
+  maxSpeed: 5
+  minSpeed: 2
+  moveSpeed: 0.5
+  maxY: 3.5
+  minY: 0.5
+  dmg2: 110
+  arrowSpeed: 1.5
+  shotRate: 1
+  explodingBullet: {fileID: 911972999547948889, guid: 9ecd7e71157ad364284fe4a6a2b0c127,
+    type: 3}
+  numberOfBulletsPattern3: 25
+  initialSpeedPattern3: 10
+  maxRadiusPattern3: 1
+  shortDelayPattern3: 0.15
+  finalSpeedPattern3: 2
+  dmg3: 150
+  pausetime: 3.4
+  explosion: {fileID: 911972999547948889, guid: 9ecd7e71157ad364284fe4a6a2b0c127,
+    type: 3}
+  punch: {fileID: 911972999547948889, guid: 7a6f9c6c80d58864d9bec85e519acf80, type: 3}
+  punchSpeed: 2
+  punchdmg: 500
+  explosiondmg: 500
+  number3: 20
+  speed3harder: 2
+  dmg3star: 100

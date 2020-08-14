@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773601d4f4ae6e54688117054c1664fa, type: 3}
+  m_Name: veasystage1
+  m_EditorClassIdentifier: 
+  wavesFirstHalf:
+  - {fileID: 8627996406350052997, guid: 2af0c42d5fda36d4dba0bc5e4d641233, type: 3}
+  - {fileID: 146563047424933430, guid: 0ba63461a9c999043beced784979472f, type: 3}
+  - {fileID: 715638237376865890, guid: bcf10111e8a40a6418607d0ccfaee170, type: 3}
+  timesFirstHalf:
+  - 3
+  - 10
+  - 25
+  midBoss: {fileID: 3292902143399646742, guid: 77a78b2a4dd0ac34aa3191501df375af, type: 3}
+  wavesSecondHalf:
+  - {fileID: 4493350343652315800, guid: 2a539f79a54fac344a1dab267229d4c3, type: 3}
+  timesSecondHalf:
+  - 3
+  endBoss: {fileID: 8472432349943338216, guid: 869bb5ca338c88241a141b06b0130f3d, type: 3}

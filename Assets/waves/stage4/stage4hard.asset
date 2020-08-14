@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773601d4f4ae6e54688117054c1664fa, type: 3}
+  m_Name: stage4hard
+  m_EditorClassIdentifier: 
+  wavesFirstHalf:
+  - {fileID: 2828686546499457913, guid: 1a7af47e7d826da4fa44a8ee7f8d3b93, type: 3}
+  - {fileID: 6547950379532720719, guid: 6d78eabaaab426f4b95dec5b762e6dcf, type: 3}
+  - {fileID: 6054226220132898661, guid: ca2e16569343d0a4bbfad80a268a4fe1, type: 3}
+  - {fileID: 5325145269758752528, guid: 46a8a22168a40a24ab7286603c2dd83a, type: 3}
+  timesFirstHalf:
+  - 3
+  - 28
+  - 43
+  - 46
+  midBoss: {fileID: 6920409525955772403, guid: d96f58c1605a7bf41b7c2ea4ab3758d3, type: 3}
+  wavesSecondHalf:
+  - {fileID: 71157803188820725, guid: 4ac77cdc7e4ea2e4d954aa79c0cdbdf8, type: 3}
+  - {fileID: 9200718557340343384, guid: be25b08715a803b4094acb063e0fef05, type: 3}
+  timesSecondHalf:
+  - 0
+  - 20
+  endBoss: {fileID: 3141672594095841008, guid: cc469cde02b1c4345b4ea9d88434525c, type: 3}

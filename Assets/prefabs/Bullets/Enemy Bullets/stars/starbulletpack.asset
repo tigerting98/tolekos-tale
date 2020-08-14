@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd5bb04df3a208499c3d89f3df1940c, type: 3}
+  m_Name: starbulletpack
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 8362802858304294312, guid: caff84e6c4fdf8b45abbbe20c72a3e6f, type: 3}
+  - {fileID: 8362802858304294312, guid: ef3e91e33708c624aa402b7f819bb2d3, type: 3}
+  - {fileID: 2977784430267972987, guid: 1af983311e2a83b4899430ed42b385c7, type: 3}
+  - {fileID: 8362802858304294312, guid: 205b16abc9f4a034fb79ec26ce83dddf, type: 3}
