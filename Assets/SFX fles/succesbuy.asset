@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: succesbuy
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: f4b135376adb5604885ef543cbe0ad19, type: 3}
-  volume: 0.4
+  volume: 0.8
   id: successbuy
   cooldownTime: 0.01

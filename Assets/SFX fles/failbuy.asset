@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9e4dc7d24b225640a1bf1ebc2260221, type: 3}
-  m_Name: succesbuy
+  m_Name: failbuy
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: f4b135376adb5604885ef543cbe0ad19, type: 3}
-  volume: 0.4
-  id: successbuy
-  cooldownTime: 0.01
+  clip: {fileID: 8300000, guid: 82bb265f710c1a945b80c52b1c1f4a2f, type: 3}
+  volume: 1
+  id: failbuy
+  cooldownTime: 0.07
