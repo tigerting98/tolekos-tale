@@ -13,6 +13,7 @@ public class ShopButton : MonoBehaviour, ISelectHandler
     [SerializeField] ItemDescription itemDescription;
     [SerializeField] TextMeshProUGUI costIcon, itemNameIcon;
     [SerializeField] Color available, unavailable, noGold;
+    [SerializeField] SFX boughtSFX, failbuySFX;
     public ShopItemList list;
     public ShopItem item;
     public event Action OnBoughtItem;
@@ -62,11 +63,17 @@ public class ShopButton : MonoBehaviour, ISelectHandler
         itemDescription.SetDescription(item);
     }
     public void BuyItem() {
-        if (item.Buyable()) {
+        if (item.Buyable())
+        {
+            AudioManager.current.PlaySFX(boughtSFX);
             item.Buy();
             Refresh();
             itemDescription.SetDescription(item);
+
             OnBoughtItem?.Invoke();
+        }
+        else {
+            AudioManager.current.PlaySFX(failbuySFX);
         }
     
     }

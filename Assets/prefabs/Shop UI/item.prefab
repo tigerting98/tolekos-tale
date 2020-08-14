@@ -329,6 +329,8 @@ MonoBehaviour:
   available: {r: 0.061599493, g: 1, b: 0, a: 1}
   unavailable: {r: 0.4339623, g: 0.43191528, b: 0.43191528, a: 1}
   noGold: {r: 1, g: 0, b: 0, a: 1}
+  boughtSFX: {fileID: 11400000, guid: 04426c36dc0c5dc41a3be1b1a342617d, type: 2}
+  failbuySFX: {fileID: 11400000, guid: 33b5143a1c795354eae2c1b380c514ce, type: 2}
   list: {fileID: 0}
   item: {fileID: 0}
 --- !u!114 &8709639064847843906
