@@ -58,11 +58,10 @@ public static class SaveManager
         return current;
     }
 
-        public static void UnlockNewStage(Difficulty difficulty, int stage)
-        {
-        SaveData data = LoadData();
+        public static void UnlockNewStage(Difficulty difficulty, int stage) { 
         try
         {
+            SaveData data = LoadData();
             if (!data.acceessible[(int)difficulty, stage - 1])
             {
                 data.acceessible[(int)difficulty, stage - 1] = true;
