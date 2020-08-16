@@ -2134,6 +2134,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 51.083145
       objectReference: {fileID: 0}
+    - target: {fileID: 7583044176951359724, guid: 0472df9004fe1b54d938e8a241bf2bf5,
+        type: 3}
+      propertyPath: m_Spacing
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7583044177123953684, guid: 0472df9004fe1b54d938e8a241bf2bf5,
         type: 3}
       propertyPath: intoShop

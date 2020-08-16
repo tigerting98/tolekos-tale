@@ -371,6 +371,59 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!1 &1051375816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1051375818}
+  - component: {fileID: 1051375817}
+  m_Layer: 0
+  m_Name: RingOfCrystals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1051375817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051375816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed48b03fbeb592d468e2c2d9139963f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystals:
+  - {fileID: 8780096203680814407, guid: 1f503281a312bdc44ae54c51819e267f, type: 3}
+  - {fileID: 6443630801643333346, guid: 2eaf9401ebddc9a439fd32b8df4eb3c9, type: 3}
+  - {fileID: 6443630801643333346, guid: 2846310a6cff4c346831644afa8aba1e, type: 3}
+  angularvel: 0.1
+  numberOfCrystals: 15
+  maxX: 2
+  maxY: 0.5
+  angularvelup: 0.25
+  amp: 0.5
+--- !u!4 &1051375818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051375816}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.36, y: -3.52, z: -0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1381087883}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1107025190
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +453,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1381087883}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1107025192
 SpriteRenderer:
@@ -530,6 +583,7 @@ Transform:
   m_LocalPosition: {x: -0.19, y: 0.38, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1051375818}
   - {fileID: 1107025191}
   m_Father: {fileID: 0}
   m_RootOrder: 10

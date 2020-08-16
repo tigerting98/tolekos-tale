@@ -13,8 +13,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0016520619, y: 0}
-  m_Size: {x: 0.5330117, y: 1.4166666}
+  m_Offset: {x: 0.0042790174, y: 0.00000011920929}
+  m_Size: {x: 0.58046067, y: 1.2387332}
   m_Direction: 0
 --- !u!114 &1806583198196191237
 MonoBehaviour:
@@ -199,7 +199,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dc50d3d1baa938a4fabf9da11f21d98a,
+      objectReference: {fileID: 21300000, guid: 03acaa8b82aa3de41826018ddb0ff813,
         type: 3}
     - target: {fileID: 6237686821007657055, guid: accf02acb6bfae242b167b6bda0e8e8e,
         type: 3}

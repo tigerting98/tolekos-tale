@@ -17,7 +17,7 @@ MonoBehaviour:
     speaker: {fileID: 21300000, guid: b07b347120140b64c8d493d07d82416f, type: 3}
     isPlayer: 0
     text: Seriously?! Be more pumped up! Today, he dies!
-    name: Aqua
+    name: Mira
   - left: 1
     speaker: {fileID: 0}
     isPlayer: 1

@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2356872346491548581
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7688454075821161768, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 204b9e8624ce0274b9368f231896c242,
+        type: 3}
+    - target: {fileID: 8342071768316789842, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342071768316789842, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342071768316789842, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342071768316789842, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342071768316789842, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342071768316789842, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342071768316789842, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342071768316789842, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342071768316789842, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342071768316789842, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342071768316789842, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211422901543941149, guid: 1f503281a312bdc44ae54c51819e267f,
+        type: 3}
+      propertyPath: m_Name
+      value: firecrystal
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f503281a312bdc44ae54c51819e267f, type: 3}
