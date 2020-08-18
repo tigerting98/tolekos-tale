@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -161,8 +161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000012397766, y: 64}
-  m_SizeDelta: {x: 1544.4796, y: 684.7588}
+  m_AnchoredPosition: {x: -3, y: 35}
+  m_SizeDelta: {x: 1386.2528, y: 663.0027}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162877634
 MonoBehaviour:
@@ -220,8 +220,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 25
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -2007,12 +2007,12 @@ PrefabInstance:
     - target: {fileID: 4956400454922636189, guid: 0472df9004fe1b54d938e8a241bf2bf5,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.731
       objectReference: {fileID: 0}
     - target: {fileID: 4956400454922636189, guid: 0472df9004fe1b54d938e8a241bf2bf5,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4956400455219333202, guid: 0472df9004fe1b54d938e8a241bf2bf5,
         type: 3}
@@ -2212,7 +2212,7 @@ PrefabInstance:
     - target: {fileID: 7583044177123953686, guid: 0472df9004fe1b54d938e8a241bf2bf5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7583044177720354727, guid: 0472df9004fe1b54d938e8a241bf2bf5,
         type: 3}

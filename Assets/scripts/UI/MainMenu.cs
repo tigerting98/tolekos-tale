@@ -27,11 +27,7 @@ public class MainMenu : MonoBehaviour
     {
 
 
-        
-        
-        
         data = SaveManager.LoadData();
-                //data.print();
 
     }
     //Set up the action listeners
