@@ -404,12 +404,14 @@ MonoBehaviour:
   - {fileID: 8780096203680814407, guid: 1f503281a312bdc44ae54c51819e267f, type: 3}
   - {fileID: 6443630801643333346, guid: 2eaf9401ebddc9a439fd32b8df4eb3c9, type: 3}
   - {fileID: 6443630801643333346, guid: 2846310a6cff4c346831644afa8aba1e, type: 3}
-  angularvel: 0.1
-  numberOfCrystals: 15
-  maxX: 2
+  angularvel: 0.2
+  numberOfCrystals: 30
+  maxX: 2.5
   maxY: 0.5
-  angularvelup: 0.25
+  angularvelup: 0.43
   amp: 0.5
+  tiltAngle: 30
+  tiltangular: 0.6
 --- !u!4 &1051375818
 Transform:
   m_ObjectHideFlags: 0
@@ -418,7 +420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051375816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.36, y: -3.52, z: -0.5}
+  m_LocalPosition: {x: 6.45, y: -3.3, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1381087883}
@@ -1498,6 +1500,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747588786803013107, guid: e2f4ad6eee1145d44a93c42775a46178,
+        type: 3}
+      propertyPath: m_text
+      value: Toleko's Tale v1.0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747588786803013107, guid: e2f4ad6eee1145d44a93c42775a46178,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747588786803013107, guid: e2f4ad6eee1145d44a93c42775a46178,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6980089383566737390, guid: e2f4ad6eee1145d44a93c42775a46178,
         type: 3}

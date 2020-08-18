@@ -14,7 +14,9 @@ public class Polar
         rect = vect;
        
     }
-
+    public static Polar RotateBy(float movedegree, Polar pol) {
+        return new Polar(pol.r, pol.degree + movedegree);
+    }
     public Polar(float r, float degree) {
         this.r = r;
         this.degree = degree;

@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviour
     public static event Action<int> OnGainGold;
     public static event Action OnUpdateBomb;
     public static int maxBomb = 10;
-    public static int bombCount = 10;
+    public static int bombCount = 3;
 
     public static float bombDamage = 1000;
 
