@@ -224,7 +224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -386}
+  m_AnchoredPosition: {x: 0, y: -26.778}
   m_SizeDelta: {x: 681.8143, y: 53.555817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &174163975
@@ -248,8 +248,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Try Clearing the Game Without Dying!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cbdad726d69a27c4cb1dc662ec8e233c, type: 2}
-  m_sharedMaterial: {fileID: 3136925618656530923, guid: cbdad726d69a27c4cb1dc662ec8e233c,
+  m_fontAsset: {fileID: 11400000, guid: c1c4afb2afce0f14389ae590d11e4a32, type: 2}
+  m_sharedMaterial: {fileID: 2464364717378356963, guid: c1c4afb2afce0f14389ae590d11e4a32,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -275,8 +275,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 30
+  m_firstOverflowCharacterIndex: 22
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -316,10 +316,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 174163975}
-    characterCount: 56
+    characterCount: 36
     spriteCount: 0
-    spaceCount: 9
-    wordCount: 10
+    spaceCount: 5
+    wordCount: 6
     linkCount: 0
     lineCount: 2
     pageCount: 1
@@ -507,17 +507,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056570714}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0013386748, w: -0.9999991}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1665932970}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.15300001}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -7.800049, y: -643.3}
-  m_SizeDelta: {x: 1596.4639, y: 838.152}
+  m_AnchoredPosition: {x: 0, y: -543.3}
+  m_SizeDelta: {x: 1089.4199, y: 519.9127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1056570716
 MonoBehaviour:
@@ -540,8 +540,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Something
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cd9b41438953bec41af3e782899079cd, type: 2}
-  m_sharedMaterial: {fileID: -6477036572108708468, guid: cd9b41438953bec41af3e782899079cd,
+  m_fontAsset: {fileID: 11400000, guid: c1c4afb2afce0f14389ae590d11e4a32, type: 2}
+  m_sharedMaterial: {fileID: 2464364717378356963, guid: c1c4afb2afce0f14389ae590d11e4a32,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -567,8 +567,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 25
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -0.000036239624}
   m_textInfo:
     textComponent: {fileID: 1056570716}
     characterCount: 9
@@ -674,7 +674,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.4, y: -138.7}
+  m_AnchoredPosition: {x: 0, y: -138.7}
   m_SizeDelta: {x: 1546.1508, y: 604.6167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1315147261
@@ -717,8 +717,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: End
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 06f5489a82c80a54bb73f130c985ac39, type: 2}
-  m_sharedMaterial: {fileID: -1337794397159478764, guid: 06f5489a82c80a54bb73f130c985ac39,
+  m_fontAsset: {fileID: 11400000, guid: c1c4afb2afce0f14389ae590d11e4a32, type: 2}
+  m_sharedMaterial: {fileID: 2464364717378356963, guid: c1c4afb2afce0f14389ae590d11e4a32,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -744,8 +744,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 400
-  m_fontSizeBase: 400
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
