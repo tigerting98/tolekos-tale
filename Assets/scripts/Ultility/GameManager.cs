@@ -3,8 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
+
 using UnityEngine;
 //This global class controls the game system and allows for classes to interact with each other
 public enum Difficulty { VeryEasy, Easy, Normal, Hard, Nightmare
