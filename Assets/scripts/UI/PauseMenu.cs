@@ -61,7 +61,8 @@ public class PauseMenu : MonoBehaviour
     public void StatsText() {
         int curHP = GameManager.player ? (int)GameManager.player.health.GetCurrentHP() : 0;
         StringBuilder txt = new StringBuilder(1000);
-        txt.Append(string.Format("Difficulty: {0}\n", GameManager.difficultyLevel.ToString()));
+        txt.Append(string.Format("Difficulty: {0}\n", Functions.GetDifficultyString(GameManager.difficultyLevel)));
+        txt.Append(string.Format("Stage: {0}\n", GameManager.stageLevel));
         txt.Append(string.Format("Level: {0}\n", PlayerStats.playerLevel));
         txt.Append(string.Format("EXP: {0}/{1}\n", PlayerStats.exp, PlayerStats.expToLevelUp));
         txt.Append(string.Format("Health: {0}/{1}\n", curHP, (int)PlayerStats.playerMaxHP));

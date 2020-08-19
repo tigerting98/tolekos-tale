@@ -43,12 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076b051d07b55de4486226688a0153c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   boss: {fileID: 3520580310181643960, guid: 12bd33ede5555674480fb1a24d27e2f2, type: 3}
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 21300000, guid: 539ef55b0079efa4fa03f820a265a8c5, type: 3}
   namesOfSpellCards:
-  - Bird Sign \n ~Feather Flurry~
+  - Goose\n~GOOSE~
   - Goosing Around \n ~A Wild Goose Chase~
   nextLevel: {fileID: 0}
   spawnEffect: {fileID: 0}

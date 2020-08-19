@@ -3,10 +3,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using UnityEngine;
 //This global class controls the game system and allows for classes to interact with each other
-public enum Difficulty { VeryEasy, Easy, Normal, Hard, Nightmare}
+public enum Difficulty { VeryEasy, Easy, Normal, Hard, Nightmare
+}
 public class GameManager : MonoBehaviour
 {
     public static PauseMenu pauseMenu;
@@ -36,10 +38,12 @@ public class GameManager : MonoBehaviour
     public static int randomCounter = 0;
     public static float[] randomvalues = Enumerable.Repeat(-1f, 10000).ToArray();
     public static LevelDescription levelDescription = null;
+    public static int stageLevel =1;
 
     public static Boss currentBoss = null;
 
     public static void Reset() {
+        stageLevel = 1;
         randomCounter = 0;
         randomvalues = Enumerable.Repeat(-1f, 10000).ToArray();
         practiceMode = false;

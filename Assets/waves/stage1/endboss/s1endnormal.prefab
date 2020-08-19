@@ -47,7 +47,7 @@ MonoBehaviour:
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
   namesOfSpellCards:
-  - Divine Archery\n ~Heavenly Arrow Barrage~
+  - Muscle Archery\n ~Arrow Barrage~
   - Muscle Madness\n~Explosive Tricep Contraction~
   nextLevel: {fileID: 11400000, guid: 1a32aca0baf75b248927de00041c87f3, type: 2}
   background: {fileID: -9162131273511116121, guid: bbf1ec97531c67a4fb422744b1b8a8e7,

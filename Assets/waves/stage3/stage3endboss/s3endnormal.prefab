@@ -43,15 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53807db8a3787734194668c22559d5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   boss: {fileID: 5510918016240705999, guid: 4dc00fa65a9378545ad055ac41dcaed9, type: 3}
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
   namesOfSpellCards:
-  - Earthquake\n~Falling Leaves and Spiking Rocks~
-  - Colourful Dance\n~Mushroom Light Show~
-  - Overgrowth\n ~Blossoming Fruiting Bodies~
-  - Fire Support\n ~The Mushroommancer's Loyal Mushrooms~
+  - Earthen Domain\n~Striking Elements~
+  - Fungal Domain\n~Dancing Mushrooms~
+  - Fungal Domain\n~Blossoming Elongated Muskrooms~
+  - Artillery Support\n~A Truffle Kerfluffle~
   nextLevel: {fileID: 11400000, guid: d73e175741a50b54fac65e5db4aedec6, type: 2}
   key: {fileID: 6034030427296860853, guid: 98d4cbe4543ac1144a641a6525c1c54b, type: 3}
   image: {fileID: 6034030427296860853, guid: 54e6fd7b213e26449a8f4ffda9e9d305, type: 3}

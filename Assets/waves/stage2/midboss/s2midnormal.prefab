@@ -47,7 +47,7 @@ MonoBehaviour:
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
   namesOfSpellCards:
-  - Slime Secrets\n~Spiraling Waves Of Doom~
+  - Slime Secrets\n~Temperamental Whirlpool~
   nextLevel: {fileID: 0}
   waterCircle: {fileID: 2610694480630583689, guid: ec6988b72df21bb448d33d6753039904,
     type: 3}

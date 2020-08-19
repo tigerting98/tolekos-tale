@@ -47,11 +47,11 @@ MonoBehaviour:
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
   namesOfSpellCards:
-  - Ice Age \n~Icicles and Snowflakes~
-  - Earth Prison \n~Morphing Rock Walls~
-  - Flame Dance \n ~Cartwheels Of Flame~
-  - Tricolor Medley \n~Shifting Elements~
-  - Great Convergence \n~Combination Magic~
+  - Frigid Blizzard\n~Overwhelmed by Snow and Ice~
+  - Amorphous Earth\n~Transforming Prison~
+  - Flame Dance\n~Cartwheels Of Flame~
+  - Unique but United\n~ Elemental Amalgamation~
+  - Unique but United\n~Great Convergence~
   nextLevel: {fileID: 11400000, guid: 381b96fb81b94554daacb9630680f967, type: 2}
   waterportrait: {fileID: 21300000, guid: b07b347120140b64c8d493d07d82416f, type: 3}
   earthportrait: {fileID: 21300000, guid: dc50d3d1baa938a4fabf9da11f21d98a, type: 3}

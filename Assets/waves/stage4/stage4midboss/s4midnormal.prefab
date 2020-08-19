@@ -43,12 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6f1fa149611b349915a38b87473636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   boss: {fileID: 5510918016240705999, guid: c0d69388963e4e9469b5ff82c6d09b9b, type: 3}
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
   namesOfSpellCards:
-  - Heat Wave\n ~Burning Merry-Go-Round~
+  - Silent Salamander\n~Incineration Carousel~
   nextLevel: {fileID: 0}
   harder: 0
   spawnEffect: {fileID: 713349088135005307, guid: 0845c8f5beef85e4db65d60c7a3c528f,

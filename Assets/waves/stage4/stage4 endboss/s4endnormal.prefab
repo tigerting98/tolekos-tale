@@ -47,9 +47,9 @@ MonoBehaviour:
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 21300000, guid: 81b8c6732a10b8341af07089de6eab45, type: 3}
   namesOfSpellCards:
-  - Absolute Chaos\n~Blinding Starfall~
-  - Fire Wheel\n ~Conflagration~
-  - Pandemonium\n~Geysers Of Flame~
+  - Chaotic Acceleration\n~Star Chamber~
+  - Cautious Machinations\n~Rolling Flame Wheel~
+  - Violent Separation\n~Drawing the Lines~
   - Last Resort\n~Meltdown~
   nextLevel: {fileID: 11400000, guid: 5de849c1ee2620e4cafdade913add7b8, type: 2}
   key: {fileID: 6034030427296860853, guid: d75a1ff5e7e7ac349bbe294fb3d3ada1, type: 3}

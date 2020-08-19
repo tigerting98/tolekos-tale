@@ -24,6 +24,7 @@ public class LevelLoader : MonoBehaviour
         Cursor.visible = false;
         UnityEngine.Random.InitState(goldSeed);
         generateSeed();
+        GameManager.stageLevel = stagelevel;
         ChooseLevel(GameManager.difficultyLevel);
         SaveManager.UnlockNewStage(GameManager.difficultyLevel, stagelevel);
     }

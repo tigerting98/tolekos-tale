@@ -169,6 +169,26 @@ public class Functions : MonoBehaviour
             item.transform.localScale *= factor;
         }
         return list;
-    } 
+    }
 
+    public static string GetDifficultyString(Difficulty difficulty) {
+        return difficulty == Difficulty.VeryEasy ? "Very Easy" : difficulty.ToString();
+    }
+    public static Color GetDifficultyColor(Difficulty difficulty) {
+        switch (difficulty) {
+            case Difficulty.VeryEasy:
+                return GameManager.gameData.veryEasyColor;
+            case Difficulty.Easy:
+                return GameManager.gameData.easyColor;
+            case Difficulty.Normal:
+                return GameManager.gameData.normalColor;
+            case Difficulty.Hard:
+                return GameManager.gameData.hardColor;
+            case Difficulty.Nightmare:
+                return GameManager.gameData.nightmareColor;
+            default:
+                return GameManager.gameData.normalColor;
+
+        }
+    }
 }

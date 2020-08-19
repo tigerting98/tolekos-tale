@@ -47,12 +47,12 @@ MonoBehaviour:
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 21300000, guid: 8a3744d7bc8e34d44bb5b4986023c680, type: 3}
   namesOfSpellCards:
-  - Polarization \n ~Hot And Cold Trap~
-  - Force of Nature \n ~Typhoon~
-  - Flame Swirl \n ~Forest Fire~
-  - Magic Barrier \n ~Shifting Pylfer~
-  - Mischief \n ~Deadly Candy~
-  - Pylfer's Trump Card \n ~Unleash Magic~
+  - Spirit of Disaster\n~Cold Shock~
+  - Spirit of Disaster\n~Typhoon~
+  - Spirit of Disaster\n~Wildfire~
+  - Spirit of Evolution\n~Rainbow Cloak~
+  - Spirit of Mayhem\n~Unrelenting Grasp of the Rainbow Mage~
+  - Spirit of Pylfer\n~Cradle of Life and Death~
   nextLevel: {fileID: 0}
   harder: 0
   background: {fileID: 7414380709887408105, guid: abb9119637e23b24cb2d92d8ace9438f,

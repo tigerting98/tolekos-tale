@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5916288215380762352}
   - component: {fileID: -5194968770029176298}
   m_Layer: 0
-  m_Name: stage3midboss
+  m_Name: s3midnormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,13 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4588b231f405b499545020ce20404c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnSound: {fileID: 0}
   boss: {fileID: 5510918016240705999, guid: 655c0fb2cddbb6344a3d33e197ae459b, type: 3}
   bossImage: {fileID: 6034030427296860853, guid: 8ff239ce2cc6efa4e8342769fa9a0840,
     type: 3}
   bossPortrait: {fileID: 0}
   namesOfSpellCards:
-  - Spore Attack\n ~Exploding Spores of Delight~
+  - Clandestine Mushroom\n ~Exploding Spores of Delight~
   nextLevel: {fileID: 0}
   earthCircle: {fileID: 3435677033397378573, guid: b734662aac5843d4ab894c7b4971b14d,
     type: 3}
@@ -61,6 +60,7 @@ MonoBehaviour:
   spawnDelay: 2
   preFightDialogue1: {fileID: 11400000, guid: dcd809ca07433f54fb40a908149ae0b1, type: 2}
   preFightDialogue2: {fileID: 11400000, guid: 269e871347715874685458971901de7b, type: 2}
+  harder: 0
   movementSpeed1: 2.5
   pulseRate1: 0.23
   pauseDuration1: 2
@@ -73,6 +73,9 @@ MonoBehaviour:
   acceleration1: 2
   pulses1: 12
   bulletsperPulse1: 16
+  harderdmg: 0
+  harderspeed1: 0
+  hardernumber1ring: 0
   y2: 2
   ringspeed: 18
   bulletspeedfast: 4
@@ -84,3 +87,5 @@ MonoBehaviour:
   timetoExplode: 1.75
   numberOfRings: 10
   numberOfBulletsPerRing: 16
+  harderdmg2: 0
+  harderspeed2: 0

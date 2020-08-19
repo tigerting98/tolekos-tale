@@ -47,8 +47,8 @@ MonoBehaviour:
   bossImage: {fileID: 0}
   bossPortrait: {fileID: 0}
   namesOfSpellCards:
-  - Book Fiend\n ~Cascading Scattered Pages~
-  - Book Fiend\n ~Grimoire Accident~
+  - Endless Readings\n~Realm of Confusion~
+  - Endless Readings\n~Cross-Referencing~
   nextLevel: {fileID: 0}
   spawnEffect: {fileID: 3483778914283871063, guid: 4206a966e2b41f4478c92a30f3b3d846,
     type: 3}
