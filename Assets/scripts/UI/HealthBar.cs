@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Diagnostics;
+using System;
 //This class is responsible for the healthbar UI element
 public class HealthBar : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] TextMeshProUGUI waterResistText;
     [SerializeField] TextMeshProUGUI earthResistText;
     [SerializeField] TextMeshProUGUI fireResistText;
+    [SerializeField] DamageText dmgTaker;
     float currentHP = 0;
     float lastKnownMax = 0;
  
@@ -28,7 +30,39 @@ public class HealthBar : MonoBehaviour
    
 
     }
+    public void TakeDPSDmg(DamageType type, float dmg) {
+        try
+        {
+            DamageText text = Instantiate(dmgTaker, (Vector2)transform.position + new Vector2(150f, 25f), Quaternion.identity, transform);
+            text.SetColor(type);
+            text.SetText(dmg);
 
+            Movement movement = text.GetComponent<Movement>();
+            movement.SetSpeed(50f, 90);
+
+            Destroy(text.gameObject, 2.1f);
+        }
+        catch(Exception ex) {
+            UnityEngine.Debug.Log(ex);
+        }
+    }
+    public void TakeNormalDmg(DamageType type, float dmg)
+    {
+        try
+        {
+           DamageText text = Instantiate(dmgTaker, (Vector2)transform.position + new Vector2(0f, 25f), Quaternion.identity, transform);
+            text.SetColor(type);
+            text.SetText(dmg);
+
+            Movement movement = text.GetComponent<Movement>();
+            movement.SetSpeed(50f, 90);
+
+            Destroy(text.gameObject, 2.1f);
+        }
+        catch (Exception ex) {
+            UnityEngine.Debug.Log(ex);
+        }
+    }
     public void SetVisible() {
         visible = true;
         gameObject.SetActive(true);
@@ -47,9 +81,16 @@ public class HealthBar : MonoBehaviour
         health = hp;
         currentHP = hp.GetCurrentHP();
         lastKnownMax = hp.maxHP;
+        hp.OnHeal += (heal) => TakeNormalDmg(DamageType.Pure, -heal);
+
+        
+
     }
     public void SetTaker(DamageTaker taker) {
         this.taker = taker;
+        this.taker.OnNormalDmgTaken += TakeNormalDmg;
+        this.taker.OnDPSDmgTaken += TakeDPSDmg;
+
     }
 
     public void SetResist() {

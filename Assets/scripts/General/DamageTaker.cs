@@ -8,6 +8,8 @@ public class DamageTaker : MonoBehaviour
     [SerializeField] Health health = default;
     HashSet<int> bombids = new HashSet<int>();
     public Action<DamageDealer> OnDamageTaken;
+    public Action<DamageType, float> OnNormalDmgTaken;
+    public Action<DamageType, float> OnDPSDmgTaken;
     public bool vulnerable = true;
     public float FireMultiplier = 1;
     public float WaterMultiplier = 1;
@@ -36,8 +38,10 @@ public class DamageTaker : MonoBehaviour
             
             if (dmg != null && !dmg.DamageOverTime())
             {
+                float dmgtaken = GetDamage(dmg);
                 OnDamageTaken?.Invoke(dmg);
-                health.TakeDamage(GetDamage(dmg));
+                OnNormalDmgTaken?.Invoke(dmg.damageType, dmgtaken);
+                health.TakeDamage(dmgtaken);
                 if (dmg.DestroyOnImpact())
                 {
                     if (dmg.gameObject.tag == "Player Bullet") {
@@ -65,8 +69,10 @@ public class DamageTaker : MonoBehaviour
             DamageDealer dmg = collision.GetComponent<DamageDealer>();
             if (dmg != null && dmg.DamageOverTime())
             {
+                float dmgtaken = GetDamage(dmg) * Time.deltaTime;
+                OnDPSDmgTaken?.Invoke(dmg.damageType, dmgtaken);
                 OnDamageTaken?.Invoke(dmg);
-                health.TakeDamage(GetDamage(dmg) * Time.deltaTime);
+                health.TakeDamage(dmgtaken);
             }
         }
     }

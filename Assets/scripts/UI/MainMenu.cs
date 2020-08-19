@@ -26,13 +26,13 @@ public class MainMenu : MonoBehaviour
     void Awake()
     {
 
-
         data = SaveManager.LoadData();
 
     }
     //Set up the action listeners
     private void Start()
     {
+
         AudioManager.current.music.PlayTrack(mainMenuMusic);
 
         for (int i = 0; i < difficultyButtons.Count; i++)

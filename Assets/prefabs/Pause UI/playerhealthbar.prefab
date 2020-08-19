@@ -21,6 +21,8 @@ MonoBehaviour:
   waterResistText: {fileID: 4634057080760959369}
   earthResistText: {fileID: 8582018227905775462}
   fireResistText: {fileID: 5243725781986902916}
+  dmgTaker: {fileID: 2772437305436232034, guid: 2a705c8e45af1ca4bb5473237cb12705,
+    type: 3}
 --- !u!1001 &2501662320145467695
 PrefabInstance:
   m_ObjectHideFlags: 0

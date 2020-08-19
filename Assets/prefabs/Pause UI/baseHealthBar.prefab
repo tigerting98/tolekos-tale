@@ -483,6 +483,8 @@ MonoBehaviour:
   waterResistText: {fileID: 7131673197445122214}
   earthResistText: {fileID: 6174088450602454601}
   fireResistText: {fileID: 7670409103946222251}
+  dmgTaker: {fileID: 7022638857565199059, guid: 2a705c8e45af1ca4bb5473237cb12705,
+    type: 3}
 --- !u!1 &3311493128693656915
 GameObject:
   m_ObjectHideFlags: 0

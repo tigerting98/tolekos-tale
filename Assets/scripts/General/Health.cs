@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     protected float currentHP;
     public event Action OnDeath;
     public bool canDie = true;
-
+    public event Action<float> OnHeal;
     
     // Start is called before the first frame update
     public virtual void Start()
@@ -35,8 +35,11 @@ public class Health : MonoBehaviour
     }
 
     public virtual void Heal(float amount){
+        float oldHP = currentHP;
         float newHP = amount + currentHP;
         currentHP = Mathf.Clamp(newHP, 0, maxHP);
+        float actualHeal = currentHP - oldHP;
+        OnHeal?.Invoke(actualHeal);
 
     }
     public virtual float GetCurrentHP()
