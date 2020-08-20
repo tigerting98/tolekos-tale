@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     SaveData data;
     void Awake()
     {
-        SaveManager.UnlockAll();
+
         data = SaveManager.LoadData();
 
     }
